@@ -7,7 +7,7 @@
 % XeLaTeX can use any font installed in your system fonts folder
 \setmainfont[Mapping=tex-text]{CMU Serif}
 \newfontfamily\russianfont[Script=Cyrillic]{CMU Serif}
-%\newfontfamily\russianfont[Script=Cyrillic]{Droid Serif}
+\newfontfamily\cyrillicfonttt[Script=Cyrillic]{Ubuntu Mono}
 
 \usepackage{etex}
 \usepackage{savesym}
@@ -465,7 +465,7 @@ Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenb
 
 At first category theory was little more than a deeply clarifying language for existing difficult mathematical ideas. However, in 1957 Alexander Grothendieck\index{Grothendieck!in history} used category theory to build new mathematical machinery (new cohomology theories) that granted unprecedented insight into the behavior of algebraic equations. Since that time, categories have been built specifically to zoom in on particular features of mathematical subjects and study them with a level of acuity that is simply unavailable elsewhere.
 
-\begin{russian}В самом начале теория категорий была не более, чем глубоко проясняющим языком для отдельных уже существующих трудных математических идей. Однако, в 1957 году Александр Гротендик\index{Grothendieck!in history} использовал теорию категорий для построения новой математической техники (новых когомологических теорий), которая основывалась на беспрецендентном проникновении в поведение алгебраических уравнений. С тех пор категории стали строить специально для того, чтобы сосредоточиться на отдельных свойствах математических объектов и изучать их с такой четкостью, которая была ранее просто недоступна. \end{russian}
+\begin{russian}В самом начале теория категорий была не более, чем глубоко проясняющим языком для отдельных уже существующих трудных математических идей. Однако, в 1957 году Александр Гротендик\index{Grothendieck!in history} использовал теорию категорий для построения новой математической техники (новых когомологических теорий), которая предоставила беспрецендентное понимание поведения алгебраических уравнений. С тех пор категории стали строить специально для того, чтобы сосредоточиться на отдельных свойствах математических объектов и изучать их с такой четкостью, которая была ранее просто недоступна. \end{russian}
 
 Bill Lawvere\index{Lawvere, William} saw category theory as a new foundation for all mathematical thought. Mathematicians had been searching for foundations in the 19th century and were reasonably satisfied with set theory as {\em the foundation}. But Lawvere showed that the category of sets is simply a category with certain nice properties, not necessarily the center of the mathematical universe. He explained how whole algebraic theories can be viewed as examples of a single system. He and others went on to show that higher order logic was beautifully captured in the setting of category theory (more specifically toposes). It is here also that Grothendieck and his school worked out major results in algebraic geometry.
 
@@ -493,7 +493,7 @@ As mentioned above category theory has branched out into certain areas of scienc
 
 The world of {\em applied mathematics} is much smaller than the world of {\em applicable mathematics}. As alluded to above, this course is intended to create a bridge between the vast array of mathematical concepts that are used daily by mathematicians to describe all manner of phenomena that arise in our studies, and the models and frameworks of scientific disciplines such as physics, computation, and neuroscience.
 
-\begin{russian}Мир {\em ужe' примененной математики} значительно y'же мира {\em применимой математики} [каламбур]. Как указывалось выше, этот курс предназначен создать мост между, с одной стороны, огромным массивом математических понятий, используемых ежедневно математиками, чтобы описывать феномены всякого рода, возникающие в их исследованиях, и, с другой стороны, моделями и конструкциями таких научных дисциплин, как физика, вычислительная математика, нейронаука. \end{russian}
+\begin{russian}Мир {\em уж\'e примененной математики} значительно \'yже мира {\em применимой математики} [каламбур]. Как указывалось выше, этот курс предназначен создать мост между, с одной стороны, огромным массивом математических понятий, используемых ежедневно математиками, чтобы описывать феномены всякого рода, возникающие в их исследованиях, и, с другой стороны, моделями и конструкциями таких научных дисциплин, как физика, вычислительная математика, нейронаука. \end{russian}
 
 To the pure mathematician I'll try to prove that concepts such as categories, functors, natural transformations, limits, colimits, functor categories, sheaves, monads, and operads---concepts that are often considered too abstract for even math majors---can be communicated to scientists with no math background beyond linear algebra. If this material is as teachable as I think, it means that category theory is not esoteric but somehow well-aligned with ideas that already make sense to the scientific mind. Note, however, that this book is example-based rather than proof-based, so it may not be suitable as a reference for students of pure mathematics.
 
@@ -505,19 +505,19 @@ To the scientist I'll try to prove the claim that category theory includes a for
 
 Data gathering is ubiquitous in science. Giant databases are currently being mined for unknown patterns, but in fact there are many (many) known patterns that simply have not been catalogued. Consider the well-known case of medical records. A patient's medical history is often known by various individual doctor-offices but quite inadequately shared between them. Sharing medical records often means faxing a hand-written note or a filled-in house-created form between offices.
 
-\begin{russian}Сбор данных вездесущ в науке. Причем сейчас в гигантских базах данных встречается откровенная чепуха, и в то же время имеется множество информации, которая просто еще не попала в эти каталоги. Рассмотрим хорошо известный случай медицинских записей. История болезни пациента хорошо известна различным отдельным медицинским заведениям, но совершенно неадекватно передается между ними. Обмен медицинскими записями зачастую означает передачу по факсу между заведениями рукописной записки или заполнения доморощенной формы. \end{russian}
+\begin{russian}Сбор данных вездесущ в науке. Сейчас в гигантских базах данных ведется целенаправленный поиск ранее неизвестных взаимосвязей, и в то же время имеется множество информации, которая просто еще не попала в эти каталоги. Рассмотрим хорошо известный случай медицинских записей. История болезни пациента хорошо известна различным отдельным медицинским заведениям, но совершенно неадекватно передается между ними. Обмен медицинскими записями зачастую означает передачу по факсу между заведениями рукописной записки или заполнения доморощенной формы. \end{russian}
 
 Similarly, in science there exists substantial expertise making brilliant connections between concepts, but it is being conveyed in silos of English prose known as journal articles. Every scientific journal article has a methods section, but it is almost impossible to read a methods section and subsequently repeat the experiment---the English language is inadequate to precisely and concisely convey what is being done.
 
-\begin{russian}Аналогично, в науке развит достаточный профессионализм в создании блистательных связей между понятиями, но он передается в силосной яме [переводчик: щито?] английской прозы, известной как журнальные статьи. Каждая статья в научном журнале имеет методический раздел, но практически невозможно прочесть методический раздел и последовательно воспроизвести эксперимент, --- английский язык неадекватен для точной и краткой передачи того, что же необходимо проделать. \end{russian}
+\begin{russian}Аналогично, в науке развит достаточный профессионализм в создании блистательных связей между понятиями, но он втискивается в прокрустово ложе естественного языка, известное как журнальные статьи. Каждая статья в научном журнале имеет методический раздел, но практически невозможно прочесть методический раздел и последовательно воспроизвести эксперимент, --- английский язык неадекватен для точной и краткой передачи того, что же необходимо проделать. \end{russian}
 
 The first thing to understand in this course is that reusable methodologies can be formalized, and that doing so is inherently valuable. Consider the following analogy. Suppose you want to add up the area of a region in space (or the area under a curve). You break the region down into small squares, each of which you know has area $A$; then you count the number of squares, say $n$, and the result is that the region has an area of about $nA$. If you want a more precise and accurate result you repeat the process with half-size squares. This methodology can be used for any area-finding problem (of which there are more than a first-year calculus student generally realizes) and thus it deserves to be formalized. But once we have formalized this methodology, it can be taken to its limit and out comes integration by Riemann sums.
 
-\begin{russian}Первая вещь, которую можно понять из этого курса, --- то, что повторно используемые методологии могут быть формализованы, и то, что делать это --- существенно важно. Рассмотрим следующую аналогию. Предположим, мы хотим просуммировать площадь области в пространстве (или площадь под кривой). Мы разбиваем область на малые квадратики, каждый из которых имеет площадь \begin{english} $A$ \end{english}; затем мы подсчитываем число квадратиков, скажем \begin{english} $n$ \end{english}, и в результате получаем, что площадь равняется \begin{english} $nA$ \end{english}. Если мы хотим более точного результата, мы повторяем процедуру с квадратиками половинного размера. Эта методология может быть использована для любой задачи нахождения площади (которых гораздо больше, чем представляет себе студент-первокурсник) и поэтому она заслуживает формализации. Но как только мы формализовали методологию, она может быть улучшена до своего предела, и отсюда получается интегрирование при помощи римановых сумм. \end{russian}
+\begin{russian}Первая вещь, которую можно понять из этого курса, --- то, что повторно используемые методологии могут быть формализованы, и то, что делать это --- существенно важно. Рассмотрим следующую аналогию. Предположим, мы хотим просуммировать площадь области в пространстве (или площадь под кривой). Мы разбиваем область на малые квадратики, каждый из которых имеет площадь \begin{english}$A$\end{english}; затем мы подсчитываем число квадратиков, скажем \begin{english}$n$\end{english}, и в результате получаем, что площадь равняется \begin{english}$nA$\end{english}. Если мы хотим более точного результата, мы повторяем процедуру с квадратиками половинного размера. Эта методология может быть использована для любой задачи нахождения площади (которых гораздо больше, чем представляет себе студент-первокурсник) и поэтому она заслуживает формализации. Но как только мы формализовали методологию, она может быть улучшена до своего предела, и отсюда получается интегрирование при помощи римановых сумм. \end{russian}
 
 I intend to show that category theory is incredibly efficient as a language for experimental design patterns, introducing formality while remaining flexible. It forms a rich and tightly woven conceptual fabric that will allow the scientist to maneuver between different perspectives whenever the need arises. Once one builds that fabric for oneself, he or she has an ability to think about models in a way that simply would not occur without it.  Moreover, putting ideas into the language of category theory forces a person to clarify their assumptions. This is highly valuable both for the researcher and for his or her audience.
 
-\begin{russian}Я собираюсь показать, что теория категорий невероятно эффективна как язык для экспериментальных дизайн-паттернов [переводчик: и сюда они пробрались...], одновременно вводя формальность и оставаясь гибкой. Она образует "крепко сшитую понятийную ткань", которая позволит ученым маневрировать между различными точками зрения, как только возникает необходимость. Как только некто строит подобную ткань для самого себя, он или она получает возможность думать о моделях способом, который бы без этого не возник. Более того, выражение идей в языке теории категорий заставляет человека сделать более ясными свои предположения. Это чрезвычайно ценно как для исследователя, так и для его аудитории. \end{russian}
+\begin{russian}Я собираюсь показать, что теория категорий невероятно эффективна как язык для экспериментальных дизайн-паттернов [переводчик: и сюда они пробрались...], одновременно вводя формальность и оставаясь гибкой. Она образует крепко сотканную ткань понятий, которая позволит ученым маневрировать между различными точками зрения, как только возникает необходимость. Как только некто строит подобную ткань для самого себя, он или она получает возможность думать о моделях способом, который бы без этого не возник. Более того, выражение идей в языке теории категорий заставляет человека сделать более ясными свои предположения. Это чрезвычайно ценно как для исследователя, так и для его аудитории. \end{russian}
 
 What must be recognized in order to find value in this course is that conceptual chaos is a major problem. Creativity demands clarity of thinking, and to think clearly about a subject requires an organized understanding of how its pieces fit together. Organization and clarity also lead to better communication with others. Academics often say they are paid to think and understand, but that is not true. They are paid to think, understand, and {\em communicate their findings}. Universal languages for science---languages such as calculus and differential equations, matrices, or simply graphs and pie-charts---already exist, and they grant us a cohesiveness that makes scientific research worthwhile. In this book I will attempt to show that category theory can be similarly useful in describing complex scientific understandings.
 
@@ -533,7 +533,7 @@ I will do my best to make clear the value of category theory in science, but I a
 
 I also want you to recognize that the value of mathematics is not generally obvious at first. A good student learning a good subject with a good teacher will see something compelling almost immediately, but may not see how it will be useful in real life. This will come later. I hope you will work hard to understand even without yet knowing what its actual value in your life and research will be. Like a student of soccer is encouraged to spend hours juggling the ball when he or she could be practicing penalty shots, it is important to gain facility with the materials you will be using. Doing exercises is imperative for learning mathematics.
 
-\begin{russian}Я также хочу, чтобы вы поняли, что ценность математики не всегда сразу очевидна. Хороший студент, изучающий хороший предмет у хорошего преподавателя сможет понять нечто впечатляющее практически немедленно, но не сможет так же быстро понять, как это нечто может быть полезно в реальной жизни. Это придет позже. Я надеюсь, вы будете усердно трудиться над предметом, даже еще не понимая, в чем окажется его настоящая ценность в вашей жизни и исследованиях. Подобно тому, как учащегося футболу заставляют проводить часы, упражняясь с мячом, перед тем, как ему или ей [переводчик: давно я не видел женский футбол...] придется попрактиковаться, выполняя пенальти, важно заранее обрести умения в избранном деле. Выполнение упражнений критически важно при обучении математике. \end{russian}
+\begin{russian}Я также хочу, чтобы вы поняли, что ценность математики не всегда сразу очевидна. Хороший студент, изучающий хороший предмет у хорошего преподавателя сможет понять нечто впечатляющее практически немедленно, но не сможет так же быстро понять, как это нечто может быть полезно в реальной жизни. Это придет позже. Я надеюсь, вы будете усердно трудиться над предметом, даже еще не понимая, в чем окажется его настоящая ценность в вашей жизни и исследованиях. Подобно тому, как учащегося футболу заставляют проводить часы, упражняясь с мячом, вместо того, чтобы попрактиковаться в пенальти; ибо важно заранее обрести умения в избранном деле. Точно так же выполнение упражнений критически важно при обучении математике. \end{russian}
 
 %%%%%% Section %%%%%%
 
@@ -541,7 +541,7 @@ I also want you to recognize that the value of mathematics is not generally obvi
 
 I wrote this book because the available books on category theory are almost all written for mathematicians (the rest are written for computer scientists). There is one book by Lawvere and Schanuel, called {\em Conceptual Mathematics} \cite{LS}, that offers category theory to a wider audience, but its style is not appropriate for this course. Still, it is very well written and clear.
 
-\begin{russian}Я написал эту книгу, потому что имеющиеся книги по теории категорий практически все написаны для математиков (остальные написаны для теоретических информатиков). Есть одна книга Ловера и Шануеля {\em Концептуальная математика} \cite{LS}, которая предлагает теорию категорий более широкой аудитории, но ее стиль не подходит для этого курса. Тем не менее, она написана очень хорошо и ясно. \end{russian}
+\begin{russian}Я написал эту книгу, потому что имеющиеся книги по теории категорий практически все написаны для математиков (остальные написаны для теоретиков информатики). Есть одна книга Ловера и Шануеля {\em Концептуальная математика} \cite{LS}, которая предлагает теорию категорий более широкой аудитории, но ее стиль не подходит для этого курса. Тем не менее, она написана очень хорошо и ясно. \end{russian}
 
 The ``bible" of category theory is {\em Categories for the working mathematician} by Mac Lane \cite{Mac}. But as the title suggests, it was written for working mathematicians and will be quite opaque to my target audience. However, once a person has read my book, Mac Lane's book may become a valuable reference.
 
@@ -561,7 +561,7 @@ This book attempts to explain category theory by examples and exercises rather t
 
 In a front page MIT news article on December 17, 2012 explained that {\em graphs}, systems of vertices and edges are ``A simple tool for representing relationships between data, devices or almost anything else has ubiquitous applications in computer science."\cite{http://web.mit.edu/newsoffice/2012/explained-graphs-computer-science-1217.html}. Categories are graphs with one extra piece of structure: the ability to consider two paths, such as two different routes to the grocery store, to be equivalent. Reading it through, the MIT news article would have been more appropriately written about categories, had scientists been adequately aware of them. This is my hope for the course.
 
-\begin{russian}На первой странице выпуска MIT news за 17 декабря 2012 объясняется, что {\em графы}, системы вершин и ребер, будучи "простым инструментом для представления отношений между данными, устройствами либо практически чем-угодно еще, имеют вездесущие приложения в информатике."\cite{http://web.mit.edu/newsoffice/2012/explained-graphs-computer-science-1217.html}. Категории являются графами с еще одним компонентом структуры: возможности считать два различных пути, таких как два различных маршрута к магазину, эквивалентными. Прочитав ее до конца, я решил, что если бы статья в MIT news была бы написана про категории, то ученые были бы более адекватно просвещены. Такова моя надежда, касающаяся этого курса. \end{russian}
+\begin{russian}На первой странице выпуска MIT news за 17 декабря 2012 объясняется, что {\em графы}, системы вершин и ребер, будучи "простым инструментом для представления отношений между данными, устройствами либо практически чем-угодно еще, имеют вездесущие приложения в информатике."\cite{http://web.mit.edu/newsoffice/2012/explained-graphs-computer-science-1217.html}. Категории являются графами с еще одним компонентом структуры: возможности считать два различных пути, таких как два различных маршрута к магазину, эквивалентными. Прочитав её до конца, я убедился, что, если бы учёные были более адекватно информированы о категориях, данную статью для MIT было бы более уместно написать именно о них. Таковы мои надежды, которые я возлагаю на этот курс. \end{russian}
 
 These communication barriers are seen in businesses when one database ``can't talk to" another---the two systems, though ostensibly containing information about the same topic, represent the information differently and therefore cannot be integrated without tremendous cost and overhaul. The barriers can be seen in teaching or training, when an expert has a hard time speaking in a language that the student is ready to understand. Finally, and most relevantly, they can be seen in science. Aside from teaching and training, there is the issue that researchers in even neighboring fields often find the barriers between disciplines to be insurmountable, and much of this has to do with differences in jargon.
 
@@ -3245,5 +3245,111 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 
 %%%%%%%% Chapter %%%%%%%%
 
+\printindex
+
+
+\bibliographystyle{amsalpha}
+\begin{thebibliography}{SGWB}\rr
+
+\bibitem [Ati]{Ati} Atiyah, M. (1989) ``Topological quantum field theories". {\em Publications Math\'{e}matiques de l'IH\'{E}S} 68 (68), pp. 175--186.
+
+\bibitem [Axl]{Axl} Axler, S. (1997) {\em Linear algebra done right}. Springer. 
+
+\bibitem [Awo]{Awo} S. Awodey. (2010) {\em Category theory.} Second edition. Oxford Logic Guides, 52. Oxford University Press, Oxford.
+
+\bibitem [Bar]{Bar} Bralow, H. (1961) ``Possible principles underlying the transformation of sensory messages". {\em Sensory communication}, pp. 217 -- 234.
+
+\bibitem [BD]{BD} Baez, J.C.; Dolan, J. (1995) ``Higher-dimensional algebra and topological quantum field theory". {\em Journal of mathematical physics} vol 36, 6073.
+
+\bibitem [BFL]{BFL} Baez, J.C.; Fritz, T.; Leinster, T. (2011) ``A characterization of entropy in terms of information loss." {\em Entropy} 13, no. 11.
+
+\bibitem[BS]{BS} Baez, J.C.; Stay, M. (2011) ``Physics, topology, logic and computation: a Rosetta Stone." {\em New structures for physics}, 95Ð172. Lecture Notes in Phys., 813, Springer, Heidelberg.
+
+\bibitem [BP1]{BP1} Brown, R.; Porter, T. (2006) ``Category Theory: an abstract setting for
+analogy and comparison, In: {\em What is Category Theory?} Advanced
+Studies in Mathematics and Logic, Polimetrica Publisher, Italy, pp. 257-274.
+
+\bibitem [BP2]{BP2} Brown, R.; Porter, T. (2003) ``Category theory and higher dimensional
+algebra: potential descriptive tools in neuroscience", {\em Proceedings
+of the International Conference on Theoretical Neurobiology, Delhi}, edited by Nandini Singh, National Brain Research
+Centre, Conference Proceedings 1 80-92. 
+
+\bibitem [BW]{BW} M. Barr, C. Wells. (1990) {\em Category theory for computing science.} Prentice Hall International Series in Computer Science. Prentice Hall International, New York.
+
+\bibitem [Big]{Big} Biggs, N.M. (2004) {\em Discrete mathematics}. Oxford University Press, NY. 
+
+\bibitem [Dia]{Dia} Diaconescu, R. (2008) {\em Institution-independent model theory} Springer.
+
+\bibitem[DI]{DI} D\"{o}ring, A.; Isham, C. J. ``A topos foundation for theories of physics. I. Formal languages for physics." 
+{\em J. Math. Phys.} 49 (2008), no. 5, 053515.
+
+\bibitem[EV]{EV} Ehresmann, A.C.; Vanbremeersch, J.P. (2007) {\em Memory evolutive systems; hierarchy, emergence, cognition}. Elsevier.
+
+\bibitem[Eve]{Eve} Everett III, H. (1973). ``The theory of the universal wave function." In {\em The many-worlds interpretation of quantum mechanics} (Vol. 1, p. 3).
+
+\bibitem [Gog]{Gog} Goguen, J. (1992) ``Sheaf semantics for concurrent interacting objects" {\em Mathematical structures in Computer Science} Vol 2, pp. 159 -- 191.
+
+\bibitem [Gro]{Gro} Grothendieck, A. (1971). {\em S\'eminaire de G\'eom\'etrie Alg\'ebrique du Bois Marie - 1960-61 - Rev\^etements \'etales et groupe fondamental - (SGA 1)} (Lecture notes in mathematics 224) (in French). Berlin; New York: Springer-Verlag.
+
+\bibitem [Kro]{Kro} Kr\"{o}mer, R. (2007). {\em Tool and Object: A History and Philosophy of Category Theory}, Birkhauser.
+
+\bibitem [Lam]{Lam} Lambek, J. (1980) ``From $\lambda$-calculus to Cartesian closed categories". In {\em Formalism}, Academic Press, London, pp. 375 -- 402.
+
+\bibitem [Law]{Law} Lawvere, F.W. (2005) ``An elementary theory of the category of sets (long version) with
+   commentary." (Reprinted and expanded from Proc. Nat. Acad. Sci. U.S.A. {\bf 52}
+   (1964)) {\em Repr. Theory Appl. Categ.} 11, pp. 1 -- 35.
+   
+\bibitem [Kho]{Kho} Khovanov, M. (2000) ``A categorificiation of the Jones polynomial" {\em Duke Math J.}.
+
+\bibitem [Le1]{Le1} Leinster, T. (2004) {\em Higher Operads, Higher Categories}. London Mathematical Society Lecture Note Series 298, Cambridge University Press.
+
+\bibitem [Le2]{Le2} Leinster, T. (2012) ``Rethinking set theory". ePrint available \url{http://arxiv.org/abs/1212.6543}.
+
+\bibitem [Lin]{Lin} Linsker, R. (1988) ``Self-organization in a perceptual network". {\em Computer} 21, no. 3, pp. 105 -- 117.
+
+\bibitem [LM]{LM} Landry, E.; Marquis, J-P., 2005, "Categories in Contexts: historical, foundational, and philosophical." {\em Philosophia Mathematica}, (3), vol. 13, no. 1, 1 -- 43.
+
+\bibitem [LS]{LS} F.W. Lawvere, S.H. Schanuel. (2009) {\em Conceptual mathematics. 
+A first introduction to categories.} Second edition. Cambridge University Press, Cambridge.
+
+\bibitem [MacK]{MacK} MacKay, D.J. (2003). {\em Information theory, inference and learning algorithms.} Cambridge university press.
+
+\bibitem [Mac]{Mac} Mac Lane, S. (1998) {\em Categories for the working mathematician.} Second edition. Graduate Texts in Mathematics, 5. Springer-Verlag, New York.
+
+\bibitem[Mar1]{Mar1} Marquis, J-P. (2009) {\em From a Geometrical Point of View: a study in the history and philosophy of category theory}, Springer.
+
+\bibitem [Mar2]{Mar2} Marquis, J-P, ``Category Theory", {\em The Stanford Encyclopedia of Philosophy} (Spring 2011 Edition), Edward N. Zalta (ed.), \url{http://plato.stanford.edu/archives/spr2011/entries/category-theory}
+
+\bibitem[Min]{Min} Minsky, M. {\em The Society of Mind.}  Simon and Schuster, NY 1985.
+
+\bibitem[Mog]{Mog} Moggi, E. (1989) ``A category-theoretic account of program modules." {\em Category theory and computer science (Manchester, 1989),} 101Ð117, Lecture Notes in Comput. Sci., 389, Springer, Berlin. 
+
+\bibitem [nLa]{nLa} nLab authors.  \url{http://ncatlab.org/nlab/show/HomePage}
+
+\bibitem [Pen]{Pen} Penrose, R. (2006) {\em The road to reality}. Random house.
+
+\bibitem [RS]{RS} Radul, A.; Sussman, G.J. (2009). ``The art of the propagator". {\em MIT Computer science and artificial intelligence laboratory technical report.}
+
+\bibitem [Sp1]{Sp1} Spivak, D.I. (2012) ``Functorial data migration". {\em Information and communication} 
+
+\bibitem [Sp2]{Sp2} Spivak, D.I. (2012) ``Queries and constraints via lifting problems". Submitted to {\em Mathematical structures in computer science}. ePrint available: \url{http://arxiv.org/abs/1202.2591}
+
+\bibitem [Sp3]{Sp3} Spivak, D.I. (2012) ``Kleisli database instances". ePrint available: \url{http://arxiv.org/abs/1209.1011}
+
+\bibitem [Sp4]{Sp4} Spivak, D.I. (2013) ``The operad of wiring diagrams: Formalizing a graphical language for databases, recursion, and plug-and-play circuits". Available online: \url{http://arxiv.org/abs/1305.0297}
+
+\bibitem[SGWB]{SGWB} Spivak D.I., Giesa T., Wood E., Buehler M.J. (2011) ``Category Theoretic Analysis of Hierarchical Protein Materials and Social Networks." PLoS ONE 6(9): e23911. doi:10.1371/journal.pone.0023911
+
+\bibitem[SK]{SK} Spivak, D.I., Kent, R.E. (2012) ``Ologs: A Categorical Framework for Knowledge Representation." {\em PLoS ONE} 7(1): e24274. doi:10.1371/journal.pone.0024274.
+
+\bibitem[WeS]{WeS} Weinberger, S. (2011) ``What is... Persistent Homology?" AMS.
+
+\bibitem[WeA]{WeA} Weinstein, A. (1996) ``Groupoids: unifying internal and external symmetry. {\em Notices of the AMS} Vol 43, no. 7, pp. 744 -- 752.
+
+\bibitem[Wik]{Wik} \href{http://www.wikipedia.org}{\text Wikipedia} (multiple authors). Various articles, all linked with a hyperreference are scattered throughout this text. All accessed December 6, 2012 -- \today.
+
+\end{thebibliography}
+
 \end{english}
+
 \end{document}
