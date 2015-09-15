@@ -9,6 +9,10 @@
 \newfontfamily\russianfont[Script=Cyrillic]{CMU Serif}
 \newfontfamily\cyrillicfonttt[Script=Cyrillic]{Ubuntu Mono}
 
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\russianfont}
+\renewcommand{\cftsecfont}{\russianfont}
+
 \usepackage{etex}
 \usepackage{savesym}
 \usepackage{amssymb, amsmath,amsthm,amscd}
@@ -437,7 +441,7 @@ This course is an attempt to extol the virtues of a new branch of mathematics, c
 
 I believe that the language and toolset of category theory can be useful throughout science. We build scientific understanding by developing models, and category theory is the study of basic conceptual building blocks and how they cleanly fit together to make such models. Certain structures and conceptual frameworks show up again and again in our understanding of reality. No one would dispute that vector spaces are ubiquitous. But so are hierarchies, symmetries, actions of agents on objects, data models, global behavior emerging as the aggregate of local behavior, self-similarity, and the effect of methodological context.
 
-\begin{russian}Я верю, что язык и инструментарий теории категорий может быть полезен во всей науке. Научное понимание мира строится на основе разработки сложных моделей, и теория категорий как раз изучает базовые концептуальные строительные блоки, а также то, как они могут быть четко состыкованы между собой при создании таких моделей. Определенные структуры и концептуальные конструкции обнаруживаются вновь и вновь в нашем понимании реальности. Никто не станет сомневаться в том, что векторные пространства вездесущи. Но таковы же и иерархии, симметрии, воздействия агентов на объекты, модели данных, глобальное поведение, возникающее как агрегация локального поведения, самоподобие и эффект методологического контекста [переводчик: щито??? гугл не дает ссылок про "эффект методологического контекста"; далее автор пишет, что это, оказывается, про монады; как это переводить здесь и что это вообще означает?] \end{russian}
+\begin{russian}Я верю, что язык и инструментарий теории категорий может быть полезен во всей науке. Научное понимание мира строится на основе разработки сложных моделей, и теория категорий как раз изучает базовые концептуальные строительные блоки, а также то, как они могут быть четко состыкованы между собой при создании таких моделей. Определенные структуры и концептуальные конструкции обнаруживаются вновь и вновь в нашем понимании реальности. Никто не станет сомневаться в том, что векторные пространства вездесущи. Но таковы же и иерархии, симметрии, воздействия агентов на объекты, модели данных, глобальное поведение, возникающее при объединении локального поведения, самоподобие и эффект методологического контекста [переводчик: щито??? гугл не дает ссылок про "эффект методологического контекста"; далее автор пишет, что это, оказывается, про монады; что это вообще означает?] \end{russian}
 
 Some ideas are so common that our use of them goes virtually undetected, such as set-theoretic intersections. For example, when we speak of a material that is both lightweight and ductile, we are intersecting two sets. But what is the use of even mentioning this set-theoretic fact? The answer is that when we formalize our ideas, our understanding is almost always clarified. Our ability to communicate with others is enhanced, and the possibility for developing new insights expands. And if we are ever to get to the point that we can input our ideas into computers, we will need to be able to formalize these ideas first.
 
@@ -473,7 +477,7 @@ Bill Lawvere\index{Lawvere, William} saw category theory as a new foundation for
 
 In 1980 Joachim Lambek\index{Lambek, Joachim} showed that the types and programs used in computer science form a specific kind of category. This provided a new semantics for talking about programs, allowing people to investigate how programs combine and compose to create other programs, without caring about the specifics of implementation. Eugenio Moggi\index{Moggi, Eugenio} brought the category theoretic notion of monads into computer science to encapsulate ideas that up to that point were considered outside the realm of such theory.
 
-\begin{russian}В 1980 Иоахим Ламбек\index{Lambek, Joachim} показал, что типы и программы, используемые в информатике, образуют особого рода категорию. Это предложило новую семантику для обсуждения программ, позволяя ученым исследовать, как программы комбинируются и соединяются, образуя другие программы, не заботясь о специфике реализации. Эугенио Моджи\index{Moggi, Eugenio} принес в информатику теоретико-категорное понятие монад, которое инкапсулирует идеи, рассматривавшиеся ранее недоступными для подобных теорий. \end{russian}
+\begin{russian}В 1980 Иоахим Ламбек\index{Lambek, Joachim} показал, что типы и программы, используемые в информатике, образуют особого рода категорию. Это дало возможность обсуждать программы в рамках новой семантики, позволяя ученым исследовать, как программы комбинируются и соединяются, образуя другие программы, не заботясь о специфике реализации. Эугенио Моджи\index{Moggi, Eugenio} принес в информатику теоретико-категорное понятие монад, которое инкапсулирует идеи, рассматривавшиеся ранее недоступными для подобных теорий. \end{russian}
 
 It is difficult to explain the clarity and beauty brought to category theory by people like Daniel Kan\index{Kan, Daniel} and Andr\'{e} Joyal\index{Joyal, Andr\'{e}}. They have each repeatedly extracted the essence of a whole mathematical subject to reveal and formalize a stunningly simple yet extremely powerful pattern of thinking, revolutionizing how mathematics is done.
 
@@ -622,7 +626,7 @@ without which this book would not have been remotely possible. I believe that th
 
 The theory of sets was invented as a foundation for all of mathematics. The notion of sets and functions serves as a basis on which to build our intuition about categories in general. In this chapter we will give examples of sets and functions and then move on to discuss commutative diagrams. At this point we can introduce ologs which will allow us to use the language of category theory to speak about real world concepts. Then we will introduce limits and colimits, and their universal properties. All of this material is basic set theory, but it can also be taken as an investigation of our first category, the {\em category of sets}, which we call $\Set$. We will end this chapter with some other interesting constructions in $\Set$ that do not fit into the previous sections.
 
-\begin{russian} \end{russian}
+\begin{russian}Теория множеств была изобретена [развита?] в качестве оснований всей математики. Понятие множества и функции служат основой, на которой строится наша интуиция о категориях вообще. В этой главе мы дадим примеры множеств и функций и затем перейдем к обсуждению коммутативных диаграмм. К тому моменту мы сможем ввести ологи, которые позволят нам использовать язык теории категорий, чтобы говорить о понятиях реального мира. Затем мы введем пределы и копределы и их универсальные свойства. Весь этот материал входит в область элементарной теории множеств, но он может также рассматриваться и как исследование нашей первой категории, {\em категории множеств}, которую мы назовем $\Set$. \end{russian}
 
 %%%%%% Section %%%%%%
 
@@ -636,13 +640,18 @@ In this course I'll assume you know what a set is. We can think of a set $X$ as 
 \footnote{Note that the symbol $x'$, read ``x-prime", has nothing to do with calculus or derivatives. It is simply notation that we use to name a symbol that is suggested as being somehow like $x$. This suggestion of kinship between $x$ and $x'$ is meant only as an aid for human cognition, and not as part of the mathematics.}
 The set of pendulums is the collection of things we agree to call pendulums, each of which is recognizable as being a pendulum, and for any two people pointing at pendulums we can tell if they're pointing at the same pendulum or not. 
 
-\begin{russian} \end{russian}
+\begin{russian}В этом курсе я буду предполагать, что вы знаете, что такое множество. Мы можем думать о множестве $X$ как о совокупности вещей $x\in X$, для каждой из которых мы можем проверить, находится ли она в $X$, и такой, что для каждой пары именованных элементов $x,x'\in X$ мы можем сказать, $x=x'$ или нет.
+\footnote{Заметим, что символ $x'$, читается "x-штрих", не имеет ничего общего с матанализом или производной. Это просто обозначение, которое мы используем, чтобы обозначить символ, в чем-то похожий на $x$. Таоке предположение о родстве между $x$ и $x'$ имеет смысл только для целей удобства человеческого восприятия, а не как часть математики.}
+Множество маятников это совокупность вещей, которые мы согласились называть маятниками, про каждый из которых мы можем проверить, что это действительно маятник, и для любых двух людей, указывающих на маятники, мы можем сказать, показывают ли они на один и тот же маятник или нет. \end{russian}
 
 \begin{figure}
 \begin{center}
 \includegraphics[height=2in]{aSet}
 \end{center}
-\caption{A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$.}
+\caption{
+  A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$.\\ 
+  Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\emptyset$.
+}
 \end{figure}
 
 \begin{notation}\label{not:basic math notation}
@@ -652,11 +661,18 @@ $$\NN:=\{0,1,2,3,4,\ldots,877,\ldots\}.$$
 The symbol $\ZZ$\index{a symbol!$\ZZ$} denotes the set of integers, which contains both the natural numbers and their negatives, 
 $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
 
-\begin{russian} \end{russian}
+\begin{russian}
+Симвод $\emptyset$\index{a symbol!$\emptyset$} обозначает множество без элементов. Символ $\NN$\index{a symbol!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
+$$\NN:=\{0,1,2,3,4,\ldots,877,\ldots\}.$$
+Символ $\ZZ$\index{a symbol!$\ZZ$} обозначает множество целых чисел, которое содержит как положительные, так и отрицательные числа, 
+$$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
+ \end{russian}
 
 If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$, and write $A\ss B$, if every element of $A$ is an element of $B$. So we have $\NN\ss\ZZ$. Checking the definition, one sees that for any set $A$, we have (perhaps uninteresting) subsets $\emptyset\ss A$ and $A\ss A$. We can use {\em set-builder notation}\index{set!set builder notation} to denote subsets. For example the set of even integers can be written $\{n\in\ZZ\|n\tn{ is even}\}$. The set of integers greater than $2$ can be written in many ways, such as $$\{n\in\ZZ\|n>2\} \hsp\tn{or}\hsp\{n\in\NN\|n>2\}\hsp\tn{or}\hsp\{n\in\NN\|n\geq 3\}.$$
 
-\begin{russian} \end{russian}
+\begin{russian}
+Если $A$ и $B$ множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$, каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверим по определению, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\emptyset\ss A$ и $A\ss A$. We can use {\em set-builder notation}\index{set!set builder notation} to denote subsets. For example the set of even integers can be written $\{n\in\ZZ\|n\tn{ is even}\}$. The set of integers greater than $2$ can be written in many ways, such as $$\{n\in\ZZ\|n>2\} \hsp\tn{or}\hsp\{n\in\NN\|n>2\}\hsp\tn{or}\hsp\{n\in\NN\|n\geq 3\}.$$
+ \end{russian}
 
 The symbol $\exists$ means ``there exists".\index{a symbol!$\exists$} So we could write the set of even integers as $$\{n\in\ZZ\|n\tn{ is even}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ such that } 2m=n\}.$$ The symbol $\exists!$\index{a symbol!$\exists$"!} means ``there exists a unique". So the statement ``$\exists! x\in\RR\tn{ such that } x^2=0$" means that there is one and only one number whose square is 0. Finally, the symbol $\forall$ means ``for all".\index{a symbol!$\forall$} So the statement ``$\forall m\in\NN\;\exists n\in\NN\tn{ such that } m<n$" means that for every number there is a bigger one.
 
