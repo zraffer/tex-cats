@@ -5,13 +5,15 @@
 \setmainlanguage{russian}
 \setotherlanguage{english}
 % XeLaTeX can use any font installed in your system fonts folder
-\setmainfont[Mapping=tex-text]{CMU Serif}
+%\setmainfont[Mapping=tex-text]{CMU Serif}
+\setmainfont{CMU Serif}
 \newfontfamily\russianfont[Script=Cyrillic]{CMU Serif}
 \newfontfamily\cyrillicfonttt[Script=Cyrillic]{Ubuntu Mono}
 
-\usepackage{tocloft}
+\usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\russianfont}
 \renewcommand{\cftsecfont}{\russianfont}
+\renewcommand{\contentsname}{Contents / Soderzhanie}
 
 \usepackage{etex}
 \usepackage{savesym}
@@ -364,7 +366,7 @@
   David I. Spivak\\
   \begin{russian}Дэвид И. Спивак\end{russian}
 }
-\titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large How can mathematics make this diagram meaningful?%What does this diagram intend to communicate?
+\titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large How can mathematics make this diagram meaningful? \\ \begin{russian}Как математика может сделать эту диаграмму более осмысленной? \end{russian}
 \normalsize}
 \maketitle
 
@@ -388,18 +390,19 @@ Other than the title, there are two main differences between the present version
 
 \chapter{Introduction / Введение}
 
-The title page of this book contains a graphic that we reproduce here.\\
-\begin{russian}Титульная страница данной книги содержит рисунок, который мы воспроизводим ниже.\end{russian}
+The title page of this book contains a graphic that we reproduce here.
 \begin{align}\label{dia:scientific method}
 \dashbox{\includegraphics[width=.7\textwidth]{ScientificMethod}}
 \end{align}
-It is intended to evoke thoughts of the scientific method.\\
-\begin{russian}Он призван наводить на мысли о научном методе.\end{russian} \begin{quote}
-A hypothesis analyzed by a person produces a prediction, which motivates the specification of an experiment, which when executed results in an observation, which analyzed by a person yields a hypothesis.
+It is intended to evoke thoughts of the scientific method. \begin{quote}A hypothesis analyzed by a person produces a prediction, which motivates the specification of an experiment, which when executed results in an observation, which analyzed by a person yields a hypothesis.\end{quote}
+This sounds valid, and a good graphic can be exceptionally useful for leading a reader through the story that the author wishes to tell. 
 
-\begin{russian}Гипотеза, выведенная человеком, приводит к предсказанию, которое мотивирует описание эксперимента, который, после выполнения, приводит к наблюдениям, которые, будучи проанализированы человеком, приводят к гипотезе.\end{russian}
-\end{quote}
-This sounds valid, and a good graphic can be exceptionally useful for leading a reader through the story that the author wishes to tell. \\
+\begin{russian}Титульная страница данной книги содержит рисунок, который мы воспроизводим ниже.\end{russian}
+\begin{align}\label{dia:scientific method ru}
+\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethodRU}}
+\end{align}
+\begin{russian}Он призван наводить на мысли о научном методе.\end{russian} \begin{quote}
+\begin{russian}Гипотеза, выведенная человеком при анализе, приводит к предсказанию, которое мотивирует описание эксперимента, который, после выполнения, приводит к наблюдениям, которые, будучи проанализированы человеком, приводят к гипотезе.\end{russian}\end{quote}
 \begin{russian}Это похоже на истину; кроме того, хорошая картинка может быть исключительно полезна, чтобы провести читателя сквозь историю, которую автор желает поведать.\end{russian}
 
 Interestingly, a graphic has the power to evoke feelings of understanding, without really meaning much. The same is true for text: it is possible to use a language such as English to express ideas that are never made rigorous or clear. When someone says ``I believe in free will," what does she believe in? We may all have some concept of what she's saying---something we can conceptually work with and discuss or argue about. But to what extent are we all discussing the same thing, the thing she intended to convey?
@@ -418,21 +421,30 @@ Data. Hard evidence. The physical world. It is here that science touches down an
 
 \begin{russian} Данные. Железные подтверждения. Физический мир. Именно здесь наука приземляется, и испаряются эвристики. Так что давайте взглянем на диаграмму на обложке еще раз. Она предназначена вызывать идею о том, как делают науку. Но имеются ли железные подтверждения и данные, стоящие за подобной теорией? Способны ли мы организовать эксперимент для проверки того, что науку делают именно в соответствии с подобным протоколом? Чтобы сделать это, мы должны сбросить ступор, вызванный диаграммой, и задаться вопросом: "Что эта диаграмма должна нам сообщать?" \end{russian}
 
-In this course I will use a mathematical tool called {\em ologs}, or ontology logs, to give some structure to the kinds of ideas that are often communicated in pictures like the one on the cover. Each olog inherently offers a framework in which to record data about the subject. More precisely it encompasses a {\em database schema}, which means a system of interconnected tables that are initially empty but into which data can be entered. For example consider the olog below\\
+In this course I will use a mathematical tool called {\em ologs}, or ontology logs, to give some structure to the kinds of ideas that are often communicated in pictures like the one on the cover. Each olog inherently offers a framework in which to record data about the subject. More precisely it encompasses a {\em database schema}, which means a system of interconnected tables that are initially empty but into which data can be entered. For example consider the olog below
+$$\xymatrix{
+\obox{}{.5in}{a mass}&&\obox{}{1.1in}{an object of mass $m$ held at height $h$ above the ground}\LAL{ll}{\footnotesize has as mass}\LA{rrdd}{\hspace{.4in}\parbox{1in}{\singlespace \footnotesize when dropped has as number of seconds till hitting the ground}}\LAL{dd}{\parbox{.7in}{\singlespace\footnotesize has as height in meters}}&&\\\\
+&&\obox{}{1in}{a real number $h$}\ar@{}[uurr]|(.35){?}\ar[rr]_-{\sqrt{2h\div 9.8}}&\hspace{.3in}&\obox{}{.9in}{a real number}
+}
+$$
+This olog represents a framework in which to record data about objects held above the ground, their mass, their height, and a comparison (the ?-mark in the middle) between the number of seconds till they hit the ground and a certain real-valued function of their height. We will discuss ologs in detail throughout this course.
+
 \begin{russian}В этом курсе я буду использовать математический инструмент, называемый {\em ологами} или же онтологическими записями, чтобы придать некую структуру тем видам идей, о которых зачастую сообщается в картинках, подобных той, что изображена на обложке. Каждый олог по своей сути представляет собой конструкцию, в которой записаны данные о предмете обсуждения. Более точно, они отражают {\em схему базы данных}, что означает систему взаимосвязанных таблиц, которые вначале пусты, но в которые могут быть внесены данные. Для примера рассмотрим такой олог \end{russian}
 $$\xymatrix{
 \obox{}{.5in}{\begin{russian}масса\end{russian}}&&\obox{}{1.1in}{\begin{russian}объект массы \end{russian}$m$ \begin{russian}удерживаемый на высоте \end{russian}$h$ \begin{russian}над землей\end{russian}}\LAL{ll}{\footnotesize\begin{russian}имеет массу\end{russian}}\LA{rrdd}{\hspace{.4in}\parbox{1in}{\singlespace \footnotesize \begin{russian}при падении требуется определенное число секунд до ударения о землю\end{russian}}}\LAL{dd}{\parbox{.7in}{\singlespace\footnotesize\begin{russian}имеет высоту в метрах\end{russian}}}&&\\\\
 &&\obox{}{1in}{\begin{russian}действительное число \end{russian} $h$}\ar@{}[uurr]|(.35){?}\ar[rr]_-{\sqrt{2h\div 9.8}}&\hspace{.3in}&\obox{}{.9in}{\begin{russian}действительное число \end{russian} }
 }
 $$
-This olog represents a framework in which to record data about objects held above the ground, their mass, their height, and a comparison (the ?-mark in the middle) between the number of seconds till they hit the ground and a certain real-valued function of their height. We will discuss ologs in detail throughout this course.\\
 \begin{russian}Данный олог представляет собой конструкцию, в которой для объектов, находящихся над поверхностью земли, записаны: их масса, их высота и соответствие (значок ? в середине) между числом секунд, за которое они достигают земли, с определенной действительнозначной функцией их высоты. Ологи мы детально обсудим по ходу этого курса. \end{russian}
 
-The picture in (\ref{dia:scientific method}) looks like an olog, but it does not conform to the rules that we lay out for ologs in Section \ref{sec:ologs}. In an olog, every arrow is intended to represent a mathematical function. It is difficult to imagine a function that takes in predictions and outputs experiments, but such a function is necessary in order for the arrow\\
+The picture in (\ref{dia:scientific method}) looks like an olog, but it does not conform to the rules that we lay out for ologs in Section \ref{sec:ologs}. In an olog, every arrow is intended to represent a mathematical function. It is difficult to imagine a function that takes in predictions and outputs experiments, but such a function is necessary in order for the arrow
+$$\fbox{a prediction}\To{\tn{motivates the specification of}}\fbox{an experiment}
+$$
+in (\ref{dia:scientific method}) to make sense. To produce an experiment design from a prediction probably requires an expert, and even then the expert may be motivated to specify a different experiment on Tuesday than he is on Monday. But perhaps our criticism has led to a way forward: if we say that every arrow represents a function {\em when in the context of a specific expert who is actually doing the science at a specific time}, then Figure (\ref{dia:scientific method}) begins to make sense. In fact, we will return to the figure in Section \ref{sec:monads} (specifically Example \ref{ex:scientific method}), where background methodological context is discussed in earnest.
+
 \begin{russian} Картинка "научного метода" (\ref{dia:scientific method}) выглядит как олог, но она не соответствует правилам, которые мы изложим в Разделе \ref{sec:ologs}. В ологе каждая стрелка должна представлять математическую функцию. Трудно вообразить функцию, которая принимала бы предсказания и выдавала в результате эксперименты, но такая функция была бы необходима, чтобы стрелка \end{russian}
 $$\fbox{\begin{russian}предсказание\end{russian}}\To{\tn{\begin{russian}мотивирует спецификацию\end{russian}}}\fbox{\begin{russian}эксперимент\end{russian}}
 $$
-in (\ref{dia:scientific method}) to make sense. To produce an experiment design from a prediction probably requires an expert, and even then the expert may be motivated to specify a different experiment on Tuesday than he is on Monday. But perhaps our criticism has led to a way forward: if we say that every arrow represents a function {\em when in the context of a specific expert who is actually doing the science at a specific time}, then Figure (\ref{dia:scientific method}) begins to make sense. In fact, we will return to the figure in Section \ref{sec:monads} (specifically Example \ref{ex:scientific method}), where background methodological context is discussed in earnest.\\
 \begin{russian}в (\ref{dia:scientific method}) имела смысл. Чтобы разработать схему эксперимента по предсказанию нам, быть может, потребовался бы эксперт, но даже эксперт может решить предложить во вторник не тот эксперимент, который он предлагал в понедельник. Но, возможно, наша критика способна также предложить и путь вперед: если мы скажем, что каждая стрелка представляет функцию {\em в контексте конкретного эксперта, занимающегося наукой в конктерный момент времени}, тогда Рисунок (\ref{dia:scientific method}) приобретает смысл. А именно, мы еще будем возвращаться к диаграмме в Разделе \ref{sec:monads} (точнее, Пример \ref{ex:scientific method}), когда базовый методологический контекст будет обсуждаться более подробно. \end{russian}
 
 This course is an attempt to extol the virtues of a new branch of mathematics, called {\em category theory}, which was invented for powerful communication of ideas between different fields and subfields within mathematics. By powerful communication of ideas I actually mean something precise. Different branches of mathematics can be formalized into categories. These categories can then be connected together by functors. And the sense in which these functors provide powerful communication of ideas is that facts and theorems proven in one category can be transferred through a connecting functor to yield proofs of analogous theorems in another category. A functor is like a conductor of mathematical truth.
@@ -465,7 +477,7 @@ The paradigm shift brought on by Einstein's theory of relativity brought on the 
 
 Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenberg, Samuel} and Saunders Mac Lane.\index{Mac Lane, Saunders} It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as $y^2z=x^3-xz^2$. People had already created important and useful links (e.g. cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well.
 
-\begin{russian}Теория категорий была создана в начале 1940-х Сэмюэлем Эйленбергом\index{Eilenberg, Samuel} и Сондерсом Мак Лейном\index{Mac Lane, Saunders}. Она специально разрабатывалась для того, чтобы соединить две совершенно различные области: топологию и алгебру. Топология изучает абстрактные формы, такие как 7-мерные сферы; алгебра изучает абстрактные уравнения, такие как \begin{english} $y^2z=x^3-xz^2$ \end{english}. Математики уже создали к тому времени важные и полезные связи (например, теорию когомологий) между этими областями, но Эйленбергу и Мак Лейну потребовалось провести точное сравнение различных связей друг с другом. Чтобы сделать это, им сперва потребовалось "выпарить и экстрагировать" фундаментальную природу этих двух областей. Впоследствии оказалось, что идеи, на которых они проводили первые испытания, привели их к конструкции, которая подходила не только для топологии и алгебры, но с равным успехом была применима и для многих других математических дисциплин. \end{russian}
+\begin{russian}Теория категорий была создана в начале 1940-х Сэмюэлем Эйленбергом\index{Eilenberg, Samuel} и Сондерсом Мак Лейном\index{Mac Lane, Saunders}. Она специально разрабатывалась для того, чтобы соединить две совершенно различные области: топологию и алгебру. Топология изучает абстрактные формы, такие как 7-мерные сферы; алгебра изучает абстрактные уравнения, такие как $y^2z=x^3-xz^2$. Математики уже создали к тому времени важные и полезные связи (например, теорию когомологий) между этими областями, но Эйленбергу и Мак Лейну потребовалось провести точное сравнение различных связей друг с другом. Чтобы сделать это, им сперва потребовалось "выпарить и экстрагировать" фундаментальную природу этих двух областей. Впоследствии оказалось, что идеи, на которых они проводили первые испытания, привели их к конструкции, которая подходила не только для топологии и алгебры, но с равным успехом была применима и для многих других математических дисциплин. \end{russian}
 
 At first category theory was little more than a deeply clarifying language for existing difficult mathematical ideas. However, in 1957 Alexander Grothendieck\index{Grothendieck!in history} used category theory to build new mathematical machinery (new cohomology theories) that granted unprecedented insight into the behavior of algebraic equations. Since that time, categories have been built specifically to zoom in on particular features of mathematical subjects and study them with a level of acuity that is simply unavailable elsewhere.
 
@@ -509,7 +521,7 @@ To the scientist I'll try to prove the claim that category theory includes a for
 
 Data gathering is ubiquitous in science. Giant databases are currently being mined for unknown patterns, but in fact there are many (many) known patterns that simply have not been catalogued. Consider the well-known case of medical records. A patient's medical history is often known by various individual doctor-offices but quite inadequately shared between them. Sharing medical records often means faxing a hand-written note or a filled-in house-created form between offices.
 
-\begin{russian}Сбор данных вездесущ в науке. Сейчас в гигантских базах данных ведется целенаправленный поиск ранее неизвестных взаимосвязей, и в то же время имеется множество информации, которая просто еще не попала в эти каталоги. Рассмотрим хорошо известный случай медицинских записей. История болезни пациента хорошо известна различным отдельным медицинским заведениям, но совершенно неадекватно передается между ними. Обмен медицинскими записями зачастую означает передачу по факсу между заведениями рукописной записки или заполнения доморощенной формы. \end{russian}
+\begin{russian}Сбор данных вездесущ в науке. Сейчас в гигантских базах данных ведется целенаправленный поиск ранее неизвестных взаимосвязей, и в то же время имеется огромное количество информации, которая просто еще не попала в эти каталоги. Рассмотрим хорошо известный случай медицинских записей. История болезни пациента хорошо известна различным отдельным медицинским заведениям, но совершенно неадекватно передается между ними. Обмен медицинскими записями зачастую означает передачу по факсу между заведениями рукописной справки или заполнения доморощенной формы. \end{russian}
 
 Similarly, in science there exists substantial expertise making brilliant connections between concepts, but it is being conveyed in silos of English prose known as journal articles. Every scientific journal article has a methods section, but it is almost impossible to read a methods section and subsequently repeat the experiment---the English language is inadequate to precisely and concisely convey what is being done.
 
@@ -517,7 +529,7 @@ Similarly, in science there exists substantial expertise making brilliant connec
 
 The first thing to understand in this course is that reusable methodologies can be formalized, and that doing so is inherently valuable. Consider the following analogy. Suppose you want to add up the area of a region in space (or the area under a curve). You break the region down into small squares, each of which you know has area $A$; then you count the number of squares, say $n$, and the result is that the region has an area of about $nA$. If you want a more precise and accurate result you repeat the process with half-size squares. This methodology can be used for any area-finding problem (of which there are more than a first-year calculus student generally realizes) and thus it deserves to be formalized. But once we have formalized this methodology, it can be taken to its limit and out comes integration by Riemann sums.
 
-\begin{russian}Первая вещь, которую можно понять из этого курса, --- то, что повторно используемые методологии могут быть формализованы, и то, что делать это --- существенно важно. Рассмотрим следующую аналогию. Предположим, мы хотим просуммировать площадь области в пространстве (или площадь под кривой). Мы разбиваем область на малые квадратики, каждый из которых имеет площадь \begin{english}$A$\end{english}; затем мы подсчитываем число квадратиков, скажем \begin{english}$n$\end{english}, и в результате получаем, что площадь равняется \begin{english}$nA$\end{english}. Если мы хотим более точного результата, мы повторяем процедуру с квадратиками половинного размера. Эта методология может быть использована для любой задачи нахождения площади (которых гораздо больше, чем представляет себе студент-первокурсник) и поэтому она заслуживает формализации. Но как только мы формализовали методологию, она может быть улучшена до своего предела, и отсюда получается интегрирование при помощи римановых сумм. \end{russian}
+\begin{russian}Первая вещь, которую следует понять из этого курса, --- то, что повторно используемые методологии могут быть формализованы, и то, что делать это --- существенно важно. Рассмотрим следующую аналогию. Предположим, мы хотим просуммировать площадь области в пространстве (или площадь под кривой). Мы разбиваем область на малые квадратики, каждый из которых имеет площадь $A$; затем мы подсчитываем число квадратиков, скажем $n$, и в результате получаем, что площадь равняется $nA$. Если мы хотим более точного результата, мы повторяем процедуру с квадратиками половинного размера. Эта методология может быть использована для любой задачи нахождения площади (которых гораздо больше, чем представляет себе студент-первокурсник) и поэтому она заслуживает формализации. Но как только мы формализовали методологию, она может быть существенно улучшена, и отсюда получается интегрирование при помощи римановых сумм. \end{russian}
 
 I intend to show that category theory is incredibly efficient as a language for experimental design patterns, introducing formality while remaining flexible. It forms a rich and tightly woven conceptual fabric that will allow the scientist to maneuver between different perspectives whenever the need arises. Once one builds that fabric for oneself, he or she has an ability to think about models in a way that simply would not occur without it.  Moreover, putting ideas into the language of category theory forces a person to clarify their assumptions. This is highly valuable both for the researcher and for his or her audience.
 
@@ -545,11 +557,11 @@ I also want you to recognize that the value of mathematics is not generally obvi
 
 I wrote this book because the available books on category theory are almost all written for mathematicians (the rest are written for computer scientists). There is one book by Lawvere and Schanuel, called {\em Conceptual Mathematics} \cite{LS}, that offers category theory to a wider audience, but its style is not appropriate for this course. Still, it is very well written and clear.
 
-\begin{russian}Я написал эту книгу, потому что имеющиеся книги по теории категорий практически все написаны для математиков (остальные написаны для теоретиков информатики). Есть одна книга Ловера и Шануеля {\em Концептуальная математика} \cite{LS}, которая предлагает теорию категорий более широкой аудитории, но ее стиль не подходит для этого курса. Тем не менее, она написана очень хорошо и ясно. \end{russian}
+\begin{russian}Я написал эту книгу, потому что имеющиеся книги по теории категорий практически все написаны для математиков (остальные написаны для теоретиков информатики). Есть одна книга Ловера и Шануеля {\em Концептуальная математика} \cite{LS}, которая предлагает теорию категорий более широкой аудитории, но ее стиль не подходит для этого курса. Тем не менее, написана она очень хорошо и ясно. \end{russian}
 
 The ``bible" of category theory is {\em Categories for the working mathematician} by Mac Lane \cite{Mac}. But as the title suggests, it was written for working mathematicians and will be quite opaque to my target audience. However, once a person has read my book, Mac Lane's book may become a valuable reference.
 
-\begin{russian} "Библия" теории категорий это {\em Категории для работающего математика} Мак Лейна \cite{Mac}. Но, как и предполагает ее заглавие, она написана для профессиональных математиков и будет совершенно непонятна моей целевой аудитории. Однако, после прочтения моей книги, книга Мак Лейна может стать ценным справочником.  \end{russian}
+\begin{russian} "Библия" теории категорий это {\em Категории для работающего математика} Мак Лейна \cite{Mac}. Но, как и предполагает ее заглавие, написана она для профессиональных математиков и будет совершенно непонятна моей целевой аудитории. Однако, после прочтения моей книги, книга Мак Лейна может стать ценным справочником.  \end{russian}
 
 Other good books include Steve Awodey's book {\em Category theory} \cite{Awo} and Barr and Wells book {\em Category theory for computing science}, \cite{BW}.  A paper by Brown and Porter called  \href{http://pages.bangor.ac.uk/\%7Emas010/pdffiles/Analogy-and-Comparison.pdf}{\text Category Theory: an abstract setting for analogy and comparison} \cite{BP1} is more in line with the style of this book, only much shorter. Online, I find \href{http://www.wikipedia.org}{\text wikipedia} and a site called \href{http://ncatlab.org/nlab/show/HomePage}{\em the $n$lab} to be quite useful.
 
@@ -641,17 +653,14 @@ In this course I'll assume you know what a set is. We can think of a set $X$ as 
 The set of pendulums is the collection of things we agree to call pendulums, each of which is recognizable as being a pendulum, and for any two people pointing at pendulums we can tell if they're pointing at the same pendulum or not. 
 
 \begin{russian}В этом курсе я буду предполагать, что вы знаете, что такое множество. Мы можем думать о множестве $X$ как о совокупности вещей $x\in X$, для каждой из которых мы можем проверить, находится ли она в $X$, и такой, что для каждой пары именованных элементов $x,x'\in X$ мы можем сказать, $x=x'$ или нет.
-\footnote{Заметим, что символ $x'$, читается "x-штрих", не имеет ничего общего с матанализом или производной. Это просто обозначение, которое мы используем, чтобы обозначить символ, в чем-то похожий на $x$. Таоке предположение о родстве между $x$ и $x'$ имеет смысл только для целей удобства человеческого восприятия, а не как часть математики.}
+\footnote{Заметим, что символ $x'$, читается "x-штрих", не имеет ничего общего с матанализом или производной. Это просто обозначение, которое мы используем, чтобы обозначить символ, в чем-то похожий на $x$. Такое предположение о родстве между $x$ и $x'$ имеет смысл только для целей удобства человеческого восприятия, а не как часть математики.}
 Множество маятников это совокупность вещей, которые мы согласились называть маятниками, про каждый из которых мы можем проверить, что это действительно маятник, и для любых двух людей, указывающих на маятники, мы можем сказать, показывают ли они на один и тот же маятник или нет. \end{russian}
 
 \begin{figure}
 \begin{center}
 \includegraphics[height=2in]{aSet}
 \end{center}
-\caption{
-  A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$.\\ 
-  Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\emptyset$.
-}
+\caption{ A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$. / Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\emptyset$. }
 \end{figure}
 
 \begin{notation}\label{not:basic math notation}
@@ -662,7 +671,7 @@ The symbol $\ZZ$\index{a symbol!$\ZZ$} denotes the set of integers, which contai
 $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
 
 \begin{russian}
-Симвод $\emptyset$\index{a symbol!$\emptyset$} обозначает множество без элементов. Символ $\NN$\index{a symbol!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
+Символ $\emptyset$\index{a symbol!$\emptyset$} обозначает множество без элементов. Символ $\NN$\index{a symbol!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
 $$\NN:=\{0,1,2,3,4,\ldots,877,\ldots\}.$$
 Символ $\ZZ$\index{a symbol!$\ZZ$} обозначает множество целых чисел, которое содержит как положительные, так и отрицательные числа, 
 $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
@@ -671,16 +680,16 @@ $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$
 If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$, and write $A\ss B$, if every element of $A$ is an element of $B$. So we have $\NN\ss\ZZ$. Checking the definition, one sees that for any set $A$, we have (perhaps uninteresting) subsets $\emptyset\ss A$ and $A\ss A$. We can use {\em set-builder notation}\index{set!set builder notation} to denote subsets. For example the set of even integers can be written $\{n\in\ZZ\|n\tn{ is even}\}$. The set of integers greater than $2$ can be written in many ways, such as $$\{n\in\ZZ\|n>2\} \hsp\tn{or}\hsp\{n\in\NN\|n>2\}\hsp\tn{or}\hsp\{n\in\NN\|n\geq 3\}.$$
 
 \begin{russian}
-Если $A$ и $B$ множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$, каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверим по определению, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\emptyset\ss A$ и $A\ss A$. We can use {\em set-builder notation}\index{set!set builder notation} to denote subsets. For example the set of even integers can be written $\{n\in\ZZ\|n\tn{ is even}\}$. The set of integers greater than $2$ can be written in many ways, such as $$\{n\in\ZZ\|n>2\} \hsp\tn{or}\hsp\{n\in\NN\|n>2\}\hsp\tn{or}\hsp\{n\in\NN\|n\geq 3\}.$$
+Если $A$ и $B$ множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\emptyset\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная {\em форма записи}\index{set!set builder notation}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
  \end{russian}
 
 The symbol $\exists$ means ``there exists".\index{a symbol!$\exists$} So we could write the set of even integers as $$\{n\in\ZZ\|n\tn{ is even}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ such that } 2m=n\}.$$ The symbol $\exists!$\index{a symbol!$\exists$"!} means ``there exists a unique". So the statement ``$\exists! x\in\RR\tn{ such that } x^2=0$" means that there is one and only one number whose square is 0. Finally, the symbol $\forall$ means ``for all".\index{a symbol!$\forall$} So the statement ``$\forall m\in\NN\;\exists n\in\NN\tn{ such that } m<n$" means that for every number there is a bigger one.
 
-\begin{russian} \end{russian}
+\begin{russian}Символ $\exists$ означает "существует".\index{a symbol!$\exists$} Таким образом мы можем записать множество четных чисел $$\{n\in\ZZ\|n\tn{ четно}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ такое, что } 2m=n\}.$$ Символ $\exists!$\index{a symbol!$\exists$"!} означает "существует единственный". Таким образом утверждение ``$\exists! x\in\RR\tn{ такой, что } x^2=0$" означает, что имеется одно и только одно число, равное в квадрате $0$. Наконец, символ $\forall$ означает "для всех", "для каждого".\index{a symbol!$\forall$} Таким образом утверждение ``$\forall m\in\NN\;\exists n\in\NN\tn{ такой, что } m<n$" означает, что для каждого числа имеется большее него. \end{russian}
 
 As you may have noticed, we use the colon-equals notation `` $A:=XYZ$ " to mean something like ``define $A$ to be $XYZ$".\index{a symbol!:=} That is, a colon-equals declaration is not denoting a fact of nature (like $2+2=4$), but a choice of the speaker. It just so happens that the notation above, such as $\NN:=\{0,1,2,\ldots\}$, is a widely-held choice.
 
-\begin{russian} \end{russian}
+\begin{russian}Как вы могли заметить, мы пользуемся записью "двоеточие-равно" $A:=XYZ$, чтобы обозначить нечто вроде "определим $A$ как $XYZ$".\index{a symbol!:=} То есть, объявление чего-то в виде двоеточие-равно не означает новый факт о мире (вроде $2+2=4$), а всего лишь выбор обозначения говорящим. Просто так получилось, что обозначения выше, такие как $\NN:=\{0,1,2,\ldots\}$, широко используются. \end{russian}
 
 \end{notation}
 
@@ -688,7 +697,7 @@ As you may have noticed, we use the colon-equals notation `` $A:=XYZ$ " to mean 
 
 Let $A=\{1,2,3\}$. What are all the subsets of $A$? Hint: there are 8.
 
-\begin{russian} \end{russian}
+\begin{russian}Пусть $A=\{1,2,3\}$. Каковы все подмножества $A$? Подсказка: их ровно $8$. \end{russian}
 
 \end{exercise}
 
