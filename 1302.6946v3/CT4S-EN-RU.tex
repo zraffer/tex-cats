@@ -776,12 +776,12 @@ Let $f\taking\NN\to\NN$ be the function that sends every natural number to its s
 \endsexc
 
 \begin{russian}
-Пусть $f\taking\NN\to\NN$ be the function that sends every natural number to its square, e.g. $f(6)=36$. First fill in the blanks below, then answer a question.
+Пусть $f\taking\NN\to\NN$ --- функция, переводящая каждое натуральное число в его квадрат, например $f(6)=36$. Заполните вначале пустые места ниже, затем ответьте на вопрос.
 \sexc $2\mapsto\ul{\hspace{.5in}}$
 \next $0\mapsto\ul{\hspace{.5in}}$
 \next $-2\mapsto\ul{\hspace{.5in}}$
 \next $5\mapsto\ul{\hspace{.5in}}$
-\next Consider the symbol $\to$ and the symbol $\mapsto$. What is the difference between how these two symbols are used in this book?
+\next Рассмотрим символ $\to$ и символ $\mapsto$. В чем разница между тем, как эти два символа используются в данной книге?
 \endsexc
 \end{russian}
 
@@ -792,42 +792,56 @@ Given a function $f\taking X\to Y$, the elements of $Y$ that have at least one a
 \im(f):=\{y\in Y\| \exists x\in X \tn{ such that } f(x)=y\}.
 \end{align} 
 
-\begin{russian} \end{russian}
+\begin{russian}Для заданной функции $f\taking X\to Y$, те элементы $Y$, для которых имеется по крайней мере одна стрелка, указывающая на них, называются лежащими {\em в образе} $f$; получаем \index{image}
+\begin{align}\label{dia:image}
+\im(f):=\{y\in Y\| \exists x\in X \tn{ такой, что } f(x)=y\}.
+\end{align}\end{russian}
 
 \begin{exercise}
 
 If $f\taking X\to Y$ is depicted by (\ref{dia:setmap}) above, write its image, $\im(f)$ as a set.
 
-\begin{russian} \end{russian}
+\begin{russian}Для $f\taking X\to Y$, изображенной на (\ref{dia:setmap}) выше, запишите ее образ $\im(f)$ в виде множества.\end{russian}
 
 \end{exercise}
 
-Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the codomain of $f$ is the same set as the domain of $g$ (namely $Y$), we say that $f$ and $g$ are composable 
-$$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} is denoted by $g\circ f\taking X\to Z$. 
+Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the codomain of $f$ is the same set as the domain of $g$ (namely $Y$), we say that $f$ and $g$ are composable $$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} is denoted by $g\circ f\taking X\to Z$. 
 
-\begin{russian} \end{russian}
+\begin{russian}Если заданы функция $f\taking X\to Y$ и функция $g\taking Y\to Z$, где кообласть $f$ совпадает с областью $g$ (а именно, $Y$), мы говорим, что $f$ и $g$ соединимы. $$X\Too{f}Y\Too{g}Z.$$ {\em Композиция $f$ и $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} обозначается $g\circ f\taking X\to Z$. \end{russian}
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[height=2in]{composition}
 \end{center}
 \caption{Functions $f\taking X\to Y$ and $g\taking Y\to Z$ compose to a function $g\circ f\taking X\to Z$; just follow the arrows.}
+\begin{russian}\caption{Й}%Из функций $f\taking X\to Y$ и $g\taking Y\to Z$ получается композиция --- функция $g\circ f\taking X\to Z$; просто по стрелочкам.}\end{russian}
 \end{figure}
 
 Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} to denote the set of functions $X\to Y$.
 \footnote{The strange notation $\Hom_\Set(-,-)$ will make more sense later, when it is seen as part of a bigger story.} 
 Note that two functions $f,g\taking X\to Y$ are equal\index{function!equality of} if and only if for every element $x\in X$ we have $f(x)=g(x)$. 
 
-\begin{russian} \end{russian}
+\begin{russian}
+Пусть $X$ и $Y$ --- множества. Мы записываем $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} для обозначения множества функций $X\to Y$.
+\footnote{Странное обозначение $\Hom_\Set(-,-)$ обретет смысл позже, когда мы увидим его как часть большой картины.} 
+Заметим, что две функции $f,g\taking X\to Y$ считаются равными\index{function!equality of}, если и только если для каждого элемента $x\in X$ верно $f(x)=g(x)$. 
+\end{russian}
 
 \begin{exercise}
+
 Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$ 
 \sexc How many elements does $\Hom_\Set(A,B)$ have? 
 \next How many elements does $\Hom_\Set(B,A)$ have?
 \endsexc
-\end{exercise}
 
-\begin{russian} \end{russian}
+\begin{russian}
+Пусть $A=\{1,2,3,4,5\}$ и $B=\{x,y\}.$ 
+\sexc Сколько элементов имеется в $\Hom_\Set(A,B)$? 
+\next Сколько элементов имеется в $\Hom_\Set(B,A)$?
+\endsexc
+\end{russian}
+
+\end{exercise}
 
 \begin{exercise}~
 
@@ -835,15 +849,19 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$
 \next Find a set $B$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(B,X)$.
 \endsexc 
 
-\begin{russian} \end{russian}
+\begin{russian}
+\sexc Найти множество $A$ такое, что для всех множеств $X$ в $\Hom_\Set(X,A)$ имеется в точности один элемент. Подсказка: нарисовать картинку с предложенными $A$'s и $X$'s.
+\next Найти множество $B$ такое, что для всех множеств $X$ в $\Hom_\Set(B,X)$ имеется в точности один элемент.
+\endsexc 
+\end{russian}
 
 \end{exercise}
 
 For any set $X$, we define the {\em identity function on $X$}\index{function!identity}, denoted $\id_X\taking X\to X$, to be the function such that for all $x\in X$ we have $\id_X(x)=x$.\index{a symbol!$\id_X$}
 
-\begin{russian} \end{russian}
+\begin{russian}Для любого множества $X$, мы определим {\em тождественную функцию на $X$}\index{function!identity}, обозначаемую $\id_X\taking X\to X$, как функцию такую, что для всех $x\in X$ верно $\id_X(x)=x$.\index{a symbol!$\id_X$}\end{russian}
 
-\begin{definition}[Isomorphism]\label{def:iso in set}
+\begin{definition}[Isomorphism / Изоморфизм]\label{def:iso in set}
 
 Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}
 
