@@ -4,8 +4,6 @@
 \usepackage{polyglossia}
 \setmainlanguage{russian}
 \setotherlanguage{english}
-% XeLaTeX can use any font installed in your system fonts folder
-%\setmainfont[Mapping=tex-text]{CMU Serif}
 \setmainfont{CMU Serif}
 \newfontfamily\russianfont[Script=Cyrillic]{CMU Serif}
 \newfontfamily\cyrillicfonttt[Script=Cyrillic]{Ubuntu Mono}
@@ -13,7 +11,7 @@
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\russianfont}
 \renewcommand{\cftsecfont}{\russianfont}
-\renewcommand{\contentsname}{Contents / Soderzhanie}
+\renewcommand{\contentsname}{Contents / Soderzhanie}% problem
 
 \usepackage{etex}
 \usepackage{savesym}
@@ -597,7 +595,7 @@ But it goes further. If we were perfect thinkers then anything we thought once w
 
 People often ask ``is category theory just a language? Can anything be done with category theory that can't be done without it?" Consider a university like MIT; can the researchers here do anything that they couldn't do by themselves? Isn't it the minds themselves that are so valuable and unique? Perhaps not. Perhaps much of what goes on is enabled and made possible by the organizational structure of the university, which brings people together in the same space with the same rules, providing the  infrastructure necessary to do excellent work. The same is true in category theory: while many of the real advances come from domain-specific creativity, the language and toolset of category theory provides an infrastructure that enriches all involved. Category theory is mankind's most well-oiled conceptual machine to date.
 
-\begin{russian}Зачастую звучит вопрос: "Является ли теория категорий всего лишь языком? Можно ли сделать что-нибудь при помощи теории категорий, что невозможно сделать без нее?" Рассмотрим университет вроде MIT; может ли исследователь сделать здесь что-либо, что он не смог бы сделать самостоятельно? Не является ли интеллект сам по себе тем, что ценно и уникально? Наверное, нет. Наверное, большинство из того, что происходит здесь, обусловлено организационной структурой университета, которая сводит людей в одно время в одном месте с одними и теми же правилами поведения, предлагая инфраструктуру, необходимую для качественной работы. То же верно и для теории категорий: хотя многое из действительно сделанного при помощи нее просходит из творчества в конкретных областях, язык и инструментарий теории категорий предлагает инфраструктуру, которая обогащает все, что ее использует. Теория категорий --- это самая хорошо смазанная [убрать повторяющиеся эпитеты?] понятийная машина на сегодняшний день. \end{russian}
+\begin{russian}Зачастую звучит вопрос: "Является ли теория категорий всего лишь языком? Можно ли сделать что-нибудь при помощи теории категорий, что невозможно сделать без нее?" Рассмотрим университет вроде MIT; может ли исследователь сделать здесь что-либо, что он не смог бы сделать самостоятельно? Не является ли [его] интеллект сам по себе тем, что ценно и уникально? Наверное, нет. Наверное, большинство из того, что происходит здесь, обусловлено организационной структурой университета, которая сводит людей в одно время в одном месте с одними и теми же правилами поведения, предлагая инфраструктуру, необходимую для качественной работы. То же верно и для теории категорий: хотя многое из действительно сделанного при помощи нее просходит из творчества в конкретных областях, язык и инструментарий теории категорий предлагает инфраструктуру, которая обогащает все, что ее использует. Теория категорий --- это самая хорошо смазанная [убрать повторяющиеся эпитеты?] понятийная машина на сегодняшний день. \end{russian}
 
 %%%%%% Section %%%%%%
 
@@ -660,7 +658,8 @@ The set of pendulums is the collection of things we agree to call pendulums, eac
 \begin{center}
 \includegraphics[height=2in]{aSet}
 \end{center}
-\caption{ A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$. / Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\emptyset$. }
+\caption{A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$.}
+\begin{russian}\caption{Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\emptyset$.}\end{russian}
 \end{figure}
 
 \begin{notation}\label{not:basic math notation}
@@ -743,7 +742,7 @@ Let $PR$ denote the set of photoreceptor cells and let $RG$ denote the set of re
 \begin{russian}
 Пусть $PR$ обозначает множество фоторецепторов и пусть $RG$ обозначает множество ганглионарных нейронов сетчатки. 
 \sexc В соответствии с информацией выше, образует ли схема связей нейронов функцию $RG\to PR$, функцию $PR\to RG$ или ни одну из них? 
-\next Думаете ли вы, что схемы соединения, существующие между другими областями мозга, функцие-подобны? 
+\next Думаете ли вы, что схемы связей между другими областями мозга функцие-подобны? 
 \endsexc 
 \end{russian}
 
@@ -807,14 +806,14 @@ If $f\taking X\to Y$ is depicted by (\ref{dia:setmap}) above, write its image, $
 
 Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the codomain of $f$ is the same set as the domain of $g$ (namely $Y$), we say that $f$ and $g$ are composable $$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} is denoted by $g\circ f\taking X\to Z$. 
 
-\begin{russian}Если заданы функция $f\taking X\to Y$ и функция $g\taking Y\to Z$, где кообласть $f$ совпадает с областью $g$ (а именно, $Y$), мы говорим, что $f$ и $g$ соединимы. $$X\Too{f}Y\Too{g}Z.$$ {\em Композиция $f$ и $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} обозначается $g\circ f\taking X\to Z$. \end{russian}
+\begin{russian}Если заданы функция $f\taking X\to Y$ и функция $g\taking Y\to Z$, где кообласть $f$ совпадает с областью $g$ (то есть, $Y$), мы говорим, что $f$ и $g$ соединимы. $$X\Too{f}Y\Too{g}Z.$$ {\em Композиция $f$ и $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} обозначается $g\circ f\taking X\to Z$. \end{russian}
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[height=2in]{composition}
 \end{center}
 \caption{Functions $f\taking X\to Y$ and $g\taking Y\to Z$ compose to a function $g\circ f\taking X\to Z$; just follow the arrows.}
-\begin{russian}\caption{Й}%Из функций $f\taking X\to Y$ и $g\taking Y\to Z$ получается композиция --- функция $g\circ f\taking X\to Z$; просто по стрелочкам.}\end{russian}
+\begin{russian}\caption{Из функций $f\taking X\to Y$ и $g\taking Y\to Z$, просто следуя по стрелочкам, получается композиция --- функция $g\circ f\taking X\to Z$}\end{russian}
 \end{figure}
 
 Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} to denote the set of functions $X\to Y$.
@@ -850,7 +849,7 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$
 \endsexc 
 
 \begin{russian}
-\sexc Найти множество $A$ такое, что для всех множеств $X$ в $\Hom_\Set(X,A)$ имеется в точности один элемент. Подсказка: нарисовать картинку с предложенными $A$'s и $X$'s.
+\sexc Найти множество $A$ такое, что для всех множеств $X$ в $\Hom_\Set(X,A)$ имеется в точности один элемент. Подсказка: нарисовать картинку со всевозможными $A$ и $X$.
 \next Найти множество $B$ такое, что для всех множеств $X$ в $\Hom_\Set(B,X)$ имеется в точности один элемент.
 \endsexc 
 \end{russian}
@@ -861,19 +860,15 @@ For any set $X$, we define the {\em identity function on $X$}\index{function!ide
 
 \begin{russian}Для любого множества $X$, мы определим {\em тождественную функцию на $X$}\index{function!identity}, обозначаемую $\id_X\taking X\to X$, как функцию такую, что для всех $x\in X$ верно $\id_X(x)=x$.\index{a symbol!$\id_X$}\end{russian}
 
-\begin{definition}[Isomorphism / Изоморфизм]\label{def:iso in set}
+\begin{definition}[Isomorphism]\label{def:iso in set} Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}\end{definition}
 
-Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}
-
-\begin{russian} \end{russian}
-
-\end{definition}
+\begin{russian}\begin{definition}[Изоморфизм]\label{def:iso in set} Пусть $X$ и $Y$ --- множества. Функция $f\taking X\to Y$ называется {\em изоморфизмом}\index{function!isomorphism}\index{isomorphism!of sets}, что обозначается как $f\taking X\To{\iso}Y$, если существует функция $g\taking Y\to X$ такая, что $g\circ f=\id_X$ и $f\circ g=\id_Y$. Мы также говорим, что $f$ является {\em обратимой}, и что $g$ является {\em обратной}\index{function!inverse} к $f$. Если существует изоморфизм $X\To\iso Y$, то мы говорим, что $X$ и $Y$ являются {\em изоморфными} множествами, и записываем это как $X\iso Y$. \index{a symbol!$\iso$}\end{definition}\end{russian}
 
 \begin{example}
 
 If $X$ and $Y$ are sets and $f\taking X\to Y$ is an isomorphism then the analogue of Diagram \ref{dia:setmap} will look like a perfect matching, more often called a {\em one-to-one correspondence}\index{one-to-one correspondence}\index{correspondence!one-to-one}. That means that no two arrows will hit the same element of $Y$, and every element of $Y$ will be in the image. For example, the following depicts an isomorphism $X\To{\iso}Y$.
 
-\begin{russian} \end{russian}
+\begin{russian}Если $X$ и $Y$ --- множества и $f\taking X\to Y$ --- изоморфизм, то аналог Диаграммы \ref{dia:setmap} будет выглядеть как идеальное совпадение, чаще называемое {\em соответствием один-к-одному}\index{one-to-one correspondence}\index{correspondence!one-to-one}. Это означает, что никакие две стрелки не попадают в один элемент $Y$, и что каждый элемент $Y$ находится в образе. Например, ниже изображен изоморфизм $X\To{\iso}Y$.\end{russian}
 
 \begin{align}\label{dia:setmapiso}
 \parbox{2.3in}{\includegraphics[height=2in]{SetMapIso}}
@@ -885,28 +880,37 @@ If $X$ and $Y$ are sets and $f\taking X\to Y$ is an isomorphism then the analogu
 
 There is an isomorphism between the set $\tn{Nuc}_\tn{DNA}$ of \href{http://en.wikipedia.org/wiki/Nucleotides}{\text nucleotides} found in DNA and the set $\tn{Nuc}_\tn{RNA}$ of nucleotides found in RNA. Indeed both sets have four elements, so there are 24 different isomorphisms. But only one is useful. Before we say which one it is, let us say there is also an isomorphism $\tn{Nuc}_\tn{DNA}\iso\{A,C,G,T\}$ and an isomorphism $\tn{Nuc}_\tn{RNA}\iso\{A,C,G,U\}$, and we will use the letters as abbreviations for the nucleotides. 
 
-\begin{russian} \end{russian}
+\begin{russian}Имеется изоморфизм между множеством $\tn{Nuc}_\tn{DNA}$, состоящим из  \href{https://ru.wikipedia.org/wiki/%D0%9D%D1%83%D0%BA%D0%BB%D0%B5%D0%BE%D1%82%D0%B8%D0%B4%D1%8B}{\text нуклеотидов}, встречающихся в ДНК, и множеством $\tn{Nuc}_\tn{RNA}$ нуклеотидов, встречающихся в РНК. На самом деле в обоих множествах по четыре элемента, так что [всего между ними] имеется 24 различных изоморфизма. И только один из них нам нужен! Прежде, чем мы укажем, какой именно, давайте заметим, что имеются также изоморфизм $\tn{Nuc}_\tn{DNA}\iso\{A,C,G,T\}$ и изоморфизм $\tn{Nuc}_\tn{RNA}\iso\{A,C,G,U\}$, и что мы используем буквы для сокращения названий нуклеотидов. \end{russian}
 
 The convenient isomorphism $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{RNA}$ is that given by RNA transcription; it sends 
 $$A\mapsto U, C\mapsto G, G\mapsto C, T\mapsto A.$$ 
 (See also Application \ref{app:polymerase}.) There is also an isomorphism $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{DNA}$ (the matching in the double-helix) given by 
 $$A\mapsto T, C\mapsto G, G\mapsto C, T\mapsto A.$$
 
-\begin{russian} \end{russian}
+\begin{russian}Подходящий изоморфизм $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{RNA}$ --- это тот, что задается РНК-транскрипцией; он переводит
+$$A\mapsto U, C\mapsto G, G\mapsto C, T\mapsto A.$$ 
+(См. также Приложение \ref{app:polymerase}.) Кроме того, имеется изоморфизм $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{DNA}$ (соответствия соседей в двойной спирали), заданный как  
+$$A\mapsto T, C\mapsto G, G\mapsto C, T\mapsto A.$$\end{russian}
 
 Protein production can be modeled as a function from the set of 3-nucleotide sequences to the set of eukaryotic amino acids. However, it cannot be an isomorphism because there are $4^3=64$ triplets of RNA nucleotides, but only 21 eukaryotic amino acids. 
 
-\begin{russian} \end{russian}
+\begin{russian}Синтез протеинов моделируется функцией из множества трехнуклеотидных последовательностей во множество эукариотических аминокислот. Однако, она не может быть изоморфизмом, поскольку имеется $4^3=64$ триплета из РНК нуклеотидов, и всего лишь $21$ эукариотическая аминокислота. \end{russian}
 
 \end{application}
 
 \begin{exercise}
+
 Let $n\in\NN$ be a natural number and let $X$ be a set with exactly $n$ elements. 
 \sexc How many isomorphisms are there from $X$ to itself? 
 \next Does your formula from part a.) hold when $n=0$?
 \endsexc
 
-\begin{russian} \end{russian}
+\begin{russian}
+Пусть $n\in\NN$ --- натуральное число и $X$ --- множество из ровно $n$ элементов. 
+\sexc Сколько изоморфизмов имеется из $X$ в себя? 
+\next Выполняется ли ваша формула из a.) для случая $n=0$?
+\endsexc 
+\end{russian}
 
 \end{exercise}
 
@@ -916,10 +920,17 @@ The following facts hold about isomorphism.
 \begin{enumerate}
 \item Any set $A$ is isomorphic to itself; i.e. there exists an isomorphism $A\To{\iso} A$.
 \item For any sets $A$ and $B$, if $A$ is isomorphic to $B$ then $B$ is isomorphic to $A$.
-\item For any sets $A, B,$ and $C$, if $A$ is isomorphic to $B$ and $B$ is isomorphic to $C$ then $A$ is isomorphic to $C$.
+\item For any sets $A, B$ and $C$, if $A$ is isomorphic to $B$ and $B$ is isomorphic to $C$ then $A$ is isomorphic to $C$.
 \end{enumerate}
 
-\begin{russian} \end{russian}
+\begin{russian}
+Верны следующие утверждения об изоморфизмах.
+\begin{enumerate}
+\item Любое множество $A$ изоморфно самому себе; т.е. имеется изоморфизм $A\To{\iso} A$.
+\item Для любых множеств $A$ и $B$, если $A$ изоморфно $B$, то $B$ изоморфно $A$.
+\item Для любых множеств $A, B,$ и $C$, если $A$ изоморфно $B$, и $B$ изоморфно $C$, то $A$ изоморфно $C$.
+\end{enumerate}
+\end{russian}
 
 \end{lemma}
 
@@ -935,6 +946,18 @@ The following facts hold about isomorphism.
 \end{align*}
 \end{enumerate}
 
+\begin{russian}
+\begin{enumerate}
+\item Тождественная функция $\id_A\taking A\to A$ обратима; ее обратной является $\id_A$, потому что $\id_A\circ\id_A=\id_A$.
+\item Если $f\taking A\to B$ обратима с обратной $g\taking B\to A$, то $g$ --- изоморфизм с обратной $f$.
+\item Если $f\taking A\to B$ и $f'\taking B\to C$ обратимы с обратными $g\taking B\to A$ и $g'\taking C\to B$, то следующие вычисления показывают, что $f'\circ f$ обратима с обратной $g\circ g'$: 
+\begin{align*}
+(f'\circ f)\circ(g\circ g')=f'\circ(f\circ g)\circ g'=f'\circ\id_B\circ g'=f'\circ g'=\id_C\\
+(g\circ g')\circ(f'\circ f)=g\circ(g'\circ f')\circ f=g\circ\id_B\circ f=g\circ f=\id_A
+\end{align*}
+\end{enumerate}
+\end{russian}
+
 \end{proof}
 
 \begin{exercise}\label{exc:functions are not iso invariant}
@@ -948,7 +971,15 @@ $$
 Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,2,3,4,5\}$ sends ``Bob" to $1$, sends $\clubsuit$ to $3$, and sends $r8$ to $4$, is there a canonical function $A\to\{1,2,3,4,5\}$ corresponding to $f$?
 \footnote{Canonical means something like ``best choice", a choice that stands out as the only reasonable one.}\index{canonical}
 
-\begin{russian} \end{russian}
+\begin{russian}Пусть $A$ и $B$ --- множества, нарисованные ниже:
+$$
+\parbox{1.1in}{\boxtitle{A:=}\fbox{\xymatrix@=1pt{\\&\LMO{\;a\;}&&&\LMO{\;\;\;7\;\;}&\\\\\\&&&\LMO{Q}\\&}}}
+\hspace{.8in}
+\parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{``Bob"}\\&&\LMO{\clubsuit}}}}
+$$
+Заметим, что множества $A$ и $B$ изоморфны. Предположим, что $f\taking B\to\{1,2,3,4,5\}$ переводит "Bob" в $1$, $\clubsuit$ в $3$, и $r8$ в $4$; имеется ли каноническая функция $A\to\{1,2,3,4,5\}$, соответствующая $f$?
+\footnote{"Каноническая" означает нечто наподобие "лучшего выбора", выбора, который выделяется, как единственный обоснованный.}\index{canonical}
+\end{russian}
 
 \end{exercise}
 
@@ -956,7 +987,8 @@ Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,
 
 Find a set $A$ such that for any set $X$ there is a isomorphism of sets $$X\iso\Hom_\Set(A,X).$$ Hint: draw a picture of proposed $A$'s and $X$'s.
 
-\begin{russian} \end{russian}
+\begin{russian}Найти множество $A$ такое, что для любого множества $X$ имеется изомрфизм множеств $$X\iso\Hom_\Set(A,X).$$ Подсказка: нарисуйте картинку с пробными $A$ и $X$.
+ \end{russian}
 
 \end{exercise}
 
@@ -966,11 +998,17 @@ For any natural number $n\in\NN$, define a set
 \end{align}
 So, in particular, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, and $\ul{0}=\emptyset$. 
 
-\begin{russian} \end{russian}
+\begin{russian}
+Для любого натурального числа $n\in\NN$, определим множество 
+\begin{align}\label{dia:underline n}\index{a symbol!$\ul{n}$}
+\ul{n}:=\{1,2,3,\ldots,n\}.
+\end{align}
+Так что, в частности, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, и $\ul{0}=\emptyset$. 
+\end{russian}
 
 Let $A$ be any set. A function $f\taking\ul{n}\to A$ can be written as a sequence $$f=(f(1),f(2),\ldots,f(n)).$$
 
-\begin{russian} \end{russian}
+\begin{russian}Пусть $A$ --- любое множество. Функция $f\taking\ul{n}\to A$ может быть записана как [конечная] последовательность $$f=(f(1),f(2),\ldots,f(n)).$$\end{russian}
 
 \begin{exercise}\label{exc:sequence}~
 
@@ -978,17 +1016,23 @@ Let $A$ be any set. A function $f\taking\ul{n}\to A$ can be written as a sequenc
 \next Let $s\taking\ul{7}\to\NN$ be given by $s(i)=i^2$. Write $s$ out as a sequence.
 \endsexc
 
-\begin{russian} \end{russian}
+\begin{russian} 
+\sexc Пусть $A=\{a,b,c,d\}$. Если $f\taking\ul{10}\to A$ задана как $(a,b,c,c,b,a,d,d,a,b)$, чему равен $f(4)$?
+\next Пусть $s\taking\ul{7}\to\NN$ задана как $s(i)=i^2$. Запишите $s$ в виде последовательности.
+\endsexc
+\end{russian}
 
 \end{exercise}
 
-\begin{definition}Cardinality of finite sets]\label{def:cardinality}[
-
+\begin{definition}[Cardinality of finite sets]\label{def:cardinality}
 Let $A$ be a set and $n\in\NN$ a natural number. We say that $A$ is {\em has cardinality $n$}\index{cardinality}, denoted $$|A|=n,$$ if there exists an isomorphism of sets $A\iso\ul{n}$. If there exists some $n\in\NN$ such that $A$ has cardinality $n$ then we say that $A$ is {\em finite}. Otherwise, we say that $A$ is {\em infinite} and write $|A|\geq\infty$.
-
-\begin{russian} \end{russian}
-
 \end{definition}
+
+\begin{russian}
+\begin{definition}[Мощность конечных чисел]\label{def:cardinality}
+Пусть $A$ --- множество и $n\in\NN$ --- натуральное число. Мы говорим, что $A$ {\em имеет мощность $n$}\index{cardinality}, что обозначается как $$|A|=n,$$ если существует изоморфизм между множествами $A\iso\ul{n}$. Если существует $n\in\NN$ такой, что $A$ имеет мощность $n$, то мы говорим, что $A$ {\em конечно}. В противном случае, мы говорим, что $A$ {\em бесконечно} и пишем $|A|\geq\infty$.
+\end{definition}
+\end{russian}
 
 \begin{exercise}~
 
@@ -997,7 +1041,12 @@ Let $A$ be a set and $n\in\NN$ a natural number. We say that $A$ is {\em has car
 \next What is $|\{n\in\NN\|n\leq 5\}|$?
 \endsexc
 
-\begin{russian} \end{russian}
+\begin{russian}
+\sexc Пусть $A=\{5,6,7\}$. Чему равно $|A|$? 
+\next Чему равно $|\NN|$? 
+\next Чему равно $|\{n\in\NN\|n\leq 5\}|$?
+\endsexc
+\end{russian}
 
 \end{exercise}
 
@@ -1005,7 +1054,7 @@ Let $A$ be a set and $n\in\NN$ a natural number. We say that $A$ is {\em has car
 
 Let $A$ and $B$ be finite sets. If there is an isomorphism of sets $f\taking A\to B$ then the two sets have the same cardinality, $|A|=|B|$.
 
-\begin{russian} \end{russian}
+\begin{russian}Пусть $A$ и $B$ --- конечные множества. Если имеется изоморфизм множеств $f\taking A\to B$, то эти два множества имеют одинаковую мощность, $|A|=|B|$. \end{russian}
 
 \end{lemma}
 
@@ -1013,7 +1062,9 @@ Let $A$ and $B$ be finite sets. If there is an isomorphism of sets $f\taking A\t
 
 Suppose $f\taking A\to B$ is an isomorphism. If there exists natural numbers $m,n\in\NN$ and isomorphisms $a\taking\ul{m}\To\iso A$ and $b\taking\ul{n}\To\iso B$ then $\ul{m}\To{a^\m1}A\To{f}B\To{b}\ul{n}$ is an isomorphism. One can prove by induction that the sets $\ul{m}$ and $\ul{n}$ are isomorphic if and only if $m=n$. 
 
-\begin{russian} \end{russian}
+\begin{russian}
+Предположим $f\taking A\to B$ --- изоморфизм. Если существуют натуральные числа $m,n\in\NN$ и изоморфизмы $a\taking\ul{m}\To\iso A$ и $b\taking\ul{n}\To\iso B$, то $\ul{m}\To{a^\m1}A\To{f}B\To{b}\ul{n}$ --- изоморфизм. Можно доказать по индукции, что множества $\ul{m}$ и $\ul{n}$ изоморфны тогда и только тогда, когда $m=n$. 
+\end{russian}
 
 \end{proof}
 
