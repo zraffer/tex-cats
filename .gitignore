@@ -74,7 +74,6 @@ acs-*.bib
 *-gnuplottex-*
 
 # hyperref
-*.brf
 
 # knitr
 *-concordance.tex
@@ -124,3 +123,5 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
+/tex-cats.ipr
+/tex-cats.iws
