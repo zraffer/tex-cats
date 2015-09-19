@@ -686,11 +686,7 @@ without which this book would not have been remotely possible. I believe that th
 
 The theory of sets was invented as a foundation for all of mathematics. The notion of sets and functions serves as a basis on which to build our intuition about categories in general. In this chapter we will give examples of sets and functions and then move on to discuss commutative diagrams. At this point we can introduce ologs which will allow us to use the language of category theory to speak about real world concepts. Then we will introduce limits and colimits, and their universal properties. All of this material is basic set theory, but it can also be taken as an investigation of our first category, the {\em category of sets}, which we call $\Set$. We will end this chapter with some other interesting constructions in $\Set$ that do not fit into the previous sections.
 
-<<<<<<< HEAD
-\begin{russian}Теория множеств была изобретена [развита?] в качестве оснований всей математики. Понятия множества и функции служат основой, на которой строится наша интуиция о категориях вообще. В этой главе мы дадим примеры множеств и функций и затем перейдем к обсуждению коммутативных диаграмм. К тому моменту мы сможем ввести ологи, которые позволят нам использовать язык теории категорий, чтобы говорить о понятиях реального мира. Затем мы введем пределы и копределы и их универсальные свойства. Весь этот материал входит в область элементарной теории множеств, но он может также рассматриваться и как исследование нашей первой категории, {\em категории множеств}, которую мы назовем $\Set$. \end{russian}
-=======
 \begin{russian}Теория множеств разрабатывалась в качестве оснований всей математики. Понятие множества и функции служат основой, на которой строится наша интуиция о категориях вообще. В этой главе мы дадим примеры множеств и функций и затем перейдем к обсуждению коммутативных диаграмм. К тому моменту мы сможем ввести ологи, которые позволят нам использовать язык теории категорий, чтобы говорить о понятиях реального мира. Затем мы введем пределы и копределы и их универсальные свойства. Весь этот материал входит в область элементарной теории множеств, но он может также рассматриваться и как исследование нашей первой категории, {\em категории множеств}, которую мы назовем $\Set$. Мы закончим эту главу некоторыми другими интересными конструкциями в Set, которые не подходят к предыдущим разделам.\end{russian}
->>>>>>> origin/master
 
 %%%%%% Section %%%%%%
 
@@ -735,11 +731,7 @@ If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$,
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
 \begin{russian}
-<<<<<<< HEAD
-Если $A$ и $B$ - множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\emptyset\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная {\em форма записи}\index{set!set builder notation}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
-=======
-Если $A$ и $B$ множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\emptyset\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная форма записи\index{set!set builder notation}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
->>>>>>> origin/master
+Если $A$ и $B$ — множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\emptyset\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная форма записи\index{set!set builder notation}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
 \end{russian}
 \end{notationRUS}
 \begin{notationENG}\label{not:basic math notation}
@@ -1278,6 +1270,7 @@ A type is presented as a text box.  The text in that box should
 \begin{russian} 
 Тип изображается прямоугольником с текстом. Текст в этом прямоугольнике должен:
 \begin{enumerate}[(i)]
+\item быть обобщающим термином;
 \item относиться к критерию, придуманному и понятному автору олога;
 \item относиться к критерию, определяющего класс, описание экземпляров которого может быть записано;
 \item явно описывать все переменные в составной структуре. 
@@ -1442,24 +1435,27 @@ An aspect is presented as a labeled arrow, pointing from a source box to a targe
 
 \subsection{Facts / Факты}\label{sec:facts}\index{olog!facts}
 
-In this section I will discuss facts, which are simply "path equivalences" in an olog. It is the notion of path equivalences that make category theory so powerful. 
+In this section I will discuss facts, which are simply “path equivalences” in an olog. It is the notion of path equivalences that make category theory so powerful. 
 
-\begin{russian} \end{russian}
+\begin{russian}В этом разделе мы обсудим факты, или попросту «эквивалентности путей» в ологе. Именно понятие эквивалентности путей делает теорию категорий такой мощной. \end{russian}
 
 A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
 
-\begin{russian} \end{russian}
+\begin{russian}{\em Путь}\index{olog!path in} в ологе это связная напрвленная последовательность стрелок. Другими словами, любой путь начинается в прямойгольнике $B_0$, затем идет по стрелке, исходящей из $B_0$ (двигаясь в правильном направлении), из нее он переходит в следующий прямоугольник $B_1$, затем идет по любой стрелке, исходящей из $B_1$, и т.д., и наконец приходит в $B_n$ и останавливается там. Число стрелок — это {\em длина} пути. Таким образом, путь длины $1$ это единственная стрелка, а путь длины $0$ это отдельный прямоугольник. Мы называем $B_0$ {\em началом} и $B_n$ {\em концом} пути. \end{russian}
 
 Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
-\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say "a woman parent is equivalent to a mother."  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say “a woman parent is equivalent to a mother.”  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
 
-\begin{russian} \end{russian}
+\begin{russian}Для любого олога его автор может объявить, что два выбранных пути в нем эквивалентны.  Например, рассмотрим два пути из $A$ в $C$ в ологе
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет родителей}\LAL{drr}{\parbox{.8in}{имеет мать}}&&\obox{B}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\ar@{}[dll]|(.4){\checkmark}\LA{d}{выдает $w$}\\&&\smbox{C}{женщина}}}\end{align} Носители естественного языка обычно знают, что женщина-родитель называется матерью, поэтому эти два пути $A\to C$ должны быть эквивалентны.  Более математический способ выразить это — назвать треугольник в Ологе (\ref{olog:commute}) {\em коммутирующим}. То есть, эквивалентности путей это просто коммутативные диаграммы из Раздела \ref{sec:comm diag}. О примере выше мы кратко говорим «женщина-родитель эквивалентна матери.»  Мы заявляем об этом, определяя диагональное отображение в (\ref{olog:commute}) как {\em композицию} горизонтального отображения и вертикального. \end{russian}
 
 I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
 \footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
-  Either way, it means that "$f$ then $g$" is equivalent to "$h$ then $i$".  
+  Either way, it means that “$f$ then $g$” is equivalent to “$h$ then $i$”.  
 
-\begin{russian} \end{russian}
+\begin{russian}Обычно я предпочитаю обозначать коммутативную диаграмму при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{a symbol!$\simeq$}.
+\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{a warning!notation for composition} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит задом-наперед.\index{composition!classical order} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{composition!diagrammatic order} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
+ В любом случае, это означает, что «$f$ then $g$» эквивалентно «$h$ then $i$». \end{russian}
 
 Here is another, more scientific example:
 \begin{align*}
