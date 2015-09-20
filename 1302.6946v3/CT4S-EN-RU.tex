@@ -60,7 +60,8 @@
 \def\tn{\textnormal}
 \def\mf{\mathfrak}
 \def\mc{\mathcal}
-\newcommand{\qt}[1]{\tn{``}#1\tn{"}}
+\newcommand{\qtE}[1]{\tn{“}#1\tn{”}}
+\newcommand{\qtR}[1]{\tn{«}#1\tn{»}}
 
 \def\ZZ{{\mathbb Z}}
 \def\QQ{{\mathbb Q}}
@@ -258,94 +259,70 @@
 
 \makeatletter\let\c@figure\c@equation\makeatother%Aligns figure numbering and equation numbering.
 
+\newtheoremstyle{myth}% <name>
+{1pt}% <Space above>
+{1pt}% <Space below>
+{\upshape}% <Body font>
+{}% <Indent amount>
+{\bfseries}% <Theorem head font>
+{:}% <Punctuation after theorem head>
+{.5em}% <Space after theorem headi>
+{}% <Theorem head spec (can be left empty, meaning `normal')>
+
+\theoremstyle{myth}
+\newtheorem{envENG}{\begin{english}Theorem\end{english}}[chapter]
+\newtheorem{envRUS}{\begin{english}Theorem\end{english}}[chapter]
+
 %%%%%%%%%%%%%%%% theorem titles, ENG
 
-\theoremstyle{theoremENG}
-\newtheorem{theoremENG}[subsubsection]{\begin{english}Theorem\end{english}}
-\theoremstyle{lemmaENG}
-\newtheorem{lemmaENG}[subsubsection]{\begin{english}Lemma\end{english}}
-\theoremstyle{propositionENG}
-\newtheorem{propositionENG}[subsubsection]{\begin{english}Proposition\end{english}}
-\theoremstyle{corollaryENG}
-\newtheorem{corollaryENG}[subsubsection]{\begin{english}Corollary\end{english}}
-\theoremstyle{factENG}
-\newtheorem{factENG}[subsubsection]{\begin{english}Fact\end{english}}
+\newtheorem{theoremENG}[envENG]{\begin{english}Theorem\end{english}}
+\newtheorem{lemmaENG}[envENG]{\begin{english}Lemma\end{english}}
+\newtheorem{propositionENG}[envENG]{\begin{english}Proposition\end{english}}
+\newtheorem{corollaryENG}[envENG]{\begin{english}Corollary\end{english}}
+\newtheorem{factENG}[envENG]{\begin{english}Fact\end{english}}
 
-\theoremstyle{remarkENG}
-\newtheorem{remarkENG}[subsubsection]{\begin{english}Remark\end{english}}
-\theoremstyle{exampleENG}
-\newtheorem{exampleENG}[subsubsection]{\begin{english}Example\end{english}}
-\theoremstyle{warningENG}
-\newtheorem{warningENG}[subsubsection]{\begin{english}Warning\end{english}}
-\theoremstyle{questionENG}
-\newtheorem{questionENG}[subsubsection]{\begin{english}Question\end{english}}
-\theoremstyle{guessENG}
-\newtheorem{guessENG}[subsubsection]{\begin{english}Guess\end{english}}
-\theoremstyle{answerENG}
-\newtheorem{answerENG}[subsubsection]{\begin{english}Answer\end{english}}
-\theoremstyle{constructionENG}
-\newtheorem{constructionENG}[subsubsection]{\begin{english}Construction\end{english}}
-\theoremstyle{rulesENG}
-\newtheorem{rulesENG}[subsubsection]{\begin{english}Rules of good practice\end{english}}
-\theoremstyle{excENG}
-\newtheorem{excENG}[subsubsection]{\begin{english}Exercise\end{english}}
-\theoremstyle{appENG}
-\newtheorem{appENG}[subsubsection]{\begin{english}Application\end{english}}
-\theoremstyle{definitionENG}
-\newtheorem{definitionENG}[subsubsection]{\begin{english}Definition\end{english}}
-\theoremstyle{notationENG}
-\newtheorem{notationENG}[subsubsection]{\begin{english}Notation\end{english}}
-\theoremstyle{conjectureENG}
-\newtheorem{conjectureENG}[subsubsection]{\begin{english}Conjecture\end{english}}
-\theoremstyle{postulateENG}
-\newtheorem{postulateENG}[subsubsection]{\begin{english}Postulate\end{english}}
+\newtheorem{remarkENG}[envENG]{\begin{english}Remark\end{english}}
+\newtheorem{exampleENG}[envENG]{\begin{english}Example\end{english}}
+\newtheorem{warningENG}[envENG]{\begin{english}Warning\end{english}}
+\newtheorem{questionENG}[envENG]{\begin{english}Question\end{english}}
+\newtheorem{guessENG}[envENG]{\begin{english}Guess\end{english}}
+\newtheorem{answerENG}[envENG]{\begin{english}Answer\end{english}}
+\newtheorem{constructionENG}[envENG]{\begin{english}Construction\end{english}}
+\newtheorem{rulesENG}[envENG]{\begin{english}Rules of good practice\end{english}}
+\newtheorem{excENG}[envENG]{\begin{english}Exercise\end{english}}
+\newtheorem{appENG}[envENG]{\begin{english}Application\end{english}}
+\newtheorem{definitionENG}[envENG]{\begin{english}Definition\end{english}}
+\newtheorem{notationENG}[envENG]{\begin{english}Notation\end{english}}
+\newtheorem{conjectureENG}[envENG]{\begin{english}Conjecture\end{english}}
+\newtheorem{postulateENG}[envENG]{\begin{english}Postulate\end{english}}
 
 \newenvironment{proofENG}{\begin{proof}[Proof (original)]}{\end{proof}}
 \newenvironment{exerciseENG}{\begin{excENG}}{\hspace*{\fill}$\lozenge$\end{excENG}}
 \newenvironment{applicationENG}{\begin{appENG}}{\hspace*{\fill}$\lozenge\lozenge$\end{appENG}}
-\newenvironment{sloganENG}{\addtocounter{subsection}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsection}. \begin{quote}``\slshape}{"\end{quote}\end{sloppypar}\vspace{.1in}}
+\newenvironment{sloganENG}{\addtocounter{subsection}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsection}. \begin{quote}“\slshape}{”\end{quote}\end{sloppypar}\vspace{.1in}}
 
 %%%%%%%%%%%%%%%% заголовки теорем, RUS
 
-\theoremstyle{theoremRUS}
-\newtheorem{theoremRUS}[subsubsection]{\begin{russian}Теорема\end{russian}}
-\theoremstyle{lemmaRUS}
-\newtheorem{lemmaRUS}[subsubsection]{\begin{russian}Лемма\end{russian}}
-\theoremstyle{propositionRUS}
-\newtheorem{propositionRUS}[subsubsection]{\begin{russian}Утверждение\end{russian}}
-\theoremstyle{corollaryRUS}
-\newtheorem{corollaryRUS}[subsubsection]{\begin{russian}Следствие\end{russian}}
-\theoremstyle{factRUS}
-\newtheorem{factRUS}[subsubsection]{\begin{russian}Факт\end{russian}}
+\newtheorem{theoremRUS}[envRUS]{\begin{russian}Теорема\end{russian}}
+\newtheorem{lemmaRUS}[envRUS]{\begin{russian}Лемма\end{russian}}
+\newtheorem{propositionRUS}[envRUS]{\begin{russian}Утверждение\end{russian}}
+\newtheorem{corollaryRUS}[envRUS]{\begin{russian}Следствие\end{russian}}
+\newtheorem{factRUS}[envRUS]{\begin{russian}Факт\end{russian}}
 
-\theoremstyle{remarkRUS}
-\newtheorem{remarkRUS}[subsubsection]{\begin{russian}Примечание\end{russian}}
-\theoremstyle{exampleRUS}
-\newtheorem{exampleRUS}[subsubsection]{\begin{russian}Пример\end{russian}}
-\theoremstyle{warningRUS}
-\newtheorem{warningRUS}[subsubsection]{\begin{russian}Предупреждение\end{russian}}
-\theoremstyle{questionRUS}
-\newtheorem{questionRUS}[subsubsection]{\begin{russian}Вопрос\end{russian}}
-\theoremstyle{guessRUS}
-\newtheorem{guessRUS}[subsubsection]{\begin{russian}Догадка\end{russian}}
-\theoremstyle{answerRUS}
-\newtheorem{answerRUS}[subsubsection]{\begin{russian}Ответ\end{russian}}
-\theoremstyle{constructionRUS}
-\newtheorem{constructionRUS}[subsubsection]{\begin{russian}Конструкция\end{russian}}
-\theoremstyle{rulesRUS}
-\newtheorem{rulesRUS}[subsubsection]{\begin{russian}Рекомендации\end{russian}}
-\theoremstyle{excRUS}
-\newtheorem{excRUS}[subsubsection]{\begin{russian}Упражнение\end{russian}}
-\theoremstyle{appRUS}
-\newtheorem{appRUS}[subsubsection]{\begin{russian}Прикладной пример (применение)\end{russian}}
-\theoremstyle{definitionRUS}
-\newtheorem{definitionRUS}[subsubsection]{\begin{russian}Определение\end{russian}}
-\theoremstyle{notationRUS}
-\newtheorem{notationRUS}[subsubsection]{\begin{russian}Обозначение\end{russian}}
-\theoremstyle{conjectureRUS}
-\newtheorem{conjectureRUS}[subsubsection]{\begin{russian}Гипотеза\end{russian}}
-\theoremstyle{postulateRUS}
-\newtheorem{postulateRUS}[subsubsection]{\begin{russian}Постулат\end{russian}}
+\newtheorem{remarkRUS}[envRUS]{\begin{russian}Примечание\end{russian}}
+\newtheorem{exampleRUS}[envRUS]{\begin{russian}Пример\end{russian}}
+\newtheorem{warningRUS}[envRUS]{\begin{russian}Предупреждение\end{russian}}
+\newtheorem{questionRUS}[envRUS]{\begin{russian}Вопрос\end{russian}}
+\newtheorem{guessRUS}[envRUS]{\begin{russian}Догадка\end{russian}}
+\newtheorem{answerRUS}[envRUS]{\begin{russian}Ответ\end{russian}}
+\newtheorem{constructionRUS}[envRUS]{\begin{russian}Конструкция\end{russian}}
+\newtheorem{rulesRUS}[envRUS]{\begin{russian}Правила хорошего тона (рекомендации)\end{russian}}
+\newtheorem{excRUS}[envRUS]{\begin{russian}Упражнение\end{russian}}
+\newtheorem{appRUS}[envRUS]{\begin{russian}Прикладной пример (применение)\end{russian}}
+\newtheorem{definitionRUS}[envRUS]{\begin{russian}Определение\end{russian}}
+\newtheorem{notationRUS}[envRUS]{\begin{russian}Обозначение\end{russian}}
+\newtheorem{conjectureRUS}[envRUS]{\begin{russian}Гипотеза\end{russian}}
+\newtheorem{postulateRUS}[envRUS]{\begin{russian}Постулат\end{russian}}
 
 \newenvironment{proofRUS}{\begin{proof}[Доказательство]}{\end{proof}}
 \newenvironment{exerciseRUS}{\begin{excRUS}}{\hspace*{\fill}$\lozenge$\end{excRUS}}
@@ -480,10 +457,10 @@ This olog represents a framework in which to record data about objects held abov
 \begin{russian}В этом курсе я буду использовать математический инструмент, называемый {\em ологами} или же онтологическими записями, чтобы придать некую структуру тем видам идей, о которых зачастую сообщается в картинках, подобных той, что изображена на обложке. Каждый олог по своей сути представляет собой конструкцию, в которой записаны данные о предмете обсуждения. Более точно, они отражают {\em схему базы данных}, что означает систему взаимосвязанных таблиц, которые вначале пусты, но в которые могут быть внесены данные. Для примера рассмотрим такой олог \end{russian}
 $$\xymatrix{
 \obox{}{.5in}{\begin{russian}масса\end{russian}}&&\obox{}{1.1in}{\begin{russian}объект массы \end{russian}$m$ \begin{russian}удерживаемый на высоте \end{russian}$h$ \begin{russian}над землей\end{russian}}\LAL{ll}{\footnotesize\begin{russian}имеет массу\end{russian}}\LA{rrdd}{\hspace{.4in}\parbox{1in}{\singlespace \footnotesize \begin{russian}при падении требуется определенное число секунд до ударения о землю\end{russian}}}\LAL{dd}{\parbox{.7in}{\singlespace\footnotesize\begin{russian}имеет высоту в метрах\end{russian}}}&&\\\\
-&&\obox{}{1in}{\begin{russian}действительное число \end{russian} $h$}\ar@{}[uurr]|(.35){?}\ar[rr]_-{\sqrt{2h\div 9.8}}&\hspace{.3in}&\obox{}{.9in}{\begin{russian}действительное число \end{russian} }
+&&\obox{}{1in}{\begin{russian}действительное число \end{russian} $h$}\ar@{}[uurr]|(.35){\checkmark}\ar[rr]_-{\sqrt{2h\div 9.8}}&\hspace{.3in}&\obox{}{.9in}{\begin{russian}действительное число \end{russian} }
 }
 $$
-\begin{russian}Данный олог представляет собой конструкцию, в которой для объектов, находящихся над поверхностью земли, записаны: их масса, их высота и соответствие (значок ? в середине) между числом секунд, за которое они достигают земли, с определенной действительнозначной функцией их высоты. Ологи мы детально обсудим по ходу этого курса. \end{russian}
+\begin{russian}Данный олог представляет собой конструкцию, в которой для объектов, находящихся над поверхностью земли, записаны: их масса, их высота и соответствие (отметка \checkmark в середине) между числом секунд, за которое они достигают земли, с определенной действительнозначной функцией их высоты. Ологи мы детально обсудим по ходу этого курса. \end{russian}
 
 The picture in (\ref{dia:scientific method}) looks like an olog, but it does not conform to the rules that we lay out for ologs in Section \ref{sec:ologs}. In an olog, every arrow is intended to represent a mathematical function. It is difficult to imagine a function that takes in predictions and outputs experiments, but such a function is necessary in order for the arrow
 $$\fbox{a prediction}\To{\tn{motivates the specification of}}\fbox{an experiment}
@@ -607,7 +584,7 @@ I wrote this book because the available books on category theory are almost all 
 
 \begin{russian}Я написал эту книгу, потому что имеющиеся книги по теории категорий практически все написаны для математиков (остальные написаны для теоретиков информатики). Есть одна книга Ловера и Шануеля {\em Концептуальная математика} \cite{LS}, которая предлагает теорию категорий более широкой аудитории, но ее стиль не подходит для этого курса. Тем не менее, написана она очень хорошо и ясно. \end{russian}
 
-The "bible" of category theory is {\em Categories for the working mathematician} by Mac Lane \cite{Mac}. But as the title suggests, it was written for working mathematicians and will be quite opaque to my target audience. However, once a person has read my book, Mac Lane's book may become a valuable reference.
+The “bible” of category theory is {\em Categories for the working mathematician} by Mac Lane \cite{Mac}. But as the title suggests, it was written for working mathematicians and will be quite opaque to my target audience. However, once a person has read my book, Mac Lane's book may become a valuable reference.
 
 \begin{russian} «Библия» теории категорий это {\em Категории для работающего математика} Мак Лейна \cite{Mac}. Но, как и предполагает ее заглавие, написана она для профессиональных математиков и будет совершенно непонятна моей целевой аудитории. Однако, после прочтения моей книги, книга Мак Лейна может стать ценным справочником.  \end{russian}
 
@@ -735,10 +712,10 @@ If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$,
 \end{russian}
 \end{notationRUS}
 \begin{notationENG}\label{not:basic math notation}
-The symbol $\exists$ means “there exists”.\index{a symbol!$\exists$} So we could write the set of even integers as $$\{n\in\ZZ\|n\tn{ is even}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ such that } 2m=n\}.$$ The symbol $\exists!$\index{a symbol!$\exists$"!} means “there exists a unique”. So the statement “$\exists! x\in\RR\tn{ such that } x^2=0$” means that there is one and only one number whose square is 0. Finally, the symbol $\forall$ means “for all”.\index{a symbol!$\forall$} So the statement “$\forall m\in\NN\;\exists n\in\NN\tn{ such that } m<n$” means that for every number there is a bigger one.
+The symbol $\exists$ means “there exists”.\index{a symbol!$\exists$} So we could write the set of even integers as $$\{n\in\ZZ\|n\tn{ is even}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ such that } 2m=n\}.$$ The symbol $\exists!$\index{a symbol!$\exists$!} means “there exists a unique”. So the statement “$\exists! x\in\RR\tn{ such that } x^2=0$” means that there is one and only one number whose square is 0. Finally, the symbol $\forall$ means “for all”.\index{a symbol!$\forall$} So the statement “$\forall m\in\NN\;\exists n\in\NN\tn{ such that } m<n$” means that for every number there is a bigger one.
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
-\begin{russian}Символ $\exists$ означает «существует».\index{a symbol!$\exists$} Таким образом мы можем записать множество четных чисел $$\{n\in\ZZ\|n\tn{ четно}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ такое, что } 2m=n\}.$$ Символ $\exists!$\index{a symbol!$\exists$"!} означает «существует единственный». Таким образом утверждение «$\exists! x\in\RR\tn{ такой, что } x^2=0$» означает, что имеется одно и только одно число, равное в квадрате $0$. Наконец, символ $\forall$ означает «для всех», «для каждого».\index{a symbol!$\forall$} Таким образом утверждение «$\forall m\in\NN\;\exists n\in\NN\tn{ такой, что } m<n$» означает, что для каждого числа имеется большее него. \end{russian}
+\begin{russian}Символ $\exists$ означает «существует».\index{a symbol!$\exists$} Таким образом мы можем записать множество четных чисел $$\{n\in\ZZ\|n\tn{ четно}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ такое, что } 2m=n\}.$$ Символ $\exists!$\index{a symbol!$\exists$!} означает «существует единственный». Таким образом утверждение «$\exists! x\in\RR\tn{ такой, что } x^2=0$» означает, что имеется одно и только одно число, равное в квадрате $0$. Наконец, символ $\forall$ означает «для всех», «для каждого».\index{a symbol!$\forall$} Таким образом утверждение «$\forall m\in\NN\;\exists n\in\NN\tn{ такой, что } m<n$» означает, что для каждого числа имеется большее него. \end{russian}
 \end{notationRUS}
 \begin{notationENG}\label{not:basic math notation}
 As you may have noticed, we use the colon-equals notation “$A:=XYZ$” to mean something like “define $A$ to be $XYZ$”.\index{a symbol!:=} That is, a colon-equals declaration is not denoting a fact of nature (like $2+2=4$), but a choice of the speaker. It just so happens that the notation above, such as $\NN:=\{0,1,2,\ldots\}$, is a widely-held choice.
@@ -873,7 +850,7 @@ Note that two functions $f,g\taking X\to Y$ are equal\index{function!equality of
 \begin{russian}
 Пусть $X$ и $Y$ — множества. Мы записываем $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} для обозначения множества функций $X\to Y$.
 \footnote{Странное обозначение $\Hom_\Set(-,-)$ обретет смысл позже, когда мы увидим его как часть большой картины.} 
-Заметим, что две функции $f,g\taking X\to Y$ считаются равными\index{function!equality of}, если и только если для каждого элемента $x\in X$ верно $f(x)=g(x)$. 
+Заметим, что две функции $f,g\taking X\to Y$ считаются равными\index{function!equality of}, если и только если для каждого элемента $x\in X$ верно равенство $f(x)=g(x)$. 
 \end{russian}
 
 \begin{exerciseENG}
@@ -908,7 +885,7 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$
 
 For any set $X$, we define the {\em identity function on $X$}\index{function!identity}, denoted $\id_X\taking X\to X$, to be the function such that for all $x\in X$ we have $\id_X(x)=x$.\index{a symbol!$\id_X$}
 
-\begin{russian}Для любого множества $X$, мы определим {\em тождественную функцию на $X$}\index{function!identity}, обозначаемую $\id_X\taking X\to X$, как функцию такую, что для всех $x\in X$ верно $\id_X(x)=x$.\index{a symbol!$\id_X$}\end{russian}
+\begin{russian}Для любого множества $X$, мы определим {\em тождественную функцию на $X$}\index{function!identity}, обозначаемую $\id_X\taking X\to X$, как функцию такую, что для всех $x\in X$ верно равенство $\id_X(x)=x$.\index{a symbol!$\id_X$}\end{russian}
 
 \begin{definitionENG}[Isomorphism]\label{def:iso in set} 
 Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}
@@ -1021,7 +998,7 @@ Let $A$ and $B$ be the sets drawn below:
 $$
 \parbox{1.1in}{\boxtitle{A:=}\fbox{\xymatrix@=1pt{\\&\LMO{\;a\;}&&&\LMO{\;\;\;7\;\;}&\\\\\\&&&\LMO{Q}\\&}}}
 \hspace{.8in}
-\parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{``Bob"}\\&&\LMO{\clubsuit}}}}
+\parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{“Bob”}\\&&\LMO{\clubsuit}}}}
 $$
 Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,2,3,4,5\}$ sends “Bob” to $1$, sends $\clubsuit$ to $3$, and sends $r8$ to $4$, is there a canonical function $A\to\{1,2,3,4,5\}$ corresponding to $f$?
 \footnote{Canonical means something like “best choice”, a choice that stands out as the only reasonable one.}\index{canonical}
@@ -1032,7 +1009,7 @@ Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,
 $$
 \parbox{1.1in}{\boxtitle{A:=}\fbox{\xymatrix@=1pt{\\&\LMO{\;a\;}&&&\LMO{\;\;\;7\;\;}&\\\\\\&&&\LMO{Q}\\&}}}
 \hspace{.8in}
-\parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{``Bob"}\\&&\LMO{\clubsuit}}}}
+\parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{«Bob»}\\&&\LMO{\clubsuit}}}}
 $$
 Заметим, что множества $A$ и $B$ изоморфны. Предположим, что $f\taking B\to\{1,2,3,4,5\}$ переводит «Bob» в $1$, $\clubsuit$ в $3$, и $r8$ в $4$; имеется ли каноническая функция $A\to\{1,2,3,4,5\}$, соответствующая $f$?
 \footnote{«Каноническая» означает нечто наподобие «лучшего выбора», выбора, который выделяется, как единственный обоснованный.}\index{canonical}
@@ -1425,7 +1402,7 @@ An aspect is presented as a labeled arrow, pointing from a source box to a targe
 \begin{rulesRUS}\label{rules:aspects}\index{olog!rules}
 \begin{russian}Аспект изображается стрелкой с меткой, указывающей из области определения в область значений.  Текст над стрелкой должен
 \begin{enumerate}[(i)]
-\item начинаться с глагола;
+\item начинаться с глагола или отглагольного существительного;
 \item образовывать фразу естественного языка при помещении между меткой области определения и меткой области значений;
 \item обозначать функциональное отношение: каждый экземпляр исходного типа должен порождать единственный экземпляр типа-результата.
 \end{enumerate}\end{russian}
@@ -1441,21 +1418,21 @@ In this section I will discuss facts, which are simply “path equivalences” i
 
 A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
 
-\begin{russian}{\em Путь}\index{olog!path in} в ологе это связная напрвленная последовательность стрелок. Другими словами, любой путь начинается в прямойгольнике $B_0$, затем идет по стрелке, исходящей из $B_0$ (двигаясь в правильном направлении), из нее он переходит в следующий прямоугольник $B_1$, затем идет по любой стрелке, исходящей из $B_1$, и т.д., и наконец приходит в $B_n$ и останавливается там. Число стрелок — это {\em длина} пути. Таким образом, путь длины $1$ это единственная стрелка, а путь длины $0$ это отдельный прямоугольник. Мы называем $B_0$ {\em началом} и $B_n$ {\em концом} пути. \end{russian}
+\begin{russian}{\em Путь}\index{olog!path in} в ологе это связная направленная последовательность стрелок. Другими словами, любой путь начинается в прямоугольнике $B_0$, затем идет по стрелке, исходящей из $B_0$ (двигаясь в правильном направлении), из нее он переходит в следующий прямоугольник $B_1$, затем идет по любой стрелке, исходящей из $B_1$, и т.д., и наконец приходит в $B_n$ и останавливается там. Число стрелок — это {\em длина} пути. Таким образом, путь длины $1$ это единственная стрелка, а путь длины $0$ это отдельный прямоугольник. Мы называем $B_0$ {\em началом} и $B_n$ {\em концом} пути. \end{russian}
 
 Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
 \begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say “a woman parent is equivalent to a mother.”  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
 
-\begin{russian}Для любого олога его автор может объявить, что два выбранных пути в нем эквивалентны.  Например, рассмотрим два пути из $A$ в $C$ в ологе
-\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет родителей}\LAL{drr}{\parbox{.8in}{имеет мать}}&&\obox{B}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\ar@{}[dll]|(.4){\checkmark}\LA{d}{выдает $w$}\\&&\smbox{C}{женщина}}}\end{align} Носители естественного языка обычно знают, что женщина-родитель называется матерью, поэтому эти два пути $A\to C$ должны быть эквивалентны.  Более математический способ выразить это — назвать треугольник в Ологе (\ref{olog:commute}) {\em коммутирующим}. То есть, эквивалентности путей это просто коммутативные диаграммы из Раздела \ref{sec:comm diag}. О примере выше мы кратко говорим «женщина-родитель эквивалентна матери.»  Мы заявляем об этом, определяя диагональное отображение в (\ref{olog:commute}) как {\em композицию} горизонтального отображения и вертикального. \end{russian}
+\begin{russian}Автор любого олога может объявить, что два выбранных пути в этом ологе эквивалентны.  Например, рассмотрим два пути из $A$ в $C$ в ологе
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет родителей}\LAL{drr}{\parbox{.8in}{имеет мать}}&&\obox{B}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\ar@{}[dll]|(.4){\checkmark}\LA{d}{выдает $w$}\\&&\smbox{C}{женщина}}}\end{align} Носители естественного языка обычно знают, что женщина-родитель называется матерью, поэтому эти два пути $A\to C$ должны быть эквивалентны.  Более математический способ выразить то же самое — назвать треугольник в Ологе (\ref{olog:commute}) {\em коммутирующим}. То есть, эквивалентности путей это просто коммутативные диаграммы из Раздела \ref{sec:comm diag}. О примере выше мы кратко говорим «женщина-родитель эквивалентна матери.»  Чтобы заявить об этом, мы определяем диагональное отображение в (\ref{olog:commute}) как {\em композицию} горизонтального отображения и вертикального. \end{russian}
 
 I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
 \footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
   Either way, it means that “$f$ then $g$” is equivalent to “$h$ then $i$”.  
 
-\begin{russian}Обычно я предпочитаю обозначать коммутативную диаграмму при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{a symbol!$\simeq$}.
-\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{a warning!notation for composition} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит задом-наперед.\index{composition!classical order} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{composition!diagrammatic order} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
- В любом случае, это означает, что «$f$ then $g$» эквивалентно «$h$ then $i$». \end{russian}
+\begin{russian}Обычно я предпочитаю обозначать коммутативность диаграммы при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{a symbol!$\simeq$}.
+\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{a warning!notation for composition} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит идущим задом-наперед.\index{composition!classical order} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{composition!diagrammatic order} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
+ В любом случае, это означает, что «$f$ потом $g$» эквивалентно «$h$ потом $i$». \end{russian}
 
 Here is another, more scientific example:
 \begin{align*}
@@ -1465,39 +1442,49 @@ Here is another, more scientific example:
 \end{align*}
 Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
 
-\begin{russian} \end{russian}
+\begin{russian}Вот другой, более научный пример:
+\begin{align*}
+\fbox{\xymatrix{
+\obox{}{1in}{последовательность ДНК}\LA{rr}{транскрипция}\LAL{drr}{кодирование}&\hspace{.1in}&\obox{}{1.1in}{последовательность РНК}\ar@{}[dll]|(.35){\checkmark}\LA{d}{трансляция}\\
+&&\obox{}{.6in}{белок}}}
+\end{align*}
+Заметим, что данная диаграмма сообщает нам общепринятую терминологию касательно различных способов, которыми ДНК, РНК и белки участвуют в таком контексте. \end{russian}
 
 \begin{exerciseENG}\label{exc:family olog}
-
 Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exampleENG}[Non-commuting diagram]
+\begin{exerciseRUS}\label{exc:family olog}
+\begin{russian}Сочините олог для человеческих биологических {\em нуклеарных семей} [термин социологии], который бы включал понятия человека, мужчины, женщины, родителя, отца, матери и ребенка. Убедитесь, что размечены все стрелки, и что каждая стрелка обозначает корректный аспект в смысле Раздела \ref{sec:invalid aspect}. Обозначьте отметками ($\checkmark$) диаграммы, которые должны коммутировать. Если двумерность страницы мешает отметкам быть непротиворечивыми, обозначьте требуемую коммутативность уравнениями. \end{russian}
+\end{exerciseRUS}
 
+\begin{exampleENG}[Non-commuting diagram]
 In my conception of the world, the following diagram does not commute:
 \begin{align}\label{dia:non-commuting}
 \xymatrixnocompile@=50pt{\obox{}{.5in}{a person}\LA{r}{has as father}\LAL{dr}{lives in}&\obox{}{.4in}{a man}\LA{d}{lives in}\\&\obox{}{.4in}{a city}}
 \end{align}
 The non-commutativity of Diagram (\ref{dia:non-commuting}) does not imply that, in my conception, no person lives in the same city as his or her father. Rather it implies that, in my conception, it is not the case that {\em every} person lives in the same city as his or her father.
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
+\begin{exampleRUS}[Некоммутативная диаграмма]
+\begin{russian}В соответствии с моей картиной мира, следующая диаграмма не будет коммутировать:
+\begin{align}\label{dia:non-commuting}
+\xymatrixnocompile@=50pt{\obox{}{.5in}{человек}\LA{r}{имеет отца}\LAL{dr}{живет в}&\obox{}{.4in}{мужчина}\LA{d}{живет в}\\&\obox{}{.4in}{город}}
+\end{align}
+Из некоммутативности Диаграммы (\ref{dia:non-commuting}) не следует, будто по моему мнению ни один человек не живет в одном городе со своим отцом. Вместо этого из нее следует, что по моему мнению не верно, будто {\em каждый} человек живет в одном городе со своим отцом. \end{russian}
+\end{exampleRUS}
+
 \begin{exerciseENG}
-
 Create an olog about a scientific subject, preferably one you think about often. The olog should have at least five boxes, five arrows, and one commutative diagram. 
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian}Сочините олог о каком-нибудь научном предмете, лучше всего о том, о котором вы думаете чаще всего. Олог должен содержать по крайней мере пять прямоугольников, пять стрелок и одну коммутитивную диаграмму. \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
-\subsubsection{A formula for writing facts as English / Рецепт для написания фактов естественным языков}\index{olog!facts in English}
+\subsubsection{A formula for writing facts as English / Рецепт для записи фактов естественным языком}\index{olog!facts in English}
 
 Every fact consists of two paths, say $P$ and $Q$, that are to be declared equivalent. The paths $P$ and $Q$ will necessarily have the same source, say $s$, and target, say $t$, but their lengths may be different, say $m$ and $n$ respectively.
 \footnote{If the source equals the target, $s=t$, then it is possible  to have $m=0$ or $n=0$, and the ideas below still make sense.} 
@@ -1506,26 +1493,45 @@ We draw these paths as
 P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
 Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\ar[r]^{g_3}&\cdots\ar[r]^{g_{n-1}}&\LMO{b_{n-1}}\ar[r]^{g_n}&\LMO{b_n=t}}
 \end{align}
-Every part $\ell$ of an olog (i.e. every box and every arrow) has an associated English phrase, which we write as $\qt{\ell}$. Using a dummy variable $x$ we can convert a fact into English too. The following general formula is a bit difficult to understand, see Example \ref{ex:English fact}, but here goes. The fact $P\simeq Q$ from (\ref{dia:two paths for equivalence}) can be Englishified as follows:
-
-\begin{russian} \end{russian}
+Every part $\ell$ of an olog (i.e. every box and every arrow) has an associated English phrase, which we write as $\qtE{\ell}$. Using a dummy variable $x$ we can convert a fact into English too. The following general formula is a bit difficult to understand, see Example \ref{ex:English fact}, but here goes. The fact $P\simeq Q$ from (\ref{dia:two paths for equivalence}) can be Englishified as follows:
 
 \begin{align}\label{dia:Englishification}\index{Englishification}
-&\tn{Given }x,\qt{s},\tn{ consider the following. We know that }x\tn{ is }\qt{s}, \\
-\nonumber&\tn {which } \qt{f_1}\;\qt{a_1}, \tn{ which } \qt{f_2}\;\qt{a_2}, \tn { which }\ldots \; \qt{f_{m-1}}\;\qt{a_{m-1}}, \tn { which } \qt{f_m}\;\qt{t}\\
+&\tn{Given }x,\qtE{s},\tn{ consider the following. We know that }x\tn{ is }\qtE{s}, \\
+\nonumber&\tn{which } \qtE{f_1}\;\qtE{a_1}, \tn{ which } \qtE{f_2}\;\qtE{a_2}, \tn{ which }\ldots \; \qtE{f_{m-1}}\;\qtE{a_{m-1}}, \tn{ which } \qtE{f_m}\;\qtE{t}\\
 \nonumber&\tn{that we'll call } P(x).\\
-\nonumber&\tn{We also know that }x\tn{ is } \qt{s},\\
-\nonumber&\tn {which } \qt{g_1}\;\qt{b_1}, \tn{ which }\qt{g_2}\;\qt{b_2}, \tn { which }\ldots\;\qt{g_{n-1}}\;\qt{b_{n-1}}, \tn { which } \qt{g_n}\;\qt{t}\\
+\nonumber&\tn{We also know that }x\tn{ is } \qtE{s},\\
+\nonumber&\tn{which } \qtE{g_1}\;\qtE{b_1}, \tn{ which }\qtE{g_2}\;\qtE{b_2}, \tn{ which }\ldots\;\qtE{g_{n-1}}\;\qtE{b_{n-1}}, \tn{ which } \qtE{g_n}\;\qtE{t}\\
 \nonumber&\tn{that we'll call } Q(x).\\
-\nonumber&\tn{Fact: whenever }x\tn{ is }``s",\tn{ we will have }P(x)=Q(x).
+\nonumber&\tn{Fact: whenever }x\tn{ is }\qtE{s},\tn{ we will have }P(x)=Q(x).
 \end{align}
 
-\begin{exampleENG}\label{ex:English fact}
+\begin{russian}Каждый факт состоит из двух путей, допустим, $P$ и $Q$, которые мы намерены объявить эквивалентными. Пути $P$ и $Q$ обязательно должны иметь общее начало и конец, скажем, $s$ и $t$, однако их длины могут отличаться, скажем, $m$ и $n$ соответственно.
+\footnote{Если начало совпадает с концом, $s=t$, то возможна ситуация $m=0$ или $n=0$, при этом все сказанное ниже остается осмысленным и в таком случае.} 
+Мы изображает пути так 
+\begin{align}\label{dia:two paths for equivalence}
+P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
+Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\ar[r]^{g_3}&\cdots\ar[r]^{g_{n-1}}&\LMO{b_{n-1}}\ar[r]^{g_n}&\LMO{b_n=t}}
+\end{align}
+Каждой части $\ell$ олога (т.е. каждому прямоугольнику и каждой стрелке) можно сопоставить фразу естественного языка, которую мы обозначим $\qtR{\ell}$. Используя вспомогательную переменную $x$ мы можем превести на естественный язык и каждый факт. Следующая общая формула немного сложна для понимания, см. Пример \ref{ex:English fact}, но вот она. Факт $P\simeq Q$ из (\ref{dia:two paths for equivalence}) переводится на естественный язык следующим образом: \end{russian}
 
+\begin{russian}\begin{align}\label{dia:Englishification}\index{Englishification}
+&\tn{Для данного }\qtR{s}\;x\tn{ рассмотрим следующее.}\\
+\nonumber&\tn{Для известного }\qtR{s}\;x\\
+\nonumber&\tn{который }\qtR{f_1}\;\qtR{a_1},\tn{который }\qtR{f_2}\;\qtR{a_2},\\ 
+\nonumber&\ldots\tn{который }\qtR{f_{m-1}}\;\qtR{a_{m-1}},\tn{который }\qtR{f_m}\;\qtR{t},\\
+\nonumber&\tn{обозначим последнее }P(x).\\
+\nonumber&\tn{Для известного }\qtR{s}\;x\\
+\nonumber&\tn{который }\qtR{g_1}\;\qtR{b_1},\tn{который }\qtR{g_2}\;\qtR{b_2},\\
+\nonumber&\ldots\tn{который }\qtR{g_{n-1}}\;\qtR{b_{n-1}},\tn{который }\qtR{g_n}\;\qtR{t},\\
+\nonumber&\tn{обозначим последнее }Q(x).\\
+\nonumber&\tn{Факт: для любого }\qtR{s}\;x\tn{ верно равенство }P(x)=Q(x).
+\end{align}\end{russian}
+
+\begin{exampleENG}\label{ex:English fact}
 Consider the olog
 \begin{align}\label{olog:commute2}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has}\LAL{drr}{\parbox{.8in}{lives in}}&&\obox{B}{.7in}{\rr an address}\ar@{}[dll]|(.4){\checkmark}\LA{d}{is in}\\&&\smbox{C}{a city}}}
 \end{align}
-To put the fact that Diagram \ref{olog:commute2} commutes into English, we first Englishify the two paths: $F$=``a person has an address which is in a city" and $G$=``a person lives in a city". The source of both is $s$=``a person" and the target of both is $t$=``a city".
+To put the fact that Diagram \ref{olog:commute2} commutes into English, we first Englishify the two paths: $F$=“a person has an address, which is in a city” and $G$=“a person lives in a city”. The source of both is $s$=“a person” and the target of both is $t$=“a city”.
 write:
 \begin{align*}
 &\tn{Given }x,\tn{a person, consider the following. We know that } x\tn{ is a person,}\\
@@ -1535,50 +1541,72 @@ write:
 &\tn{which lives in a city}\\
 &\tn{that we'll call } Q(x).\\
 &\tn{Fact: whenever }x\tn{ is a person, we will have }P(x)=Q(x).
+\end{align*}\end{exampleENG}
+
+\begin{exampleRUS}\label{ex:English fact}
+\begin{russian}Рассмотрим олог
+\begin{align}\label{olog:commute2}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет}\LAL{drr}{\parbox{.8in}{проживает в}}&&\obox{B}{.7in}{\rr адрес}\ar@{}[dll]|(.4){\checkmark}\LA{d}{находится в}\\&&\smbox{C}{город}}}
+\end{align}
+Чтобы перевести факт коммутативности Диаграммы \ref{olog:commute2} на английский, мы вначале переведем два пути: $F$=«человек имеет адрес, который находится в городе» и $G$=«человек проживает в городе». Началом обоих является $s$=«человек», а концом — $t$=«город».
+Запишем:
+\begin{align*}
+&\tn{Для данного человека }x,\tn{ рассмотрим следующее.}\\
+&\tn{Для известного человека }x\\
+&\tn{который имеет адрес, который находится в городе}\\
+&\tn{обозначим последний }P(x).\\
+&\tn{Для известного человека }x\\
+&\tn{который живет в городе}\\
+&\tn{обозначим последний }Q(x).\\
+&\tn{Факт: для любого человека }x\tn{ верно равенство }P(x)=Q(x).
 \end{align*}
-
-\begin{russian} \end{russian}
-
-\end{exampleENG}
+\end{russian}
+\end{exampleRUS}
 
 \begin{exerciseENG}
-
 This olog was taken from \cite{Sp1}.
 \begin{align}\label{dia:phone paths}\xymatrix{&\obox{N}{1in}{a phone number}\LA{rr}{has}&&\obox{C}{.8in}{an area code}\ar@{}[dll]|{\checkmark}\LA{d}{corresponds to}\\\obox{OLP}{1.2in}{an operational landline phone}\LA{ru}{is assigned}\LAL{r}{is}&\obox{P}{1in}{a physical phone}\LAL{rr}{\parbox{.55in}{\scriptsize is currently located in}}&&\obox{R}{.5in}{a region}}
 \end{align} 
 It says that a landline phone is physically located in the region that its phone number is assigned. Translate this fact into English using the formula from \ref{dia:Englishification}.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian}Этот олог взят из \cite{Sp1}.
+\begin{align}\label{dia:phone paths}\xymatrix{&\obox{N}{1in}{телефонный номер}\LA{rr}{имеет}&&\obox{C}{.8in}{код региона}\ar@{}[dll]|{\checkmark}\LA{d}{соответствует}\\\obox{OLP}{1.2in}{стационарный телефон}\LA{ru}{присвоен номер}\LAL{r}{является}&\obox{P}{1in}{физический телефон}\LAL{rr}{\parbox{.55in}{\scriptsize размещается в}}&&\obox{R}{.5in}{регион}}
+\end{align} 
+Он говорит, что стационарный телефон физически размещается в том же регионе, к которому приписан его телефонный номер. Переведите это факт на естественный язык, используя рецепт из \ref{dia:Englishification}. \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}
-
 In the above olog (\ref{dia:phone paths}), suppose that the box \fakebox{an operational landline phone} is replaced with the box \fakebox{an operational mobile phone}. Would the diagram still commute?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian}В ологе выше (\ref{dia:phone paths}) предположим, что прямоугольник \fakebox{стационарный телефон} заменен прямоугольником \fakebox{мобильный телефон}. Будет ли диаграмма и дальше коммутировать? \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
 \subsubsection{Images / Образы}\label{sec:images}\index{olog!images}\index{image!in olog}
 
-In this section we discuss a specific kind of fact, generated by any aspect. Recall that every function has an image, meaning the subset of elements in the codomain that are "hit" by the function. For example the function $f(x)=2*x\taking \ZZ\to\ZZ$ has as image the set of all even numbers.
+In this section we discuss a specific kind of fact, generated by any aspect. Recall that every function has an image, meaning the subset of elements in the codomain that are “hit” by the function. For example the function $f(x)=2*x\taking \ZZ\to\ZZ$ has as image the set of all even numbers.
 
-\begin{russian} \end{russian}
+\begin{russian}В этом разделе мы обсудим особый вид фактов, порождаемых каждым аспектом. Напомним, что каждая функция имеет образ, под которым мы подразумеваем подмножество элементов в области значений, в которые можно «попасть» функцией. Например, для функции $f(x)=2*x\taking \ZZ\to\ZZ$ образом будет множество всех четных чисел.\end{russian}
 
-Similarly the set of mothers arises as is the image of the "has as mother" function, as shown below 
+Similarly the set of mothers arises as is the image of the “has as mother” function, as shown below 
 $$
 \xymatrix{\obox{P}{.5in}{a person}\LAL{rd}{has}\LA{rr}{$\stackrel{f\taking P\to P}{\tn{has as mother}}$}&&\obox{P}{.5in}{a person}\\
 &\obox{M=\im(f)}{.6in}{a mother}\LAL{ur}{is}\ar@{}[u]|(.6){\checkmark}
 }$$
 
-\begin{russian} \end{russian}
+\begin{russian}Аналогично, множество матерей возникает как образ функции «имеет в качестве матери» как это показано ниже
+$$
+\xymatrix{\obox{P}{.5in}{человек}\LAL{rd}{имеет}\LA{rr}{$\stackrel{f\taking P\to P}{\tn{имеет мать}}$}&&\obox{P}{.5in}{человек}\\
+&\obox{M=\im(f)}{.6in}{мать}\LAL{ur}{является}\ar@{}[u]|(.6){\checkmark}
+}$$ 
+\end{russian}
 
 \begin{exerciseENG}
-
-For each of the following types, write down a function for which it is the image, or say "not clearly an image type" 
+For each of the following types, write down a function for which it is the image, or say “not clearly an image type”:
 \sexc \fakebox{a book}
 \next \fakebox{a material that has been fabricated by a process of type $T$}
 \next \fakebox{a bicycle owner}
@@ -1586,10 +1614,18 @@ For each of the following types, write down a function for which it is the image
 \next \fakebox{a used book}
 \next \fakebox{an inhabited residence}
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian}Для каждого из следующих типов, запишите функцию, для которой оно будет образом, или скажите, что оно «не является очевидным типом-образом»:
+\sexc \fakebox{книга}
+\next \fakebox{материал, полученный обработкой типа $T$}
+\next \fakebox{владелец велосипеда}
+\next \fakebox{ребенок}
+\next \fakebox{использованная книга}
+\next \fakebox{обитаемое помещение}
+\endsexc\end{russian}
+\end{exerciseRUS}
 
 %%%%%% Section %%%%%%
 
@@ -1717,7 +1753,7 @@ $$
 
 \begin{lemmaENG}[Universal property for product]\label{lemma:up for prod}
 
-Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes \footnote{The symbol $\forall$ is read "for all"; the symbol $\exists$ is read "there exists", and the symbol $\exists!$ is read "there exists a unique". So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
+Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes \footnote{The symbol $\forall$ is read “for all”; the symbol $\exists$ is read “there exists”, and the symbol $\exists!$ is read “there exists a unique”. So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
 \begin{align}\label{dia:univ prop for products}
 \xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X\ar@{}[r]|{\checkmark}&&Y\ar@{}[l]|{\checkmark}\\\\&A\ar[luu]^{\forall f}\ar[ruu]_{\forall g}\ar@{-->}[uuuu]^{\exists !}}
 \end{align}
@@ -1749,7 +1785,7 @@ Suppose that each person in a classroom picks an element of $X$ and an element o
 
 \begin{exampleENG}
 
-Let $\RR$ be the set of real numbers. The origin in $\RR$ is an element of $\RR$. As you showed in Exercise \ref{exc:generator for set}, we can view this (or any) element of $\RR$ as a function $z\taking\singleton\to\RR$, where $\singleton$ is any set with one element. Our function $z$ "picks out the origin". Thus we can draw functions 
+Let $\RR$ be the set of real numbers. The origin in $\RR$ is an element of $\RR$. As you showed in Exercise \ref{exc:generator for set}, we can view this (or any) element of $\RR$ as a function $z\taking\singleton\to\RR$, where $\singleton$ is any set with one element. Our function $z$ “picks out the origin”. Thus we can draw functions 
 $$\xymatrix@=15pt{&\singleton\ar[ddr]^z\ar[ddl]_z\\\\\RR&&\RR}
 $$
 The universal property for products guarantees a function $\singleton\to\RR\times\RR$, which will be the origin in $\RR^2.$
@@ -1772,7 +1808,7 @@ For every set $A$ there is some nice relationship between the following three se
 
 \begin{russian} \end{russian}
 
-Hint: Do not be alarmed: this problem is a bit "recursive" in that you'll use products in your formula.
+Hint: Do not be alarmed: this problem is a bit “recursive” in that you'll use products in your formula.
 
 \begin{russian} \end{russian}
 
@@ -1780,7 +1816,7 @@ Hint: Do not be alarmed: this problem is a bit "recursive" in that you'll use pr
 
 \begin{exerciseENG}~
 
-\sexc Let $X$ and $Y$ be sets. Construct the "swap map" $s\taking X\times Y\to Y\times X$ using only the universal property for products. If $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$ are the projection functions, write $s$ in terms of the symbols $``\pi_1",``\pi_2", "(\ ,\ )",$ and $``\circ"$. 
+\sexc Let $X$ and $Y$ be sets. Construct the “swap map” $s\taking X\times Y\to Y\times X$ using only the universal property for products. If $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$ are the projection functions, write $s$ in terms of the symbols $\qtE{\pi_1}, \qtE{\pi_2}, \qtE{(\ ,\ )},$ and $\qtE{\circ}$. 
 \next Can you prove that $s$ is a isomorphism using only the universal property for product?
 \endsexc
 
@@ -1817,13 +1853,13 @@ $$m\times n\taking X\times Y\to X'\times Y'.$$
 
 \subsubsection{Ologging products / Произведения в ологах}\label{sec:ologging products}
 
-Given two objects $c,d$ in an olog, there is a canonical label $\qt{c\times d}$ for their product $c\times d$, written in terms of the labels $\qt{c}$ and $\qt{d}$. Namely, $$\qt{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qt{c}\tn{ and }y\tn{ is }\qt{d}.$$ The projections $c\from c\times d\to d$ can be labeled "yields, as $x$," and "yields, as $y$," respectively.
+Given two objects $c,d$ in an olog, there is a canonical label $\qtE{c\times d}$ for their product $c\times d$, written in terms of the labels $\qtE{c}$ and $\qtE{d}$. Namely, $$\qtE{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qtE{c}\tn{ and }y\tn{ is }\qtE{d}.$$ The projections $c\from c\times d\to d$ can be labeled “yields, as $x$,” and “yields, as $y$,” respectively.
 
 \begin{russian} \end{russian}
 
 Suppose that $e$ is another object and $p\taking e\to c$ and $q\taking e\to d$ are two arrows. By the universal property of products (Lemma \ref{lemma:up for prod}), $p$ and $q$ induce a unique arrow $e\to c\times d$ making the evident diagrams commute. This arrow can be labeled
 \begin{center}
-yields, insofar as it $\qt{p}\;\qt{c}$ and $\qt{q}\;\qt{d}$, 
+yields, insofar as it $\qtE{p}\;\qtE{c}$ and $\qtE{q}\;\qtE{d}$, 
 \end{center}
 
 \begin{russian} \end{russian}
@@ -1847,7 +1883,7 @@ $$
 
 \begin{definitionENG}\label{def:coproduct}
 
-Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the "disjoint union" of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
+Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the “disjoint union” of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
 
 \begin{russian} \end{russian}
 
@@ -1998,7 +2034,7 @@ In the following olog the types $A$ and $B$ are disjoint, so the coproduct $C=A\
 
 \begin{exampleENG}\label{ex:coproduct2}
 
-In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr an animal that can fly}\LA{rr}{labeled "A" is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled "A") or an animal that can swim (labeled "B")}&&\obox{B}{.9in}{\rr an animal that can swim}\LAL{ll}{labeled "B" is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C$, once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C$, which justifies the name "disjoint union."
+In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr an animal that can fly}\LA{rr}{labeled “A” is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled “A”) or an animal that can swim (labeled “B”)}&&\obox{B}{.9in}{\rr an animal that can swim}\LAL{ll}{labeled “B” is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C$, once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C$, which justifies the name “disjoint union.”
 
 \begin{russian} \end{russian}
 
@@ -2014,7 +2050,7 @@ Understand Example \ref{ex:coproduct2} and see if a similar idea would make sens
 
 \begin{exerciseENG}
 
-Following the section above, "Ologging products" page \pageref{sec:ologging products}, come up with a naming system for coproducts, the inclusions, and the universal maps. Try it out by making an olog (involving coproducts) discussing the idea that both a .wav file and a .mp3 file can be played on a modern computer. Be careful that your arrows are valid in the sense of Section \ref{sec:invalid aspect}.
+Following the section above, “Ologging products” page \pageref{sec:ologging products}, come up with a naming system for coproducts, the inclusions, and the universal maps. Try it out by making an olog (involving coproducts) discussing the idea that both a .wav file and a .mp3 file can be played on a modern computer. Be careful that your arrows are valid in the sense of Section \ref{sec:invalid aspect}.
 
 \begin{russian} \end{russian}
 
@@ -2067,7 +2103,7 @@ What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y$?
 
 \sexc Draw a set $X$ with five elements and a set $Y$ with three elements. Color each element of $X$ and each element of $Y$ either red, blue, or yellow,
 \footnote{You can use shadings rather than coloring, if coloring would be annoying.}
-and do so in a "random-looking" way. Considering your coloring of $X$ as a function $X\to C$, where $C=\{\tn{red, blue, yellow}\}$, and similarly obtaining a function $Y\to C$, draw the fiber product $X\times_CY$. Make sure it is colored appropriately.
+and do so in a “random-looking” way. Considering your coloring of $X$ as a function $X\to C$, where $C=\{\tn{red, blue, yellow}\}$, and similarly obtaining a function $Y\to C$, draw the fiber product $X\times_CY$. Make sure it is colored appropriately.
 \next The universal property for products guarantees a function $X\times_CY\to X\times Y$, which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
 \endsexc
 
@@ -2122,7 +2158,7 @@ Consider the following two ologs. The one on the right is the pullback of the on
 \begin{align}\label{dia:wealthy and loyal}
 \fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr a customer that is wealthy and loyal}\LAL{d}{is}\LA{r}{is}&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}
 \end{align}
-Check from Definition \ref{def:pullback} that the label, "a customer that is wealthy and loyal", is fair and straightforward as a label for the fiber product $A=B\times_DC$, given the labels on $B,C$, and $D$.
+Check from Definition \ref{def:pullback} that the label, “a customer that is wealthy and loyal”, is fair and straightforward as a label for the fiber product $A=B\times_DC$, given the labels on $B,C$, and $D$.
 
 \begin{russian} \end{russian}
 
@@ -2256,14 +2292,14 @@ Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, th
 
 \begin{russian} \end{russian}
 
-The category-theoretic fact described above says that since $A\iso B\times_DC$ and $C\iso D\times_FE$, it follows that $A\iso B\times_FE$.  That is, we can deduce the definition "a cellphone that has a bad battery is defined as a cellphone that has a battery which remains charged for less than one hour."  
+The category-theoretic fact described above says that since $A\iso B\times_DC$ and $C\iso D\times_FE$, it follows that $A\iso B\times_FE$.  That is, we can deduce the definition “a cellphone that has a bad battery is defined as a cellphone that has a battery which remains charged for less than one hour.”  
 
 \begin{russian} \end{russian}
 
 \begin{exerciseENG}~
 
-\sexc Create an olog that defines two people to be "of approximately the same height" if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
-\next In the same olog, make a box for those people whose height is approximately the same as a person named "The Virgin Mary". You may need to use images, as in Section \ref{sec:images}.
+\sexc Create an olog that defines two people to be “of approximately the same height” if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
+\next In the same olog, make a box for those people whose height is approximately the same as a person named “The Virgin Mary”. You may need to use images, as in Section \ref{sec:images}.
 \endsexc
 
 \begin{russian} \end{russian}
@@ -2346,7 +2382,7 @@ Let's look back at our lab's experiment from Application \ref{app:exp temp press
 
 \begin{russian} \end{russian}
 
-The composite of our lab's span with the online data span yields a span $T\from E''\to V$, where $E'':=E\times_PE'$. What information does this span give us? In explaining it, one might say "whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do." 
+The composite of our lab's span with the online data span yields a span $T\from E''\to V$, where $E'':=E\times_PE'$. What information does this span give us? In explaining it, one might say “whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do.” 
 
 \begin{russian} \end{russian}
 
@@ -2356,7 +2392,7 @@ The information we get this way might be seen by some as unscientific, but it ce
 
 \end{applicationENG}
 
-We can relate spans to matrices of natural numbers, and see a natural "categorification" of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
+We can relate spans to matrices of natural numbers, and see a natural “categorification” of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
 
 \begin{russian} \end{russian}
 
@@ -2421,7 +2457,7 @@ The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in
 
 \begin{exampleENG}
 
-Suppose one has designed an experiment to test a theoretical prediction. The question becomes, "when does the theory match the experiment?" The answer is given by the equalizer of the following diagram:
+Suppose one has designed an experiment to test a theoretical prediction. The question becomes, “when does the theory match the experiment?” The answer is given by the equalizer of the following diagram:
 $$\xymatrix{
 \obox{}{.5in}{an input}\ar@<1ex>[rr]^{\tn{should, according to theory, yield}}\ar@<-1ex>[rr]_{\tn{according to experiment yields}}&\hspace{1in}&\obox{}{.6in}{an output}
 }$$
@@ -2617,7 +2653,7 @@ Consider the binary relation $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$.
 \begin{exerciseENG}
 
 Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and let $R\ss X\times X$ denote the relation such that $(x,y)\in R$ iff there exists an arrow connecting $x$ to $y$.
-\footnote{The word {\em iff} means "if and only if". In this case we are saying that the pair $(x,y)$ is in $R$ if and only if there exists an arrow connecting $x$ and $y$.\index{iff}}
+\footnote{The word {\em iff} means “if and only if”. In this case we are saying that the pair $(x,y)$ is in $R$ if and only if there exists an arrow connecting $x$ and $y$.\index{iff}}
 \sexc What is the equivalence relation $\sim$ generated by $R$? 
 \next What is the quotient $X/\sim$?
 \endsexc
@@ -2652,7 +2688,7 @@ commutes. Given the setup of Diagram \ref{dia:pushout} we define the {\em pushou
 
 \begin{exampleENG}
 
-Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusive, let $Y=\{y\in\RR\|1\leq y\leq 2\}$ by the set of numbers between 1 and 2, inclusive, and let $W=\{1\}$. Then the pushout $X\From{f} W\To{g} Y$, where $f$ and $g$ are the "obvious" functions ($1\mapsto 1$) is $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, as expected. When we eventually get to general colimits, one can check that the whole real line can be made by patching together intervals in this way.
+Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusive, let $Y=\{y\in\RR\|1\leq y\leq 2\}$ by the set of numbers between 1 and 2, inclusive, and let $W=\{1\}$. Then the pushout $X\From{f} W\To{g} Y$, where $f$ and $g$ are the “obvious” functions ($1\mapsto 1$) is $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, as expected. When we eventually get to general colimits, one can check that the whole real line can be made by patching together intervals in this way.
 
 \begin{russian} \end{russian}
 
@@ -2671,14 +2707,14 @@ In the left-hand olog (\ref{dia:po1}, the two arrows are inclusions: the author 
 
 \begin{russian} \end{russian}
 
-\begin{align}\label{dia:po2}\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase "too hard"}\\\obox{B}{.6in}{\rr a college course}}}\hsp&\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase "too hard"}\LA{d}{}\\\obox{B}{.6in}{\rr a college course}\LA{r}{}&\obox{\parbox{.6in}{\vspace{.1in}\tiny$D=B\!\sqcup_A\!C$}}{1in}{\rr a college course, where every mathematics course is replaced by an utterance of the phrase "too hard"}}}
+\begin{align}\label{dia:po2}\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase “too hard”}\\\obox{B}{.6in}{\rr a college course}}}\hsp&\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase “too hard”}\LA{d}{}\\\obox{B}{.6in}{\rr a college course}\LA{r}{}&\obox{\parbox{.6in}{\vspace{.1in}\tiny$D=B\!\sqcup_A\!C$}}{1in}{\rr a college course, where every mathematics course is replaced by an utterance of the phrase “too hard”}}}
 \end{align}
 
-In Olog (\ref{dia:po1}), the shoulder is seen as part of the arm and part of the torso.  When taking the union of these two parts, we do not want to "double-count" the shoulder (as would be done in the coproduct $B\sqcup C$, see Example \ref{ex:coproduct2}).  Thus we create a new type $A$ for cells in the shoulder, which are considered the same whether viewed as cells in the arm or cells in the torso.  In general, if one wishes to take two things and glue them together, with $A$ as the glue and with $B$ and $C$ as the two things to be glued, the union is the pushout $B\sqcup_AC$. (A nice image of this can be seen in the setting of topological spaces, see Example \ref{ex:pushout in Top}.)
+In Olog (\ref{dia:po1}), the shoulder is seen as part of the arm and part of the torso.  When taking the union of these two parts, we do not want to “double-count” the shoulder (as would be done in the coproduct $B\sqcup C$, see Example \ref{ex:coproduct2}).  Thus we create a new type $A$ for cells in the shoulder, which are considered the same whether viewed as cells in the arm or cells in the torso.  In general, if one wishes to take two things and glue them together, with $A$ as the glue and with $B$ and $C$ as the two things to be glued, the union is the pushout $B\sqcup_AC$. (A nice image of this can be seen in the setting of topological spaces, see Example \ref{ex:pushout in Top}.)
 
 \begin{russian} \end{russian}
 
-In Olog (\ref{dia:po2}), if every mathematics course is simply "too hard," then when reading off a list of courses, each math course will not be read aloud but simply read as "too hard."  To form $D$ we begin by taking the union of $B$ and $C$, and then we consider everything in $A$ to be the same whether one looks at it as a course or as the phrase "too hard."  The math courses are all blurred together as one thing.  Thus we see that the power to equate different things can be exercised with pushouts.
+In Olog (\ref{dia:po2}), if every mathematics course is simply “too hard,” then when reading off a list of courses, each math course will not be read aloud but simply read as “too hard.”  To form $D$ we begin by taking the union of $B$ and $C$, and then we consider everything in $A$ to be the same whether one looks at it as a course or as the phrase “too hard.”  The math courses are all blurred together as one thing.  Thus we see that the power to equate different things can be exercised with pushouts.
 
 \begin{russian} \end{russian}
 
@@ -2821,7 +2857,7 @@ Create an olog that includes sets $X$ and $Y$, and functions $f\taking X\to Y$ a
 
 \subsection{Currying / Каррирование}\label{sec:currying}\index{currying}\index{materials!force extension curves}
 
-Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to "curry" the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information. 
+Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to “curry” the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information. 
 
 \begin{russian} \end{russian}
 
@@ -2921,7 +2957,7 @@ In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR
 
 \subsection{Arithmetic of sets / Арифметика множеств}\label{sec:arithmetic of sets}\index{set!arithmetic of}
 
-Proposition \ref{prop:arithmetic of sets} summarizes the properties of products, coproducts, and exponentials, and shows them all in a familiar light, namely that of arithmetic. In fact, one can think of the natural numbers as literally being the isomorphism classes of finite sets---that's what they are used for in counting. Consider the standard procedure for counting the elements of a set $S$, say cows in a field: one points to an element in $S$ and simultaneously says "1", points to another element in $S$ and simultaneously says "2", and so on until finished. This procedure amounts to nothing more than creating an isomorphism (one-to-one mapping) between $S$ and some set $\ul{n}$. 
+Proposition \ref{prop:arithmetic of sets} summarizes the properties of products, coproducts, and exponentials, and shows them all in a familiar light, namely that of arithmetic. In fact, one can think of the natural numbers as literally being the isomorphism classes of finite sets---that's what they are used for in counting. Consider the standard procedure for counting the elements of a set $S$, say cows in a field: one points to an element in $S$ and simultaneously says “1”, points to another element in $S$ and simultaneously says “2”, and so on until finished. This procedure amounts to nothing more than creating an isomorphism (one-to-one mapping) between $S$ and some set $\ul{n}$. 
 
 \begin{russian} \end{russian}
 
@@ -3018,7 +3054,7 @@ For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\P
 \sexc How many elements does $\PP(\emptyset)$ have? 
 \next How many elements does $\PP(\singleton)$ have? 
 \next How many elements does $\PP(\{1,2,3,4,5,6\})$ have? 
-\next Any idea why they may have named it "power set"?
+\next Any idea why they may have named it “power set”?
 \endsexc
 
 \begin{russian} \end{russian}
@@ -3068,7 +3104,7 @@ Thus, the 0-simplex $\Delta^0$, the 1-simplex $\Delta^1$, the 2-simplex $\Delta^
 
 \begin{russian} \end{russian}
 
-The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or "gluing together" of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
+The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or “gluing together” of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
 $$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
 
 \begin{russian} \end{russian}
@@ -3275,9 +3311,9 @@ $$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$ such tha
 \footnote{Of course, this diagram is symmetrical, so the same ideas hold if $g$ is an injection and $f$ is any map.} 
 In this case, there are nice labeling systems for $f', g'$, and $X\times_ZY$. Namely:
 \begin{itemize}
-\item "is" is an appropriate label for $f'$, 
+\item “is” is an appropriate label for $f'$, 
 \item the label for $g$ is an appropriate label for $g'$,
-\item (the label for $X$, then "which", then the label for $g$, then the label for $Y$) is an appropriate label for $X\times_ZY$.
+\item (the label for $X$, then “which”, then the label for $g$, then the label for $Y$) is an appropriate label for $X\times_ZY$.
 \end{itemize}
 
 \begin{russian} \end{russian}
@@ -3332,7 +3368,7 @@ In this section we prepare ourselves for considering categories other than $\Set
 
 \subsubsection{Multisets / Мультимножества}\index{multiset}
 
-Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount of the document, we will not generally have $WC(X)=|X|$. The reason is that a set cannot contain the same element more than once, so words like "the" might be undercounted in $|X|$. A {\em multiset} is a set in which elements can be assigned a multiplicity, i.e. a number of times they are to be counted. 
+Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount of the document, we will not generally have $WC(X)=|X|$. The reason is that a set cannot contain the same element more than once, so words like “the” might be undercounted in $|X|$. A {\em multiset} is a set in which elements can be assigned a multiplicity, i.e. a number of times they are to be counted. 
 
 \begin{russian} \end{russian}
 
@@ -3411,7 +3447,7 @@ Consider the multisets described in Exercise \ref{exc:multiset 1}.
 %
 %We could similarly define a $k$-handed poker deal for any $1\leq k\leq 10$. We focus here on $1$-handed poker deals. For any $n\leq 52$, let $\sim_n$ denote the equivalence relation on $A_n$ for which two arrangements are equivalent if one is a permutation (reordering) of the other. Let $H_n=A_n/\sim_n$ be the quotient; we call its elements {\em $n$-card hands}. 
 %
-%In "5-card poker", the 5-card hands are classified by patterns of suits and ranks in the cards. More precisely, given a 5-card arrangement $f\taking \{1,2,3,4,5\}\to C$, we consider the compositions with $\pi_1\taking C\to S$ and $\pi_2\taking C\to R$, which we denote $f_S:=\pi_1\circ f$ and $f_R:=\pi_2\circ f$. We are concerned only with the cardinalities of the fibers of $f_S$ and $f_R$. For example if some suit $s\in S$ has $|f_S^\m1(s)|=5$ we say that $f$ (or its equivalence class in $H_5$) is a {\em flush}. If for ranks $r_1,r_2$ we have $|f_R^\m1(r_1)|=2$ and $|f_R^\m1(r_2)|=3$, we call it a {\em full house}. 
+%In “5-card poker”, the 5-card hands are classified by patterns of suits and ranks in the cards. More precisely, given a 5-card arrangement $f\taking \{1,2,3,4,5\}\to C$, we consider the compositions with $\pi_1\taking C\to S$ and $\pi_2\taking C\to R$, which we denote $f_S:=\pi_1\circ f$ and $f_R:=\pi_2\circ f$. We are concerned only with the cardinalities of the fibers of $f_S$ and $f_R$. For example if some suit $s\in S$ has $|f_S^\m1(s)|=5$ we say that $f$ (or its equivalence class in $H_5$) is a {\em flush}. If for ranks $r_1,r_2$ we have $|f_R^\m1(r_1)|=2$ and $|f_R^\m1(r_2)|=3$, we call it a {\em full house}. 
 %
 %\end{exampleENG}
 
@@ -3457,7 +3493,7 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can
 
 \subsubsection{Indexed sets / Индексированные множества}\label{sec:indexed sets}\index{indexed set}
 
-Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the "obvious thing".
+Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the “obvious thing”.
 
 \begin{russian} \end{russian}
 
@@ -3501,26 +3537,26 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 \bibliographystyle{amsalpha}
 \begin{thebibliography}{SGWB}\rr
 
-\bibitem [Ati]{Ati} Atiyah, M. (1989) "Topological quantum field theories". {\em Publications Math\'{e}matiques de l'IH\'{E}S} 68 (68), pp. 175--186.
+\bibitem [Ati]{Ati} Atiyah, M. (1989) “Topological quantum field theories”. {\em Publications Math\'{e}matiques de l'IH\'{E}S} 68 (68), pp. 175--186.
 
 \bibitem [Axl]{Axl} Axler, S. (1997) {\em Linear algebra done right}. Springer. 
 
 \bibitem [Awo]{Awo} S. Awodey. (2010) {\em Category theory.} Second edition. Oxford Logic Guides, 52. Oxford University Press, Oxford.
 
-\bibitem [Bar]{Bar} Bralow, H. (1961) "Possible principles underlying the transformation of sensory messages". {\em Sensory communication}, pp. 217 -- 234.
+\bibitem [Bar]{Bar} Bralow, H. (1961) “Possible principles underlying the transformation of sensory messages”. {\em Sensory communication}, pp. 217 -- 234.
 
-\bibitem [BD]{BD} Baez, J.C.; Dolan, J. (1995) "Higher-dimensional algebra and topological quantum field theory". {\em Journal of mathematical physics} vol 36, 6073.
+\bibitem [BD]{BD} Baez, J.C.; Dolan, J. (1995) “Higher-dimensional algebra and topological quantum field theory”. {\em Journal of mathematical physics} vol 36, 6073.
 
-\bibitem [BFL]{BFL} Baez, J.C.; Fritz, T.; Leinster, T. (2011) "A characterization of entropy in terms of information loss." {\em Entropy} 13, no. 11.
+\bibitem [BFL]{BFL} Baez, J.C.; Fritz, T.; Leinster, T. (2011) “A characterization of entropy in terms of information loss.” {\em Entropy} 13, no. 11.
 
-\bibitem[BS]{BS} Baez, J.C.; Stay, M. (2011) "Physics, topology, logic and computation: a Rosetta Stone." {\em New structures for physics}, 95–172. Lecture Notes in Phys., 813, Springer, Heidelberg.
+\bibitem[BS]{BS} Baez, J.C.; Stay, M. (2011) “Physics, topology, logic and computation: a Rosetta Stone.” {\em New structures for physics}, 95–172. Lecture Notes in Phys., 813, Springer, Heidelberg.
 
-\bibitem [BP1]{BP1} Brown, R.; Porter, T. (2006) "Category Theory: an abstract setting for
+\bibitem [BP1]{BP1} Brown, R.; Porter, T. (2006) “Category Theory: an abstract setting for
 analogy and comparison, In: {\em What is Category Theory?} Advanced
 Studies in Mathematics and Logic, Polimetrica Publisher, Italy, pp. 257-274.
 
-\bibitem [BP2]{BP2} Brown, R.; Porter, T. (2003) "Category theory and higher dimensional
-algebra: potential descriptive tools in neuroscience", {\em Proceedings
+\bibitem [BP2]{BP2} Brown, R.; Porter, T. (2003) “Category theory and higher dimensional
+algebra: potential descriptive tools in neuroscience”, {\em Proceedings
 of the International Conference on Theoretical Neurobiology, Delhi}, edited by Nandini Singh, National Brain Research
 Centre, Conference Proceedings 1 80-92. 
 
@@ -3530,34 +3566,34 @@ Centre, Conference Proceedings 1 80-92.
 
 \bibitem [Dia]{Dia} Diaconescu, R. (2008) {\em Institution-independent model theory} Springer.
 
-\bibitem[DI]{DI} D\"{o}ring, A.; Isham, C. J. "A topos foundation for theories of physics. I. Formal languages for physics." 
+\bibitem[DI]{DI} D\"{o}ring, A.; Isham, C. J. “A topos foundation for theories of physics. I. Formal languages for physics.” 
 {\em J. Math. Phys.} 49 (2008), no. 5, 053515.
 
 \bibitem[EV]{EV} Ehresmann, A.C.; Vanbremeersch, J.P. (2007) {\em Memory evolutive systems; hierarchy, emergence, cognition}. Elsevier.
 
-\bibitem[Eve]{Eve} Everett III, H. (1973). "The theory of the universal wave function." In {\em The many-worlds interpretation of quantum mechanics} (Vol. 1, p. 3).
+\bibitem[Eve]{Eve} Everett III, H. (1973). “The theory of the universal wave function.” In {\em The many-worlds interpretation of quantum mechanics} (Vol. 1, p. 3).
 
-\bibitem [Gog]{Gog} Goguen, J. (1992) "Sheaf semantics for concurrent interacting objects" {\em Mathematical structures in Computer Science} Vol 2, pp. 159 -- 191.
+\bibitem [Gog]{Gog} Goguen, J. (1992) “Sheaf semantics for concurrent interacting objects” {\em Mathematical structures in Computer Science} Vol 2, pp. 159 -- 191.
 
 \bibitem [Gro]{Gro} Grothendieck, A. (1971). {\em S\'eminaire de G\'eom\'etrie Alg\'ebrique du Bois Marie - 1960-61 - Rev\^etements \'etales et groupe fondamental - (SGA 1)} (Lecture notes in mathematics 224) (in French). Berlin; New York: Springer-Verlag.
 
 \bibitem [Kro]{Kro} Kr\"{o}mer, R. (2007). {\em Tool and Object: A History and Philosophy of Category Theory}, Birkhauser.
 
-\bibitem [Lam]{Lam} Lambek, J. (1980) "From $\lambda$-calculus to Cartesian closed categories". In {\em Formalism}, Academic Press, London, pp. 375 -- 402.
+\bibitem [Lam]{Lam} Lambek, J. (1980) “From $\lambda$-calculus to Cartesian closed categories”. In {\em Formalism}, Academic Press, London, pp. 375 -- 402.
 
-\bibitem [Law]{Law} Lawvere, F.W. (2005) "An elementary theory of the category of sets (long version) with
-   commentary." (Reprinted and expanded from Proc. Nat. Acad. Sci. U.S.A. {\bf 52}
+\bibitem [Law]{Law} Lawvere, F.W. (2005) “An elementary theory of the category of sets (long version) with
+   commentary.” (Reprinted and expanded from Proc. Nat. Acad. Sci. U.S.A. {\bf 52}
    (1964)) {\em Repr. Theory Appl. Categ.} 11, pp. 1 -- 35.
    
-\bibitem [Kho]{Kho} Khovanov, M. (2000) "A categorificiation of the Jones polynomial" {\em Duke Math J.}.
+\bibitem [Kho]{Kho} Khovanov, M. (2000) “A categorificiation of the Jones polynomial” {\em Duke Math J.}.
 
 \bibitem [Le1]{Le1} Leinster, T. (2004) {\em Higher Operads, Higher Categories}. London Mathematical Society Lecture Note Series 298, Cambridge University Press.
 
-\bibitem [Le2]{Le2} Leinster, T. (2012) "Rethinking set theory". ePrint available \url{http://arxiv.org/abs/1212.6543}.
+\bibitem [Le2]{Le2} Leinster, T. (2012) “Rethinking set theory”. ePrint available \url{http://arxiv.org/abs/1212.6543}.
 
-\bibitem [Lin]{Lin} Linsker, R. (1988) "Self-organization in a perceptual network". {\em Computer} 21, no. 3, pp. 105 -- 117.
+\bibitem [Lin]{Lin} Linsker, R. (1988) “Self-organization in a perceptual network”. {\em Computer} 21, no. 3, pp. 105 -- 117.
 
-\bibitem [LM]{LM} Landry, E.; Marquis, J-P., 2005, "Categories in Contexts: historical, foundational, and philosophical." {\em Philosophia Mathematica}, (3), vol. 13, no. 1, 1 -- 43.
+\bibitem [LM]{LM} Landry, E.; Marquis, J-P., 2005, “Categories in Contexts: historical, foundational, and philosophical.” {\em Philosophia Mathematica}, (3), vol. 13, no. 1, 1 -- 43.
 
 \bibitem [LS]{LS} F.W. Lawvere, S.H. Schanuel. (2009) {\em Conceptual mathematics. 
 A first introduction to categories.} Second edition. Cambridge University Press, Cambridge.
@@ -3568,33 +3604,33 @@ A first introduction to categories.} Second edition. Cambridge University Press,
 
 \bibitem[Mar1]{Mar1} Marquis, J-P. (2009) {\em From a Geometrical Point of View: a study in the history and philosophy of category theory}, Springer.
 
-\bibitem [Mar2]{Mar2} Marquis, J-P, "Category Theory", {\em The Stanford Encyclopedia of Philosophy} (Spring 2011 Edition), Edward N. Zalta (ed.), \url{http://plato.stanford.edu/archives/spr2011/entries/category-theory}
+\bibitem [Mar2]{Mar2} Marquis, J-P, “Category Theory”, {\em The Stanford Encyclopedia of Philosophy} (Spring 2011 Edition), Edward N. Zalta (ed.), \url{http://plato.stanford.edu/archives/spr2011/entries/category-theory}
 
 \bibitem[Min]{Min} Minsky, M. {\em The Society of Mind.}  Simon and Schuster, NY 1985.
 
-\bibitem[Mog]{Mog} Moggi, E. (1989) "A category-theoretic account of program modules." {\em Category theory and computer science (Manchester, 1989),} 101–117, Lecture Notes in Comput. Sci., 389, Springer, Berlin. 
+\bibitem[Mog]{Mog} Moggi, E. (1989) “A category-theoretic account of program modules.” {\em Category theory and computer science (Manchester, 1989),} 101–117, Lecture Notes in Comput. Sci., 389, Springer, Berlin. 
 
 \bibitem [nLa]{nLa} nLab authors.  \url{http://ncatlab.org/nlab/show/HomePage}
 
 \bibitem [Pen]{Pen} Penrose, R. (2006) {\em The road to reality}. Random house.
 
-\bibitem [RS]{RS} Radul, A.; Sussman, G.J. (2009). "The art of the propagator". {\em MIT Computer science and artificial intelligence laboratory technical report.}
+\bibitem [RS]{RS} Radul, A.; Sussman, G.J. (2009). “The art of the propagator”. {\em MIT Computer science and artificial intelligence laboratory technical report.}
 
-\bibitem [Sp1]{Sp1} Spivak, D.I. (2012) "Functorial data migration". {\em Information and communication} 
+\bibitem [Sp1]{Sp1} Spivak, D.I. (2012) “Functorial data migration”. {\em Information and communication} 
 
-\bibitem [Sp2]{Sp2} Spivak, D.I. (2012) "Queries and constraints via lifting problems". Submitted to {\em Mathematical structures in computer science}. ePrint available: \url{http://arxiv.org/abs/1202.2591}
+\bibitem [Sp2]{Sp2} Spivak, D.I. (2012) “Queries and constraints via lifting problems”. Submitted to {\em Mathematical structures in computer science}. ePrint available: \url{http://arxiv.org/abs/1202.2591}
 
-\bibitem [Sp3]{Sp3} Spivak, D.I. (2012) "Kleisli database instances". ePrint available: \url{http://arxiv.org/abs/1209.1011}
+\bibitem [Sp3]{Sp3} Spivak, D.I. (2012) “Kleisli database instances”. ePrint available: \url{http://arxiv.org/abs/1209.1011}
 
-\bibitem [Sp4]{Sp4} Spivak, D.I. (2013) "The operad of wiring diagrams: Formalizing a graphical language for databases, recursion, and plug-and-play circuits". Available online: \url{http://arxiv.org/abs/1305.0297}
+\bibitem [Sp4]{Sp4} Spivak, D.I. (2013) “The operad of wiring diagrams: Formalizing a graphical language for databases, recursion, and plug-and-play circuits”. Available online: \url{http://arxiv.org/abs/1305.0297}
 
-\bibitem[SGWB]{SGWB} Spivak D.I., Giesa T., Wood E., Buehler M.J. (2011) "Category Theoretic Analysis of Hierarchical Protein Materials and Social Networks." PLoS ONE 6(9): e23911. doi:10.1371/journal.pone.0023911
+\bibitem[SGWB]{SGWB} Spivak D.I., Giesa T., Wood E., Buehler M.J. (2011) “Category Theoretic Analysis of Hierarchical Protein Materials and Social Networks.” PLoS ONE 6(9): e23911. doi:10.1371/journal.pone.0023911
 
-\bibitem[SK]{SK} Spivak, D.I., Kent, R.E. (2012) "Ologs: A Categorical Framework for Knowledge Representation." {\em PLoS ONE} 7(1): e24274. doi:10.1371/journal.pone.0024274.
+\bibitem[SK]{SK} Spivak, D.I., Kent, R.E. (2012) “Ologs: A Categorical Framework for Knowledge Representation.” {\em PLoS ONE} 7(1): e24274. doi:10.1371/journal.pone.0024274.
 
-\bibitem[WeS]{WeS} Weinberger, S. (2011) "What is... Persistent Homology?" AMS.
+\bibitem[WeS]{WeS} Weinberger, S. (2011) “What is... Persistent Homology?” AMS.
 
-\bibitem[WeA]{WeA} Weinstein, A. (1996) "Groupoids: unifying internal and external symmetry. {\em Notices of the AMS} Vol 43, no. 7, pp. 744 -- 752.
+\bibitem[WeA]{WeA} Weinstein, A. (1996) “Groupoids: unifying internal and external symmetry. {\em Notices of the AMS} Vol 43, no. 7, pp. 744 -- 752.
 
 \bibitem[Wik]{Wik} \href{http://www.wikipedia.org}{\text Wikipedia} (multiple authors). Various articles, all linked with a hyperreference are scattered throughout this text. All accessed December 6, 2012 -- \today.
 
