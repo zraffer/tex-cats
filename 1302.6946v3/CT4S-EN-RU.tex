@@ -299,7 +299,7 @@
 \newenvironment{proofENG}{\begin{proof}[Proof (original)]}{\end{proof}}
 \newenvironment{exerciseENG}{\begin{excENG}}{\hspace*{\fill}$\lozenge$\end{excENG}}
 \newenvironment{applicationENG}{\begin{appENG}}{\hspace*{\fill}$\lozenge\lozenge$\end{appENG}}
-\newenvironment{sloganENG}{\addtocounter{subsection}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsection}. \begin{quote}“\slshape}{”\end{quote}\end{sloppypar}\vspace{.1in}}
+\newenvironment{sloganENG}{\addtocounter{envENG}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{envENG}: \begin{quote}{\bf “}\slshape}{{\bf ”}\end{quote}\end{sloppypar}\vspace{.1in}}
 
 %%%%%%%%%%%%%%%% заголовки теорем, RUS
 
@@ -327,7 +327,7 @@
 \newenvironment{proofRUS}{\begin{proof}[Доказательство]}{\end{proof}}
 \newenvironment{exerciseRUS}{\begin{excRUS}}{\hspace*{\fill}$\lozenge$\end{excRUS}}
 \newenvironment{applicationRUS}{\begin{appRUS}}{\hspace*{\fill}$\lozenge\lozenge$\end{appRUS}}
-\newenvironment{sloganRUS}{\begin{russian}\addtocounter{subsection}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Лозунг}\;\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsection}. \begin{quote}«\slshape}{»\end{quote}\end{sloppypar}\vspace{.1in}\end{russian}}
+\newenvironment{sloganRUS}{\begin{russian}\addtocounter{envENG}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Лозунг}\;\arabic{envENG}: \begin{quote}{\bf «}\slshape}{{\bf »}\end{quote}\end{sloppypar}\vspace{.1in}\end{russian}}
 
 %%%%%%%%%%%%%%%% 
 
@@ -1633,23 +1633,24 @@ For each of the following types, write down a function for which it is the image
 
 In this section we introduce two concepts that are likely to be familiar, although perhaps not by their category-theoretic names, product and coproduct. Each is an example of a large class of ideas that exist far beyond the realm of sets.
 
-\begin{russian} \end{russian}
+\begin{russian}В данном разделе мы введем два понятия, которые, скорее всего, известны читателю, хотя и, возможно, не под их теоретико-категорными именами: произведение и копроизведение. Каждое из них является представителем большого класса идей, выходящих далеко за рамки теории множеств. \end{russian}
 
 %%%% Subsection %%%%
 
 \subsection{Products / Произведения}\label{sec:products}\index{products!of sets}
 
 \begin{definitionENG}
-
 Let $X$ and $Y$ be sets. The {\em product of $X$ and $Y$}, denoted $X\times Y$,\index{a symbol!$\times$} is defined as the set of ordered pairs $(x,y)$ where $x\in X$ and $y\in Y$. Symbolically, $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ There are two natural {\em projection functions} $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
 $$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exampleENG}\label{ex:grid1}[Grid of dots]\index{product!as grid}
+\begin{definitionRUS}
+\begin{russian}Пусть $X$ и $Y$ — множества. {\em Произведение $X$ и $Y$}, обозначаемое $X\times Y$,\index{a symbol!$\times$} определяется как множество упорядоченных пар $(x,y)$, где $x\in X$ и $y\in Y$. На языке символов: $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ Имеются две естественные {\em функции проектирования} (или просто {\em проекции}) $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
+$$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
+\end{russian}
+\end{definitionRUS}
 
+\begin{exampleENG}\label{ex:grid1}[Grid of dots]\index{product!as grid}
 Let $X=\{1,2,3,4,5,6\}$ and $Y=\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$. Then we can draw $X\times Y$ as a 6-by-4 grid of dots, and the projections as projections
 \begin{align}
 \parbox{2.9in}{\begin{center}\small $X\times Y$\vspace{-.1in}\end{center}\fbox{
@@ -1674,60 +1675,81 @@ Let $X=\{1,2,3,4,5,6\}$ and $Y=\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$
 \LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}
 }}\begin{center}\hspace{-2.6in}\small$X$\end{center}}
 \end{align}
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
+\begin{exampleRUS}\label{ex:grid1}[Сетка из точек]\index{product!as grid}
+\begin{russian}Пусть $X=\{1,2,3,4,5,6\}$ и $Y=\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$. Тогда мы можем изобразить $X\times Y$ в виде состоящей из точек таблицы 6-на-4, а функции проектирования — в виде следующих геометрических проекций
+\begin{align}
+\parbox{2.9in}{\begin{center}\small $X\times Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=10pt{
+\LMO{(1,\clubsuit)}&\LMO{(2,\clubsuit)}&\LMO{(3,\clubsuit)}&\LMO{(4,\clubsuit)}&\LMO{(5,\clubsuit)}&\LMO{(6,\clubsuit)}\\
+\LMO{(1,\diamondsuit)}&\LMO{(2,\diamondsuit)}&\LMO{(3,\diamondsuit)}&\LMO{(4,\diamondsuit)}&\LMO{(5,\diamondsuit)}&\LMO{(6,\diamondsuit)}\\
+\LMO{(1,\heartsuit)}&\LMO{(2,\heartsuit)}&\LMO{(3,\heartsuit)}&\LMO{(4,\heartsuit)}&\LMO{(5,\heartsuit)}&\LMO{(6,\heartsuit)}\\
+\LMO{(1,\spadesuit)}&\LMO{(2,\spadesuit)}&\LMO{(3,\spadesuit)}&\LMO{(4,\spadesuit)}&\LMO{(5,\spadesuit)}&\LMO{(6,\spadesuit)}\\
+}}}
+\parbox{.9in}{
+\xymatrix{~\ar[rr]^{\pi_2}&&~}
+}
+\parbox{.3in}{\begin{center}\small $Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=10pt{
+\LMO{\clubsuit}\\\LMO{\diamondsuit}\\\LMO{\heartsuit}\\\LMO{\spadesuit}
+}}}
+\\\nonumber
+\parbox{1in}{\hspace{-1.95in}\xymatrix{~\ar[dd]_{\pi_1}\\\\~}}
+\\\nonumber
+\parbox{2.9in}{\hspace{-1.2in}\fbox{
+\xymatrix@=24pt{
+\LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}
+}}\begin{center}\hspace{-2.6in}\small$X$\end{center}}
+\end{align}\end{russian}
+\end{exampleRUS}
+
 \begin{applicationENG}
-
 A traditional (Mendelian) way to predict the genotype of offspring based on the genotype of its parents is by the use of \href{http://en.wikipedia.org/wiki/Punnett_square}{Punnett squares}. If $F$ is the set of possible genotypes for the female parent and $M$ is the set of possible genotypes of the male parent, then $F\times M$ is drawn as a square, called a Punnett square, in which every combination is drawn. 
-
-\begin{russian} \end{russian}
-
 \end{applicationENG}
+
+\begin{applicationRUS}
+\begin{russian}A traditional (Mendelian) way to predict the genotype of offspring based on the genotype of its parents is by the use of \href{http://en.wikipedia.org/wiki/Punnett_square}{Punnett squares}. If $F$ is the set of possible genotypes for the female parent and $M$ is the set of possible genotypes of the male parent, then $F\times M$ is drawn as a square, called a Punnett square, in which every combination is drawn. \end{russian}
+\end{applicationRUS}
 
 \begin{exerciseENG}
-
 How many elements does the set $\{a,b,c,d\}\times\{1,2,3\}$ have?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
+\begin{exerciseRUS}
+\begin{russian}How many elements does the set $\{a,b,c,d\}\times\{1,2,3\}$ have?\end{russian}
+\end{exerciseRUS}
+
 \begin{applicationENG}
-
 Suppose we are conducting experiments about the mechanical properties of materials, as in Application \ref{app:force-extension}. For each material sample we will produce multiple data points in the set $\fakebox{extension}\times\fakebox{force}\iso\RR\times\RR$.
-
-\begin{russian} \end{russian}
-
 \end{applicationENG}
 
-\begin{remarkENG}
+\begin{applicationRUS}
+\begin{russian} \end{russian}
+\end{applicationRUS}
 
+\begin{remarkENG}
 It is possible to take the product of more than two sets as well. For example, if $A,B,$ and $C$ are sets then $A\times B\times C$ is the set of triples, 
 $$A\times B\times C:=\{(a,b,c)\|a\in A, b\in B, c\in C\}.$$
 
-\begin{russian} \end{russian}
-
 This kind of generality is useful in understanding multiple dimensions, e.g. what physicists mean by 10-dimensional space. It comes under the heading of {\em limits}, which we will see in Section \ref{sec:lims and colims in a cat}.
-
-\begin{russian} \end{russian}
-
 \end{remarkENG}
 
-\begin{exampleENG}\label{ex:R2}
+\begin{remarkRUS}
+\begin{russian} \end{russian}
+\end{remarkRUS}
 
+\begin{exampleENG}\label{ex:R2}
 Let $\RR$\index{a symbol!$\RR$} be the set of real numbers. By $\RR^2$ we mean $\RR\times\RR$ (though see Exercise \ref{exc:two R2s}). Similarly, for any $n\in\NN$, we define $\RR^n$ to be the product of $n$ copies of $\RR$. 
 
 According to \cite{Pen}, Aristotle seems to have conceived of space as something like $S:=\RR^3$ and of time as something like $T:=\RR$. Spacetime, had he conceived of it, would probably have been $S\times T\iso\RR^4$. He of course did not have access to this kind of abstraction, which was probably due to Descartes. 
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exerciseENG}
+\begin{exampleRUS}\label{ex:R2}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exerciseENG}
 Let $\ZZ$ denote the set of integers, and let $+\taking\ZZ\times\ZZ\to\ZZ$ denote the addition function and $\cdot\taking\ZZ\times\ZZ\to\ZZ$ denote the multiplication function. Which of the following diagrams commute?
 \sexc $$\xymatrix{
 \ZZ\times\ZZ\times\ZZ\ar[rr]^-{(a,b,c)\mapsto(a\cdot b,a\cdot c)}\ar[d]_{(a,b,c)\mapsto(a+b,c)}&\hsp&\ZZ\times\ZZ\ar[d]^{(x,y)\mapsto x+y}\\
@@ -1742,97 +1764,89 @@ $$
 \ZZ\ar[rr]^{x\mapsto (x,1)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
 $$
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
 \subsubsection{Universal property for products / Универсальное свойство произведений}\index{products!universal property of}\index{universal property!products}
 
 \begin{lemmaENG}[Universal property for product]\label{lemma:up for prod}
-
 Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes \footnote{The symbol $\forall$ is read “for all”; the symbol $\exists$ is read “there exists”, and the symbol $\exists!$ is read “there exists a unique”. So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
 \begin{align}\label{dia:univ prop for products}
 \xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X\ar@{}[r]|{\checkmark}&&Y\ar@{}[l]|{\checkmark}\\\\&A\ar[luu]^{\forall f}\ar[ruu]_{\forall g}\ar@{-->}[uuuu]^{\exists !}}
 \end{align}
 We might write the unique function as $$\prodmap{f}{g}\taking A\to X\times Y.$$
-
-\begin{russian} \end{russian}
-
 \end{lemmaENG}
 
-\begin{proofENG}
-
-Suppose given $f,g$ as above. To provide a function $\ell\taking A\to X\times Y$ is equivalent to providing an element $\ell(a)\in X\times Y$ for each $a\in A$. We need such a function for which $\pi_1\circ \ell=f$ and $\pi_2\circ \ell=g$. An element of $X\times Y$ is an ordered pair $(x,y)$, and we can use $\ell(a)=(x,y)$ if and only if $x=\pi_1(x,y)=f(a)$ and $y=\pi_2(x,y)=g(a)$. So it is necessary and sufficient to define $$\prodmap{f}{g}(a):=(f(a),g(a))$$ for all $a\in A$.
-
+\begin{lemmaRUS}[Универсальное свойство произведения]\label{lemma:up for prod}
 \begin{russian} \end{russian}
+\end{lemmaRUS}
 
+\begin{proofENG}
+Suppose given $f,g$ as above. To provide a function $\ell\taking A\to X\times Y$ is equivalent to providing an element $\ell(a)\in X\times Y$ for each $a\in A$. We need such a function for which $\pi_1\circ \ell=f$ and $\pi_2\circ \ell=g$. An element of $X\times Y$ is an ordered pair $(x,y)$, and we can use $\ell(a)=(x,y)$ if and only if $x=\pi_1(x,y)=f(a)$ and $y=\pi_2(x,y)=g(a)$. So it is necessary and sufficient to define $$\prodmap{f}{g}(a):=(f(a),g(a))$$ for all $a\in A$.
 \end{proofENG}
 
-\begin{exampleENG}[Grid of dots, continued]\label{ex:grid2}
+\begin{proofRUS}
+\begin{russian} \end{russian}
+\end{proofRUS}
 
+\begin{exampleENG}[Grid of dots, continued]\label{ex:grid2}
 We need to see the universal property of products as completely intuitive. Recall that if $X$ and $Y$ are sets, say of cardinalities $|X|=m$ and $|Y|=n$ respectively, then $X\times Y$ is an $m\times n$ grid of dots, and it comes with two canonical projections $X\From{\pi_1}X\times Y\To{\pi_2}Y$. These allow us to extract from every grid element $z\in X\times Y$ its column $\pi_1(z)\in X$ and its row $\pi_2(z)\in Y$.
 
-\begin{russian} \end{russian}
-
 Suppose that each person in a classroom picks an element of $X$ and an element of $Y$. Thus we have functions $f\taking C\to X$ and $g\taking C\to Y$. But isn't picking a column and a row the same thing as picking an element in the grid? The two functions $f$ and $g$ induce a unique function $C\to X\times Y$. And how does this function $C\to X\times Y$ compare with the original functions $f$ and $g$? The commutative diagram (\ref{dia:univ prop for products}) sums up the obvious connection. 
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exampleENG}
+\begin{exampleRUS}[Сетки из точек, продолжение]\label{ex:grid2}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exampleENG}
 Let $\RR$ be the set of real numbers. The origin in $\RR$ is an element of $\RR$. As you showed in Exercise \ref{exc:generator for set}, we can view this (or any) element of $\RR$ as a function $z\taking\singleton\to\RR$, where $\singleton$ is any set with one element. Our function $z$ “picks out the origin”. Thus we can draw functions 
 $$\xymatrix@=15pt{&\singleton\ar[ddr]^z\ar[ddl]_z\\\\\RR&&\RR}
 $$
 The universal property for products guarantees a function $\singleton\to\RR\times\RR$, which will be the origin in $\RR^2.$
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{remarkENG}
-
-Given sets $X, Y,$ and $A$, and functions $f\taking A\to X$ and $g\taking A\to Y$, there is a unique function $A\to X\times Y$ that commutes with $f$ and $g$. We call it {\em the induced function $A\to X\times Y$},\index{induced function} meaning the one that arises in light of $f$ and $g$.
-
+\begin{exampleRUS}
 \begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{remarkENG}
+Given sets $X, Y,$ and $A$, and functions $f\taking A\to X$ and $g\taking A\to Y$, there is a unique function $A\to X\times Y$ that commutes with $f$ and $g$. We call it {\em the induced function $A\to X\times Y$},\index{induced function} meaning the one that arises in light of $f$ and $g$.
 \end{remarkENG}
 
-\begin{exerciseENG}
+\begin{remarkRUS}
+\begin{russian} \end{russian}
+\end{remarkRUS}
 
+\begin{exerciseENG}
 For every set $A$ there is some nice relationship between the following three sets: $$\Hom_{\Set}(A,X), \hsp \Hom_\Set(A,Y), \hsp \text{and} \hsp\Hom_\Set(A,X\times Y).$$ What is it?
 
-\begin{russian} \end{russian}
-
 Hint: Do not be alarmed: this problem is a bit “recursive” in that you'll use products in your formula.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}~
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}~
 \sexc Let $X$ and $Y$ be sets. Construct the “swap map” $s\taking X\times Y\to Y\times X$ using only the universal property for products. If $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$ are the projection functions, write $s$ in terms of the symbols $\qtE{\pi_1}, \qtE{\pi_2}, \qtE{(\ ,\ )},$ and $\qtE{\circ}$. 
 \next Can you prove that $s$ is a isomorphism using only the universal property for product?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exampleENG}\label{ex:product to product}
+\begin{exerciseRUS}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exampleENG}\label{ex:product to product}
 Suppose given sets $X,X', Y, Y'$ and functions $m\taking X\to X'$ and $n\taking Y\to Y'$. We can use the universal property of products to construct a function $s\taking X\times Y\to X'\times Y'$.  Here's how.
 
-\begin{russian} \end{russian}
-
 The universal property (Lemma \ref{lemma:up for prod}) says that to get a function from any set $A$ to $X'\times Y'$, we need two functions, namely some $f\taking A\to X'$ and some $g\taking A\to Y'$. Here $A=X\times Y$. 
-
-\begin{russian} \end{russian}
 
 What we have readily available are the two projections $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$. But we also have $m\taking X\to X'$ and $n\taking Y\to Y'$. Composing, we set $f:=m\circ \pi_1$ and $g:=n\circ\pi_2$.
 $$\xymatrix{
@@ -1844,10 +1858,11 @@ X\ar[u]^m&&Y\ar[u]_n\\
 $$
 The dotted arrow is often called the {\em product} of $m\taking X\to X'$ and $n\taking Y\to Y'$ and is denoted simply by 
 $$m\times n\taking X\times Y\to X'\times Y'.$$
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
+
+\begin{exampleRUS}\label{ex:product to product}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
 %% Subsubsection %%
 
@@ -1865,67 +1880,64 @@ yields, insofar as it $\qtE{p}\;\qtE{c}$ and $\qtE{q}\;\qtE{d}$,
 \begin{russian} \end{russian}
 
 \begin{exampleENG}
-
 Every car owner owns at least one car, but there is no obvious function $\fakebox{a car owner}\to\fakebox{a car}$ because he or she may own more than one. One good choice would be the car that the person drives most often, which we'll call his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products:
 $$
 \xymatrixnocompile{\obox{O}{.7in}{a car owner}\LAL{dd}{is}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize owns, as primary,}}\LA{rr}{\parbox{.8in}{\rr\scriptsize yields, insofar as it is a person and owns, as primary, a car,}}&\ar@{}[d]^(.4){\checkmark}&
 \obox{P\times C}{1in}{a pair $(x,y)$ where $x$ is a person and $y$ is a car}\ar@/^1pc/[ddll]^(.7){\tn{yields, as }x,}\LA{dd}{\tn{yields, as }y,}\LA{rr}{\parbox{.7in}{\scriptsize has as associated utility}}&&\obox{V}{.8in}{a dollar value}\\&&\\\obox{P}{.5in}{a person}&&\obox{C}{.4in}{a car}
 }
 $$
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
+
+\begin{exampleRUS}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
 %%%% Subsection %%%%
 
 \subsection{Coproducts / Копроизведения}\label{sec:coproducts}\index{coproducts!of sets}
 
 \begin{definitionENG}\label{def:coproduct}
-
 Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the “disjoint union” of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
-
-\begin{russian} \end{russian}
 
 There are two natural inclusion functions $i_1\taking X\to X\sqcup Y$ and $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
 $$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exampleENG}\label{ex:coproduct}
+\begin{definitionRUS}\label{def:coproduct}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exampleENG}\label{ex:coproduct}
 The coproduct of $X:=\{a,b,c,d\}$ and $Y:=\{1,2,3\}$ is $$X\sqcup Y\iso\{a,b,c,d,1,2,3\}.$$ The coproduct of $X$ and itself is $$X\sqcup X\iso\{i_1a,i_1b,i_1c,i_1d,i_2a,i_2b,i_2c,i_2d\}$$ 
 The names of the elements in $X\sqcup Y$ are not so important. What's important are the inclusion maps $i_1,i_2$, which ensure that we know where each element of $X\sqcup Y$ came from.
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exampleENG}[Airplane seats]\label{ex:airplanes}
+\begin{exampleRUS}\label{ex:coproduct}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exampleENG}[Airplane seats]\label{ex:airplanes}
 \begin{align}\label{dia:airplane}
 \xymatrix@=15pt{
 \obox{X}{.8in}{an economy-class seat in an airplane}\LAL{ddr}{is}&&\obox{Y}{.7in}{a first-class seat in an airplane}\LA{ddl}{is}\\\\
 &\obox{X\sqcup Y}{.7in}{a seat in an airplane}
 }
 \end{align}
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exerciseENG}
-
-Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} and \fakebox{a landline phone}? 
-
+\begin{exampleRUS}[Места в самолете]\label{ex:airplanes}
 \begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exerciseENG}
+Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} and \fakebox{a landline phone}? 
 \end{exerciseENG}
 
-\begin{exampleENG}[Disjoint union of dots]\label{ex:coprod of dots}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exampleENG}[Disjoint union of dots]\label{ex:coprod of dots}
 \begin{align}
 \parbox{2.4in}{\begin{center}\small $X\sqcup Y$\vspace{-.1in}\end{center}\fbox{
 \xymatrix@=15pt{
@@ -1946,15 +1958,17 @@ Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} a
 \LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}
 }}\begin{center}\hspace{-2.6in}\small$X$\end{center}}
 \end{align}
-
 \end{exampleENG}
+
+\begin{exampleRUS}[Несвязное объединение точек]\label{ex:coprod of dots}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
 %% Subsubsection %%
 
 \subsubsection{Universal property for coproducts / Универсальное свойство копроизведений}\index{coproducts!universal property of}
 
 \begin{lemmaENG}[Universal property for coproduct]\label{lemma:up for coprod}
-
 Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes
 $$
 \xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
@@ -1962,23 +1976,23 @@ $$
 We might write the unique function as 
 \footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
 $$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
-
-\begin{russian} \end{russian}
-
 \end{lemmaENG}
 
-\begin{proofENG}
+\begin{lemmaRUS}[Универсальное свойство копроизведения]\label{lemma:up for coprod}
+\begin{russian} \end{russian}
+\end{lemmaRUS}
 
+\begin{proofENG}
 Suppose given $f,g$ as above. To provide a function $\ell\taking X\sqcup Y\to A$ is equivalent to providing an element $f(m)\in A$ is for each $m\in X\sqcup Y$. We need such a function such that $\ell\circ i_1=f$ and $\ell\circ i_2=g$. But each element $m\in X\sqcup Y$ is either of the form $i_1x$ or $i_2y$, and cannot be of both forms. So we assign 
 $$\coprodmap{f}{g}(m)=\begin{cases}f(x)&\tn{if } m=i_1x,\\ g(y) &\tn{if }m=i_2y.\end{cases}$$
 This assignment is necessary and sufficient to make all relevant diagrams commute.
-
-\begin{russian} \end{russian}
-
 \end{proofENG}
 
-\begin{exampleENG}[Airplane seats, continued]
+\begin{proofRUS}
+\begin{russian} \end{russian}
+\end{proofRUS}
 
+\begin{exampleENG}[Airplane seats, continued]
 The universal property of coproducts says the following. Any time we have a function $X\to A$ and a function $Y\to A$, we get a unique function $X\sqcup Y\to A$. For example, every economy class seat in an airplane and every first class seat in an airplane is actually {\em in a particular airplane}. Every economy class seat has a price, as does every first class seat.
 \begin{align}
 \xymatrix{
@@ -1995,66 +2009,63 @@ To say it another way (and using the other induced map):
 \begin{quote}
 If we keep track of which airplane every economy class seat is in and we keep track of which airplane every first class seat is in, and if we know that every seat is either economy class or first class, then we require no additional tracking for any airplane seat whatsoever.
 \end{quote}
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{applicationENG}[Piecewise defined curves]
-
-In science, curves are often defined or considered piecewise. For example in testing the mechanical properties of a material, we might be interested in various regions of \href{http://en.wikipedia.org/wiki/Deformation_(engineering)}{deformation}, such as elastic, plastic, or post-fracture. These are three intervals on which the material displays different kinds of properties. 
-
+\begin{exampleRUS}[Места в самолете, продолжение]
 \begin{russian} \end{russian}
+\end{exampleRUS}
+
+\begin{applicationENG}[Piecewise defined curves]
+In science, curves are often defined or considered piecewise. For example in testing the mechanical properties of a material, we might be interested in various regions of \href{http://en.wikipedia.org/wiki/Deformation_(engineering)}{deformation}, such as elastic, plastic, or post-fracture. These are three intervals on which the material displays different kinds of properties. 
 
 For real numbers $a<b\in\RR$, let $[a,b]:=\{x\in\RR\|a\leq x\leq b\}$ denote the closed interval. Given a function $[a,b]\to\RR$ and a function $[c,d]\to\RR$, the universal property of coproducts implies that they extend uniquely to a function $[a,b]\sqcup[c,d]\to\RR$, which will appear as a piecewise defined curve.
 
-\begin{russian} \end{russian}
-
 Often we are given a curve on $[a,b]$ and another on $[b,c]$, where the two curves agree at the point $b$. This situation is described by pushouts, which are mild generalizations of coproducts; see Section \ref{sec:pushouts}.
-
-\begin{russian} \end{russian}
-
 \end{applicationENG}
 
-\begin{exerciseENG}\label{exc:coprod}
-
-Write the universal property for coproduct in terms of a relationship between the following three sets: $$\Hom_{\Set}(X,A), \hsp \Hom_\Set(Y,A), \hsp \text{and} \hsp\Hom_\Set(X\sqcup Y,A).$$ 
-
+\begin{applicationRUS}[Кусочно-определенные кривые]
 \begin{russian} \end{russian}
+\end{applicationRUS}
 
+\begin{exerciseENG}\label{exc:coprod}
+Write the universal property for coproduct in terms of a relationship between the following three sets: $$\Hom_{\Set}(X,A), \hsp \Hom_\Set(Y,A), \hsp \text{and} \hsp\Hom_\Set(X\sqcup Y,A).$$ 
 \end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:coprod}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exampleENG}\label{ex:coproduct1}
-
 In the following olog the types $A$ and $B$ are disjoint, so the coproduct $C=A\sqcup B$ is just the union. $$\fbox{\xymatrix{\smbox{A}{a person}\LA{r}{is}&\smbox{C=A\sqcup B}{a person or a cat}&\smbox{B}{a cat}\LAL{l}{is}}}$$
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
+
+\begin{exampleRUS}\label{ex:coproduct1}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
 \begin{exampleENG}\label{ex:coproduct2}
-
 In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr an animal that can fly}\LA{rr}{labeled “A” is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled “A”) or an animal that can swim (labeled “B”)}&&\obox{B}{.9in}{\rr an animal that can swim}\LAL{ll}{labeled “B” is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C$, once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C$, which justifies the name “disjoint union.”
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exerciseENG}
+\begin{exampleRUS}\label{ex:coproduct2}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exerciseENG}
 Understand Example \ref{ex:coproduct2} and see if a similar idea would make sense for particles and waves. Make an olog, and choose your wording in accordance with Rules \ref{rules:types}. How do photons, which exhibit properties of both waves and particles, fit into the coproduct in your olog?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}
-
 Following the section above, “Ologging products” page \pageref{sec:ologging products}, come up with a naming system for coproducts, the inclusions, and the universal maps. Try it out by making an olog (involving coproducts) discussing the idea that both a .wav file and a .mp3 file can be played on a modern computer. Be careful that your arrows are valid in the sense of Section \ref{sec:invalid aspect}.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%%%% Section %%%%%%
 
@@ -2062,14 +2073,13 @@ Following the section above, “Ologging products” page \pageref{sec:ologging 
 
 In this section we discuss what are called {\em limits} of variously-shaped diagrams of sets. We will make all this much more precise when we discuss limits in arbitrary categories in Section \ref{sec:lims and colims in a cat}.
 
-\begin{russian} \end{russian}
+\begin{russian}В этом разделе мы обсудим то, что называется {\em пределами} диаграмм множеств различной формы. Впоследствии все это мы проделаем значительно более точно при обсуждении пределов в произвольных категориях в Разделе \ref{sec:lims and colims in a cat}. \end{russian}
 
 %%%% Subsection %%%%
 
-\subsection{Pullbacks / Пуллбеки (притягивающие квадраты)}
+\subsection{Pullbacks / Притягивающие квадраты}
 
 \begin{definitionENG}[Pullback]\label{def:pullback}\index{pullback!of sets}
-
 Suppose given the diagram of sets and functions below.
 \begin{align}\label{dia:fp sets}
 \xymatrix{&Y\ar[d]^g\\
@@ -2082,55 +2092,55 @@ $$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}.$$ There are obvious projections $\pi_1\t
 X\ar[r]_f&Z}
 \end{align}
 commutes. Given the setup of Diagram \ref{dia:fp sets} we define the {\em pullback of $X$ and $Y$ over $Z$} to be any set $W$ for which we have an isomorphism $W\To{\iso}X\times_ZY$. The corner symbol $\lrcorner$ in Diagram \ref{dia:pullback sets} indicates that $W$ is the pullback.\index{a symbol!$\lrcorner$}
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exerciseENG}
+\begin{definitionRUS}[Притягивающий квадрат]\label{def:pullback}\index{pullback!of sets}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}
 Let $X,Y,Z$ be as drawn and $f\taking X\to Z$ and $g\taking Y\to Z$ the indicated functions. 
 \begin{center}
 \includegraphics[height=2in]{setPullback}
 \end{center}
 What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y$?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}~
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}~
 \sexc Draw a set $X$ with five elements and a set $Y$ with three elements. Color each element of $X$ and each element of $Y$ either red, blue, or yellow,
 \footnote{You can use shadings rather than coloring, if coloring would be annoying.}
 and do so in a “random-looking” way. Considering your coloring of $X$ as a function $X\to C$, where $C=\{\tn{red, blue, yellow}\}$, and similarly obtaining a function $Y\to C$, draw the fiber product $X\times_CY$. Make sure it is colored appropriately.
 \next The universal property for products guarantees a function $X\times_CY\to X\times Y$, which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{remarkENG}
-
-Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\times_ZY$. The former is  mathematically better notation, but human-readability is often enhanced by the latter, which is also more common in the literature. We use whichever is more convenient.
-
+\begin{exerciseRUS}~
 \begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{remarkENG}
+Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\times_ZY$. The former is  mathematically better notation, but human-readability is often enhanced by the latter, which is also more common in the literature. We use whichever is more convenient.
 \end{remarkENG}
 
-\begin{exerciseENG}~
+\begin{remarkRUS}
+\begin{russian} \end{russian}
+\end{remarkRUS}
 
+\begin{exerciseENG}~
 \sexc Suppose that $Y=\emptyset$; what can you say about $X\times_ZY$? 
 \next Suppose now that $Y$ is any set but that $Z$ has exactly one element; what can you say about $X\times_ZY$?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 Let $S=\RR^3, T=\RR$, and think of them as (Aristotelian) space and time, with the origin in $S\times T$ given by the center of mass of MIT at the time of its founding. Let $Y=S\times T$ and let $g_1\taking Y\to S$ be one projection and $g_2\taking Y\to T$ the other projection. Let $X=\singleton$ be a set with one element and let $f_1\taking X\to S$ and $f_2\taking X\to T$ be given by the origin in both cases. 
 \sexc What are the fiber products $W_1$ and $W_2$:
 $$
@@ -2139,10 +2149,11 @@ $$
 $$
 \next Interpret these sets in terms of the center of mass of MIT at the time of its founding.
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
@@ -2153,27 +2164,26 @@ In this section we will see that the fiber product of a diagram can serve to def
 \begin{russian} \end{russian}
 
 \begin{exampleENG}
-
 Consider the following two ologs. The one on the right is the pullback of the one on the left. 
 \begin{align}\label{dia:wealthy and loyal}
 \fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr a customer that is wealthy and loyal}\LAL{d}{is}\LA{r}{is}&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}
 \end{align}
 Check from Definition \ref{def:pullback} that the label, “a customer that is wealthy and loyal”, is fair and straightforward as a label for the fiber product $A=B\times_DC$, given the labels on $B,C$, and $D$.
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{remarkENG}\label{rem:defining using pullbacks}
-
-Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have been (non-canonically named) \fakebox{a good customer}. If it was taken to be the fiber product, then the author would be effectively {\em defining} a good customer to be one that is wealthy and loyal. 
-
+\begin{exampleRUS}
 \begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{remarkENG}\label{rem:defining using pullbacks}
+Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have been (non-canonically named) \fakebox{a good customer}. If it was taken to be the fiber product, then the author would be effectively {\em defining} a good customer to be one that is wealthy and loyal. 
 \end{remarkENG}
 
-\begin{exerciseENG}
+\begin{remarkRUS}\label{rem:defining using pullbacks}
+\begin{russian} \end{russian}
+\end{remarkRUS}
 
+\begin{exerciseENG}
 For each of the following, an author has proposed that the diagram on the right is a pullback. Do you think their labels are appropriate or misleading; that is, is the label on the upper-left box reasonable given the rest of the olog, or is it suspect in some way?
 \sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}\hsp&
 \footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}
@@ -2187,39 +2197,39 @@ For each of the following, an author has proposed that the diagram on the right 
 \footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
 \end{align*}
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}~
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}~
 \sexc Consider your olog from Exercise \ref{exc:family olog}. Are any of the commutative squares there actually pullback squares? 
 \next Now use ologs with products and pullbacks to define what a brother is and what a sister is (again in a human biological nuclear family), in terms of types such as \fakebox{an offspring of mating pair $(a,b)$}, \fakebox{a person}, \fakebox{a male person}, \fakebox{a female person}, and so on.
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{definitionENG}[Preimage]\label{def:preimage}
-
 Let $f\taking X\to Y$ be a function and $y\in Y$ an element. The {\em preimage of y under $f$}\index{preimage}, denoted $f^\m1(y)$,\index{a symbol!$f^\m1$} is  the subset $f^\m1(y):=\{x\in X\|f(x)=y\}$. If $Y'\ss Y$ is any subset, the {\em preimage of $Y'$ under $f$}, denoted $f^\m1(Y')$, is the subset $f^\m1(Y')=\{x\in X\|f(x)\in Y'\}$.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exerciseENG}
-
-Let $f\taking X\to Y$ be a function and $y\in Y$ an element. Draw a pullback diagram in which the fiber product is isomorphic to the preimage $f^\m1(y)$.
-
+\begin{definitionRUS}[Прообраз]\label{def:preimage}
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}
+Let $f\taking X\to Y$ be a function and $y\in Y$ an element. Draw a pullback diagram in which the fiber product is isomorphic to the preimage $f^\m1(y)$.
 \end{exerciseENG}
 
-\begin{lemmaENG}[Universal property for pullback]\label{lemma:up for fp}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{lemmaENG}[Universal property for pullback]\label{lemma:up for fp}
 Suppose given the diagram of sets and functions as below.
 \begin{align*}
 \xymatrix{&Y\ar[d]^u\\
@@ -2235,18 +2245,19 @@ X\ar[rd]_t&&Y\ar[ld]^u\\
 \end{align}
 there exists a unique arrow $\pb{f}{g}{Z}\taking A\to X\times_ZY$ making everything commute, i.e. 
 $$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
-
-\begin{russian} \end{russian}
-
 \end{lemmaENG}
 
-\begin{exerciseENG}
-
-Create an olog whose underlying shape is a commutative square. Now add the fiber product so that the shape is the same as that of Diagram (\ref{dia:universal property of fp}). Assign English labels to the projections $\pi_1,\pi_2$ and to the dotted map $A\To{\pb{f}{g}{Z}}X\times_ZY$, such that these labels are as canonical as possible.
-
+\begin{lemmaRUS}[Универсальное свойство притягивающего квадрата]\label{lemma:up for fp}
 \begin{russian} \end{russian}
+\end{lemmaRUS}
 
+\begin{exerciseENG}
+Create an olog whose underlying shape is a commutative square. Now add the fiber product so that the shape is the same as that of Diagram (\ref{dia:universal property of fp}). Assign English labels to the projections $\pi_1,\pi_2$ and to the dotted map $A\To{\pb{f}{g}{Z}}X\times_ZY$, such that these labels are as canonical as possible.
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
@@ -2263,7 +2274,6 @@ The right-hand square has a corner symbol indicating that $B'\iso B\times_CC'$ i
 \begin{russian} \end{russian}
 
 \begin{propositionENG}\label{prop:pasting}
-
 Consider the diagram drawn below
 $$
 \xymatrix{
@@ -2271,18 +2281,19 @@ $$
 A\ar[r]_f&B\ar[r]_g&C}
 $$
 where $B'\iso B\times_CC'$ is a pullback. Then there is an isomorphism $A\times_BB'\iso A\times_CC'$. Said another way, $$A\times_B(B\times_CC')\iso A\times_CC'.$$
-
-\begin{russian} \end{russian}
-
 \end{propositionENG}
 
-\begin{proofENG}
-
-We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. An element of $A\times_B(B\times_CC')$ is of the form $(a,b,(b,c,c'))$ such that $f(a)=b, g(b)=c$ and $k(c')=c$. But this implies that $g\circ f(a)=c=k(c')$ so we put $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$. Now we provide a proposed inverse, $\psi\taking A\times_CC'\to A\times_B(B\times_CC')$. Given $(a,c,c')$ with $g\circ f(a)=c=k(c')$, let $b=f(a)$ and note that $(b,c,c')$ is an element of $B\times_CC'$. So we can define $\psi(a,c,c')=(a,b,(b,c,c'))$. It is easy to see that $\phi$ and $\psi$ are inverse.
- 
+\begin{propositionRUS}\label{prop:pasting}
 \begin{russian} \end{russian}
+\end{propositionRUS}
 
+\begin{proofENG}
+We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. An element of $A\times_B(B\times_CC')$ is of the form $(a,b,(b,c,c'))$ such that $f(a)=b, g(b)=c$ and $k(c')=c$. But this implies that $g\circ f(a)=c=k(c')$ so we put $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$. Now we provide a proposed inverse, $\psi\taking A\times_CC'\to A\times_B(B\times_CC')$. Given $(a,c,c')$ with $g\circ f(a)=c=k(c')$, let $b=f(a)$ and note that $(b,c,c')$ is an element of $B\times_CC'$. So we can define $\psi(a,c,c')=(a,b,(b,c,c'))$. It is easy to see that $\phi$ and $\psi$ are inverse.
 \end{proofENG}
+
+\begin{proofRUS}
+\begin{russian} \end{russian}
+\end{proofRUS}
 
 Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, the type \fakebox{a cellphone that has a bad battery} is vague, but we can lay out precisely what it means using pullbacks:
 \small
@@ -2297,17 +2308,16 @@ The category-theoretic fact described above says that since $A\iso B\times_DC$ a
 \begin{russian} \end{russian}
 
 \begin{exerciseENG}~
-
 \sexc Create an olog that defines two people to be “of approximately the same height” if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
 \next In the same olog, make a box for those people whose height is approximately the same as a person named “The Virgin Mary”. You may need to use images, as in Section \ref{sec:images}.
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}\label{exc:pointwise map of fp}
+\begin{exerciseRUS}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}\label{exc:pointwise map of fp}
 Consider the diagram on the left below, where both squares commute. 
 $$
 \xymatrix@=15pt{
@@ -2325,26 +2335,26 @@ X\ar[rr]\ar[ru]&&Z\ar[ru]
 }
 $$
 Let $W=X\times_ZY$ and $W'=X'\times_{Z'}Y'$, and form the diagram to the right. Use the universal property of fiber products to construct a map $W\to W'$ such that all squares commute.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:pointwise map of fp}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
-\subsection{Spans, experiments, and matrices / Спаны, эксперименты и матрицы}
+\subsection{Spans, experiments, and matrices / Растопырки, эксперименты и матрицы}
 
 \begin{definitionENG}\label{def:span}\index{span}
-
 Given sets $A$ and $B$, a {\em span on $A$ and $B$} is a set $R$ together with functions $f\taking R\to A$ and $g\taking R\to B$. 
 $$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{applicationENG}\label{app:exp temp press}
+\begin{definitionRUS}\label{def:span}\index{span}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{applicationENG}\label{app:exp temp press}
 Think of $A$ and $B$ as observables and $R$ as a set of experiments performed on these two variables. For example, let's say $T$ is the set of possible temperatures of a \href{http://en.wikipedia.org/wiki/Ideal_gas_law}{\text gas} in a fixed container and let's say $P$ is the set of possible pressures of the gas. We perform 1000 experiments in which we change and record the temperature and we simultaneously also record the pressure; this is a span $T\From{f}E\To{g}P$. The results might look like this:
 $$
 \begin{tabular}{| l || l | l |}
@@ -2360,37 +2370,34 @@ $$
 \vdots&\vdots&\vdots\\\bhline
 \end{tabular}
 $$
-
-\begin{russian} \end{russian}
-
 \end{applicationENG}
 
-\begin{definitionENG}\label{def:composite span}
+\begin{applicationRUS}\label{app:exp temp press}
+\begin{russian} \end{russian}
+\end{applicationRUS}
 
+\begin{definitionENG}\label{def:composite span}
 Let $A,B,$ and $C$ be sets, and let $A\From{f}R\To{g}B$ and $B\From{f'}R'\To{g'}C$ be spans. Their {\em composite span}\index{span!composite} is given by the fiber product $R\times_BR'$ as in the diagram below:
 $$
 \xymatrix@=10pt{&&R\times_BR'\ar[ldd]\ar[rdd]\\\\&R\ar[ddl]_f\ar[ddr]^g&&R'\ar[ddl]_{f'}\ar[ddr]^{g'}\\\\A&&B&&C
 }$$
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{applicationENG}\label{app:exp temp press 2}
-
-Let's look back at our lab's experiment from Application \ref{app:exp temp press}, which resulted in a span $T\From{f}E\To{g}P$. Suppose we notice that something looks a little wrong. The pressure should be linear in the temperature but it doesn't appear to be. We hypothesize that the volume of the container is increasing under pressure. We look up this container online and see that experiments have been done to measure the volume as the interior pressure changes. The data has generously been made available online, which gives us a span $P\From{f'}E'\To{g'}V$. 
-
+\begin{definitionRUS}\label{def:composite span}
 \begin{russian} \end{russian}
+\end{definitionRUS}
+
+\begin{applicationENG}\label{app:exp temp press 2}
+Let's look back at our lab's experiment from Application \ref{app:exp temp press}, which resulted in a span $T\From{f}E\To{g}P$. Suppose we notice that something looks a little wrong. The pressure should be linear in the temperature but it doesn't appear to be. We hypothesize that the volume of the container is increasing under pressure. We look up this container online and see that experiments have been done to measure the volume as the interior pressure changes. The data has generously been made available online, which gives us a span $P\From{f'}E'\To{g'}V$. 
 
 The composite of our lab's span with the online data span yields a span $T\from E''\to V$, where $E'':=E\times_PE'$. What information does this span give us? In explaining it, one might say “whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do.” 
 
-\begin{russian} \end{russian}
-
 The information we get this way might be seen by some as unscientific, but it certainly is the kind of information people use in business and in every day life calculation---we get our data from multiple sources and put it together. Moreover, it is scientific in the sense that it is reproducible. The way we obtained our $T$-$V$ data is completely transparent.
-
-\begin{russian} \end{russian}
-
 \end{applicationENG}
+
+\begin{applicationRUS}\label{app:exp temp press 2}
+\begin{russian} \end{russian}
+\end{applicationRUS}
 
 We can relate spans to matrices of natural numbers, and see a natural “categorification” of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
 
@@ -2421,77 +2428,77 @@ Given a span $A\from R\to B$ and a span $B\from S\to C$, the composite span can 
 \begin{russian} \end{russian}
 
 \begin{constructionENG}\label{const:bipartite}\index{graph!bipartite}
-
 Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with each element of $A$ drawn as a dot on the left, each element of $B$ drawn as a dot on the right, and each element $r\in R$ drawn as an arrow connecting vertex $f(r)$ on the left to vertex $g(r)$ on the right.
-
-\begin{russian} \end{russian}
-
 \end{constructionENG}
 
-\begin{exerciseENG}~
+\begin{constructionRUS}\label{const:bipartite}\index{graph!bipartite}
+\begin{russian} \end{russian}
+\end{constructionRUS}
 
+\begin{exerciseENG}~
 \sexc Draw the bipartite graph (as in Construction \ref{const:bipartite}) corresponding to the span $T\From{f}E\To{g}P$ in Application \ref{app:exp temp press}.
 \next Now make up your own span $P\From{f'}E'\To{g'}V$ and draw it. Finally, draw the composite span below. 
 \next Can you say how the composite span graph relates to the graphs of its factors?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
 \subsection{Equalizers and terminal objects / Уравнители и терминальные объекты}
 
 \begin{definitionENG}\label{def:equalizer}\index{equalizer}
-
 Suppose given two parallel arrows 
 \begin{align}\label{dia:equalizer}
 \xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{Eq(f,g)\ar[r]^-p&X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y}
 \end{align}
 The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:equalizer}), where we define $$Eq(f,g):=\{x\in X\|f(x)=g(x)\}$$ and where $p$ is the canonical inclusion.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exampleENG}
+\begin{definitionRUS}\label{def:equalizer}\index{equalizer}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exampleENG}
 Suppose one has designed an experiment to test a theoretical prediction. The question becomes, “when does the theory match the experiment?” The answer is given by the equalizer of the following diagram:
 $$\xymatrix{
 \obox{}{.5in}{an input}\ar@<1ex>[rr]^{\tn{should, according to theory, yield}}\ar@<-1ex>[rr]_{\tn{according to experiment yields}}&\hspace{1in}&\obox{}{.6in}{an output}
 }$$
 The equalizer is the set of all inputs for which the theory and the experiment yield the same output.
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exerciseENG}
+\begin{exampleRUS}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exerciseENG}
 Come up with an olog that uses equalizers in a reasonably interesting way. Alternatively, use an equalizer to specify those published authors who have published exactly one paper. Hint: find a function from authors to papers; then find another.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}
-
 Find a universal property enjoyed by the equalizer of two arrows, and present it in the style of Lemmas \ref{lemma:up for prod}, \ref{lemma:up for coprod}, and \ref{lemma:up for fp}.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}\index{terminal object!in $\Set$}~
-
 \sexc A terminal set is a set $S$ such that for every set $X$, there exists a unique function $X\to S$. Find a terminal set. 
 \next Do you think that the notion {\em terminal set} belongs in this section (Section \ref{sec:finite limits})? How so? If products, pullbacks, and equalizers are all limits, what do limits have in common?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}\index{terminal object!in $\Set$}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%%%% Section %%%%%%
 
@@ -2506,7 +2513,6 @@ This section will parallel Section \ref{sec:finite limits}---I will introduce se
 \subsection{Background: equivalence relations / Отступление: отношения эквивалентности}\index{equivalence relation}\index{relation!equivalence}
 
 \begin{definitionENG}[Equivalence relations and equivalence classes]
-
 Let $X$ be a set. An {\em equivalence relation on $X$} is a subset $R\ss X\times X$ satisfying the following properties for all $x,y,z\in X$:
 \begin{description}
 \item[Reflexivity:] $(x,x)\in R$;
@@ -2515,8 +2521,6 @@ Let $X$ be a set. An {\em equivalence relation on $X$} is a subset $R\ss X\times
 \end{description}
 If $R$ is an equivalence relation, we often write $x\sim_R y$, or simply $x\sim y$, to mean $(x,y)\in R$. For convenience we may refer to the equivalence relation by the symbol $\sim$, saying that $\sim$ is an equivalence relation on $X$.\index{a symbol!$\sim$}
 
-\begin{russian} \end{russian}
-
 An {\em equivalence class of $\sim$}\index{equivalence relation!equivalence classes} is a subset $A\ss X$ such that
 \begin{itemize}
 \item $A$ is nonempty, $A\neq\emptyset$;
@@ -2524,69 +2528,67 @@ An {\em equivalence class of $\sim$}\index{equivalence relation!equivalence clas
 \item if $x\in A$ and $x\sim y$, then $y\in A$.
 \end{itemize}
 Suppose that $\sim$ is an equivalence relation on $X$. The {\em quotient of $X$ by $\sim$}\index{equivalence relation!quotient by}, denoted $X/\sim$\index{a symbol!$X/\sim$} is the set of equivalence classes of $\sim$.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exampleENG}
-
-Let $\ZZ$ denote the set of integers. Define a relation $R\ss\ZZ\times\ZZ$ by $$R=\{(x,y)\|\exists n\in\ZZ \tn{ such that } x+7n=y\}.$$ Then $R$ is an equivalence relation because $x+7*0=x$ (reflexivity); $x+7*n=y$ if and only if $y+7*(-n)= x$ (symmetry); and $x+7n=y$ and $y+7m=z$ together imply that $x+7(m+n)=z$ (transitivity).
-
+\begin{definitionRUS}[Equivalence relations and equivalence classes]
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exampleENG}
+Let $\ZZ$ denote the set of integers. Define a relation $R\ss\ZZ\times\ZZ$ by $$R=\{(x,y)\|\exists n\in\ZZ \tn{ such that } x+7n=y\}.$$ Then $R$ is an equivalence relation because $x+7*0=x$ (reflexivity); $x+7*n=y$ if and only if $y+7*(-n)= x$ (symmetry); and $x+7n=y$ and $y+7m=z$ together imply that $x+7(m+n)=z$ (transitivity).
 \end{exampleENG}
 
-\begin{exerciseENG}
+\begin{exampleRUS}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exerciseENG}
 Let $X$ be the set of people on earth; define a binary relation $R\ss X\times X$ on $X$ as follows. For a pair $(x,y)$ of people, say $(x,y)\in R$ if $x$ spends a lot of time thinking about $y$. 
 \sexc Is this relation reflexive? 
 \next Is it symmetric? 
 \next Is it transitive?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exampleENG}[Partitions]\label{ex:partition}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exampleENG}[Partitions]\label{ex:partition}
 An equivalence relation on a set $X$ can be thought of as a way of partitioning $X$. A {\em partition of $X$}\index{equivalence relation!as partition} consists of a set $I$, called {\em the set of parts}, and for every element $i\in I$ a subset $X_i\ss X$ such that two properties hold:
 \begin{itemize}
 \item every element $x\in X$ is in some part (i.e. for all $x\in X$ there exists $i\in I$ such that $x\in X_i$); and
 \item no element can be found in two different parts (i.e. if $x\in X_i$ and $x\in X_j$ then $i=j$).
 \end{itemize}
 
-\begin{russian} \end{russian}
-
 Given a partition of $X$, we define an equivalence relation $\sim$ on $X$ by saying $x\sim x'$ if $x$ and $x'$ are in the same part (i.e. if there exists $i\in I$ such that $x,x'\in X_i$). The parts become the equivalence classes of this relation. Conversely, given an equivalence relation, one makes a partition on $X$ by taking $I$ to be the set of equivalence classes and for each $i\in I$ letting $X_i$ be the elements in that equivalence class.
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exerciseENG}
+\begin{exampleRUS}[Разбиения]\label{ex:partition}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exerciseENG}
 Let $X$ and $B$ be sets and let $f\taking X\to B$ be a function. Define a subset $R\ss X\times X$ by $$R=\{(x,y)\|f(x)=f(y)\}.$$ 
 \sexc Is $R$ an equivalence relation? 
 \next Are all equivalence relations on $X$ obtainable in this way (as the fibers of some function having domain $X$)?
 \next Does this viewpoint on equivalence classes relate to that of Example \ref{ex:partition}?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}
-
 Take a set $I$ of sets; i.e. suppose that for each element $i\in I$ you are given a set $X_i$. For every two elements $i,j\in I$ say that $i\sim j$ if $X_i$ and $X_j$ are isomorphic. Is this relation an equivalence relation on $I$?  
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{lemmaENG}[Generating equivalence relations]\label{lemma:generating ERs}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{lemmaENG}[Generating equivalence relations]\label{lemma:generating ERs}
 Let $X$ be a set and $R\ss X\times X$ a subset. There exists a relation $S\ss X\times X$ such that
 \begin{itemize}
 \item $S$ is an equivalence relation,
@@ -2594,38 +2596,36 @@ Let $X$ be a set and $R\ss X\times X$ a subset. There exists a relation $S\ss X\
 \item for any equivalence relation $S'$ such that $R\ss S'$, we have $S\ss S'$.
 \end{itemize}
 The relation $S'$ will be called {\em the equivalence relation generated by $R$}.\index{equivalence relation!generated}
-
-\begin{russian} \end{russian}
-
 \end{lemmaENG}
 
-\begin{proofENG}
+\begin{lemmaRUS}[Порождение отношений эквивалентности]\label{lemma:generating ERs}
+\begin{russian} \end{russian}
+\end{lemmaRUS}
 
+\begin{proofENG}
 Let $L_R$ be the set of all equivalence relations on $X$ that contain $R$; in other words, each element $\ell\in L_R$ is an equivalence relation, $\ell\in X\times X$. The set $L_R$ is non-empty because $X\times X\ss X\times X$ is an equivalence relation. Let $S$ denote the set of pairs $(x_1,x_2)\in X\times X$ that appear in every element of $L_R$. Note that $R\ss S$ by definition. We need only show that $S$ is an equivalence relation.
 
-\begin{russian} \end{russian}
-
 It is clearly reflexive, because $R$ is. If $(x,y)\in S$ then $(x,y)\in\ell$ for all $\ell\in L_R$. But since each $\ell$ is an equivalence relation, $(y,x)\in\ell$ too, so $(y,x)\in S$. This shows that $S$ is symmetric. The proof that it is transitive is similar: if $(x,y)\in S$ and $(y,z)\in S$ then they are both in each $\ell$ which puts $(x,z)$ in each $\ell$, which puts it in $S$.
-
-\begin{russian} \end{russian}
-
 \end{proofENG}
 
-\begin{remarkENG}
+\begin{proofRUS}
+\begin{russian} \end{russian}
+\end{proofRUS}
 
+\begin{remarkENG}
 Let $X$ be a set and $R\ss X\times X$ a relation. The proof of Lemma \ref{lemma:generating ERs} has the benefit of working even if $|X|\geq\infty$, but it has the cost that it is not very intuitive, nor useful in practice when $X$ is finite. The intuitive way to think about the idea of equivalence relation generated by $R$ is as follows.
 \begin{enumerate}
 \item First add to $R$ what is demanded by reflexivity, $R_1:=R\cup\{(x,x)\|x\in X\}$.
 \item Then add to $R$ what is demanded by symmetry, $R_2:=R_1\cup\{(x,y)\|(y,x)\in R_1\}.$
 \item Finally, add to $R$ what is demanded by transitivity, $$S=R_2\cup\{(x,z)\|(x,y)\in R_2, \tn{ and } (y,z)\in R_2\}.$$
 \end{enumerate}
-
-\begin{russian} \end{russian}
-
 \end{remarkENG}
 
-\begin{exerciseENG}
+\begin{remarkRUS}
+\begin{russian} \end{russian}
+\end{remarkRUS}
 
+\begin{exerciseENG}
 Consider the set $\RR$ of real numbers. Draw the coordinate plane $\RR\times\RR$, give it coordinates $x$ and $y$. A binary relation on $\RR$ is a subset $S\ss\RR\times\RR$, which can be drawn as a set of points in the plane. 
 \sexc Draw the relation $\{(x,y)\|y=x^2\}$. 
 \next Draw the relation $\{(x,y)\|y\geq x^2\}.$
@@ -2634,40 +2634,40 @@ Consider the set $\RR$ of real numbers. Draw the coordinate plane $\RR\times\RR$
 \next The reflexivity property and the symmetry property have pleasing visualizations in $\RR\times\RR$; what are they? 
 \next Is there a nice heuristic for visualizing the transitivity property?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 Consider the binary relation $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$. 
 \sexc What is the equivalence relation generated by $R$? 
 \next How many equivalence classes are there?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and let $R\ss X\times X$ denote the relation such that $(x,y)\in R$ iff there exists an arrow connecting $x$ to $y$.
 \footnote{The word {\em iff} means “if and only if”. In this case we are saying that the pair $(x,y)$ is in $R$ if and only if there exists an arrow connecting $x$ and $y$.\index{iff}}
 \sexc What is the equivalence relation $\sim$ generated by $R$? 
 \next What is the quotient $X/\sim$?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
 \subsection{Pushouts / Выталкивающие квадраты}\label{sec:pushouts}
 
 \begin{definitionENG}[Pushout]\label{def:pushout}
-
 Suppose given the diagram of sets and functions below:
 \begin{align}\label{dia:pushout}
 \xymatrix{W\ar[r]^f\ar[d]_g&X\\Y}
@@ -2681,87 +2681,80 @@ Note that if $Z=X\sqcup_WY$ then the diagram
 \xymatrix{W\ar[r]^g\ar[d]_f&Y\ar[d]^{i_2}\\X\ar[r]_-{i_1}&Z\lrlimit}
 \end{align} 
 commutes. Given the setup of Diagram \ref{dia:pushout} we define the {\em pushout of $X$ and $Y$ over $W$} to be any set $Z$ for which we have an isomorphism $Z\To{\iso}X\sqcup_WY$. The corner symbol $\ulcorner$ in Diagram \ref{dia:pushout sets} indicates that $Z$ is the pushout.\index{a symbol!$\ulcorner$}
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exampleENG}
-
-Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusive, let $Y=\{y\in\RR\|1\leq y\leq 2\}$ by the set of numbers between 1 and 2, inclusive, and let $W=\{1\}$. Then the pushout $X\From{f} W\To{g} Y$, where $f$ and $g$ are the “obvious” functions ($1\mapsto 1$) is $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, as expected. When we eventually get to general colimits, one can check that the whole real line can be made by patching together intervals in this way.
-
+\begin{definitionRUS}[Выталкивающий квадрат]\label{def:pushout}
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exampleENG}
+Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusive, let $Y=\{y\in\RR\|1\leq y\leq 2\}$ by the set of numbers between 1 and 2, inclusive, and let $W=\{1\}$. Then the pushout $X\From{f} W\To{g} Y$, where $f$ and $g$ are the “obvious” functions ($1\mapsto 1$) is $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, as expected. When we eventually get to general colimits, one can check that the whole real line can be made by patching together intervals in this way.
 \end{exampleENG}
 
-\begin{exampleENG}[Pushout]\label{ex:pushout}
-
-In each example below, the diagram to the right is intended to be a pushout of the diagram to the left.  The new object, $D$, is the union of $B$ and $C$, but instances of $A$ are equated to their $B$ and $C$ aspects.  This will be discussed after the two diagrams.
-
+\begin{exampleRUS}
 \begin{russian} \end{russian}
+\end{exampleRUS}
+
+\begin{exampleENG}[Pushout]\label{ex:pushout}
+In each example below, the diagram to the right is intended to be a pushout of the diagram to the left.  The new object, $D$, is the union of $B$ and $C$, but instances of $A$ are equated to their $B$ and $C$ aspects.  This will be discussed after the two diagrams.
 
 \begin{align}
 \label{dia:po1}\fbox{\xymatrixnocompile{\obox{A}{.7in}{a cell in the shoulder}\LA{r}{is}\LAL{d}{is}&\obox{C}{.6in}{a cell in the arm}\\\obox{B}{.7in}{a cell in the torso}}}\hsp&\fbox{\xymatrix{\obox{A}{.7in}{a cell in the shoulder}\LA{r}{is}\LAL{d}{is}&\obox{C}{.6in}{a cell in the arm}\LA{d}{}\\\obox{B}{.7in}{a cell in the torso}\LA{r}{}&\obox{D=B\sqcup_AC}{.8in}{a cell in the torso or arm}}}
 \end{align}
 In the left-hand olog (\ref{dia:po1}, the two arrows are inclusions: the author considers every cell in the shoulder to be both in the arm and in the torso. The pushout is then just the union, where cells in the shoulder are not double-counted.
 
-\begin{russian} \end{russian}
-
 \begin{align}\label{dia:po2}\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase “too hard”}\\\obox{B}{.6in}{\rr a college course}}}\hsp&\fbox{\xymatrixnocompile@=18pt{\obox{A}{.8in}{\rr a college mathematics course}\LA{r}{yields}\LAL{d}{is}&\obox{C}{.8in}{an utterance of the phrase “too hard”}\LA{d}{}\\\obox{B}{.6in}{\rr a college course}\LA{r}{}&\obox{\parbox{.6in}{\vspace{.1in}\tiny$D=B\!\sqcup_A\!C$}}{1in}{\rr a college course, where every mathematics course is replaced by an utterance of the phrase “too hard”}}}
 \end{align}
 
 In Olog (\ref{dia:po1}), the shoulder is seen as part of the arm and part of the torso.  When taking the union of these two parts, we do not want to “double-count” the shoulder (as would be done in the coproduct $B\sqcup C$, see Example \ref{ex:coproduct2}).  Thus we create a new type $A$ for cells in the shoulder, which are considered the same whether viewed as cells in the arm or cells in the torso.  In general, if one wishes to take two things and glue them together, with $A$ as the glue and with $B$ and $C$ as the two things to be glued, the union is the pushout $B\sqcup_AC$. (A nice image of this can be seen in the setting of topological spaces, see Example \ref{ex:pushout in Top}.)
 
-\begin{russian} \end{russian}
-
 In Olog (\ref{dia:po2}), if every mathematics course is simply “too hard,” then when reading off a list of courses, each math course will not be read aloud but simply read as “too hard.”  To form $D$ we begin by taking the union of $B$ and $C$, and then we consider everything in $A$ to be the same whether one looks at it as a course or as the phrase “too hard.”  The math courses are all blurred together as one thing.  Thus we see that the power to equate different things can be exercised with pushouts.
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{exerciseENG}
+\begin{exampleRUS}[Выталкивающий квадрат]\label{ex:pushout}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{exerciseENG}
 Let $W,X,Y$ be as drawn and $f\taking W\to X$ and $g\taking W\to Y$ the indicated functions. 
 \begin{center}
 \includegraphics[height=2in]{setPushout}
 \end{center}
 The pushout of the diagram $X\Fromm{f}W\Too{g}Y$ is a set $P$. Write down the cardinality of $P\iso\ul{n}$ as a natural number $n\in\NN$.  
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 Suppose that $W=\emptyset$; what can you say about $X\sqcup_WZ$? 
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 Let $W:=\NN=\{0,1,2,\ldots\}$ denote the set of natural numbers, let $X=\ZZ$ denote the set of integers, and let $Y=\singleton$ denote a one-element set. Define $f\taking W\to X$ by $f(w)= -(w+1)$, and define $g\taking W\to Y$ to be the unique map. Describe the set $X\sqcup_WY$.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 Let $i\taking R\ss X\times X$ be an equivalence relation (see Example \ref{ex:subset as function} for notation). Composing with the projections $\pi_1,\pi_2\taking X\times X\to X$, we have two maps $\pi_1\circ i,\taking R\to X$ and $\pi_2\circ i\taking R\to X$. 
 \sexc What is the pushout $$X\From{\pi_1\circ i}R\To{\pi_2\circ i}X?$$ 
 \next If $i\taking R\ss X\times X$ is not assumed to be an equivalence relation, we can still define the pushout above. Is there a relationship between the pushout $X\From{\pi_1\circ i}R\To{\pi_2\circ i}X$ and the equivalence relation generated by $R\ss X\times X$?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{lemmaENG}[Universal property for pushout]\label{lemma:up for po}
-
 Suppose given the diagram of sets and functions as below.
 \begin{align*}
 \xymatrix{W\ar[r]^u\ar[d]_t&Y\\
@@ -2777,53 +2770,54 @@ X\ar@/_1pc/[dddr]_{i_1}\ar[rd]_f&&Y\ar@/^1pc/[dddl]^{i_2}\ar[dl]^g\\
 }
 \end{align}
 there exists a unique arrow $\po{f}{g}{W}\taking X\sqcup_WY\to A$ making everything commute, $$f=\po{f}{g}{W}\circ i_1\hsp\text{and}\hsp g=\po{f}{g}{W}\circ i_2.$$
-
-\begin{russian} \end{russian}
-
 \end{lemmaENG}
+
+\begin{lemmaRUS}[Универсальное свойство выталкивающего квадрата]\label{lemma:up for po}
+\begin{russian} \end{russian}
+\end{lemmaRUS}
 
 %%%% Subsection %%%%
 
 \subsection{Other finite colimits / Другие конечные пределы}
 
 \begin{definitionENG}\label{def:coequalizer}[Coequalizer]\index{coequalizer}
-
 Suppose given two parallel arrows 
 \begin{align}\label{dia:coequalizer}
 \xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y\ar[r]^-q&Coeq(f,g)}
 \end{align}
 The {\em coequalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:coequalizer}), where we define $$Coeq(f,g):=Y\;/\;f(x)\sim g(x)$$ i.e. the coequalizer of $f$ and $g$ is the quotient of $Y$ by the equivalence relation generated by $\{(f(x),g(x))\|x\in X\}\ss Y\times Y$
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exerciseENG}
+\begin{definitionRUS}\label{def:coequalizer}[Коуравнитель]\index{coequalizer}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}
 Let $X=\RR$ be the set of real numbers. What is the coequalizer of the two maps $X\to X$ given by $x\mapsto x$ and $x\mapsto (x+1)$ respectively?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}
-
 Find a universal property enjoyed by the coequalizer of two arrows.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}[Initial object]\label{exc:initial set}
-
 An initial set is a set $S$ such that for every set $A$, there exists a unique function $S\to A$. 
 \sexc Find an initial set. 
 \next Do you think that the notion {\em initial set} belongs in this section (Section \ref{sec:finite colimits})? How so? If coproducts, pushouts, and coequalizers are all colimits, what do colimits have in common?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}[Инициальный объект]\label{exc:initial set}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%%%% Section %%%%%%
 
@@ -2831,27 +2825,27 @@ An initial set is a set $S$ such that for every set $A$, there exists a unique f
 
 In this section we discuss some left-over notions in the category of Sets.
 
-\begin{russian} \end{russian}
+\begin{russian}В данном разделе мы обсудим некоторые из оставшихся понятий в категории множеств. \end{russian}
 
 %%%% Subsection %%%%
 
 \subsection{Retractions / Ретракции}
 
 \begin{definitionENG}
-
 Suppose we have a function $f\taking X\to Y$ and a function $g\taking Y\to X$ such that $g\circ f=\id_X$. In this case we call $f$ a {\em retract section} and we call $g$ a {\em retract projection}. \index{retraction}
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exerciseENG}
-
-Create an olog that includes sets $X$ and $Y$, and functions $f\taking X\to Y$ and $g\taking Y\to X$ such that $g\circ f=\id_X$ but such that $f\circ g\neq\id_Y$; that is, such that $f$ is a retract section but not an isomorphism.
-
+\begin{definitionRUS}
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}
+Create an olog that includes sets $X$ and $Y$, and functions $f\taking X\to Y$ and $g\taking Y\to X$ such that $g\circ f=\id_X$ but such that $f\circ g\neq\id_Y$; that is, such that $f$ is a retract section but not an isomorphism.
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
@@ -2866,73 +2860,69 @@ In fact, it may be convenient to repackage this information another way. For any
 \begin{russian} \end{russian}
 
 \begin{notationENG}\index{exponentials ! in $\Set$}
-
 Let $A$ and $B$ be sets. We sometimes denote the set of functions from $A$ to $B$ by 
 \begin{align}\label{dia:exponential sets}
 B^A:=\Hom_\Set(A,B).
 \end{align}
-
-\begin{russian} \end{russian}
-
 \end{notationENG}
 
-\begin{exerciseENG}
-
-For a finite set $A$, let $|A|\in\NN$ denote the cardinality of (number of elements in) $A$. If $A$ and $B$ are both finite (including the possibility that one or both are empty), is it always true that $|B^A|=|B|^{|A|}$?
-
+\begin{notationRUS}\index{exponentials ! in $\Set$}
 \begin{russian} \end{russian}
+\end{notationRUS}
 
+\begin{exerciseENG}
+For a finite set $A$, let $|A|\in\NN$ denote the cardinality of (number of elements in) $A$. If $A$ and $B$ are both finite (including the possibility that one or both are empty), is it always true that $|B^A|=|B|^{|A|}$?
 \end{exerciseENG}
 
-\begin{propositionENG}[Currying]\label{prop:curry}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{propositionENG}[Currying]\label{prop:curry}
 Let $A$ denote a set. For any sets $X,Y$ there is a bijection 
 \begin{align}\label{dia:curry bijection}
 \phi\taking\Hom_\Set(X\times A,Y)\To{\iso}\Hom_\Set(X,Y^A).
 \end{align}
-
-\begin{russian} \end{russian}
-
 \end{propositionENG}
 
-\begin{proofENG}
-
-Suppose given $f\taking X\times A\to Y$. Define $\phi(f)\taking X\to Y^A$ as follows: for any $x\in X$ let $\phi(f)(x)\taking A\to Y$ be defined as follows: for any $a\in A$, let $\phi(f)(x)(a):=f(x,a)$. 
-
+\begin{propositionRUS}[Каррирование]\label{prop:curry}
 \begin{russian} \end{russian}
+\end{propositionRUS}
+
+\begin{proofENG}
+Suppose given $f\taking X\times A\to Y$. Define $\phi(f)\taking X\to Y^A$ as follows: for any $x\in X$ let $\phi(f)(x)\taking A\to Y$ be defined as follows: for any $a\in A$, let $\phi(f)(x)(a):=f(x,a)$. 
 
 We now construct the inverse, $\psi\taking\Hom_\Set(X,Y^A)\to\Hom_\Set(X\times A,Y)$. Suppose given $g\taking X\to Y^A$. Define $\psi(g)\taking X\times A\to Y$ as follows: for any pair $(x,a)\in X\times A$ let $\psi(g)(x,a):=g(x)(a)$. 
 
-\begin{russian} \end{russian}
-
 Then for any $f\in\Hom_\Set(X\times A,Y)$ we have $\psi\circ\phi(f)(x,a)=\phi(f)(x)(a)=f(x,a)$, and for any $g\in\Hom_\Set(X,Y^A)$ we have $\phi\circ\psi(g)(x)(a)=\psi(g)(x,a)=g(x)(a)$, Thus we see that $\phi$ is an isomorphism as desired.
-
-\begin{russian} \end{russian}
-
 \end{proofENG}
 
-\begin{exerciseENG}
+\begin{proofRUS}
+\begin{russian} \end{russian}
+\end{proofRUS}
 
+\begin{exerciseENG}
 Let $X=\{1,2\}, A=\{a,b\}$, and $Y=\{x,y\}$. 
 \sexc\label{part:three distinct} Write down three distinct elements of $L:=\Hom_\Set(X\times A,Y)$. 
 \next Write down all the elements of $M:=\Hom_\Set(A,Y)$. 
 \next For each of the three elements $\ell\in L$ you chose in part (\ref{part:three distinct}), write down the corresponding function $\phi(\ell)\taking X\to M$ guaranteed by Proposition \ref{prop:curry}.
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}\label{exc:evaluation}\index{exponentials!evaluation of}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}\label{exc:evaluation}\index{exponentials!evaluation of}
 Let $A$ and $B$ be sets. We know that $\Hom_\Set(A,B)=B^A$, so we have a function $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A$. Look at Proposition \ref{prop:curry}, making the substitutions $X=\Hom_\Set(A,B)$, $Y=B$, and  $A=A$. Consider the function $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B)$$ obtained as the inverse of (\ref{dia:curry bijection}). We have a canonical element $\id_{B^A}$ in the domain of $\phi^\m1$. We can apply the function $\phi^\m1$ and obtain an element $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B)$, which is itself a function, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
 \sexc Describe the function $ev$ in terms of how it operates on elements in its domain. 
 \next Why might one be tempted to denote this function by $ev$?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:evaluation}\index{exponentials!evaluation of}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 If $n\in\NN$ is a natural number, recall from (\ref{dia:underline n}) that there is a nice set $\ul{n}=\{1,2,\ldots,n\}$. If $A$ is a set, we often make the abbreviation 
 \begin{align}\label{dia:exponential abbrev}
@@ -2942,16 +2932,14 @@ A^n:=A^{\ul{n}}.
 \begin{russian} \end{russian}
 
 \begin{exerciseENG}\label{exc:two R2s}
-
 In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR$, but in (\ref{dia:exponential abbrev}) we say that $\RR^2$ is an abbreviation for $\RR^{\ul{2}}$. Use Exercise \ref{exc:generator for set}, Proposition \ref{prop:curry}, Exercise \ref{exc:coprod}, and the fact that 1+1=2, to prove that these are isomorphic, $\RR^{\ul{2}}\iso\RR\times\RR$.
 
-\begin{russian} \end{russian}
-
 (The answer to Exercise \ref{exc:generator for set} was $A=\singleton$: i.e. $\Hom_\Set(\singleton,X)\iso X$ for all $X$.)
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:two R2s}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
@@ -2967,8 +2955,9 @@ Again, the natural numbers are the isomorphism classes of finite sets. Their beh
 
 In this proposition, we denote the coproduct of two sets $A$ and $B$ by the notation $A+B$ rather than $A\sqcup B$. It is a reasonable notation in general, and one that is often used. 
 
-\begin{propositionENG}\label{prop:arithmetic of sets}
+\begin{russian} \end{russian}
 
+\begin{propositionENG}\label{prop:arithmetic of sets}
 The following isomorphisms exist for any sets $A,B,$ and $C$ (except for one caveat, see Exercise \ref{exc:0 to the 0}). 
 \begin{russian} \end{russian}
 \begin{itemize}
@@ -2987,28 +2976,29 @@ The following isomorphisms exist for any sets $A,B,$ and $C$ (except for one cav
 \item $A^{B+C}\iso A^B\times A^C$
 \item $(A^B)^C\iso A^{B\times C}$
 \end{itemize}
-
 \end{propositionENG}
 
-\begin{exerciseENG}\label{exc:0 to the 0}
+\begin{propositionRUS}\label{prop:arithmetic of sets}
+\begin{russian} \end{russian}
+\end{propositionRUS}
 
+\begin{exerciseENG}\label{exc:0 to the 0}
 Everything in Proposition \ref{prop:arithmetic of sets} is true except in one case, namely that of $$\ul{0}^{\ul{0}}.$$ In this case, we get conflicting answers, because for any set $A$, including $A=\emptyset=\ul{0}$, we have claimed both that $A^{\ul{0}}\iso\ul{1}$ and that $\ul{0}^A\iso\ul{0}.$ 
 
-\begin{russian} \end{russian}
-
 What is the correct answer for $\ul{0}^{\ul{0}}$, based on the definitions of $\ul{0}$ and $\ul{1}$, given in (\ref{dia:underline n}), and of $A^B$, given in (\ref{dia:exponential sets})?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:0 to the 0}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}
-
 It is also true of natural numbers that if $a,b\in\NN$ and $ab=0$ then either $a=0$ or $b=0$. Is the analogous statement true of all sets?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 Proposition \ref{prop:arithmetic of sets} is in some sense about isomorphisms. It says that understanding isomorphisms of sets reduces to understanding natural numbers. But note that there is much more going on in $\Set$ than isomorphisms; in particular there are functions that are not invertible. 
 
@@ -3022,20 +3012,20 @@ And yet in Exercise \ref{exc:evaluation} we found a function $ev\taking B^A\time
 \begin{russian} \end{russian}
 
 \begin{exerciseENG}
-
 Explain why there is a canonical function $\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ but not a canonical function $\ul{575}\to\ul{5}$.
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{sloganENG}
-
-It is true that a set is isomorphic to any other set with the same number of elements, but don't be fooled into thinking that the study of sets reduces to the study of numbers. Functions that are not isomorphisms cannot be captured within the framework of numbers. 
-
+\begin{exerciseRUS}
 \begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{sloganENG}
+It is true that a set is isomorphic to any other set with the same number of elements, but don't be fooled into thinking that the study of sets reduces to the study of numbers. Functions that are not isomorphisms cannot be captured within the framework of numbers. 
 \end{sloganENG}
+
+\begin{sloganRUS}
+\begin{russian} \end{russian}
+\end{sloganRUS}
 
 %%%% Subsection %%%%
 
