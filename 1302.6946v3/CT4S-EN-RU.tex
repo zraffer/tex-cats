@@ -448,7 +448,7 @@ Data. Hard evidence. The physical world. It is here that science touches down an
 
 In this course I will use a mathematical tool called {\em ologs}, or ontology logs, to give some structure to the kinds of ideas that are often communicated in pictures like the one on the cover. Each olog inherently offers a framework in which to record data about the subject. More precisely it encompasses a {\em database schema}, which means a system of interconnected tables that are initially empty but into which data can be entered. For example consider the olog below
 $$\xymatrix{
-\obox{}{.5in}{a mass}&&\obox{}{1.1in}{an object of mass $m$ held at height $h$ above the ground}\LAL{ll}{\footnotesize has as mass}\LA{rrdd}{\hspace{.4in}\parbox{1in}{\singlespace \footnotesize when dropped has as number of seconds till hitting the ground}}\LAL{dd}{\parbox{.7in}{\singlespace\footnotesize has as height in meters}}&&\\\\
+\obox{}{.5in}{a mass}&&\obox{}{1.1in}{an object of mass $m$ held at height $h$ above the ground}\LAL{ll}{\footnotesize has as mass}\LA{rrdd}{\hspace{.4in}\parbox{1in}{\singlespace\footnotesize when dropped has as number of seconds till hitting the ground}}\LAL{dd}{\parbox{.7in}{\singlespace\footnotesize has as height in meters}}&&\\\\
 &&\obox{}{1in}{a real number $h$}\ar@{}[uurr]|(.35){?}\ar[rr]_-{\sqrt{2h\div 9.8}}&\hspace{.3in}&\obox{}{.9in}{a real number}
 }
 $$
@@ -456,7 +456,7 @@ This olog represents a framework in which to record data about objects held abov
 
 \begin{russian}В этом курсе я буду использовать математический инструмент, называемый {\em ологами} или же онтологическими записями, чтобы придать некую структуру тем видам идей, о которых зачастую сообщается в картинках, подобных той, что изображена на обложке. Каждый олог по своей сути представляет собой конструкцию, в которой записаны данные о предмете обсуждения. Более точно, они отражают {\em схему базы данных}, что означает систему взаимосвязанных таблиц, которые вначале пусты, но в которые могут быть внесены данные. Для примера рассмотрим такой олог \end{russian}
 $$\xymatrix{
-\obox{}{.5in}{\begin{russian}масса\end{russian}}&&\obox{}{1.1in}{\begin{russian}объект массы \end{russian}$m$ \begin{russian}удерживаемый на высоте \end{russian}$h$ \begin{russian}над землей\end{russian}}\LAL{ll}{\footnotesize\begin{russian}имеет массу\end{russian}}\LA{rrdd}{\hspace{.4in}\parbox{1in}{\singlespace \footnotesize \begin{russian}при падении требуется определенное число секунд до ударения о землю\end{russian}}}\LAL{dd}{\parbox{.7in}{\singlespace\footnotesize\begin{russian}имеет высоту в метрах\end{russian}}}&&\\\\
+\obox{}{.5in}{\begin{russian}масса\end{russian}}&&\obox{}{1.1in}{\begin{russian}объект массы \end{russian}$m$ \begin{russian}удерживаемый на высоте \end{russian}$h$ \begin{russian}над землей\end{russian}}\LAL{ll}{\footnotesize\begin{russian}имеет массу\end{russian}}\LA{rrdd}{\hspace{.4in}\parbox{1in}{\singlespace\footnotesize \begin{russian}при падении требуется определенное число секунд до ударения о землю\end{russian}}}\LAL{dd}{\parbox{.7in}{\singlespace\footnotesize\begin{russian}имеет высоту в метрах\end{russian}}}&&\\\\
 &&\obox{}{1in}{\begin{russian}действительное число \end{russian} $h$}\ar@{}[uurr]|(.35){\checkmark}\ar[rr]_-{\sqrt{2h\div 9.8}}&\hspace{.3in}&\obox{}{.9in}{\begin{russian}действительное число \end{russian} }
 }
 $$
@@ -1715,7 +1715,10 @@ This kind of generality is useful in understanding multiple dimensions, e.g. wha
 \end{remarkENG}
 
 \begin{remarkRUS}
-\begin{russian} \end{russian}
+\begin{russian}Можно также брать произведение более чем двух множеств. Например, если $A,B$ и $C$ это множества, то $A\times B\times C$ это множество троек, 
+$$A\times B\times C:=\{(a,b,c)\|a\in A, b\in B, c\in C\}.$$
+
+Обобщение такого рода полезно для понимания многомерности, в частности того, что физики называют 10-мерным пространством. И все это охватывается понятием {\em пределов}, которое мы рассмотрим в Разделе \ref{sec:lims and colims in a cat}.\end{russian}
 \end{remarkRUS}
 
 \begin{exampleENG}\label{ex:R2}
@@ -1725,7 +1728,9 @@ According to \cite{Pen}, Aristotle seems to have conceived of space as something
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:R2}
-\begin{russian} \end{russian}
+\begin{russian}Пусть $\RR$\index{a symbol!$\RR$} означает множество действительных чисел. Под $\RR^2$ мы имеем в виду $\RR\times\RR$ (см. Упражнение \ref{exc:two R2s}). Аналогично, для любого $n\in\NN$ определим $\RR^n$ как произведение $n$ копий $\RR$ [т.е. множество конечных последовательностей действительных чисел длины $n$]. 
+
+Согласно \cite{Pen}, Аристотель, похоже, воспринимал пространство, как нечто вроде $S:=\RR^3$, и время, как $T:=\RR$. Пространством-временем, если бы он рассматривал его, было бы вероятно $S\times T\iso\RR^4$. На самом деле, конечно, такого рода абстракции были для него недоступны, и восходят скорее к Декарту. \end{russian}
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -1746,7 +1751,20 @@ $$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-\begin{russian} \end{russian}
+\begin{russian}Пусть $\ZZ$ обозначает множество целых чисел, и пусть $+\taking\ZZ\times\ZZ\to\ZZ$ — функцию сложения, и $\cdot\taking\ZZ\times\ZZ\to\ZZ$ — функцию умножения. Какие из следующих диаграмм коммутируют?
+\sexc $$\xymatrix{
+\ZZ\times\ZZ\times\ZZ\ar[rr]^-{(a,b,c)\mapsto(a\cdot b,a\cdot c)}\ar[d]_{(a,b,c)\mapsto(a+b,c)}&\hsp&\ZZ\times\ZZ\ar[d]^{(x,y)\mapsto x+y}\\
+\ZZ\times\ZZ\ar[rr]_{(x,y)\mapsto xy}&&\ZZ}
+$$
+\next $$
+\xymatrix{
+\ZZ\ar[rr]^{x\mapsto (x,0)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
+$$
+\next$$
+\xymatrix{
+\ZZ\ar[rr]^{x\mapsto (x,1)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
+$$
+\endsexc\end{russian}
 \end{exerciseRUS}
 
 %% Subsubsection %%
@@ -1754,7 +1772,7 @@ $$
 \subsubsection{Universal property for products / Универсальное свойство произведений}\index{products!universal property of}\index{universal property!products}
 
 \begin{lemmaENG}[Universal property for product]\label{lemma:up for prod}
-Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes \footnote{The symbol $\forall$ is read “for all”; the symbol $\exists$ is read “there exists”, and the symbol $\exists!$ is read “there exists a unique”. So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
+Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes\footnote{The symbol $\forall$ is read “for all”; the symbol $\exists$ is read “there exists”, and the symbol $\exists!$ is read “there exists a unique”. So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
 \begin{align}\label{dia:univ prop for products}
 \xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X\ar@{}[r]|{\checkmark}&&Y\ar@{}[l]|{\checkmark}\\\\&A\ar[luu]^{\forall f}\ar[ruu]_{\forall g}\ar@{-->}[uuuu]^{\exists !}}
 \end{align}
@@ -1762,7 +1780,11 @@ We might write the unique function as $$\prodmap{f}{g}\taking A\to X\times Y.$$
 \end{lemmaENG}
 
 \begin{lemmaRUS}[Универсальное свойство произведения]\label{lemma:up for prod}
-\begin{russian} \end{russian}
+\begin{russian}Пусть $X$ и $Y$ — множества. Для любого множества $A$ и функций $f\taking A\to X$ и $g\taking A\to Y$ существует единственная функция $A\to X\times Y$ такая, что следующая диаграмма коммутирует:\footnote{Символ $\forall$ читается «для всех»; символ $\exists$ — «существует», а символ $\exists!$ — «существует единственный». Таким образом, эта диаграмма должна выражать идею, что для любых функций $f\taking A\to X$ и $g\taking A\to Y$, существует единственная функция $A\to X\times Y$, для которой оба треугольника коммутируют.}
+\begin{align}\label{dia:univ prop for products}
+\xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X\ar@{}[r]|{\checkmark}&&Y\ar@{}[l]|{\checkmark}\\\\&A\ar[luu]^{\forall f}\ar[ruu]_{\forall g}\ar@{-->}[uuuu]^{\exists !}}
+\end{align}
+Мы могли бы обозначить эту единственную функцию как $$\prodmap{f}{g}\taking A\to X\times Y.$$\end{russian}
 \end{lemmaRUS}
 
 \begin{proofENG}
@@ -1770,7 +1792,7 @@ Suppose given $f,g$ as above. To provide a function $\ell\taking A\to X\times Y$
 \end{proofENG}
 
 \begin{proofRUS}
-\begin{russian} \end{russian}
+\begin{russian}Предположим, даны такие $f,g$, какие требуются выше. Указать функцию $\ell\taking A\to X\times Y$ эквивалентно тому, чтобы указать элемент $\ell(a)\in X\times Y$ для каждого $a\in A$. Нам нужна такая функция, что $\pi_1\circ \ell=f$ и $\pi_2\circ \ell=g$. Произвольный элемент $X\times Y$ — это упорядоченная пара $(x,y)$, поэтому мы получаем, что для $\ell(a)=(x,y)$ должны выполняться равенства $x=\pi_1(x,y)=f(a)$ и $y=\pi_2(x,y)=g(a)$. Таким образом, необходимо и достаточно определить $$\prodmap{f}{g}(a):=(f(a),g(a))$$ для всех $a\in A$.\end{russian}
 \end{proofRUS}
 
 \begin{exampleENG}[Grid of dots, continued]\label{ex:grid2}
@@ -1780,7 +1802,9 @@ Suppose that each person in a classroom picks an element of $X$ and an element o
 \end{exampleENG}
 
 \begin{exampleRUS}[Сетки из точек, продолжение]\label{ex:grid2}
-\begin{russian} \end{russian}
+\begin{russian}В универсальном свойстве произведений следует видеть нечто совершенно интуитивное. Напомним, что если $X$ и $Y$ — множества, имеющие мощности, скажем, $|X|=m$ и $|Y|=n$ соответственно, то $X\times Y$ — это сетка из точек размером $m\times n$, сопровождаемая двумя каноническими проекциями $X\From{\pi_1}X\times Y\To{\pi_2}Y$. Они позволяют нам узнать по каждому элементу $z\in X\times Y$ его столбец $\pi_1(z)\in X$ и строку $\pi_2(z)\in Y$.
+
+Предположим, что каждый человек в зале выберет произвольный элемент $X$ (столбец) и элемент $Y$ (строку). Тогда мы получим функции $f\taking C\to X$ и $g\taking C\to Y$. Но не будет ли выбор столбца и строки одновременно тем же самым, что и выбор элемента сетки? То есть, две функции $f$ и $g$ порождают единственную функцию $C\to X\times Y$. И как же эта функция $C\to X\times Y$ связана с исходными $f$ and $g$? Коммутативная диаграмма (\ref{dia:univ prop for products}) выражает эту очевидную связь. \end{russian}
 \end{exampleRUS}
 
 \begin{exampleENG}
@@ -1791,7 +1815,10 @@ The universal property for products guarantees a function $\singleton\to\RR\time
 \end{exampleENG}
 
 \begin{exampleRUS}
-\begin{russian} \end{russian}
+\begin{russian}Пусть $\RR$ это множество действительных чисел. Начало системы отсчета в $\RR$ это просто элемент $\RR$. Как вы уже показали в Упражнении \ref{exc:generator for set}, мы можем смотреть на такие элементы $\RR$ как на функции $z\taking\singleton\to\RR$, где $\singleton$ — любое множество с одним элементом. Наша функция $z$ «выбирает начало системы отсчета». Таким образом, мы можем изобразить функции 
+$$\xymatrix@=15pt{&\singleton\ar[ddr]^z\ar[ddl]_z\\\\\RR&&\RR}
+$$
+После этого универсальное свойство произведений позволяет нам получить функцию $\singleton\to\RR\times\RR$, которая будет началом системы отсчета в $\RR^2.$ \end{russian}
 \end{exampleRUS}
 
 \begin{remarkENG}
@@ -1799,7 +1826,7 @@ Given sets $X, Y,$ and $A$, and functions $f\taking A\to X$ and $g\taking A\to Y
 \end{remarkENG}
 
 \begin{remarkRUS}
-\begin{russian} \end{russian}
+\begin{russian}Для данных множеств $X, Y$ и $A$, а также функций $f\taking A\to X$ и $g\taking A\to Y$, имеется единственная функция $A\to X\times Y$, коммутирующая с $f$ and $g$. Мы называем ее {\em индуцированной функцией}\index{induced function} $A\to X\times Y$, имея ввиду ту, что возникает из $f$ и $g$. \end{russian}
 \end{remarkRUS}
 
 \begin{exerciseENG}
@@ -1952,7 +1979,7 @@ Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\
 $$
 \xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
 $$
-We might write the unique function as \footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
+We might write the unique function as\footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
 $$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
 \end{lemmaENG}
 
