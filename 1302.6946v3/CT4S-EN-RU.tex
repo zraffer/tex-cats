@@ -361,7 +361,7 @@
 %\pdfoutput=1
 
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 
 \def\sub{\begin{itemize}\item}
 \def\sexc{\begin{enumerate}[a.)]\setlength{\itemsep}{.1cm}\setlength{\parskip}{.1cm}\item}
@@ -408,6 +408,8 @@ In the summer of 2013 I signed a contract with the MIT Press to publish a new ve
 Other than the title, there are two main differences between the present version and the MIT Press version. The first difference is that I will do a full edit with the help of professional editors from the Press. The second difference is that I will write up solutions to the book's (approximately 280) exercises; some of these will be included in the published version, whereas the rest will be available by way of a password-protected page, accessible only to professors who teach the subject.
 
 \begin{russian}Помимо заголовка, есть еще два основных различия данной версии и версии MIT Press. Первое различие состоит в том, что я проведу кардинальное редактирование при помощи профессиональных редакторов. Второе различие — в том, что я напишу решения для упражнений этой книги (приблизительно 280); некоторые из них будут включены в опубликованную версию, тогда как остальные будут размещены на защищенной паролем странице, доступные только преподавателям, ведущим данный предмет. \end{russian}
+
+%%%%%%%% Chapter %%%%%%%%
 
 \tableofcontents
 
@@ -1836,7 +1838,9 @@ Hint: Do not be alarmed: this problem is a bit “recursive” in that you'll us
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-\begin{russian} \end{russian}
+\begin{russian}Для каждого множества $A$ имеется некое замечательное отношение между следующими тремя множествами: $$\Hom_{\Set}(A,X), \hsp \Hom_\Set(A,Y), \hsp \text{and} \hsp\Hom_\Set(A,X\times Y).$$ Какое?
+
+Подсказка: Без паники: эта задача немного «рекурсивна» по части использования произведения в формулах. \end{russian}
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
@@ -1846,7 +1850,9 @@ Hint: Do not be alarmed: this problem is a bit “recursive” in that you'll us
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
-\begin{russian} \end{russian}
+\begin{russian}\sexc Пусть $X$ и $Y$ — множества. Постройте «отображение перестановки» $s\taking X\times Y\to Y\times X$ используя только универсальное свойство произведений. Если $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$ — функции проектирования, запишите $s$ через символы $\qtR{\pi_1}, \qtR{\pi_2}, \qtR{\prodmap{-}{-}}$ и $\qtR{- \circ -}$. 
+\next Можете ли вы доказать, что $s$ — изоморфизм, используя только универсальное свойство произведения?
+\endsexc\end{russian}
 \end{exerciseRUS}
 
 \begin{exampleENG}\label{ex:product to product}
@@ -1867,7 +1873,20 @@ $$m\times n\taking X\times Y\to X'\times Y'.$$
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:product to product}
-\begin{russian} \end{russian}
+\begin{russian}Предположим, даны множества $X, X', Y, Y'$ и функции $m\taking X\to X'$ и $n\taking Y\to Y'$. Мы можем использовать универсальное свойство произведений, чтобы построить функцию $s\taking X\times Y\to X'\times Y'$ следующим образом.
+
+Универсальное свойство (Лемма \ref{lemma:up for prod}) говорит, что для определения функции из любого множества $A$ в $X'\times Y'$ нам требуются две функции, а именно $f\taking A\to X'$ и $g\taking A\to Y'$. Здесь $A=X\times Y$. 
+
+У нас уже есть две проекции $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$. Также у нас имеются $m\taking X\to X'$ и $n\taking Y\to Y'$. Образуя композицию функций, положим $f:=m\circ \pi_1$ и $g:=n\circ\pi_2$.
+$$\xymatrix{
+&X'\times Y'\ar[dl]_{\pi_1'}\ar[dr]^{\pi_2'}\\
+X'&&Y'\\
+X\ar[u]^m&&Y\ar[u]_n\\
+&X\times Y\ar[ul]^{\pi_1}\ar[ur]_{\pi_2}\ar@{-->}[uuu]
+}
+$$
+Пунктирную стрелку часто называют {\em произведением} $m\taking X\to X'$ и $n\taking Y\to Y'$ и обозначают просто  
+$$m\times n\taking X\times Y\to X'\times Y'.$$ \end{russian}
 \end{exampleRUS}
 
 %% Subsubsection %%
