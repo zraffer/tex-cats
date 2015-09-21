@@ -327,7 +327,7 @@
 \newenvironment{proofRUS}{\begin{proof}[Доказательство]}{\end{proof}}
 \newenvironment{exerciseRUS}{\begin{excRUS}}{\hspace*{\fill}$\lozenge$\end{excRUS}}
 \newenvironment{applicationRUS}{\begin{appRUS}}{\hspace*{\fill}$\lozenge\lozenge$\end{appRUS}}
-\newenvironment{sloganRUS}{\begin{russian}\addtocounter{envENG}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Лозунг}\;\arabic{envENG}: \begin{quote}{\bf «}\slshape}{{\bf »}\end{quote}\end{sloppypar}\vspace{.1in}\end{russian}}
+\newenvironment{sloganRUS}{\begin{russian}\addtocounter{envRUS}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Лозунг}\;\arabic{envRUS}: \begin{quote}{\bf «}\slshape}{{\bf »}\end{quote}\end{sloppypar}\vspace{.1in}\end{russian}}
 
 %%%%%%%%%%%%%%%% 
 
@@ -492,12 +492,10 @@ It is my hope that this course will offer scientists a new vocabulary in which t
 
 \section{A brief history of category theory /  Краткая история теории категорий }
 
-The paradigm shift brought on by Einstein's theory of relativity brought on the realization that there is no single perspective from which to view the world. There is no background framework that we need to find; there are infinitely many different frameworks and perspectives, and the real power lies in being able to translate between them. It is in this historical context that category theory got its start.
-\footnote{The following history of category theory is far too brief, and perhaps reflects more of the author's aesthetic than any kind of objective truth, whatever that may mean. Here are some much better references: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
+The paradigm shift brought on by Einstein's theory of relativity brought on the realization that there is no single perspective from which to view the world. There is no background framework that we need to find; there are infinitely many different frameworks and perspectives, and the real power lies in being able to translate between them. It is in this historical context that category theory got its start.\footnote{The following history of category theory is far too brief, and perhaps reflects more of the author's aesthetic than any kind of objective truth, whatever that may mean. Here are some much better references: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
 
 \begin{russian}
-Сдвиг парадигмы, произведенный теорией относительности Эйнштейна, принес понимание того, что нет единой точки зрения на мир. Не существует основополагающей системы отсчёта, которую нам нужно найти; имеется бесконечно много различных систем отсчета и точек зрения, и настоящая мощь [переводчик: да пребудет с тобой сила!..] состоит в умении переходить между ними. В таком историческом контексте возникала теория категорий.
-\footnote{Нижеследующее описание истории теории категорий слишком кратко, и, возможно, отражает в большей степени авторское чувство прекрасного, чем любой вид объективной истины, что бы это ни значило. Вот некоторые значительно лучшие ссылки: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
+Сдвиг парадигмы, произведенный теорией относительности Эйнштейна, принес понимание того, что нет единой точки зрения на мир. Не существует основополагающей системы отсчёта, которую нам нужно найти; имеется бесконечно много различных систем отсчета и точек зрения, и настоящая мощь [переводчик: да пребудет с тобой сила!..] состоит в умении переходить между ними. В таком историческом контексте возникала теория категорий.\footnote{Нижеследующее описание истории теории категорий слишком кратко, и, возможно, отражает в большей степени авторское чувство прекрасного, чем любой вид объективной истины, что бы это ни значило. Вот некоторые значительно лучшие ссылки: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
  \end{russian}
 
 Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenberg, Samuel} and Saunders Mac Lane.\index{Mac Lane, Saunders} It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as $y^2z=x^3-xz^2$. People had already created important and useful links (e.g. cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well.
@@ -650,8 +648,7 @@ I would like to thank my teacher, Peter Ralston, who taught me to repeatedly que
 
 \begin{russian} \end{russian}
 
-Finally, I acknowledge my appreciation for support from the Office of Naval Research
-\footnote{Grant numbers: N000140910466, N000141010841, N000141310260}
+Finally, I acknowledge my appreciation for support from the Office of Naval Research\footnote{Grant numbers: N000140910466, N000141010841, N000141310260}
 without which this book would not have been remotely possible. I believe that their funding of basic research is an excellent way of ensuring that the US remains a global leader in the years to come.
 
 \begin{russian} \end{russian}
@@ -673,12 +670,10 @@ The theory of sets was invented as a foundation for all of mathematics. The noti
 
 \subsection{Sets / Множества}
 
-In this course I'll assume you know what a set is. We can think of a set $X$ as a collection of things $x\in X$, each of which is recognizable as being in $X$ and such that for each pair of named elements $x,x'\in X$ we can tell if $x=x'$ or not.
-\footnote{Note that the symbol $x'$, read “x-prime”, has nothing to do with calculus or derivatives. It is simply notation that we use to name a symbol that is suggested as being somehow like $x$. This suggestion of kinship between $x$ and $x'$ is meant only as an aid for human cognition, and not as part of the mathematics.}
+In this course I'll assume you know what a set is. We can think of a set $X$ as a collection of things $x\in X$, each of which is recognizable as being in $X$ and such that for each pair of named elements $x,x'\in X$ we can tell if $x=x'$ or not.\footnote{Note that the symbol $x'$, read “x-prime”, has nothing to do with calculus or derivatives. It is simply notation that we use to name a symbol that is suggested as being somehow like $x$. This suggestion of kinship between $x$ and $x'$ is meant only as an aid for human cognition, and not as part of the mathematics.}
 The set of pendulums is the collection of things we agree to call pendulums, each of which is recognizable as being a pendulum, and for any two people pointing at pendulums we can tell if they're pointing at the same pendulum or not. 
 
-\begin{russian}В этом курсе я буду предполагать, что вы знаете, что такое множество. Мы можем думать о множестве $X$ как о совокупности вещей $x\in X$, для каждой из которых мы можем проверить, находится ли она в $X$, и такой, что для каждой пары именованных элементов $x,x'\in X$ мы можем сказать, $x=x'$ или нет.
-\footnote{Заметим, что символ $x'$, читается «x-штрих», не имеет ничего общего с матанализом или производной. Это просто обозначение, которое мы используем, чтобы обозначить символ, в чем-то похожий на $x$. Такое предположение о родстве между $x$ и $x'$ имеет смысл только для целей удобства человеческого восприятия, а не как часть математики.}
+\begin{russian}В этом курсе я буду предполагать, что вы знаете, что такое множество. Мы можем думать о множестве $X$ как о совокупности вещей $x\in X$, для каждой из которых мы можем проверить, находится ли она в $X$, и такой, что для каждой пары именованных элементов $x,x'\in X$ мы можем сказать, $x=x'$ или нет.\footnote{Заметим, что символ $x'$, читается «x-штрих», не имеет ничего общего с матанализом или производной. Это просто обозначение, которое мы используем, чтобы обозначить символ, в чем-то похожий на $x$. Такое предположение о родстве между $x$ и $x'$ имеет смысл только для целей удобства человеческого восприятия, а не как часть математики.}
 Множество маятников это совокупность вещей, которые мы условились называть маятниками, про каждый из которых мы можем проверить, что это действительно маятник, и для любых двух людей, указывающих на маятники, мы можем сказать, показывают ли они на один и тот же маятник или нет. \end{russian}
 
 \begin{figure}
@@ -744,14 +739,12 @@ Note that for every element $x\in X$, there is exactly one arrow emanating from 
 \begin{russian}Заметим, что для каждого элемента $x\in X$ имеется в точности одна стрелка, исходящая из $x$, в то же время для элемента $y\in Y$ может быть несколько стрелок, указывающих на $y$, или их вообще может не быть.\end{russian}
 
 \begin{applicationENG}\label{app:force-extension}\index{materials!force-extension curves}
-In studying the mechanics of materials, one wishes to know how a material responds to tension. For example a rubber band responds to tension differently than a spring does. To each material we can associate a \href{http://en.wikipedia.org/wiki/Stress–strain_curve}{\text force-extension curve}, recording how much force the material carries when extended to various lengths. Once we fix a methodology for performing experiments, finding a material's force-extension curve would ideally constitute a function from the set of materials to the set of curves.
-\footnote{In reality, different samples of the same material, say samples of different sizes or at different temperatures, may have different force-extension curves. If we want to see this as a true function whose codomain is curves it should have as domain something like the set of material samples.}
+In studying the mechanics of materials, one wishes to know how a material responds to tension. For example a rubber band responds to tension differently than a spring does. To each material we can associate a \href{http://en.wikipedia.org/wiki/Stress–strain_curve}{\text force-extension curve}, recording how much force the material carries when extended to various lengths. Once we fix a methodology for performing experiments, finding a material's force-extension curve would ideally constitute a function from the set of materials to the set of curves.\footnote{In reality, different samples of the same material, say samples of different sizes or at different temperatures, may have different force-extension curves. If we want to see this as a true function whose codomain is curves it should have as domain something like the set of material samples.}
 \end{applicationENG}
 
 \begin{applicationRUS}\label{app:force-extension}\index{materials!force-extension curves}
 \begin{russian}
-При изучении сопротивления материалов [часть механики деформируемого твёрдого тела] стремятся исследовать, как материал реагирует на напряжение [сжатие и растяжение]. Например, резиновая лента реагирует на напряжение не так, как пружина. С каждым материалом мы можем ассоциировать \href{https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B4%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F}{\text диаграмму деформирования}, описывающую, силу какой величины материал выдерживает, будучи растянут до различной длины. Как только мы зафиксировали методологию проведения экспериментов, нахождение кривой сила-растяжение для данного материала идеальным образом образует функцию из множества материалов в множество кривых.
-\footnote{В действительности, различные образцы одного и того же материала, скажем, образцы различного размера или при различной температуре, могут иметь различные кривые сила-растяжение. Если мы хотим увидеть здесь настоящую функцию с областью значений «кривые», мы должны взять в качестве области определения нечто вроде «образцы материала».} 
+При изучении сопротивления материалов [часть механики деформируемого твёрдого тела] стремятся исследовать, как материал реагирует на напряжение [сжатие и растяжение]. Например, резиновая лента реагирует на напряжение не так, как пружина. С каждым материалом мы можем ассоциировать \href{https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B4%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F}{\text диаграмму деформирования}, описывающую, силу какой величины материал выдерживает, будучи растянут до различной длины. Как только мы зафиксировали методологию проведения экспериментов, нахождение кривой сила-растяжение для данного материала идеальным образом образует функцию из множества материалов в множество кривых.\footnote{В действительности, различные образцы одного и того же материала, скажем, образцы различного размера или при различной температуре, могут иметь различные кривые сила-растяжение. Если мы хотим увидеть здесь настоящую функцию с областью значений «кривые», мы должны взять в качестве области определения нечто вроде «образцы материала».} 
 \end{russian}
 \end{applicationRUS}
 
@@ -776,16 +769,14 @@ Let $PR$ denote the set of photoreceptor cells and let $RG$ denote the set of re
 \end{exerciseRUS}
 
 \begin{exampleENG}\label{ex:subset as function}\index{subset!as function}
-Suppose that $X$ is a set and $X'\ss X$ is a subset. Then we can consider the function $X'\to X$ given by sending every element of $X'$ to “itself” as an element of $X$. For example if $X=\{a,b,c,d,e,f\}$ and $X'=\{b,d,e\}$ then $X'\ss X$ and we turn that into the function $X'\to X$ given by $b\mapsto b, d\mapsto d, e\mapsto e$.
-\footnote{This kind of arrow,\;\;$\mapsto$\;\;, is read aloud as “maps to”. A function $f\taking X\to Y$ means a rule for assigning to each element $x\in X$ an element $f(x)\in Y$. We say that “$x$ maps to $f(x)$” and write $x\mapsto f(x)$.}\index{a symbol!$\mapsto$}
+Suppose that $X$ is a set and $X'\ss X$ is a subset. Then we can consider the function $X'\to X$ given by sending every element of $X'$ to “itself” as an element of $X$. For example if $X=\{a,b,c,d,e,f\}$ and $X'=\{b,d,e\}$ then $X'\ss X$ and we turn that into the function $X'\to X$ given by $b\mapsto b, d\mapsto d, e\mapsto e$.\footnote{This kind of arrow,\;\;$\mapsto$\;\;, is read aloud as “maps to”. A function $f\taking X\to Y$ means a rule for assigning to each element $x\in X$ an element $f(x)\in Y$. We say that “$x$ maps to $f(x)$” and write $x\mapsto f(x)$.}\index{a symbol!$\mapsto$}
 
 As a matter of notation, we may sometimes say something like the following: Let $X$ be a set and let $i\taking X'\ss X$ be a subset. Here we are making clear that $X'$ is a subset of $X$, but that $i$ is the name of the associated function.
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:subset as function}\index{subset!as function}
 \begin{russian}
-Предположим, $X$ — множество и $X'\ss X$ — подмножество. Тогда мы можем рассмотреть функцию $X'\to X$, заданную превращением каждого элемента $X'$ в себя, но уже как элемент $X$. Например, если $X=\{a,b,c,d,e,f\}$ и $X'=\{b,d,e\}$, то $X'\ss X$ и мы получаем отсюда функцию $X'\to X$, заданную как $b\mapsto b, d\mapsto d, e\mapsto e$.
-\footnote{Такой вид стрелочки,\;\;$\mapsto$\;\;, читается вслух как «переходит в». Функция $f\taking X\to Y$ означает правило сопоставления каждому элементу $x\in X$ элемента $f(x)\in Y$. При этом мы говорим, что «$x$ переходит в $f(x)$» и пишем $x\mapsto f(x)$.}\index{a symbol!$\mapsto$}
+Предположим, $X$ — множество и $X'\ss X$ — подмножество. Тогда мы можем рассмотреть функцию $X'\to X$, заданную превращением каждого элемента $X'$ в себя, но уже как элемент $X$. Например, если $X=\{a,b,c,d,e,f\}$ и $X'=\{b,d,e\}$, то $X'\ss X$ и мы получаем отсюда функцию $X'\to X$, заданную как $b\mapsto b, d\mapsto d, e\mapsto e$.\footnote{Такой вид стрелочки,\;\;$\mapsto$\;\;, читается вслух как «переходит в». Функция $f\taking X\to Y$ означает правило сопоставления каждому элементу $x\in X$ элемента $f(x)\in Y$. При этом мы говорим, что «$x$ переходит в $f(x)$» и пишем $x\mapsto f(x)$.}\index{a symbol!$\mapsto$}
 
 Что касается обозначений, мы можем сказать иногда нечто вроде следующего: «Пусть $X$ — множество и пусть $i\taking X'\ss X$ — подмножество». Здесь мы ясно говорим, что $X'$ это подмножество $X$, а также, что $i$ это имя соответствующей функции. 
 \end{russian}
@@ -843,13 +834,11 @@ Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the c
 \begin{russian}\caption{Из функций $f\taking X\to Y$ и $g\taking Y\to Z$, просто следуя по стрелочкам, получается композиция — функция $g\circ f\taking X\to Z$}\end{russian}
 \end{figure}
 
-Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} to denote the set of functions $X\to Y$.
-\footnote{The strange notation $\Hom_\Set(-,-)$ will make more sense later, when it is seen as part of a bigger story.} 
+Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} to denote the set of functions $X\to Y$.\footnote{The strange notation $\Hom_\Set(-,-)$ will make more sense later, when it is seen as part of a bigger story.} 
 Note that two functions $f,g\taking X\to Y$ are equal\index{function!equality of} if and only if for every element $x\in X$ we have $f(x)=g(x)$. 
 
 \begin{russian}
-Пусть $X$ и $Y$ — множества. Мы записываем $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} для обозначения множества функций $X\to Y$.
-\footnote{Странное обозначение $\Hom_\Set(-,-)$ обретет смысл позже, когда мы увидим его как часть большой картины.} 
+Пусть $X$ и $Y$ — множества. Мы записываем $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} для обозначения множества функций $X\to Y$.\footnote{Странное обозначение $\Hom_\Set(-,-)$ обретет смысл позже, когда мы увидим его как часть большой картины.} 
 Заметим, что две функции $f,g\taking X\to Y$ считаются равными\index{function!equality of}, если и только если для каждого элемента $x\in X$ верно равенство $f(x)=g(x)$. 
 \end{russian}
 
@@ -1000,8 +989,7 @@ $$
 \hspace{.8in}
 \parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{“Bob”}\\&&\LMO{\clubsuit}}}}
 $$
-Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,2,3,4,5\}$ sends “Bob” to $1$, sends $\clubsuit$ to $3$, and sends $r8$ to $4$, is there a canonical function $A\to\{1,2,3,4,5\}$ corresponding to $f$?
-\footnote{Canonical means something like “best choice”, a choice that stands out as the only reasonable one.}\index{canonical}
+Note that the sets $A$ and $B$ are isomorphic. Supposing that $f\taking B\to\{1,2,3,4,5\}$ sends “Bob” to $1$, sends $\clubsuit$ to $3$, and sends $r8$ to $4$, is there a canonical function $A\to\{1,2,3,4,5\}$ corresponding to $f$?\footnote{Canonical means something like “best choice”, a choice that stands out as the only reasonable one.}\index{canonical}
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:functions are not iso invariant}
@@ -1011,8 +999,7 @@ $$
 \hspace{.8in}
 \parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{«Bob»}\\&&\LMO{\clubsuit}}}}
 $$
-Заметим, что множества $A$ и $B$ изоморфны. Предположим, что $f\taking B\to\{1,2,3,4,5\}$ переводит «Bob» в $1$, $\clubsuit$ в $3$, и $r8$ в $4$; имеется ли каноническая функция $A\to\{1,2,3,4,5\}$, соответствующая $f$?
-\footnote{«Каноническая» означает нечто наподобие «лучшего выбора», выбора, который выделяется, как единственный обоснованный.}\index{canonical}
+Заметим, что множества $A$ и $B$ изоморфны. Предположим, что $f\taking B\to\{1,2,3,4,5\}$ переводит «Bob» в $1$, $\clubsuit$ в $3$, и $r8$ в $4$; имеется ли каноническая функция $A\to\{1,2,3,4,5\}$, соответствующая $f$?\footnote{«Каноническая» означает нечто наподобие «лучшего выбора», выбора, который выделяется, как единственный обоснованный.}\index{canonical}
 \end{russian}
 \end{exerciseRUS}
 
@@ -1106,8 +1093,7 @@ Suppose $f\taking A\to B$ is an isomorphism. If there exists natural numbers $m,
 \section{Commutative diagrams / Коммутативные диаграммы}\label{sec:comm diag}
 \addtocounter{subsection}{1}\setcounter{subsubsection}{0}
 
-At this point it is difficult to precisely define diagrams or commutative diagrams in general, but we can give the heuristic idea.
-\footnote{We will define commutative diagrams precisely in Section \ref{sec:diagrams in a category}.}
+At this point it is difficult to precisely define diagrams or commutative diagrams in general, but we can give the heuristic idea.\footnote{We will define commutative diagrams precisely in Section \ref{sec:diagrams in a category}.}
 Consider the following picture: 
 \begin{align}\label{dia:triangle}
 \xymatrix{A\ar[r]^f\ar[rd]_h&B\ar[d]^g\\&C}
@@ -1115,8 +1101,7 @@ Consider the following picture:
 We say this is a {\em diagram of sets}\index{diagram!in $\Set$} if each of $A,B,C$ is a set and each of $f,g,h$ is a function. We say this diagram {\em commutes}\index{commuting diagram}\index{diagam!commutes} if $g\circ f = h$. In this case we refer to it as a commutative triangle of sets.
 
 \begin{russian} 
-На данном этапе изложения трудно дать точное определение диаграммам или коммутативным диаграммам в общем виде, поэтому мы ограничимся пока эвристической идеей.
-\footnote{Позднее, в Разделе \ref{sec:diagrams in a category} мы точно определим понятие коммутативной диаграммы.}
+На данном этапе изложения трудно дать точное определение диаграммам или коммутативным диаграммам в общем виде, поэтому мы ограничимся пока эвристической идеей.\footnote{Позднее, в Разделе \ref{sec:diagrams in a category} мы точно определим понятие коммутативной диаграммы.}
 Рассмотрим следующий рисунок: 
 \begin{align}\label{dia:triangle}
 \xymatrix{A\ar[r]^f\ar[rd]_h&B\ar[d]^g\\&C}
@@ -1345,12 +1330,10 @@ Sometimes the label on an arrow can be shortened or dropped altogether if it is 
 
 \begin{russian}Иногда метку на стрелке можно сократить или опустить совсем, если она очевидна из контекста.  Мы обсудим это подробнее в Разделе \ref{sec:facts}, а здесь приведем достаточно общий пример того, как я записываю ологи. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr пара $(x,y)$, где $x$ и $y$ это целые числа}\ar[dl]_x\ar[dr]^y\\\smbox{B}{целое число}&&\smbox{B}{целое число}}}\end{align}  Ни одна из стрелок не читается по описанному выше протоколу («пара $(x,y)$, где $x$ и $y$ это целые числа $x$ целое число» не будет корректным выражением естественного языка), и все же очевидно, что каждое отображение означает.  Например, если $(8,11)$ это $A$, то стрелка $x$ выдаст $8$, а стрелка $y$ выдаст $11$.  О метке $x$ можно думать, как о псевдониме для полного имени «взять и выдать $x$», и аналогично для $y$.  Как правило, я не использую полные имена во избежание захламления олога текстом. \end{russian}
 
-One can also read paths through an olog by inserting the word “which” after each intermediate box.
-\footnote{If the intended elements of an intermediate box are humans, it is polite to use “who” rather than “which”, and other such conventions may be upheld if one so desires.}
+One can also read paths through an olog by inserting the word “which” after each intermediate box.\footnote{If the intended elements of an intermediate box are humans, it is polite to use “who” rather than “which”, and other such conventions may be upheld if one so desires.}
 For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read “a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman.”  The reader should read and understand the content of the bottom path, which associates to every child a year.  
 
-\begin{russian}В ологе можно читать целые пути, вставляя слово «который» после каждого промежуточного прямоугольника.
-\footnote{Если элементами промежуточного типа являются одушевленные существа, более вежливо говорить «кто», а не «который»; при желании можно следовать этому правилу и другим подобным договоренностям.}
+\begin{russian}В ологе можно читать целые пути, вставляя слово «который» после каждого промежуточного прямоугольника.\footnote{Если элементами промежуточного типа являются одушевленные существа, более вежливо говорить «кто», а не «который»; при желании можно следовать этому правилу и другим подобным договоренностям.}
 Возьмем для примера следующий олог, который имеет два пути длины 3 (считаем стрелки в цепи): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{ребенок}\LA{r}{является}&\fbox{человек}\LA{rr}{имеет родителей}\LAL{dr}{имеет день рождения}&&\obox{}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\LA{r}{$w$}&\fbox{женщина}\\&&\fbox{дата}\LA{r}{включает}&\fbox{год}}}\end{align}  \normalsize Верхний путь читается «ребенок является человеком, который имеет [в качестве] родителей пару $(w,m)$, где $w$ это женщина и $m$ мужчина, из которой можно получить [в качестве] $w$ женщину.»  Читателю следует прочесть и разобраться в смысле нижнего пути, который сопоставляет каждому ребенку некоторый год.  \end{russian}
 
 %% Subsubsection %%
@@ -1426,12 +1409,10 @@ Given an olog, the author may want to declare that two paths are equivalent.  Fo
 \begin{russian}Автор любого олога может объявить, что два выбранных пути в этом ологе эквивалентны.  Например, рассмотрим два пути из $A$ в $C$ в ологе
 \begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет родителей}\LAL{drr}{\parbox{.8in}{имеет мать}}&&\obox{B}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\ar@{}[dll]|(.4){\checkmark}\LA{d}{выдает $w$}\\&&\smbox{C}{женщина}}}\end{align} Носители естественного языка обычно знают, что женщина-родитель называется матерью, поэтому эти два пути $A\to C$ должны быть эквивалентны.  Более математический способ выразить то же самое — назвать треугольник в Ологе (\ref{olog:commute}) {\em коммутирующим}. То есть, эквивалентности путей это просто коммутативные диаграммы из Раздела \ref{sec:comm diag}. О примере выше мы кратко говорим «женщина-родитель эквивалентна матери.»  Чтобы заявить об этом, мы определяем диагональное отображение в (\ref{olog:commute}) как {\em композицию} горизонтального отображения и вертикального. \end{russian}
 
-I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.
-\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
+I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
   Either way, it means that “$f$ then $g$” is equivalent to “$h$ then $i$”.  
 
-\begin{russian}Обычно я предпочитаю обозначать коммутативность диаграммы при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{a symbol!$\simeq$}.
-\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{a warning!notation for composition} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит идущим задом-наперед.\index{composition!classical order} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{composition!diagrammatic order} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
+\begin{russian}Обычно я предпочитаю обозначать коммутативность диаграммы при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{a symbol!$\simeq$}.\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{a warning!notation for composition} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит идущим задом-наперед.\index{composition!classical order} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{composition!diagrammatic order} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
  В любом случае, это означает, что «$f$ потом $g$» эквивалентно «$h$ потом $i$». \end{russian}
 
 Here is another, more scientific example:
@@ -1486,8 +1467,7 @@ Create an olog about a scientific subject, preferably one you think about often.
 
 \subsubsection{A formula for writing facts as English / Рецепт для записи фактов естественным языком}\index{olog!facts in English}
 
-Every fact consists of two paths, say $P$ and $Q$, that are to be declared equivalent. The paths $P$ and $Q$ will necessarily have the same source, say $s$, and target, say $t$, but their lengths may be different, say $m$ and $n$ respectively.
-\footnote{If the source equals the target, $s=t$, then it is possible  to have $m=0$ or $n=0$, and the ideas below still make sense.} 
+Every fact consists of two paths, say $P$ and $Q$, that are to be declared equivalent. The paths $P$ and $Q$ will necessarily have the same source, say $s$, and target, say $t$, but their lengths may be different, say $m$ and $n$ respectively.\footnote{If the source equals the target, $s=t$, then it is possible  to have $m=0$ or $n=0$, and the ideas below still make sense.} 
 We draw these paths as 
 \begin{align}\label{dia:two paths for equivalence}
 P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
@@ -1505,8 +1485,7 @@ Every part $\ell$ of an olog (i.e. every box and every arrow) has an associated 
 \nonumber&\tn{Fact: whenever }x\tn{ is }\qtE{s},\tn{ we will have }P(x)=Q(x).
 \end{align}
 
-\begin{russian}Каждый факт состоит из двух путей, допустим, $P$ и $Q$, которые мы намерены объявить эквивалентными. Пути $P$ и $Q$ обязательно должны иметь общее начало и конец, скажем, $s$ и $t$, однако их длины могут отличаться, скажем, $m$ и $n$ соответственно.
-\footnote{Если начало совпадает с концом, $s=t$, то возможна ситуация $m=0$ или $n=0$, при этом все сказанное ниже остается осмысленным и в таком случае.} 
+\begin{russian}Каждый факт состоит из двух путей, допустим, $P$ и $Q$, которые мы намерены объявить эквивалентными. Пути $P$ и $Q$ обязательно должны иметь общее начало и конец, скажем, $s$ и $t$, однако их длины могут отличаться, скажем, $m$ и $n$ соответственно.\footnote{Если начало совпадает с концом, $s=t$, то возможна ситуация $m=0$ или $n=0$, при этом все сказанное ниже остается осмысленным и в таком случае.} 
 Мы изображает пути так 
 \begin{align}\label{dia:two paths for equivalence}
 P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
@@ -1709,7 +1688,7 @@ A traditional (Mendelian) way to predict the genotype of offspring based on the 
 \end{applicationENG}
 
 \begin{applicationRUS}
-\begin{russian}A traditional (Mendelian) way to predict the genotype of offspring based on the genotype of its parents is by the use of \href{http://en.wikipedia.org/wiki/Punnett_square}{Punnett squares}. If $F$ is the set of possible genotypes for the female parent and $M$ is the set of possible genotypes of the male parent, then $F\times M$ is drawn as a square, called a Punnett square, in which every combination is drawn. \end{russian}
+\begin{russian}Традиционный (по Менделю) способ предсказания генотипа потомков основываясь на генотипе родителей использует \href{https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D1%88%D1%91%D1%82%D0%BA%D0%B0_%D0%9F%D0%B5%D0%BD%D0%BD%D0%B5%D1%82%D0%B0}{решётку Пеннета}. Если $F$ это множество возможных генотипов женского родителя и $M$ это множество возможных генотипов мужского родителя, то $F\times M$ изображается в виде квадрата, называемого решеткой Пеннета, в которой показана каждая комбинация. \end{russian}
 \end{applicationRUS}
 
 \begin{exerciseENG}
@@ -1717,7 +1696,7 @@ How many elements does the set $\{a,b,c,d\}\times\{1,2,3\}$ have?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-\begin{russian}How many elements does the set $\{a,b,c,d\}\times\{1,2,3\}$ have?\end{russian}
+\begin{russian}Сколько всего элементов в множестве $\{a,b,c,d\}\times\{1,2,3\}$?\end{russian}
 \end{exerciseRUS}
 
 \begin{applicationENG}
@@ -1725,7 +1704,7 @@ Suppose we are conducting experiments about the mechanical properties of materia
 \end{applicationENG}
 
 \begin{applicationRUS}
-\begin{russian} \end{russian}
+\begin{russian}Предположим, мы проводим эксперименты, касающиеся механических свойств материалов, как в Приложении \ref{app:force-extension}. Для каждого образца материала мы получим несколько точек данных в множестве $\fakebox{extension}\times\fakebox{force}\iso\RR\times\RR$.\end{russian}
 \end{applicationRUS}
 
 \begin{remarkENG}
@@ -1973,8 +1952,7 @@ Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\
 $$
 \xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
 $$
-We might write the unique function as 
-\footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
+We might write the unique function as \footnote{We are about to use a two-line symbol, which is a bit unusual. In what follows a certain function $X\sqcup Y\to A$ is being denoted by the symbol $\coprodmap{f}{g}$.}
 $$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
 \end{lemmaENG}
 
@@ -2111,8 +2089,7 @@ What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y$?
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
-\sexc Draw a set $X$ with five elements and a set $Y$ with three elements. Color each element of $X$ and each element of $Y$ either red, blue, or yellow,
-\footnote{You can use shadings rather than coloring, if coloring would be annoying.}
+\sexc Draw a set $X$ with five elements and a set $Y$ with three elements. Color each element of $X$ and each element of $Y$ either red, blue, or yellow,\footnote{You can use shadings rather than coloring, if coloring would be annoying.}
 and do so in a “random-looking” way. Considering your coloring of $X$ as a function $X\to C$, where $C=\{\tn{red, blue, yellow}\}$, and similarly obtaining a function $Y\to C$, draw the fiber product $X\times_CY$. Make sure it is colored appropriately.
 \next The universal property for products guarantees a function $X\times_CY\to X\times Y$, which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
 \endsexc
@@ -2185,16 +2162,11 @@ Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have b
 
 \begin{exerciseENG}
 For each of the following, an author has proposed that the diagram on the right is a pullback. Do you think their labels are appropriate or misleading; that is, is the label on the upper-left box reasonable given the rest of the olog, or is it suspect in some way?
-\sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}\hsp&
-\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}
+\sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}
 \end{align*}
-\next\begin{align*}
-\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}\hsp&
-\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr a dog whose owner is a woman}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}
+\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr a dog whose owner is a woman}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}
 \end{align*}
-\next\begin{align*}
-\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}\hsp&
-\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
+\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
 \end{align*}
 \endsexc
 \end{exerciseENG}
@@ -2411,8 +2383,7 @@ We make a matrix of natural numbers out of this data as follows. The set of rows
 
 \begin{russian} \end{russian}
 
-Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.
-\footnote{
+Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.\footnote{
 $$\xymatrix{
 &R\ar[dl]\ar[dr]\ar[d]\\
 A&R\sqcup R'\ar[l]\ar[r]&B\\
@@ -2652,8 +2623,7 @@ Consider the binary relation $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$.
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and let $R\ss X\times X$ denote the relation such that $(x,y)\in R$ iff there exists an arrow connecting $x$ to $y$.
-\footnote{The word {\em iff} means “if and only if”. In this case we are saying that the pair $(x,y)$ is in $R$ if and only if there exists an arrow connecting $x$ and $y$.\index{iff}}
+Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and let $R\ss X\times X$ denote the relation such that $(x,y)\in R$ iff there exists an arrow connecting $x$ to $y$.\footnote{The word {\em iff} means “if and only if”. In this case we are saying that the pair $(x,y)$ is in $R$ if and only if there exists an arrow connecting $x$ and $y$.\index{iff}}
 \sexc What is the equivalence relation $\sim$ generated by $R$? 
 \next What is the quotient $X/\sim$?
 \endsexc
@@ -2674,8 +2644,7 @@ Suppose given the diagram of sets and functions below:
 \end{align}
 Its {\em fiber sum},\index{fiber sum} denoted $X\sqcup_WY$, is defined as the quotient of $X\sqcup W\sqcup Y$ by the equivalence relation $\sim$ generated by $w\sim f(w)$ and $w\sim g(w)$ for all $w\in W$.
 $$X\sqcup_WY:=(X\sqcup W\sqcup Y)/\sim \hsp\tn{where } \forall w\in W,\;\;  w\sim f(w)\;\;\tn{ and }\;\; w\sim g(w).$$ 
-There are obvious inclusions $i_1\taking X\to X\sqcup_WY$ and $i_2\taking Y\to X\sqcup_WY$.
-\footnote{Note that our term inclusions is not too good, because it seems to suggest that $i_1$ and $i_2$ are injective (see Definition \ref{def:inj,surj,bij}) and this is not always the case.}
+There are obvious inclusions $i_1\taking X\to X\sqcup_WY$ and $i_2\taking Y\to X\sqcup_WY$.\footnote{Note that our term inclusions is not too good, because it seems to suggest that $i_1$ and $i_2$ are injective (see Definition \ref{def:inj,surj,bij}) and this is not always the case.}
 Note that if $Z=X\sqcup_WY$ then the diagram
 \begin{align}\label{dia:pushout sets}
 \xymatrix{W\ar[r]^g\ar[d]_f&Y\ar[d]^{i_2}\\X\ar[r]_-{i_1}&Z\lrlimit}
@@ -3006,8 +2975,7 @@ Proposition \ref{prop:arithmetic of sets} is in some sense about isomorphisms. I
 
 In grade school you probably never saw anything that looked like this:
 $$5^3\times 3\too 5$$
-And yet in Exercise \ref{exc:evaluation} we found a function $ev\taking B^A\times A\to B$ that exists for any sets $A,B$. This function $ev$ is not an isomorphism so it somehow does not show up as an equation of natural numbers. But it still has important meaning.
-\footnote{Roughly, the existence of $ev\taking\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ says that given a dot in a $5\times 5\times 5$ grid of dots, and given one of the three axes, you can tell me the coordinate of that dot along that axis.} In terms of mere number, it looks like we are being told of an important function $\ul{575}\to\ul{5}$, which is bizarre. The issue here is precisely the one you confronted in Exercise \ref{exc:functions are not iso invariant}.
+And yet in Exercise \ref{exc:evaluation} we found a function $ev\taking B^A\times A\to B$ that exists for any sets $A,B$. This function $ev$ is not an isomorphism so it somehow does not show up as an equation of natural numbers. But it still has important meaning.\footnote{Roughly, the existence of $ev\taking\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ says that given a dot in a $5\times 5\times 5$ grid of dots, and given one of the three axes, you can tell me the coordinate of that dot along that axis.} In terms of mere number, it looks like we are being told of an important function $\ul{575}\to\ul{5}$, which is bizarre. The issue here is precisely the one you confronted in Exercise \ref{exc:functions are not iso invariant}.
 
 \begin{russian} \end{russian}
 
@@ -3032,56 +3000,49 @@ It is true that a set is isomorphic to any other set with the same number of ele
 \subsection{Subobjects and characteristic functions / Подобъекты и характеристические функции}
 
 \begin{definitionENG}\label{def:power set}
-
 For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\PP(B)$,\index{a symbol!$\PP$} to be the set of subsets of $B$.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exerciseENG}\label{exc:size of power sets}~
+\begin{definitionRUS}\label{def:power set}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}\label{exc:size of power sets}~
 \sexc How many elements does $\PP(\emptyset)$ have? 
 \next How many elements does $\PP(\singleton)$ have? 
 \next How many elements does $\PP(\{1,2,3,4,5,6\})$ have? 
 \next Any idea why they may have named it “power set”?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:size of power sets}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
 \subsubsection{Simplicial complexes / Симплициальные комплексы}\label{sec:simplicial complex}
 
 \begin{definitionENG}\label{def:simplicial complex}\index{simplicial complex}
-
 Let $V$ be a set and let $\PP(V)$ be its powerset. A subset $X\ss\PP(V)$ is called {\em downward-closed} if, for every $u\in X$ and every $u'\ss u$, we have $u'\in X$. We say that $X$ {\em contains all atoms} if for every $v\in V$ the singleton set $\{v\}$ is an element of $X$. 
 
-\begin{russian} \end{russian}
-
-A {\em simplicial complex} is a pair $(V,X)$ where $V$ is a set and $X\ss\PP(V)$ is a downward-closed subset that contains all atoms. The elements of $X$ are called {\em simplices} (singular: {\em simplex}).\index{simplex} Any subset $u\ss V$ has a cardinality $|u|$, so we have a function $X\to\NN$ sending each simplex to its cardinality. The set of simplices with cardinality $n+1$ is denoted $X_n$ and each element $x\in X_n$ is called an {\em $n$-simplex}.
-\footnote{It is annoying at first that the set of subsets with cardinality 1 is denoted $X_0$, etc. But this is standard convention because as we will see, $X_n$ will be $n$-dimensional.}
-Since $X$ contains all atoms (subsets of cardinality 1), we have $X_0\iso V$, and we may also call the 0-simplices {\em vertices}. We sometimes call the 1-simplices {\em edges}.
-\footnote{The reason we wrote $X_0\iso V$ rather than $X_0=V$ is that $X_0$ is the set of 1-element subsets of $V$. So if $V=\{a,b,c\}$ then $X_0=\{\{a\},\{b\},\{c\}\}$. This is really just pedantry.}
-
-\begin{russian} \end{russian}
+A {\em simplicial complex} is a pair $(V,X)$ where $V$ is a set and $X\ss\PP(V)$ is a downward-closed subset that contains all atoms. The elements of $X$ are called {\em simplices} (singular: {\em simplex}).\index{simplex} Any subset $u\ss V$ has a cardinality $|u|$, so we have a function $X\to\NN$ sending each simplex to its cardinality. The set of simplices with cardinality $n+1$ is denoted $X_n$ and each element $x\in X_n$ is called an {\em $n$-simplex}.\footnote{It is annoying at first that the set of subsets with cardinality 1 is denoted $X_0$, etc. But this is standard convention because as we will see, $X_n$ will be $n$-dimensional.}
+Since $X$ contains all atoms (subsets of cardinality 1), we have $X_0\iso V$, and we may also call the 0-simplices {\em vertices}. We sometimes call the 1-simplices {\em edges}.\footnote{The reason we wrote $X_0\iso V$ rather than $X_0=V$ is that $X_0$ is the set of 1-element subsets of $V$. So if $V=\{a,b,c\}$ then $X_0=\{\{a\},\{b\},\{c\}\}$. This is really just pedantry.}
 
 Since $X_0\iso V$, we may denote a simplicial complex $(V,X)$ simply by $X$.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exampleENG}
-
-Let $n\in\NN$ be a natural number and let $V=\ul{n+1}$. Define {\em the $n$-simplex}, denoted $\Delta^n$, to be the simplicial complex $\PP(V)\ss\PP(V)$, i.e. the whole power set, which indeed is downward-closed and contains all atoms. 
-
+\begin{definitionRUS}\label{def:simplicial complex}\index{simplicial complex}
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exampleENG}
+Let $n\in\NN$ be a natural number and let $V=\ul{n+1}$. Define {\em the $n$-simplex}, denoted $\Delta^n$, to be the simplicial complex $\PP(V)\ss\PP(V)$, i.e. the whole power set, which indeed is downward-closed and contains all atoms. 
 \end{exampleENG}
 
+\begin{exampleRUS}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
 We can draw a simplicial complex $X$ by first putting all the vertices on the page as dots. Then for every $x\in X_1$, we see that $x=\{v,v'\}$ consists of 2 vertices, so we draw an edge connecting $v$ and $v'$. For every $y\in X_2$ we see that $y=\{w,w',w''\}$ consists of 3 vertices, so we draw a (filled-in) triangle connecting them. All three edges will be drawn too because $X$ is assumed to be downward closed.
 
@@ -3100,55 +3061,51 @@ $$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
 \begin{russian} \end{russian}
 
 \begin{exerciseENG}
-
 Let $X$ be the following simplicial complex, so that $X_0=\{A,B,\ldots,M\}$. 
 \begin{center}
 \includegraphics[height=3in]{OlogNetwork5}
 \end{center} 
 In this case $X_1$ consists of elements like $\{A,B\}$ and $\{D,K\}$ but not $\{D,J\}$. 
 
-\begin{russian} \end{russian}
-
 Write out $X_2$ and $X_3$ (hint: the drawing of $X$ indicates that $X_3$ should have one element).
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 The 2-simplex $\Delta^2$ is drawn as a filled-in triangle with vertices $V=\{1,2,3\}$. There is a simplicial complex $X=\partial\Delta^2$ that would be drawn as an empty triangle with the same set of vertices. 
 \sexc Draw $\Delta^2$ and $X$ side by side and make clear the difference.
 \next Write down the data for $X$ as a simplicial complex. In other words what are the sets $X_0, X_1, X_2, X_3,\ldots$?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
 \subsubsection{Subobject classifier / Классификатор подобъектов}
 
 \begin{definitionENG}\label{def:subobject classifier}\index{subobject classifier!in $\Set$}
-
 Define the {\em subobject classifier} for $\Set$, denoted $\Omega$\index{a symbol!$\Omega$}, to be the set $\Omega:=\{True,False\}$, together with the function $\singleton\to\Omega$ sending the unique element to $True$.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
+\begin{definitionRUS}\label{def:subobject classifier}\index{subobject classifier!in $\Set$}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
 \begin{propositionENG}\label{prop:characteristic function}
-
 Let $B$ be a set. There is an isomorphism $$\phi\taking\Hom_\Set(B,\Omega)\To{\iso}\PP(B).$$
-
-\begin{russian} \end{russian}
-
 \end{propositionENG}
 
-\begin{proofENG}
+\begin{propositionRUS}\label{prop:characteristic function}
+\begin{russian} \end{russian}
+\end{propositionRUS}
 
+\begin{proofENG}
 Given a function $f\taking B\to\Omega$, let $\phi(f)=\{b\in B\|f(b)=True\}\ss B$. We now construct a function $\psi\taking\PP(B)\to\Hom_\Set(B,\Omega)$ to serve as the inverse of $\phi$. Given a subset $B'\ss B$, define $\psi(B')\taking B\to\Omega$ as follows: 
 $$\psi(i)(b)=\begin{cases}
 True&\tn{ if } b\in B',\\
@@ -3156,33 +3113,35 @@ False&\tn{ if } b\not\in B'.
 \end{cases}
 $$
 One checks easily that $\phi$ and $\psi$ are mutually inverse.
-
-\begin{russian} \end{russian}
-
 \end{proofENG}
+
+\begin{proofRUS}
+\begin{russian} \end{russian}
+\end{proofRUS}
 
 \begin{definitionENG}[Characteristic function]\index{characteristic function}\index{subset!characteristic function of}
 
 Given a subset $B'\ss B$, we call the corresponding function $B\to\Omega$ the {\em characteristic function of $B'$ in $B$.}
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
+
+\begin{definitionRUS}[Characteristic function]\index{characteristic function}\index{subset!characteristic function of}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
 Let $B$ be any set and let $\PP(B)$ be its power set. By Proposition \ref{prop:characteristic function} there is a bijection between $\PP(B)$ and $\Omega^B$. Since $\Omega$ has cardinality 2, the cardinality of $\PP(B)$ is $2^{|B|}$, which explains the correct answer to Exercise \ref{exc:size of power sets}.
 
 \begin{russian} \end{russian}
 
 \begin{exerciseENG}
-
 Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, and define $A''\ss A$ to be its complement, $A'':=A-A'$ (i.e. $a\in A''$ if and only if $a\not\in A'$). 
 \sexc What is the characteristic function of $A''\ss A$? 
 \next Can you phrase it in terms of some function $\Omega\to\Omega$?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
@@ -3193,30 +3152,25 @@ The classical definition of injections and surjections involves elements, which 
 \begin{russian} \end{russian}
 
 \begin{definitionENG}\label{def:inj,surj,bij}\index{function!injection}\index{function!surjection}\index{function!bijection}
-
 Let $f\taking X\to Y$ be a function. We say that $f$ is {\em surjective} if, for all $y\in Y$ there exists some $x\in X$ such that $f(x)=y$. We say that $f$ is {\em injective} if, for all $x\in X$ and all $x'\in X$ with $f(x)=f(x')$ we have $x=x'$.
 
-\begin{russian} \end{russian}
-
 A function that is both injective and surjective is called {\em bijective}.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{remarkENG}
-
-It turns out that a function that is bijective is always an isomorphism and that all isomorphisms are bijective. We will not show that here, but it is not too hard; see for example \cite[Theorem 5.4]{Big}.
-
+\begin{definitionRUS}\label{def:inj,surj,bij}\index{function!injection}\index{function!surjection}\index{function!bijection}
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{remarkENG}
+It turns out that a function that is bijective is always an isomorphism and that all isomorphisms are bijective. We will not show that here, but it is not too hard; see for example \cite[Theorem 5.4]{Big}.
 \end{remarkENG}
 
-\begin{definitionENG}[Monomorphisms, epimorphisms]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
-
-Let $f\taking X\to Y$ be a function. 
-
+\begin{remarkRUS}
 \begin{russian} \end{russian}
+\end{remarkRUS}
+
+\begin{definitionENG}[Monomorphisms, epimorphisms]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
+Let $f\taking X\to Y$ be a function. 
 
 We say that $f$ is a {\em monomorphism} if for all sets $A$ and pairs of functions $g,g'\taking A\to X$,
 $$
@@ -3224,56 +3178,50 @@ $$
 $$
 if $f\circ g=f\circ g'$ then $g=g'$.
 
-\begin{russian} \end{russian}
-
 We say that $f$ is an {\em epimorphism} if for all sets $B$ and pairs of functions $h,h'\taking Y\to B$, 
 $$
 \xymatrix{X\ar[r]^f&Y\ar@/^1pc/[r]^h\ar@/_1pc/[r]_{h'}&B}
 $$
 if $h\circ f=h'\circ f$ then $h=h'$.
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{propositionENG}\label{prop:inj and surj}
-
-Let $f\taking X\to Y$ be a function. Then $f$ is injective if and only if it is a monomorphism; $f$ is surjective if and only if it is an epimorphism.
-
+\begin{definitionRUS}[Мономорфизмы, эпиморфизмы]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{propositionENG}\label{prop:inj and surj}
+Let $f\taking X\to Y$ be a function. Then $f$ is injective if and only if it is a monomorphism; $f$ is surjective if and only if it is an epimorphism.
 \end{propositionENG}
 
-\begin{proofENG}
-
-If $f$ is a monomorphism it is clearly injective by putting $A=\singleton$. Suppose that $f$ is injective and let $g,g'\taking A\to X$ be functions such that $f\circ g=f\circ g'$, but suppose for contradiction that $g\neq g'$. Then there is some element $a\in A$ such $g(a)\neq g'(a)\in X$. But by injectivity $f(g(a))\neq f(g'(a))$, contradicting $f\circ g=f\circ g'$.
-
+\begin{propositionRUS}\label{prop:inj and surj}
 \begin{russian} \end{russian}
+\end{propositionRUS}
+
+\begin{proofENG}
+If $f$ is a monomorphism it is clearly injective by putting $A=\singleton$. Suppose that $f$ is injective and let $g,g'\taking A\to X$ be functions such that $f\circ g=f\circ g'$, but suppose for contradiction that $g\neq g'$. Then there is some element $a\in A$ such $g(a)\neq g'(a)\in X$. But by injectivity $f(g(a))\neq f(g'(a))$, contradicting $f\circ g=f\circ g'$.
 
 Suppose that $f\taking X\to Y$ is an epimorphism and choose some $y_0\in Y$ (noting that if $Y$ is empty then the claim is vacuously true). Let $h\taking Y\to\Omega$ denote the characteristic function of the subset $\{y_0\}\ss Y$ and let $h'\taking Y\to\Omega$ denote the characteristic function of $\emptyset\ss Y$; note that $h(y)=h'(y)$ for all $y\neq y_0$. Then since $f$ is an epimorphism and $h\neq h'$, we must have $h\circ f\neq h'\circ f$, so there exists $x\in X$ with $h(f(x))\neq h'(f(x))$, which implies that $f(x)=y_0$. This proves that $f$ is surjective.
 
-\begin{russian} \end{russian}
-
 Finally, suppose that $f$ is surjective, and let $h,h'\taking Y\to B$ be functions with $h\circ f=h'\circ f$. For any $y\in Y$, there exists some $x\in X$ with $f(x)=y$, so $h(y)=h(f(x))=h'(f(x))=h'(y)$. This proves that $f$ is an epimorphism.
-
-\begin{russian} \end{russian}
-
 \end{proofENG}
 
-\begin{propositionENG}\label{prop:pb preserve mono}
+\begin{proofRUS}
+\begin{russian} \end{russian}
+\end{proofRUS}
 
+\begin{propositionENG}\label{prop:pb preserve mono}
 Let $f\taking X\to Y$ be a monomorphism. Then for any function $g\taking A\to Y$, the top map $f'\taking X\times_YA\to A$ in the diagram
 $$
 \xymatrix{X\times_YA\ar[r]^-{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\X\ar[r]_f&Y}
 $$
 is a monomorphism.
-
-\begin{russian} \end{russian}
-
 \end{propositionENG}
 
-\begin{proofENG}
+\begin{propositionRUS}\label{prop:pb preserve mono}
+\begin{russian} \end{russian}
+\end{propositionRUS}
 
+\begin{proofENG}
 To show that $f'$ is a monomorphism, we take an arbitrary set $B$ and two maps $m,n\taking B\to X\times_YA$ such that $f'\circ m=f'\circ n$, denote that function by $p:=f'\circ m\taking B\to A$. Now let $q=g'\circ m$ and $r=g'\circ n$. The diagram looks like this:
 $$
 \xymatrix{B\ar@<.5ex>[rr]^(.4)m\ar@<-.5ex>[rr]_(.4)n\ar@/^2pc/[rrr]^p\ar@<.5ex>[drr]^(.6)q\ar@<-.5ex>[drr]_(.6)r&&X\times_YA\ar[r]^{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\&&X\ar[r]_f&Y}
@@ -3281,24 +3229,23 @@ $$
 We have that 
 \begin{align*}f\circ q=f\circ g'\circ m=g\circ f'\circ m=g\circ f'\circ n=f\circ g'\circ n=f\circ r\end{align*} 
 But we assumed that $f$ is a monomorphism so this implies that $q=r$. By the universal property of pullbacks, Lemma \ref{lemma:up for fp}, we have $m=n$.
-
-\begin{russian} \end{russian}
-
 \end{proofENG}
 
-\begin{exerciseENG}
-
-Show, in analogy to Proposition \ref{prop:pb preserve mono}, that pushouts preserve epimorphisms.
-
+\begin{proofRUS}
 \begin{russian} \end{russian}
+\end{proofRUS}
 
+\begin{exerciseENG}
+Show, in analogy to Proposition \ref{prop:pb preserve mono}, that pushouts preserve epimorphisms.
 \end{exerciseENG}
 
-\begin{exampleENG}\label{exc:olog pullbacks}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exampleENG}\label{exc:olog pullbacks}
 Suppose an olog has a fiber product square
-$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$ such that $f$ is intended to be an injection and $g$ is any map.
-\footnote{Of course, this diagram is symmetrical, so the same ideas hold if $g$ is an injection and $f$ is any map.} 
+$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$ such that $f$ is intended to be an injection and $g$ is any map.\footnote{Of course, this diagram is symmetrical, so the same ideas hold if $g$ is an injection and $f$ is any map.} 
 In this case, there are nice labeling systems for $f', g'$, and $X\times_ZY$. Namely:
 \begin{itemize}
 \item “is” is an appropriate label for $f'$, 
@@ -3306,45 +3253,44 @@ In this case, there are nice labeling systems for $f', g'$, and $X\times_ZY$. Na
 \item (the label for $X$, then “which”, then the label for $g$, then the label for $Y$) is an appropriate label for $X\times_ZY$.
 \end{itemize}
 
-\begin{russian} \end{russian}
-
 To give an explicit example, 
 $$\xymatrix{
 \obox{X\times_ZY}{.9in}{a rib which is made by a cow}\LA{rr}{is made by}\LAL{d}{is}&&\obox{Y}{.4in}{a cow}\LA{d}{is}\\
 \obox{X}{.3in}{a rib}\LAL{rr}{is made by}&&\obox{Z}{.6in}{an animal}
 }
 $$
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{corollaryENG}\label{cor:monos are pullbacks of true}
+\begin{exampleRUS}\label{exc:olog pullbacks}
+\begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{corollaryENG}\label{cor:monos are pullbacks of true}
 Let $i\taking A\to X$ be a monomorphism. Then there is a fiber product square of the form 
 \begin{align}\label{dia:monos are pbs of true}
 \xymatrix{A\ar[r]^{f'}\ar[d]_i\ullimit&\singleton\ar[d]^{True}\\X\ar[r]_f&\Omega.}
 \end{align}
-
-\begin{russian} \end{russian}
-
 \end{corollaryENG}
 
-\begin{proofENG}
-
-Let $X'\ss X$ denote the image of $i$ and let $f\taking X\to\Omega$ denote the characteristic function of $X'\ss X$. Then it is easy to check that Diagram \ref{dia:monos are pbs of true} is a pullback.
-
+\begin{corollaryRUS}\label{cor:monos are pullbacks of true}
 \begin{russian} \end{russian}
+\end{corollaryRUS}
 
+\begin{proofENG}
+Let $X'\ss X$ denote the image of $i$ and let $f\taking X\to\Omega$ denote the characteristic function of $X'\ss X$. Then it is easy to check that Diagram \ref{dia:monos are pbs of true} is a pullback.
 \end{proofENG}
 
-\begin{exerciseENG}
-
-Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the map $\singleton\To{True}\Omega$ from Definition \ref{def:subobject classifier}. Look at diagram \ref{dia:monos are pbs of true} and in the spirit of Exercise \ref{exc:olog pullbacks}, come up with a label for $\Omega$, a label for $\singleton$, and a label for $True$. Given a label for $X$ and a label for $f$, come up with a label for $A$, a label for $i$ and a label for $f'$, such that the English smoothly fits the mathematics.
-
+\begin{proofRUS}
 \begin{russian} \end{russian}
+\end{proofRUS}
 
+\begin{exerciseENG}
+Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the map $\singleton\To{True}\Omega$ from Definition \ref{def:subobject classifier}. Look at diagram \ref{dia:monos are pbs of true} and in the spirit of Exercise \ref{exc:olog pullbacks}, come up with a label for $\Omega$, a label for $\singleton$, and a label for $True$. Given a label for $X$ and a label for $f$, come up with a label for $A$, a label for $i$ and a label for $f'$, such that the English smoothly fits the mathematics.
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
@@ -3367,57 +3313,55 @@ But if $X$ and $Y$ are multisets, what is the appropriate type of mapping from $
 \begin{russian} \end{russian}
 
 \begin{exerciseENG}\label{exc:multiset 1}~
-
 \sexc Come up with some notion of mapping for multisets that generalizes functions when the notion is restricted to sets. 
 \next Suppose that $X=(1,1,2,3)$ and $Y=(a,b,b,b)$, i.e. $X=\{1,2,3\}$ with $1$ having multiplicity 2, and $Y=\{a,b\}$ with $b$ having multiplicity 3. What are all the maps $X\to Y$ in your notion?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:multiset 1}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 In Chapter \ref{chap:categories} we will be getting to the definition of category, and you can test whether your notion of mapping in fact defines a category. Here is my definition of mapping for multisets.
 
 \begin{russian} \end{russian}
 
 \begin{definitionENG}\label{def:multiset}
-
 A {\em multiset} is a sequence $X:=(E,B,\pi)$ where $E$ and $B$ are sets and $\pi\taking E\to B$ is a surjective function. We refer to $E$ as the set of {\em element instances of $X$}, we refer to $B$ as the set of {\em element names of $X$}, and we refer to $\pi$ as the {\em naming function for $X$}. Given an element name $x\in B$, let $\pi^\m1(x)\ss E$ be the preimage; the number of elements in $\pi^\m1(x)$ is called the {\em multiplicity of $x$}.
-
-\begin{russian} \end{russian}
 
 Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping from $X$ to $Y$}, denoted $f\taking X\to Y$, consists of a pair $(f_1,f_0)$ such that $f_1\taking E\to E'$ and $f_0\taking B\to B'$ are functions and such that the following diagram commutes:
 \begin{align}\label{dia:multiset map}
 \xymatrix{E\ar[r]^{f_1}\ar[d]_{\pi}&E'\ar[d]^{\pi'}\\B\ar[r]_{f_0}&B'.}
 \end{align}
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exerciseENG}
+\begin{definitionRUS}\label{def:multiset}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}
 Suppose that a pseudo-multiset is defined to be almost the same as a multiset, except that $\pi$ is not required to be surjective. 
 \sexc Write down a pseudo-multiset that is not a multi-set. 
 \next Describe the difference between the two notions in terms of multiplicities. 
 \next Complexity of names aside, which do you think is a more useful notion: multiset or pseudo-multisets? 
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
 
-\begin{exerciseENG}
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}
 Consider the multisets described in Exercise \ref{exc:multiset 1}. 
 \sexc Write each of them in the form $(E,B,\pi)$, as in Definition \ref{def:multiset}. 
 \next In terms of the same definition, what are the mappings $X\to Y$? 
 \next If we remove the restriction that diagram \ref{dia:multiset map} must commute, how many mappings $X\to Y$ are there?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %\begin{exampleENG}[Using multisets to approach probability]
 %
@@ -3450,34 +3394,34 @@ Let's continue with our ideas from multisets, but now suppose that we have a fix
 \begin{russian} \end{russian}
 
 \begin{definitionENG}[Relative set]\label{def:relative sets}\index{relative set}
-
 Let $B$ be a set. A {\em relative set over $B$}, or simply a {\em set over $B$}, is a pair $(E,\pi)$ such that $E$ is a set and $\pi\taking E\to B$ is a function. A {\em mapping of relative sets over $B$}, denoted $f\taking (E,\pi)\to(E',\pi')$, is a function $f\taking E\to E'$ such that the triangle below commutes, i.e. $\pi=\pi'\circ f$,
 $$
 \xymatrix@=10pt{E\ar[rr]^f\ar[rdd]_{\pi}&&E'\ar[ldd]^{\pi'}\\\\&B
 }
 $$
-
-\begin{russian} \end{russian}
-
 \end{definitionENG}
 
-\begin{exerciseENG}
-
-Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can compose them to get a function $X\to Z$. If $B$ is a set, if $(X,p), (Y,q),$ and $(Z,r)$ are relative sets over $B$, and if $f\taking (X,p)\to (Y,q)$ and $g\taking (Y,q)\to (Z,r)$ are mappings, is there a reasonable notion of composition such that we get a mapping of relative sets $(X,p)\to (Z,r)$? Hint: draw diagrams.
-
+\begin{definitionRUS}[Relative set]\label{def:relative sets}\index{relative set}
 \begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}
+Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can compose them to get a function $X\to Z$. If $B$ is a set, if $(X,p), (Y,q),$ and $(Z,r)$ are relative sets over $B$, and if $f\taking (X,p)\to (Y,q)$ and $g\taking (Y,q)\to (Z,r)$ are mappings, is there a reasonable notion of composition such that we get a mapping of relative sets $(X,p)\to (Z,r)$? Hint: draw diagrams.
 \end{exerciseENG}
 
-\begin{exerciseENG}~
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
+\begin{exerciseENG}~
 \sexc Let $\singleton$ denote a set with one element. What is the difference between sets over $\singleton$ and simply sets?
 \next Describe the sets relative to $\emptyset$. How many are there?
 \endsexc
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}~
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
@@ -3488,41 +3432,42 @@ Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$
 \begin{russian} \end{russian}
 
 \begin{exampleENG}\label{ex:classroom seats}
-
 Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of people in classroom $c$, and let $S_c$ denote the set of seats (chairs) in classroom $c$. Then $P$ and $S$ are $C$-indexed sets. The appropriate kind of mapping between them respects the indexes. That is, a mapping of multi-sets $P\to S$ should, for each classroom $c\in C$, be a function $P_c\to S_c$.\footnote{If we wanted to allow people from any classroom to choose a chair from just any classroom, category theory would tell us to reconsider $P$ and $S$ as sets, forgetting their indices. See Section \ref{sec:left push}.}
-
-\begin{russian} \end{russian}
-
 \end{exampleENG}
 
-\begin{definitionENG}\label{def:indexed sets}\index{indexed set}
-
-Let $A$ be a set. An {\em $A$-indexed set} is a collection of sets $S_a$, one for each element $a\in A$; for now we denote this by $(S_a)_{a\in A}$. If $(S'_a)_{a\in A}$ is another $A$-indexed set, a {\em mapping of $A$-indexed sets from $(S_a)_{a\in A}$ to $(S'_a)_{a\in A}$}, denoted $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A}$$ is a collection of functions $f_a\taking S_a\to S'_a$, one for each element $a\in A$.
-
+\begin{exampleRUS}\label{ex:classroom seats}
 \begin{russian} \end{russian}
+\end{exampleRUS}
 
+\begin{definitionENG}\label{def:indexed sets}\index{indexed set}
+Let $A$ be a set. An {\em $A$-indexed set} is a collection of sets $S_a$, one for each element $a\in A$; for now we denote this by $(S_a)_{a\in A}$. If $(S'_a)_{a\in A}$ is another $A$-indexed set, a {\em mapping of $A$-indexed sets from $(S_a)_{a\in A}$ to $(S'_a)_{a\in A}$}, denoted $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A}$$ is a collection of functions $f_a\taking S_a\to S'_a$, one for each element $a\in A$.
 \end{definitionENG}
 
-\begin{exerciseENG}
+\begin{definitionRUS}\label{def:indexed sets}\index{indexed set}
+\begin{russian} \end{russian}
+\end{definitionRUS}
 
+\begin{exerciseENG}
 Let $\singleton$ denote a one element set. What are $\singleton$-indexed sets and mappings between them?
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 \begin{exerciseENG}
-
 There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it? 
-
-\begin{russian} \end{russian}
-
 \end{exerciseENG}
+
+\begin{exerciseRUS}
+\begin{russian} \end{russian}
+\end{exerciseRUS}
 
 %%%%%%%% Chapter %%%%%%%%
 
 \printindex
 
+%%%%%%%% Chapter %%%%%%%%
 
 \bibliographystyle{amsalpha}
 \begin{thebibliography}{SGWB}\rr
