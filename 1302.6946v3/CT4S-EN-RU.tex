@@ -376,7 +376,6 @@
 
 
 \begin{document}
-\begin{english}
 
 \title{
     ~\\
@@ -394,7 +393,7 @@
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\begin{english}
 \chapter*{Preface / Предисловие}
 
 An early version of this book was put on line in February 2013 to serve as the textbook for my course \href{http://math.mit.edu/~dspivak/teaching/sp13/}{\text Category Theory for Scientists} taught in the spring semester of 2013 at MIT. During that semester, students provided me with hundreds of comments and questions, which led to a substantial improvement (and the addition of 50 pages) to the original document.
@@ -411,7 +410,9 @@ Other than the title, there are two main differences between the present version
 
 %%%%%%%% Chapter %%%%%%%%
 
+\begin{russian}
 \tableofcontents
+\end{russian}
 
 %%%%%%%% Chapter %%%%%%%%
 
@@ -1895,14 +1896,17 @@ $$m\times n\taking X\times Y\to X'\times Y'.$$ \end{russian}
 
 Given two objects $c,d$ in an olog, there is a canonical label $\qtE{c\times d}$ for their product $c\times d$, written in terms of the labels $\qtE{c}$ and $\qtE{d}$. Namely, $$\qtE{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qtE{c}\tn{ and }y\tn{ is }\qtE{d}.$$ The projections $c\from c\times d\to d$ can be labeled “yields, as $x$,” and “yields, as $y$,” respectively.
 
-\begin{russian} \end{russian}
+\begin{russian}Для данных двух объектов олога $c,d$, имеется каноническая метка $\qtR{c\times d}$ их произведения $c\times d$, сформулированная в терминах меток $\qtR{c}$ и $\qtR{d}$. А именно, $$\qtR{c\times d}:=\tn{пара }(x,y),\tn{ где }x\tn{ это }\qtR{c}\tn{ и }y\tn{ это }\qtR{d}.$$ Проекции $c\from c\times d\to d$ могут быть помечены «выдает в качестве $x$,» и “выдает в качестве $y$,” соответственно. \end{russian}
 
 Suppose that $e$ is another object and $p\taking e\to c$ and $q\taking e\to d$ are two arrows. By the universal property of products (Lemma \ref{lemma:up for prod}), $p$ and $q$ induce a unique arrow $e\to c\times d$ making the evident diagrams commute. This arrow can be labeled
 \begin{center}
-yields, insofar as it $\qtE{p}\;\qtE{c}$ and $\qtE{q}\;\qtE{d}$, 
+yields, insofar as it $\qtR{p}\;\qtR{c}$ and $\qtR{q}\;\qtR{d}$, 
 \end{center}
 
-\begin{russian} \end{russian}
+\begin{russian}Предположим, $e$ — другой объект, а $p\taking e\to c$ и $q\taking e\to d$ две стрелки. Вследствие универсального свойства произведений (Лемма \ref{lemma:up for prod}), $p$ и $q$ порождают единственную стрелку $e\to c\times d$, делающую очевидные диаграммы коммутативными. Эта стрелка может быть помечена
+\begin{center}
+выдает $\qtR{c}\;\qtR{p}$ и $\qtR{d}\;\qtR{q}$, 
+\end{center}\end{russian}
 
 \begin{exampleENG}
 Every car owner owns at least one car, but there is no obvious function $\fakebox{a car owner}\to\fakebox{a car}$ because he or she may own more than one. One good choice would be the car that the person drives most often, which we'll call his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products:
@@ -1914,7 +1918,12 @@ $$
 \end{exampleENG}
 
 \begin{exampleRUS}
-\begin{russian} \end{russian}
+\begin{russian}Каждый владелец автомобиля владеет по крайней мере одним автомобилем, однако нет очевидной функции $\fakebox{a car owner}\to\fakebox{a car}$, поскольку он (или она) могут владеть более чем одной машиной. Подходящим выбором может оказаться автомобиль, которым этот человек пользуется наиболее часто, и который мы назовем основной его (или ее) машиной. Кроме того, для каждого человека и автомобиля, экономист мог бы спросить, сколько выгоды данный человек может получить от данной машины. Из всего этого мы можем собрать следующий олог, включающий произведения:
+$$
+\xymatrixnocompile{\obox{O}{.7in}{владелец автомобиля}\LAL{dd}{является}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize владеет основным}}\LA{rr}{\parbox{.8in}{\rr\scriptsize выдает себя в качестве человека и основную машину, которой владеет}}&\ar@{}[d]^(.4){\checkmark}&
+\obox{P\times C}{1in}{пара $(x,y)$, где $x$ это человек и $y$ это машина}\ar@/^1pc/[ddll]^(.7){\tn{выдает в качестве }x,}\LA{dd}{\tn{выдает в качестве }y,}\LA{rr}{\parbox{.7in}{\scriptsize дает выгоду}}&&\obox{V}{.8in}{сумма в долларах}\\&&\\\obox{P}{.5in}{человек}&&\obox{C}{.4in}{автомобиль}
+}
+$$\end{russian}
 \end{exampleRUS}
 
 %%%% Subsection %%%%
