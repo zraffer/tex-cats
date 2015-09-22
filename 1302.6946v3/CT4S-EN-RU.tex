@@ -1,29 +1,38 @@
-\documentclass{book}
+\documentclass[a4paper]{book}
 
 \usepackage{fontspec}
 \usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage{amsmath}
+%\usepackage{unicode-math}
+%\setmainfont{XITS}
+%\setmathfont{XITS Math}
 \setmainlanguage{russian}
 \setotherlanguage{english}
-\setmainfont{CMU Serif}
 \newfontfamily\russianfont[Script=Cyrillic]{CMU Serif}
 \newfontfamily\cyrillicfonttt[Script=Cyrillic]{Ubuntu Mono}
 
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\russianfont}
 \renewcommand{\cftsecfont}{\russianfont}
-\renewcommand{\contentsname}{Содержание}% seems to be ignored
+
+\usepackage{endnotes}
+\usepackage{perpage}
+\renewcommand{\thefootnote}{\roman{footnote}}
+\makeatletter
+\MakePerPage{footnote}
+\makeatother
+\renewcommand{\theendnote}{(\arabic{endnote})}
 
 \usepackage{etex}
 \usepackage{savesym}
-\usepackage{amssymb, amsmath,amsthm,amscd}
-%\savesymbol{lrcorner}
+\usepackage{amssymb}
+\usepackage{amsthm,amscd}
 \usepackage{txfonts}
 \savesymbol{lrcorner}\savesymbol{llcorner}\savesymbol{urcorner}\savesymbol{ulcorner}
-%\usepackage{marvosym}
 \usepackage{wasysym}
 \savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
-\usepackage{mathabx}
-%\usepackage{stmaryrd}
+%\usepackage{mathabx}
 \usepackage{setspace}
 \usepackage{chngcntr}
 \usepackage[tt]{titlepic}
@@ -34,15 +43,12 @@
 \usepackage{lmodern}
 \usepackage{graphicx,float}
 \usepackage{multirow}
-\usepackage{geometry}
-\newgeometry{left=1.6in,right=1.6in,top=1.4in,bottom=1.4in}
+\usepackage[margin=3cm]{geometry}
 \restoresymbol{txfonts}{lrcorner}\restoresymbol{txfonts}{llcorner}\restoresymbol{txfonts}{urcorner}\restoresymbol{txfonts}{ulcorner}
 
 \usepackage{color}
 \usepackage[all,poly,color,matrix,arrow]{xy}
 \makeindex
-
-%\usepackage{showkeys}
 
 \newcommand{\comment}[1]{}
 
@@ -393,9 +399,11 @@
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{english}
-\chapter*{Preface / Предисловие}
+\begin{russian}\chapter*{Preface / Предисловие}\end{russian}
+\phantomsection
+\addcontentsline{toc}{chapter}{Preface / Предисловие}
 
+\begin{english}
 An early version of this book was put on line in February 2013 to serve as the textbook for my course \href{http://math.mit.edu/~dspivak/teaching/sp13/}{\text Category Theory for Scientists} taught in the spring semester of 2013 at MIT. During that semester, students provided me with hundreds of comments and questions, which led to a substantial improvement (and the addition of 50 pages) to the original document.
 
 \begin{russian}Ранняя версия данной книги была представлена в феврале 2013 в качестве учебника для моего курса \href{http://math.mit.edu/~dspivak/teaching/sp13/}{\text Теория категорий для ученых}, который читался в весеннем семестре 2013 в MIT. В течение семестра студенты передали мне сотни комментариев и вопросов, которые привели к существенному улучшению исходного текста (и к добавлению 50 страниц).\end{russian}
@@ -411,12 +419,14 @@ Other than the title, there are two main differences between the present version
 %%%%%%%% Chapter %%%%%%%%
 
 \begin{russian}
+\phantomsection
+\addcontentsline{toc}{chapter}{\contentsname}
 \tableofcontents
 \end{russian}
 
 %%%%%%%% Chapter %%%%%%%%
 
-\chapter{Introduction / Введение}
+\begin{russian}\chapter{Introduction / Введение}\end{russian}
 
 The title page of this book contains a graphic that we reproduce here.
 \begin{align}\label{dia:scientific method}
@@ -659,7 +669,7 @@ without which this book would not have been remotely possible. I believe that th
 
 %%%%%%%% Chapter %%%%%%%%
 
-\chapter{The category of sets / Категория множеств}\label{chap:sets}
+\begin{russian}\chapter{The category of sets / Категория множеств}\label{chap:sets}\end{russian}
 
 The theory of sets was invented as a foundation for all of mathematics. The notion of sets and functions serves as a basis on which to build our intuition about categories in general. In this chapter we will give examples of sets and functions and then move on to discuss commutative diagrams. At this point we can introduce ologs which will allow us to use the language of category theory to speak about real world concepts. Then we will introduce limits and colimits, and their universal properties. All of this material is basic set theory, but it can also be taken as an investigation of our first category, the {\em category of sets}, which we call $\Set$. We will end this chapter with some other interesting constructions in $\Set$ that do not fit into the previous sections.
 
@@ -1175,16 +1185,6 @@ In this course we will ground the mathematical ideas in applications whenever po
 
 \begin{russian}В данном курсе мы, насколько это возможно, привяжем математические идеи к прикладным примерам (применениям). Для этих целей мы введем ологи, которые будут служить мостом между математикой и различными системами понятий. Следующий материал взят из \cite{SK}, введения в ологи.
 \begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr аминокислота, находящаяся в молокопродуктах}\LAL{dr}{является}&\obox{A}{.5in}{аргинин}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{имеет}\LAL{l}{является}\LA{d}{является}&\obox{E}{.9in}{\rr электрически заряженная боковая цепь}\LA{d}{является}\\&\obox{X}{.9in}{аминокислота}\LAL{dl}{имеет}\LA{dr}{имеет}\LA{r}{имеет}&\smbox{R}{боковая цепь}\\\mebox{N}{аминогруппа}&&\mebox{C}{карбоновая кислота}}}\end{align}\end{russian}
-
-%\cite{SGWB}. 
-%\newpage
-%\newgeometry{left=.7in,right=.4in,top=1.4in,bottom=1.4in}
-%\begin{figure}
-%\includegraphics[height=7in]{olog--ProteinSocial}
-%\caption{This olog, taken from \cite{SGWB}, describes both a particular kind of social network and a particular kind of protein material in terms of the same arrangement of 23 sets and 44 functions. The elements of these sets should be known to the olog's author, but may not be interpretable by an arbitrary reader of the olog; for example, {\bf V}=\fakebox{a real number} should be interpretable by most readers, but it is unlikely that {\bf U}=\fakebox{a building block} is interpretable without reading that paper.}
-%\label{fig:protein social olog}
-%\end{figure}
-%\newgeometry{left=1.6in,right=1.6in,top=1.4in,bottom=1.4in}
 
 %%%% Subsection %%%%
 
@@ -3511,7 +3511,7 @@ Let $\singleton$ denote a one element set. What are $\singleton$-indexed sets an
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it? 
+There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it?\endnote{многозначительное примечание}
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -3520,7 +3520,21 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 
 %%%%%%%% Chapter %%%%%%%%
 
+\begin{russian}
+\newpage
+\renewcommand{\notesname}{Примечания переводчика}
+\phantomsection
+\addcontentsline{toc}{chapter}{\notesname}
+\theendnotes
+\end{russian}
+
+%%%%%%%% Chapter %%%%%%%%
+
+\begin{russian}
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
 \printindex
+\end{russian}
 
 %%%%%%%% Chapter %%%%%%%%
 
