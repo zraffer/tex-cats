@@ -15,14 +15,6 @@
 \renewcommand{\cftchapfont}{\russianfont}
 \renewcommand{\cftsecfont}{\russianfont}
 
-\usepackage{endnotes}
-\usepackage{perpage}
-\renewcommand{\thefootnote}{\roman{footnote}}
-\makeatletter
-\MakePerPage{footnote}
-\makeatother
-\renewcommand{\theendnote}{(\arabic{endnote})}
-
 \usepackage{etex}
 \usepackage{savesym}
 \usepackage{amssymb}
@@ -50,6 +42,16 @@
 \makeindex
 
 \newcommand{\comment}[1]{}
+
+\usepackage{perpage}
+\renewcommand{\thefootnote}{\roman{footnote}}
+\makeatletter
+\MakePerPage{footnote}
+\makeatother
+\usepackage[backref=true,totoc=chapter]{enotez}
+\DeclareTranslation{russian}{enotez-title}{Примечания переводчика}
+\DeclareTranslation{russian}{enotez-section}{Раздел}
+\DeclareTranslation{russian}{enotez-chapter}{Глава}
 
 \newcommand{\longnote}[2][4.9in]{\fcolorbox{black}{yellow}{\parbox{#1}{\color{black} #2}}}
 \newcommand{\shortnote}[1]{\fcolorbox{black}{yellow}{\color{black} #1}}
@@ -399,8 +401,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{russian}\chapter*{Preface / Предисловие}\end{russian}
-\phantomsection
-\addcontentsline{toc}{chapter}{Preface / Предисловие}
 
 \begin{english}
 An early version of this book was put on line in February 2013 to serve as the textbook for my course \href{http://math.mit.edu/~dspivak/teaching/sp13/}{\text Category Theory for Scientists} taught in the spring semester of 2013 at MIT. During that semester, students provided me with hundreds of comments and questions, which led to a substantial improvement (and the addition of 50 pages) to the original document.
@@ -409,7 +409,7 @@ An early version of this book was put on line in February 2013 to serve as the t
 
 In the summer of 2013 I signed a contract with the MIT Press to publish a new version of this work under the title {\em Category Theory for the Sciences}. Because I am committed to the open source development model I insisted that a version of this book, namely the one you are reading, remain freely available online. The MIT Press version will of course not be free.
 
-\begin{russian}Летом 2013 я подписал контракт с MIT Press о публикации новой версии данной работы под заглавием {\em Теория категорий для наук}. Поскольку я являюсь приверженцем подхода открытого исходного кода, я настоял на том, что отдельная версия этой книги, а именно — та, которую вы сейчас читаете, останется доступной бесплатно онлайн. \end{russian}
+\begin{russian}Летом 2013 я подписал контракт с MIT Press о публикации новой версии данной работы под заглавием {\em Теория категорий для наук}. Поскольку я являюсь приверженцем подхода открытого исходного кода, я настоял на том, чтобы отдельная версия этой книги, а именно — та, которую вы сейчас читаете, осталась доступной бесплатно онлайн.\end{russian}
 
 Other than the title, there are two main differences between the present version and the MIT Press version. The first difference is that I will do a full edit with the help of professional editors from the Press. The second difference is that I will write up solutions to the book's (approximately 280) exercises; some of these will be included in the published version, whereas the rest will be available by way of a password-protected page, accessible only to professors who teach the subject.
 
@@ -418,8 +418,6 @@ Other than the title, there are two main differences between the present version
 %%%%%%%% Chapter %%%%%%%%
 
 \begin{russian}
-\phantomsection
-\addcontentsline{toc}{chapter}{\contentsname}
 \tableofcontents
 \end{russian}
 
@@ -435,7 +433,7 @@ It is intended to evoke thoughts of the scientific method. \begin{quote}A hypoth
 This sounds valid, and a good graphic can be exceptionally useful for leading a reader through the story that the author wishes to tell. 
 
 \begin{russian}Титульная страница данной книги содержит рисунок, который мы воспроизводим ниже.\end{russian}
-\begin{align}\label{dia:scientific method ru}
+\begin{align}\label{dia:scientific method}
 \dashbox{\includegraphics[width=.8\textwidth]{ScientificMethodRU}}
 \end{align}
 \begin{russian}Он призван наводить на мысли о научном методе.\end{russian} \begin{quote}
@@ -512,23 +510,23 @@ The paradigm shift brought on by Einstein's theory of relativity brought on the 
 
 Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenberg, Samuel} and Saunders Mac Lane.\index{Mac Lane, Saunders} It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as $y^2z=x^3-xz^2$. People had already created important and useful links (e.g. cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well.
 
-\begin{russian}Теория категорий была создана в начале 1940-х Сэмюэлем Эйленбергом\index{Eilenberg, Samuel} и Сондерсом Мак Лейном\index{Mac Lane, Saunders}. Она специально разрабатывалась для того, чтобы соединить две, на первый взгляд, совершенно различные области: топологию и алгебру. Топология изучает абстрактные формы, такие как 7-мерные сферы; алгебра изучает абстрактные уравнения, такие как $y^2z=x^3-xz^2$. Математики уже создали к тому времени важные и полезные связи (например, теорию когомологий) между этими областями, но Эйленбергу и Мак Лейну потребовалось провести точное сравнение различных связей друг с другом. Для этого им сперва потребовалось «выпарить и экстрагировать» фундаментальную природу этих двух областей. Однако идеи, на которых они проводили первые испытания, привели их к конструкции, которая подходила не только для топологии и алгебры, но с равным успехом была применима и для многих других математических дисциплин. \end{russian}
+\begin{russian}Теория категорий была создана в начале 1940-х Сэмюэлем Эйленбергом\index{Эйленберг, Сэмюэль} и Сондерсом Мак Лейном\index{Мак Лейн, Сондерс}. Она специально разрабатывалась для того, чтобы соединить две, на первый взгляд, совершенно различные области: топологию и алгебру. Топология изучает абстрактные формы, такие как 7-мерные сферы; алгебра изучает абстрактные уравнения, такие как $y^2z=x^3-xz^2$. Математики уже создали к тому времени важные и полезные связи (например, теорию когомологий) между этими областями, но Эйленбергу и Мак Лейну потребовалось провести точное сравнение различных связей друг с другом. Для этого им сперва потребовалось «выпарить и экстрагировать» фундаментальную природу этих двух областей. Однако идеи, на которых они проводили первые испытания, привели их к конструкции, которая подходила не только для топологии и алгебры, но с равным успехом была применима и для многих других математических дисциплин. \end{russian}
 
 At first category theory was little more than a deeply clarifying language for existing difficult mathematical ideas. However, in 1957 Alexander Grothendieck\index{Grothendieck!in history} used category theory to build new mathematical machinery (new cohomology theories) that granted unprecedented insight into the behavior of algebraic equations. Since that time, categories have been built specifically to zoom in on particular features of mathematical subjects and study them with a level of acuity that is simply unavailable elsewhere.
 
-\begin{russian}В самом начале теория категорий была не более, чем глубоко проясняющим языком для отдельных уже существующих трудных математических идей. Однако, в 1957 году Александр Гротендик\index{Grothendieck!in history} использовал теорию категорий для построения новой математической техники (новых когомологических теорий), которая предоставила беспрецендентное понимание поведения алгебраических уравнений. С тех пор категории стали строить специально для того, чтобы сосредоточиться на отдельных свойствах математических объектов и изучать их с такой четкостью, которая была ранее просто недоступна. \end{russian}
+\begin{russian}В самом начале теория категорий была не более, чем глубоко проясняющим языком для отдельных уже существующих трудных математических идей. Однако, в 1957 году Александр Гротендик\index{Гротендик!в истории} использовал теорию категорий для построения новой математической техники (новых когомологических теорий), которая предоставила беспрецендентное понимание поведения алгебраических уравнений. С тех пор категории стали строить специально для того, чтобы сосредоточиться на отдельных свойствах математических объектов и изучать их с такой четкостью, которая была ранее просто недоступна. \end{russian}
 
 Bill Lawvere\index{Lawvere, William} saw category theory as a new foundation for all mathematical thought. Mathematicians had been searching for foundations in the 19th century and were reasonably satisfied with set theory as {\em the foundation}. But Lawvere showed that the category of sets is simply a category with certain nice properties, not necessarily the center of the mathematical universe. He explained how whole algebraic theories can be viewed as examples of a single system. He and others went on to show that higher order logic was beautifully captured in the setting of category theory (more specifically toposes). It is here also that Grothendieck and his school worked out major results in algebraic geometry.
 
-\begin{russian}Билл Ловер\index{Lawvere, William} увидел в теории категорий новые основания для всех математических построений. В поисках оснований математики находились еще в 19-м веке и ко временам Ловера были в достаточной степени удовлетворены использованием теории множеств в качестве {\em оснований}. Однако Ловер показал, что категория множеств это просто категория с определенными хорошими свойствами, а не обязательный центр математической вселенной. Он показал, как целые алгебраические теории могут рассматриваться в качестве примеров единой системы. Ему и другим удалось показать, что логика высших порядков прекрасно охватывается средствами теории категорий (конкретно, топосов). Пользуясь инструментами из этой же области, Гротендику и его школе удалось получить значительные результаты в алгебраической геометрии. \end{russian}
+\begin{russian}Билл Ловер\index{Ловер, Уилльям} увидел в теории категорий новые основания для всех математических построений. В поисках оснований математики находились еще в 19-м веке и ко временам Ловера были в достаточной степени удовлетворены использованием теории множеств в качестве {\em оснований}. Однако Ловер показал, что категория множеств это просто категория с определенными хорошими свойствами, а не обязательный центр математической вселенной. Он показал, как целые алгебраические теории могут рассматриваться в качестве примеров единой системы. Ему и другим удалось показать, что логика высших порядков прекрасно охватывается средствами теории категорий (конкретно, топосов). Пользуясь инструментами из этой же области, Гротендику и его школе удалось получить значительные результаты в алгебраической геометрии. \end{russian}
 
 In 1980 Joachim Lambek\index{Lambek, Joachim} showed that the types and programs used in computer science form a specific kind of category. This provided a new semantics for talking about programs, allowing people to investigate how programs combine and compose to create other programs, without caring about the specifics of implementation. Eugenio Moggi\index{Moggi, Eugenio} brought the category theoretic notion of monads into computer science to encapsulate ideas that up to that point were considered outside the realm of such theory.
 
-\begin{russian}В 1980 Иоахим Ламбек\index{Lambek, Joachim} показал, что типы и программы, используемые в информатике, образуют особого рода категорию. Это дало возможность обсуждать программы в рамках новой семантики, позволяя ученым исследовать, как программы комбинируются и соединяются в другие программы, не заботясь о специфике реализации. Эугенио Моджи\index{Moggi, Eugenio} принес в информатику теоретико-категорное понятие монад, которое инкапсулирует идеи, считавшиеся ранее недоступными для подобных теорий. \end{russian}
+\begin{russian}В 1980 Иоахим Ламбек\index{Ламбек, Иоахим} показал, что типы и программы, используемые в информатике, образуют особого рода категорию. Это дало возможность обсуждать программы в рамках новой семантики, позволяя ученым исследовать, как программы комбинируются и соединяются в другие программы, не заботясь о специфике реализации. Эугенио Моджи\index{Моджи, Эугенио} принес в информатику теоретико-категорное понятие монад, которое инкапсулирует идеи, считавшиеся ранее недоступными для подобных теорий. \end{russian}
 
 It is difficult to explain the clarity and beauty brought to category theory by people like Daniel Kan\index{Kan, Daniel} and Andr\'{e} Joyal\index{Joyal, Andr\'{e}}. They have each repeatedly extracted the essence of a whole mathematical subject to reveal and formalize a stunningly simple yet extremely powerful pattern of thinking, revolutionizing how mathematics is done.
 
-\begin{russian}Трудно объяснить ясность и красоту, принесенные в теорию категорий такими людьми, как Дэниэл Кан\index{Kan, Daniel} и Андрэ Жуаяль\index{Joyal, Andr\'{e}}. Каждый из них последовательно извлекал сущность целых областей математики, чтобы сделать их более явными и формализовать удивительно простые и в то же время чрезвычайно мощные способы мышления, революционизируя само занятие математикой. \end{russian}
+\begin{russian}Трудно объяснить ясность и красоту, принесенные в теорию категорий такими людьми, как Дэниэл Кан\index{Кан, Дэниэл} и Андрэ Жуаяль\index{Жуаяль, Андрэ}. Каждый из них последовательно извлекал сущность целых областей математики, чтобы сделать их более явными и формализовать удивительно простые и в то же время чрезвычайно мощные способы мышления, революционизируя само занятие математикой. \end{russian}
 
 All this time, however, category theory was consistently seen by much of the mathematical community as ridiculously abstract. But in the 21st century it has finally come to find healthy respect within the larger community of pure mathematics. It is the language of choice for graduate-level algebra and topology courses, and in my opinion will continue to establish itself as the basic framework in which mathematics is done.
 
@@ -536,7 +534,7 @@ All this time, however, category theory was consistently seen by much of the mat
 
 As mentioned above category theory has branched out into certain areas of science as well. Baez\index{Baez, John} and Dolan\index{Dolan, James} have shown its value in making sense of quantum physics, it is well established in computer science, and it has found proponents in several other fields as well. But to my mind, we are the very beginning of its venture into scientific methodology. Category theory was invented as a bridge and it will continue to serve in that role.
 
-\begin{russian}Как упоминалось выше, ответвления теории категорий проникли в некоторые другие области науки. Баэз\index{Baez, John} и Долан\index{Dolan, James} показали её важность в придании смысла квантовой физике, она уже основательно закрепилась в теоретической информатике, а также нашла сторонников в нескольких других областях. Тем не менее, по моему мнению, мы находимся только в самом начале ее пути в научную методологию. Теория категорий была создана в качестве связующего звена, и она продолжит исполнять эту роль. \end{russian}
+\begin{russian}Как упоминалось выше, ответвления теории категорий проникли в некоторые другие области науки. Баэз\index{Баэз, Джон} и Долан\index{Долан, Джеймс} показали её важность в придании смысла квантовой физике, она уже основательно закрепилась в теоретической информатике, а также нашла сторонников в нескольких других областях. Тем не менее, по моему мнению, мы находимся только в самом начале ее пути в научную методологию. Теория категорий была создана в качестве связующего звена, и она продолжит исполнять эту роль. \end{russian}
 
 %%%%%% Section %%%%%%
 
@@ -552,7 +550,7 @@ To the pure mathematician I'll try to prove that concepts such as categories, fu
 
 To the scientist I'll try to prove the claim that category theory includes a formal treatment of conceptual structures that the scientist sees often, perhaps without realizing that there is well-oiled mathematical machinery to be employed. We will work on the structure of information; how data is made meaningful by its connections, both internal and outreaching, to other data. Note, however, that this book should most certainly not be taken as a reference on scientific matters themselves. One should assume that any account of physics, materials science, chemistry, etc. has been oversimplified.\index{a warning!oversimplified science} The intention is to give a flavor of how category theory may help us model scientific ideas, not to explain these ideas in a serious way.
 
-\begin{russian}Что касается ученых, им я попытаюсь доказать утверждение, что теория категорий включает в себя формальное изложение концептуальных структур, с которыми часто сталкивается ученый, возможно, не осознавая, что уже имеется готовый к употреблению «хорошо смазанный» математический механизм. Мы будем иметь дело со структурой информации; тем, как сделать данные осмысленными при помощи их связей, как внутренних, так и уходящих вовне. Заметим, однако, что данная книга совершенно определенно не должна рассматриваться как справочник по научным предметам самим по себе. Следует учитывать, что любое ознакомление с физикой, материаловедением и прочими, здесь дается в упрощенном виде. Наша цель — дать почувствовать, как именно теория категорий может помочь моделировать научные идеи, а не серьезно объяснять сами эти идеи. \end{russian}
+\begin{russian}Что касается ученых, им я попытаюсь доказать утверждение, что теория категорий включает в себя формальное изложение концептуальных структур, с которыми часто сталкивается ученый, возможно, не осознавая, что уже имеется готовый к употреблению «хорошо смазанный» математический механизм. Мы будем иметь дело со структурой информации; тем, как сделать данные осмысленными при помощи их связей, как внутренних, так и уходящих вовне. Заметим, однако, что данная книга совершенно определенно не должна рассматриваться как справочник по научным предметам самим по себе. Следует учитывать, что любое ознакомление с физикой, материаловедением и прочими, здесь дается в упрощенном виде\index{предупреждение!упрощенная наука}. Наша цель — дать почувствовать, как именно теория категорий может помочь моделировать научные идеи, а не серьезно объяснять сами эти идеи. \end{russian}
 
 Data gathering is ubiquitous in science. Giant databases are currently being mined for unknown patterns, but in fact there are many (many) known patterns that simply have not been catalogued. Consider the well-known case of medical records. A patient's medical history is often known by various individual doctor-offices but quite inadequately shared between them. Sharing medical records often means faxing a hand-written note or a filled-in house-created form between offices.
 
@@ -676,7 +674,7 @@ The theory of sets was invented as a foundation for all of mathematics. The noti
 
 %%%%%% Section %%%%%%
 
-\section{Sets and functions / Множества и функции}\index{set} 
+\section{Sets and functions / Множества и функции}\index{set}\index{множество}
 
 %%%% Subsection %%%%
 
@@ -704,9 +702,9 @@ $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
 \begin{russian}
-Символ $\varnothing$\index{a symbol!$\varnothing$} обозначает множество без элементов. Символ $\NN$\index{a symbol!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
+Символ $\varnothing$\index{символ!$\varnothing$} обозначает множество без элементов. Символ $\NN$\index{символ!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
 $$\NN:=\{0,1,2,3,4,\ldots,877,\ldots\}.$$
-Символ $\ZZ$\index{a symbol!$\ZZ$} обозначает множество целых чисел, которое содержит как положительные, так и отрицательные числа, 
+Символ $\ZZ$\index{символ!$\ZZ$} обозначает множество целых чисел, которое содержит как положительные, так и отрицательные числа, 
 $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
 \end{russian}
 \end{notationRUS}
@@ -715,20 +713,20 @@ If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$,
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
 \begin{russian}
-Если $A$ и $B$ — множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\varnothing\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная форма записи\index{set!set builder notation}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
+Если $A$ и $B$ — множества, мы называем $A$ {\em подмножеством}\index{подмножество} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\varnothing\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная форма записи\index{множество!специальная форма записи}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
 \end{russian}
 \end{notationRUS}
 \begin{notationENG}\label{not:basic math notation}
 The symbol $\exists$ means “there exists”.\index{a symbol!$\exists$} So we could write the set of even integers as $$\{n\in\ZZ\|n\tn{ is even}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ such that } 2m=n\}.$$ The symbol $\exists!$\index{a symbol!$\exists$!} means “there exists a unique”. So the statement “$\exists! x\in\RR\tn{ such that } x^2=0$” means that there is one and only one number whose square is 0. Finally, the symbol $\forall$ means “for all”.\index{a symbol!$\forall$} So the statement “$\forall m\in\NN\;\exists n\in\NN\tn{ such that } m<n$” means that for every number there is a bigger one.
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
-\begin{russian}Символ $\exists$ означает «существует».\index{a symbol!$\exists$} Таким образом мы можем записать множество четных чисел $$\{n\in\ZZ\|n\tn{ четно}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ такое, что } 2m=n\}.$$ Символ $\exists!$\index{a symbol!$\exists$!} означает «существует единственный». Таким образом утверждение «$\exists! x\in\RR\tn{ такой, что } x^2=0$» означает, что имеется одно и только одно число, равное в квадрате $0$. Наконец, символ $\forall$ означает «для всех», «для каждого».\index{a symbol!$\forall$} Таким образом утверждение «$\forall m\in\NN\;\exists n\in\NN\tn{ такой, что } m<n$» означает, что для каждого числа имеется большее него. \end{russian}
+\begin{russian}Символ $\exists$ означает «существует».\index{символ!$\exists$} Таким образом мы можем записать множество четных чисел $$\{n\in\ZZ\|n\tn{ четно}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ такое, что } 2m=n\}.$$ Символ $\exists!$\index{символ!$\exists$!} означает «существует единственный». Таким образом утверждение «$\exists! x\in\RR\tn{ такой, что } x^2=0$» означает, что имеется одно и только одно число, равное в квадрате $0$. Наконец, символ $\forall$ означает «для всех», «для каждого».\index{символ!$\forall$} Таким образом утверждение «$\forall m\in\NN\;\exists n\in\NN\tn{ такой, что } m<n$» означает, что для каждого числа имеется большее него. \end{russian}
 \end{notationRUS}
 \begin{notationENG}\label{not:basic math notation}
-As you may have noticed, we use the colon-equals notation “$A:=XYZ$” to mean something like “define $A$ to be $XYZ$”.\index{a symbol!:=} That is, a colon-equals declaration is not denoting a fact of nature (like $2+2=4$), but a choice of the speaker. It just so happens that the notation above, such as $\NN:=\{0,1,2,\ldots\}$, is a widely-held choice.
+As you may have noticed, we use the colon-equals notation “$A:=XYZ$” to mean something like “define $A$ to be $XYZ$”.\index{символ!:=} That is, a colon-equals declaration is not denoting a fact of nature (like $2+2=4$), but a choice of the speaker. It just so happens that the notation above, such as $\NN:=\{0,1,2,\ldots\}$, is a widely-held choice.
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
-\begin{russian}Как вы могли заметить, мы пользуемся записью «двоеточие-равно» $A:=XYZ$, чтобы обозначить нечто вроде «определим $A$ как $XYZ$».\index{a symbol!:=} То есть, объявление чего-то в виде двоеточие-равно не означает новый факт о мире (вроде $2+2=4$), а всего лишь выбор обозначения говорящим. Просто так получилось, что обозначения выше, такие как $\NN:=\{0,1,2,\ldots\}$, широко используются. \end{russian}
+\begin{russian}Как вы могли заметить, мы пользуемся записью «двоеточие-равно» $A:=XYZ$, чтобы обозначить нечто вроде «определим $A$ как $XYZ$».\index{символ!:=} То есть, объявление чего-то в виде двоеточие-равно не означает новый факт о мире (вроде $2+2=4$), а всего лишь выбор обозначения говорящим. Просто так получилось, что обозначения выше, такие как $\NN:=\{0,1,2,\ldots\}$, широко используются. \end{russian}
 \end{notationRUS}
 
 \begin{exerciseENG}Let $A=\{1,2,3\}$. What are all the subsets of $A$? Hint: there are 8.\end{exerciseENG}
@@ -740,7 +738,7 @@ As you may have noticed, we use the colon-equals notation “$A:=XYZ$” to mean
 
 If $X$ and $Y$ are sets, then a {\em function $f$ from $X$ to $Y$},\index{function} denoted $f\taking X\to Y$, is a mapping that sends each element $x\in X$ to an element of $Y$, denoted $f(x)\in Y$. We call $X$ the {\em domain}\index{function!domain} of the function $f$ and we call $Y$ the {\em codomain}\index{function!codomain} of $f$. 
 
-\begin{russian}Если $X$ и $Y$ — множества, то {\em функция $f$ из $X$ в $Y$}\index{function}, обозначаемая $f\taking X\to Y$, это отображение, которое переводит каждый элемент $x\in X$ в элемент $Y$, обозначаемый $f(x)\in Y$. Мы называем $X$ {\em областью определения}\index{function!domain} (или просто {\em областью}) для функции $f$, а $Y$ — {\em областью значений}\index{function!codomain} (или просто {\em кообластью}) для $f$.  \end{russian}
+\begin{russian}Если $X$ и $Y$ — множества, то {\em функция $f$ из $X$ в $Y$}\index{функция}, обозначаемая $f\taking X\to Y$, это отображение, которое переводит каждый элемент $x\in X$ в элемент $Y$, обозначаемый $f(x)\in Y$. Мы называем $X$ {\em областью определения}\index{функция!область определения} (или просто {\em областью}) для функции $f$, а $Y$ — {\em областью значений}\index{функция!область значений} (или просто {\em кообластью}) для $f$.  \end{russian}
 
 \begin{align}\label{dia:setmap}
 \parbox{2.3in}{\includegraphics[height=2in]{SetMap}}
@@ -754,7 +752,7 @@ Note that for every element $x\in X$, there is exactly one arrow emanating from 
 In studying the mechanics of materials, one wishes to know how a material responds to tension. For example a rubber band responds to tension differently than a spring does. To each material we can associate a \href{http://en.wikipedia.org/wiki/Stress–strain_curve}{\text force-extension curve}, recording how much force the material carries when extended to various lengths. Once we fix a methodology for performing experiments, finding a material's force-extension curve would ideally constitute a function from the set of materials to the set of curves.\footnote{In reality, different samples of the same material, say samples of different sizes or at different temperatures, may have different force-extension curves. If we want to see this as a true function whose codomain is curves it should have as domain something like the set of material samples.}
 \end{applicationENG}
 
-\begin{applicationRUS}\label{app:force-extension}\index{materials!force-extension curves}
+\begin{applicationRUS}\label{app:force-extension}\index{материалы!диаграмма деформирования}
 \begin{russian}
 При изучении сопротивления материалов [часть механики деформируемого твёрдого тела] стремятся исследовать, как материал реагирует на напряжение [сжатие и растяжение]. Например, резиновая лента реагирует на напряжение не так, как пружина. С каждым материалом мы можем ассоциировать \href{https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0_%D0%B4%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F}{\text диаграмму деформирования}, описывающую, силу какой величины материал выдерживает, будучи растянут до различной длины. Как только мы зафиксировали методологию проведения экспериментов, нахождение кривой сила-растяжение для данного материала идеальным образом образует функцию из множества материалов в множество кривых.\footnote{В действительности, различные образцы одного и того же материала, скажем, образцы различного размера или при различной температуре, могут иметь различные кривые сила-растяжение. Если мы хотим увидеть здесь настоящую функцию с областью значений «кривые», мы должны взять в качестве области определения нечто вроде «образцы материала».} 
 \end{russian}
@@ -786,9 +784,9 @@ Suppose that $X$ is a set and $X'\ss X$ is a subset. Then we can consider the fu
 As a matter of notation, we may sometimes say something like the following: Let $X$ be a set and let $i\taking X'\ss X$ be a subset. Here we are making clear that $X'$ is a subset of $X$, but that $i$ is the name of the associated function.
 \end{exampleENG}
 
-\begin{exampleRUS}\label{ex:subset as function}\index{subset!as function}
+\begin{exampleRUS}\label{ex:subset as function}\index{подмножество!как функция}
 \begin{russian}
-Предположим, $X$ — множество и $X'\ss X$ — подмножество. Тогда мы можем рассмотреть функцию $X'\to X$, заданную превращением каждого элемента $X'$ в себя, но уже как элемент $X$. Например, если $X=\{a,b,c,d,e,f\}$ и $X'=\{b,d,e\}$, то $X'\ss X$ и мы получаем отсюда функцию $X'\to X$, заданную как $b\mapsto b, d\mapsto d, e\mapsto e$.\footnote{Такой вид стрелочки,\;\;$\mapsto$\;\;, читается вслух как «переходит в». Функция $f\taking X\to Y$ означает правило сопоставления каждому элементу $x\in X$ элемента $f(x)\in Y$. При этом мы говорим, что «$x$ переходит в $f(x)$» и пишем $x\mapsto f(x)$.}\index{a symbol!$\mapsto$}
+Предположим, $X$ — множество и $X'\ss X$ — подмножество. Тогда мы можем рассмотреть функцию $X'\to X$, заданную превращением каждого элемента $X'$ в себя, но уже как элемент $X$. Например, если $X=\{a,b,c,d,e,f\}$ и $X'=\{b,d,e\}$, то $X'\ss X$ и мы получаем отсюда функцию $X'\to X$, заданную как $b\mapsto b, d\mapsto d, e\mapsto e$.\footnote{Такой вид стрелочки,\;\;$\mapsto$\;\;, читается вслух как «переходит в». Функция $f\taking X\to Y$ означает правило сопоставления каждому элементу $x\in X$ элемента $f(x)\in Y$. При этом мы говорим, что «$x$ переходит в $f(x)$» и пишем $x\mapsto f(x)$.}\index{символ!$\mapsto$}
 
 Что касается обозначений, мы можем сказать иногда нечто вроде следующего: «Пусть $X$ — множество и пусть $i\taking X'\ss X$ — подмножество». Здесь мы ясно говорим, что $X'$ это подмножество $X$, а также, что $i$ это имя соответствующей функции. 
 \end{russian}
@@ -821,7 +819,7 @@ Given a function $f\taking X\to Y$, the elements of $Y$ that have at least one a
 \im(f):=\{y\in Y\| \exists x\in X \tn{ such that } f(x)=y\}.
 \end{align} 
 
-\begin{russian}Для заданной функции $f\taking X\to Y$, те элементы $Y$, для которых имеется по крайней мере одна стрелка, указывающая на них, называются лежащими {\em в образе} $f$; получаем \index{image}
+\begin{russian}Для заданной функции $f\taking X\to Y$, те элементы $Y$, для которых имеется по крайней мере одна стрелка, указывающая на них, называются лежащими {\em в образе} $f$; получаем \index{образ}
 \begin{align}\label{dia:image}
 \im(f):=\{y\in Y\| \exists x\in X \tn{ такой, что } f(x)=y\}.
 \end{align}\end{russian}
@@ -836,7 +834,7 @@ If $f\taking X\to Y$ is depicted by (\ref{dia:setmap}) above, write its image, $
 
 Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the codomain of $f$ is the same set as the domain of $g$ (namely $Y$), we say that $f$ and $g$ are composable $$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} is denoted by $g\circ f\taking X\to Z$. 
 
-\begin{russian}Если заданы функция $f\taking X\to Y$ и функция $g\taking Y\to Z$, где кообласть $f$ совпадает с областью $g$ (то есть, $Y$), мы говорим, что $f$ и $g$ соединимы. $$X\Too{f}Y\Too{g}Z.$$ {\em Композиция $f$ и $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} обозначается $g\circ f\taking X\to Z$. \end{russian}
+\begin{russian}Если заданы функция $f\taking X\to Y$ и функция $g\taking Y\to Z$, где кообласть $f$ совпадает с областью $g$ (то есть, $Y$), мы говорим, что $f$ и $g$ соединимы. $$X\Too{f}Y\Too{g}Z.$$ {\em Композиция $f$ и $g$}\label{function composition}\index{функция!композиция}\index{композиция!функций}\index{символ!$\circ$} обозначается $g\circ f\taking X\to Z$. \end{russian}
 
 \begin{figure}[h]
 \begin{center}
@@ -850,8 +848,8 @@ Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} t
 Note that two functions $f,g\taking X\to Y$ are equal\index{function!equality of} if and only if for every element $x\in X$ we have $f(x)=g(x)$. 
 
 \begin{russian}
-Пусть $X$ и $Y$ — множества. Мы записываем $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} для обозначения множества функций $X\to Y$.\footnote{Странное обозначение $\Hom_\Set(-,-)$ обретет смысл позже, когда мы увидим его как часть большой картины.} 
-Заметим, что две функции $f,g\taking X\to Y$ считаются равными\index{function!equality of}, если и только если для каждого элемента $x\in X$ верно равенство $f(x)=g(x)$. 
+Пусть $X$ и $Y$ — множества. Мы записываем $\Hom_\Set(X,Y)$\index{символ!$\Hom_\Set$} для обозначения множества функций $X\to Y$.\footnote{Странное обозначение $\Hom_\Set(-,-)$ обретет смысл позже, когда мы увидим его как часть большой картины.} 
+Заметим, что две функции $f,g\taking X\to Y$ считаются равными\index{функция!равенство}, если и только если для каждого элемента $x\in X$ верно равенство $f(x)=g(x)$. 
 \end{russian}
 
 \begin{exerciseENG}
@@ -886,14 +884,14 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$
 
 For any set $X$, we define the {\em identity function on $X$}\index{function!identity}, denoted $\id_X\taking X\to X$, to be the function such that for all $x\in X$ we have $\id_X(x)=x$.\index{a symbol!$\id_X$}
 
-\begin{russian}Для любого множества $X$, мы определим {\em тождественную функцию на $X$}\index{function!identity}, обозначаемую $\id_X\taking X\to X$, как функцию такую, что для всех $x\in X$ верно равенство $\id_X(x)=x$.\index{a symbol!$\id_X$}\end{russian}
+\begin{russian}Для любого множества $X$, мы определим {\em тождественную функцию на $X$}\index{функция!тождественная}, обозначаемую $\id_X\taking X\to X$, как функцию такую, что для всех $x\in X$ верно равенство $\id_X(x)=x$.\index{символ!$\id_X$}\end{russian}
 
 \begin{definitionENG}[Isomorphism]\label{def:iso in set} 
 Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}
 \end{definitionENG}
 
 \begin{definitionRUS}[Изоморфизм]\label{def:iso in set}\begin{russian}
-Пусть $X$ и $Y$ — множества. Функция $f\taking X\to Y$ называется {\em изоморфизмом}\index{function!isomorphism}\index{isomorphism!of sets}, что обозначается как $f\taking X\To{\iso}Y$, если существует функция $g\taking Y\to X$ такая, что $g\circ f=\id_X$ и $f\circ g=\id_Y$. Мы также говорим, что $f$ является {\em обратимой}, и что $g$ является {\em обратной}\index{function!inverse} к $f$. Если существует изоморфизм $X\To\iso Y$, то мы говорим, что $X$ и $Y$ являются {\em изоморфными} множествами, и записываем это как $X\iso Y$. \index{a symbol!$\iso$}\end{russian}
+Пусть $X$ и $Y$ — множества. Функция $f\taking X\to Y$ называется {\em изоморфизмом}\index{функция!изоморфизм}\index{изоморфизм!множеств}, что обозначается как $f\taking X\To{\iso}Y$, если существует функция $g\taking Y\to X$ такая, что $g\circ f=\id_X$ и $f\circ g=\id_Y$. Мы также говорим, что $f$ является {\em обратимой}, и что $g$ является {\em обратной}\index{функция!обратная} к $f$. Если существует изоморфизм $X\To\iso Y$, то мы говорим, что $X$ и $Y$ являются {\em изоморфными} множествами, и записываем это как $X\iso Y$. \index{символ!$\iso$}\end{russian}
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -902,7 +900,7 @@ If $X$ and $Y$ are sets and $f\taking X\to Y$ is an isomorphism then the analogu
 
 \begin{exampleRUS}
 \begin{russian}
-Если $X$ и $Y$ — множества и $f\taking X\to Y$ — изоморфизм, то аналог Диаграммы \ref{dia:setmap} будет выглядеть как идеальное совпадение, чаще называемое {\em соответствием один-к-одному}\index{one-to-one correspondence}\index{correspondence!one-to-one}. Это означает, что никакие две стрелки не попадают в один элемент $Y$, и что каждый элемент $Y$ находится в образе. Например, ниже изображен изоморфизм $X\To{\iso}Y$.
+Если $X$ и $Y$ — множества и $f\taking X\to Y$ — изоморфизм, то аналог Диаграммы \ref{dia:setmap} будет выглядеть как идеальное совпадение, чаще называемое {\em соответствием один-к-одному}\index{соответствие один-к-одному}\index{соответствие!один-к-одному}. Это означает, что никакие две стрелки не попадают в один элемент $Y$, и что каждый элемент $Y$ находится в образе. Например, ниже изображен изоморфизм $X\To{\iso}Y$.
 \end{russian}
 \end{exampleRUS}
 
@@ -921,7 +919,7 @@ $$A\mapsto T, C\mapsto G, G\mapsto C, T\mapsto A.$$
 Protein production can be modeled as a function from the set of 3-nucleotide sequences to the set of eukaryotic amino acids. However, it cannot be an isomorphism because there are $4^3=64$ triplets of RNA nucleotides, but only 21 eukaryotic amino acids. 
 \end{applicationENG}
 
-\begin{applicationRUS}\label{app:DNA RNA}\index{RNA transcription}
+\begin{applicationRUS}\label{app:DNA RNA}\index{РНК транскрипция}
 \begin{russian}Имеется изоморфизм между множеством $\tn{Nuc}_\tn{DNA}$, состоящим из  \href{https://ru.wikipedia.org/wiki/%D0%9D%D1%83%D0%BA%D0%BB%D0%B5%D0%BE%D1%82%D0%B8%D0%B4%D1%8B}{\text нуклеотидов}, встречающихся в ДНК, и множеством $\tn{Nuc}_\tn{RNA}$ нуклеотидов, встречающихся в РНК. На самом деле в обоих множествах по четыре элемента, так что [всего между ними] имеется 24 различных изоморфизма. И только один из них нам нужен! Прежде, чем мы укажем, какой именно, давайте заметим, что имеются также изоморфизм $\tn{Nuc}_\tn{DNA}\iso\{A,C,G,T\}$ и изоморфизм $\tn{Nuc}_\tn{RNA}\iso\{A,C,G,U\}$, и что мы используем буквы для сокращения названий нуклеотидов. \end{russian}
 
 \begin{russian}Подходящий изоморфизм $\tn{Nuc}_\tn{DNA}\To{\iso}\tn{Nuc}_\tn{RNA}$ — это тот, что задается РНК-транскрипцией; он переводит
@@ -1011,7 +1009,7 @@ $$
 \hspace{.8in}
 \parbox{1.2in}{\boxtitle{B:=}\fbox{\xymatrix@=1pt{&&&\LMO{r8}&&\\\\\\\\&\LMO{«Bob»}\\&&\LMO{\clubsuit}}}}
 $$
-Заметим, что множества $A$ и $B$ изоморфны. Предположим, что $f\taking B\to\{1,2,3,4,5\}$ переводит «Bob» в $1$, $\clubsuit$ в $3$, и $r8$ в $4$; имеется ли каноническая функция $A\to\{1,2,3,4,5\}$, соответствующая $f$?\footnote{«Каноническая» означает нечто наподобие «лучшего выбора», выбора, который выделяется, как единственный обоснованный.}\index{canonical}
+Заметим, что множества $A$ и $B$ изоморфны. Предположим, что $f\taking B\to\{1,2,3,4,5\}$ переводит «Bob» в $1$, $\clubsuit$ в $3$, и $r8$ в $4$; имеется ли каноническая функция $A\to\{1,2,3,4,5\}$, соответствующая $f$?\footnote{«Канонический» означает нечто наподобие «лучшего выбора», выбора, который выделяется, как единственный обоснованный.}\index{канонический}
 \end{russian}
 \end{exerciseRUS}
 
@@ -1032,7 +1030,7 @@ So, in particular, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, and $\ul{0}=\emptyset$.
 
 \begin{russian}
 Для любого натурального числа $n\in\NN$, определим множество 
-\begin{align}\label{dia:underline n}\index{a symbol!$\ul{n}$}
+\begin{align}\label{dia:underline n}\index{символ!$\ul{n}$}
 \ul{n}:=\{1,2,3,\ldots,n\}.
 \end{align}
 Так что, в частности, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, и $\ul{0}=\varnothing$. 
@@ -1062,7 +1060,7 @@ Let $A$ be a set and $n\in\NN$ a natural number. We say that $A$ is {\em has car
 
 \begin{definitionRUS}[Мощность конечных чисел]\label{def:cardinality}
 \begin{russian}
-Пусть $A$ — множество и $n\in\NN$ — натуральное число. Мы говорим, что $A$ {\em имеет мощность $n$}\index{cardinality}, что обозначается как $$|A|=n,$$ если существует изоморфизм между множествами $A\iso\ul{n}$. Если существует $n\in\NN$ такой, что $A$ имеет мощность $n$, то мы говорим, что $A$ {\em конечно}. В противном случае, мы говорим, что $A$ {\em бесконечно} и пишем $|A|\geq\infty$.
+Пусть $A$ — множество и $n\in\NN$ — натуральное число. Мы говорим, что $A$ {\em имеет мощность $n$}\index{мощность}, что обозначается как $$|A|=n,$$ если существует изоморфизм между множествами $A\iso\ul{n}$. Если существует $n\in\NN$ такой, что $A$ имеет мощность $n$, то мы говорим, что $A$ {\em конечно}. В противном случае, мы говорим, что $A$ {\em бесконечно} и пишем $|A|\geq\infty$.
 \end{russian}
 \end{definitionRUS}
 
@@ -1118,7 +1116,7 @@ We say this is a {\em diagram of sets}\index{diagram!in $\Set$} if each of $A,B,
 \begin{align}\label{dia:triangle}
 \xymatrix{A\ar[r]^f\ar[rd]_h&B\ar[d]^g\\&C}
 \end{align}
-Мы называем его {\em диаграммой множеств}\index{diagram!in $\Set$}, если каждое из $A,B,C$ является множеством и каждое из $f,g,h$ — функцией. Мы называем эту диаграмму {\em коммутативной}\index{commuting diagram}\index{diagam!commutes}, если $g\circ f = h$. В данном случае мы называем ее коммутативным треугольником множеств.
+Мы называем его {\em диаграммой множеств}\index{диаграмма!в $\Set$}, если каждое из $A,B,C$ является множеством и каждое из $f,g,h$ — функцией. Мы называем эту диаграмму {\em коммутативной}\index{коммутативная диаграмма}\index{диаграмма!коммутирует}, если $g\circ f = h$. В данном случае мы называем ее коммутативным треугольником множеств.
 \end{russian}
 
 \begin{applicationENG}
@@ -1177,7 +1175,7 @@ $$
 
 %%%%%% Section %%%%%%
 
-\section{Ologs / Наконец-то ологи}\label{sec:ologs}\index{olog}
+\section{Ologs / Наконец-то ологи}\label{sec:ologs}\index{olog}\index{олог}
 
 In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.
 \begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr an amino acid found in dairy}\LAL{dr}{is}&\obox{A}{.5in}{arginine}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{has}\LAL{l}{is}\LA{d}{is}&\obox{E}{.9in}{\rr an electrically-charged side chain}\LA{d}{is}\\&\obox{X}{.9in}{an amino acid}\LAL{dl}{has}\LA{dr}{has}\LA{r}{has}&\smbox{R}{a side chain}\\\mebox{N}{an amine group}&&\mebox{C}{a carboxylic acid}}}\end{align}  
@@ -1187,7 +1185,7 @@ In this course we will ground the mathematical ideas in applications whenever po
 
 %%%% Subsection %%%%
 
-\subsection{Types / Типы}\index{olog!types}
+\subsection{Types / Типы}\index{olog!types}\index{олог!типы}
 
 A type is an abstract concept, a distinction the author has made.  We represent each type as a box containing a {\em singular indefinite noun phrase.}   Each of the following four boxes is a type: 
 \begin{align}\label{dia:types}\xymatrixnocompile{\fbox{a man}&\fbox{an automobile}\\\obox{}{1.5in}{a pair $(a,w)$, where $w$ is a woman and $a$ is an automobile}&\obox{}{1.5in}{a pair $(a,w)$ where $w$ is a woman and $a$ is a blue automobile owned by $w$}}\end{align}
@@ -1230,7 +1228,7 @@ A type is presented as a text box.  The text in that box should
 \end{enumerate}
 \end{rulesENG}
 
-\begin{rulesRUS}\label{rules:types}\index{olog!rules}
+\begin{rulesRUS}\label{rules:types}\index{олог!правила}
 \begin{russian} 
 Тип изображается прямоугольником с текстом. Текст в этом прямоугольнике должен:
 \begin{enumerate}[(i)]
@@ -1252,7 +1250,7 @@ I will not always follow the rules of good practice throughout this document.  I
 
 %%%% Subsection %%%%
 
-\subsection{Aspects / Аспекты}\label{sec:aspects}\index{olog!aspects}
+\subsection{Aspects / Аспекты}\label{sec:aspects}\index{olog!aspects}\index{олог!аспекты}
 
 An aspect of a thing $x$ is a way of viewing it, a particular way in which $x$ can be regarded or measured.  For example, a woman can be regarded as a person; hence “being a person” is an aspect of a woman.  A molecule has a molecular mass (say in daltons), so “having a molecular mass” is an aspect of a molecule.  In other words, by {\em aspect} we simply mean a function. The domain $A$ of the function $f\taking A\to B$ is the thing we are measuring, and the codomain is the set of possible “answers” or results of the measurement. 
 \begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{a woman}\LA{r}{is}&\fbox{a person}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{a molecule}\LA{rr}{has as molecular mass (Da)}&\hspace{.7in}&\fbox{a positive real number}}\end{align}
@@ -1266,7 +1264,7 @@ So for the arrow in (\ref{dia:aspect 1}), the domain is the set of women (a set 
 
 %% Subsubsection %%
 
-\subsubsection{Invalid aspects / Некорректные аспекты}\label{sec:invalid aspect}\index{olog!invalid aspects}
+\subsubsection{Invalid aspects / Некорректные аспекты}\label{sec:invalid aspect}\index{olog!invalid aspects}\index{олог!некорректные аспекты}
 
 I tried above to clarify what it is that makes an aspect “valid”, namely that it must be a “functional relationship.”  In this subsection I will show two arrows which on their face may appear to be aspects, but which on closer inspection are not functional (and hence are not valid as aspects).  
  
@@ -1298,7 +1296,7 @@ The author of an olog has a world-view, some fragment of which is captured in th
 Consider the aspect $\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus as world-views change, we often need to add more information to our olog. Even the validity of $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$ is questionable. However to build a model we need to choose a level of granularity and try to stay within it, or the whole model evaporates into the nothingness of truth!
 \end{warningENG}
 
-\begin{warningRUS}\label{warn:worldview}\index{a warning!different worldviews}
+\begin{warningRUS}\label{warn:worldview}\index{предупреждение!различные картины мира}
 \begin{russian}У автора олога имеется картина мира, отдельный  фрагмент которой охвачен конкретным ологом. Если человек А проверит олог человека Б, то человек А может как согласиться с ним, так и нет.  Например, у человека Б может быть следующий олог $$\fbox{\xymatrix{&\fbox{брак}\LA{dr}{включает}\LAL{dl}{включает}\\\fbox{мужчина}&&\fbox{женщина}}},$$ который сопоставляет каждому браку мужчину и женщину.  Человек А может занять такую позицию, что некоторые браки включают двух мужчин, либо женщин, и поэтому считать олог человека Б неправильным. Такие дискусии не являются проблемами непосредственно олога А или олога Б, они появляются при наличии расхождений в картинах мира.  Поэтому, внутри данной книги, читатель Ч может увидеть показанный в ней олог и заметить расхождение между картиной мира Ч и моей собственной, но Ч не стоит беспокоиться об этом как о реальной проблеме.  Это не значит, что ологи не будут соотвествовать правилам, тем не менее правила требуют только того, чтобы отдельный олог был структурно непротиворечив, а не чтобы он «корректно отражал реальность,» что бы это ни значило. \end{russian}
 
 \begin{russian}Рассмотрим аспект $\fakebox{объект}\Too{\tn{имеет}}\fakebox{вес}$. В исторической перспективе это могло бы быть корректной функцией.  Сейчас же мы знаем, что тот же самый объект имел бы различный вес на Луне и на Земле. Таким образом, при изменении картины мира нам зачастую требуется добавлять больше информации в наш олог. Даже корректность такого олога: $\fakebox{объект на Земле}\Too{\tn{имеет}}\fakebox{вес}$ остается под вопросом. Однако для того, чтобы построить модель, нам необходимо выбрать определенный уровень детализации и пытаться его придерживаться, в противном случае вся модель целиком растворится в верных, но несущественных сведениях! \end{russian}
@@ -1384,7 +1382,7 @@ An aspect is presented as a labeled arrow, pointing from a source box to a targe
 \end{enumerate}
 \end{rulesENG}
 
-\begin{rulesRUS}\label{rules:aspects}\index{olog!rules}
+\begin{rulesRUS}\label{rules:aspects}\index{олог!правила}
 \begin{russian}Аспект изображается стрелкой с меткой, указывающей из области определения в область значений.  Текст над стрелкой должен
 \begin{enumerate}[(i)]
 \item начинаться с глагола или отглагольного существительного;
@@ -1395,7 +1393,7 @@ An aspect is presented as a labeled arrow, pointing from a source box to a targe
 
 %%%% Subsection %%%%
 
-\subsection{Facts / Факты}\label{sec:facts}\index{olog!facts}
+\subsection{Facts / Факты}\label{sec:facts}\index{olog!facts}\index{олог!факты}
 
 In this section I will discuss facts, which are simply “path equivalences” in an olog. It is the notion of path equivalences that make category theory so powerful. 
 
@@ -1403,7 +1401,7 @@ In this section I will discuss facts, which are simply “path equivalences” i
 
 A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
 
-\begin{russian}{\em Путь}\index{olog!path in} в ологе это связная направленная последовательность стрелок. Другими словами, любой путь начинается в прямоугольнике $B_0$, затем идет по стрелке, исходящей из $B_0$ (двигаясь в правильном направлении), из нее он переходит в следующий прямоугольник $B_1$, затем идет по любой стрелке, исходящей из $B_1$, и т.д., и наконец приходит в $B_n$ и останавливается там. Число стрелок — это {\em длина} пути. Таким образом, путь длины $1$ это единственная стрелка, а путь длины $0$ это отдельный прямоугольник. Мы называем $B_0$ {\em началом} и $B_n$ {\em концом} пути. \end{russian}
+\begin{russian}{\em Путь}\index{олог!путь} в ологе это связная направленная последовательность стрелок. Другими словами, любой путь начинается в прямоугольнике $B_0$, затем идет по стрелке, исходящей из $B_0$ (двигаясь в правильном направлении), из нее он переходит в следующий прямоугольник $B_1$, затем идет по любой стрелке, исходящей из $B_1$, и т.д., и наконец приходит в $B_n$ и останавливается там. Число стрелок — это {\em длина} пути. Таким образом, путь длины $1$ это единственная стрелка, а путь длины $0$ это отдельный прямоугольник. Мы называем $B_0$ {\em началом} и $B_n$ {\em концом} пути. \end{russian}
 
 Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
 \begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say “a woman parent is equivalent to a mother.”  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
@@ -1414,7 +1412,7 @@ Given an olog, the author may want to declare that two paths are equivalent.  Fo
 I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
   Either way, it means that “$f$ then $g$” is equivalent to “$h$ then $i$”.  
 
-\begin{russian}Обычно я предпочитаю обозначать коммутативность диаграммы при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{a symbol!$\simeq$}.\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{a warning!notation for composition} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит идущим задом-наперед.\index{composition!classical order} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{composition!diagrammatic order} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
+\begin{russian}Обычно я предпочитаю обозначать коммутативность диаграммы при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{символ!$\simeq$}.\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{предупреждение!обозначение композиции} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит идущим задом-наперед.\index{композиция!классический порядок} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{композиция!диаграммный порядок} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
  В любом случае, это означает, что «$f$ потом $g$» эквивалентно «$h$ потом $i$». \end{russian}
 
 Here is another, more scientific example:
@@ -1467,7 +1465,7 @@ Create an olog about a scientific subject, preferably one you think about often.
 
 %% Subsubsection %%
 
-\subsubsection{A formula for writing facts as English / Рецепт для записи фактов естественным языком}\index{olog!facts in English}
+\subsubsection{A formula for writing facts as English / Рецепт для записи фактов естественным языком}\index{olog!facts in English}\index{олог!факты на естественном языке}
 
 Every fact consists of two paths, say $P$ and $Q$, that are to be declared equivalent. The paths $P$ and $Q$ will necessarily have the same source, say $s$, and target, say $t$, but their lengths may be different, say $m$ and $n$ respectively.\footnote{If the source equals the target, $s=t$, then it is possible  to have $m=0$ or $n=0$, and the ideas below still make sense.} 
 We draw these paths as 
@@ -1495,7 +1493,7 @@ Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\a
 \end{align}
 Каждой части $\ell$ олога (т.е. каждому прямоугольнику и каждой стрелке) можно сопоставить фразу естественного языка, которую мы обозначим $\qtR{\ell}$. Используя вспомогательную переменную $x$ мы можем превести на естественный язык и каждый факт. Следующая общая формула немного сложна для понимания, см. Пример \ref{ex:English fact}, но вот она. Факт $P\simeq Q$ из (\ref{dia:two paths for equivalence}) переводится на естественный язык следующим образом: \end{russian}
 
-\begin{russian}\begin{align}\label{dia:Englishification}\index{Englishification}
+\begin{russian}\begin{align}\label{dia:Englishification}\index{перевод на естественный язык}
 &\tn{Для данного }\qtR{s}\;x\tn{ рассмотрим следующее.}\\
 \nonumber&\tn{Для известного }\qtR{s}\;x\\
 \nonumber&\tn{который }\qtR{f_1}\;\qtR{a_1},\tn{который }\qtR{f_2}\;\qtR{a_2},\\ 
@@ -1567,7 +1565,7 @@ In the above olog (\ref{dia:phone paths}), suppose that the box \fakebox{an oper
 
 %% Subsubsection %%
 
-\subsubsection{Images / Образы}\label{sec:images}\index{olog!images}\index{image!in olog}
+\subsubsection{Images / Образы}\label{sec:images}\index{olog!images}\index{image!in olog}\index{олог!образы}\index{образ!в ологе}
 
 In this section we discuss a specific kind of fact, generated by any aspect. Recall that every function has an image, meaning the subset of elements in the codomain that are “hit” by the function. For example the function $f(x)=2*x\taking \ZZ\to\ZZ$ has as image the set of all even numbers.
 
@@ -1618,7 +1616,7 @@ In this section we introduce two concepts that are likely to be familiar, althou
 
 %%%% Subsection %%%%
 
-\subsection{Products / Произведения}\label{sec:products}\index{products!of sets}
+\subsection{Products / Произведения}\label{sec:products}\index{products!of sets}\index{произведения!множеств}
 
 \begin{definitionENG}
 Let $X$ and $Y$ be sets. The {\em product of $X$ and $Y$}, denoted $X\times Y$,\index{a symbol!$\times$} is defined as the set of ordered pairs $(x,y)$ where $x\in X$ and $y\in Y$. Symbolically, $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ There are two natural {\em projection functions} $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
@@ -1626,7 +1624,7 @@ $$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
 \end{definitionENG}
 
 \begin{definitionRUS}
-\begin{russian}Пусть $X$ и $Y$ — множества. {\em Произведение $X$ и $Y$}, обозначаемое $X\times Y$,\index{a symbol!$\times$} определяется как множество упорядоченных пар $(x,y)$, где $x\in X$ и $y\in Y$. На языке символов: $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ Имеются две естественные {\em функции проектирования} (или просто {\em проекции}) $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
+\begin{russian}Пусть $X$ и $Y$ — множества. {\em Произведение $X$ и $Y$}, обозначаемое $X\times Y$,\index{символ!$\times$} определяется как множество упорядоченных пар $(x,y)$, где $x\in X$ и $y\in Y$. На языке символов: $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ Имеются две естественные {\em функции проектирования} (или просто {\em проекции}) $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$.\index{функции проектирования}\index{произведение!функции проектирования}
 $$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
 \end{russian}
 \end{definitionRUS}
@@ -1658,7 +1656,7 @@ Let $X=\{1,2,3,4,5,6\}$ and $Y=\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$
 \end{align}
 \end{exampleENG}
 
-\begin{exampleRUS}\label{ex:grid1}[Сетка из точек]\index{product!as grid}
+\begin{exampleRUS}\label{ex:grid1}[Сетка из точек]\index{произведение!как сетка}
 \begin{russian}Пусть $X=\{1,2,3,4,5,6\}$ и $Y=\{\clubsuit,\diamondsuit,\heartsuit,\spadesuit\}$. Тогда мы можем изобразить $X\times Y$ в виде состоящей из точек таблицы 6-на-4, а функции проектирования — в виде следующих геометрических проекций
 \begin{align}
 \parbox{2.9in}{\begin{center}\small $X\times Y$\vspace{-.1in}\end{center}\fbox{
@@ -1730,7 +1728,7 @@ According to \cite{Pen}, Aristotle seems to have conceived of space as something
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:R2}
-\begin{russian}Пусть $\RR$\index{a symbol!$\RR$} означает множество действительных чисел. Под $\RR^2$ мы имеем в виду $\RR\times\RR$ (см. Упражнение \ref{exc:two R2s}). Аналогично, для любого $n\in\NN$ определим $\RR^n$ как произведение $n$ копий $\RR$ [т.е. множество конечных последовательностей действительных чисел длины $n$]. 
+\begin{russian}Пусть $\RR$\index{символ!$\RR$} означает множество действительных чисел. Под $\RR^2$ мы имеем в виду $\RR\times\RR$ (см. Упражнение \ref{exc:two R2s}). Аналогично, для любого $n\in\NN$ определим $\RR^n$ как произведение $n$ копий $\RR$ [т.е. множество конечных последовательностей действительных чисел длины $n$]. 
 
 Согласно \cite{Pen}, Аристотель, похоже, воспринимал пространство, как нечто вроде $S:=\RR^3$, и время, как $T:=\RR$. Пространством-временем, если бы он рассматривал его, было бы вероятно $S\times T\iso\RR^4$. На самом деле, конечно, такого рода абстракции были для него недоступны, и восходят скорее к Декарту. \end{russian}
 \end{exampleRUS}
@@ -1771,7 +1769,7 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{Universal property for products / Универсальное свойство произведений}\index{products!universal property of}\index{universal property!products}
+\subsubsection{Universal property for products / Универсальное свойство произведений}\index{products!universal property of}\index{universal property!products}\index{произведения!универсальное свойство}\index{универсальное свойство!произведений}
 
 \begin{lemmaENG}[Universal property for product]\label{lemma:up for prod}
 Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes\footnote{The symbol $\forall$ is read “for all”; the symbol $\exists$ is read “there exists”, and the symbol $\exists!$ is read “there exists a unique”. So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
@@ -1828,7 +1826,7 @@ Given sets $X, Y,$ and $A$, and functions $f\taking A\to X$ and $g\taking A\to Y
 \end{remarkENG}
 
 \begin{remarkRUS}
-\begin{russian}Для данных множеств $X, Y$ и $A$, а также функций $f\taking A\to X$ и $g\taking A\to Y$, имеется единственная функция $A\to X\times Y$, коммутирующая с $f$ and $g$. Мы называем ее {\em индуцированной функцией}\index{induced function} $A\to X\times Y$, имея ввиду ту, что возникает из $f$ и $g$. \end{russian}
+\begin{russian}Для данных множеств $X, Y$ и $A$, а также функций $f\taking A\to X$ и $g\taking A\to Y$, имеется единственная функция $A\to X\times Y$, коммутирующая с $f$ and $g$. Мы называем ее {\em индуцированной функцией}\index{индуцированная функция} $A\to X\times Y$, имея ввиду ту, что возникает из $f$ и $g$. \end{russian}
 \end{remarkRUS}
 
 \begin{exerciseENG}
@@ -1927,7 +1925,7 @@ $$\end{russian}
 
 %%%% Subsection %%%%
 
-\subsection{Coproducts / Копроизведения}\label{sec:coproducts}\index{coproducts!of sets}
+\subsection{Coproducts / Копроизведения}\label{sec:coproducts}\index{coproducts!of sets}\index{копроизведение!множеств}
 
 \begin{definitionENG}\label{def:coproduct}
 Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the “disjoint union” of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
@@ -1937,9 +1935,9 @@ $$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:coproduct}
-\begin{russian}Пусть $X$ и $Y$ — множества. {\em Копроизведение $X$ и $Y$}, обозначаемое $X\sqcup Y$,\index{a symbol!$\sqcup$} определяется как «несвязное объединение» $X$ и $Y$, то есть множество, каждым элементом которого является либо элемент $X$, либо элемент $Y$. В случае, когда некий элемент принадлежит одновременно $X$ и $Y$, мы вкладываем в $X\sqcup Y$ две его копии и считаем их различными. См. Пример \ref{ex:coproduct}
+\begin{russian}Пусть $X$ и $Y$ — множества. {\em Копроизведение $X$ и $Y$}, обозначаемое $X\sqcup Y$,\index{символ!$\sqcup$} определяется как «несвязное объединение» $X$ и $Y$, то есть множество, каждым элементом которого является либо элемент $X$, либо элемент $Y$. В случае, когда некий элемент принадлежит одновременно $X$ и $Y$, мы вкладываем в $X\sqcup Y$ две его копии и считаем их различными. См. Пример \ref{ex:coproduct}
 
-Имеются две естественные {\em функции вложения} $i_1\taking X\to X\sqcup Y$ и $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
+Имеются две естественные {\em функции вложения} $i_1\taking X\to X\sqcup Y$ и $i_2\taking Y\to X\sqcup Y$.\index{функции вложения}\index{копроизведение!функции вложения}
 $$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$\end{russian}
 \end{definitionRUS}
 
@@ -2027,7 +2025,7 @@ Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} a
 
 %% Subsubsection %%
 
-\subsubsection{Universal property for coproducts / Универсальное свойство копроизведений}\index{coproducts!universal property of}
+\subsubsection{Universal property for coproducts / Универсальное свойство копроизведений}\index{coproducts!universal property of}\index{копроизведения!универсальное свойство}
 
 \begin{lemmaENG}[Universal property for coproduct]\label{lemma:up for coprod}
 Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes
@@ -2159,7 +2157,7 @@ Following the section above, “Ologging products” page \pageref{sec:ologging 
 
 In this section we discuss what are called {\em limits} of variously-shaped diagrams of sets. We will make all this much more precise when we discuss limits in arbitrary categories in Section \ref{sec:lims and colims in a cat}.
 
-\begin{russian}В этом разделе мы обсудим то, что называется {\em пределами} диаграмм множеств различной формы. Впоследствии все это мы проделаем значительно более точно при обсуждении пределов в произвольных категориях в Разделе \ref{sec:lims and colims in a cat}. \end{russian}
+\begin{russian}В этом разделе мы обсудим то, что называется {\em пределами} различной формы диаграмм множеств. Впоследствии все это мы проделаем значительно более точно при обсуждении пределов в произвольных категориях в Разделе \ref{sec:lims and colims in a cat}.\end{russian}
 
 %%%% Subsection %%%%
 
@@ -3564,21 +3562,19 @@ Let $\singleton$ denote a one element set. What are $\singleton$-indexed sets an
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it?\endnote{многозначительное примечание}
+There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it?\endnote{Многозначительное Примечание...}
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \begin{russian} \end{russian}
 \end{exerciseRUS}
 
+\end{english}
+
 %%%%%%%% Chapter %%%%%%%%
 
 \begin{russian}
-\newpage
-\renewcommand{\notesname}{Примечания переводчика}
-\phantomsection
-\addcontentsline{toc}{chapter}{\notesname}
-\theendnotes
+\printendnotes
 \end{russian}
 
 %%%%%%%% Chapter %%%%%%%%
@@ -3591,8 +3587,11 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 
 %%%%%%%% Chapter %%%%%%%%
 
+\begin{russian}
 \bibliographystyle{amsalpha}
 \begin{thebibliography}{SGWB}\rr
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
 
 \bibitem [Ati]{Ati} Atiyah, M. (1989) “Topological quantum field theories”. {\em Publications Math\'{e}matiques de l'IH\'{E}S} 68 (68), pp. 175--186.
 
@@ -3692,7 +3691,6 @@ A first introduction to categories.} Second edition. Cambridge University Press,
 \bibitem[Wik]{Wik} \href{http://www.wikipedia.org}{\text Wikipedia} (multiple authors). Various articles, all linked with a hyperreference are scattered throughout this text. All accessed December 6, 2012 -- \today.
 
 \end{thebibliography}
-
-\end{english}
+\end{russian}
 
 \end{document}
