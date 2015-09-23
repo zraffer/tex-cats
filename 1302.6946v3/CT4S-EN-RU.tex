@@ -2,7 +2,6 @@
 
 \usepackage{fontspec}
 \usepackage{polyglossia}
-\usepackage{fontspec}
 \usepackage{amsmath}
 %\usepackage{unicode-math}
 %\setmainfont{XITS}
@@ -673,7 +672,7 @@ without which this book would not have been remotely possible. I believe that th
 
 The theory of sets was invented as a foundation for all of mathematics. The notion of sets and functions serves as a basis on which to build our intuition about categories in general. In this chapter we will give examples of sets and functions and then move on to discuss commutative diagrams. At this point we can introduce ologs which will allow us to use the language of category theory to speak about real world concepts. Then we will introduce limits and colimits, and their universal properties. All of this material is basic set theory, but it can also be taken as an investigation of our first category, the {\em category of sets}, which we call $\Set$. We will end this chapter with some other interesting constructions in $\Set$ that do not fit into the previous sections.
 
-\begin{russian}Теория множеств разрабатывалась в качестве оснований всей математики. Понятие множества и функции служат основой, на которой строится наша интуиция о категориях вообще. В этой главе мы дадим примеры множеств и функций и затем перейдем к обсуждению коммутативных диаграмм. К тому моменту мы сможем ввести ологи, которые позволят нам использовать язык теории категорий, чтобы говорить о понятиях реального мира. Затем мы введем пределы и копределы и их универсальные свойства. Весь этот материал входит в область элементарной теории множеств, но он может также рассматриваться и как исследование нашей первой категории, {\em категории множеств}, которую мы назовем $\Set$. Мы закончим эту главу некоторыми другими интересными конструкциями в Set, которые не подходят к предыдущим разделам.\end{russian}
+\begin{russian}Теория множеств разрабатывалась в качестве оснований всей математики. Понятие множества и функции служат основой, на которой строится наша интуиция о категориях вообще. В этой главе мы дадим примеры множеств и функций и затем перейдем к обсуждению коммутативных диаграмм. К тому моменту мы сможем ввести ологи, которые позволят нам использовать язык теории категорий, чтобы говорить о понятиях реального мира. Затем мы введем пределы и копределы и их универсальные свойства. Весь этот материал входит в область элементарной теории множеств, но он может также рассматриваться и как исследование нашей первой категории, {\em категории множеств}, которую мы назовем $\Set$. Мы закончим эту главу некоторыми другими интересными конструкциями в $Set$, которые не подходят к предыдущим разделам.\end{russian}
 
 %%%%%% Section %%%%%%
 
@@ -694,7 +693,7 @@ The set of pendulums is the collection of things we agree to call pendulums, eac
 \includegraphics[height=2in]{aSet}
 \end{center}
 \caption{A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$.}
-\begin{russian}\caption{Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\emptyset$.}\end{russian}
+\begin{russian}\caption{Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\varnothing$.}\end{russian}
 \end{figure}
 
 \begin{notationENG}\label{not:basic math notation}
@@ -705,7 +704,7 @@ $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
 \begin{russian}
-Символ $\emptyset$\index{a symbol!$\emptyset$} обозначает множество без элементов. Символ $\NN$\index{a symbol!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
+Символ $\varnothing$\index{a symbol!$\varnothing$} обозначает множество без элементов. Символ $\NN$\index{a symbol!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
 $$\NN:=\{0,1,2,3,4,\ldots,877,\ldots\}.$$
 Символ $\ZZ$\index{a symbol!$\ZZ$} обозначает множество целых чисел, которое содержит как положительные, так и отрицательные числа, 
 $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
@@ -716,7 +715,7 @@ If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$,
 \end{notationENG}
 \begin{notationRUS}\label{not:basic math notation}
 \begin{russian}
-Если $A$ и $B$ — множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\emptyset\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная форма записи\index{set!set builder notation}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
+Если $A$ и $B$ — множества, мы называем $A$ {\em подмножеством}\index{subset} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\varnothing\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная форма записи\index{set!set builder notation}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
 \end{russian}
 \end{notationRUS}
 \begin{notationENG}\label{not:basic math notation}
@@ -1036,7 +1035,7 @@ So, in particular, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, and $\ul{0}=\emptyset$.
 \begin{align}\label{dia:underline n}\index{a symbol!$\ul{n}$}
 \ul{n}:=\{1,2,3,\ldots,n\}.
 \end{align}
-Так что, в частности, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, и $\ul{0}=\emptyset$. 
+Так что, в частности, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, и $\ul{0}=\varnothing$. 
 \end{russian}
 
 Let $A$ be any set. A function $f\taking\ul{n}\to A$ can be written as a sequence $$f=(f(1),f(2),\ldots,f(n)).$$
@@ -1918,10 +1917,10 @@ $$
 \end{exampleENG}
 
 \begin{exampleRUS}
-\begin{russian}Каждый владелец автомобиля владеет по крайней мере одним автомобилем, однако нет очевидной функции $\fakebox{a car owner}\to\fakebox{a car}$, поскольку он (или она) могут владеть более чем одной машиной. Подходящим выбором может оказаться автомобиль, которым этот человек пользуется наиболее часто, и который мы назовем основной его (или ее) машиной. Кроме того, для каждого человека и автомобиля, экономист мог бы спросить, сколько выгоды данный человек может получить от данной машины. Из всего этого мы можем собрать следующий олог, включающий произведения:
+\begin{russian}Каждый владелец автомобиля владеет по крайней мере одним автомобилем, однако нет очевидной функции $\fakebox{a car owner}\to\fakebox{a car}$, поскольку он (или она) могут владеть более чем одной машиной. Подходящим выбором может оказаться автомобиль, которым этот человек пользуется наиболее часто, и который мы назовем основной его (или ее) машиной. Кроме того, о каждом человеке и автомобиле экономист мог бы спросить: сколько выгоды данный человек может получить от данной машины? Из всего этого мы можем собрать следующий олог, включающий произведения:
 $$
 \xymatrixnocompile{\obox{O}{.7in}{владелец автомобиля}\LAL{dd}{является}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize владеет основным}}\LA{rr}{\parbox{.8in}{\rr\scriptsize выдает себя в качестве человека и основную машину, которой владеет}}&\ar@{}[d]^(.4){\checkmark}&
-\obox{P\times C}{1in}{пара $(x,y)$, где $x$ это человек и $y$ это машина}\ar@/^1pc/[ddll]^(.7){\tn{выдает в качестве }x,}\LA{dd}{\tn{выдает в качестве }y,}\LA{rr}{\parbox{.7in}{\scriptsize дает выгоду}}&&\obox{V}{.8in}{сумма в долларах}\\&&\\\obox{P}{.5in}{человек}&&\obox{C}{.4in}{автомобиль}
+\obox{P\times C}{1in}{пара $(x,y)$, где $x$ это человек и $y$ это машина}\ar@/^1pc/[ddll]^(.7){\tn{выдает в качестве }x}\LA{dd}{\tn{выдает в качестве }y}\LA{rr}{\parbox{.7in}{\scriptsize дает выгоду}}&&\obox{V}{.8in}{денежная сумма}\\&&\\\obox{P}{.5in}{человек}&&\obox{C}{.4in}{автомобиль}
 }
 $$\end{russian}
 \end{exampleRUS}
@@ -1938,7 +1937,10 @@ $$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:coproduct}
-\begin{russian} \end{russian}
+\begin{russian}Пусть $X$ и $Y$ — множества. {\em Копроизведение $X$ и $Y$}, обозначаемое $X\sqcup Y$,\index{a symbol!$\sqcup$} определяется как «несвязное объединение» $X$ и $Y$, то есть множество, каждым элементом которого является либо элемент $X$, либо элемент $Y$. В случае, когда некий элемент принадлежит одновременно $X$ и $Y$, мы вкладываем в $X\sqcup Y$ две его копии и считаем их различными. См. Пример \ref{ex:coproduct}
+
+Имеются две естественные {\em функции вложения} $i_1\taking X\to X\sqcup Y$ и $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
+$$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$\end{russian}
 \end{definitionRUS}
 
 \begin{exampleENG}\label{ex:coproduct}
@@ -1947,7 +1949,8 @@ The names of the elements in $X\sqcup Y$ are not so important. What's important 
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:coproduct}
-\begin{russian} \end{russian}
+\begin{russian}Копроизведение $X:=\{a,b,c,d\}$ и $Y:=\{1,2,3\}$ — это $$X\sqcup Y\iso\{a,b,c,d,1,2,3\}.$$ Копроизведение $X$ с самим собой — это $$X\sqcup X\iso\{i_1a,i_1b,i_1c,i_1d,i_2a,i_2b,i_2c,i_2d\}$$ 
+Имена элементов в $X\sqcup Y$ не так важны. Важны отображения вложения $i_1,i_2$, которые удостоверяют, что мы знаем, откуда возникает каждый элемент $X\sqcup Y$.\end{russian}
 \end{exampleRUS}
 
 \begin{exampleENG}[Airplane seats]\label{ex:airplanes}
@@ -1960,7 +1963,12 @@ The names of the elements in $X\sqcup Y$ are not so important. What's important 
 \end{exampleENG}
 
 \begin{exampleRUS}[Места в самолете]\label{ex:airplanes}
-\begin{russian} \end{russian}
+\begin{russian}\begin{align}\label{dia:airplane}
+\xymatrix@=15pt{
+\obox{X}{.8in}{место эконом-класса в самолете}\LAL{ddr}{является}&&\obox{Y}{.7in}{место первого-класса в самолете}\LA{ddl}{является}\\\\
+&\obox{X\sqcup Y}{.7in}{место в самолете}
+}
+\end{align}\end{russian}
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -1968,7 +1976,7 @@ Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} a
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-\begin{russian} \end{russian}
+\begin{russian}Сказали бы вы, что \fakebox{телефон} является копроизведением \fakebox{мобильного телефона} and \fakebox{стационарного телефона}?\end{russian}
 \end{exerciseRUS}
 
 \begin{exampleENG}[Disjoint union of dots]\label{ex:coprod of dots}
@@ -1995,7 +2003,26 @@ Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} a
 \end{exampleENG}
 
 \begin{exampleRUS}[Несвязное объединение точек]\label{ex:coprod of dots}
-\begin{russian} \end{russian}
+\begin{russian}\begin{align}
+\parbox{2.4in}{\begin{center}\small $X\sqcup Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=15pt{
+\LMO{\clubsuit}&\LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}\\\LMO{\diamondsuit}\\\LMO{\heartsuit}\\\LMO{\spadesuit}
+}}}
+\parbox{.9in}{
+\xymatrix{~&&\ar[ll]_{i_2}~}
+}
+\parbox{.3in}{\begin{center}\small $Y$\vspace{-.1in}\end{center}\fbox{
+\xymatrix@=15pt{
+\LMO{\clubsuit}\\\LMO{\diamondsuit}\\\LMO{\heartsuit}\\\LMO{\spadesuit}
+}}}
+\\\nonumber
+\parbox{1in}{\hspace{-1.4in}\xymatrix{~\\\\\ar[uu]_{i_1}}}
+\\\nonumber
+\parbox{2.1in}{\hspace{-1.3in}\fbox{
+\xymatrix@=15pt{
+\LMO{1}&\LMO{2}&\LMO{3}&\LMO{4}&\LMO{5}&\LMO{6}
+}}\begin{center}\hspace{-2.6in}\small$X$\end{center}}
+\end{align}\end{russian}
 \end{exampleRUS}
 
 %% Subsubsection %%
@@ -2012,7 +2039,12 @@ $$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
 \end{lemmaENG}
 
 \begin{lemmaRUS}[Универсальное свойство копроизведения]\label{lemma:up for coprod}
-\begin{russian} \end{russian}
+\begin{russian}Пусть $X$ и $Y$ — множества. Для любого множества $A$ и функций $f\taking X\to A$ и $g\taking Y\to A$ имеется единственная функция $X\sqcup Y\to A$ такая, что следующая диаграмма коммутирует
+$$
+\xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
+$$
+Мы можем обозначить эту единственную функцию как\footnote{Мы намерены использовать двухстрочный символ, что немного необычно. Ниже отдельная функция $X\sqcup Y\to A$ обозначается символом $\coprodmap{f}{g}$.}
+$$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$\end{russian}
 \end{lemmaRUS}
 
 \begin{proofENG}
@@ -2022,7 +2054,9 @@ This assignment is necessary and sufficient to make all relevant diagrams commut
 \end{proofENG}
 
 \begin{proofRUS}
-\begin{russian} \end{russian}
+\begin{russian}Предположим, даны такие $f,g$, как описано выше. Задать функцию $\ell\taking X\sqcup Y\to A$ эквивалентно тому, чтобы задать элемент $f(m)\in A$ для каждого $m\in X\sqcup Y$. Нам нужна такая функция, что $\ell\circ i_1=f$ и $\ell\circ i_2=g$. Но каждый элемент $m\in X\sqcup Y$ имеет вид либо $i_1x$, либо $i_2y$, и не может быть одновременно ими обоими. Поэтому мы положим 
+$$\coprodmap{f}{g}(m):=\begin{cases}f(x)&\tn{если } m=i_1x,\\ g(y) &\tn{если }m=i_2y.\end{cases}$$
+Это равенство необходимо и достаточно, чтобы сделать соответствующие диаграммы коммутирующими.\end{russian}
 \end{proofRUS}
 
 \begin{exampleENG}[Airplane seats, continued]
@@ -2045,7 +2079,22 @@ If we keep track of which airplane every economy class seat is in and we keep tr
 \end{exampleENG}
 
 \begin{exampleRUS}[Места в самолете, продолжение]
-\begin{russian} \end{russian}
+\begin{russian}Универсальное свойство копроизведений говорит о следующем. Каждый раз, когда у нас есть функция $X\to A$ и функция $Y\to A$, у нас есть и функция $X\sqcup Y\to A$. Например, в случае самолетов, каждое место эконом-класса и каждое место первого класса находятся на самом деле {\em в некотором конкретном самолете}. Далее, каждое место эконом-класса имеет цену, также как и каждое место первого класса.
+\begin{align}
+\xymatrix{
+&\obox{A}{.9in}{денежный эквивалент}&\\
+\obox{X}{.8in}{место эконом-класса}\LA{ru}{имеет цену}\LA{r}{является}\LAL{dr}{находится в}&\obox{X\sqcup Y}{.7in}{место в самолете}\ar@{-->}[d]_{\exists!}\ar@{-->}[u]^{\exists!}\ar@{}[ur]|(.35){\checkmark}\ar@{}[dl]|(.35){\checkmark}\ar@{}[dr]|(.35){\checkmark}\ar@{}[ul]|(.35){\checkmark}&\obox{Y}{.7in}{место первого класса}\LAL{l}{является}\LAL{lu}{имеет цену}\LA{dl}{находится в}\\
+&\obox{B}{.7in}{самолет}&
+}
+\end{align}
+Универсальное свойство копроизведений формализует следующий интуитивно очевидный факт:
+\begin{quote}
+Если нам известны цены на места эконом-класса и известны цены на места первого класса, и если мы знаем, что каждое место относится либо к эконом-классу, либо к первому классу, то тогда мы автоматически знаем цены на все места.
+\end{quote}
+Скажем то же другими словами (и используя другое индуцированное отображение):
+\begin{quote}
+Если мы отслеживаем, в каком самолете находится каждое место эконом-класса, и в каком самолете находится каждое место первого класса, и если мы знаем, что каждое место относится либо к эконом-классу, либо к первому классу, то нам не требуется отслеживать  больше никакие места в самолетах.
+\end{quote}\end{russian}
 \end{exampleRUS}
 
 \begin{applicationENG}[Piecewise defined curves]
@@ -2057,7 +2106,11 @@ Often we are given a curve on $[a,b]$ and another on $[b,c]$, where the two curv
 \end{applicationENG}
 
 \begin{applicationRUS}[Кусочно-определенные кривые]
-\begin{russian} \end{russian}
+\begin{russian}В естественных науках кривые зачастую определяются или рассматриваются кусочным образом. Например, при тестировании механических свойств материала, мы можем заинтересоваться отдельными видами \href{https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F}{деформации}, такими как упругая, пластическая или разрушение. Это три интервала, на которых материал обладает различным поведением. 
+
+Для действительных чисел $a<b\in\RR$, пусть $[a,b]:=\{x\in\RR\|a\leq x\leq b\}$ обозначает замкнутый интервал. Данная функция $[a,b]\to\RR$ и функция $[c,d]\to\RR$ при момощи универсального свойства копроизведений могут быть продолжены совместно до функции $[a,b]\sqcup[c,d]\to\RR$, которая оказывается кусочно-определенной кривой.
+
+Зачастую мы имеем одну кривую на $[a,b]$ и другую на $[b,c]$, причем две кривые совпадают в точке $b$. Эта ситуация описывается выталкивающими квадратами, являющимися небольшим обобщением копроизведений; см. Раздел \ref{sec:pushouts}.\end{russian}
 \end{applicationRUS}
 
 \begin{exerciseENG}\label{exc:coprod}
@@ -2065,7 +2118,7 @@ Write the universal property for coproduct in terms of a relationship between th
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:coprod}
-\begin{russian} \end{russian}
+\begin{russian}Запишите универсальное свойство копроизведений в виде отношения между следующими тремя множествами: $$\Hom_{\Set}(X,A), \hsp \Hom_\Set(Y,A), \hsp \text{and} \hsp\Hom_\Set(X\sqcup Y,A).$$ \end{russian}
 \end{exerciseRUS}
 
 \begin{exampleENG}\label{ex:coproduct1}
@@ -2073,7 +2126,7 @@ In the following olog the types $A$ and $B$ are disjoint, so the coproduct $C=A\
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:coproduct1}
-\begin{russian} \end{russian}
+\begin{russian}В следующем ологе типы $A$ и $B$ не пересекаются, так что копроизведение $C=A\sqcup B$ — это обычное теоретико-множественное объединение. $$\fbox{\xymatrix{\smbox{A}{человек}\LA{r}{является}&\smbox{C=A\sqcup B}{человек или кот}&\smbox{B}{кот}\LAL{l}{является}}}$$\end{russian}
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:coproduct2}
@@ -2081,7 +2134,7 @@ In the following olog, $A$ and $B$ are not disjoint, so care must be taken to di
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:coproduct2}
-\begin{russian} \end{russian}
+\begin{russian}В следующем ологе $A$ и $B$ пересекаются, так что особое внимание придется уделить различению общих элементов. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\rr летающее животное}\LA{rr}{помечено «A»}&&\obox{C=A\sqcup B}{1.3in}{летающее животное (помеченное «A») или водоплавающее животное (помеченное «B»)}&&\obox{B}{.9in}{\rr водоплавающее животное}\LAL{ll}{помечено «B»}}}$$ Поскольку утки одновременно летают и плавают, каждая утка появляется в $C$ дважды, один раз в качестве летуна и один раз в качестве пловца. Типы $A$ и $B$ остаются непересекающимися (не связанными) в $C$, чем объясняется название «несвязное объединение.»\end{russian}
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -2089,7 +2142,7 @@ Understand Example \ref{ex:coproduct2} and see if a similar idea would make sens
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-\begin{russian} \end{russian}
+\begin{russian}Разберитесь в Примере \ref{ex:coproduct2} и определите, может ли аналогичная идея быть применена к частицам и волнам. Создайте олог и выберите названия в соответствии с Правилами \ref{rules:types}. Каким образом фотоны, обладающие одновременно свойствами волн и частиц, попадают в копроизведение в этом ологе?\end{russian}
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -2097,7 +2150,7 @@ Following the section above, “Ologging products” page \pageref{sec:ologging 
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-\begin{russian} \end{russian}
+\begin{russian}В соответствии с разделом выше, «Произведения в ологах» с. \pageref{sec:ologging products}, предложите систему обозначений для копроизведений, вложений и универсальных отображений. Испытайте их при создании (влючающего копроизведения) олога, описывающего идею о том, что и .wav, и .mp3 файлы можно проигрывать на современном компьютере. Будьте внимательны в том, чтобы ваши стрелки были корректны в смысле Раздела \ref{sec:invalid aspect}.\end{russian}
 \end{exerciseRUS}
 
 %%%%%% Section %%%%%%
