@@ -7,4 +7,4 @@ Translations of public domain texts about category theory
 
 * source: http://category-theory.mitpress.mit.edu
 
-### work is in progress
+### work in progress
