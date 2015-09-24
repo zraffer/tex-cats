@@ -2,13 +2,13 @@
 
 \usepackage{fontspec}
 \usepackage{polyglossia}
-\usepackage{amsmath}
-%\usepackage{unicode-math}
-%\setmainfont{XITS}
-%\setmathfont{XITS Math}
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmainfont{XITS}
+\setmathfont{XITS Math}
 \setmainlanguage{russian}
 \setotherlanguage{english}
-\newfontfamily\russianfont[Script=Cyrillic]{CMU Serif}
+\newfontfamily\russianfont[Script=Cyrillic]{XITS}
 \newfontfamily\cyrillicfonttt[Script=Cyrillic]{Ubuntu Mono}
 
 \usepackage[titles]{tocloft}
@@ -17,9 +17,8 @@
 
 \usepackage{etex}
 \usepackage{savesym}
-\usepackage{amssymb}
 \usepackage{amsthm,amscd}
-\usepackage{txfonts}
+%\usepackage{txfonts}
 \savesymbol{lrcorner}\savesymbol{llcorner}\savesymbol{urcorner}\savesymbol{ulcorner}
 \usepackage{wasysym}
 \savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
@@ -31,7 +30,7 @@
 \usepackage{makeidx,tabularx,dashbox}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[bookmarks=true,colorlinks=true,linkcolor=MidnightBlue,citecolor=cyan,backref=true,pdftitle={Category Theory for Scientists - Теория категорий для ученых},xetex]{hyperref}
-\usepackage{lmodern}
+%\usepackage{lmodern}
 \usepackage{graphicx,float}
 \usepackage{multirow}
 \usepackage[margin=3cm]{geometry}
