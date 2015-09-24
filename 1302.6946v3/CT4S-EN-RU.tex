@@ -30,7 +30,7 @@
 \usepackage{enumerate,makecell}
 \usepackage{makeidx,tabularx,dashbox}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[bookmarks=true,colorlinks=true, linkcolor=MidnightBlue, citecolor=cyan]{hyperref}
+\usepackage[bookmarks=true,colorlinks=true,linkcolor=MidnightBlue,citecolor=cyan,backref=true,pdftitle={CategoryTheoryForScientists},xetex]{hyperref}
 \usepackage{lmodern}
 \usepackage{graphicx,float}
 \usepackage{multirow}
@@ -44,14 +44,15 @@
 \newcommand{\comment}[1]{}
 
 \usepackage{perpage}
-\renewcommand{\thefootnote}{\roman{footnote}}
+\renewcommand{\thefootnote}{(\roman{footnote})}
 \makeatletter
 \MakePerPage{footnote}
 \makeatother
-\usepackage[backref=true,totoc=chapter]{enotez}
+\usepackage[backref=true,totoc=chapter,split=chapter]{enotez}
 \DeclareTranslation{russian}{enotez-title}{Примечания переводчика}
-\DeclareTranslation{russian}{enotez-section}{Раздел}
-\DeclareTranslation{russian}{enotez-chapter}{Глава}
+\DeclareTranslation{russian}{enotez-splitted-title}{Примечания к <name> <ref>}
+\DeclareTranslation{russian}{enotez-section}{разделу}
+\DeclareTranslation{russian}{enotez-chapter}{главе}
 
 \newcommand{\longnote}[2][4.9in]{\fcolorbox{black}{yellow}{\parbox{#1}{\color{black} #2}}}
 \newcommand{\shortnote}[1]{\fcolorbox{black}{yellow}{\color{black} #1}}
@@ -381,35 +382,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\begin{document}
-
-\title{
-    ~\\
-    \begin{english}Category Theory for Scientists\end{english}\\
-    \begin{russian}Теория категорий для ученых\end{russian}
+\title{~\\
+    Category Theory for Scientists\\
+    Теория категорий для ученых
   }
 \author{
-    \begin{english}David I. Spivak\end{english}\\
-    \begin{russian}Дэвид И. Спивак\end{russian}
+    David I. Spivak\\
+    Дэвид И. Спивак
   }
 \titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large 
-    \begin{english}How can mathematics make this diagram meaningful?\end{english}\\ 
-    \begin{russian}Как математика может сделать эту диаграмму более осмысленной? \end{russian}\normalsize
-  }
+    How can mathematics make this diagram meaningful?\\ 
+    Как математика может придать смысл этой диаграмме?\normalsize
+  }  
+
+\begin{document}
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{russian}\chapter*{Preface / Предисловие}\end{russian}
 
-\begin{english}
+\begin{russian}
 An early version of this book was put on line in February 2013 to serve as the textbook for my course \href{http://math.mit.edu/~dspivak/teaching/sp13/}{\text Category Theory for Scientists} taught in the spring semester of 2013 at MIT. During that semester, students provided me with hundreds of comments and questions, which led to a substantial improvement (and the addition of 50 pages) to the original document.
 
 \begin{russian}Ранняя версия данной книги была представлена в феврале 2013 в качестве учебника для моего курса \href{http://math.mit.edu/~dspivak/teaching/sp13/}{\text Теория категорий для ученых}, который читался в весеннем семестре 2013 в MIT. В течение семестра студенты передали мне сотни комментариев и вопросов, которые привели к существенному улучшению исходного текста (и к добавлению 50 страниц).\end{russian}
 
 In the summer of 2013 I signed a contract with the MIT Press to publish a new version of this work under the title {\em Category Theory for the Sciences}. Because I am committed to the open source development model I insisted that a version of this book, namely the one you are reading, remain freely available online. The MIT Press version will of course not be free.
 
-\begin{russian}Летом 2013 я подписал контракт с MIT Press о публикации новой версии данной работы под заглавием {\em Теория категорий для наук}. Поскольку я являюсь приверженцем подхода открытого исходного кода, я настоял на том, чтобы отдельная версия этой книги, а именно — та, которую вы сейчас читаете, осталась доступной бесплатно онлайн.\end{russian}
+\begin{russian}Летом 2013 я подписал контракт с MIT Press о публикации новой версии данной работы под заглавием {\em Теория категорий для наук}. Поскольку я являюсь приверженцем подхода открытого исходного кода, я настоял на том, чтобы отдельная версия этой книги, а именно — та, которую вы сейчас читаете, осталась доступной бесплатно онлайн.\endnote{из предисловия}\end{russian}
 
 Other than the title, there are two main differences between the present version and the MIT Press version. The first difference is that I will do a full edit with the help of professional editors from the Press. The second difference is that I will write up solutions to the book's (approximately 280) exercises; some of these will be included in the published version, whereas the rest will be available by way of a password-protected page, accessible only to professors who teach the subject.
 
@@ -446,7 +446,7 @@ Interestingly, a graphic has the power to evoke feelings of understanding, witho
 
 Science is about agreement. When we supply a convincing argument, the result of this convincing is agreement. When, in an experiment, the observation matches the hypothesis---success!---that is agreement. When my methods make sense to you, that is agreement. When practice does not agree with theory, that is disagreement. Agreement is the good stuff in science; it's the high fives.
 
-\begin{russian} Суть науки — в согласии. Когда мы предлагаем убедительный аргумент,  результатом этой убедительности является согласие. Когда в ходе эксперимента наблюдения совпадают с гипотезой, — вот удача! — это согласие. Когда мои методы имеют смысл и для вас, это согласие. Когда же практика не соответствует теории, это несогласие. Согласие — вот лучшая материя в науке; оно подобно рукопожатию. \end{russian}
+\begin{russian} Суть науки — в согласии. Когда мы предлагаем убедительный аргумент,  результатом этой убедительности является согласие. Когда в ходе эксперимента наблюдения совпадают с гипотезой, — вот удача! — это согласие. Когда мои методы имеют смысл и для вас, это согласие. Когда же практика не соответствует теории, это несогласие. Согласие — вот лучшая материя в науке; оно подобно рукопожатию.\endnote{из введения}\end{russian}
 
 But it is easy to think we're in agreement, when really we're not. Modeling our thoughts on heuristics and pictures may be convenient for quick travel down the road, but we're liable to miss our turnoff at the first mile. The danger is in mistaking our convenient conceptualizations for what's actually there. It is imperative that we have the ability at any time to ground out in reality. What does that mean?
 
@@ -506,7 +506,7 @@ The paradigm shift brought on by Einstein's theory of relativity brought on the 
 
 \begin{russian}
 Сдвиг парадигмы, произведенный теорией относительности Эйнштейна, принес понимание того, что нет единой точки зрения на мир. Не существует основополагающей системы отсчёта, которую нам нужно найти; имеется бесконечно много различных систем отсчета и точек зрения, и настоящая мощь [переводчик: да пребудет с тобой сила!..] состоит в умении переходить между ними. В таком историческом контексте возникала теория категорий.\footnote{Нижеследующее описание истории теории категорий слишком кратко, и, возможно, отражает в большей степени авторское чувство прекрасного, чем любой вид объективной истины, что бы это ни значило. Вот некоторые значительно лучшие ссылки: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
- \end{russian}
+\endnote{из истории}\end{russian}
 
 Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenberg, Samuel} and Saunders Mac Lane.\index{Mac Lane, Saunders} It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as $y^2z=x^3-xz^2$. People had already created important and useful links (e.g. cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well.
 
@@ -542,7 +542,7 @@ As mentioned above category theory has branched out into certain areas of scienc
 
 The world of {\em applied mathematics} is much smaller than the world of {\em applicable mathematics}. As alluded to above, this course is intended to create a bridge between the vast array of mathematical concepts that are used daily by mathematicians to describe all manner of phenomena that arise in our studies, and the models and frameworks of scientific disciplines such as physics, computation, and neuroscience.
 
-\begin{russian}Мир {\em уж\'e прикладной математики} значительно \'yже мира {\em применимой математики} [каламбур]. Как указывалось выше, этот курс предназначен создать мост между, с одной стороны, огромным массивом математических понятий, используемых ежедневно математиками, чтобы описывать феномены всякого рода, возникающие в их исследованиях, и, с другой стороны, моделями и конструкциями таких научных дисциплин, как физика, вычислительная математика, нейронаука. \end{russian}
+\begin{russian}Мир уж\'e существующей и {\em примененной математики} (известной под именем прикладной) значительно \'yже мира всей {\em применимой математики} [каламбур]. Как указывалось выше, этот курс предназначен создать мост между, с одной стороны, огромным массивом математических понятий, используемых ежедневно математиками, чтобы описывать феномены всякого рода, возникающие в их исследованиях, и, с другой стороны, моделями и конструкциями таких научных дисциплин, как физика, вычислительная математика, нейронаука. \end{russian}
 
 To the pure mathematician I'll try to prove that concepts such as categories, functors, natural transformations, limits, colimits, functor categories, sheaves, monads, and operads---concepts that are often considered too abstract for even math majors---can be communicated to scientists with no math background beyond linear algebra. If this material is as teachable as I think, it means that category theory is not esoteric but somehow well-aligned with ideas that already make sense to the scientific mind. Note, however, that this book is example-based rather than proof-based, so it may not be suitable as a reference for students of pure mathematics.
 
@@ -788,7 +788,7 @@ As a matter of notation, we may sometimes say something like the following: Let 
 \begin{russian}
 Предположим, $X$ — множество и $X'\ss X$ — подмножество. Тогда мы можем рассмотреть функцию $X'\to X$, заданную превращением каждого элемента $X'$ в себя, но уже как элемент $X$. Например, если $X=\{a,b,c,d,e,f\}$ и $X'=\{b,d,e\}$, то $X'\ss X$ и мы получаем отсюда функцию $X'\to X$, заданную как $b\mapsto b, d\mapsto d, e\mapsto e$.\footnote{Такой вид стрелочки,\;\;$\mapsto$\;\;, читается вслух как «переходит в». Функция $f\taking X\to Y$ означает правило сопоставления каждому элементу $x\in X$ элемента $f(x)\in Y$. При этом мы говорим, что «$x$ переходит в $f(x)$» и пишем $x\mapsto f(x)$.}\index{символ!$\mapsto$}
 
-Что касается обозначений, мы можем сказать иногда нечто вроде следующего: «Пусть $X$ — множество и пусть $i\taking X'\ss X$ — подмножество». Здесь мы ясно говорим, что $X'$ это подмножество $X$, а также, что $i$ это имя соответствующей функции. 
+Что касается обозначений, мы можем сказать иногда нечто вроде следующего: «Пусть $X$ — множество и пусть $i\taking X'\ss X$ — подмножество». Здесь мы ясно говорим, что $X'$ это подмножество $X$, а также, что $i$ это имя соответствующей функции.\endnote{из главы 2}
 \end{russian}
 \end{exampleRUS}
 
@@ -1974,7 +1974,7 @@ Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} a
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-\begin{russian}Сказали бы вы, что \fakebox{телефон} является копроизведением \fakebox{мобильного телефона} and \fakebox{стационарного телефона}?\end{russian}
+\begin{russian}Сказали бы вы, что \fakebox{телефон} является копроизведением \fakebox{мобильного телефона} and \fakebox{стационарного телефона}?\endnote{еще глава 2}\end{russian}
 \end{exerciseRUS}
 
 \begin{exampleENG}[Disjoint union of dots]\label{ex:coprod of dots}
@@ -3569,25 +3569,18 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 \begin{russian} \end{russian}
 \end{exerciseRUS}
 
-\end{english}
-
 %%%%%%%% Chapter %%%%%%%%
 
-\begin{russian}
 \printendnotes
-\end{russian}
 
 %%%%%%%% Chapter %%%%%%%%
 
-\begin{russian}
 \phantomsection
 \addcontentsline{toc}{chapter}{\indexname}
 \printindex
-\end{russian}
 
 %%%%%%%% Chapter %%%%%%%%
 
-\begin{russian}
 \bibliographystyle{amsalpha}
 \begin{thebibliography}{SGWB}\rr
 \phantomsection
@@ -3692,5 +3685,4 @@ A first introduction to categories.} Second edition. Cambridge University Press,
 
 \end{thebibliography}
 \end{russian}
-
 \end{document}
