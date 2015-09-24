@@ -8,8 +8,8 @@
 \setmathfont{XITS Math}
 \setmainlanguage{russian}
 \setotherlanguage{english}
-\newfontfamily\russianfont[Script=Cyrillic]{XITS}
-\newfontfamily\cyrillicfonttt[Script=Cyrillic]{Ubuntu Mono}
+\newfontfamily\russianfont{XITS}
+\newfontfamily\cyrillicfonttt{Ubuntu Mono}
 
 \usepackage[titles]{tocloft}
 \renewcommand{\cftchapfont}{\russianfont}
@@ -18,11 +18,8 @@
 \usepackage{etex}
 \usepackage{savesym}
 \usepackage{amsthm,amscd}
-%\usepackage{txfonts}
-\savesymbol{lrcorner}\savesymbol{llcorner}\savesymbol{urcorner}\savesymbol{ulcorner}
 \usepackage{wasysym}
-\savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
-%\usepackage{mathabx}
+%\savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
 \usepackage{setspace}
 \usepackage{chngcntr}
 \usepackage[tt]{titlepic}
@@ -34,7 +31,6 @@
 \usepackage{graphicx,float}
 \usepackage{multirow}
 \usepackage[margin=3cm]{geometry}
-\restoresymbol{txfonts}{lrcorner}\restoresymbol{txfonts}{llcorner}\restoresymbol{txfonts}{urcorner}\restoresymbol{txfonts}{ulcorner}
 
 \usepackage{color}
 \usepackage[all,poly,color,matrix,arrow]{xy}
@@ -42,17 +38,18 @@
 
 \newcommand{\comment}[1]{}
 
-\usepackage{perpage}
-\renewcommand{\thefootnote}{(\roman{footnote})}
-\makeatletter
-\MakePerPage{footnote}
-\makeatother
 \usepackage[backref=true,totoc=chapter,split=chapter]{enotez}
 \DeclareTranslation{russian}{enotez-title}{Примечания переводчика}
 \DeclareTranslation{russian}{enotez-splitted-title}{Примечания к <name> <ref>}
 \DeclareTranslation{russian}{enotez-section}{разделу}
 \DeclareTranslation{russian}{enotez-chapter}{главе}
 \renewcommand*\enotezwritemark[1]{\textsuperscript{(#1)}}
+
+\usepackage{perpage}
+\renewcommand{\thefootnote}{(\roman{footnote})}
+\makeatletter
+\MakePerPage{footnote}
+\makeatother
 
 \newcommand{\longnote}[2][4.9in]{\fcolorbox{black}{yellow}{\parbox{#1}{\color{black} #2}}}
 \newcommand{\shortnote}[1]{\fcolorbox{black}{yellow}{\color{black} #1}}
@@ -409,7 +406,7 @@ An early version of this book was put on line in February 2013 to serve as the t
 
 In the summer of 2013 I signed a contract with the MIT Press to publish a new version of this work under the title {\em Category Theory for the Sciences}. Because I am committed to the open source development model I insisted that a version of this book, namely the one you are reading, remain freely available online. The MIT Press version will of course not be free.
 
-Летом 2013 я подписал контракт с MIT Press о публикации новой версии данной работы под заглавием {\em Теория категорий для наук}. Поскольку я являюсь приверженцем подхода открытого исходного кода, я настоял на том, чтобы отдельная версия этой книги, а именно — та, которую вы сейчас читаете, осталась доступной бесплатно онлайн.\endnote{из предисловия}
+Летом 2013 я подписал контракт с MIT Press о публикации новой версии данной работы под заглавием {\em Теория категорий для наук}. Поскольку я являюсь приверженцем подхода открытого исходного кода, я настоял на том, чтобы отдельная версия этой книги, а именно — та, которую вы сейчас читаете, осталась доступной бесплатно онлайн.\endnote{(упомянуть другие работы Спивака и другие работы по категорным основаниям БД)}
 
 Other than the title, there are two main differences between the present version and the MIT Press version. The first difference is that I will do a full edit with the help of professional editors from the Press. The second difference is that I will write up solutions to the book's (approximately 280) exercises; some of these will be included in the published version, whereas the rest will be available by way of a password-protected page, accessible only to professors who teach the subject.
 
@@ -444,7 +441,7 @@ Interestingly, a graphic has the power to evoke feelings of understanding, witho
 
 Science is about agreement. When we supply a convincing argument, the result of this convincing is agreement. When, in an experiment, the observation matches the hypothesis — success! — that is agreement. When my methods make sense to you, that is agreement. When practice does not agree with theory, that is disagreement. Agreement is the good stuff in science; it's the high fives.
 
- Суть науки — в согласии. Когда мы предлагаем убедительный аргумент,  результатом этой убедительности является согласие. Когда в ходе эксперимента наблюдения совпадают с гипотезой, — вот удача! — это согласие. Когда мои методы имеют смысл и для вас, это согласие. Когда же практика не соответствует теории, это несогласие. Согласие — вот лучшая материя в науке; оно подобно рукопожатию.\endnote{из введения}
+ Суть науки — в согласии. Когда мы предлагаем убедительный аргумент,  результатом этой убедительности является согласие. Когда в ходе эксперимента наблюдения совпадают с гипотезой, — вот удача! — это согласие. Когда мои методы имеют смысл и для вас, это согласие. Когда же практика не соответствует теории, это несогласие. Согласие — вот лучшая материя в науке; оно подобно рукопожатию.\endnote{(сказать пару слов о различении того, что приносят формальные методы вообще, и в чем отличие собственно ТК)\footnote{Пример Подстрочной Сноски к Многозначительному Примечанию}}
 
 But it is easy to think we're in agreement, when really we're not. Modeling our thoughts on heuristics and pictures may be convenient for quick travel down the road, but we're liable to miss our turnoff at the first mile. The danger is in mistaking our convenient conceptualizations for what's actually there. It is imperative that we have the ability at any time to ground out in reality. What does that mean?
 
@@ -500,11 +497,11 @@ It is my hope that this course will offer scientists a new vocabulary in which t
 
 \section{A brief history of category theory /  Краткая история теории категорий }
 
-The paradigm shift brought on by Einstein's theory of relativity brought on the realization that there is no single perspective from which to view the world. There is no background framework that we need to find; there are infinitely many different frameworks and perspectives, and the real power lies in being able to translate between them. It is in this historical context that category theory got its start.\footnote{The following history of category theory is far too brief, and perhaps reflects more of the author's aesthetic than any kind of objective truth, whatever that may mean. Here are some much better references: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
+The paradigm shift brought on by Einstein's theory of relativity brought on the realization that there is no single perspective from which to view the world. There is no background framework that we need to find; there are infinitely many different frameworks and perspectives, and the real power lies in being able to translate between them. It is in this historical context that category theory got its start.\footnote{The following history of category theory is far too brief, and perhaps reflects more of the author's aesthetic than any kind of objective truth, whatever that may mean. Here are some much better references: \cite{Kro}, \cite{Mar1}, \cite{LM}.\endnote{Пример Многозначительного Примечания к Подстрочной Сноске}}
 
 
 Сдвиг парадигмы, произведенный теорией относительности Эйнштейна, принес понимание того, что нет единой точки зрения на мир. Не существует основополагающей системы отсчёта, которую нам нужно найти; имеется бесконечно много различных систем отсчета и точек зрения, и настоящая мощь [переводчик: да пребудет с тобой сила!..] состоит в умении переходить между ними. В таком историческом контексте возникала теория категорий.\footnote{Нижеследующее описание истории теории категорий слишком кратко, и, возможно, отражает в большей степени авторское чувство прекрасного, чем любой вид объективной истины, что бы это ни значило. Вот некоторые значительно лучшие ссылки: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
-\endnote{из истории}
+\endnote{(дать обзор областей ТК в исторической перспективе)}
 
 Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenberg, Samuel} and Saunders Mac Lane.\index{Mac Lane, Saunders} It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as $y^2z=x^3-xz^2$. People had already created important and useful links (e.g. cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well.
 
@@ -678,7 +675,7 @@ The theory of sets was invented as a foundation for all of mathematics. The noti
 
 \subsection{Sets / Множества}
 
-In this course I'll assume you know what a set is. We can think of a set $X$ as a collection of things $x\in X$, each of which is recognizable as being in $X$ and such that for each pair of named elements $x,x'\in X$ we can tell if $x=x'$ or not.\footnote{Note that the symbol $x'$, read “x-prime”, has nothing to do with calculus or derivatives. It is simply notation that we use to name a symbol that is suggested as being somehow like $x$. This suggestion of kinship between $x$ and $x'$ is meant only as an aid for human cognition, and not as part of the mathematics.}
+In this course I'll assume you know what a set is.\endnote{(предложить читателю пару книжек самого начального уровня о теории множеств)} We can think of a set $X$ as a collection of things $x\in X$, each of which is recognizable as being in $X$ and such that for each pair of named elements $x,x'\in X$ we can tell if $x=x'$ or not.\footnote{Note that the symbol $x'$, read “x-prime”, has nothing to do with calculus or derivatives. It is simply notation that we use to name a symbol that is suggested as being somehow like $x$. This suggestion of kinship between $x$ and $x'$ is meant only as an aid for human cognition, and not as part of the mathematics.}
 The set of pendulums is the collection of things we agree to call pendulums, each of which is recognizable as being a pendulum, and for any two people pointing at pendulums we can tell if they're pointing at the same pendulum or not. 
 
 В этом курсе я буду предполагать, что вы знаете, что такое множество. Мы можем думать о множестве $X$ как о совокупности вещей $x\in X$, для каждой из которых мы можем проверить, находится ли она в $X$, и такой, что для каждой пары именованных элементов $x,x'\in X$ мы можем сказать, $x=x'$ или нет.\footnote{Заметим, что символ $x'$, читается «x-штрих», не имеет ничего общего с матанализом или производной. Это просто обозначение, которое мы используем, чтобы обозначить символ, в чем-то похожий на $x$. Такое предположение о родстве между $x$ и $x'$ имеет смысл только для целей удобства человеческого восприятия, а не как часть математики.}
@@ -781,7 +778,7 @@ As a matter of notation, we may sometimes say something like the following: Let 
 \begin{exampleRUS}\label{ex:subset as function}\index{подмножество!как функция}
 Предположим, $X$ — множество и $X'\ss X$ — подмножество. Тогда мы можем рассмотреть функцию $X'\to X$, заданную превращением каждого элемента $X'$ в себя, но уже как элемент $X$. Например, если $X=\{a,b,c,d,e,f\}$ и $X'=\{b,d,e\}$, то $X'\ss X$ и мы получаем отсюда функцию $X'\to X$, заданную как $b\mapsto b, d\mapsto d, e\mapsto e$.\footnote{Такой вид стрелочки,\;\;$\mapsto$\;\;, читается вслух как «переходит в». Функция $f\taking X\to Y$ означает правило сопоставления каждому элементу $x\in X$ элемента $f(x)\in Y$. При этом мы говорим, что «$x$ переходит в $f(x)$» и пишем $x\mapsto f(x)$.}\index{символ!$\mapsto$}
 
-Что касается обозначений, мы можем сказать иногда нечто вроде следующего: «Пусть $X$ — множество и пусть $i\taking X'\ss X$ — подмножество». Здесь мы ясно говорим, что $X'$ это подмножество $X$, а также, что $i$ это имя соответствующей функции.\endnote{из главы 2}
+Что касается обозначений, мы можем сказать иногда нечто вроде следующего: «Пусть $X$ — множество и пусть $i\taking X'\ss X$ — подмножество». Здесь мы ясно говорим, что $X'$ это подмножество $X$, а также, что $i$ это имя соответствующей функции.
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -1129,7 +1126,7 @@ $$
 
 \section{Ologs / Наконец-то ологи}\label{sec:ologs}\index{olog}\index{олог}
 
-In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.
+In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.\endnote{(казалось бы, мы уже ввели множества, функции и равенства, зачем нам еще типы, аспекты и факты, которые, как кажется на первый взгляд, дублируют терминологию ТМ. намекнуть читателю, что типы ологов подобны переменным, имеющим в качестве значений множества, аспекты — переменным-функциям, факты — ``переменным равенствам'')}
 \begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr an amino acid found in dairy}\LAL{dr}{is}&\obox{A}{.5in}{arginine}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{has}\LAL{l}{is}\LA{d}{is}&\obox{E}{.9in}{\rr an electrically-charged side chain}\LA{d}{is}\\&\obox{X}{.9in}{an amino acid}\LAL{dl}{has}\LA{dr}{has}\LA{r}{has}&\smbox{R}{a side chain}\\\mebox{N}{an amine group}&&\mebox{C}{a carboxylic acid}}}\end{align}  
 
 В данном курсе мы, насколько это возможно, привяжем математические идеи к прикладным примерам (применениям). Для этих целей мы введем ологи, которые будут служить мостом между математикой и различными системами понятий. Следующий материал взят из \cite{SK}, введения в ологи.
@@ -1278,7 +1275,7 @@ Sometimes the label on an arrow can be shortened or dropped altogether if it is 
 One can also read paths through an olog by inserting the word “which” after each intermediate box.\footnote{If the intended elements of an intermediate box are humans, it is polite to use “who” rather than “which”, and other such conventions may be upheld if one so desires.}
 For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read “a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman.”  The reader should read and understand the content of the bottom path, which associates to every child a year.  
 
-В ологе можно читать целые пути, вставляя слово «который» после каждого промежуточного прямоугольника.\footnote{Если элементами промежуточного типа являются одушевленные существа, более вежливо говорить «кто», а не «который»; при желании можно следовать этому правилу и другим подобным договоренностям.}
+В ологе можно читать целые пути, вставляя слово «который» после каждого промежуточного прямоугольника.%\footnote{Если элементами промежуточного типа являются одушевленные существа, более вежливо говорить «кто», а не «который»; при желании можно следовать этому правилу и другим подобным договоренностям.}
 Возьмем для примера следующий олог, который имеет два пути длины 3 (считаем стрелки в цепи): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{ребенок}\LA{r}{является}&\fbox{человек}\LA{rr}{имеет родителей}\LAL{dr}{имеет день рождения}&&\obox{}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\LA{r}{$w$}&\fbox{женщина}\\&&\fbox{дата}\LA{r}{включает}&\fbox{год}}}\end{align}  \normalsize Верхний путь читается «ребенок является человеком, который имеет [в качестве] родителей пару $(w,m)$, где $w$ это женщина и $m$ мужчина, из которой можно получить [в качестве] $w$ женщину.»  Читателю следует прочесть и разобраться в смысле нижнего пути, который сопоставляет каждому ребенку некоторый год.  
 
 %% Subsubsection %%
@@ -1438,7 +1435,7 @@ Every part $\ell$ of an olog (i.e. every box and every arrow) has an associated 
 P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
 Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\ar[r]^{g_3}&\cdots\ar[r]^{g_{n-1}}&\LMO{b_{n-1}}\ar[r]^{g_n}&\LMO{b_n=t}}
 \end{align}
-Каждой части $\ell$ олога (т.е. каждому прямоугольнику и каждой стрелке) можно сопоставить фразу естественного языка, которую мы обозначим $\qtR{\ell}$. Используя вспомогательную переменную $x$ мы можем превести на естественный язык и каждый факт. Следующая общая формула немного сложна для понимания, см. Пример \ref{ex:English fact}, но вот она. Факт $P\simeq Q$ из (\ref{dia:two paths for equivalence}) переводится на естественный язык следующим образом: 
+Каждой части $\ell$ олога (т.е. каждому прямоугольнику и каждой стрелке) можно сопоставить фразу естественного языка, которую мы обозначим $\qtR{\ell}$. Используя вспомогательную переменную $x$ мы можем превести на естественный язык и каждый факт. Следующая общая формула немного сложна для понимания, см. Пример \ref{ex:English fact}, но вот она. Факт $P\simeq Q$ из (\ref{dia:two paths for equivalence}) переводится на естественный язык следующим образом:\endnote{В оригинале рецепт на английском, имеющем более строгую структуру предложения и не имеющему падежей; потому механическое конструирование предложений довольно естественно ложится на разговорный английский. В русском требуется согласование частей речи и перестановка слов, — например, «верблюд имеет два горба» звучит не очень естественно; гораздо более естественно звучало бы «у верблюда [есть] два горба.»}
 
 \begin{align}\label{dia:Englishification}\index{перевод на естественный язык}
 &\tn{Для данного }\qtR{s}\;x\tn{ рассмотрим следующее.}\\
@@ -1919,7 +1916,7 @@ Would you say that \fakebox{a phone} is the coproduct of \fakebox{a cellphone} a
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Сказали бы вы, что \fakebox{телефон} является копроизведением \fakebox{мобильного телефона} and \fakebox{стационарного телефона}?\endnote{еще глава 2}
+Сказали бы вы, что \fakebox{телефон} является копроизведением \fakebox{мобильного телефона} and \fakebox{стационарного телефона}?\endnote{(дать наброски решений некоторых упражнений)}
 \end{exerciseRUS}
 
 \begin{exampleENG}[Disjoint union of dots]\label{ex:coprod of dots}
@@ -3507,7 +3504,7 @@ Let $\singleton$ denote a one element set. What are $\singleton$-indexed sets an
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it?\endnote{Многозначительное Примечание...}
+There is a strong relationship between $A$-indexed sets and relative sets over $A$. What is it?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
