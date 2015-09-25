@@ -1,22 +1,23 @@
 \documentclass[a4paper]{book}
 
+\usepackage{amsmath,amssymb}
 \usepackage{fontspec}
 \usepackage{polyglossia}
-\usepackage{amsmath,amssymb}
 \usepackage{unicode-math}
-\setmainfont{XITS}
+\usepackage{savesym}
+\setmainfont{Ubuntu}%{XITS}
 \setmathfont{XITS Math}
 \setmainlanguage{russian}
 \setotherlanguage{english}
-\newfontfamily\russianfont{XITS}
+\newfontfamily\russianfont{Ubuntu}%{XITS}
 \newfontfamily\cyrillicfonttt{Ubuntu Mono}
 
+\usepackage{tocbibind}
 \usepackage[titles]{tocloft}
-\renewcommand{\cftchapfont}{\russianfont}
-\renewcommand{\cftsecfont}{\russianfont}
+%\renewcommand{\cftchapfont}{\russianfont}
+%\renewcommand{\cftsecfont}{\russianfont}
 
 \usepackage{etex}
-\usepackage{savesym}
 \usepackage{amsthm,amscd}
 \usepackage{wasysym}
 %\savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
@@ -26,7 +27,7 @@
 \usepackage{enumerate,makecell}
 \usepackage{makeidx,tabularx,dashbox}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[bookmarks=true,colorlinks=true,linkcolor=MidnightBlue,citecolor=cyan,backref=true,pdftitle={Category Theory for Scientists - Теория категорий для ученых},xetex]{hyperref}
+\usepackage[bookmarks=true,xetex,colorlinks=true,linkcolor=MidnightBlue,citecolor=cyan,backref=true,pdftitle={Category Theory for Scientists - Теория категорий для ученых}]{hyperref}
 %\usepackage{lmodern}
 \usepackage{graphicx,float}
 \usepackage{multirow}
@@ -44,6 +45,8 @@
 \DeclareTranslation{russian}{enotez-section}{разделу}
 \DeclareTranslation{russian}{enotez-chapter}{главе}
 \renewcommand*\enotezwritemark[1]{\textsuperscript{(#1)}}
+\DeclareInstance{enotez-list}{custom}{paragraph}%
+{notes-sep=.5\baselineskip, format=\normalfont, number=\textsuperscript{(#1)}}
 
 \usepackage{perpage}
 \renewcommand{\thefootnote}{(\roman{footnote})}
@@ -441,7 +444,7 @@ Interestingly, a graphic has the power to evoke feelings of understanding, witho
 
 Science is about agreement. When we supply a convincing argument, the result of this convincing is agreement. When, in an experiment, the observation matches the hypothesis — success! — that is agreement. When my methods make sense to you, that is agreement. When practice does not agree with theory, that is disagreement. Agreement is the good stuff in science; it's the high fives.
 
- Суть науки — в согласии. Когда мы предлагаем убедительный аргумент,  результатом этой убедительности является согласие. Когда в ходе эксперимента наблюдения совпадают с гипотезой, — вот удача! — это согласие. Когда мои методы имеют смысл и для вас, это согласие. Когда же практика не соответствует теории, это несогласие. Согласие — вот лучшая материя в науке; оно подобно рукопожатию.\endnote{(сказать пару слов о различении того, что приносят формальные методы вообще, и в чем отличие собственно ТК)\footnote{Пример Подстрочной Сноски к Многозначительному Примечанию}}
+ Суть науки — в согласии. Когда мы предлагаем убедительный аргумент,  результатом этой убедительности является согласие. Когда в ходе эксперимента наблюдения совпадают с гипотезой, — вот удача! — это согласие. Когда мои методы имеют смысл и для вас, это согласие. Когда же практика не соответствует теории, это несогласие. Согласие — вот лучшая материя в науке; оно подобно рукопожатию.\endnote{(сказать пару слов о различении того, что приносят формальные методы вообще, и в чем особенность собственно теории категорий)\footnote{Пример Подстрочной Сноски к Многозначительному Примечанию}}
 
 But it is easy to think we're in agreement, when really we're not. Modeling our thoughts on heuristics and pictures may be convenient for quick travel down the road, but we're liable to miss our turnoff at the first mile. The danger is in mistaking our convenient conceptualizations for what's actually there. It is imperative that we have the ability at any time to ground out in reality. What does that mean?
 
@@ -465,7 +468,7 @@ $$\xymatrix{
 &&\obox{}{1in}{действительное число  $h$}\ar@{}[uurr]|(.35){\checkmark}\ar[rr]_-{\sqrt{2h\div 9.8}}&\hspace{.3in}&\obox{}{.9in}{действительное число  }
 }
 $$
-Данный олог представляет собой конструкцию, в которой для объектов, находящихся над поверхностью земли, записаны: их масса, их высота и соответствие (отметка \checkmark в середине) между числом секунд, за которое они достигают земли, с определенной действительнозначной функцией их высоты. Ологи мы детально обсудим по ходу этого курса. 
+Данный олог представляет собой конструкцию, в которой для объектов, находящихся над поверхностью земли, записаны: их масса, их высота и соответствие (отметка $\checkmark$ в середине) между числом секунд, за которое они достигают земли, с определенной действительнозначной функцией их высоты. Ологи мы детально обсудим по ходу этого курса. 
 
 The picture in (\ref{dia:scientific method}) looks like an olog, but it does not conform to the rules that we lay out for ologs in Section \ref{sec:ologs}. In an olog, every arrow is intended to represent a mathematical function. It is difficult to imagine a function that takes in predictions and outputs experiments, but such a function is necessary in order for the arrow
 $$\fbox{a prediction}\To{\tn{motivates the specification of}}\fbox{an experiment}
@@ -483,7 +486,7 @@ This course is an attempt to extol the virtues of a new branch of mathematics, c
 
 I believe that the language and toolset of category theory can be useful throughout science. We build scientific understanding by developing models, and category theory is the study of basic conceptual building blocks and how they cleanly fit together to make such models. Certain structures and conceptual frameworks show up again and again in our understanding of reality. No one would dispute that vector spaces are ubiquitous. But so are hierarchies, symmetries, actions of agents on objects, data models, global behavior emerging as the aggregate of local behavior, self-similarity, and the effect of methodological context.
 
-Я верю, что язык и инструментарий теории категорий могут быть полезны во всей науке. Научное понимание мира строится на основе разработки сложных моделей, и теория категорий как раз изучает базовые концептуальные строительные блоки, а также то, как они могут быть четко состыкованы между собой при создании таких моделей. Определенные структуры и концептуальные конструкции обнаруживаются вновь и вновь в нашем понимании реальности. Никто не станет сомневаться в том, что векторные пространства вездесущи. Но таковы же и иерархии, симметрии, воздействия агентов на объекты, модели данных, глобальное поведение, возникающее при объединении локального поведения, самоподобие и эффект методологического контекста [переводчик: щито??? гугл не дает ссылок про «эффект методологического контекста»; далее автор пишет, что это, оказывается, про монады; что это вообще означает?] 
+Я верю, что язык и инструментарий теории категорий могут быть полезны во всей науке. Научное понимание мира строится на основе разработки сложных моделей, и теория категорий как раз изучает базовые концептуальные строительные блоки, а также то, как они могут быть четко состыкованы между собой при создании таких моделей. Определенные структуры и концептуальные конструкции обнаруживаются вновь и вновь в нашем понимании реальности. Никто не станет сомневаться в том, что векторные пространства вездесущи. Но таковы же и иерархии, симметрии, воздействия агентов на объекты, модели данных, глобальное поведение, возникающее при объединении локального поведения, самоподобие и эффект методологического контекста.\endnote{Гугл не дает ссылок про «эффект методологического контекста»; далее автор пишет, что это, оказывается, про монады; надо выяснить, что это вообще означает?} 
 
 Some ideas are so common that our use of them goes virtually undetected, such as set-theoretic intersections. For example, when we speak of a material that is both lightweight and ductile, we are intersecting two sets. But what is the use of even mentioning this set-theoretic fact? The answer is that when we formalize our ideas, our understanding is almost always clarified. Our ability to communicate with others is enhanced, and the possibility for developing new insights expands. And if we are ever to get to the point that we can input our ideas into computers, we will need to be able to formalize these ideas first.
 
@@ -500,8 +503,7 @@ It is my hope that this course will offer scientists a new vocabulary in which t
 The paradigm shift brought on by Einstein's theory of relativity brought on the realization that there is no single perspective from which to view the world. There is no background framework that we need to find; there are infinitely many different frameworks and perspectives, and the real power lies in being able to translate between them. It is in this historical context that category theory got its start.\footnote{The following history of category theory is far too brief, and perhaps reflects more of the author's aesthetic than any kind of objective truth, whatever that may mean. Here are some much better references: \cite{Kro}, \cite{Mar1}, \cite{LM}.\endnote{Пример Многозначительного Примечания к Подстрочной Сноске}}
 
 
-Сдвиг парадигмы, произведенный теорией относительности Эйнштейна, принес понимание того, что нет единой точки зрения на мир. Не существует основополагающей системы отсчёта, которую нам нужно найти; имеется бесконечно много различных систем отсчета и точек зрения, и настоящая мощь [переводчик: да пребудет с тобой сила!..] состоит в умении переходить между ними. В таком историческом контексте возникала теория категорий.\footnote{Нижеследующее описание истории теории категорий слишком кратко, и, возможно, отражает в большей степени авторское чувство прекрасного, чем любой вид объективной истины, что бы это ни значило. Вот некоторые значительно лучшие ссылки: \cite{Kro}, \cite{Mar1}, \cite{LM}.}
-\endnote{(дать обзор областей ТК в исторической перспективе)}
+Сдвиг парадигмы, произведенный теорией относительности Эйнштейна, принес понимание того, что нет единой точки зрения на мир. Не существует основополагающей системы отсчёта, которую нам нужно найти; имеется бесконечно много различных систем отсчета и точек зрения, и настоящая мощь состоит в умении переходить между ними. В таком историческом контексте возникала теория категорий.\footnote{Нижеследующее описание истории теории категорий слишком кратко, и, возможно, отражает в большей степени авторское чувство прекрасного, чем любой вид объективной истины, что бы это ни значило. Вот некоторые значительно лучшие ссылки: \cite{Kro}, \cite{Mar1}, \cite{LM}.}\endnote{(дать обзор областей ТК в исторической перспективе)}
 
 Category theory was invented in the early 1940s by Samuel Eilenberg\index{Eilenberg, Samuel} and Saunders Mac Lane.\index{Mac Lane, Saunders} It was specifically designed to bridge what may appear to be two quite different fields: topology and algebra. Topology is the study of abstract shapes such as 7-dimensional spheres; algebra is the study of abstract equations such as $y^2z=x^3-xz^2$. People had already created important and useful links (e.g. cohomology theory) between these fields, but Eilenberg and Mac Lane needed to precisely compare different links with one another. To do so they first needed to boil down and extract the fundamental nature of these two fields. But the ideas they worked out amounted to a framework that fit not only topology and algebra, but many other mathematical disciplines as well.
 
@@ -537,7 +539,7 @@ As mentioned above category theory has branched out into certain areas of scienc
 
 The world of {\em applied mathematics} is much smaller than the world of {\em applicable mathematics}. As alluded to above, this course is intended to create a bridge between the vast array of mathematical concepts that are used daily by mathematicians to describe all manner of phenomena that arise in our studies, and the models and frameworks of scientific disciplines such as physics, computation, and neuroscience.
 
-Мир уж\'e существующей {\em примененной математики} (обычно называемой {\em прикладной}) значительно \'yже мира всей {\em применимой математики} [каламбур]. Как указывалось выше, этот курс предназначен создать мост между, с одной стороны, огромным массивом математических понятий, используемых ежедневно математиками, чтобы описывать феномены всякого рода, возникающие в их исследованиях, и, с другой стороны, моделями и конструкциями таких научных дисциплин, как физика, вычислительная математика, нейронаука. 
+Мир уж\'e существующей {\em примененной математики} (обычно называемой {\em прикладной}) значительно \'yже мира всей {\em применимой математики} [каламбур].\endnote{Здесь и далее все краткие пояснения в квадратных скобках добавлены при переводе. Обычно они появляются в случае, если дословный перевод не способен отразить смысл исходного текста, а слишком художественный исказил бы его. Как говорит поговорка, «перевод - как женщина: если верен, то некрасив, а если красив, то неверен.»} Как указывалось выше, этот курс предназначен создать мост между, с одной стороны, огромным массивом математических понятий, применяемых ежедневно математиками для описания возникающих в их исследованиях разнообразных феноменов, и, с другой стороны, моделями и конструкциями таких научных дисциплин, как физика, вычислительная математика, нейронаука. 
 
 To the pure mathematician I'll try to prove that concepts such as categories, functors, natural transformations, limits, colimits, functor categories, sheaves, monads, and operads — concepts that are often considered too abstract for even math majors — can be communicated to scientists with no math background beyond linear algebra. If this material is as teachable as I think, it means that category theory is not esoteric but somehow well-aligned with ideas that already make sense to the scientific mind. Note, however, that this book is example-based rather than proof-based, so it may not be suitable as a reference for students of pure mathematics.
 
@@ -561,7 +563,7 @@ The first thing to understand in this course is that reusable methodologies can 
 
 I intend to show that category theory is incredibly efficient as a language for experimental design patterns, introducing formality while remaining flexible. It forms a rich and tightly woven conceptual fabric that will allow the scientist to maneuver between different perspectives whenever the need arises. Once one builds that fabric for oneself, he or she has an ability to think about models in a way that simply would not occur without it.  Moreover, putting ideas into the language of category theory forces a person to clarify their assumptions. This is highly valuable both for the researcher and for his or her audience.
 
-Я собираюсь показать, что теория категорий невероятно эффективна как язык для экспериментальных дизайн-паттернов [переводчик: и сюда они пробрались...], одновременно вводя формальность и оставаясь гибкой. Она образует крепко сотканную ткань понятий, которая позволит ученым маневрировать между различными точками зрения, как только возникает необходимость. Как только некто строит подобную ткань для самого себя, он или она получает возможность думать о моделях способом, который бы без этого не возник. Более того, выражение идей в языке теории категорий заставляет человека сделать более ясными свои предположения. Это чрезвычайно ценно как для исследователя, так и для его аудитории. 
+Я собираюсь показать, что теория категорий невероятно эффективна как язык для экспериментальных дизайн-паттернов,\endnote{переводчик: и сюда дизайн-паттерны пробрались... или это не они? уточнить!} одновременно вводя формальность и оставаясь гибкой. Она образует крепко сотканную ткань понятий, которая позволит ученым маневрировать между различными точками зрения, как только возникает необходимость. Как только некто строит подобную ткань для самого себя, он или она получает возможность думать о моделях способом, который бы без этого не возник. Более того, выражение идей в языке теории категорий заставляет человека сделать более ясными свои предположения. Это чрезвычайно ценно как для исследователя, так и для его аудитории. 
 
 What must be recognized in order to find value in this course is that conceptual chaos is a major problem. Creativity demands clarity of thinking, and to think clearly about a subject requires an organized understanding of how its pieces fit together. Organization and clarity also lead to better communication with others. Academics often say they are paid to think and understand, but that is not true. They are paid to think, understand, and {\em communicate their findings}. Universal languages for science — languages such as calculus and differential equations, matrices, or simply graphs and pie-charts — already exist, and they grant us a cohesiveness that makes scientific research worthwhile. In this book I will attempt to show that category theory can be similarly useful in describing complex scientific understandings.
 
@@ -625,7 +627,7 @@ But it goes further. If we were perfect thinkers then anything we thought once w
 
 People often ask “is category theory just a language? Can anything be done with category theory that can't be done without it?” Consider a university like MIT; can the researchers here do anything that they couldn't do by themselves? Isn't it the minds themselves that are so valuable and unique? Perhaps not. Perhaps much of what goes on is enabled and made possible by the organizational structure of the university, which brings people together in the same space with the same rules, providing the  infrastructure necessary to do excellent work. The same is true in category theory: while many of the real advances come from domain-specific creativity, the language and toolset of category theory provides an infrastructure that enriches all involved. Category theory is mankind's most well-oiled conceptual machine to date.
 
-Зачастую звучит вопрос: «Является ли теория категорий всего лишь языком? Можно ли сделать что-нибудь при помощи теории категорий, что невозможно сделать без нее?» Рассмотрим университет вроде MIT; может ли исследователь сделать здесь что-либо, что он не смог бы сделать самостоятельно? Не является ли [его] интеллект сам по себе тем, что ценно и уникально? Похоже, что нет. Похоже, большая часть из того, что происходит здесь, обусловлена организационной структурой университета, которая сводит людей в одно время в одном месте с одними и теми же правилами поведения, предлагая инфраструктуру, необходимую для качественной работы. То же верно и для теории категорий: хотя многое из действительно сделанного при помощи нее просходит из творчества в конкретных областях, язык и инструментарий теории категорий предлагает инфраструктуру, которая обогащает все, что ее использует. Теория категорий — это самая хорошо смазанная [эффективная] понятийная машина на сегодняшний день. 
+Зачастую звучит вопрос: «Является ли теория категорий всего лишь языком? Можно ли сделать что-нибудь при помощи теории категорий, что невозможно сделать без нее?» Рассмотрим университет вроде MIT; может ли исследователь сделать здесь что-либо, что он не смог бы сделать самостоятельно? Не является ли [его] интеллект сам по себе тем, что ценно и уникально? Похоже, что нет. Похоже, большая часть из того, что происходит здесь, обусловлена организационной структурой университета, которая сводит людей в одно время в одном месте с одними и теми же правилами поведения, предлагая инфраструктуру, необходимую для качественной работы. То же верно и для теории категорий: хотя многое из действительно сделанного при помощи нее просходит из творчества в конкретных областях, язык и инструментарий теории категорий предлагает инфраструктуру, которая обогащает все, что ее использует. Теория категорий — это самая хорошо смазанная [т.е. эффективная] понятийная машина на сегодняшний день. 
 
 %%%%%% Section %%%%%%
 
@@ -1126,7 +1128,7 @@ $$
 
 \section{Ologs / Наконец-то ологи}\label{sec:ologs}\index{olog}\index{олог}
 
-In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.\endnote{(казалось бы, мы уже ввели множества, функции и равенства, зачем нам еще типы, аспекты и факты, которые, как кажется на первый взгляд, дублируют терминологию ТМ. намекнуть читателю, что типы ологов подобны переменным, имеющим в качестве значений множества, аспекты — переменным-функциям, факты — ``переменным равенствам'')}
+In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.\endnote{(казалось бы, мы уже ввели множества, функции и равенства, зачем нам еще типы, аспекты и факты, которые, как кажется на первый взгляд, дублируют терминологию ТМ. намекнуть читателю, что типы ологов подобны переменным, имеющим в качестве значений множества, аспекты — переменным-функциям, а факты обозначают равенства с параметрами)}
 \begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr an amino acid found in dairy}\LAL{dr}{is}&\obox{A}{.5in}{arginine}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{has}\LAL{l}{is}\LA{d}{is}&\obox{E}{.9in}{\rr an electrically-charged side chain}\LA{d}{is}\\&\obox{X}{.9in}{an amino acid}\LAL{dl}{has}\LA{dr}{has}\LA{r}{has}&\smbox{R}{a side chain}\\\mebox{N}{an amine group}&&\mebox{C}{a carboxylic acid}}}\end{align}  
 
 В данном курсе мы, насколько это возможно, привяжем математические идеи к прикладным примерам (применениям). Для этих целей мы введем ологи, которые будут служить мостом между математикой и различными системами понятий. Следующий материал взят из \cite{SK}, введения в ологи.
@@ -1202,7 +1204,7 @@ An aspect of a thing $x$ is a way of viewing it, a particular way in which $x$ c
 
 So for the arrow in (\ref{dia:aspect 1}), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements).   We can imagine drawing an arrow from each dot in the “woman” set to a unique dot in the “person” set, just as in (\ref{dia:setmap}).  No woman points to two different people, nor to zero people — each woman is exactly one person — so the rules for a function are satisfied.  Let us now concentrate briefly on the arrow in (\ref{dia:aspect 2}).  The domain is the set of molecules, the codomain is the set $\RR_{>0}$ of positive real numbers.  We can imagine drawing an arrow from each dot in the “molecule” set to a single dot in the “positive real number” set.  No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass.  Note however that two different molecules can point to the same mass.
 
-Таким образом, для стрелки из (\ref{dia:aspect 1}), область это множество женщин (множество с предположительно 3 миллиардами элементов); кообласть это множество личностей (множество с предположительно 6 миллиардами элементов).  Мы можем вообразить стрелку из каждой точки в множестве «женщина» к единственной точке в множестве «личность», аналогично (\ref{dia:setmap}).  Ни одна женщина не укажет ни на двух различных людей, ни на ноль людей — каждая женщина является в точности одной личностью — так что правила функции удовлетворены.  Давайте теперь сосредоточимся ненадолго на стрелке из (\ref{dia:aspect 2}).  Область определения здесь это множество молекул, область значений — множество $\RR_{>0}$ положительных действительных чисел.  В данном случае мы можем вообразить стрелку из каждой точки в множестве «молекула» к единственной точке в множестве «положительное действительное число».  Ни одна молекула ни укажет на две различные массы, ни останется без массы: ведь каждая молекула имеет в точности одну массу.  Заметим, однако, что на одну массу могут указывать две различные молекулы. [указывать/ссылаться?] 
+Таким образом, для стрелки из (\ref{dia:aspect 1}), область это множество женщин (множество с предположительно 3 миллиардами элементов); кообласть это множество личностей (множество с предположительно 6 миллиардами элементов).  Мы можем вообразить стрелку из каждой точки в множестве «женщина» к единственной точке в множестве «личность», аналогично (\ref{dia:setmap}).  Ни одна женщина не укажет ни на двух различных людей, ни на ноль людей — каждая женщина является в точности одной личностью — так что правила функции удовлетворены.  Давайте теперь сосредоточимся ненадолго на стрелке из (\ref{dia:aspect 2}).  Область определения здесь это множество молекул, область значений — множество $\RR_{>0}$ положительных действительных чисел.  В данном случае мы можем вообразить стрелку из каждой точки в множестве «молекула» к единственной точке в множестве «положительное действительное число».  Ни одна молекула ни укажет на две различные массы, ни останется без массы: ведь каждая молекула имеет в точности одну массу.  Заметим, однако, что на одну массу могут указывать две различные молекулы.
 
 %% Subsubsection %%
 
@@ -1249,7 +1251,7 @@ In keeping with Warning \ref{warn:worldview}, the arrows (\ref{dia:invalid 1}) a
 \end{remarkENG}
 
 \begin{remarkRUS}
-В свете Предупреждения \ref{warn:worldview}, стрелочки (\ref{dia:invalid 1}) и (\ref{dia:invalid 2}) могут быть не ошибочными, а просто отражать тот факт, что у автора странная картина мира, либо же странный словарь.  Возможно, автор верит, будто каждый механический карандаш использует в точности один графитовый стержень.  Если это так, то $$\fakebox{механический карандаш}\To{\tn{использует}}\fakebox{графитовый стержень}$$ будет в действительности корректным аспектом!  Аналогично, предположим, что автор хотел сказать, будто каждый человек {\em однажды был} ребенком, или что внутри личности живет внутренний ребенок.  Поскольку каждая личность имеет одного и только одного внутреннего ребенка (если верить этому автору), отображение $\fakebox{личность}\To{\tn{имеет внутреннего ребенка}}\fakebox{ребенок}$ это корректный аспект.  Мы не можем считать олог ошибочным, если автор имеет собственную точку зрения, однако обратите внимание, что мы сменили надпись, чтобы сделать авторские намерения [мысли] более явными. 
+В свете Предупреждения \ref{warn:worldview}, стрелочки (\ref{dia:invalid 1}) и (\ref{dia:invalid 2}) могут быть не ошибочными, а просто отражать тот факт, что у автора странная картина мира, либо же странный словарь.  Возможно, автор верит, будто каждый механический карандаш использует в точности один графитовый стержень.  Если это так, то $$\fakebox{механический карандаш}\To{\tn{использует}}\fakebox{графитовый стержень}$$ будет в действительности корректным аспектом!  Аналогично, предположим, что автор хотел сказать, будто каждый человек {\em однажды был} ребенком, или что внутри личности живет внутренний ребенок.  Поскольку каждая личность имеет одного и только одного внутреннего ребенка (если верить этому автору), отображение $\fakebox{личность}\To{\tn{имеет внутреннего ребенка}}\fakebox{ребенок}$ это корректный аспект.  Мы не можем считать олог ошибочным, если автор имеет собственную точку зрения, однако обратите внимание, что мы сменили надпись в ологе, чтобы сделать более явными мысли его автора. 
 \end{remarkRUS}
 
 %% Subsubsection %%
@@ -1258,7 +1260,7 @@ In keeping with Warning \ref{warn:worldview}, the arrows (\ref{dia:invalid 1}) a
 
 Each arrow (aspect) $X\To{f} Y$ can be read by first reading the label on its source box (domain of definition) $X$, then the label on the arrow $f$, and finally the label on its target box (set of values) $Y$.  For example, the arrow \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{a book}\LA{rrr}{has as first author}&&&\smbox{}{a person}}}\end{align} is read “a book has as first author a person”.  
 
-Каждуя стрелку (аспект) $X\To{f} Y$ можно прочесть так: сначала читаем метку на прямоугольнике, из которого выходит стрелка, то есть область определения $X$, затем метку на стрелке $f$, и, наконец, метку на целевом прямоугольнике, то есть область значений $Y$ (возможно, в соответствующем падеже).  Например, стрелка \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{книга}\LA{rrr}{имеет первого автора}&&&\smbox{}{человек}}}\end{align} читается «книга имеет [в качестве] первого автора человека».
+Каждуя стрелку (аспект) $X\To{f} Y$ можно прочесть так: сначала читаем метку на прямоугольнике, из которого выходит стрелка, то есть область определения $X$, затем метку на стрелке $f$, и, наконец, метку на целевом прямоугольнике, то есть область значений $Y$ (возможно, в соответствующем падеже).  Например, стрелка \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{книга}\LA{rrr}{имеет первого автора}&&&\smbox{}{человек}}}\end{align} читается «книга имеет [в качестве] первого автора человека».\endnote{Попробовать поменять подобные [в качестве] на [с помощью].}
 
 \begin{remarkENG}
 Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
@@ -3513,20 +3515,16 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 
 %%%%%%%% Chapter %%%%%%%%
 
-\printendnotes
+\printendnotes[custom]
 
 %%%%%%%% Chapter %%%%%%%%
 
-\phantomsection
-\addcontentsline{toc}{chapter}{\indexname}
 \printindex
 
 %%%%%%%% Chapter %%%%%%%%
 
 \bibliographystyle{amsalpha}
 \begin{thebibliography}{SGWB}\rr
-\phantomsection
-\addcontentsline{toc}{chapter}{\bibname}
 
 \bibitem [Ati]{Ati} Atiyah, M. (1989) “Topological quantum field theories”. {\em Publications Math\'{e}matiques de l'IH\'{E}S} 68 (68), pp. 175--186.
 
