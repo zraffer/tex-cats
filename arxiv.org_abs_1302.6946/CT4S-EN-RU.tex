@@ -1,15 +1,15 @@
 \documentclass[a4paper]{book}
 
 \usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
 \usepackage{fontspec}
 \usepackage{polyglossia}
-\usepackage{unicode-math}
 \usepackage{savesym}
-\setmainfont{Ubuntu}%{XITS}
+\setmainfont{XITS}%{Ubuntu}
 \setmathfont{XITS Math}
 \setmainlanguage{russian}
 \setotherlanguage{english}
-\newfontfamily\russianfont{Ubuntu}%{XITS}
+\newfontfamily\russianfont{XITS}%{Ubuntu}
 \newfontfamily\cyrillicfonttt{Ubuntu Mono}
 
 \usepackage{tocbibind}
@@ -745,25 +745,29 @@ $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$
 \begin{notationENG}\label{not:basic math notation}
 If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$, and write $A\ss B$, if every element of $A$ is an element of $B$. So we have $\NN\ss\ZZ$. Checking the definition, one sees that for any set $A$, we have (perhaps uninteresting) subsets $\emptyset\ss A$ and $A\ss A$. We can use {\em set-builder notation}\index{set!set builder notation} to denote subsets. For example the set of even integers can be written $\{n\in\ZZ\|n\tn{ is even}\}$. The set of integers greater than $2$ can be written in many ways, such as $$\{n\in\ZZ\|n>2\} \hsp\tn{or}\hsp\{n\in\NN\|n>2\}\hsp\tn{or}\hsp\{n\in\NN\|n\geq 3\}.$$
 \end{notationENG}
+
 \begin{notationRUS}\label{not:basic math notation}
-
 Если $A$ и $B$ — множества, мы называем $A$ {\em подмножеством}\index{подмножество} $B$, и пишем $A\ss B$ в случае, если каждый элемент $A$ является элементом $B$. Таким образом, имеем $\NN\ss\ZZ$. Проверив определение, можно убедиться, что у любого множества $A$ имеются (возможно, неинтересные) подмножества $\varnothing\ss A$ и $A\ss A$. Для обозначения подмножеств применяется специальная форма записи\index{множество!специальная форма записи}. Например, множество четных целых можно записать $\{n\in\ZZ\|n\tn{ четно}\}$. Множество целых, больших чем $2$ можно записать многими способами, такими как $$\{n\in\ZZ\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n>2\}, \hsp\tn{либо}\hsp\{n\in\NN\|n\geq 3\}.$$
-
 \end{notationRUS}
+
 \begin{notationENG}\label{not:basic math notation}
 The symbol $\exists$ means “there exists”.\index{a symbol!$\exists$} So we could write the set of even integers as $$\{n\in\ZZ\|n\tn{ is even}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ such that } 2m=n\}.$$ The symbol $\exists!$\index{a symbol!$\exists$!} means “there exists a unique”. So the statement “$\exists! x\in\RR\tn{ such that } x^2=0$” means that there is one and only one number whose square is 0. Finally, the symbol $\forall$ means “for all”.\index{a symbol!$\forall$} So the statement “$\forall m\in\NN\;\exists n\in\NN\tn{ such that } m<n$” means that for every number there is a bigger one.
 \end{notationENG}
+
 \begin{notationRUS}\label{not:basic math notation}
 Символ $\exists$ означает «существует».\index{символ!$\exists$} Таким образом мы можем записать множество четных чисел $$\{n\in\ZZ\|n\tn{ четно}\}\hsp=\hsp\{n\in\ZZ\|\exists m\in\ZZ\tn{ такое, что } 2m=n\}.$$ Символ $\exists!$\index{символ!$\exists$!} означает «существует единственный». Таким образом утверждение «$\exists! x\in\RR\tn{ такой, что } x^2=0$» означает, что имеется одно и только одно число, равное в квадрате $0$. Наконец, символ $\forall$ означает «для всех», «для каждого».\index{символ!$\forall$} Таким образом утверждение «$\forall m\in\NN\;\exists n\in\NN\tn{ такой, что } m<n$» означает, что для каждого числа имеется большее него. 
 \end{notationRUS}
+
 \begin{notationENG}\label{not:basic math notation}
 As you may have noticed, we use the colon-equals notation “$A:=XYZ$” to mean something like “define $A$ to be $XYZ$”.\index{символ!:=} That is, a colon-equals declaration is not denoting a fact of nature (like $2+2=4$), but a choice of the speaker. It just so happens that the notation above, such as $\NN:=\{0,1,2,\ldots\}$, is a widely-held choice.
 \end{notationENG}
+
 \begin{notationRUS}\label{not:basic math notation}
 Как вы могли заметить, мы пользуемся записью «двоеточие-равно» $A:=XYZ$, чтобы обозначить нечто вроде «определим $A$ как $XYZ$».\index{символ!:=} То есть, объявление чего-то в виде двоеточие-равно не означает новый факт о мире (вроде $2+2=4$), а всего лишь выбор обозначения говорящим. Просто так получилось, что обозначения выше, такие как $\NN:=\{0,1,2,\ldots\}$, широко используются. 
 \end{notationRUS}
 
 \begin{exerciseENG}Let $A=\{1,2,3\}$. What are all the subsets of $A$? Hint: there are 8.\end{exerciseENG}
+
 \begin{exerciseRUS}Пусть $A=\{1,2,3\}$. Каковы все подмножества $A$? Подсказка: их ровно $8$. \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -2170,11 +2174,11 @@ Following the section above, “Ologging products” page \pageref{sec:ologging 
 
 In this section we discuss what are called {\em limits} of variously-shaped diagrams of sets. We will make all this much more precise when we discuss limits in arbitrary categories in Section \ref{sec:lims and colims in a cat}.
 
-В этом разделе мы обсудим то, что называется {\em пределами} различной формы диаграмм множеств. Впоследствии все это мы проделаем значительно более точно при обсуждении пределов в произвольных категориях в Разделе \ref{sec:lims and colims in a cat}.
+В этом разделе мы обсудим то, что называется {\em пределами} различной формы для диаграмм множеств. Впоследствии мы проделаем это же значительно более точно при обсуждении пределов в произвольных категориях в Разделе \ref{sec:lims and colims in a cat}.
 
 %%%% Subsection %%%%
 
-\subsection{Pullbacks / Притягивающие квадраты}
+\subsection{Pullbacks / Пулбеки}
 
 \begin{definitionENG}[Pullback]\label{def:pullback}\index{pullback!of sets}
 Suppose given the diagram of sets and functions below.
@@ -2191,8 +2195,20 @@ X\ar[r]_f&Z}
 commutes. Given the setup of Diagram \ref{dia:fp sets} we define the {\em pullback of $X$ and $Y$ over $Z$} to be any set $W$ for which we have an isomorphism $W\To{\iso}X\times_ZY$. The corner symbol $\lrcorner$ in Diagram \ref{dia:pullback sets} indicates that $W$ is the pullback.\index{a symbol!$\lrcorner$}
 \end{definitionENG}
 
-\begin{definitionRUS}[Притягивающий квадрат]\label{def:pullback}\index{pullback!of sets}
- 
+\begin{definitionRUS}[Притягивающий квадрат]\label{def:pullback}\index{выталкивающий квадрат!множеств}
+Предположим, дана такая диаграмма множеств и функций:
+\begin{align}\label{dia:fp sets}
+\xymatrix{&Y\ar[d]^g\\
+X\ar[r]_f&Z}
+\end{align}
+Ее {\em расслоенное произведение}\index{расслоенное произведение} — это множество 
+$$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}.$$ 
+Имеются очевидные проекции $\pi_1\taking X\times_ZY\to X$ и $\pi_2\taking X\times_ZY\to Y$ (например, $\pi_2(x,w,y)=y$). Заметим, что если $W=X\times_ZY$, то диаграмма 
+\begin{align}\label{dia:pullback sets}
+\xymatrix{W\ullimit\ar[r]^-{\pi_2}\ar[d]_{\pi_1}&Y\ar[d]^g\\
+X\ar[r]_f&Z}
+\end{align}
+коммутирует. В контексте Диаграммы \ref{dia:fp sets} мы определяем {\em пулбек $X$ и $Y$ над $Z$} как любое множество $W$, для которого имеется изоморфизм $W\To{\iso}X\times_ZY$. Символ-уголок $\lrcorner$ в Диаграмме \ref{dia:pullback sets} отражает то, что $W$ является пулбеком; такие диаграммы называются {\em выталкивающими квадратами}.\index{символ!$\lrcorner$}
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -2204,7 +2220,11 @@ What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y$?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $X,Y,Z$ такие, как на рисунке, а $f\taking X\to Z$ и $g\taking Y\to Z$ — изображенные функции. 
+\begin{center}
+\includegraphics[height=2in]{setPullback}
+\end{center}
+Каким будет пулбек диаграммы $X\Too{f}Z\Fromm{g}Y$?
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
@@ -2216,7 +2236,11 @@ and do so in a “random-looking” way. Considering your coloring of $X$ as a f
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
- 
+\sexc Нарисуйте множество $X$ из пяти элементов и множество $Y$ из трех элементов. Раскрасьте все элементы $X$ и $Y$ либо в красный, либо в синий, либо в желтый цвет,%
+\footnote{Можете их заштриховать, а не раскрашивать, если раскрашивать вам неудобно.}
+причем сделайте это «случайным» образом. Считая вашу раскраску $X$ функцией $X\to C$, где $C=\{\tn{красный, синий, желтый}\}$, и аналогичным образом получив функцию $Y\to C$, нарисуйте расслоенное произведение $X\times_CY$. Раскрасив его подходящим образом, убедитесь, что цвета пар совпадают.
+\next Универсальное свойство произведений обеспечивает нам функцию $X\times_CY\to X\times Y$, которая, можете мне поверить, будет инъекцией. Это означает, что рисунок расслоенного произведения, который вы сделали, может быть вставлен в сетку $5\times 3$; сделайте, пожалуйста, такую сетку и отметьте на ней подмножество.
+\endsexc
 \end{exerciseRUS}
 
 \begin{remarkENG}
@@ -2224,7 +2248,7 @@ Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\time
 \end{remarkENG}
 
 \begin{remarkRUS}
- 
+Некоторые предпочитают обозначать расслоенное произведение $f\times_Zg$, а не $X\times_ZY$. Первое обозначение математически лучше, но читабельность для человека часто лучше у второго, которое, кроме того, чаще встречается в литературе. Мы будем использовать такое обозначение, которое окажется более удобным.
 \end{remarkRUS}
 
 \begin{exerciseENG}~
@@ -2234,7 +2258,9 @@ Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\time
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
- 
+\sexc Предположим, что $Y=\varnothing$; что вы можете сказать о $X\times_ZY$? 
+\next Предположим теперь, что $Y$ — любое множество, а $Z$ имеет в точности один элемент; что вы можете сказать о $X\times_ZY$?
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -2249,7 +2275,14 @@ $$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $S=\RR^3, T=\RR$, будем думать о них, как об (Аристотелевых) пространстве и времени, с началом отсчета в $S\times T$, заданным центром масс [университета] MIT в момент его основания. Пусть $Y=S\times T$ и $g_1\taking Y\to S$ — одна из проекций, а $g_2\taking Y\to T$ — другая. Пусть $X=\singleton$ — множество из одного элемента, а $f_1\taking X\to S$ и $f_2\taking X\to T$ заданы как начала отсчета в обоих случаях. 
+\sexc Какими будут расслоенные произведения $W_1$ и $W_2$:
+$$
+\xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
+\xymatrix{W_2\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_2}\\X\ar[r]_{f_2}&T}
+$$
+\next Интерпретируйте эти множества в терминах центра масс MIT в момент его основания.
+\endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
@@ -2258,7 +2291,7 @@ $$
 
 In this section we will see that the fiber product of a diagram can serve to define a new concept. For example, in (\ref{dia:bad battery}) we define what it means for a cellphone to have a bad battery, in terms of the length of time for which it remains charged. By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
 
- 
+В этом разделе мы увидим, что расслоенное произведение диаграммы может послужить нам для того, чтобы определить новое понятие. Например, в (\ref{dia:bad battery}) мы определяем, что такое мобильный телефон с плохим аккумулятором, в терминах продолжительности времени, которое он остается заряженным.  By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
 
 \begin{exampleENG}
 Consider the following two ologs. The one on the right is the pullback of the one on the left. 
