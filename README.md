@@ -1,6 +1,6 @@
 # tex-cats
 
-Translations of public domain texts about category theory  
+Translations of open source texts about category theory  
 (see LICENSE files in subdirectories)
 
 * source: http://arxiv.org/abs/1302.6946

@@ -2,7 +2,7 @@
 
 * source: http://category-theory.mitpress.mit.edu
 
-Translations of public domain texts about category theory.  
+Translations of open source texts about category theory.  
 We make use of XeLaTeX engine and "polyglossia" package.
 
 David I. Spivak, "Category Theory for the Sciences", The MIT Press, 2014  
