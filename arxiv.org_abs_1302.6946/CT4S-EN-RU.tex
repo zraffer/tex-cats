@@ -189,7 +189,7 @@
 \newcommand{\adjoint}[4]{\xymatrix{#1\taking #2\ar@<.5ex>[r]& #3\hspace{1pt}:\hspace{-2pt} #4\ar@<.5ex>[l]}}
 
 \newcommand{\prodmap}[2]{\la#1,#2\ra}
-\newcommand{\pb}[3]{\prodmap{#1}{#1}_{#3}}
+\newcommand{\pb}[3]{\prodmap{#1}{#2}_{#3}}
 \newcommand{\coprodmap}[2]{{\left\{\parbox{.1in}{#1\\#2}\right.}}
 \newcommand{\po}[3]{\coprodmap{#1}{#2}}
 
@@ -2195,8 +2195,8 @@ X\ar[r]_f&Z}
 commutes. Given the setup of Diagram \ref{dia:fp sets} we define the {\em pullback of $X$ and $Y$ over $Z$} to be any set $W$ for which we have an isomorphism $W\To{\iso}X\times_ZY$. The corner symbol $\lrcorner$ in Diagram \ref{dia:pullback sets} indicates that $W$ is the pullback.\index{a symbol!$\lrcorner$}
 \end{definitionENG}
 
-\begin{definitionRUS}[Притягивающий квадрат]\label{def:pullback}\index{выталкивающий квадрат!множеств}
-Предположим, дана такая диаграмма множеств и функций:
+\begin{definitionRUS}[Притягивающий квадрат]\label{def:pullback}\index{притягивающий квадрат!множеств}
+Предположим, дана следующая диаграмма множеств и функций:
 \begin{align}\label{dia:fp sets}
 \xymatrix{&Y\ar[d]^g\\
 X\ar[r]_f&Z}
@@ -2208,7 +2208,7 @@ $$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}.$$
 \xymatrix{W\ullimit\ar[r]^-{\pi_2}\ar[d]_{\pi_1}&Y\ar[d]^g\\
 X\ar[r]_f&Z}
 \end{align}
-коммутирует. В контексте Диаграммы \ref{dia:fp sets} мы определяем {\em пулбек $X$ и $Y$ над $Z$} как любое множество $W$, для которого имеется изоморфизм $W\To{\iso}X\times_ZY$. Символ-уголок $\lrcorner$ в Диаграмме \ref{dia:pullback sets} отражает то, что $W$ является пулбеком; такие диаграммы называются {\em выталкивающими квадратами}.\index{символ!$\lrcorner$}
+коммутирует. В контексте Диаграммы \ref{dia:fp sets} мы определяем {\em пулбек $X$ и $Y$ над $Z$} как любое множество $W$, для которого имеется изоморфизм $W\To{\iso}X\times_ZY$. Символ-уголок $\lrcorner$ в Диаграмме \ref{dia:pullback sets} отражает то, что $W$ является пулбеком; такие диаграммы называются {\em притягивающими квадратами}.\index{символ!$\lrcorner$}
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -2239,7 +2239,7 @@ and do so in a “random-looking” way. Considering your coloring of $X$ as a f
 \sexc Нарисуйте множество $X$ из пяти элементов и множество $Y$ из трех элементов. Раскрасьте все элементы $X$ и $Y$ либо в красный, либо в синий, либо в желтый цвет,%
 \footnote{Можете их заштриховать, а не раскрашивать, если раскрашивать вам неудобно.}
 причем сделайте это «случайным» образом. Считая вашу раскраску $X$ функцией $X\to C$, где $C=\{\tn{красный, синий, желтый}\}$, и аналогичным образом получив функцию $Y\to C$, нарисуйте расслоенное произведение $X\times_CY$. Раскрасив его подходящим образом, убедитесь, что цвета пар совпадают.
-\next Универсальное свойство произведений обеспечивает нам функцию $X\times_CY\to X\times Y$, которая, можете мне поверить, будет инъекцией. Это означает, что рисунок расслоенного произведения, который вы сделали, может быть вставлен в сетку $5\times 3$; сделайте, пожалуйста, такую сетку и отметьте на ней подмножество.
+\next Универсальное свойство произведений обеспечивает нам функцию $X\times_CY\to X\times Y$, которая, можете мне поверить, будет инъекцией. Это означает, что рисунок расслоенного произведения, который вы сделали, может быть вставлен в сетку $5\times 3$; изобразите, пожалуйста, такую сетку и отметьте на ней подмножество.
 \endsexc
 \end{exerciseRUS}
 
@@ -2248,7 +2248,7 @@ Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\time
 \end{remarkENG}
 
 \begin{remarkRUS}
-Некоторые предпочитают обозначать расслоенное произведение $f\times_Zg$, а не $X\times_ZY$. Первое обозначение математически лучше, но читабельность для человека часто лучше у второго, которое, кроме того, чаще встречается в литературе. Мы будем использовать такое обозначение, которое окажется более удобным.
+Некоторые предпочитают обозначать расслоенное произведение $f\times_Zg$, а не $X\times_ZY$. Первое обозначение математически корректнее, но читабельность для человека часто лучше у второго, которое, кроме того, чаще встречается в литературе. Мы будем использовать такое обозначение, которое окажется более удобным.
 \end{remarkRUS}
 
 \begin{exerciseENG}~
@@ -2291,7 +2291,7 @@ $$
 
 In this section we will see that the fiber product of a diagram can serve to define a new concept. For example, in (\ref{dia:bad battery}) we define what it means for a cellphone to have a bad battery, in terms of the length of time for which it remains charged. By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
 
-В этом разделе мы увидим, что расслоенное произведение диаграммы может послужить нам для того, чтобы определить новое понятие. Например, в (\ref{dia:bad battery}) мы определяем, что такое мобильный телефон с плохим аккумулятором, в терминах продолжительности времени, которое он остается заряженным.  By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
+В этом разделе мы увидим, что расслоенное произведение диаграммы может послужить нам для того, чтобы определить новое понятие. Например, в (\ref{dia:bad battery}) мы определяем, что такое мобильный телефон с плохим аккумулятором, в терминах продолжительности времени, которое он остается заряженным. Выражая вещи более явно, мы уменьшаем шанс возникновения недопониманий между различными группами людей. Это может быть полезно в ситуациях вроде аудита, либо когда некто пытается использовать и понять данные, собранные другими.
 
 \begin{exampleENG}
 Consider the following two ologs. The one on the right is the pullback of the one on the left. 
@@ -2302,7 +2302,14 @@ Check from Definition \ref{def:pullback} that the label, “a customer that is w
 \end{exampleENG}
 
 \begin{exampleRUS}
- 
+Рассмотрим следующие два олога. Тот, что справа, является притягивающим квадратом того, что слева. 
+\begin{align}\label{dia:wealthy and loyal}
+\fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr покорный потребитель}\LA{d}{это}\\\obox{B}{.7in}{\rr богатый потребитель}\LA{r}{это}&\smbox{D}{потребитель}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr богатый и покорный потребитель}\LAL{d}{это}\LA{r}{это}&\obox{C}{.7in}{\rr покорный потребитель}\LA{d}{это}\\\obox{B}{.7in}{\rr богатый потребитель}\LA{r}{это}&\smbox{D}{потребитель}}}
+\end{align}
+Проверьте по определению \ref{def:pullback}, что метка «богатый и покорный потребитель» — это корректная и достаточно прямолинейная метка для расслоенного произведения $A=B\times_DC$, если на $B,C$ и $D$ поставить соответствующие метки.%
+\endnote{
+С точки зрения теории множеств, мы только что построили пересечение двух подмножеств одного множества. В общем случае, такие пересечения моделируются в теории категорий именно притягивающими квадратами.
+}
 \end{exampleRUS}
 
 \begin{remarkENG}\label{rem:defining using pullbacks}
@@ -2310,7 +2317,7 @@ Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have b
 \end{remarkENG}
 
 \begin{remarkRUS}\label{rem:defining using pullbacks}
- 
+Заметим, что в Диаграмме (\ref{dia:wealthy and loyal}) верхний левый прямоугольник может быть (неканонически) назван \fakebox{хороший потребитель}. Если указать именно его в качестве пулбека, то автор [олога] будет фактически {\em определять} хорошего потребителя как того, кто одновременно богат и покорен. 
 \end{remarkRUS}
 
 \begin{exerciseENG}
@@ -2325,7 +2332,14 @@ For each of the following, an author has proposed that the diagram on the right 
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Для каждого из нижеследующих [ологов] автор заявляет, что диаграмма справа является притягивающим квадратом. Считаете ли вы метки подходящими или сбивающими с толку; другими словами, будет ли метка на верхнем левом прямоугольнике обоснованой остальной частью олога или же она некоторым образом вызывает подозрение?
+\sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{D}{цвет}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr человек, который любит синий цвет}\LAL{d}{это}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{D}{цвет}}}
+\end{align*}
+\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr собака, у которой владелец — женщина}\LAL{d}{это}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}
+\end{align*}
+\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr подходит}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}
+\end{align*}
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
@@ -2335,7 +2349,9 @@ For each of the following, an author has proposed that the diagram on the right 
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
- 
+\sexc Рассмотрите свой олог из Упражнения \ref{exc:family olog}. Будут ли какие-либо из коммутативных квадратов в нем притягивающими? 
+\next Теперь используйте ологи с произведениями и пулбеками, чтобы определить, что такое брат, и что такое сестра (опять же, в человеческой биологической нуклеарной семье), в терминах типов, таких как \fakebox{потомок супружеской пары $(a,b)$}, \fakebox{человек}, \fakebox{мужчина}, \fakebox{женщина}, и им подобных.
+\endsexc
 \end{exerciseRUS}
 
 \begin{definitionENG}[Preimage]\label{def:preimage}
@@ -2343,7 +2359,7 @@ Let $f\taking X\to Y$ be a function and $y\in Y$ an element. The {\em preimage o
 \end{definitionENG}
 
 \begin{definitionRUS}[Прообраз]\label{def:preimage}
- 
+Пусть $f\taking X\to Y$ — функция и $y\in Y$ — элемент. {\em Прообраз $y$ относительно $f$}\index{прообраз}, обозначаемый $f^\m1(y)$,\index{символ!$f^\m1$} — это подмножество $f^\m1(y):=\{x\in X\|f(x)=y\}$. Если $Y'\ss Y$ — произвольное подмножество, то {\em прообраз $Y'$ относительно $f$}, обозначаемый $f^\m1(Y')$, — это подмножество $f^\m1(Y')=\{x\in X\|f(x)\in Y'\}$.
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -2351,7 +2367,7 @@ Let $f\taking X\to Y$ be a function and $y\in Y$ an element. Draw a pullback dia
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $f\taking X\to Y$ — функция и $y\in Y$ — элемент. Нарисуйте притягивающий квадрат, в котором расслоенное произведение изоморфно прообразу $f^\m1(y)$. 
 \end{exerciseRUS}
 
 \begin{lemmaENG}[Universal property for pullback]\label{lemma:up for fp}
@@ -2373,7 +2389,21 @@ $$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
 \end{lemmaENG}
 
 \begin{lemmaRUS}[Универсальное свойство притягивающего квадрата]\label{lemma:up for fp}
- 
+Предположим, дана следующая диаграмма множеств и функций.
+\begin{align*}
+\xymatrix{&Y\ar[d]^u\\
+X\ar[r]_t&Z}
+\end{align*}
+Для любого множества $A$ и коммутативной диаграммы из непрерывных стрелок, данной ниже (т.е. функций $f\taking A\to X$ и $g\taking A\to Y$ таких, что $t\circ f=u\circ g$), 
+\begin{align}\label{dia:universal property of fp}
+\xymatrix{
+&X\times_ZY\ar@/_1pc/[lddd]_{\pi_1}\ar@/^1pc/[rddd]^{\pi_2}\\\\
+&A\ar@{-->}[uu]^{\exists!}\ar[dl]_{\forall f}\ar[dr]^{\forall g}&\\
+X\ar[rd]_t&&Y\ar[ld]^u\\
+&Z&}
+\end{align}
+существует единственная стрелка $\pb{f}{g}{Z}\taking A\to X\times_ZY$, делающая коммутативным все остальное, т.е.
+$$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
 \end{lemmaRUS}
 
 \begin{exerciseENG}
@@ -2381,7 +2411,7 @@ Create an olog whose underlying shape is a commutative square. Now add the fiber
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Постройте олог с произвольной коммутативной диаграммой. Теперь добавьте расслоенное произведение так, чтобы форма диаграммы стала подобной Диаграмме (\ref{dia:universal property of fp}). Дайте метки на естественном языке проекциям $\pi_1,\pi_2$ и пунктирному отображению $A\To{\pb{f}{g}{Z}}X\times_ZY$ таким образом, чтобы эти метки были по возможности каноничны.
 \end{exerciseRUS}
 
 %% Subsubsection %%
@@ -2396,7 +2426,13 @@ A\ar[r]_f&B\ar[r]_g&C}
 $$
 The right-hand square has a corner symbol indicating that $B'\iso B\times_CC'$ is a pullback. But the corner symbol on the left is ambiguous; it might be indicating that the left-hand square is a pullback, or it might be indicating that the big rectangle is a pullback. It turns out that if $B'\iso B\times_CC'$ then it is not ambiguous because the left-hand square is a pullback if and only if the big rectangle is.
 
- 
+Рассмотрим диаграмму, изображенную ниже, которая включает коммутативные квадраты слева, справа, а также [обрамляющий их] большой прямоугольник.
+$$
+\xymatrix{
+A'\ar[r]^{f'}\ar[d]_i\ullimit&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
+A\ar[r]_f&B\ar[r]_g&C}
+$$
+Квадрат справа имеет символ-уголок, означающий, что $B'\iso B\times_CC'$ — пулбек. Но символ-уголок слева неоднозначен; он мог бы относиться и к левому квадрату, и к большому прямоугольнику. Однако оказывается, что если $B'\iso B\times_CC'$, то разночтений нет, потому что левый квадрат является притягивающим тогда и только тогда, когда таковым является большой прямоугольник.
 
 \begin{propositionENG}\label{prop:pasting}
 Consider the diagram drawn below
@@ -2409,7 +2445,13 @@ where $B'\iso B\times_CC'$ is a pullback. Then there is an isomorphism $A\times_
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:pasting}
- 
+Рассмотрим диаграмму, изображенную ниже
+$$
+\xymatrix{
+&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
+A\ar[r]_f&B\ar[r]_g&C}
+$$
+где $B'\iso B\times_CC'$ — пулбек. Тогда имеется изоморфизм $A\times_BB'\iso A\times_CC'$. И наоборот, $$A\times_B(B\times_CC')\iso A\times_CC'.$$
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -2417,7 +2459,7 @@ We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. An e
 \end{proofENG}
 
 \begin{proofRUS}
- 
+Сначала получим отображение $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. Элементы из $A\times_B(B\times_CC')$ имеют вид $(a,b,(b,c,c'))$ таких, что $f(a)=b, g(b)=c$ и $k(c')=c$. Но из этого следует, что $g\circ f(a)=c=k(c')$, так что мы можем положить $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$. Теперь получим необходимое обратное отображение $\psi\taking A\times_CC'\to A\times_B(B\times_CC')$. Для данного $(a,c,c')$ с $g\circ f(a)=c=k(c')$, пусть $b=f(a)$; заметим, что $(b,c,c')$ — элемент $B\times_CC'$. Поэтому мы можем определить $\psi(a,c,c')=(a,b,(b,c,c'))$. Легко видеть, что $\phi$ и $\psi$ будут взаимно обратными.
 \end{proofRUS}
 
 Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, the type \fakebox{a cellphone that has a bad battery} is vague, but we can lay out precisely what it means using pullbacks:
