@@ -2685,8 +2685,12 @@ Suppose given two parallel arrows
 The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:equalizer}), where we define $$Eq(f,g):=\{x\in X\|f(x)=g(x)\}$$ and where $p$ is the canonical inclusion.
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:equalizer}\index{equalizer}
- 
+\begin{definitionRUS}\label{def:equalizer}\index{уравнитель}
+Предположим, даны две параллельные стрелки
+\begin{align}\label{dia:equalizer}
+\xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{Eq(f,g)\ar[r]^-p&X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y}
+\end{align}
+{\em Уравнитель $f$ и $g$} — это коммутативная диаграмма справа (\ref{dia:equalizer}), где мы определяем $$Eq(f,g):=\{x\in X\|f(x)=g(x)\},$$ и где  $p$ — каноническое вложение.
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -2698,7 +2702,11 @@ The equalizer is the set of all inputs for which the theory and the experiment y
 \end{exampleENG}
 
 \begin{exampleRUS}
- 
+Предположим, для проверки теоретического предсказания разработан определенный эксперимент. Возникает вопрос, «когда теория соответствует эксперименту?» Ответ дается уравнителем следующей диаграммы:
+$$\xymatrix{
+\obox{}{.5in}{an input}\ar@<1ex>[rr]^{\tn{should, according to theory, yield}}\ar@<-1ex>[rr]_{\tn{according to experiment yields}}&\hspace{1in}&\obox{}{.6in}{an output}
+}$$
+В данном случае уравнитель — это множество всех исходных условий, для которых теория и эксперимент дают одинаковый результат.
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -2706,7 +2714,7 @@ Come up with an olog that uses equalizers in a reasonably interesting way. Alter
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Предложите олог, использующий уравнители достаточно интересным способом. Либо используйте уравнитель, чтобы определить тех опубликованных авторов, что опубликовали ровно одну статью. Подсказка: опишите функцию из авторов в статьи; потом опишите другую функцию.
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -2714,7 +2722,7 @@ Find a universal property enjoyed by the equalizer of two arrows, and present it
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Придумайте универсальное свойство, которым обладает уравнитель двух стрелок, и запишите его аналогично Леммам \ref{lemma:up for prod}, \ref{lemma:up for coprod}, и \ref{lemma:up for fp}.
 \end{exerciseRUS}
 
 \begin{exerciseENG}\index{terminal object!in $\Set$}~
@@ -2724,7 +2732,9 @@ Find a universal property enjoyed by the equalizer of two arrows, and present it
 \end{exerciseENG}
 
 \begin{exerciseRUS}\index{terminal object!in $\Set$}~
- 
+\sexc Терминальное множество — это множество $S$ такое, что для любого множества $X$ существует единственная функция $X\to S$. Найдите хотя бы одно терминальное множество. 
+\next Как вы считаете, принадлежит ли понятие {\em терминального множества} данному разделу (Раздел \ref{sec:finite limits})? Почему? Если все — произведения, пулбеки и уравнители — являются пределами, то что общего у всех пределов?
+\endsexc
 \end{exerciseRUS}
 
 %%%%%% Section %%%%%%
