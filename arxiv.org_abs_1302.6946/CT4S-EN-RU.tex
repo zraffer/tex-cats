@@ -2183,7 +2183,7 @@ In this section we discuss what are called {\em limits} of variously-shaped diag
 
 %%%% Subsection %%%%
 
-\subsection{Pullbacks / Пулбеки}
+\subsection{Pullbacks / Пулбеки и притягивающие квадраты}
 
 \begin{definitionENG}[Pullback]\label{def:pullback}\index{pullback!of sets}
 Suppose given the diagram of sets and functions below.
@@ -2200,7 +2200,7 @@ X\ar[r]_f&Z}
 commutes. Given the setup of Diagram \ref{dia:fp sets} we define the {\em pullback of $X$ and $Y$ over $Z$} to be any set $W$ for which we have an isomorphism $W\To{\iso}X\times_ZY$. The corner symbol $\lrcorner$ in Diagram \ref{dia:pullback sets} indicates that $W$ is the pullback.\index{a symbol!$\lrcorner$}
 \end{definitionENG}
 
-\begin{definitionRUS}[Притягивающий квадрат]\label{def:pullback}\index{притягивающий квадрат!множеств}
+\begin{definitionRUS}[Притягивающий квадрат]\label{def:pullback}\index{притягивающий квадрат!множеств}\index{пулбек!множеств}\index{расслоенное произведение!множеств}
 Предположим, дана следующая диаграмма множеств и функций:
 \begin{align}\label{dia:fp sets}
 \xymatrix{&Y\ar[d]^g\\
@@ -2537,15 +2537,16 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{Spans, experiments, and matrices / Растопырки, эксперименты и матрицы}
+\subsection{Spans, experiments, and matrices / Развилки, эксперименты и матрицы}
 
 \begin{definitionENG}\label{def:span}\index{span}
 Given sets $A$ and $B$, a {\em span on $A$ and $B$} is a set $R$ together with functions $f\taking R\to A$ and $g\taking R\to B$. 
 $$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:span}\index{span}
- 
+\begin{definitionRUS}\label{def:span}\index{спан}\index{развилка}
+Для данных множеств $A$ и $B$ {\em развилка} между $A$ и $B$ (иногда говорят {\em спан}) это множество $R$ вместе с функциями $f\taking R\to A$ и $g\taking R\to B$. 
+$$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
 \end{definitionRUS}
 
 \begin{applicationENG}\label{app:exp temp press}
@@ -2567,7 +2568,21 @@ $$
 \end{applicationENG}
 
 \begin{applicationRUS}\label{app:exp temp press}
- 
+Думайте об $A$ и $B$, как о наблюдаемых величинах, и об $R$ как о множестве экспериментов, производимых, чтобы получить эти величины. Например, положим $T$ — множество возможных температур \href{http://en.wikipedia.org/wiki/Ideal_gas_law}{\text идеального газа} в жестком контейнере, а $P$ — множество возможных давлений этого газа. Произведем $1000$ экспериментов, в которых мы изменяем и записываем температуру и одновременно давление; это развилка $T\From{f}E\To{g}P$. Результат может выглядеть так:
+$$
+\begin{tabular}{| l || l | l |}
+\bhline
+\multicolumn{3}{| c |}{эксперимент}\\\bhline
+{\bf №}&{\bf температура}&{\bf давление}\\\bbhline
+1&100& 72\\\hline
+2&100&73\\\hline
+3&100&72\\\hline
+4&200&140\\\hline
+5&200&138\\\hline
+6&200&141\\\hline
+\vdots&\vdots&\vdots\\\bhline
+\end{tabular}
+$$
 \end{applicationRUS}
 
 \begin{definitionENG}\label{def:composite span}
@@ -2578,7 +2593,10 @@ $$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:composite span}
- 
+Пусть $A,B$ и $C$ — множества, а $A\From{f}R\To{g}B$ и $B\From{f'}R'\To{g'}C$ — развилки. Их {\em композиция}\index{развилка!композиция} задается таким расслоенным произведением $R\times_BR'$, как на диаграмме ниже:
+$$
+\xymatrix@=10pt{&&R\times_BR'\ar[ldd]\ar[rdd]\\\\&R\ar[ddl]_f\ar[ddr]^g&&R'\ar[ddl]_{f'}\ar[ddr]^{g'}\\\\A&&B&&C
+}$$
 \end{definitionRUS}
 
 \begin{applicationENG}\label{app:exp temp press 2}
@@ -2590,20 +2608,24 @@ The information we get this way might be seen by some as unscientific, but it ce
 \end{applicationENG}
 
 \begin{applicationRUS}\label{app:exp temp press 2}
- 
+Давайте вернемся к нашему эксперименту из Прикладного примера \ref{app:exp temp press}, результат которого представим в виде развилки $T\From{f}E\To{g}P$. Предположим, мы обнаружили, будто нечто пошло неправильно. Давление должно зависеть линейно от температуры, но обнаружилось, что это не так. Мы можем высказать гипотезу, что объем контейнера растет с давлением. Мы ищем данные об этом контейнере в интернет и обнаруживаем, что уже были проделаны эксперименты по измерению объема этого контейнера при изменении давления. Данные были великодушно выложены в свободный доступ, что дает нам развилку $P\From{f'}E'\To{g'}V$. 
+
+При помощи композиции нашей лабораторной развилки и развилки с данными из интернет получим новую развилку $T\from E''\to V$, где $E'':=E\times_PE'$. Какую информацию эта развилка дает нам? Для объяснения этого можно сказать «каждый раз, когда эксперимент в нашей латоратории выдает такое давление, какое мы записали, назовем это измерительной точкой. Каждая измерительная точка имеет связанную с ней температуру (из нашей лаборатории) и объем (из чужого эксперимента). Это лучшее из того, что можно получить.»
+
+Информация, которую мы получим таким способом может показаться в чем-то ненаучной, но это именно тот вид информации, которую люди используют в бизнесе и в ежедневных бытовых вычислениях: мы получаем данные из многих источников и соединяем их вместе. Более того, этот способ научен в том смысле, что он воспроизводим. Способ, которым мы получили наши данные о зависимости $T$-$V$ совершенно прозрачен.
 \end{applicationRUS}
 
 We can relate spans to matrices of natural numbers, and see a natural “categorification” of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
 
- 
+Можно найти связи развилок и матриц из натуральных чисел и получить естественную «категорификацию» матричных сложения и умножения. Если взять наши развилки, полученные в экспериментах из Прикладных примеров \ref{app:exp temp press} и \ref{app:exp temp press 2}, то соответствующие матрицы будут огромными и разреженными. Изложим это подробнее.
 
 Let $A$ and $B$ be sets and let $A\from R\to B$ be a span. By the universal property of products, we have a unique map $R\To{p}A\times B$. 
 
- 
+Пусть $A$ и $B$ — множества, а $A\from R\to B$ — развилка. Согласно универсальному свойству произведений у нас имеется единственное отображение $R\To{p}A\times B$. 
 
 We make a matrix of natural numbers out of this data as follows. The set of rows is $A$, the set of columns is $B$. For elements $a\in A$ and $b\in B$, the $(a,b)$-entry is the cardinality of its preimage, $|p^\m1(a,b)|$, i.e. the number of elements in $R$ that are sent by $p$ to $(a,b)$. 
 
- 
+Построим матрицу из натуральных чисел следующим образом. В качестве множества строк возьмем $A$, множества столбцов — $B$. Для элементов $a\in A$ и $b\in B$ ячейка $(a,b)$ будет содержать мощность прообраза $|p^\m1(a,b)|$, т.е. число элементов $R$ переходящих в $(a,b)$ при помощи $p$. 
 
 Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.%
 \footnote{
@@ -2615,18 +2637,26 @@ $$
 }
 The matrix corresponding to this new span will be the sum of the matrices corresponding to the two previous spans out of which it was made.
 
- 
+Предположим, даны две $(A,B)$-развилки, например $A\from R\to B$ и $A\from R'\to B$; о них можно думать, как об имеющих общую {\em размерность}, другими словами обе являются $|A|\times|B|$-матрицами. Мы можем взять несвязное объединение $R\sqcup R'$ и из универсального свойства копроизведений получить единственную развилку $A\from R\sqcup R'\to B$, делающую необходимую нам диаграмму коммутирующей.%
+\footnote{
+$$\xymatrix{
+&R\ar[dl]\ar[dr]\ar[d]\\
+A&R\sqcup R'\ar[l]\ar[r]&B\\
+&R'\ar[ur]\ar[ul]\ar[u]}
+$$
+}
+Матрица, соответствующая этой новой развилке, будет суммой матриц, соответствующих развилкам, из которых мы ее получили.
 
 Given a span $A\from R\to B$ and a span $B\from S\to C$, the composite span can be formed as in Definition \ref{def:composite span}. It will correspond to the usual multiplication of matrices.
 
- 
+Для данных развилок $A\from R\to B$ и $B\from S\to C$ можно образовать их композицию (см. Определение \ref{def:composite span}). Она будет соответствовать обычному умножению матриц.
 
 \begin{constructionENG}\label{const:bipartite}\index{graph!bipartite}
 Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with each element of $A$ drawn as a dot on the left, each element of $B$ drawn as a dot on the right, and each element $r\in R$ drawn as an arrow connecting vertex $f(r)$ on the left to vertex $g(r)$ on the right.
 \end{constructionENG}
 
-\begin{constructionRUS}\label{const:bipartite}\index{graph!bipartite}
- 
+\begin{constructionRUS}\label{const:bipartite}\index{граф!двудольный}
+Для данной развилки $A\From{f} R\To{g} B$ можно изобразить {\em двудольный граф}, где каждый элемент $A$ представлен вершиной слева, кадый элемент $B$ — вершиной справа, а каждый элемент $r\in R$ — стрелкой, связывающей вершину $f(r)$ слева с вершиной $g(r)$ справа.
 \end{constructionRUS}
 
 \begin{exerciseENG}~
@@ -2637,7 +2667,10 @@ Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with ea
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
- 
+\sexc Нарисуйте двудольный граф (как в Конструкции \ref{const:bipartite}), соответствующий развилке $T\From{f}E\To{g}P$ в Прикладном примере \ref{app:exp temp press}.
+\next Теперь придумайте свою собственную развилку $P\From{f'}E'\To{g'}V$ и нарисуйте ее. Наконец, нарисуйте ниже композицию [этих двух развилок]. 
+\next Сможете ли вы объяснить, как связан граф композиции развилок с графами ее сомножителей?
+\endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -2859,7 +2892,7 @@ Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and le
 
 %%%% Subsection %%%%
 
-\subsection{Pushouts / Выталкивающие квадраты}\label{sec:pushouts}
+\subsection{Pushouts / Пушауты и выталкивающие квадраты}\label{sec:pushouts}
 
 \begin{definitionENG}[Pushout]\label{def:pushout}
 Suppose given the diagram of sets and functions below:
@@ -2972,7 +3005,7 @@ there exists a unique arrow $\po{f}{g}{W}\taking X\sqcup_WY\to A$ making everyth
 
 %%%% Subsection %%%%
 
-\subsection{Other finite colimits / Другие конечные пределы}
+\subsection{Other finite colimits / Другие конечные копределы}
 
 \begin{definitionENG}\label{def:coequalizer}[Coequalizer]\index{coequalizer}
 Suppose given two parallel arrows 
