@@ -20,7 +20,7 @@
 \usepackage{etex}
 \usepackage{amsthm,amscd}
 \usepackage{wasysym}
-%\savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
+\savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
 \usepackage{setspace}
 \usepackage{chngcntr}
 \usepackage[tt]{titlepic}
@@ -629,9 +629,9 @@ This book attempts to explain category theory by examples and exercises rather t
 
 \section{(ниже идет скрытый текст)}
 
-In a front page MIT news article on December 17, 2012 explained that {\em graphs}, systems of vertices and edges are “A simple tool for representing relationships between data, devices or almost anything else has ubiquitous applications in computer science.”\cite{http://web.mit.edu/newsoffice/2012/explained-graphs-computer-science-1217.html}. Categories are graphs with one extra piece of structure: the ability to consider two paths, such as two different routes to the grocery store, to be equivalent. Reading it through, the MIT news article would have been more appropriately written about categories, had scientists been adequately aware of them. This is my hope for the course.
+In a front page MIT news article on December 17, 2012 explained that {\em graphs}, systems of vertices and edges are “A simple tool for representing relationships between data, devices or almost anything else has ubiquitous applications in computer science.”\href{http://web.mit.edu/newsoffice/2012/explained-graphs-computer-science-1217.html}. Categories are graphs with one extra piece of structure: the ability to consider two paths, such as two different routes to the grocery store, to be equivalent. Reading it through, the MIT news article would have been more appropriately written about categories, had scientists been adequately aware of them. This is my hope for the course.
 
-На первой странице выпуска MIT news за 17 декабря 2012 объясняется, что {\em графы}, системы вершин и ребер, будучи «простым инструментом для представления отношений между данными, устройствами или практически чем-угодно еще, имеют вездесущие приложения в информатике.»\cite{http://web.mit.edu/newsoffice/2012/explained-graphs-computer-science-1217.html}. Категории являются графами с еще одним компонентом структуры: возможности считать два различных пути, таких как два различных маршрута к магазину, эквивалентными. Дочитав до конца, я убедился, что, если бы учёные были более адекватно информированы о категориях, данную статью для MIT было бы более уместно написать именно о них. Таковы мои надежды, которые я возлагаю на этот курс. 
+На первой странице выпуска MIT news за 17 декабря 2012 объясняется, что {\em графы}, системы вершин и ребер, будучи «простым инструментом для представления отношений между данными, устройствами или практически чем-угодно еще, имеют вездесущие приложения в информатике.»\href{http://web.mit.edu/newsoffice/2012/explained-graphs-computer-science-1217.html}. Категории являются графами с еще одним компонентом структуры: возможности считать два различных пути, таких как два различных маршрута к магазину, эквивалентными. Дочитав до конца, я убедился, что, если бы учёные были более адекватно информированы о категориях, данную статью для MIT было бы более уместно написать именно о них. Таковы мои надежды, которые я возлагаю на этот курс. 
 
 These communication barriers are seen in businesses when one database “can't talk to” another — the two systems, though ostensibly containing information about the same topic, represent the information differently and therefore cannot be integrated without tremendous cost and overhaul. The barriers can be seen in teaching or training, when an expert has a hard time speaking in a language that the student is ready to understand. Finally, and most relevantly, they can be seen in science. Aside from teaching and training, there is the issue that researchers in even neighboring fields often find the barriers between disciplines to be insurmountable, and much of this has to do with differences in jargon.
 
@@ -2473,7 +2473,7 @@ Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, th
 \fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{a cellphone that has a bad battery}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{a bad battery}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{less than 1 hour}\ar[r]\ar[d]&\obox{G}{.5in}{between 0 and 1}\ar[d]\\\smbox{B}{a cellphone}\LA{r}{has}&\smbox{D}{a battery}\LA{r}{\parbox{.4in}{\rr remains charged for}}&\obox{F}{.6in}{a duration of time}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr in hours yields}}&\obox{H}{.6in}{a range of numbers}}}
 \end{align}\normalsize
 
-Утверждение \ref{prop:pasting} может оказаться полезным при создании ологов. Например, тип \fakebox{мобильный телефон с плохим аккумулятором} определен неточно, но мы можем точно сформулировать, что оно означет, используя пулбеки:
+Утверждение \ref{prop:pasting} может оказаться полезным при создании ологов. Например, тип \fakebox{мобильный телефон с плохим аккумулятором} определен туманно, но мы можем точно сформулировать, что оно означает, используя пулбеки:
 \small
 \begin{align}\label{dia:bad battery}
 \fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{мобильный телефон с плохим аккумулятором}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{плохой аккумулятор}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{менее 1 часа}\ar[r]\ar[d]&\obox{G}{.5in}{между 0 и 1}\ar[d]\\\smbox{B}{мобильный телефон}\LA{r}{имеет}&\smbox{D}{аккумулятор}\LA{r}{\parbox{.4in}{\rr остается заряженным}}&\obox{F}{.6in}{промежуток времени}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr в часах}}&\obox{H}{.6in}{числовой промежуток}}}
@@ -2743,11 +2743,11 @@ Find a universal property enjoyed by the equalizer of two arrows, and present it
 
 This section will parallel Section \ref{sec:finite limits} — I will introduce several types of finite colimits and hope that this gives the reader some intuition about them, without formally defining them yet. Before doing so, I must define equivalence relations and quotients.
 
- 
+Этот раздел воспроизводит структуру Раздела \ref{sec:finite limits} — я ввожу несколько видов конечных копределов в надежде, что это даст читателю интуитивное представление о них, без необходимости их пока формально определять. Однако прежде я введу отношения эквивалентности и фактор-множества.
 
 %%%% Subsection %%%%
 
-\subsection{Background: equivalence relations / Отступление: отношения эквивалентности}\index{equivalence relation}\index{relation!equivalence}
+\subsection{Background: equivalence relations / Отступление: отношения эквивалентности}\index{equivalence relation}\index{relation!equivalence}\index{отношение!эквивалентности}
 
 \begin{definitionENG}[Equivalence relations and equivalence classes]
 Let $X$ be a set. An {\em equivalence relation on $X$} is a subset $R\ss X\times X$ satisfying the following properties for all $x,y,z\in X$:
@@ -2767,8 +2767,22 @@ An {\em equivalence class of $\sim$}\index{equivalence relation!equivalence clas
 Suppose that $\sim$ is an equivalence relation on $X$. The {\em quotient of $X$ by $\sim$}\index{equivalence relation!quotient by}, denoted $X/\sim$\index{a symbol!$X/\sim$} is the set of equivalence classes of $\sim$.
 \end{definitionENG}
 
-\begin{definitionRUS}[Equivalence relations and equivalence classes]
- 
+\begin{definitionRUS}[Отношения эквивалентности и классы эквивалентности]
+Пусть $X$ — множество. {\em Отношение эквивалентности на $X$} — это подмножество $R\ss X\times X$, удовлетворяющее следующим условиям для всех $x,y,z\in X$:
+\begin{description}
+\item[Рефлексивность:] $(x,x)\in R$;
+\item[Симметричность:] $(x,y)\in R$ если и только если $(y,x)\in R$; и
+\item[Транзитивность:] если $(x,y)\in R$ и $(y,z)\in R$, то $(x,z)\in R$.
+\end{description}
+Если $R$ — отношение эквивалентности, это часто обозначается $x\sim_R y$ или $x\sim y$, имея в виду $(x,y)\in R$. Для удобства мы, говоря о самом отношении эквивалентности $R$ над $X$, будем обозначать его символом $\sim$.\index{символ!$\sim$}
+
+{\em Классом эквивалентности}\index{equivalence relation!equivalence classes} для $\sim$ называется подмножество $A\ss X$ такое, что
+\begin{itemize}
+\item $A$ не является пустым, $A\neq\emptyset$;
+\item если $x\in A$ и $x'\in A$, то $x\sim x'$; и 
+\item если $x\in A$ и $x\sim y$, то $y\in A$.
+\end{itemize}
+Предположим, что $\sim$ — отношение эквивалентности на $X$. Тогда множество всех классов эквивалентности для $\sim$ называется {\em фактор-множеством $X$ по эквивалентности $\sim$}\index{отношение!эквивалентности!фактор-множество}, обозначаемым $X/\sim$\index{символ!$X/\sim$}.
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -2776,7 +2790,7 @@ Let $\ZZ$ denote the set of integers. Define a relation $R\ss\ZZ\times\ZZ$ by $$
 \end{exampleENG}
 
 \begin{exampleRUS}
- 
+Пусть $\ZZ$ обозначает множество целых чисел. Определим отношение $R\ss\ZZ\times\ZZ$ таким образом: $$R=\{(x,y)\|\exists n\in\ZZ \tn{ такое, что } x+7n=y\}.$$ Тогда $R$ является отношением эквивалентности, поскольку $x+7*0=x$ (рефлексивность); $x+7*n=y$ если и только если $y+7*(-n)= x$ (симметричность); наконец, из $x+7n=y$ и $y+7m=z$ одновременно следует, что $x+7(m+n)=z$ (транзитивность).
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -2788,7 +2802,11 @@ Let $X$ be the set of people on earth; define a binary relation $R\ss X\times X$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $X$ — множество людей на земле; определим бинарное отношение $R\ss X\times X$ на $X$ следующим образом. Для пары людей $(x,y)$ будем считать, что $(x,y)\in R$, если $x$ проводит много времени, думая об $y$. 
+\sexc Будет ли это отношение рефлексивным? 
+\next Будет ли оно симметричным? 
+\next Будет ли оно транзитивным?
+\endsexc
 \end{exerciseRUS}
 
 \begin{exampleENG}[Partitions]\label{ex:partition}
@@ -2802,7 +2820,13 @@ Given a partition of $X$, we define an equivalence relation $\sim$ on $X$ by say
 \end{exampleENG}
 
 \begin{exampleRUS}[Разбиения]\label{ex:partition}
- 
+Об отношении эквивалентности на множестве $X$ можно думать, как о способе разбить $X$ на части. {\em Разбиение $X$}\index{отношение!эквивалентности!как разбиение} состоит из множества $I$, называемого {\em множеством частей}, и для каждого элемента $i\in I$ — подмножества $X_i\ss X$ такого, что выполняются два условия:
+\begin{itemize}
+\item каждый элемент $x\in X$ находится в некоторой части (то есть, для всех $x\in X$ существует $i\in I$ такой, что $x\in X_i$); и
+\item ни один элемент не находится в двух различных частях (то есть, если $x\in X_i$ и $x\in X_j$, то $i=j$).
+\end{itemize}
+
+Для данного рабиения $X$ определим отношение эквивалентности $\sim$ на $X$, положив $x\sim x'$, если $x$ и $x'$ находятся в одной и той же части (то есть, если существует $i\in I$ такой, что $x,x'\in X_i$). Части оказываются классами эквивалентности этого отношения. Обратно, для данного отношения эквивалентности построим разбиение $X$, взяв в качестве $I$ множество классов эквивалентности и для каждого $i\in I$ положив, что $X_i$ состоит из элементов этого класса.
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -2814,7 +2838,11 @@ Let $X$ and $B$ be sets and let $f\taking X\to B$ be a function. Define a subset
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $X$ и $B$ — это множество, а $f\taking X\to B$ — функция. Определим подмножество $R\ss X\times X$ как $$R=\{(x,y)\|f(x)=f(y)\}.$$ 
+\sexc Будет ли $R$ отношением эквивалентности? 
+\next Можно ли все отношения эквивалентности на $X$ получить таким же способом (как «слои» некоторой функции с областью определения $X$)?
+\next Связана ли эта точка зрения на классы эквивалентности с Примером \ref{ex:partition}?
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -2822,7 +2850,7 @@ Take a set $I$ of sets; i.e. suppose that for each element $i\in I$ you are give
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Возьмем множество $I$ некоторых множеств; то есть предположим, что для каждого элемента $i\in I$ задано множество $X_i$. Для каждых двух элементов $i,j\in I$ будем считать, что $i\sim j$, если $X_i$ и $X_j$ изоморфны. Будет ли это отношение отношением эквивалентности на $I$?
 \end{exerciseRUS}
 
 \begin{lemmaENG}[Generating equivalence relations]\label{lemma:generating ERs}
@@ -2836,7 +2864,13 @@ The relation $S'$ will be called {\em the equivalence relation generated by $R$}
 \end{lemmaENG}
 
 \begin{lemmaRUS}[Порождение отношений эквивалентности]\label{lemma:generating ERs}
- 
+Пусть $X$ — это множество, а $R\ss X\times X$ — подмножество. Существует отношение $S\ss X\times X$ такое, что
+\begin{itemize}
+\item $S$ является отношением эквивалентности,
+\item $R\ss S$, и
+\item для любого отношения эквивалентности $S'$ такого, что $R\ss S'$, выполняется $S\ss S'$.
+\end{itemize}
+Отношение $S'$ назовем {\em отношением эквивалентности, порожденным $R$}.\index{отношение!эквивалентности!порожденное}
 \end{lemmaRUS}
 
 \begin{proofENG}
@@ -2846,7 +2880,9 @@ It is clearly reflexive, because $R$ is. If $(x,y)\in S$ then $(x,y)\in\ell$ for
 \end{proofENG}
 
 \begin{proofRUS}
- 
+Пусть $L_R$ — множество всех отношений эквивалентности на $X$, которые содержат $R$; другими словами, каждый элемент $\ell\in L_R$ будет отношением эквивалентности, $\ell\ss X\times X$. Множество $L_R$ непусто, поскольку $X\times X\ss X\times X$ — это тоже отношение эквивалентности. Пусть $S$ обозначает множество пар $(x_1,x_2)\in X\times X$, которые появляются в каждом элементе $L_R$. Заметим, что $R\ss S$ по определению. Нам остается только показать, что $S$ оказывается отношением эквивалентности.
+
+Оно, очевидно, рефлексивно, поскольку этим свойством обладает $R$. Если $(x,y)\in S$, то $(x,y)\in\ell$ для всех $\ell\in L_R$. Но поскольку каждый $\ell$ это отношение эквивалентности, то $(y,x)\in\ell$, а значит, $(y,x)\in S$. Это показывает, что $S$ — симметрично. Доказательство того, что оно транзитивно, аналогично: если $(x,y)\in S$ и $(y,z)\in S$, то они оба принадлежат каждому $\ell$, из чего следует принадлежность $(x,z)$ каждому $\ell$, что, в свою очередь, влечет $(x,z)\in S$.
 \end{proofRUS}
 
 \begin{remarkENG}
@@ -2859,7 +2895,12 @@ Let $X$ be a set and $R\ss X\times X$ a relation. The proof of Lemma \ref{lemma:
 \end{remarkENG}
 
 \begin{remarkRUS}
- 
+Пусть $X$ — множество, а $R\ss X\times X$ — отношение. Доказательство Леммы \ref{lemma:generating ERs} имеет то преимущество, что работает даже для $|X|\geq\infty$, но это достигается за счет того, что оно ни слишком интуитивно, ни полезно на практике, когда $X$ конечно. Интуитивный способ думать об идее отношения эквивалентности, порожденном $R$ описан ниже.
+\begin{enumerate}
+\item Прежде всего, добавим к $R$ то, что требуется из-за рефлексивности, $R_1:=R\cup\{(x,x)\|x\in X\}$.
+\item Затем добавим к $R$ то, что требуется из-за симмеричности, $R_2:=R_1\cup\{(x,y)\|(y,x)\in R_1\}.$
+\item Наконец, добавим к $R$ то, что требуется из-за транзитивности,\endnote{возможно, этот шаг потребуется повторить несколько раз, чтобы учесть цепочки эквивалентностей длины более $2$.} $$S=R_2\cup\{(x,z)\|(x,y)\in R_2, \tn{ и } (y,z)\in R_2\}.$$
+\end{enumerate}
 \end{remarkRUS}
 
 \begin{exerciseENG}
@@ -2874,7 +2915,14 @@ Consider the set $\RR$ of real numbers. Draw the coordinate plane $\RR\times\RR$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Рассмотрим множество $\RR$ всех действительных чисел. Изобразим координатную плоскость $\RR\times\RR$ с координатами $x$ и $y$. Бинарное отношение на $\RR$ это подмножество $S\ss\RR\times\RR$, которое может быть изображено в виде множества точек на нашей плоскости. 
+\sexc Изобразите отношение $\{(x,y)\|y=x^2\}$. 
+\next Изобразите отношение $\{(x,y)\|y\geq x^2\}.$
+\next Пусть $S_0$ — отношение эквивалентсноти на $\RR$, порожденное (в смысле Леммы \ref{lemma:generating ERs}) пустым множеством. Изобразите $S$ как подмножество плоскости.
+\next Рассмотрим отношение эквивалентности $S_1$, порожденное $\{(1,2),(1,3)\}$. Изобразите $S_1$ на плоскости. Выделите класс эквивалентности, содержащий $(1,2)$.\endnote{Какая-то фигня про $(1,2)$, причем во второй редакции еще и с ответом. Класс эквивалентности определяется одним элементом $\RR$ (а не парой) и является подмножеством $\RR$ (а не плоскости).}
+\next У свойства рефлексивности и симметричности есть удобная визуализация в $\RR\times\RR$; какая? 
+\next Имеется ли хорошая эвристика для визуализации свойства транзитивности?
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -2885,7 +2933,10 @@ Consider the binary relation $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Рассмотрим бинарное отношение $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$. 
+\sexc Каковы классы эквивалентности, порожденные $R$? 
+\next Сколько всего здесь классов эквивалентности?
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -2897,7 +2948,12 @@ Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and le
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Предположим, $N$ — это сеть (или граф). Пусть $X$ — узлы сети [или вершины графа], и пусть $R\ss X\times X$ обозначает такое отношение, что $(x,y)\in R$ ттт%
+\footnote{Слово {\em ттт}\index{ттт} означает «тогда и только тогда, когда». В данном случае мы говорим, что пара $(x,y)$ принадлежит $R$, если и только если существует стрелка, соединяющая $x$ с $y$.}
+существует стрелка, соединяющая $x$ с $y$.
+\sexc Каково отношение эквивалентности $\sim$, порожденное $R$? 
+\next Каким будет фактор-множество $X/\sim$?
+\endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
