@@ -1507,7 +1507,7 @@ Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\a
 \end{align}
 Каждой части $\ell$ олога (т.е. каждому прямоугольнику и каждой стрелке) можно сопоставить фразу естественного языка, которую мы обозначим $\qtR{\ell}$. Используя вспомогательную переменную $x$ мы можем превести на естественный язык и каждый факт. Следующая общая формула немного сложна для понимания, см. Пример \ref{ex:English fact}, но вот она. Факт $P\simeq Q$ из (\ref{dia:two paths for equivalence}) переводится на естественный язык следующим образом:%
 \endnote{
-В оригинале рецепт на английском, имеющем более строгую структуру предложения и не имеющему падежей; потому механическое конструирование предложений довольно естественно ложится на разговорный английский. В русском требуется согласование частей речи и перестановка слов, — например, «верблюд имеет два горба» звучит не очень естественно; гораздо более естественно звучало бы «у верблюда [есть] два горба.»
+В оригинале рецепт на английском, имеющем более строгую структуру предложения и не имеющем падежей; потому механическое конструирование предложений довольно естественно ложится на разговорный английский. В русском требуется согласование частей речи и перестановка слов, — например, «верблюд имеет два горба» звучит не очень естественно; гораздо более естественно звучало бы «у верблюда [есть] два горба.»
 }
 
 \begin{align}\label{dia:Englishification}\index{перевод на естественный язык}
@@ -2977,7 +2977,19 @@ commutes. Given the setup of Diagram \ref{dia:pushout} we define the {\em pushou
 \end{definitionENG}
 
 \begin{definitionRUS}[Выталкивающий квадрат]\label{def:pushout}
- 
+Предположим, дана следующая диаграмма множеств и функций:
+\begin{align}\label{dia:pushout}
+\xymatrix{W\ar[r]^f\ar[d]_g&X\\Y}
+\end{align}
+Ее {\em связная сумма},\index{связная сумма} обозначаемая $X\sqcup_WY$, определяется как фактор-множество $X\sqcup W\sqcup Y$ по отношению эквивалентности $\sim$, порожденному $w\sim f(w)$ и $w\sim g(w)$ для всех $w\in W$.
+$$X\sqcup_WY:=(X\sqcup W\sqcup Y)/\sim \hsp\tn{где } \forall w\in W,\;\;  w\sim f(w)\;\;\tn{ и }\;\; w\sim g(w).$$ 
+Имеются очевидные вложения  $i_1\taking X\to X\sqcup_WY$  и  $i_2\taking Y\to X\sqcup_WY$.%
+\footnote{Заметим, что наш термин вложения не особенно подходит, поскольку может показаться, что он предполагает, будто $i_1$ и $i_2$ инъективны (см. Определение \ref{def:inj,surj,bij}), а это не всегда так.}
+Заметим, что если $Z=X\sqcup_WY$, то диаграмма
+\begin{align}\label{dia:pushout sets}
+\xymatrix{W\ar[r]^g\ar[d]_f&Y\ar[d]^{i_2}\\X\ar[r]_-{i_1}&Z\lrlimit}
+\end{align} 
+коммутирует. Для данной Диаграммы \ref{dia:pushout} мы определим {\em пушаут $X$ и $Y$ над $W$} как произвольное множество $Z$, для которого имеется изоморфизм $Z\To{\iso}X\sqcup_WY$. Символ-уголок $\ulcorner$ в Диаграмме \ref{dia:pushout sets} означает, что $Z$ является пушаутом.\index{символ!$\ulcorner$} [Саму эту диаграмму мы будем называть {\em выталкивающим квадратом}\index{выталкивающий квадрат}, аналогично двойственному случаю введенных ранее притягивающих квадратов.]
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -2985,7 +2997,7 @@ Let $X=\{x\in\RR\|0\leq x\leq1\}$ be the set of numbers between 0 and 1, inclusi
 \end{exampleENG}
 
 \begin{exampleRUS}
- 
+Пусть $X=\{x\in\RR\|0\leq x\leq1\}$ — это множество [действительных] чисел от 0 до 1 включительно, $Y=\{y\in\RR\|1\leq y\leq 2\}$ — множество чисел от 1 до 2 включительно и, наконец, $W=\{1\}$. Тогда пушаутом $X\From{f} W\To{g} Y$, где $f$ и $g$ — «очевидные» функции ($1\mapsto 1$), оказывается $X\sqcup_WY\iso\{z\in\RR\|0\leq z\leq 2\}$, как и можно было ожидать. Когда мы наконец доберемся к общему понятию пределов, можно будет убедиться, что при сшивании отдельных интервалов аналогичным образом получается целиком вся действительная прямая.
 \end{exampleRUS}
 
 \begin{exampleENG}[Pushout]\label{ex:pushout}
@@ -3004,8 +3016,23 @@ In Olog (\ref{dia:po1}), the shoulder is seen as part of the arm and part of the
 In Olog (\ref{dia:po2}), if every mathematics course is simply “too hard,” then when reading off a list of courses, each math course will not be read aloud but simply read as “too hard.”  To form $D$ we begin by taking the union of $B$ and $C$, and then we consider everything in $A$ to be the same whether one looks at it as a course or as the phrase “too hard.”  The math courses are all blurred together as one thing.  Thus we see that the power to equate different things can be exercised with pushouts.
 \end{exampleENG}
 
-\begin{exampleRUS}[Выталкивающий квадрат]\label{ex:pushout}
- 
+\begin{exampleRUS}[Выталкивающие квадраты]\label{ex:pushout}
+В каждом примере ниже, диаграмма справа должна быть выталкивающим квадратом диаграммы слева.  То есть новый тип $D$ является объединением типов $B$ и $C$, при этом экземпляры $A$ считаются совпадающими со своими аспектами в $B$ и $C$.  Под диаграммами мы обсудим это [более подробно].
+
+\begin{align}
+\label{dia:po1}\fbox{\xymatrixnocompile{\obox{A}{.7in}{клетка в плече}\LA{r}{это}\LAL{d}{это}&\obox{C}{.6in}{клетка в руке}\\\obox{B}{.7in}{клетка в туловище}}}\hsp&\fbox{\xymatrix{\obox{A}{.7in}{клетка в плече}\LA{r}{это}\LAL{d}{это}&\obox{C}{.6in}{клетка в руке}\LA{d}{}\\\obox{B}{.7in}{клетка в туловище}\LA{r}{}&\obox{D=B\sqcup_AC}{.8in}{клетка в туловище или в руке}}}
+\end{align}
+На ологе слева (\ref{dia:po1}), две стрелки — это вложения: автор рассматривает каждую клетку в плече как принадлежащую одновременно руке и туловищу. Пушаут тогда является обычным объединением, в котором мы не учитываем клетки в плече дважды.%
+\endnote{
+Более общо, конструкция объединения множеств из классической теории множеств реализуется средствами теории категорий аналогичным способом как выталкивающий квадрат.
+}
+
+В ологе (\ref{dia:po1}) плечо рассматривается как часть руки и одновременно как часть туловища. Образуя объединение этих двух частей, мы не хотим получить продублированное плечо (как получилось бы в случае копроизведения $B\sqcup C$, см. Пример \ref{ex:coproduct2}). Поэтому мы описали новый тип $A$ для клеток плеча, которые считаются одними и теми же, и в качестве клеток плеча, и как клетки туловища. В общем случае, если требуется взять две вещи и склеить их вместе, считая $A$ клеем, а $B$ и $C$ — склеиваемыми вещами, то объединение будет пушаутом $B\sqcup_AC$. (Хорошую иллюстрацию этого можно увидеть в случае топологических пространств, см. Пример \ref{ex:pushout in Top}.)
+
+\begin{align}\label{dia:po2}\fbox{\xymatrixnocompile@=20pt{\obox{A}{1in}{\rr математический предмет в колледже}\LA{r}{\scriptsize вызывает}\LAL{d}{это}&\obox{C}{.8in}{фраза «слишком сложно»}\\\obox{B}{.6in}{\rr предмет в колледже}}}\hsp&\fbox{\xymatrixnocompile@=16pt{\obox{A}{1in}{\rr математический предмет в колледже}\LA{r}{\scriptsize вызывает}\LAL{d}{это}&\obox{C}{.8in}{фраза «слишком сложно»}\LA{d}{}\\\obox{B}{.6in}{\rr предмет в колледже}\LA{r}{}&\obox{\parbox{.6in}{\vspace{.1in}\scriptsize$D=B\!\sqcup_A\!C$}}{1.2in}{\rr предмет в колледже (математические предметы заменены фразой «слишком сложно»)}}}
+\end{align}
+
+В ологе (\ref{dia:po2}), если каждый математический предмет просто «слишком сложен,» то при зачитывании подряд всего списка предметов каждый математический предмет не будет зачитан вслух, а просто будет произнесено «слишком сложен.»  Чтобы получить $D$, мы начнем с простого объединения $B$ и $C$, а затем станем считать все в $A$ одним и тем же, смотрим ли мы на предмет или на фразу «слишком сложен.»  В результате все математические предметы смешиваются вместе в одну вещь.  Таким образом мы видим, что в умении приравнивать между собой различные вещи можно тренироваться с пушаутами.
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -3017,7 +3044,11 @@ The pushout of the diagram $X\Fromm{f}W\Too{g}Y$ is a set $P$. Write down the ca
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть множества $W,X,Y$ и функции $f\taking W\to X$ и $g\taking W\to Y$ такие, как изображено ниже . 
+\begin{center}
+\includegraphics[height=2in]{setPushout}
+\end{center}
+Пушаут диаграммы $X\Fromm{f}W\Too{g}Y$ это множество $P$. Запишите мощность $P\iso\ul{n}$ в виде натурального числа $n\in\NN$.  
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -3025,7 +3056,7 @@ Suppose that $W=\emptyset$; what can you say about $X\sqcup_WZ$?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Предположим, что $W=\varnothing$; что вы можете сказать о $X\sqcup_WZ$? 
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -3033,7 +3064,7 @@ Let $W:=\NN=\{0,1,2,\ldots\}$ denote the set of natural numbers, let $X=\ZZ$ den
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $W:=\NN=\{0,1,2,\ldots\}$ обозначает множество всех натуральных чисел, $X=\ZZ$ — можество всех целых чисел, и $Y=\singleton$ — одноэлементное множество. Определим $f\taking W\to X$ как $f(w)= -(w+1)$, и $g\taking W\to Y$ как единственное отображение такого вида. Опишите множество $X\sqcup_WY$.
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -3044,7 +3075,10 @@ Let $i\taking R\ss X\times X$ be an equivalence relation (see Example \ref{ex:su
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $i\taking R\ss X\times X$ — это отношение эквивалентности (про обозначения см. Пример \ref{ex:subset as function}). Беря композицию с проекциями $\pi_1,\pi_2\taking X\times X\to X$, получим два отображения $\pi_1\circ i\taking R\to X$ и $\pi_2\circ i\taking R\to X$. 
+\sexc Каким будет пушаут $$X\From{\pi_1\circ i}R\To{\pi_2\circ i}X?$$ 
+\next Даже если $i\taking R\ss X\times X$ не обязательно отношение эквивалентности, мы все равно можем определить такой пушаут, как выше. Имеется ли связь между пушаутом $X\From{\pi_1\circ i}R\To{\pi_2\circ i}X$ и отношением эквивалентности, порожденным $R\ss X\times X$?
+\endsexc
 \end{exerciseRUS}
 
 \begin{lemmaENG}[Universal property for pushout]\label{lemma:up for po}
@@ -3066,7 +3100,21 @@ there exists a unique arrow $\po{f}{g}{W}\taking X\sqcup_WY\to A$ making everyth
 \end{lemmaENG}
 
 \begin{lemmaRUS}[Универсальное свойство выталкивающего квадрата]\label{lemma:up for po}
- 
+Предположим, дана такая диаграмма множеств и функций, как ниже.
+\begin{align*}
+\xymatrix{W\ar[r]^u\ar[d]_t&Y\\
+X}
+\end{align*}
+Для любого множества $A$ и коммутативной диаграммы (из сплошных стрелок) ниже (то есть функций $f\taking X\to A$ и $g\taking Y\to A$ таких, что $f\circ t=g\circ u$), 
+\begin{align}\label{dia:universal property of po}
+\xymatrix{
+&W\ar[dr]^u\ar[dl]_t\\
+X\ar@/_1pc/[dddr]_{i_1}\ar[rd]_f&&Y\ar@/^1pc/[dddl]^{i_2}\ar[dl]^g\\
+&A\\\\
+&X\sqcup_WY\ar@{-->}[uu]^{\exists!}
+}
+\end{align}
+существует единственная стрелка $\po{f}{g}{W}\taking X\sqcup_WY\to A$, делающая коммутативной всю диаграмму, $$f=\po{f}{g}{W}\circ i_1\hsp\text{and}\hsp g=\po{f}{g}{W}\circ i_2.$$
 \end{lemmaRUS}
 
 %%%% Subsection %%%%
