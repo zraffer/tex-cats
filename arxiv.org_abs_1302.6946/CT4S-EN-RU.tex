@@ -2899,7 +2899,9 @@ Let $X$ be a set and $R\ss X\times X$ a relation. The proof of Lemma \ref{lemma:
 \begin{enumerate}
 \item Прежде всего, добавим к $R$ то, что требуется из-за рефлексивности, $R_1:=R\cup\{(x,x)\|x\in X\}$.
 \item Затем добавим к $R$ то, что требуется из-за симмеричности, $R_2:=R_1\cup\{(x,y)\|(y,x)\in R_1\}.$
-\item Наконец, добавим к $R$ то, что требуется из-за транзитивности,\endnote{возможно, этот шаг потребуется повторить несколько раз, чтобы учесть цепочки эквивалентностей длины более $2$.} $$S=R_2\cup\{(x,z)\|(x,y)\in R_2, \tn{ и } (y,z)\in R_2\}.$$
+\item Наконец, добавим к $R$ то, что требуется из-за транзитивности,%
+\endnote{Возможно, последний шаг потребуется повторить несколько раз, чтобы учесть цепочки эквивалентностей длиною более $2$.}
+$$S=R_2\cup\{(x,z)\|(x,y)\in R_2, \tn{ и } (y,z)\in R_2\}.$$
 \end{enumerate}
 \end{remarkRUS}
 
@@ -3184,7 +3186,7 @@ Suppose we have a function $f\taking X\to Y$ and a function $g\taking Y\to X$ su
 \end{definitionENG}
 
 \begin{definitionRUS}
- 
+Предположим, у нас есть функция $f\taking X\to Y$ и функция $g\taking Y\to X$ такие, что $g\circ f=\id_X$. [О подобной ситуации говорят, как о {\em ретракции}.]\index{ретракция} В этом случае мы называем $f$ {\em сечением ретракции}, а $g$ — {\em проекцией ретракции}.
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -3192,7 +3194,7 @@ Create an olog that includes sets $X$ and $Y$, and functions $f\taking X\to Y$ a
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Придумайте олог, содержащий множества $X$ и $Y$, и функции $f\taking X\to Y$ и $g\taking Y\to X$ такие, чтобы $g\circ f=\id_X$, но чтобы $f\circ g\neq\id_Y$; то есть, чтобы $f$ было сечением ретракции, но не изоморфизмом.
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -3201,11 +3203,11 @@ Create an olog that includes sets $X$ and $Y$, and functions $f\taking X\to Y$ a
 
 Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to “curry” the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information. 
 
- 
+Каррирование — это идея о том, что в случае функции нескольких аргументов мы можем подставлять их в функцию или по одному, или все сразу. Например, рассмотрим функцию, которая берет материал $M$ и величину деформации $E$, и возвращает силу, возникающую в материале, если деформировать его соответствующим образом. Это функция $e\taking \fakebox{материал}\times\fakebox{деформация}\to\fakebox{сила}$. Эта функция принимает два аргумента сразу, однако удобно «каррировать» ее второй аргумент. Напомним, что $\Hom_\Set(\fakebox{деформация},\fakebox{сила})$ это множество всех теоретически возможных зависимостей силы от деформации. Каррирование преобразует $e$ в функцию $$e'\taking\fakebox{материал}\to\Hom_\Set(\fakebox{деформация},\fakebox{сила}).$$ Это более удобный способ «упаковать» ту же самую информацию. 
 
 In fact, it may be convenient to repackage this information another way. For any extension, we may want the function that takes a material and returns how much force it can transmit at that extension. This is a function $$e''\taking\fakebox{an extension}\to\Hom_\Set(\fakebox{a material},\fakebox{a force}).$$ 
 
- 
+В принципе, удобным может оказаться и «переупаковывание» информации другим способом. Для каждой деформации мы можем получить функцию, которая принимает материал и возвращает силу, возникающую в нем при данной деформации. Так получается функция $$e''\taking\fakebox{деформация}\to\Hom_\Set(\fakebox{материал},\fakebox{сила}).$$ 
 
 \begin{notationENG}\index{exponentials ! in $\Set$}
 Let $A$ and $B$ be sets. We sometimes denote the set of functions from $A$ to $B$ by 
@@ -3215,7 +3217,10 @@ B^A:=\Hom_\Set(A,B).
 \end{notationENG}
 
 \begin{notationRUS}\index{exponentials ! in $\Set$}
- 
+Пусть $A$ и $B$ — это множества. Мы иногда будем обозначать множество функций из $A$ в $B$ так: 
+\begin{align}\label{dia:exponential sets}
+B^A:=\Hom_\Set(A,B).
+\end{align}
 \end{notationRUS}
 
 \begin{exerciseENG}
@@ -3223,7 +3228,7 @@ For a finite set $A$, let $|A|\in\NN$ denote the cardinality of (number of eleme
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Для конечного множества $A$, пусть $|A|\in\NN$ обозначает мощность (т.е. число элементов в) $A$. Если оба множества $A$ и $B$ —  конечные (включая возможность того, что одно из них или оба пустые), всегда ли будет верно, что $|B^A|=|B|^{|A|}$?
 \end{exerciseRUS}
 
 \begin{propositionENG}[Currying]\label{prop:curry}
@@ -3234,7 +3239,16 @@ Let $A$ denote a set. For any sets $X,Y$ there is a bijection
 \end{propositionENG}
 
 \begin{propositionRUS}[Каррирование]\label{prop:curry}
- 
+Пусть $A$ обозначает множество. Для любых множеств $X,Y$ имеется биекция%
+\endnote{
+TODO: Термин «биекция» встречается раньше определения. Поменять на «изоморфизм» или переместить определение?
+}%
+\endnote{
+В случае категории множеств (а именно о ней мы сейчас говорим), есть более легкая для восприятия и запоминания формулировка этого изоморфизма: $(A^X)^Y \iso A^{X\times Y}$
+}
+\begin{align}\label{dia:curry bijection}
+\phi\taking\Hom_\Set(X\times A,Y)\To{\iso}\Hom_\Set(X,Y^A).
+\end{align}
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -3246,7 +3260,11 @@ Then for any $f\in\Hom_\Set(X\times A,Y)$ we have $\psi\circ\phi(f)(x,a)=\phi(f)
 \end{proofENG}
 
 \begin{proofRUS}
- 
+Предположим, дана функция $f\taking X\times A\to Y$. Определим $\phi(f)\taking X\to Y^A$ таким образом: для любого $x\in X$ возьмем $\phi(f)(x)\taking A\to Y$, определенную так: для любого $a\in A$, положим $\phi(f)(x)(a):=f(x,a)$. 
+
+Теперь сконструируем обратное отображение, $\psi\taking\Hom_\Set(X,Y^A)\to\Hom_\Set(X\times A,Y)$.  Предположим, дана функция $g\taking X\to Y^A$. Определим $\psi(g)\taking X\times A\to Y$ так: для любой пары $(x,a)\in X\times A$ положим $\psi(g)(x,a):=g(x)(a)$. 
+
+Тогда для любой $f\in\Hom_\Set(X\times A,Y)$ получим $\psi\circ\phi(f)(x,a)=\phi(f)(x)(a)=f(x,a)$, и для любой $g\in\Hom_\Set(X,Y^A)$ выполняется $\phi\circ\psi(g)(x)(a)=\psi(g)(x,a)=g(x)(a)$. Таким образом, мы видим, что $\phi$ — изоморфизм, как и требовалось.
 \end{proofRUS}
 
 \begin{exerciseENG}
@@ -3258,7 +3276,11 @@ Let $X=\{1,2\}, A=\{a,b\}$, and $Y=\{x,y\}$.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $X=\{1,2\}, A=\{a,b\}$ и $Y=\{x,y\}$. 
+\sexc\label{part:three distinct} Запишите три различных элемента множества $L:=\Hom_\Set(X\times A,Y)$. 
+\next Запишите все элементы множества $M:=\Hom_\Set(A,Y)$. 
+\next Для каждого из трех элементов $\ell\in L$, выбранных в пункте (\ref{part:three distinct}), запишите соответствующую функцию $\phi(\ell)\taking X\to M$, полученную из Утверждения \ref{prop:curry}.
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:evaluation}\index{exponentials!evaluation of}
@@ -3269,7 +3291,13 @@ Let $A$ and $B$ be sets. We know that $\Hom_\Set(A,B)=B^A$, so we have a functio
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:evaluation}\index{exponentials!evaluation of}
- 
+Пусть $A$ и $B$ — это множества. Известно, что $\Hom_\Set(A,B)=B^A$, так что имеется функция $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A$. Взглянем на Утверждение \ref{prop:curry}, сделав подстановки $X=\Hom_\Set(A,B)$, $Y=B$ и  $A=A$. Рассмотрим функцию $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B)$$, полученную как обратную к (\ref{dia:curry bijection}). В области определения $\phi^\m1$ имеется канонический элемент $\id_{B^A}$. Мы можем применить функцию $\phi^\m1$ и получить элемент $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B)$, который сам является функцией, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
+\sexc Опишите функцию $ev$ в терминах того, как она действует на элементах своей области определения. 
+\next Что побудило нас назвать функцию $ev$?%
+\endnote{
+На английском это сокращение от {\em evaluate} — вычислять, рассчитывать, оценивать.
+}
+\endsexc
 \end{exerciseRUS}
 
 If $n\in\NN$ is a natural number, recall from (\ref{dia:underline n}) that there is a nice set $\ul{n}=\{1,2,\ldots,n\}$. If $A$ is a set, we often make the abbreviation 
@@ -3277,7 +3305,10 @@ If $n\in\NN$ is a natural number, recall from (\ref{dia:underline n}) that there
 A^n:=A^{\ul{n}}.
 \end{align}
 
- 
+Если $n\in\NN$ — это натуральное число, напомним (см. \ref{dia:underline n}), что имеется замечательное множество $\ul{n}=\{1,2,\ldots,n\}$. Если $A$ — это множество, мы часто используем сокращенную запись
+\begin{align}\label{dia:exponential abbrev}
+A^n:=A^{\ul{n}}.
+\end{align}
 
 \begin{exerciseENG}\label{exc:two R2s}
 In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR$, but in (\ref{dia:exponential abbrev}) we say that $\RR^2$ is an abbreviation for $\RR^{\ul{2}}$. Use Exercise \ref{exc:generator for set}, Proposition \ref{prop:curry}, Exercise \ref{exc:coprod}, and the fact that 1+1=2, to prove that these are isomorphic, $\RR^{\ul{2}}\iso\RR\times\RR$.
@@ -3286,7 +3317,9 @@ In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:two R2s}
- 
+В Примере \ref{ex:R2} мы уже сказали, что $\RR^2$ — это сокращенная запись для $\RR\times\RR$, однако теперь в (\ref{dia:exponential abbrev}) говорим, что $\RR^2$ — это сокращенная запись для $\RR^{\ul{2}}$. Используя Упражнение \ref{exc:generator for set}, Утверждение \ref{prop:curry}, Упражнение \ref{exc:coprod} и тот факт, что 1+1=2, докажите, что эти два определения изоморфны, т.е. $\RR^{\ul{2}}\iso\RR\times\RR$.
+
+(Ответом к Упражнению \ref{exc:generator for set} является [любое множество с единственным элементом] $A=\singleton$: т.е. $\Hom_\Set(\singleton,X)\iso X$ для всех $X$.)
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
