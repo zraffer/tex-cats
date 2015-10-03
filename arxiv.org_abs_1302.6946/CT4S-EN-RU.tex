@@ -3440,7 +3440,7 @@ For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\P
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:power set}
- 
+Для любого множества $B$, определим {\em множество-степень $B$}\index{множество-степень}, обозначаемое $\PP(B)$,\index{символ!$\PP$} как множество всех подмножеств $B$.
 \end{definitionRUS}
 
 \begin{exerciseENG}\label{exc:size of power sets}~
@@ -3452,7 +3452,11 @@ For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\P
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:size of power sets}~
- 
+\sexc Сколько всего элементов в $\PP(\emptyset)$? 
+\next Сколько всего элементов в $\PP(\singleton)$? 
+\next Сколько всего элементов в $\PP(\{1,2,3,4,5,6\})$? 
+\next Появились ли у вас соображения по поводу названия «множество-степень»?
+\endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
@@ -3470,8 +3474,15 @@ Since $X$ contains all atoms (subsets of cardinality 1), we have $X_0\iso V$, an
 Since $X_0\iso V$, we may denote a simplicial complex $(V,X)$ simply by $X$.
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:simplicial complex}\index{simplicial complex}
- 
+\begin{definitionRUS}\label{def:simplicial complex}\index{симплициальный комплекс}
+Пусть $V$ — это множество, а $\PP(V)$ — его множество-степень. Подмножество $X\ss\PP(V)$ называется {\em замкнутым вниз} если, для каждого $u\in X$ и каждого $u'\ss u$ выполняется $u'\in X$. Мы говорим, что $X$ {\em содержит все атомы}, если для каждого $v\in V$ одноэлементное множество $\{v\}$ является элементом $X$. 
+
+{\em Симплициальный комплекс} это пара $(V,X)$, где $V$ — это множество и $X\ss\PP(V)$ — замкнутоее вниз подмножество, содержащее все атомы. Элементы $X$ называются {\em симплексами}.\index{симплекс} Любое подмножество $u\ss V$ имеет мощность $|u|$, откуда мы получаем функцию $X\to\NN$, переводящую каждый симплекс в его мощность. Множество симплексов мощности $n+1$ обозначается $X_n$, а каждый элемент $x\in X_n$ называется {\em $n$-симплексом}.%
+\footnote{Поначалу кажется неудобным, что множество подмножеств мощности 1 обозначается $X_0$, и т.д. Но это стандартное соглашение, поскольку, как мы увидим позже, $X_n$ содержит $n$-мерные симплексы.}
+Поскольку $X$ содержит все атомы (подмножества мощности 1), мы получаем $X_0\iso V$; элементы этого множества — 0-симплексы — мы будем называть также {\em вершинами}. Иногда мы также будем называть 1-симплексы {\em ребрами}.%
+\footnote{Причина, по которой мы записываем $X_0\iso V$, а не $X_0=V$ — то, что $X_0$ — это [не само $V$, а] множество одноэлементных подмножеств $V$. Так что, если $V=\{a,b,c\}$, то $X_0=\{\{a\},\{b\},\{c\}\}$. На самом деле это всего лишь педантичность.}
+
+Поскольку $X_0\iso V$, [т.е. $V$ полностью определяется по $X$, и поэтому его указание избыточно,] мы можем обозначать симплициальный комплекс $(V,X)$ просто как $X$.
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -3479,24 +3490,28 @@ Let $n\in\NN$ be a natural number and let $V=\ul{n+1}$. Define {\em the $n$-simp
 \end{exampleENG}
 
 \begin{exampleRUS}
- 
+Пусть $n\in\NN$ — натуральное число и $V=\ul{n+1}$. Определим {\em $n$-симплекс}, обозначаемый $\Delta^n$, как симплициальный комплекс $\PP(V)\ss\PP(V)$, т.е. все множество-степень, которое действительно замнуто вниз и содержит все атомы [как это требуется по определению]. 
 \end{exampleRUS}
 
 We can draw a simplicial complex $X$ by first putting all the vertices on the page as dots. Then for every $x\in X_1$, we see that $x=\{v,v'\}$ consists of 2 vertices, so we draw an edge connecting $v$ and $v'$. For every $y\in X_2$ we see that $y=\{w,w',w''\}$ consists of 3 vertices, so we draw a (filled-in) triangle connecting them. All three edges will be drawn too because $X$ is assumed to be downward closed.
 
- 
+Мы можем изобразить симплициальный комплекс $X$, нарисовав все вершины в виде точек. Потом для каждого $x\in X_1$ мы видим $x=\{v,v'\}$ состоит из 2 вершин, в результате мы нарисуем ребро, соединяющее $v$ и $v'$. Для каждого $y\in X_2$ мы видим, что $y=\{w,w',w''\}$ состоит из 3 вершин, поэтому нарисуем (сплошной) треугольник, соединяющий их. Все три ребра его уже нарисованы, поскольку $X$ предполагается замкнутым вниз.
 
 Thus, the 0-simplex $\Delta^0$, the 1-simplex $\Delta^1$, the 2-simplex $\Delta^2$, and the 3-simplex $\Delta^3$ are drawn here:
 \begin{center}
 \includegraphics[height=1.1in]{simplices}
 \end{center} 
 
- 
+Вот, здесь нарисованы 0-симплекс $\Delta^0$, 1-симплекс $\Delta^1$, 2-симплекс $\Delta^2$ и 3-симплекс $\Delta^3$:
+\begin{center}
+\includegraphics[height=1.1in]{simplices}
+\end{center} 
 
 The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or “gluing together” of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
 $$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
 
- 
+The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or “gluing together” of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
+$$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
 
 \begin{exerciseENG}
 Let $X$ be the following simplicial complex, so that $X_0=\{A,B,\ldots,M\}$. 
