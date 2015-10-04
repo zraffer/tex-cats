@@ -3490,7 +3490,11 @@ Let $n\in\NN$ be a natural number and let $V=\ul{n+1}$. Define {\em the $n$-simp
 \end{exampleENG}
 
 \begin{exampleRUS}
-Пусть $n\in\NN$ — натуральное число и $V=\ul{n+1}$. Определим {\em $n$-симплекс}, обозначаемый $\Delta^n$, как симплициальный комплекс $\PP(V)\ss\PP(V)$, т.е. все множество-степень, которое действительно замнуто вниз и содержит все атомы [как это требуется по определению]. 
+Пусть $n\in\NN$ — натуральное число и $V=\ul{n+1}$. Определим {\em стандартный $n$-симплекс},%
+\endnote{
+Автор называет $n$-симлексами одновременно и клетки симплициального  комплекса, и простейшие комплексы, порожденные одной клеткой. Чтобы не путать читателя, мы будем добавлять к последним слово {\em стандартный}. Заметим, что стандартный симплекс это не отдельный симплекс, а целый симплициальный комплекс.
+}
+обозначаемый $\Delta^n$, как симплициальный комплекс $\PP(V)\ss\PP(V)$, т.е. все множество-степень, которое действительно замнуто вниз и содержит все атомы [как это требуется по определению]. 
 \end{exampleRUS}
 
 We can draw a simplicial complex $X$ by first putting all the vertices on the page as dots. Then for every $x\in X_1$, we see that $x=\{v,v'\}$ consists of 2 vertices, so we draw an edge connecting $v$ and $v'$. For every $y\in X_2$ we see that $y=\{w,w',w''\}$ consists of 3 vertices, so we draw a (filled-in) triangle connecting them. All three edges will be drawn too because $X$ is assumed to be downward closed.
@@ -3502,7 +3506,7 @@ Thus, the 0-simplex $\Delta^0$, the 1-simplex $\Delta^1$, the 2-simplex $\Delta^
 \includegraphics[height=1.1in]{simplices}
 \end{center} 
 
-Вот, здесь нарисованы 0-симплекс $\Delta^0$, 1-симплекс $\Delta^1$, 2-симплекс $\Delta^2$ и 3-симплекс $\Delta^3$:
+Вот, здесь нарисованы стандартные 0-симплекс $\Delta^0$, 1-симплекс $\Delta^1$, 2-симплекс $\Delta^2$ и 3-симплекс $\Delta^3$:
 \begin{center}
 \includegraphics[height=1.1in]{simplices}
 \end{center} 
@@ -3510,7 +3514,7 @@ Thus, the 0-simplex $\Delta^0$, the 1-simplex $\Delta^1$, the 2-simplex $\Delta^
 The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or “gluing together” of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
 $$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
 
-The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or “gluing together” of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
+Список стандартных $n$-симплексов для различных $n$ ни в коем случае не исчерпывает все виды симплициальных комплексов. В общем случае симплициальный комплекс является объединением или, вернее, результатом склейки отдельных симплексов предписанным образом. Например, рассмотрим симплициальный комплекс $X$ с вершинами $X_0=\{1,2,3,4\},$ ребрами $X_1=\{\{1,2\},\{2,3\},\{2,4\}\}$ и без симплексов высшей размерности $X_2=X_3=\cdots=\emptyset$. Мы могли бы изобразить $X$ так:
 $$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
 
 \begin{exerciseENG}
@@ -3524,7 +3528,13 @@ Write out $X_2$ and $X_3$ (hint: the drawing of $X$ indicates that $X_3$ should 
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $X$ — это такой симплициальный комплекс, у которого $X_0=\{A,B,\ldots,M\}$. 
+\begin{center}
+\includegraphics[height=3in]{OlogNetwork5}
+\end{center} 
+В данном случае $X_1$ состоит из элементов вида $\{A,B\}$ и $\{D,K\}$, но не $\{D,J\}$. 
+
+Выпишите $X_2$ и $X_3$ (подсказка: чертеж $X$ показывает, $X_3$ будет иметь один элемент).
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -3535,7 +3545,10 @@ The 2-simplex $\Delta^2$ is drawn as a filled-in triangle with vertices $V=\{1,2
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Стандартный 2-симплекс $\Delta^2$ изображается сплошным треугольником с вершинами $V=\{1,2,3\}$. Имеется симплициальный комплекс $X=\partial\Delta^2$, который можно изобразить как пустой треугольник с тем же множеством вершин. 
+\sexc Нарисуйте $\Delta^2$ и $X$ рядом друг с другом, чтобы была видна разница между ними.
+\next Выпишите данные $X$ как симплициального комплекса. Другими словами, какими будут множества $X_0, X_1, X_2, X_3,\ldots$?
+\endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
