@@ -3623,7 +3623,7 @@ Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, 
 
 The classical definition of injections and surjections involves elements, which we give now. But a more robust notion involves all maps and will be given in Proposition \ref{prop:inj and surj}.
 
-
+Сейчас мы дадим классическое определение инъекций и сюръекций, которое использует элементы. Однако более «надежное» определение, использующее только отображения, будет представлено в Утверждении \ref{prop:inj and surj}.
 
 \begin{definitionENG}\label{def:inj,surj,bij}\index{function!injection}\index{function!surjection}\index{function!bijection}
 Let $f\taking X\to Y$ be a function. We say that $f$ is {\em surjective} if, for all $y\in Y$ there exists some $x\in X$ such that $f(x)=y$. We say that $f$ is {\em injective} if, for all $x\in X$ and all $x'\in X$ with $f(x)=f(x')$ we have $x=x'$.
@@ -3631,8 +3631,10 @@ Let $f\taking X\to Y$ be a function. We say that $f$ is {\em surjective} if, for
 A function that is both injective and surjective is called {\em bijective}.
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:inj,surj,bij}\index{function!injection}\index{function!surjection}\index{function!bijection}
- 
+\begin{definitionRUS}\label{def:inj,surj,bij}\index{функция!инъекция}\index{функция!сюръекция}\index{функция!биекция}
+Пусть $f\taking X\to Y$ — это функция. Мы называем $f$ {\em сюръективной}, если для всех $y\in Y$ существует $x\in X$ такой, что $f(x)=y$. Мы называем $f$ {\em инъективной}, если для всех $x\in X$ и $x'\in X$, из $f(x)=f(x')$ следует $x=x'$.
+
+Функция, одновременно инъективная и сюръективная, называется {\em биективной}.
 \end{definitionRUS}
 
 \begin{remarkENG}
@@ -3640,7 +3642,7 @@ It turns out that a function that is bijective is always an isomorphism and that
 \end{remarkENG}
 
 \begin{remarkRUS}
- 
+Оказывается, что биективная функция всегда является изоморфизмом, и что все изоморфизмы биективны. Здесь мы не доказываем этот факт, но делается это не сложно; см., например, \cite[Theorem 5.4]{Big}.
 \end{remarkRUS}
 
 \begin{definitionENG}[Monomorphisms, epimorphisms]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
@@ -3659,8 +3661,20 @@ $$
 if $h\circ f=h'\circ f$ then $h=h'$.
 \end{definitionENG}
 
-\begin{definitionRUS}[Мономорфизмы, эпиморфизмы]\label{def:mono, epi in set}\index{epimorphism!in $\Set$}\index{monomorphism!in $\Set$}
- 
+\begin{definitionRUS}[Мономорфизмы, эпиморфизмы]\label{def:mono, epi in set}\index{эпиморфизм!в $\Set$}\index{мономорфизм!в $\Set$}
+Пусть $f\taking X\to Y$ — это функция. 
+
+Мы говорим, что $f$ — {\em мономорфизм}, если для всех множеств $A$ и пар функций $g,g'\taking A\to X$,
+$$
+\xymatrix{A\ar@/^1pc/[r]^g\ar@/_1pc/[r]_{g'}&X\ar[r]^f&Y}
+$$
+из того, что $f\circ g=f\circ g'$ следует $g=g'$.
+
+Мы говорим, что $f$ — {\em эпиморфизм}, если для всех множеств $B$ и пар функций $h,h'\taking Y\to B$, 
+$$
+\xymatrix{X\ar[r]^f&Y\ar@/^1pc/[r]^h\ar@/_1pc/[r]_{h'}&B}
+$$
+из того, что $h\circ f=h'\circ f$ следует $h=h'$.
 \end{definitionRUS}
 
 \begin{propositionENG}\label{prop:inj and surj}
