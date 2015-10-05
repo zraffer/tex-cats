@@ -3623,7 +3623,7 @@ Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, 
 
 The classical definition of injections and surjections involves elements, which we give now. But a more robust notion involves all maps and will be given in Proposition \ref{prop:inj and surj}.
 
-Сейчас мы дадим классическое определение инъекций и сюръекций, которое использует элементы. Однако более «надежное» определение, использующее только отображения, будет представлено в Утверждении \ref{prop:inj and surj}.
+Сейчас мы дадим классическое определение инъекций и сюръекций, которое использует элементы. Кроме того ниже, в Утверждении \ref{prop:inj and surj}, будет представлено более «надежное» определение, использующее только отображения.
 
 \begin{definitionENG}\label{def:inj,surj,bij}\index{function!injection}\index{function!surjection}\index{function!bijection}
 Let $f\taking X\to Y$ be a function. We say that $f$ is {\em surjective} if, for all $y\in Y$ there exists some $x\in X$ such that $f(x)=y$. We say that $f$ is {\em injective} if, for all $x\in X$ and all $x'\in X$ with $f(x)=f(x')$ we have $x=x'$.
@@ -3682,7 +3682,7 @@ Let $f\taking X\to Y$ be a function. Then $f$ is injective if and only if it is 
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:inj and surj}
- 
+Пусть $f\taking X\to Y$ — это функция. Тогда $f$ инъективна, если и только если она является мономорфизмом; $f$ сюръективна, если и только если она является эпиморфизмом.
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -3694,7 +3694,11 @@ Finally, suppose that $f$ is surjective, and let $h,h'\taking Y\to B$ be functio
 \end{proofENG}
 
 \begin{proofRUS}
- 
+Если $f$ — это мономорфизм, то легко увидеть, что она инъективна, просто подставив $A=\singleton$. Предположим, что $f$ — инъективна и пусть $g,g'\taking A\to X$ — функции такие, что $f\circ g=f\circ g'$; начнем доказывать от противного и предположим, что $g\neq g'$. Тогда имеется некоторый элемент $a\in A$ такой, что $g(a)\neq g'(a)\in X$. Но тогда в силу инъективности $f(g(a))\neq f(g'(a))$, что противоречит условию $f\circ g=f\circ g'$.
+
+Предположим $f\taking X\to Y$ — это эпиморфизм и выберем некоторое $y_0\in Y$ (заметим, что если $Y$ пусто, то утверждение тривиальным образом верно). Пусть $h\taking Y\to\Omega$ обозначает характеристическую функцию подмножества $\{y_0\}\ss Y$, а $h'\taking Y\to\Omega$ — характеристическую функцию $\emptyset\ss Y$; заметим, что $h(y)=h'(y)$ для всех $y\neq y_0$. Тогда, поскольку $f$ — эпиморфизм и $h\neq h'$, выполняется $h\circ f\neq h'\circ f$, так что существует $x\in X$, для которого $h(f(x))\neq h'(f(x))$, откуда следует, что $f(x)=y_0$. Это доказывает, что $f$ сюръективна.
+
+Наконец, предположим, что $f$ сюръективна, а $h,h'\taking Y\to B$ — функции, для которых $h\circ f=h'\circ f$. Для каждого $y\in Y$, существует такой $x\in X$, что $f(x)=y$, поэтому $h(y)=h(f(x))=h'(f(x))=h'(y)$. Это доказывает, что $f$ — эпиморфизм.
 \end{proofRUS}
 
 \begin{propositionENG}\label{prop:pb preserve mono}
@@ -3706,7 +3710,11 @@ is a monomorphism.
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:pb preserve mono}
- 
+Пусть $f\taking X\to Y$ — это мономорфизм. Тогда для любой функции $g\taking A\to Y$ верхнее отображение $f'\taking X\times_YA\to A$ в диаграмме
+$$
+\xymatrix{X\times_YA\ar[r]^-{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\X\ar[r]_f&Y}
+$$
+является мономорфизмом.
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -3720,7 +3728,13 @@ But we assumed that $f$ is a monomorphism so this implies that $q=r$. By the uni
 \end{proofENG}
 
 \begin{proofRUS}
- 
+Чтобы показать, что $f'$ является мономорфизмом, возьмем произвольное множество $B$ и два отображения $m,n\taking B\to X\times_YA$ такие, что $f'\circ m=f'\circ n$; последнюю функцию обозначим $p:=f'\circ m\taking B\to A$. Теперь положим $q=g'\circ m$ и $r=g'\circ n$. Необходимая диаграмма выглядит так:
+$$
+\xymatrix{B\ar@<.5ex>[rr]^(.4)m\ar@<-.5ex>[rr]_(.4)n\ar@/^2pc/[rrr]^p\ar@<.5ex>[drr]^(.6)q\ar@<-.5ex>[drr]_(.6)r&&X\times_YA\ar[r]^{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\&&X\ar[r]_f&Y}
+$$
+Выполняются следующие равенства:
+\begin{align*}f\circ q=f\circ g'\circ m=g\circ f'\circ m=g\circ f'\circ n=f\circ g'\circ n=f\circ r\end{align*} 
+Но, поскольку $f$ — это мономорфизм, отсюда вытекает, что $q=r$. Благодаря универсальному свойству пулбеков, Лемма \ref{lemma:up for fp}, получаем $m=n$.
 \end{proofRUS}
 
 \begin{exerciseENG}
@@ -3728,7 +3742,7 @@ Show, in analogy to Proposition \ref{prop:pb preserve mono}, that pushouts prese
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+По аналогии с Утверждением \ref{prop:pb preserve mono} покажите, что пушаут сохраняет эпиморфизмы.
 \end{exerciseRUS}
 
 \begin{exampleENG}\label{exc:olog pullbacks}
@@ -3751,7 +3765,24 @@ $$
 \end{exampleENG}
 
 \begin{exampleRUS}\label{exc:olog pullbacks}
- 
+Предположим, в ологе имеется притягивающий квадрат
+$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$ 
+такой, что $f$ должна быть инъекцией, а $g$ — любым отображением.%
+\footnote{Конечно, эта диаграмма симметрична, так что те же идеи верны и в случае, если $g$ является инъекцией, а $f$ — любым отображением.} 
+В таком случае имеется прекрасная система меток для $f', g'$ и $X\times_ZY$. В частности:
+\begin{itemize}
+\item «является», «это» — это подходящие метки для $f'$, 
+\item метка для $g$ подходит и для $g'$,
+\item метка (метка $X$, «у которого», метка $g$, метка $Y$) подходит для $X\times_ZY$.
+\end{itemize}
+
+В качестве конкретного примера,%
+\endnote{TODO переделать, чтобы подходило под «рецепт»} 
+$$\xymatrix{
+\obox{X\times_ZY}{.9in}{ребро коровы}\LA{rr}{из}\LAL{d}{это}&&\obox{Y}{.4in}{корова}\LA{d}{это}\\
+\obox{X}{.3in}{ребро}\LAL{rr}{из}&&\obox{Z}{.6in}{животное}
+}
+$$
 \end{exampleRUS}
 
 \begin{corollaryENG}\label{cor:monos are pullbacks of true}
@@ -3762,7 +3793,11 @@ Let $i\taking A\to X$ be a monomorphism. Then there is a fiber product square of
 \end{corollaryENG}
 
 \begin{corollaryRUS}\label{cor:monos are pullbacks of true}
- 
+Пусть $i\taking A\to X$ — это мономорфизм. Тогда имеется притягивающий квадрат вида 
+\begin{align}\label{dia:monos are pbs of true}
+\xymatrix{A\ar[r]^{f'}\ar[d]_i\ullimit&\singleton\ar[d]^{True}\\X\ar[r]_f&\Omega,}
+\end{align}
+[который представляет каждый мономорфизм в виде пулбека отображения $True$.]
 \end{corollaryRUS}
 
 \begin{proofENG}
@@ -3770,7 +3805,7 @@ Let $X'\ss X$ denote the image of $i$ and let $f\taking X\to\Omega$ denote the c
 \end{proofENG}
 
 \begin{proofRUS}
- 
+Пусть $X'\ss X$ обозначает образ $i$, а $f\taking X\to\Omega$ — характеристическую функцию $X'\ss X$. Тогда легко проверить, что Диаграмма \ref{dia:monos are pbs of true} является соответствующим притягивающим квадратом.
 \end{proofRUS}
 
 \begin{exerciseENG}
@@ -3778,7 +3813,7 @@ Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the m
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Рассмотрим классификатор подобъектов $\Omega$, синглетон $\singleton$ и отображение $\singleton\To{True}\Omega$ из Определения \ref{def:subobject classifier}. Взгляните на диаграмму \ref{dia:monos are pbs of true} и, в духе Упражнения \ref{exc:olog pullbacks}, предложите метку для $\Omega$, для $\singleton$ и для $True$. Исходя из известных меток для $X$ и для $f$, предложите метку для $A$, для $i$ и для $f'$ так, чтобы естественый язык приближался к математическому.
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
