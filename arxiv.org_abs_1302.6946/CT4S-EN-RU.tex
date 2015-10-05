@@ -3532,9 +3532,9 @@ Write out $X_2$ and $X_3$ (hint: the drawing of $X$ indicates that $X_3$ should 
 \begin{center}
 \includegraphics[height=3in]{OlogNetwork5}
 \end{center} 
-В данном случае $X_1$ состоит из элементов вида $\{A,B\}$ и $\{D,K\}$, но не $\{D,J\}$. 
+В данном случае $X_1$ состоит из элементов вроде $\{A,B\}$ и $\{D,K\}$, но не $\{D,J\}$. 
 
-Выпишите $X_2$ и $X_3$ (подсказка: чертеж $X$ показывает, $X_3$ будет иметь один элемент).
+Выпишите $X_2$ и $X_3$ (подсказка: изображение $X$ показывает, $X_3$ будет иметь один элемент).
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -3545,7 +3545,7 @@ The 2-simplex $\Delta^2$ is drawn as a filled-in triangle with vertices $V=\{1,2
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Стандартный 2-симплекс $\Delta^2$ изображается сплошным треугольником с вершинами $V=\{1,2,3\}$. Имеется симплициальный комплекс $X=\partial\Delta^2$, который можно изобразить как пустой треугольник с тем же множеством вершин. 
+Стандартный 2-симплекс $\Delta^2$ изображается сплошным треугольником с вершинами $V=\{1,2,3\}$. Имеется симплициальный комплекс $X=\partial\Delta^2$, который можно изобразить как пустой треугольник с тем же множеством вершин [и ребер]. 
 \sexc Нарисуйте $\Delta^2$ и $X$ рядом друг с другом, чтобы была видна разница между ними.
 \next Выпишите данные $X$ как симплициального комплекса. Другими словами, какими будут множества $X_0, X_1, X_2, X_3,\ldots$?
 \endsexc
@@ -3559,8 +3559,8 @@ The 2-simplex $\Delta^2$ is drawn as a filled-in triangle with vertices $V=\{1,2
 Define the {\em subobject classifier} for $\Set$, denoted $\Omega$\index{a symbol!$\Omega$}, to be the set $\Omega:=\{True,False\}$, together with the function $\singleton\to\Omega$ sending the unique element to $True$.
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:subobject classifier}\index{subobject classifier!in $\Set$}
- 
+\begin{definitionRUS}\label{def:subobject classifier}\index{классификатор подобъектов!в $\Set$}
+Определим {\em классификатор подобъектов} в $\Set$, обозначаемый $\Omega$\index{символ!$\Omega$}, как множество $\Omega:=\{True,False\}$ вместе с функцией $\singleton\to\Omega$, переводящей единственный элемент в $True$. 
 \end{definitionRUS}
 
 \begin{propositionENG}\label{prop:characteristic function}
@@ -3568,7 +3568,7 @@ Let $B$ be a set. There is an isomorphism $$\phi\taking\Hom_\Set(B,\Omega)\To{\i
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:characteristic function}
- 
+Пусть $B$ — это множество. Имеется изоморфизм $$\phi\taking\Hom_\Set(B,\Omega)\To{\iso}\PP(B).$$
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -3582,21 +3582,26 @@ One checks easily that $\phi$ and $\psi$ are mutually inverse.
 \end{proofENG}
 
 \begin{proofRUS}
- 
+Для данной функции $f\taking B\to\Omega$ положим $\phi(f)=\{b\in B\|f(b)=True\}\ss B$. Теперь построим функцию $\psi\taking\PP(B)\to\Hom_\Set(B,\Omega)$, которая будет обратной к $\phi$. Для подмножества $B'\ss B$ определим $\psi(B')\taking B\to\Omega$ следующим боразом: 
+$$\psi(i)(b)=\begin{cases}
+True,&\tn{ если } b\in B',\\
+False,&\tn{ если } b\not\in B'.
+\end{cases}
+$$
+Легко проверить, что $\phi$ и $\psi$ взаимно обратны.
 \end{proofRUS}
 
 \begin{definitionENG}[Characteristic function]\index{characteristic function}\index{subset!characteristic function of}
-
 Given a subset $B'\ss B$, we call the corresponding function $B\to\Omega$ the {\em characteristic function of $B'$ in $B$.}
 \end{definitionENG}
 
-\begin{definitionRUS}[Characteristic function]\index{characteristic function}\index{subset!characteristic function of}
- 
+\begin{definitionRUS}[Характеристичекая функция]\index{характеристическая функция}\index{подмножество!характеристическая функция}
+Для данного подмножества $B'\ss B$ назовем соответствующую функцию $B\to\Omega$ {\em характеристической функцией $B'$ в $B$.}
 \end{definitionRUS}
 
 Let $B$ be any set and let $\PP(B)$ be its power set. By Proposition \ref{prop:characteristic function} there is a bijection between $\PP(B)$ and $\Omega^B$. Since $\Omega$ has cardinality 2, the cardinality of $\PP(B)$ is $2^{|B|}$, which explains the correct answer to Exercise \ref{exc:size of power sets}.
 
- 
+Пусть $B$ — любое множество, а $\PP(B)$ — его множество-степень. Согласно Утверждению \ref{prop:characteristic function}, имеется биекция между $\PP(B)$ и $\Omega^B$. Покольку $\Omega$ имеется мощность 2, мощность $\PP(B)$ равняется $2^{|B|}$, что является верным ответом к Упражнению \ref{exc:size of power sets}.
 
 \begin{exerciseENG}
 Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, and define $A''\ss A$ to be its complement, $A'':=A-A'$ (i.e. $a\in A''$ if and only if $a\not\in A'$). 
@@ -3606,7 +3611,10 @@ Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, 
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $f\taking A\to\Omega$ обозначает характеристическую функцию некоторого $A'\ss A$; определим $A''\ss A$ как дополнение $A'':=A-A'$ (т.е. $a\in A''$ ттт $a\not\in A'$). 
+\sexc Какой будет характеристическая функция $A''\ss A$? 
+\next Сможете ли вы выразить это в терминах некоторой функции $\Omega\to\Omega$?
+\endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -3615,7 +3623,7 @@ Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, 
 
 The classical definition of injections and surjections involves elements, which we give now. But a more robust notion involves all maps and will be given in Proposition \ref{prop:inj and surj}.
 
- 
+
 
 \begin{definitionENG}\label{def:inj,surj,bij}\index{function!injection}\index{function!surjection}\index{function!bijection}
 Let $f\taking X\to Y$ be a function. We say that $f$ is {\em surjective} if, for all $y\in Y$ there exists some $x\in X$ such that $f(x)=y$. We say that $f$ is {\em injective} if, for all $x\in X$ and all $x'\in X$ with $f(x)=f(x')$ we have $x=x'$.
