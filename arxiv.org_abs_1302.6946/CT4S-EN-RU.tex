@@ -3813,7 +3813,8 @@ Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the m
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Рассмотрим классификатор подобъектов $\Omega$, синглетон $\singleton$ и отображение $\singleton\To{True}\Omega$ из Определения \ref{def:subobject classifier}. Взгляните на диаграмму \ref{dia:monos are pbs of true} и, в духе Упражнения \ref{exc:olog pullbacks}, предложите метку для $\Omega$, для $\singleton$ и для $True$. Исходя из известных меток для $X$ и для $f$, предложите метку для $A$, для $i$ и для $f'$ так, чтобы естественый язык приближался к математическому.
+Рассмотрим классификатор подобъектов $\Omega$, синглетон $\singleton$ и отображение $\singleton\To{True}\Omega$ из Определения \ref{def:subobject classifier}. Взгляните на диаграмму \ref{dia:monos are pbs of true} и, в духе Упражнения \ref{exc:olog pullbacks}, предложите метку для $\Omega$, для $\singleton$ и для $True$. Исходя из известных меток для $X$ и для $f$, предложите метку для $A$, для $i$ и для $f'$ так, чтобы естественый язык приближался к математическому.%
+\endnote{Опять же, с данной задачей из-за гибкости русского могут быть проблемы...}
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -3822,7 +3823,7 @@ Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the m
 
 In this section we prepare ourselves for considering categories other than $\Set$, by looking at some categories related to $\Set$. 
 
- 
+В данном разделе мы подготовим себя к изучению отличных от $\Set$ категорий, рассмотрев некоторые категории, связанные с $\Set$. 
 
 %% Subsubsection %%
 
@@ -3830,11 +3831,11 @@ In this section we prepare ourselves for considering categories other than $\Set
 
 Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount of the document, we will not generally have $WC(X)=|X|$. The reason is that a set cannot contain the same element more than once, so words like “the” might be undercounted in $|X|$. A {\em multiset} is a set in which elements can be assigned a multiplicity, i.e. a number of times they are to be counted. 
 
- 
+Рассмотрим множество $X$ слов в заданном документе. Если $WC(X)$ это число слов в документе, мы обычно не получим $WC(X)=|X|$. Причиной является то, что множество не может содержать один и тот же элемент более одного раза, поэтому часто встречающиеся слова не будут правильно учтены в $|X|$. {\em Мультимножество} — это множество, в котором каждому элементу может быть присвоена кратность, т.е. число раз, которое он встретился при подсчете. 
 
 But if $X$ and $Y$ are multisets, what is the appropriate type of mapping from $X$ to $Y$? Since every set is a multiset (in which each element has multiplicity 1), let's restrict ourselves to notions of mapping that agree with the usual one on sets. That is, if multisets $X$ and $Y$ happen to be sets then our mappings $X\to Y$ should just be functions.
 
- 
+Однако, если $X$ и $Y$ — это мультимножества, то какой тип же подойдет нам в качестве отображений из $X$ в $Y$? Поскольку каждое множество является мультимножеством (в котором каждый элемент имеет кратность 1), давайте ограничимся только теми определениями отображений, что согласованы с известным понятием отображения между множествами. То есть, если мультимножества $X$ и $Y$ окажутся обычными множествами, то наши отображения $X\to Y$ должны оказаться обычными функциями. 
 
 \begin{exerciseENG}\label{exc:multiset 1}~
 \sexc Come up with some notion of mapping for multisets that generalizes functions when the notion is restricted to sets. 
@@ -3843,12 +3844,14 @@ But if $X$ and $Y$ are multisets, what is the appropriate type of mapping from $
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:multiset 1}~
- 
+\sexc Предложите понятие отображений между мультимножествами, которое превращается в понятие функций, если мы ограничиваемся множествами. 
+\next Предположим, что $X=(1,1,2,3)$ и $Y=(a,b,b,b)$, т.е. $X=\{1,2,3\}$, в котором $1$ имеет кратность $2$, а $Y=\{a,b\}$, в котором $b$ имеет кратность $3$. Перечислите все отображения $X\to Y$ согласно вашему определению.
+\endsexc
 \end{exerciseRUS}
 
 In Chapter \ref{chap:categories} we will be getting to the definition of category, and you can test whether your notion of mapping in fact defines a category. Here is my definition of mapping for multisets.
 
- 
+В Главе \ref{chap:categories} будет представлено определение категории, и тогда вы сможете проверить, соответствует ли ваше понятие отображений определению категории. Для сравнения, вот мое определение отображений мультимножеств.
 
 \begin{definitionENG}\label{def:multiset}
 A {\em multiset} is a sequence $X:=(E,B,\pi)$ where $E$ and $B$ are sets and $\pi\taking E\to B$ is a surjective function. We refer to $E$ as the set of {\em element instances of $X$}, we refer to $B$ as the set of {\em element names of $X$}, and we refer to $\pi$ as the {\em naming function for $X$}. Given an element name $x\in B$, let $\pi^\m1(x)\ss E$ be the preimage; the number of elements in $\pi^\m1(x)$ is called the {\em multiplicity of $x$}.
@@ -3860,7 +3863,12 @@ Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping f
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:multiset}
- 
+{\em Мультимножество} это последовательность $X:=(E,B,\pi)$, где $E$ и $B$ — это множества, а $\pi\taking E\to B$ — сюръективная функция. Мы будем называть $E$ множеством {\em экземпляров элементов $X$}, $B$ — множеством {\em имен элементов $X$}, а $\pi$ — {\em именующей функцией $X$}. Для заданного имени элемента $x\in B$, пусть $\pi^\m1(x)\ss E$ это прообраз; число элементов в $\pi^\m1(x)$ называется {\em кратностью $x$}.
+
+Предположим, что $X=(E,B,\pi)$ и $X'=(E',B',\pi')$ — это мультимножества. {\em Отображение из $X$ в $Y$}, обозначаемое $f\taking X\to Y$, это пара $(f_1,f_0)$ функций $f_1\taking E\to E'$ и $f_0\taking B\to B'$, для которых следующая диаграмма коммутирует:
+\begin{align}\label{dia:multiset map}
+\xymatrix{E\ar[r]^{f_1}\ar[d]_{\pi}&E'\ar[d]^{\pi'}\\B\ar[r]_{f_0}&B'.}
+\end{align}
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -3872,7 +3880,11 @@ Suppose that a pseudo-multiset is defined to be almost the same as a multiset, e
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Предположим, что {\em псевдомультимножество} определено почти так же, как мультимножество, за исключением того, что $\pi$ не обязательно должно быть сурьективным. 
+\sexc Запишите псевдомультимножество, не являющееся мультимножеством. 
+\next Опишите отличия этих понятий в терминах кратностей элементов. 
+\next Если не обращать внимания на сложность названий, то какое понятие, по вашему мнению, более полезно: мультимножество или псевдомультимножество? 
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -3884,7 +3896,11 @@ Consider the multisets described in Exercise \ref{exc:multiset 1}.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Рассмотрим мультимножества, описанные в Упражнении \ref{exc:multiset 1}. 
+\sexc Запишите каждое из них в виде $(E,B,\pi)$ согласно Определению \ref{def:multiset}. 
+\next В терминах того же определения, какими будут отображения $X\to Y$? 
+\next Если бы мы убрали требование, чтобы диаграмма \ref{dia:multiset map} коммутировала, сколько всего отображений $X\to Y$ было бы тогда?
+\endsexc
 \end{exerciseRUS}
 
 %\begin{exampleENG}[Using multisets to approach probability]
