@@ -3975,7 +3975,7 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can
 
 Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the “obvious thing”.
 
- 
+Пусть $A$ — это множество. Предположим, мы хотим сопоставить каждому элементу $a\in A$ некоторое множество $S_a$. Это называется $A$-индексированным множеством. Поскольку в теории категорий всегда интересуются определенным образом «узаконенными» отображениями между двумя отдельными структурами одного сорта, нам потребуется понятие $A$-индексированных отобржений; пойдем очевидным путем. 
 
 \begin{exampleENG}\label{ex:classroom seats}
 Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of people in classroom $c$, and let $S_c$ denote the set of seats (chairs) in classroom $c$. Then $P$ and $S$ are $C$-indexed sets. The appropriate kind of mapping between them respects the indexes. That is, a mapping of multi-sets $P\to S$ should, for each classroom $c\in C$, be a function $P_c\to S_c$.%
@@ -3983,15 +3983,16 @@ Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of pe
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:classroom seats}
- 
+Пусть $C$ — это множество аудиторий. Для каждого $c\in C$ пусть $P_c$ обозначает множество людей в аудитории $c$, а $S_c$ — множество сидений (стульев) в аудитории $c$. Тогда $P$ и $S$ будут $C$-индексированными множествами. Подходящий вид отображений между ними должен сохранять индексы. Другими словами, отображение $C$-индексированных множеств $P\to S$ должно для каждой аудитории $c\in C$ быть функцией $P_c\to S_c$.%
+\footnote{Если бы мы хотели позволить людям из любой аудитории выбирать стулья из любой [возможно, другой] аудитории, то теория категорий предложила бы нам считать $P$ и $S$ обычными множествами, забыв об их индексах. См. Раздел \ref{sec:left push}.}
 \end{exampleRUS}
 
 \begin{definitionENG}\label{def:indexed sets}\index{indexed set}
 Let $A$ be a set. An {\em $A$-indexed set} is a collection of sets $S_a$, one for each element $a\in A$; for now we denote this by $(S_a)_{a\in A}$. If $(S'_a)_{a\in A}$ is another $A$-indexed set, a {\em mapping of $A$-indexed sets from $(S_a)_{a\in A}$ to $(S'_a)_{a\in A}$}, denoted $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A}$$ is a collection of functions $f_a\taking S_a\to S'_a$, one for each element $a\in A$.
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:indexed sets}\index{indexed set}
- 
+\begin{definitionRUS}\label{def:indexed sets}\index{индексированное множество}
+Пусть $A$ — это множество. {\em $A$-индексированное множество} — это семейство множеств $S_a$, по одному для каждого элемента $a\in A$; мы будем обозначать это при помощи $(S_a)_{a\in A}$. Если $(S'_a)_{a\in A}$ — это другое $A$-индексированное множество, то {\em отображением $A$-индексированных множеств из $(S_a)_{a\in A}$ в $(S'_a)_{a\in A}$}, обозначаемым $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A},$$ является семейство функций $f_a\taking S_a\to S'_a$, по одному для каждого элемента $a\in A$.
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -3999,7 +4000,7 @@ Let $\singleton$ denote a one element set. What are $\singleton$-indexed sets an
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Пусть $\singleton$ обозначает множество с одним элементом. Какими будут $\singleton$-индексированные множества и отображения между ними?
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -4007,7 +4008,7 @@ There is a strong relationship between $A$-indexed sets and relative sets over $
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Имеется тесная связь между $A$-индексированными множествами и относительными множествами над $A$. Какая?
 \end{exerciseRUS}
 
 %%%%%%%% Chapter %%%%%%%%
