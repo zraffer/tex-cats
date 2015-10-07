@@ -3931,7 +3931,7 @@ Consider the multisets described in Exercise \ref{exc:multiset 1}.
 
 Let's continue with our ideas from multisets, but now suppose that we have a fixed set $B$ of names that we want to keep once and for all. Whenever someone discusses a set, each element must have a name in $B$. And whenever someone discusses a mapping, it must preserve the names. For example, if $B$ is the set of English words, then every document consists of an ordered set mapping to $B$ (e.g. $1\mapsto \tn{Suppose}, 2\mapsto\tn{that}, 3\mapsto\tn{we},$ etc.) A mapping from document $A$ to document $B$ would send each word found somewhere in $A$ to the same word found somewhere in $B$. This notion is defined carefully below.
 
- 
+Продолжим наши идеи о мультимножествах, но на этот раз предположим, что у нас есть заданное множество $B$ имен, которое мы зафиксируем раз и навсегда. Если обсуждается множество, то каждый его элемент должен иметь имя в $B$. А если обсуждается отображение, то оно должно сохранять имена. Например, если $B$ — это множество слов естественного языка, то каждый документ состоит из упорядоченного множества с отображением его в $B$ (например, $1\mapsto \tn{Предположим}, 2\mapsto\tn{что}, 3\mapsto\tn{мы}$ и т.д.) Отображение документа $A$ в документ $B$ должно переводить каждое слово из $A$ в такое же слово из $B$. Эти понятия подробно определены ниже.
 
 \begin{definitionENG}[Relative set]\label{def:relative sets}\index{relative set}
 Let $B$ be a set. A {\em relative set over $B$}, or simply a {\em set over $B$}, is a pair $(E,\pi)$ such that $E$ is a set and $\pi\taking E\to B$ is a function. A {\em mapping of relative sets over $B$}, denoted $f\taking (E,\pi)\to(E',\pi')$, is a function $f\taking E\to E'$ such that the triangle below commutes, i.e. $\pi=\pi'\circ f$,
@@ -3941,8 +3941,12 @@ $$
 $$
 \end{definitionENG}
 
-\begin{definitionRUS}[Relative set]\label{def:relative sets}\index{relative set}
- 
+\begin{definitionRUS}[Относительное множество]\label{def:relative sets}\index{относительное множество}
+Пусть $B$ — это множество. {\em Относительное множество над $B$} или просто {\em множество над $B$} — это пара $(E,\pi)$ такая, что $E$ — это множество, а $\pi\taking E\to B$ — функция. {\em Отображение относительных множеств над $B$}, обозначаемое $f\taking (E,\pi)\to(E',\pi')$, — это функция $f\taking E\to E'$ такая, что треугольник ниже коммутирует, т.е. $\pi=\pi'\circ f$,
+$$
+\xymatrix@=10pt{E\ar[rr]^f\ar[rdd]_{\pi}&&E'\ar[ldd]^{\pi'}\\\\&B
+}
+$$
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -3950,7 +3954,7 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can
 \end{exerciseENG}
 
 \begin{exerciseRUS}
- 
+Для данных множеств $X,Y,Z$ и функций $f\taking X\to Y$ и $g\taking Y\to Z$ мы можем образовать композицию, получив функцию $X\to Z$. Допустим, $B$ — это множество, а $(X,p), (Y,q),$ и $(Z,r)$ — относительные множества над $B$ и, кроме того, $f\taking (X,p)\to (Y,q)$ и $g\taking (Y,q)\to (Z,r)$ — отображения; имеется ли тогда осмысленное понятие композиции, которое давало бы в результате отображение относительных множеств $(X,p)\to (Z,r)$? Подсказка: нарисуйте диаграммы.
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
@@ -3960,7 +3964,9 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
- 
+\sexc Пусть $\singleton$ обозначает множество с одним элементом. В чем разница между множествами над $\singleton$ и просто множествами [если она есть]?
+\next Опишите относительные множества над $\emptyset$. Сколько их всего?
+\endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
