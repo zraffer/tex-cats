@@ -3835,7 +3835,7 @@ Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount o
 
 But if $X$ and $Y$ are multisets, what is the appropriate type of mapping from $X$ to $Y$? Since every set is a multiset (in which each element has multiplicity 1), let's restrict ourselves to notions of mapping that agree with the usual one on sets. That is, if multisets $X$ and $Y$ happen to be sets then our mappings $X\to Y$ should just be functions.
 
-Однако, если $X$ и $Y$ — это мультимножества, то какой тип же подойдет нам в качестве отображений из $X$ в $Y$? Поскольку каждое множество является мультимножеством (в котором каждый элемент имеет кратность 1), давайте ограничимся только теми определениями отображений, что согласованы с известным понятием отображения между множествами. То есть, если мультимножества $X$ и $Y$ окажутся обычными множествами, то наши отображения $X\to Y$ должны оказаться обычными функциями. 
+Однако, если $X$ и $Y$ — это мультимножества, то какой же тип подойдет нам в качестве отображений из $X$ в $Y$? Поскольку каждое множество является мультимножеством (в котором каждый элемент имеет кратность 1), давайте ограничимся только теми определениями отображений, что согласованы с обычным понятием отображения между множествами. То есть, если мультимножества $X$ и $Y$ окажутся обычными множествами, то наши отображения $X\to Y$ должны оказаться обычными функциями. 
 
 \begin{exerciseENG}\label{exc:multiset 1}~
 \sexc Come up with some notion of mapping for multisets that generalizes functions when the notion is restricted to sets. 
@@ -3931,7 +3931,7 @@ Consider the multisets described in Exercise \ref{exc:multiset 1}.
 
 Let's continue with our ideas from multisets, but now suppose that we have a fixed set $B$ of names that we want to keep once and for all. Whenever someone discusses a set, each element must have a name in $B$. And whenever someone discusses a mapping, it must preserve the names. For example, if $B$ is the set of English words, then every document consists of an ordered set mapping to $B$ (e.g. $1\mapsto \tn{Suppose}, 2\mapsto\tn{that}, 3\mapsto\tn{we},$ etc.) A mapping from document $A$ to document $B$ would send each word found somewhere in $A$ to the same word found somewhere in $B$. This notion is defined carefully below.
 
-Продолжим наши идеи о мультимножествах, но на этот раз предположим, что у нас есть заданное множество $B$ имен, которое мы зафиксируем раз и навсегда. Если обсуждается множество, то каждый его элемент должен иметь имя в $B$. А если обсуждается отображение, то оно должно сохранять имена. Например, если $B$ — это множество слов естественного языка, то каждый документ состоит из упорядоченного множества с отображением его в $B$ (например, $1\mapsto \tn{Предположим}, 2\mapsto\tn{что}, 3\mapsto\tn{мы}$ и т.д.) Отображение документа $A$ в документ $B$ должно переводить каждое слово из $A$ в такое же слово из $B$. Эти понятия подробно определены ниже.
+Продолжим наши идеи о мультимножествах, но на этот раз предположим, что у нас есть заданное множество имен $B$, которое мы зафиксируем раз и навсегда. Если обсуждается множество, то каждый его элемент должен иметь имя в $B$. Если же обсуждается отображение, то оно должно сохранять имена. Например, если $B$ — это множество слов естественного языка, то каждый документ состоит из упорядоченного множества с отображением его в $B$ (например, $1\mapsto \tn{Предположим}, 2\mapsto\tn{что}, 3\mapsto\tn{мы}$ и т.д.) Отображение документа $A$ в документ $B$ должно переводить каждое слово из $A$ в такое же слово из $B$. Эти понятия подробно определены ниже.
 
 \begin{definitionENG}[Relative set]\label{def:relative sets}\index{relative set}
 Let $B$ be a set. A {\em relative set over $B$}, or simply a {\em set over $B$}, is a pair $(E,\pi)$ such that $E$ is a set and $\pi\taking E\to B$ is a function. A {\em mapping of relative sets over $B$}, denoted $f\taking (E,\pi)\to(E',\pi')$, is a function $f\taking E\to E'$ such that the triangle below commutes, i.e. $\pi=\pi'\circ f$,
@@ -3975,7 +3975,7 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can
 
 Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the “obvious thing”.
 
-Пусть $A$ — это множество. Предположим, мы хотим сопоставить каждому элементу $a\in A$ некоторое множество $S_a$. Это называется $A$-индексированным множеством. Поскольку в теории категорий всегда интересуются определенным образом «узаконенными» отображениями между двумя отдельными структурами одного сорта, нам потребуется понятие $A$-индексированных отобржений; пойдем очевидным путем. 
+Пусть $A$ — это множество. Предположим, мы хотим сопоставить каждому элементу $a\in A$ некоторое множество $S_a$. Это называется $A$-индексированным множеством. Поскольку в теории категорий всегда интересуются определенным образом «узаконенными» отображениями между двумя отдельными структурами одного сорта, нам потребуется понятие $A$-индексированных отображений; пойдем очевидным путем. 
 
 \begin{exampleENG}\label{ex:classroom seats}
 Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of people in classroom $c$, and let $S_c$ denote the set of seats (chairs) in classroom $c$. Then $P$ and $S$ are $C$-indexed sets. The appropriate kind of mapping between them respects the indexes. That is, a mapping of multi-sets $P\to S$ should, for each classroom $c\in C$, be a function $P_c\to S_c$.%
@@ -3983,7 +3983,7 @@ Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of pe
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:classroom seats}
-Пусть $C$ — это множество аудиторий. Для каждого $c\in C$ пусть $P_c$ обозначает множество людей в аудитории $c$, а $S_c$ — множество сидений (стульев) в аудитории $c$. Тогда $P$ и $S$ будут $C$-индексированными множествами. Подходящий вид отображений между ними должен сохранять индексы. Другими словами, отображение $C$-индексированных множеств $P\to S$ должно для каждой аудитории $c\in C$ быть функцией $P_c\to S_c$.%
+Пусть $C$ — это множество аудиторий. Для каждого $c\in C$ пусть $P_c$ обозначает множество людей в аудитории $c$, а $S_c$ — множество сидений (стульев) в аудитории $c$. Тогда $P$ и $S$ будут $C$-индексированными множествами. Подходящий вид отображений между ними должен сохранять индексы. Другими словами, отображение $C$-индексированных множеств $P\to S$ [сопоставляющее каждому человеку его сидение] должно для каждой аудитории $c\in C$ быть функцией $P_c\to S_c$.%
 \footnote{Если бы мы хотели позволить людям из любой аудитории выбирать стулья из любой [возможно, другой] аудитории, то теория категорий предложила бы нам считать $P$ и $S$ обычными множествами, забыв об их индексах. См. Раздел \ref{sec:left push}.}
 \end{exampleRUS}
 
