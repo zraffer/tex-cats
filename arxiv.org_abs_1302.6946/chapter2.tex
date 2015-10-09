@@ -1,26 +1,33 @@
 % chapter2.tex
 
-\chapter{\caseENGRUS{The category of sets}{Категория множеств}}\label{chap:sets}
+\chapter{\caseENGRUS{The category of sets}{ / }{Категория множеств}}\label{chap:sets}
 
+\begin{blockENG}
 The theory of sets was invented as a foundation for all of mathematics. The notion of sets and functions serves as a basis on which to build our intuition about categories in general. In this chapter we will give examples of sets and functions and then move on to discuss commutative diagrams. At this point we can introduce ologs which will allow us to use the language of category theory to speak about real world concepts. Then we will introduce limits and colimits, and their universal properties. All of this material is basic set theory, but it can also be taken as an investigation of our first category, the {\em category of sets}, which we call $\Set$. We will end this chapter with some other interesting constructions in $\Set$ that do not fit into the previous sections.
+\end{blockENG}
 
+\begin{blockRUS}
 Теория множеств разрабатывалась в качестве оснований всей математики. Понятие множества и функции служат основой, на которой строится наша интуиция о категориях вообще. В этой главе мы дадим примеры множеств и функций и затем перейдем к обсуждению коммутативных диаграмм. К тому моменту мы сможем ввести ологи, которые позволят нам использовать язык теории категорий, чтобы говорить о понятиях реального мира. Затем мы введем пределы и копределы и их универсальные свойства. Весь этот материал входит в область элементарной теории множеств, но он может также рассматриваться и как исследование нашей первой категории, {\em категории множеств}, которую мы назовем $\Set$. Мы закончим эту главу некоторыми другими интересными конструкциями в $Set$, которые не подходят к предыдущим разделам.%
 \endnote{
 TODO ...(возможно, пара слов о логической парадигме более конкретно: нужны ли нам понятия о предикатах и кванторах?)...
 }
+\end{blockRUS}
 
 %%%%%% Section %%%%%%
 
-\section{\caseENGRUS{Sets and functions}{Множества и функции}}\index{set}\index{множество}
+\section{\caseENGRUS{Sets and functions}{ / }{Множества и функции}}\index{set}\index{множество}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Sets}{Множества}}
+\subsection{\caseENGRUS{Sets}{ / }{Множества}}
 
+\begin{blockENG}
 In this course I'll assume you know what a set is. We can think of a set $X$ as a collection of things $x\in X$, each of which is recognizable as being in $X$ and such that for each pair of named elements $x,x'\in X$ we can tell if $x=x'$ or not.%
 \footnote{Note that the symbol $x'$, read “x-prime”, has nothing to do with calculus or derivatives. It is simply notation that we use to name a symbol that is suggested as being somehow like $x$. This suggestion of kinship between $x$ and $x'$ is meant only as an aid for human cognition, and not as part of the mathematics.}
 The set of pendulums is the collection of things we agree to call pendulums, each of which is recognizable as being a pendulum, and for any two people pointing at pendulums we can tell if they're pointing at the same pendulum or not. 
+\end{blockENG}
 
+\begin{blockRUS}
 В этом курсе я буду предполагать, что вы знаете, что такое множество.%
 \endnote{
 Мы можем предложить читателю несколько книг начального уровня о теории множеств. 
@@ -34,13 +41,18 @@ The set of pendulums is the collection of things we agree to call pendulums, eac
 Мы можем думать о множестве $X$ как о совокупности вещей $x\in X$, для каждой из которых мы можем проверить, находится ли она в $X$, и такой, что для каждой пары именованных элементов $x,x'\in X$ мы можем сказать, $x=x'$ или нет.%
 \footnote{Заметим, что символ $x'$, читается «x-штрих», не имеет ничего общего с матанализом или производной. Это просто обозначение, которое мы используем, чтобы обозначить символ, в чем-то похожий на $x$. Такое предположение о родстве между $x$ и $x'$ имеет смысл только для целей удобства человеческого восприятия, а не как часть математики.}
 Множество маятников это совокупность вещей, которые мы условились называть маятниками, про каждый из которых мы можем проверить, что это действительно маятник, и для любых двух людей, указывающих на маятники, мы можем сказать, показывают ли они на один и тот же маятник или нет. 
+\end{blockRUS}
 
 \begin{figure}
 \begin{center}
 \includegraphics[height=2in]{aSet}
 \end{center}
+\begin{blockENG}
 \caption{A set $X$ with $9$ elements and a set $Y$ with no elements, $Y=\emptyset$.}
+\end{blockENG}
+\begin{blockRUS}
 \caption{Множество $X$ из $9$ элементов и множество $Y$ без элементов, $Y=\varnothing$.}
+\end{blockRUS}
 \end{figure}
 
 \begin{notationENG}\label{not:basic math notation}
@@ -49,14 +61,14 @@ $$\NN:=\{0,1,2,3,4,\ldots,877,\ldots\}.$$
 The symbol $\ZZ$\index{a symbol!$\ZZ$} denotes the set of integers, which contains both the natural numbers and their negatives, 
 $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
 \end{notationENG}
-\begin{notationRUS}\label{not:basic math notation}
 
+\begin{notationRUS}\label{not:basic math notation}
 Символ $\varnothing$\index{символ!$\varnothing$} обозначает множество без элементов. Символ $\NN$\index{символ!$\NN$} обозначает множество натуральных чисел, которые мы можем записать как 
 $$\NN:=\{0,1,2,3,4,\ldots,877,\ldots\}.$$
 Символ $\ZZ$\index{символ!$\ZZ$} обозначает множество целых чисел, которое содержит как положительные, так и отрицательные числа, 
 $$\ZZ:=\{\ldots,-551,\ldots,-2,-1,0,1,2,\ldots\}.$$ 
-
 \end{notationRUS}
+
 \begin{notationENG}\label{not:basic math notation}
 If $A$ and $B$ are sets, we say that $A$ is a {\em subset}\index{subset} of $B$, and write $A\ss B$, if every element of $A$ is an element of $B$. So we have $\NN\ss\ZZ$. Checking the definition, one sees that for any set $A$, we have (perhaps uninteresting) subsets $\emptyset\ss A$ and $A\ss A$. We can use {\em set-builder notation}\index{set!set builder notation} to denote subsets. For example the set of even integers can be written $\{n\in\ZZ\|n\tn{ is even}\}$. The set of integers greater than $2$ can be written in many ways, such as $$\{n\in\ZZ\|n>2\} \hsp\tn{or}\hsp\{n\in\NN\|n>2\}\hsp\tn{or}\hsp\{n\in\NN\|n\geq 3\}.$$
 \end{notationENG}
@@ -87,19 +99,27 @@ As you may have noticed, we use the colon-equals notation “$A:=XYZ$” to mean
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Functions}{Функции}}\label{sec:functions}
+\subsection{\caseENGRUS{Functions}{ / }{Функции}}\label{sec:functions}
 
+\begin{blockENG}
 If $X$ and $Y$ are sets, then a {\em function $f$ from $X$ to $Y$},\index{function} denoted $f\taking X\to Y$, is a mapping that sends each element $x\in X$ to an element of $Y$, denoted $f(x)\in Y$. We call $X$ the {\em domain}\index{function!domain} of the function $f$ and we call $Y$ the {\em codomain}\index{function!codomain} of $f$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Если $X$ и $Y$ — множества, то {\em функция $f$ из $X$ в $Y$}\index{функция}, обозначаемая $f\taking X\to Y$, это отображение, которое переводит каждый элемент $x\in X$ в элемент $Y$, обозначаемый $f(x)\in Y$. Мы называем $X$ {\em областью определения}\index{функция!область определения} (или просто {\em областью}) для функции $f$, а $Y$ — {\em областью значений}\index{функция!область значений} (или просто {\em кообластью}) для $f$.  
+\end{blockRUS}
 
 \begin{align}\label{dia:setmap}
 \parbox{2.3in}{\includegraphics[height=2in]{SetMap}}
 \end{align}
 
+\begin{blockENG}
 Note that for every element $x\in X$, there is exactly one arrow emanating from $x$, but for an element $y\in Y$, there can be several arrows pointing to $y$, or there can be no arrows pointing to $y$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Заметим, что для каждого элемента $x\in X$ имеется в точности одна стрелка, исходящая из $x$, в то же время для элемента $y\in Y$ может быть несколько стрелок, указывающих на $y$, или их вообще может не быть.
+\end{blockRUS}
 
 \begin{applicationENG}\label{app:force-extension}\index{materials!force-extension curves}
 In studying the mechanics of materials, one wishes to know how a material responds to tension. For example a rubber band responds to tension differently than a spring does. To each material we can associate a \href{http://en.wikipedia.org/wiki/Stress–strain_curve}{\text force-extension curve}, recording how much force the material carries when extended to various lengths. Once we fix a methodology for performing experiments, finding a material's force-extension curve would ideally constitute a function from the set of materials to the set of curves.%
@@ -116,7 +136,7 @@ Here is a simplified account of how the \href{http://en.wikipedia.org/wiki/Retin
 
 Let $PR$ denote the set of photoreceptor cells and let $RG$ denote the set of retinal ganglion cells. 
 \sexc According to the above account, does the connection pattern constitute a function $RG\to PR$, a function $PR\to RG$ or neither one? 
-\next Would you guess that the connection pattern that exists between other areas of the brain are “function-like”?
+\item Would you guess that the connection pattern that exists between other areas of the brain are “function-like”?
 \endsexc
 \end{exerciseENG}
 
@@ -125,7 +145,7 @@ Let $PR$ denote the set of photoreceptor cells and let $RG$ denote the set of re
 
 Пусть $PR$ обозначает множество фоторецепторов и пусть $RG$ обозначает множество ганглионарных нейронов сетчатки. 
 \sexc В соответствии с информацией выше, образует ли схема связей нейронов функцию $RG\to PR$, функцию $PR\to RG$ или ни одну из них? 
-\next Как вы думаете, могут ли схемы связей между другими областями мозга быть «функциеподобными»? 
+\item Как вы думаете, могут ли схемы связей между другими областями мозга быть «функциеподобными»? 
 \endsexc 
 \end{exerciseRUS}
 
@@ -146,32 +166,36 @@ As a matter of notation, we may sometimes say something like the following: Let 
 \begin{exerciseENG}
 Let $f\taking\NN\to\NN$ be the function that sends every natural number to its square, e.g. $f(6)=36$. First fill in the blanks below, then answer a question.
 \sexc $2\mapsto\ul{\hspace{.5in}}$
-\next $0\mapsto\ul{\hspace{.5in}}$
-\next $-2\mapsto\ul{\hspace{.5in}}$
-\next $5\mapsto\ul{\hspace{.5in}}$
-\next Consider the symbol $\to$ and the symbol $\mapsto$. What is the difference between how these two symbols are used in this book?
+\item $0\mapsto\ul{\hspace{.5in}}$
+\item $-2\mapsto\ul{\hspace{.5in}}$
+\item $5\mapsto\ul{\hspace{.5in}}$
+\item Consider the symbol $\to$ and the symbol $\mapsto$. What is the difference between how these two symbols are used in this book?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $f\taking\NN\to\NN$ — функция, переводящая каждое натуральное число в его квадрат, например $f(6)=36$. Заполните вначале пустые места ниже, затем ответьте на вопрос.
 \sexc $2\mapsto\ul{\hspace{.5in}}$
-\next $0\mapsto\ul{\hspace{.5in}}$
-\next $-2\mapsto\ul{\hspace{.5in}}$
-\next $5\mapsto\ul{\hspace{.5in}}$
-\next Рассмотрим символ $\to$ и символ $\mapsto$. В чем разница между тем, как эти два символа используются в данной книге?
+\item $0\mapsto\ul{\hspace{.5in}}$
+\item $-2\mapsto\ul{\hspace{.5in}}$
+\item $5\mapsto\ul{\hspace{.5in}}$
+\item Рассмотрим символ $\to$ и символ $\mapsto$. В чем разница между тем, как эти два символа используются в данной книге?
 \endsexc
 \end{exerciseRUS}
 
+\begin{blockENG}
 Given a function $f\taking X\to Y$, the elements of $Y$ that have at least one arrow pointing to them are said to be {\em in the image} of $f$; that is we have \index{image}
 \begin{align}\label{dia:image}
 \im(f):=\{y\in Y\| \exists x\in X \tn{ such that } f(x)=y\}.
 \end{align} 
+\end{blockENG}
 
+\begin{blockRUS}
 Для заданной функции $f\taking X\to Y$, те элементы $Y$, для которых имеется по крайней мере одна стрелка, указывающая на них, называются лежащими {\em в образе} $f$; получаем \index{образ}
 \begin{align}\label{dia:image}
 \im(f):=\{y\in Y\| \exists x\in X \tn{ такой, что } f(x)=y\}.
 \end{align}
+\end{blockRUS}
 
 \begin{exerciseENG}
 If $f\taking X\to Y$ is depicted by (\ref{dia:setmap}) above, write its image, $\im(f)$ as a set.
@@ -181,55 +205,71 @@ If $f\taking X\to Y$ is depicted by (\ref{dia:setmap}) above, write its image, $
 Для $f\taking X\to Y$, изображенной на (\ref{dia:setmap}) выше, запишите ее образ $\im(f)$ в виде множества.
 \end{exerciseRUS}
 
+\begin{blockENG}
 Given a function $f\taking X\to Y$ and a function $g\taking Y\to Z$, where the codomain of $f$ is the same set as the domain of $g$ (namely $Y$), we say that $f$ and $g$ are composable $$X\Too{f}Y\Too{g}Z.$$ The {\em composition of $f$ and $g$}\label{function composition}\index{function!composition}\index{composition!of functions}\index{a symbol!$\circ$} is denoted by $g\circ f\taking X\to Z$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Если заданы функция $f\taking X\to Y$ и функция $g\taking Y\to Z$, где кообласть $f$ совпадает с областью $g$ (то есть, $Y$), мы говорим, что $f$ и $g$ соединимы. $$X\Too{f}Y\Too{g}Z.$$ {\em Композиция $f$ и $g$}\label{function composition}\index{функция!композиция}\index{композиция!функций}\index{символ!$\circ$} обозначается $g\circ f\taking X\to Z$. 
+\end{blockRUS}
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[height=2in]{composition}
 \end{center}
+\begin{blockENG}
 \caption{Functions $f\taking X\to Y$ and $g\taking Y\to Z$ compose to a function $g\circ f\taking X\to Z$; just follow the arrows.}
+\end{blockENG}
+\begin{blockRUS}
 \caption{Из функций $f\taking X\to Y$ и $g\taking Y\to Z$, просто следуя по стрелочкам, получается композиция — функция $g\circ f\taking X\to Z$}
+\end{blockRUS}
 \end{figure}
 
+\begin{blockENG}
 Let $X$ and $Y$ be sets. We write $\Hom_\Set(X,Y)$\index{a symbol!$\Hom_\Set$} to denote the set of functions $X\to Y$.%
 \footnote{The strange notation $\Hom_\Set(-,-)$ will make more sense later, when it is seen as part of a bigger story.} 
 Note that two functions $f,g\taking X\to Y$ are equal\index{function!equality of} if and only if for every element $x\in X$ we have $f(x)=g(x)$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Пусть $X$ и $Y$ — множества. Мы записываем $\Hom_\Set(X,Y)$\index{символ!$\Hom_\Set$} для обозначения множества функций $X\to Y$.%
 \footnote{Странное обозначение $\Hom_\Set(-,-)$ обретет смысл позже, когда мы увидим его как часть большой картины.} 
 Заметим, что две функции $f,g\taking X\to Y$ считаются равными\index{функция!равенство}, если и только если для каждого элемента $x\in X$ верно равенство $f(x)=g(x)$. 
+\end{blockRUS}
 
 \begin{exerciseENG}
 Let $A=\{1,2,3,4,5\}$ and $B=\{x,y\}.$ 
 \sexc How many elements does $\Hom_\Set(A,B)$ have? 
-\next How many elements does $\Hom_\Set(B,A)$ have?
+\item How many elements does $\Hom_\Set(B,A)$ have?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $A=\{1,2,3,4,5\}$ и $B=\{x,y\}.$ 
 \sexc Сколько элементов имеется в $\Hom_\Set(A,B)$? 
-\next Сколько элементов имеется в $\Hom_\Set(B,A)$?
+\item Сколько элементов имеется в $\Hom_\Set(B,A)$?
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
 \sexc Find a set $A$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(X,A)$. Hint: draw a picture of proposed $A$'s and $X$'s.
-\next Find a set $B$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(B,X)$.
+\item Find a set $B$ such that for all sets $X$ there is exactly one element in $\Hom_\Set(B,X)$.
 \endsexc 
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Найти множество $A$ такое, что для всех множеств $X$ в $\Hom_\Set(X,A)$ имеется в точности один элемент. Подсказка: нарисовать картинку с пробными $A$ и $X$.
-\next Найти множество $B$ такое, что для всех множеств $X$ в $\Hom_\Set(B,X)$ имеется в точности один элемент.
+\item Найти множество $B$ такое, что для всех множеств $X$ в $\Hom_\Set(B,X)$ имеется в точности один элемент.
 \endsexc 
 \end{exerciseRUS}
 
+\begin{blockENG}
 For any set $X$, we define the {\em identity function on $X$}\index{function!identity}, denoted $\id_X\taking X\to X$, to be the function such that for all $x\in X$ we have $\id_X(x)=x$.\index{a symbol!$\id_X$}
+\end{blockENG}
 
+\begin{blockRUS}
 Для любого множества $X$, мы определим {\em тождественную функцию на $X$}\index{функция!тождественная}, обозначаемую $\id_X\taking X\to X$, как функцию такую, что для всех $x\in X$ верно равенство $\id_X(x)=x$.\index{символ!$\id_X$}
+\end{blockRUS}
 
 \begin{definitionENG}[Isomorphism]\label{def:iso in set} 
 Let $X$ and $Y$ be sets. A function $f\taking X\to Y$ is called an {\em isomorphism}\index{function!isomorphism}\index{isomorphism!of sets}, denoted $f\taking X\To{\iso}Y$, if there exists a function $g\taking Y\to X$ such that $g\circ f=\id_X$ and $f\circ g=\id_Y$. We also say that $f$ is {\em invertible} and we say that $g$ is {\em the inverse}\index{function!inverse} of $f$. If there exists an isomorphism $X\To\iso Y$ we say that $X$ and $Y$ are {\em isomorphic} sets and may write $X\iso Y$. \index{a symbol!$\iso$}
@@ -276,14 +316,14 @@ $$A\mapsto T, C\mapsto G, G\mapsto C, T\mapsto A.$$
 \begin{exerciseENG}
 Let $n\in\NN$ be a natural number and let $X$ be a set with exactly $n$ elements. 
 \sexc How many isomorphisms are there from $X$ to itself? 
-\next Does your formula from part a.) hold when $n=0$?
+\item Does your formula from part a.) hold when $n=0$?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $n\in\NN$ — натуральное число и $X$ — множество из ровно $n$ элементов. 
 \sexc Сколько изоморфизмов имеется из $X$ в себя? 
-\next Выполняется ли ваша формула из a.) для случая $n=0$?
+\item Выполняется ли ваша формула из a.) для случая $n=0$?
 \endsexc 
 \end{exerciseRUS}
 
@@ -359,31 +399,39 @@ Find a set $A$ such that for any set $X$ there is a isomorphism of sets $$X\iso\
 Найти множество $A$ такое, что для любого множества $X$ имеется изомрфизм множеств $$X\iso\Hom_\Set(A,X).$$ Подсказка: нарисуйте картинку с пробными $A$ и $X$.
 \end{exerciseRUS}
 
+\begin{blockENG}
 For any natural number $n\in\NN$, define a set 
 \begin{align}\label{dia:underline n}\index{a symbol!$\ul{n}$}
 \ul{n}:=\{1,2,3,\ldots,n\}.
 \end{align}
 So, in particular, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, and $\ul{0}=\emptyset$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Для любого натурального числа $n\in\NN$, определим множество 
 \begin{align}\label{dia:underline n}\index{символ!$\ul{n}$}
 \ul{n}:=\{1,2,3,\ldots,n\}.
 \end{align}
 Так что, в частности, $\ul{2}=\{1,2\}, \ul{1}=\{1\}$, и $\ul{0}=\varnothing$. 
+\end{blockRUS}
 
+\begin{blockENG}
 Let $A$ be any set. A function $f\taking\ul{n}\to A$ can be written as a sequence $$f=(f(1),f(2),\ldots,f(n)).$$
+\end{blockENG}
 
+\begin{blockRUS}
 Пусть $A$ — любое множество. Функция $f\taking\ul{n}\to A$ может быть записана как [конечная] последовательность $$f=(f(1),f(2),\ldots,f(n)).$$
+\end{blockRUS}
 
 \begin{exerciseENG}\label{exc:sequence}~
 \sexc Let $A=\{a,b,c,d\}$. If $f\taking\ul{10}\to A$ is given by $(a,b,c,c,b,a,d,d,a,b)$, what is $f(4)$?
-\next Let $s\taking\ul{7}\to\NN$ be given by $s(i)=i^2$. Write $s$ out as a sequence.
+\item Let $s\taking\ul{7}\to\NN$ be given by $s(i)=i^2$. Write $s$ out as a sequence.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:sequence}~
  \sexc Пусть $A=\{a,b,c,d\}$. Если $f\taking\ul{10}\to A$ задана как $(a,b,c,c,b,a,d,d,a,b)$, чему равен $f(4)$?
-\next Пусть $s\taking\ul{7}\to\NN$ задана как $s(i)=i^2$. Запишите $s$ в виде последовательности.
+\item Пусть $s\taking\ul{7}\to\NN$ задана как $s(i)=i^2$. Запишите $s$ в виде последовательности.
 \endsexc
 \end{exerciseRUS}
 
@@ -397,15 +445,15 @@ Let $A$ be a set and $n\in\NN$ a natural number. We say that $A$ is {\em has car
 
 \begin{exerciseENG}~
 \sexc Let $A=\{5,6,7\}$. What is $|A|$? 
-\next What is $|\NN|$? 
-\next What is $|\{n\in\NN\|n\leq 5\}|$?
+\item What is $|\NN|$? 
+\item What is $|\{n\in\NN\|n\leq 5\}|$?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Пусть $A=\{5,6,7\}$. Чему равно $|A|$? 
-\next Чему равно $|\NN|$? 
-\next Чему равно $|\{n\in\NN\|n\leq 5\}|$?
+\item Чему равно $|\NN|$? 
+\item Чему равно $|\{n\in\NN\|n\leq 5\}|$?
 \endsexc
 \end{exerciseRUS}
 
@@ -427,9 +475,10 @@ Suppose $f\taking A\to B$ is an isomorphism. If there exists natural numbers $m,
 
 %%%%%% Section %%%%%%
 
-\section{\caseENGRUS{Commutative diagrams}{Коммутативные диаграммы}}\label{sec:comm diag}
+\section{\caseENGRUS{Commutative diagrams}{ / }{Коммутативные диаграммы}}\label{sec:comm diag}
 \addtocounter{subsection}{1}\setcounter{subsubsection}{0}
 
+\begin{blockENG}
 At this point it is difficult to precisely define diagrams or commutative diagrams in general, but we can give the heuristic idea.%
 \footnote{We will define commutative diagrams precisely in Section \ref{sec:diagrams in a category}.}
 Consider the following picture: 
@@ -437,7 +486,9 @@ Consider the following picture:
 \xymatrix{A\ar[r]^f\ar[rd]_h&B\ar[d]^g\\&C}
 \end{align}
 We say this is a {\em diagram of sets}\index{diagram!in $\Set$} if each of $A,B,C$ is a set and each of $f,g,h$ is a function. We say this diagram {\em commutes}\index{commuting diagram}\index{diagam!commutes} if $g\circ f = h$. In this case we refer to it as a commutative triangle of sets.
+\end{blockENG}
 
+\begin{blockRUS}
 На данном этапе изложения трудно дать точное определение диаграммам или коммутативным диаграммам в общем виде, поэтому мы ограничимся пока эвристической идеей.%
 \footnote{Позднее, в Разделе \ref{sec:diagrams in a category} мы точно определим понятие коммутативной диаграммы.}
 Рассмотрим следующий рисунок: 
@@ -445,6 +496,7 @@ We say this is a {\em diagram of sets}\index{diagram!in $\Set$} if each of $A,B,
 \xymatrix{A\ar[r]^f\ar[rd]_h&B\ar[d]^g\\&C}
 \end{align}
 Мы называем его {\em диаграммой множеств}\index{диаграмма!в $\Set$}, если каждое из $A,B,C$ является множеством и каждое из $f,g,h$ — функцией. Мы называем эту диаграмму {\em коммутативной}\index{коммутативная диаграмма}\index{диаграмма!коммутирует}, если $g\circ f = h$. В данном случае мы называем ее коммутативным треугольником множеств.
+\end{blockRUS}
 
 \begin{applicationENG}
 \href{http://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology}{\text The central dogma of molecular biology} is that “DNA codes for RNA codes for protein”. That is, there is a function from DNA triplets to RNA triplets and a function from RNA triplets to amino acids. But sometimes we just want to discuss the translation from DNA to amino acids, and this is the composite of the other two. The commutative diagram is a picture of this fact.
@@ -454,13 +506,17 @@ We say this is a {\em diagram of sets}\index{diagram!in $\Set$} if each of $A,B,
 \href{https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%B4%D0%BE%D0%B3%D0%BC%D0%B0_%D0%BC%D0%BE%D0%BB%D0%B5%D0%BA%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B9_%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8}{\text Центральная догма молекулярной биологии} это «ДНК кодирует РНК, РНК кодирует белки». То есть, имеется функция из триплетов ДНК в триплеты РНК, а также функция из триплетов РНК в аминокислоты. Но иногда мы хотим обсуждать только трансляцию [биологический термин] из ДНК в аминокислоты, и эта функция является композицией первых двух. Данная коммутативная диаграмма является графическим изображением этого факта.
 \end{applicationRUS}
 
+\begin{blockENG}
 Consider the following picture:
 $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$
 We say this is a {\em diagram of sets} if each of $A,B,C,D$ is a set and each of $f,g,h,i$ is a function. We say this diagram {\em commutes} if $g\circ f=i\circ h$. In this case we refer to it as a commutative square of sets.
- 
+\end{blockENG}
+
+\begin{blockRUS}
 Рассмотрим следующий рисунок:
 $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$
 Мы называем его {\em диаграммой множеств}, если каждое из $A,B,C,D$ является множеством и каждая из $f,g,h,i$ — функцией. Мы говорим, что эта диаграмма {\em коммутирует}, если $g\circ f=i\circ h$. В данном случае мы называем это коммутативным квадратом множеств.
+\end{blockRUS}
 
 \begin{applicationENG}
 Given a physical system $S$, there may be two mathematical approaches $f\taking S\to A$ and $g\taking S\to B$ that can be applied to it. Either of those results in a prediction of the same sort, $f'\taking A\to P$ and $g'\taking B\to P$. For example, in \href{http://en.wikipedia.org/wiki/Hamiltonian_mechanics#As_a_reformulation_of_Lagrangian_mechanics}{\text mechanics} we can use either Lagrangian approach or the Hamiltonian approach to predict future states. To say that the diagram 
@@ -478,25 +534,32 @@ $$
 коммутирует, означает утверждать, что эти подходы приводят к одинаковым результатам.
 \end{applicationRUS}
 
+\begin{blockENG}
 And so on. Note that diagram (\ref{dia:triangle}) is considered to be the same diagram as each of the following:
 $$
 \xymatrix{A\ar[r]^f\ar[d]_h&B\ar[dl]^g\\C}\hspace{.8in}
 \xymatrix{A\ar[r]^f\ar@/_1pc/[rr]_h&B\ar[r]^g&C}\hspace{.8in}
 \xymatrix{B\ar[rd]^g\\&C\\A\ar[ru]_h\ar[uu]^f}$$
- 
+\end{blockENG}
+
+\begin{blockRUS}
 И так далее. Заметим, что диаграмма (\ref{dia:triangle}) считается совпадающей с каждой из приведенных ниже:
 $$
 \xymatrix{A\ar[r]^f\ar[d]_h&B\ar[dl]^g\\C}\hspace{.8in}
 \xymatrix{A\ar[r]^f\ar@/_1pc/[rr]_h&B\ar[r]^g&C}\hspace{.8in}
 \xymatrix{B\ar[rd]^g\\&C\\A\ar[ru]_h\ar[uu]^f}$$
+\end{blockRUS}
 
 %%%%%% Section %%%%%%
 
-\section{\caseENGRUS{Ologs}{Ологи}}\label{sec:ologs}\index{olog}\index{олог}
+\section{\caseENGRUS{Ologs}{ / }{Ологи}}\label{sec:ologs}\index{olog}\index{олог}
 
+\begin{blockENG}
 In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.
 \begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr an amino acid found in dairy}\LAL{dr}{is}&\obox{A}{.5in}{arginine}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{has}\LAL{l}{is}\LA{d}{is}&\obox{E}{.9in}{\rr an electrically-charged side chain}\LA{d}{is}\\&\obox{X}{.9in}{an amino acid}\LAL{dl}{has}\LA{dr}{has}\LA{r}{has}&\smbox{R}{a side chain}\\\mebox{N}{an amine group}&&\mebox{C}{a carboxylic acid}}}\end{align}  
+\end{blockENG}
 
+\begin{blockRUS}
 В данном курсе мы, насколько это возможно, привяжем математические идеи к прикладным примерам (применениям). Для этих целей мы введем ологи, которые будут служить мостом между математикой и различными системами понятий. Следующий материал взят из \cite{SK}, введения в ологи.%
 \endnote{
 TODO ...(ниже написан дикий ужас. переписать для инженеров)...
@@ -504,36 +567,53 @@ TODO ...(ниже написан дикий ужас. переписать дл�
 Казалось бы, мы только что рассмотрели {\em множества}, {\em функции} и {\em равенства}, и у читателя может возникнуть вопрос, зачем нам далее вводить типы, аспекты и факты, которые, как кажется на первый взгляд, дублируют эти понятия теории множеств, только в новой терминологии. На самом деле {\em типы} из ологов играют роль переменных, имеющих в качестве значений множества, {\em аспекты} — переменных-функций, а {\em факты} обозначают равенства с параметрами. Хорошо, это переменные, но зачем нам вводить такие переменные, если у нас уже есть математическая нотация, в которой мы можем обозначать переменные обычными буквами? Во-первых, типы ологов являются более содержательными обозначениями, чем буквы, которые для прикладных целей все равно пришлось бы обобщать. Во-вторых, весь олог имеет вид {\em одной} большой переменной, которой мы можем приписывать различные значения, отражающие состояния нашего знания о понятиях, охваченных ологом, аналогично тому, как схема базы данных подразумевает различные состояния хранимой в ней информации. Более формально, далее в книге автор пояснит, что олог — это небольшая категория, еще один пример центрального понятия данной книги. Кроме того, введение ологов связано с таким уровнем рассмотрения формальных теорий, как метатеория и теория моделей. В свете сказанного выше о формальных методах, на олог можно смотреть как на небольшую прикладную теорию (и категорные утверждения об категории-ологе — это утверждения метатеории), тогда как состояния олога — будучи функторами из категории-олога в категорию множеств — являются моделями нашей теории. Мы понимаем, что данное примечание забегает вперед, используя понятия, которые будут введены в книге позже, однако оно написано для того, чтобы дать общее представление о целях введения этих понятий.
 }
 \begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr аминокислота, находящаяся в молокопродуктах}\LAL{dr}{является}&\obox{A}{.5in}{аргинин}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{имеет}\LAL{l}{является}\LA{d}{является}&\obox{E}{.9in}{\rr электрически заряженная боковая цепь}\LA{d}{является}\\&\obox{X}{.9in}{аминокислота}\LAL{dl}{имеет}\LA{dr}{имеет}\LA{r}{имеет}&\smbox{R}{боковая цепь}\\\mebox{N}{аминогруппа}&&\mebox{C}{карбоновая кислота}}}\end{align}
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Types}{Типы}}\index{olog!types}\index{олог!типы}
+\subsection{\caseENGRUS{Types}{ / }{Типы}}\index{olog!types}\index{олог!типы}
 
+\begin{blockENG}
 A type is an abstract concept, a distinction the author has made.  We represent each type as a box containing a {\em singular indefinite noun phrase.}   Each of the following four boxes is a type: 
 \begin{align}\label{dia:types}\xymatrixnocompile{\fbox{a man}&\fbox{an automobile}\\\obox{}{1.5in}{a pair $(a,w)$, where $w$ is a woman and $a$ is an automobile}&\obox{}{1.5in}{a pair $(a,w)$ where $w$ is a woman and $a$ is a blue automobile owned by $w$}}\end{align}
+\end{blockENG}
 
+\begin{blockRUS}
 Тип это абстрактное понятие, основанное на понятном для его автора характеристическом критерии. Мы изображаем каждый тип прямоугольником, содержащим {\em словосочетание на основе существительного в единственном числе.} Каждый из следующих четырех прямоугольников является типом: 
 \begin{align}\label{dia:types}\xymatrixnocompile{\fbox{человек}&\fbox{автомобиль}\\\obox{}{1.5in}{пара $(a,w)$, где $w$ это женщина и $a$ это автомобиль}&\obox{}{1.5in}{пара $(a,w)$ где $w$ это женщина и $a$ это синий автомобиль, которым владеет $w$}}\end{align}
+\end{blockRUS}
 
+\begin{blockENG}
 Each of the four boxes in (\ref{dia:types}) represents a type of thing, a whole class of things, and the label on that box is what one should call {\em each example} of that class.  Thus \fakebox{a man} does not represent a single man, but the set of men, each example of which is called “a man”.  Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example.  
+\end{blockENG}
 
+\begin{blockRUS}
 Каждый из четырех прямоугольников в (\ref{dia:types}) изображает тип вещи, целый класс вещей, а метка на этом прямоугольнике это то, что называется {\em общим представителем} данного класса. Таким образом \fakebox{человек} изображает не единственного человека, а целое множество людей, общий представитель которого называется «человек».  Аналогично, нижний правый прямоугольник изображает абстрактный тип вещей, который, возможно, имеет более миллиона представителей, а метка на прямоугольнике обозначает общее имя для всех представителей.
+\end{blockRUS}
 
+\begin{blockENG}
 Typographical problems emerge when writing a text-box in a line of text, e.g. the text-box \fbox{a man} seems out of place here, and the more in-line text-boxes there are, the worse it gets.  To remedy this, I will denote types which occur in a line of text with corner-symbols; e.g. I will write \fakebox{a man} instead of \fbox{a man}.
+\end{blockENG}
 
+\begin{blockRUS}
 При печати прямоугольников с тестом внутри абзаца возникают проблемы типографского характера, например прямоугольник \fbox{человек} здесь выглядит выползающим за границы строки, и чем больше таких прямоугольников используется, тем хуже они выглядят. Чтобы исправить это, я буду обозначать типы, которые появляются внутри текста, символами-уголками; например, я буду писать \fakebox{человек} вместо \fbox{человек}.
+\end{blockRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Types with compound structures}{Составные типы}}
+\subsubsection{\caseENGRUS{Types with compound structures}{ / }{Составные типы}}
 
+\begin{blockENG}
 Many types have compound structures; i.e. they are composed of smaller units.  Examples include 
 \begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr a man and a woman}&\obox{}{1.3in}{\rr a food portion $f$ and a child $c$ such that $c$ ate all of $f$}&\labox{}{a triple $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}}\end{align} 
 It is good practice to declare the variables in a “compound type”, as I did in the last two cases of (\ref{dia:compound}).  In other words, it is preferable to replace the first box above with something like $$\obox{}{.8in}{a man $m$ and a woman $w$}\hsp\tn{or}\hsp\obox{}{1.1in}{\rr a pair $(m,w)$ where $m$ is a man and $w$ is a woman}$$ so that the variables $(m,w)$ are clear.
+\end{blockENG}
 
+\begin{blockRUS}
 Многие типы имеют составную структуру; то есть они составлены из меньших частей.  Примеры включают
 \begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr мужчина и женщина}&\obox{}{1.3in}{\rr порция еды $f$ и ребенок $c$ такие, что $c$ въел всю $f$}&\labox{}{тройка $(p,a,j)$, где $p$ это статья, $a$ это автор $p$, и $j$ это журнал, в котором $p$ была опубликована}}\end{align}  
 Хорошей практикой является объявлять пременные в «составном типе», как я это сделал в последних двух случаях (\ref{dia:compound}).  Другими словами, предпочтительно заменить первый прямоугольник выше на нечто вроде $$\obox{}{.8in}{мужчина $m$ и женщина $w$}\hsp\tn{либо}\hsp\obox{}{1.1in}{\rr пара $(m,w)$ где $m$ это мужчина и $w$ это женщина}$$ с тем, чтобы переменные $(m,w)$ были явными.
+\end{blockRUS}
 
 \begin{rulesENG}\label{rules:types}\index{olog!rules}
 A type is presented as a text box.  The text in that box should 
@@ -555,36 +635,57 @@ A type is presented as a text box.  The text in that box should
 \end{enumerate}
 \end{rulesRUS}
 
+\begin{blockENG}
 The first, second, and third rules ensure that the class of things represented by each box appears to the author as a well-defined set.  The fourth rule encourages good “readability” of arrows, as will be discussed next in Section \ref{sec:aspects}.  
+\end{blockENG}
 
+\begin{blockRUS}
 Первое, второе и третье правила обеспечивают, чтобы класс вещей, изображаемый каждым прямоугольником, представлялся бы автору в виде корректно определенного множества.  Четвертое правило способствует хорошей «читабельности» стрелок, что будет обсуждаться в Разделе \ref{sec:aspects}.
+\end{blockRUS}
 
+\begin{blockENG}
 I will not always follow the rules of good practice throughout this document.  I think of these rules being followed “in the background” but that I have “nicknamed” various boxes.  So \fakebox{Steve} may stand as a nickname for \fakebox{a thing classified as Steve} and \fakebox{arginine} as a nickname for \fakebox{a molecule of arginine}. However, when pressed, one should always be able to rename each type according to the rules of good practice.
+\end{blockENG}
 
+\begin{blockRUS}
 В данном документе я не всегда буду следовать своим рекомендациям. Я думаю об этих правилах где-то на фоне, но я также даю «псевдонимы» некоторым прямоугольникам.  Так \fakebox{Стив} может употребляться в качестве псевдонима для \fakebox{вещь, классифицируемая как Стив} и \fakebox{аргинин} — в качестве псевдонима для \fakebox{молекула аргинина}. Однако, в случае необходимости, всегда нужно уметь переименовывать каждый тип в соответствии с этими рекомендациями. 
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Aspects}{Аспекты}}\label{sec:aspects}\index{olog!aspects}\index{олог!аспекты}
+\subsection{\caseENGRUS{Aspects}{ / }{Аспекты}}\label{sec:aspects}\index{olog!aspects}\index{олог!аспекты}
 
+\begin{blockENG}
 An aspect of a thing $x$ is a way of viewing it, a particular way in which $x$ can be regarded or measured.  For example, a woman can be regarded as a person; hence “being a person” is an aspect of a woman.  A molecule has a molecular mass (say in daltons), so “having a molecular mass” is an aspect of a molecule.  In other words, by {\em aspect} we simply mean a function. The domain $A$ of the function $f\taking A\to B$ is the thing we are measuring, and the codomain is the set of possible “answers” or results of the measurement. 
 \begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{a woman}\LA{r}{is}&\fbox{a person}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{a molecule}\LA{rr}{has as molecular mass (Da)}&\hspace{.7in}&\fbox{a positive real number}}\end{align}
+\end{blockENG}
 
+\begin{blockRUS}
 Аспект вещи $x$ это способ смотреть на нее, подход, в рамках которого к $x$ определенным образом относятся или измеряют ее.  Например, к женщине можно относиться как к личности; таким образом, «являться личностью» это аспект женщины.  Молекула имеет молекулярную массу (скажем, в дальтонах), так что «иметь молекулярную массу» это аспект молекулы.  Другими словами, под {\em аспектом} мы просто подразумеваем функцию. Область определения $A$ функции $f\taking A\to B$ это вещь, которая подвергается измерению, а область значений это множество возможных «ответов» или результатов такого измерения. 
 \begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{женщина}\LA{r}{является}&\fbox{личность}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{молекула}\LA{rr}{имеет молекулярную массу (Da)}&\hspace{.7in}&\fbox{положительное действительное число}}\end{align} 
+\end{blockRUS}
 
+\begin{blockENG}
 So for the arrow in (\ref{dia:aspect 1}), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements).   We can imagine drawing an arrow from each dot in the “woman” set to a unique dot in the “person” set, just as in (\ref{dia:setmap}).  No woman points to two different people, nor to zero people — each woman is exactly one person — so the rules for a function are satisfied.  Let us now concentrate briefly on the arrow in (\ref{dia:aspect 2}).  The domain is the set of molecules, the codomain is the set $\RR_{>0}$ of positive real numbers.  We can imagine drawing an arrow from each dot in the “molecule” set to a single dot in the “positive real number” set.  No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass.  Note however that two different molecules can point to the same mass.
+\end{blockENG}
 
+\begin{blockRUS}
 Таким образом, для стрелки из (\ref{dia:aspect 1}), область это множество женщин (множество с предположительно 3 миллиардами элементов); кообласть это множество личностей (множество с предположительно 6 миллиардами элементов).  Мы можем вообразить стрелку из каждой точки в множестве «женщина» к единственной точке в множестве «личность», аналогично (\ref{dia:setmap}).  Ни одна женщина не укажет ни на двух различных людей, ни на ноль людей — каждая женщина является в точности одной личностью — так что правила функции удовлетворены.  Давайте теперь сосредоточимся ненадолго на стрелке из (\ref{dia:aspect 2}).  Область определения здесь это множество молекул, область значений — множество $\RR_{>0}$ положительных действительных чисел.  В данном случае мы можем вообразить стрелку из каждой точки в множестве «молекула» к единственной точке в множестве «положительное действительное число».  Ни одна молекула ни укажет на две различные массы, ни останется без массы: ведь каждая молекула имеет в точности одну массу.  Заметим, однако, что на одну массу могут указывать две различные молекулы.
+\end{blockRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Invalid aspects}{Некорректные аспекты}}\label{sec:invalid aspect}\index{olog!invalid aspects}\index{олог!некорректные аспекты}
+\subsubsection{\caseENGRUS{Invalid aspects}{ / }{Некорректные аспекты}}\label{sec:invalid aspect}\index{olog!invalid aspects}\index{олог!некорректные аспекты}
 
+\begin{blockENG}
 I tried above to clarify what it is that makes an aspect “valid”, namely that it must be a “functional relationship.”  In this subsection I will show two arrows which on their face may appear to be aspects, but which on closer inspection are not functional (and hence are not valid as aspects).  
- 
-Выше я попытался разъяснить, что делает аспект «корректным», в частности, что он должен быть «функциональным отношением».  В этом подразделе я покажу две стрелки, которые на первый взгляд могут показаться аспектами, но которые при ближайшем рассмотрении не являются функциональными (и поэтому некорректны в качестве аспектов).   
+\end{blockENG}
 
+\begin{blockRUS}
+Выше я попытался разъяснить, что делает аспект «корректным», в частности, что он должен быть «функциональным отношением».  В этом подразделе я покажу две стрелки, которые на первый взгляд могут показаться аспектами, но которые при ближайшем рассмотрении не являются функциональными (и поэтому некорректны в качестве аспектов).   
+\end{blockRUS}
+
+\begin{blockENG}
 Consider the following two arrows:
 \begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 1}
 \xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
@@ -594,7 +695,9 @@ Consider the following two arrows:
 \xymatrixnocompile{\fbox{a mechanical pencil}\LA{r}{uses}&\fbox{a piece of lead}}
 \end{align}  
 A person may have no children or may have more than one child, so the first arrow is invalid: it is not a function.  Similarly, if we drew an arrow from each mechanical pencil to each piece of lead it uses, it would not be a function.
+\end{blockENG}
 
+\begin{blockRUS}
 Рассмотрим следующие две стрелки:
 \begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 1}
 \xymatrixnocompile{\fbox{человек}\LA{r}{имеет}&\fbox{ребенок}}
@@ -604,6 +707,7 @@ A person may have no children or may have more than one child, so the first arro
 \xymatrixnocompile{\fbox{механический карандаш}\LA{r}{ использует }&\fbox{графитовый стержень}}
 \end{align}  
 Человек может не иметь детей или может иметь более одного ребенка, так что первая стрелка некорректна: это не функция.  Аналогично, если мы нарисуем стрелку от каждого механического карандаша к каждому графитовому стержню, который он использует, это не будет функцией. 
+\end{blockRUS}
 
 \begin{warningENG}\label{warn:worldview}\index{a warning!different worldviews}
 The author of an olog has a world-view, some fragment of which is captured in the olog.  When person A examines the olog of person B, person A may or may not “agree with it.”  For example, person B may have the following olog $$\fbox{\xymatrix{&\fbox{a marriage}\LA{dr}{ includes}\LAL{dl}{includes }\\\fbox{a man}&&\fbox{a woman}}}$$ which associates to each marriage a man and a woman.  Person A may take the position that some marriages involve two men or two women, and thus see B's olog as “wrong.”  Such disputes are not “problems” with either A's olog or B's olog, they are discrepancies between world-views.  Hence, throughout this paper, a reader R may see a displayed olog and notice a discrepancy between R's world-view and my own, but R should not worry that this is a problem.  This is not to say that ologs need not follow rules, but instead that the rules are enforced to ensure that an olog is structurally sound, rather than that it “correctly reflects reality,” whatever that may mean.
@@ -627,14 +731,18 @@ In keeping with Warning \ref{warn:worldview}, the arrows (\ref{dia:invalid 1}) a
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Reading aspects and paths as English phrases}{Прочтение аспектов и путей как фраз естественного языка}}
+\subsubsection{\caseENGRUS{Reading aspects and paths as English phrases}{ / }{Прочтение аспектов и путей как фраз естественного языка}}
 
+\begin{blockENG}
 Each arrow (aspect) $X\To{f} Y$ can be read by first reading the label on its source box (domain of definition) $X$, then the label on the arrow $f$, and finally the label on its target box (set of values) $Y$.  For example, the arrow \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{a book}\LA{rrr}{has as first author}&&&\smbox{}{a person}}}\end{align} is read “a book has as first author a person”.  
+\end{blockENG}
 
+\begin{blockRUS}
 Каждуя стрелку (аспект) $X\To{f} Y$ можно прочесть так: сначала читаем метку на прямоугольнике, из которого выходит стрелка, то есть область определения $X$, затем метку на стрелке $f$, и, наконец, метку на целевом прямоугольнике, то есть область значений $Y$ (возможно, в соответствующем падеже).  Например, стрелка \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{книга}\LA{rrr}{имеет первого автора}&&&\smbox{}{человек}}}\end{align} читается «книга имеет [в качестве] первого автора человека».%
 \endnote{
 TODO Попробовать поменять подобные [в качестве] на [с помощью].
 }
+\end{blockRUS}
 
 \begin{remarkENG}
 Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
@@ -644,40 +752,55 @@ Note that the map in (\ref{dia:first author}) is a valid aspect, but that a simi
 Заметим, что отображение в (\ref{dia:first author}) будет корректным аспектом; в то же время выглядящее в равной степени невинно отображение $\fakebox{книга}\To{\tn{имеет автора}}\fakebox{человек}$ не будет корректным, поскольку оно не является функциональным.  Авторы олога должны самостоятельно следить за подобного рода ошибками, ибо их легко пропустить и они могут испортить весь олог.
 \end{remarkRUS}
 
+\begin{blockENG}
 Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context.  We will discuss this more in Section \ref{sec:facts} but here is a common example from the way I write ologs. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align}  Neither arrow is readable by the protocol given above (e.g. “a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer” is not an English sentence), and yet it is obvious what each map means.  For example, given $(8,11)$ in $A$, arrow $x$ would yield $8$ and arrow $y$ would yield $11$.  The label $x$ can be thought of as a nickname for the full name “yields, via the value of $x$,” and similarly for $y$.  I do not generally use the full name for fear that the olog would become cluttered with text.
+\end{blockENG}
 
+\begin{blockRUS}
 Иногда метку на стрелке можно сократить или опустить совсем, если она очевидна из контекста.  Мы обсудим это подробнее в Разделе \ref{sec:facts}, а здесь приведем достаточно общий пример того, как я записываю ологи. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr пара $(x,y)$, где $x$ и $y$ это целые числа}\ar[dl]_x\ar[dr]^y\\\smbox{B}{целое число}&&\smbox{B}{целое число}}}\end{align}  Ни одна из стрелок не читается по описанному выше протоколу («пара $(x,y)$, где $x$ и $y$ это целые числа $x$ целое число» не будет корректным выражением естественного языка), и все же очевидно, что каждое отображение означает.  Например, если $(8,11)$ это $A$, то стрелка $x$ выдаст $8$, а стрелка $y$ выдаст $11$.  О метке $x$ можно думать, как о псевдониме для полного имени «взять и выдать $x$», и аналогично для $y$.  Как правило, я не использую полные имена во избежание захламления олога текстом. 
+\end{blockRUS}
 
+\begin{blockENG}
 One can also read paths through an olog by inserting the word “which” after each intermediate box.%
 \footnote{If the intended elements of an intermediate box are humans, it is polite to use “who” rather than “which”, and other such conventions may be upheld if one so desires.}
 For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read “a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman.”  The reader should read and understand the content of the bottom path, which associates to every child a year.  
+\end{blockENG}
 
+\begin{blockRUS}
 В ологе можно читать целые пути, вставляя слово «который» после каждого промежуточного прямоугольника.%
 %\footnote{Если элементами промежуточного типа являются одушевленные существа, более вежливо говорить «кто», а не «который»; при желании можно следовать этому правилу и другим подобным договоренностям.}
 Возьмем для примера следующий олог, который имеет два пути длины 3 (считаем стрелки в цепи): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{ребенок}\LA{r}{является}&\fbox{человек}\LA{rr}{имеет родителей}\LAL{dr}{имеет день рождения}&&\obox{}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\LA{r}{$w$}&\fbox{женщина}\\&&\fbox{дата}\LA{r}{включает}&\fbox{год}}}\end{align}  \normalsize Верхний путь читается «ребенок является человеком, который имеет [в качестве] родителей пару $(w,m)$, где $w$ это женщина и $m$ мужчина, из которой можно получить [в качестве] $w$ женщину.»  Читателю следует прочесть и разобраться в смысле нижнего пути, который сопоставляет каждому ребенку некоторый год.  
+\end{blockRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Converting non-functional relationships to aspects}{Преобразование нефункциональных отношений в аспекты}}\label{sec:relations}
+\subsubsection{\caseENGRUS{Converting non-functional relationships to aspects}{ / }{Преобразование нефункциональных отношений в аспекты}}\label{sec:relations}
 
+\begin{blockENG}
 There are many relationships that are not functional, and these cannot be considered aspects.  Often the word “has” indicates a relationship — sometimes it is functional as in $\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$, and sometimes it is not, as in $\fakebox{a father}\To{\tn{has}}\fakebox{a child}$. Obviously, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function $\fakebox{a child}\To{\tn{has}}\fakebox{a father}$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Имеется много отношений, не являющихся функциональными, и их нельзя рассматривать в качестве аспектов. Зачастую слово «имеет» означает отношение, и иногда оно функционально, как в $\fakebox{человек}\To{\tn{ имеет }}\fakebox{желудок}$, но иногда — нет, как в $\fakebox{отец}\To{\tn{имеет}}\fakebox{ребенок}$. Очевидно, отец может иметь более одного ребенка. Эту стрелку легко исправить, если понять, что на самом деле она должна идти в другую сторону: имеется функция $\fakebox{ребенок}\To{\tn{имеет}}\fakebox{отец}$. 
+\end{blockRUS}
 
+\begin{blockENG}
 What about $\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by $\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$.   This is ok, but the relationship between \fakebox{a car} and \fakebox{a set of cars} then becomes an issue to deal with later.  There is another way to indicate such “non-functional” relationships. In this case it would look like this:
 $$
 \fbox{\xymatrix{&\obox{}{1.15in}{a pair $(p,c)$ where $p$ is a person, $c$ is a car, and $p$ owns $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
 \obox{}{.5in}{a person}&&\obox{}{.3in}{a car}}}
 $$
 This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and the general situation looks like this $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  For example, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$ 
+\end{blockENG}
 
+\begin{blockRUS}
 Но как быть с $\fakebox{человек}\To{\tn{владеет}}\fakebox{автомобиль}$? Опять же, у человека может не быть автомобиля или может быть много автомобилей, но в этот раз и автомобиль может находиться во владении более одного человека. Минимальным исправлением будет замена $\fakebox{человек}\To{\tn{владеет}}\fakebox{множество автомобилей}$.  С такой стрелкой все в порядке, но отношение между \fakebox{автомобиль} и \fakebox{множество автомобилей} станет тогда проблемой, которой мы займемся позже.  Имеется другой способ обозначить подобные «нефункциональные» отношения. В данном случае он будет выглядеть так:
 $$
 \fbox{\xymatrix{&\obox{}{1.15in}{пара $(p,c)$, где $p$ это человек, $c$ это машина, и $p$ владеет $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
 \obox{}{.5in}{человек}&&\obox{}{.3in}{машина}}}
 $$
 Эта конструкция гарантирует, что все организовано должным образом. В общем случае отношения могут включать более двух типов, и общая ситуация будет выглядеть так: $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  Например, $$\fbox{\xymatrixnocompile{&\labox{R}{последовательность $(p,a,j)$, где $p$ это статья, $a$ это автор $p$, и $j$ это журнал, в котором $p$ опубликована}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{статья}&\smbox{A_2}{автор}&\smbox{A_3}{журнал}}}$$ 
- 
+\end{blockRUS}
 
 \begin{exerciseENG}
 On page \pageref{dia:invalid 1} we indicate a so-called invalid aspect, namely 
@@ -713,32 +836,49 @@ An aspect is presented as a labeled arrow, pointing from a source box to a targe
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Facts}{Факты}}\label{sec:facts}\index{olog!facts}\index{олог!факты}
+\subsection{\caseENGRUS{Facts}{ / }{Факты}}\label{sec:facts}\index{olog!facts}\index{олог!факты}
 
+\begin{blockENG}
 In this section I will discuss facts, which are simply “path equivalences” in an olog. It is the notion of path equivalences that make category theory so powerful. 
+\end{blockENG}
 
+\begin{blockRUS}
 В этом разделе мы обсудим факты, или попросту «эквивалентности путей» в ологе. Именно понятие эквивалентности путей делает теорию категорий такой мощной. 
+\end{blockRUS}
 
+\begin{blockENG}
 A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
+\end{blockENG}
 
+\begin{blockRUS}
 {\em Путь}\index{олог!путь} в ологе это связная направленная последовательность стрелок. Другими словами, любой путь начинается в прямоугольнике $B_0$, затем идет по стрелке, исходящей из $B_0$ (двигаясь в правильном направлении), из нее он переходит в следующий прямоугольник $B_1$, затем идет по любой стрелке, исходящей из $B_1$, и т.д., и наконец приходит в $B_n$ и останавливается там. Число стрелок — это {\em длина} пути. Таким образом, путь длины $1$ это единственная стрелка, а путь длины $0$ это отдельный прямоугольник. Мы называем $B_0$ {\em началом} и $B_n$ {\em концом} пути. 
+\end{blockRUS}
 
+\begin{blockENG}
 Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
 \begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say “a woman parent is equivalent to a mother.”  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
+\end{blockENG}
 
+\begin{blockRUS}
 Автор любого олога может объявить, что два выбранных пути в этом ологе эквивалентны.  Например, рассмотрим два пути из $A$ в $C$ в ологе
 \begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет родителей}\LAL{drr}{\parbox{.8in}{имеет мать}}&&\obox{B}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\ar@{}[dll]|(.4){\checkmark}\LA{d}{выдает $w$}\\&&\smbox{C}{женщина}}}\end{align} Носители естественного языка обычно знают, что женщина-родитель называется матерью, поэтому эти два пути $A\to C$ должны быть эквивалентны.  Более математический способ выразить то же самое — назвать треугольник в Ологе (\ref{olog:commute}) {\em коммутирующим}. То есть, эквивалентности путей это просто коммутативные диаграммы из Раздела \ref{sec:comm diag}. О примере выше мы кратко говорим «женщина-родитель эквивалентна матери.»  Чтобы заявить об этом, мы определяем диагональное отображение в (\ref{olog:commute}) как {\em композицию} горизонтального отображения и вертикального. 
+\end{blockRUS}
 
+\begin{blockENG}
 I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.%
 \footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
 
 Either way, it means that “$f$ then $g$” is equivalent to “$h$ then $i$”.  
+\end{blockENG}
 
+\begin{blockRUS}
 Обычно я предпочитаю обозначать коммутативность диаграммы при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{символ!$\simeq$}.%
 \footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{предупреждение!обозначение композиции} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит идущим задом-наперед.\index{композиция!классический порядок} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{композиция!диаграммный порядок} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
  
 В любом случае, это означает, что «$f$ потом $g$» эквивалентно «$h$ потом $i$». 
+\end{blockRUS}
 
+\begin{blockENG}
 Here is another, more scientific example:
 \begin{align*}
 \fbox{\xymatrix{
@@ -746,7 +886,9 @@ Here is another, more scientific example:
 &&\obox{}{.6in}{a protein}}}
 \end{align*}
 Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
+\end{blockENG}
 
+\begin{blockRUS}
 Вот другой, более научный пример:
 \begin{align*}
 \fbox{\xymatrix{
@@ -754,6 +896,7 @@ Note how this diagram gives us the established terminology for the various ways 
 &&\obox{}{.6in}{белок}}}
 \end{align*}
 Заметим, что данная диаграмма сообщает нам общепринятую терминологию касательно различных способов, которыми ДНК, РНК и белки участвуют в таком контексте. 
+\end{blockRUS}
 
 \begin{exerciseENG}\label{exc:family olog}
 Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
@@ -789,8 +932,9 @@ Create an olog about a scientific subject, preferably one you think about often.
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{A formula for writing facts as English}{Рецепт для записи фактов естественным языком}}\index{olog!facts in English}\index{олог!факты на естественном языке}
+\subsubsection{\caseENGRUS{A formula for writing facts as English}{ / }{Рецепт для записи фактов естественным языком}}\index{olog!facts in English}\index{олог!факты на естественном языке}
 
+\begin{blockENG}
 Every fact consists of two paths, say $P$ and $Q$, that are to be declared equivalent. The paths $P$ and $Q$ will necessarily have the same source, say $s$, and target, say $t$, but their lengths may be different, say $m$ and $n$ respectively.%
 \footnote{If the source equals the target, $s=t$, then it is possible  to have $m=0$ or $n=0$, and the ideas below still make sense.} 
 We draw these paths as 
@@ -809,7 +953,9 @@ Every part $\ell$ of an olog (i.e. every box and every arrow) has an associated 
 \nonumber&\tn{that we'll call } Q(x).\\
 \nonumber&\tn{Fact: whenever }x\tn{ is }\qtE{s},\tn{ we will have }P(x)=Q(x).
 \end{align}
+\end{blockENG}
 
+\begin{blockRUS}
 Каждый факт состоит из двух путей, допустим, $P$ и $Q$, которые мы намерены объявить эквивалентными. Пути $P$ и $Q$ обязательно должны иметь общее начало и конец, скажем, $s$ и $t$, однако их длины могут отличаться, скажем, $m$ и $n$ соответственно.%
 \footnote{Если начало совпадает с концом, $s=t$, то возможна ситуация $m=0$ или $n=0$, при этом все сказанное ниже остается осмысленным и в таком случае.} 
 Мы изображает пути так 
@@ -834,6 +980,7 @@ Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\a
 \nonumber&\tn{обозначим последнее }Q(x).\\
 \nonumber&\tn{Факт: для любого }\qtR{s}\;x\tn{ верно равенство }P(x)=Q(x).
 \end{align}
+\end{blockRUS}
 
 \begin{exampleENG}\label{ex:English fact}
 Consider the olog
@@ -894,57 +1041,69 @@ In the above olog (\ref{dia:phone paths}), suppose that the box \fakebox{an oper
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Images}{Образы}}\label{sec:images}\index{olog!images}\index{image!in olog}\index{олог!образы}\index{образ!в ологе}
+\subsubsection{\caseENGRUS{Images}{ / }{Образы}}\label{sec:images}\index{olog!images}\index{image!in olog}\index{олог!образы}\index{образ!в ологе}
 
+\begin{blockENG}
 In this section we discuss a specific kind of fact, generated by any aspect. Recall that every function has an image, meaning the subset of elements in the codomain that are “hit” by the function. For example the function $f(x)=2*x\taking \ZZ\to\ZZ$ has as image the set of all even numbers.
+\end{blockENG}
 
+\begin{blockRUS}
 В этом разделе мы обсудим особый вид фактов, порождаемых каждым аспектом. Напомним, что каждая функция имеет образ, под которым мы подразумеваем подмножество элементов в области значений, в которые можно «попасть» функцией. Например, для функции $f(x)=2*x\taking \ZZ\to\ZZ$ образом будет множество всех четных чисел.
+\end{blockRUS}
 
+\begin{blockENG}
 Similarly the set of mothers arises as is the image of the “has as mother” function, as shown below 
 $$
 \xymatrix{\obox{P}{.5in}{a person}\LAL{rd}{has}\LA{rr}{$\stackrel{f\taking P\to P}{\tn{has as mother}}$}&&\obox{P}{.5in}{a person}\\
 &\obox{M=\im(f)}{.6in}{a mother}\LAL{ur}{is}\ar@{}[u]|(.6){\checkmark}
 }$$
+\end{blockENG}
 
+\begin{blockRUS}
 Аналогично, множество матерей возникает как образ функции «имеет в качестве матери» как это показано ниже
 $$
 \xymatrix{\obox{P}{.5in}{человек}\LAL{rd}{имеет}\LA{rr}{$\stackrel{f\taking P\to P}{\tn{имеет мать}}$}&&\obox{P}{.5in}{человек}\\
 &\obox{M=\im(f)}{.6in}{мать}\LAL{ur}{является}\ar@{}[u]|(.6){\checkmark}
 }$$ 
+\end{blockRUS}
 
 \begin{exerciseENG}
 For each of the following types, write down a function for which it is the image, or say “not clearly an image type”:
 \sexc \fakebox{a book}
-\next \fakebox{a material that has been fabricated by a process of type $T$}
-\next \fakebox{a bicycle owner}
-\next \fakebox{a child}
-\next \fakebox{a used book}
-\next \fakebox{an inhabited residence}
+\item \fakebox{a material that has been fabricated by a process of type $T$}
+\item \fakebox{a bicycle owner}
+\item \fakebox{a child}
+\item \fakebox{a used book}
+\item \fakebox{an inhabited residence}
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Для каждого из следующих типов, запишите функцию, для которой оно будет образом, или скажите, что оно «не является очевидным типом-образом»:
 \sexc \fakebox{книга}
-\next \fakebox{материал, полученный обработкой типа $T$}
-\next \fakebox{владелец велосипеда}
-\next \fakebox{ребенок}
-\next \fakebox{использованная книга}
-\next \fakebox{обитаемое помещение}
+\item \fakebox{материал, полученный обработкой типа $T$}
+\item \fakebox{владелец велосипеда}
+\item \fakebox{ребенок}
+\item \fakebox{использованная книга}
+\item \fakebox{обитаемое помещение}
 \endsexc
 \end{exerciseRUS}
 
 %%%%%% Section %%%%%%
 
-\section{\caseENGRUS{Products and coproducts}{Произведения и копроизведения}}\label{sec:prods and coprods in set}
+\section{\caseENGRUS{Products and coproducts}{ / }{Произведения и копроизведения}}\label{sec:prods and coprods in set}
 
+\begin{blockENG}
 In this section we introduce two concepts that are likely to be familiar, although perhaps not by their category-theoretic names, product and coproduct. Each is an example of a large class of ideas that exist far beyond the realm of sets.
+\end{blockENG}
 
+\begin{blockRUS}
 В данном разделе мы введем два понятия, которые, скорее всего, известны читателю, хотя и, возможно, не под их теоретико-категорными именами: произведение и копроизведение. Каждое из них является представителем большого класса идей, выходящих далеко за рамки теории множеств. 
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Products}{Произведения}}\label{sec:products}\index{products!of sets}\index{произведения!множеств}
+\subsection{\caseENGRUS{Products}{ / }{Произведения}}\label{sec:products}\index{products!of sets}\index{произведения!множеств}
 
 \begin{definitionENG}
 Let $X$ and $Y$ be sets. The {\em product of $X$ and $Y$}, denoted $X\times Y$,\index{a symbol!$\times$} is defined as the set of ordered pairs $(x,y)$ where $x\in X$ and $y\in Y$. Symbolically, $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ There are two natural {\em projection functions} $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
@@ -1066,11 +1225,11 @@ Let $\ZZ$ denote the set of integers, and let $+\taking\ZZ\times\ZZ\to\ZZ$ denot
 \ZZ\times\ZZ\times\ZZ\ar[rr]^-{(a,b,c)\mapsto(a\cdot b,a\cdot c)}\ar[d]_{(a,b,c)\mapsto(a+b,c)}&\hsp&\ZZ\times\ZZ\ar[d]^{(x,y)\mapsto x+y}\\
 \ZZ\times\ZZ\ar[rr]_{(x,y)\mapsto xy}&&\ZZ}
 $$
-\next $$
+\item $$
 \xymatrix{
 \ZZ\ar[rr]^{x\mapsto (x,0)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
 $$
-\next$$
+\item$$
 \xymatrix{
 \ZZ\ar[rr]^{x\mapsto (x,1)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
 $$
@@ -1083,11 +1242,11 @@ $$
 \ZZ\times\ZZ\times\ZZ\ar[rr]^-{(a,b,c)\mapsto(a\cdot b,a\cdot c)}\ar[d]_{(a,b,c)\mapsto(a+b,c)}&\hsp&\ZZ\times\ZZ\ar[d]^{(x,y)\mapsto x+y}\\
 \ZZ\times\ZZ\ar[rr]_{(x,y)\mapsto xy}&&\ZZ}
 $$
-\next $$
+\item $$
 \xymatrix{
 \ZZ\ar[rr]^{x\mapsto (x,0)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
 $$
-\next$$
+\item$$
 \xymatrix{
 \ZZ\ar[rr]^{x\mapsto (x,1)}\ar[drr]_{\id_\ZZ}&&\ZZ\times\ZZ\ar[d]^{(a,b)\mapsto a\cdot b}\\&&\ZZ}
 $$
@@ -1096,7 +1255,7 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Universal property for products}{Универсальное свойство произведений}}\index{products!universal property of}\index{universal property!products}\index{произведения!универсальное свойство}\index{универсальное свойство!произведений}
+\subsubsection{\caseENGRUS{Universal property for products}{ / }{Универсальное свойство произведений}}\index{products!universal property of}\index{universal property!products}\index{произведения!универсальное свойство}\index{универсальное свойство!произведений}
 
 \begin{lemmaENG}[Universal property for product]\label{lemma:up for prod}
 Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes%
@@ -1172,13 +1331,13 @@ Hint: Do not be alarmed: this problem is a bit “recursive” in that you'll us
 
 \begin{exerciseENG}~
 \sexc Let $X$ and $Y$ be sets. Construct the “swap map” $s\taking X\times Y\to Y\times X$ using only the universal property for products. If $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$ are the projection functions, write $s$ in terms of the symbols $\qtE{\pi_1}, \qtE{\pi_2}, \qtE{(\ ,\ )},$ and $\qtE{\circ}$. 
-\next Can you prove that $s$ is a isomorphism using only the universal property for product?
+\item Can you prove that $s$ is a isomorphism using only the universal property for product?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Пусть $X$ и $Y$ — множества. Постройте «отображение перестановки» $s\taking X\times Y\to Y\times X$ используя только универсальное свойство произведений. Если $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$ — функции проектирования, запишите $s$ через символы $\qtR{\pi_1}, \qtR{\pi_2}, \qtR{\prodmap{-}{-}}$ и $\qtR{- \circ -}$. 
-\next Можете ли вы доказать, что $s$ — изоморфизм, используя только универсальное свойство произведения?
+\item Можете ли вы доказать, что $s$ — изоморфизм, используя только универсальное свойство произведения?
 \endsexc
 \end{exerciseRUS}
 
@@ -1218,21 +1377,29 @@ $$m\times n\taking X\times Y\to X'\times Y'.$$
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Ologging products}{Произведения в ологах}}\label{sec:ologging products}
+\subsubsection{\caseENGRUS{Ologging products}{ / }{Произведения в ологах}}\label{sec:ologging products}
 
+\begin{blockENG}
 Given two objects $c,d$ in an olog, there is a canonical label $\qtE{c\times d}$ for their product $c\times d$, written in terms of the labels $\qtE{c}$ and $\qtE{d}$. Namely, $$\qtE{c\times d}:=\tn{a pair }(x,y)\tn{ where }x\tn{ is }\qtE{c}\tn{ and }y\tn{ is }\qtE{d}.$$ The projections $c\from c\times d\to d$ can be labeled “yields, as $x$,” and “yields, as $y$,” respectively.
+\end{blockENG}
 
+\begin{blockRUS}
 Для данных двух объектов олога $c,d$, имеется каноническая метка $\qtR{c\times d}$ их произведения $c\times d$, сформулированная в терминах меток $\qtR{c}$ и $\qtR{d}$. А именно, $$\qtR{c\times d}:=\tn{пара }(x,y),\tn{ где }x\tn{ это }\qtR{c}\tn{ и }y\tn{ это }\qtR{d}.$$ Проекции $c\from c\times d\to d$ могут быть помечены «выдает в качестве $x$,» и “выдает в качестве $y$,” соответственно. 
+\end{blockRUS}
 
+\begin{blockENG}
 Suppose that $e$ is another object and $p\taking e\to c$ and $q\taking e\to d$ are two arrows. By the universal property of products (Lemma \ref{lemma:up for prod}), $p$ and $q$ induce a unique arrow $e\to c\times d$ making the evident diagrams commute. This arrow can be labeled
 \begin{center}
 yields, insofar as it $\qtR{p}\;\qtR{c}$ and $\qtR{q}\;\qtR{d}$, 
 \end{center}
+\end{blockENG}
 
+\begin{blockRUS}
 Предположим, $e$ — другой объект, а $p\taking e\to c$ и $q\taking e\to d$ две стрелки. Вследствие универсального свойства произведений (Лемма \ref{lemma:up for prod}), $p$ и $q$ порождают единственную стрелку $e\to c\times d$, делающую очевидные диаграммы коммутативными. Эта стрелка может быть помечена
 \begin{center}
 выдает $\qtR{c}\;\qtR{p}$ и $\qtR{d}\;\qtR{q}$, 
 \end{center}
+\end{blockRUS}
 
 \begin{exampleENG}
 Every car owner owns at least one car, but there is no obvious function $\fakebox{a car owner}\to\fakebox{a car}$ because he or she may own more than one. One good choice would be the car that the person drives most often, which we'll call his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products:
@@ -1254,7 +1421,7 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Coproducts}{Копроизведения}}\label{sec:coproducts}\index{coproducts!of sets}\index{копроизведение!множеств}
+\subsection{\caseENGRUS{Coproducts}{ / }{Копроизведения}}\label{sec:coproducts}\index{coproducts!of sets}\index{копроизведение!множеств}
 
 \begin{definitionENG}\label{def:coproduct}
 Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the “disjoint union” of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
@@ -1357,7 +1524,7 @@ TODO (дать наброски решений некоторых упражне
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Universal property for coproducts}{Универсальное свойство копроизведений}}\index{coproducts!universal property of}\index{копроизведения!универсальное свойство}
+\subsubsection{\caseENGRUS{Universal property for coproducts}{ / }{Универсальное свойство копроизведений}}\index{coproducts!universal property of}\index{копроизведения!универсальное свойство}
 
 \begin{lemmaENG}[Universal property for coproduct]\label{lemma:up for coprod}
 Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes
@@ -1487,15 +1654,19 @@ Following the section above, “Ologging products” page \pageref{sec:ologging 
 
 %%%%%% Section %%%%%%
 
-\section{\caseENGRUS{Finite limits in $\Set$}{Конечные пределы в $\Set$}}\label{sec:finite limits}
+\section{\caseENGRUS{Finite limits in $\Set$}{ / }{Конечные пределы в $\Set$}}\label{sec:finite limits}
 
+\begin{blockENG}
 In this section we discuss what are called {\em limits} of variously-shaped diagrams of sets. We will make all this much more precise when we discuss limits in arbitrary categories in Section \ref{sec:lims and colims in a cat}.
+\end{blockENG}
 
+\begin{blockRUS}
 В этом разделе мы обсудим то, что называется {\em пределами} различной формы для диаграмм множеств. Впоследствии мы проделаем это же значительно более точно при обсуждении пределов в произвольных категориях в Разделе \ref{sec:lims and colims in a cat}.
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Pullbacks}{Пулбеки и притягивающие квадраты}}
+\subsection{\caseENGRUS{Pullbacks}{ / }{Пулбеки и притягивающие квадраты}}
 
 \begin{definitionENG}[Pullback]\label{def:pullback}\index{pullback!of sets}
 Suppose given the diagram of sets and functions below.
@@ -1548,7 +1719,7 @@ What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y$?
 \sexc Draw a set $X$ with five elements and a set $Y$ with three elements. Color each element of $X$ and each element of $Y$ either red, blue, or yellow,%
 \footnote{You can use shadings rather than coloring, if coloring would be annoying.}
 and do so in a “random-looking” way. Considering your coloring of $X$ as a function $X\to C$, where $C=\{\tn{red, blue, yellow}\}$, and similarly obtaining a function $Y\to C$, draw the fiber product $X\times_CY$. Make sure it is colored appropriately.
-\next The universal property for products guarantees a function $X\times_CY\to X\times Y$, which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
+\item The universal property for products guarantees a function $X\times_CY\to X\times Y$, which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
 \endsexc
 \end{exerciseENG}
 
@@ -1556,7 +1727,7 @@ and do so in a “random-looking” way. Considering your coloring of $X$ as a f
 \sexc Нарисуйте множество $X$ из пяти элементов и множество $Y$ из трех элементов. Раскрасьте все элементы $X$ и $Y$ либо в красный, либо в синий, либо в желтый цвет,%
 \footnote{Можете их заштриховать, а не раскрашивать, если раскрашивать вам неудобно.}
 причем сделайте это «случайным» образом. Считая вашу раскраску $X$ функцией $X\to C$, где $C=\{\tn{красный, синий, желтый}\}$, и аналогичным образом получив функцию $Y\to C$, нарисуйте расслоенное произведение $X\times_CY$. Раскрасив его подходящим образом, убедитесь, что цвета пар совпадают.
-\next Универсальное свойство произведений обеспечивает нам функцию $X\times_CY\to X\times Y$, которая, можете мне поверить, будет инъекцией. Это означает, что рисунок расслоенного произведения, который вы сделали, может быть вставлен в сетку $5\times 3$; изобразите, пожалуйста, такую сетку и отметьте на ней подмножество.
+\item Универсальное свойство произведений обеспечивает нам функцию $X\times_CY\to X\times Y$, которая, можете мне поверить, будет инъекцией. Это означает, что рисунок расслоенного произведения, который вы сделали, может быть вставлен в сетку $5\times 3$; изобразите, пожалуйста, такую сетку и отметьте на ней подмножество.
 \endsexc
 \end{exerciseRUS}
 
@@ -1570,13 +1741,13 @@ Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\time
 
 \begin{exerciseENG}~
 \sexc Suppose that $Y=\emptyset$; what can you say about $X\times_ZY$? 
-\next Suppose now that $Y$ is any set but that $Z$ has exactly one element; what can you say about $X\times_ZY$?
+\item Suppose now that $Y$ is any set but that $Z$ has exactly one element; what can you say about $X\times_ZY$?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Предположим, что $Y=\varnothing$; что вы можете сказать о $X\times_ZY$? 
-\next Предположим теперь, что $Y$ — любое множество, а $Z$ имеет в точности один элемент; что вы можете сказать о $X\times_ZY$?
+\item Предположим теперь, что $Y$ — любое множество, а $Z$ имеет в точности один элемент; что вы можете сказать о $X\times_ZY$?
 \endsexc
 \end{exerciseRUS}
 
@@ -1587,7 +1758,7 @@ $$
 \xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
 \xymatrix{W_2\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_2}\\X\ar[r]_{f_2}&T}
 $$
-\next Interpret these sets in terms of the center of mass of MIT at the time of its founding.
+\item Interpret these sets in terms of the center of mass of MIT at the time of its founding.
 \endsexc
 \end{exerciseENG}
 
@@ -1598,17 +1769,21 @@ $$
 \xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
 \xymatrix{W_2\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_2}\\X\ar[r]_{f_2}&T}
 $$
-\next Интерпретируйте эти множества в терминах центра масс MIT в момент его основания.
+\item Интерпретируйте эти множества в терминах центра масс MIT в момент его основания.
 \endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Using pullbacks to define new ideas from old}{Использование пуллбеков для определения новый идей на основе старых}}
+\subsubsection{\caseENGRUS{Using pullbacks to define new ideas from old}{ / }{Использование пуллбеков для определения новый идей на основе старых}}
 
+\begin{blockENG}
 In this section we will see that the fiber product of a diagram can serve to define a new concept. For example, in (\ref{dia:bad battery}) we define what it means for a cellphone to have a bad battery, in terms of the length of time for which it remains charged. By being explicit, we reduce the chance of misunderstandings between different groups of people. This can be useful in situations like audits and those in which one is trying to reuse or understand data gathered by others.
+\end{blockENG}
 
+\begin{blockRUS}
 В этом разделе мы увидим, что расслоенное произведение диаграммы может послужить нам для того, чтобы определить новое понятие. Например, в (\ref{dia:bad battery}) мы определяем, что такое мобильный телефон с плохим аккумулятором, в терминах продолжительности времени, которое он остается заряженным. Выражая вещи более явно, мы уменьшаем шанс возникновения недопониманий между различными группами людей. Это может быть полезно в ситуациях вроде аудита, либо когда некто пытается использовать и понять данные, собранные другими.
+\end{blockRUS}
 
 \begin{exampleENG}
 Consider the following two ologs. The one on the right is the pullback of the one on the left. 
@@ -1641,9 +1816,9 @@ Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have b
 For each of the following, an author has proposed that the diagram on the right is a pullback. Do you think their labels are appropriate or misleading; that is, is the label on the upper-left box reasonable given the rest of the olog, or is it suspect in some way?
 \sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}
 \end{align*}
-\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr a dog whose owner is a woman}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}
+\item\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr a dog whose owner is a woman}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}
 \end{align*}
-\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
+\item\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
 \end{align*}
 \endsexc
 \end{exerciseENG}
@@ -1652,22 +1827,22 @@ For each of the following, an author has proposed that the diagram on the right 
 Для каждого из нижеследующих [ологов] автор заявляет, что диаграмма справа является притягивающим квадратом. Считаете ли вы метки подходящими или сбивающими с толку; другими словами, будет ли метка на верхнем левом прямоугольнике обоснованой остальной частью олога или же она некоторым образом вызывает подозрение?
 \sexc\begin{align*}\footnotesize\fbox{\xymatrix{&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{D}{цвет}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr человек, который любит синий цвет}\LAL{d}{это}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{D}{цвет}}}
 \end{align*}
-\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr собака, у которой владелец — женщина}\LAL{d}{это}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}
+\item\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr собака, у которой владелец — женщина}\LAL{d}{это}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}
 \end{align*}
-\next\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr подходит}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}
+\item\begin{align*}\footnotesize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}\hsp&\footnotesize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr подходит}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}
 \end{align*}
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
 \sexc Consider your olog from Exercise \ref{exc:family olog}. Are any of the commutative squares there actually pullback squares? 
-\next Now use ologs with products and pullbacks to define what a brother is and what a sister is (again in a human biological nuclear family), in terms of types such as \fakebox{an offspring of mating pair $(a,b)$}, \fakebox{a person}, \fakebox{a male person}, \fakebox{a female person}, and so on.
+\item Now use ologs with products and pullbacks to define what a brother is and what a sister is (again in a human biological nuclear family), in terms of types such as \fakebox{an offspring of mating pair $(a,b)$}, \fakebox{a person}, \fakebox{a male person}, \fakebox{a female person}, and so on.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Рассмотрите свой олог из Упражнения \ref{exc:family olog}. Будут ли какие-либо из коммутативных квадратов в нем притягивающими? 
-\next Теперь используйте ологи с произведениями и пулбеками, чтобы определить, что такое брат, и что такое сестра (опять же, в человеческой биологической нуклеарной семье), в терминах типов, таких как \fakebox{потомок супружеской пары $(a,b)$}, \fakebox{человек}, \fakebox{мужчина}, \fakebox{женщина}, и им подобных.
+\item Теперь используйте ологи с произведениями и пулбеками, чтобы определить, что такое брат, и что такое сестра (опять же, в человеческой биологической нуклеарной семье), в терминах типов, таких как \fakebox{потомок супружеской пары $(a,b)$}, \fakebox{человек}, \fakebox{мужчина}, \fakebox{женщина}, и им подобных.
 \endsexc
 \end{exerciseRUS}
 
@@ -1733,8 +1908,9 @@ Create an olog whose underlying shape is a commutative square. Now add the fiber
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Pasting diagrams for pullback}{Склеивание диаграмм для пуллбеков}}
+\subsubsection{\caseENGRUS{Pasting diagrams for pullback}{ / }{Склеивание диаграмм для пуллбеков}}
 
+\begin{blockENG}
 Consider the diagram drawn below, which includes a left-hand square, a right-hand square, and a big rectangle.
 $$
 \xymatrix{
@@ -1742,7 +1918,9 @@ A'\ar[r]^{f'}\ar[d]_i\ullimit&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
 A\ar[r]_f&B\ar[r]_g&C}
 $$
 The right-hand square has a corner symbol indicating that $B'\iso B\times_CC'$ is a pullback. But the corner symbol on the left is ambiguous; it might be indicating that the left-hand square is a pullback, or it might be indicating that the big rectangle is a pullback. It turns out that if $B'\iso B\times_CC'$ then it is not ambiguous because the left-hand square is a pullback if and only if the big rectangle is.
+\end{blockENG}
 
+\begin{blockRUS}
 Рассмотрим диаграмму, изображенную ниже, которая включает коммутативные квадраты слева, справа, а также [обрамляющий их] большой прямоугольник.
 $$
 \xymatrix{
@@ -1750,6 +1928,7 @@ A'\ar[r]^{f'}\ar[d]_i\ullimit&B'\ar[r]^{g'}\ar[d]_j\ullimit&C'\ar[d]^k\\
 A\ar[r]_f&B\ar[r]_g&C}
 $$
 Квадрат справа имеет символ-уголок, означающий, что $B'\iso B\times_CC'$ — пулбек. Но символ-уголок слева неоднозначен; он мог бы относиться и к левому квадрату, и к большому прямоугольнику. Однако оказывается, что если $B'\iso B\times_CC'$, то разночтений нет, потому что левый квадрат является притягивающим тогда и только тогда, когда таковым является большой прямоугольник.
+\end{blockRUS}
 
 \begin{propositionENG}\label{prop:pasting}
 Consider the diagram drawn below
@@ -1779,31 +1958,39 @@ We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. An e
 Сначала получим отображение $\phi\taking A\times_B(B\times_CC')\to A\times_CC'$. Элементы из $A\times_B(B\times_CC')$ имеют вид $(a,b,(b,c,c'))$ таких, что $f(a)=b, g(b)=c$ и $k(c')=c$. Но из этого следует, что $g\circ f(a)=c=k(c')$, так что мы можем положить $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'$. Теперь получим необходимое обратное отображение $\psi\taking A\times_CC'\to A\times_B(B\times_CC')$. Для данного $(a,c,c')$ с $g\circ f(a)=c=k(c')$, пусть $b=f(a)$; заметим, что $(b,c,c')$ — элемент $B\times_CC'$. Поэтому мы можем определить $\psi(a,c,c')=(a,b,(b,c,c'))$. Легко видеть, что $\phi$ и $\psi$ будут взаимно обратными.
 \end{proofRUS}
 
+\begin{blockENG}
 Proposition \ref{prop:pasting} can be useful in authoring ologs. For example, the type \fakebox{a cellphone that has a bad battery} is vague, but we can lay out precisely what it means using pullbacks:
 \small
 \begin{align}\label{dia:bad battery}
 \fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{a cellphone that has a bad battery}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{a bad battery}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{less than 1 hour}\ar[r]\ar[d]&\obox{G}{.5in}{between 0 and 1}\ar[d]\\\smbox{B}{a cellphone}\LA{r}{has}&\smbox{D}{a battery}\LA{r}{\parbox{.4in}{\rr remains charged for}}&\obox{F}{.6in}{a duration of time}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr in hours yields}}&\obox{H}{.6in}{a range of numbers}}}
 \end{align}\normalsize
+\end{blockENG}
 
+\begin{blockRUS}
 Утверждение \ref{prop:pasting} может оказаться полезным при создании ологов. Например, тип \fakebox{мобильный телефон с плохим аккумулятором} определен туманно, но мы можем точно сформулировать, что оно означает, используя пулбеки:
 \small
 \begin{align}\label{dia:bad battery}
 \fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{мобильный телефон с плохим аккумулятором}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{плохой аккумулятор}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{менее 1 часа}\ar[r]\ar[d]&\obox{G}{.5in}{между 0 и 1}\ar[d]\\\smbox{B}{мобильный телефон}\LA{r}{имеет}&\smbox{D}{аккумулятор}\LA{r}{\parbox{.4in}{\rr остается заряженным}}&\obox{F}{.6in}{промежуток времени}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr в часах}}&\obox{H}{.6in}{числовой промежуток}}}
 \end{align}\normalsize
+\end{blockRUS}
 
+\begin{blockENG}
 The category-theoretic fact described above says that since $A\iso B\times_DC$ and $C\iso D\times_FE$, it follows that $A\iso B\times_FE$.  That is, we can deduce the definition “a cellphone that has a bad battery is defined as a cellphone that has a battery which remains charged for less than one hour.”  
+\end{blockENG}
 
+\begin{blockRUS}
 Теоретико-категорный факт, описанный выше, говорит, что из $A\iso B\times_DC$ и $C\iso D\times_FE$ следует $A\iso B\times_FE$. Это значит, мы можем вывести такое определение «мобильный телефон с плохим аккумулятором определяется как мобильный телефон, имеющий аккумулятор, который остается заряженным менее одного часа.»
+\end{blockRUS}
 
 \begin{exerciseENG}~
 \sexc Create an olog that defines two people to be “of approximately the same height” if and only if their height difference is less than half an inch, using a pullback. Your olog can include the box \fakebox{a real number $x$ such that $-.5<x<.5$}. 
-\next In the same olog, make a box for those people whose height is approximately the same as a person named “The Virgin Mary”. You may need to use images, as in Section \ref{sec:images}.
+\item In the same olog, make a box for those people whose height is approximately the same as a person named “The Virgin Mary”. You may need to use images, as in Section \ref{sec:images}.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Придумать олог, который при помощи пулбека определяет, что два человека «имеют приблизительно однаковый рост», если и только если разность их роста меньше половины дюйма. Ваш олог может включать прямоугольник \fakebox{действительное число $x$ такое, что $-.5<x<.5$}. 
-\next В тот же олог добавьте прямоугольник для людей, чей рост приблизительно совпадает с ростом человека по имени «Дева Мария». Вам могут потребоваться образы функций, см. Раздел \ref{sec:images}.
+\item В тот же олог добавьте прямоугольник для людей, чей рост приблизительно совпадает с ростом человека по имени «Дева Мария». Вам могут потребоваться образы функций, см. Раздел \ref{sec:images}.
 \endsexc
 \end{exerciseRUS}
 
@@ -1849,7 +2036,7 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Spans, experiments, and matrices}{Развилки, эксперименты и матрицы}}
+\subsection{\caseENGRUS{Spans, experiments, and matrices}{ / }{Развилки, эксперименты и матрицы}}
 
 \begin{definitionENG}\label{def:span}\index{span}
 Given sets $A$ and $B$, a {\em span on $A$ and $B$} is a set $R$ together with functions $f\taking R\to A$ and $g\taking R\to B$. 
@@ -1927,18 +2114,31 @@ The information we get this way might be seen by some as unscientific, but it ce
 Информация, которую мы получим таким способом может показаться в чем-то ненаучной, но это именно тот вид информации, которую люди используют в бизнесе и в ежедневных бытовых вычислениях: мы получаем данные из многих источников и соединяем их вместе. Более того, этот способ научен в том смысле, что он воспроизводим. Способ, которым мы получили наши данные о зависимости $T$-$V$ совершенно прозрачен.
 \end{applicationRUS}
 
+\begin{blockENG}
 We can relate spans to matrices of natural numbers, and see a natural “categorification” of matrix addition and matrix multiplication. If our spans come from experiments as in Applications \ref{app:exp temp press} and \ref{app:exp temp press 2} the matrices involved will look like huge but sparse matrices. Let's go through that.
+\end{blockENG}
 
+\begin{blockRUS}
 Можно найти связи развилок и матриц из натуральных чисел и получить естественную «категорификацию» матричных сложения и умножения. Если взять наши развилки, полученные в экспериментах из Прикладных примеров \ref{app:exp temp press} и \ref{app:exp temp press 2}, то соответствующие матрицы будут огромными и разреженными. Изложим это подробнее.
+\end{blockRUS}
 
+\begin{blockENG}
 Let $A$ and $B$ be sets and let $A\from R\to B$ be a span. By the universal property of products, we have a unique map $R\To{p}A\times B$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Пусть $A$ и $B$ — множества, а $A\from R\to B$ — развилка. Согласно универсальному свойству произведений у нас имеется единственное отображение $R\To{p}A\times B$. 
+\end{blockRUS}
 
+\begin{blockENG}
 We make a matrix of natural numbers out of this data as follows. The set of rows is $A$, the set of columns is $B$. For elements $a\in A$ and $b\in B$, the $(a,b)$-entry is the cardinality of its preimage, $|p^\m1(a,b)|$, i.e. the number of elements in $R$ that are sent by $p$ to $(a,b)$. 
+\end{blockENG}
 
+\begin{blockRUS}
 Построим матрицу из натуральных чисел следующим образом. В качестве множества строк возьмем $A$, множества столбцов — $B$. Для элементов $a\in A$ и $b\in B$ ячейка $(a,b)$ будет содержать мощность прообраза $|p^\m1(a,b)|$, т.е. число элементов $R$ переходящих в $(a,b)$ при помощи $p$. 
+\end{blockRUS}
 
+\begin{blockENG}
 Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.%
 \footnote{
 $$\xymatrix{
@@ -1948,7 +2148,9 @@ A&R\sqcup R'\ar[l]\ar[r]&B\\
 $$
 }
 The matrix corresponding to this new span will be the sum of the matrices corresponding to the two previous spans out of which it was made.
+\end{blockENG}
 
+\begin{blockRUS}
 Предположим, даны две $(A,B)$-развилки, например $A\from R\to B$ и $A\from R'\to B$; о них можно думать, как об имеющих общую {\em размерность}, другими словами обе являются $|A|\times|B|$-матрицами. Мы можем взять несвязное объединение $R\sqcup R'$ и из универсального свойства копроизведений получить единственную развилку $A\from R\sqcup R'\to B$, делающую необходимую нам диаграмму коммутирующей.%
 \footnote{
 $$\xymatrix{
@@ -1958,10 +2160,15 @@ A&R\sqcup R'\ar[l]\ar[r]&B\\
 $$
 }
 Матрица, соответствующая этой новой развилке, будет суммой матриц, соответствующих развилкам, из которых мы ее получили.
+\end{blockRUS}
 
+\begin{blockENG}
 Given a span $A\from R\to B$ and a span $B\from S\to C$, the composite span can be formed as in Definition \ref{def:composite span}. It will correspond to the usual multiplication of matrices.
+\end{blockENG}
 
+\begin{blockRUS}
 Для данных развилок $A\from R\to B$ и $B\from S\to C$ можно образовать их композицию (см. Определение \ref{def:composite span}). Она будет соответствовать обычному умножению матриц.
+\end{blockRUS}
 
 \begin{constructionENG}\label{const:bipartite}\index{graph!bipartite}
 Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with each element of $A$ drawn as a dot on the left, each element of $B$ drawn as a dot on the right, and each element $r\in R$ drawn as an arrow connecting vertex $f(r)$ on the left to vertex $g(r)$ on the right.
@@ -1973,21 +2180,21 @@ Given a span $A\From{f} R\To{g} B$, one can draw a {\em bipartite graph} with ea
 
 \begin{exerciseENG}~
 \sexc Draw the bipartite graph (as in Construction \ref{const:bipartite}) corresponding to the span $T\From{f}E\To{g}P$ in Application \ref{app:exp temp press}.
-\next Now make up your own span $P\From{f'}E'\To{g'}V$ and draw it. Finally, draw the composite span below. 
-\next Can you say how the composite span graph relates to the graphs of its factors?
+\item Now make up your own span $P\From{f'}E'\To{g'}V$ and draw it. Finally, draw the composite span below. 
+\item Can you say how the composite span graph relates to the graphs of its factors?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Нарисуйте двудольный граф (как в Конструкции \ref{const:bipartite}), соответствующий развилке $T\From{f}E\To{g}P$ в Прикладном примере \ref{app:exp temp press}.
-\next Теперь придумайте свою собственную развилку $P\From{f'}E'\To{g'}V$ и нарисуйте ее. Наконец, нарисуйте ниже композицию [этих двух развилок]. 
-\next Сможете ли вы объяснить, как связан граф композиции развилок с графами ее сомножителей?
+\item Теперь придумайте свою собственную развилку $P\From{f'}E'\To{g'}V$ и нарисуйте ее. Наконец, нарисуйте ниже композицию [этих двух развилок]. 
+\item Сможете ли вы объяснить, как связан граф композиции развилок с графами ее сомножителей?
 \endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Equalizers and terminal objects}{Уравнители и терминальные объекты}}
+\subsection{\caseENGRUS{Equalizers and terminal objects}{ / }{Уравнители и терминальные объекты}}
 
 \begin{definitionENG}\label{def:equalizer}\index{equalizer}
 Suppose given two parallel arrows 
@@ -2039,27 +2246,31 @@ Find a universal property enjoyed by the equalizer of two arrows, and present it
 
 \begin{exerciseENG}\index{terminal object!in $\Set$}~
 \sexc A terminal set is a set $S$ such that for every set $X$, there exists a unique function $X\to S$. Find a terminal set. 
-\next Do you think that the notion {\em terminal set} belongs in this section (Section \ref{sec:finite limits})? How so? If products, pullbacks, and equalizers are all limits, what do limits have in common?
+\item Do you think that the notion {\em terminal set} belongs in this section (Section \ref{sec:finite limits})? How so? If products, pullbacks, and equalizers are all limits, what do limits have in common?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}\index{terminal object!in $\Set$}~
 \sexc Терминальное множество — это множество $S$ такое, что для любого множества $X$ существует единственная функция $X\to S$. Найдите хотя бы одно терминальное множество. 
-\next Как вы считаете, принадлежит ли понятие {\em терминального множества} данному разделу (Раздел \ref{sec:finite limits})? Почему? Если все — произведения, пулбеки и уравнители — являются пределами, то что общего у всех пределов?
+\item Как вы считаете, принадлежит ли понятие {\em терминального множества} данному разделу (Раздел \ref{sec:finite limits})? Почему? Если все — произведения, пулбеки и уравнители — являются пределами, то что общего у всех пределов?
 \endsexc
 \end{exerciseRUS}
 
 %%%%%% Section %%%%%%
 
-\section{\caseENGRUS{Finite colimits in $\Set$}{Конечные копределы в $\Set$}}\label{sec:finite colimits}
+\section{\caseENGRUS{Finite colimits in $\Set$}{ / }{Конечные копределы в $\Set$}}\label{sec:finite colimits}
 
+\begin{blockENG}
 This section will parallel Section \ref{sec:finite limits} — I will introduce several types of finite colimits and hope that this gives the reader some intuition about them, without formally defining them yet. Before doing so, I must define equivalence relations and quotients.
+\end{blockENG}
 
+\begin{blockRUS}
 Этот раздел воспроизводит структуру Раздела \ref{sec:finite limits} — я ввожу несколько видов конечных копределов в надежде, что это даст читателю интуитивное представление о них, без необходимости их пока формально определять. Однако прежде я введу отношения эквивалентности и фактор-множества.
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Background: equivalence relations}{Отступление: отношения эквивалентности}}\index{equivalence relation}\index{relation!equivalence}\index{отношение!эквивалентности}
+\subsection{\caseENGRUS{Background: equivalence relations}{ / }{Отступление: отношения эквивалентности}}\index{equivalence relation}\index{relation!equivalence}\index{отношение!эквивалентности}
 
 \begin{definitionENG}[Equivalence relations and equivalence classes]
 Let $X$ be a set. An {\em equivalence relation on $X$} is a subset $R\ss X\times X$ satisfying the following properties for all $x,y,z\in X$:
@@ -2108,16 +2319,16 @@ Let $\ZZ$ denote the set of integers. Define a relation $R\ss\ZZ\times\ZZ$ by $$
 \begin{exerciseENG}
 Let $X$ be the set of people on earth; define a binary relation $R\ss X\times X$ on $X$ as follows. For a pair $(x,y)$ of people, say $(x,y)\in R$ if $x$ spends a lot of time thinking about $y$. 
 \sexc Is this relation reflexive? 
-\next Is it symmetric? 
-\next Is it transitive?
+\item Is it symmetric? 
+\item Is it transitive?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $X$ — множество людей на земле; определим бинарное отношение $R\ss X\times X$ на $X$ следующим образом. Для пары людей $(x,y)$ будем считать, что $(x,y)\in R$, если $x$ проводит много времени, думая об $y$. 
 \sexc Будет ли это отношение рефлексивным? 
-\next Будет ли оно симметричным? 
-\next Будет ли оно транзитивным?
+\item Будет ли оно симметричным? 
+\item Будет ли оно транзитивным?
 \endsexc
 \end{exerciseRUS}
 
@@ -2144,16 +2355,16 @@ Given a partition of $X$, we define an equivalence relation $\sim$ on $X$ by say
 \begin{exerciseENG}
 Let $X$ and $B$ be sets and let $f\taking X\to B$ be a function. Define a subset $R\ss X\times X$ by $$R=\{(x,y)\|f(x)=f(y)\}.$$ 
 \sexc Is $R$ an equivalence relation? 
-\next Are all equivalence relations on $X$ obtainable in this way (as the fibers of some function having domain $X$)?
-\next Does this viewpoint on equivalence classes relate to that of Example \ref{ex:partition}?
+\item Are all equivalence relations on $X$ obtainable in this way (as the fibers of some function having domain $X$)?
+\item Does this viewpoint on equivalence classes relate to that of Example \ref{ex:partition}?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $X$ и $B$ — это множество, а $f\taking X\to B$ — функция. Определим подмножество $R\ss X\times X$ как $$R=\{(x,y)\|f(x)=f(y)\}.$$ 
 \sexc Будет ли $R$ отношением эквивалентности? 
-\next Можно ли все отношения эквивалентности на $X$ получить таким же способом (как «слои» некоторой функции с областью определения $X$)?
-\next Связана ли эта точка зрения на классы эквивалентности с Примером \ref{ex:partition}?
+\item Можно ли все отношения эквивалентности на $X$ получить таким же способом (как «слои» некоторой функции с областью определения $X$)?
+\item Связана ли эта точка зрения на классы эквивалентности с Примером \ref{ex:partition}?
 \endsexc
 \end{exerciseRUS}
 
@@ -2220,36 +2431,36 @@ $$S=R_2\cup\{(x,z)\|(x,y)\in R_2, \tn{ и } (y,z)\in R_2\}.$$
 \begin{exerciseENG}
 Consider the set $\RR$ of real numbers. Draw the coordinate plane $\RR\times\RR$, give it coordinates $x$ and $y$. A binary relation on $\RR$ is a subset $S\ss\RR\times\RR$, which can be drawn as a set of points in the plane. 
 \sexc Draw the relation $\{(x,y)\|y=x^2\}$. 
-\next Draw the relation $\{(x,y)\|y\geq x^2\}.$
-\next Let $S_0$ be the equivalence relation on $\RR$ generated (in the sense of Lemma \ref{lemma:generating ERs}) by the empty set. Draw $S$ as a subset of the plane.
-\next Consider the equivalence relation $S_1$ generated by $\{(1,2),(1,3)\}$. Draw $S_1$ in the plane. Highlight the equivalence class containing $(1,2)$.
-\next The reflexivity property and the symmetry property have pleasing visualizations in $\RR\times\RR$; what are they? 
-\next Is there a nice heuristic for visualizing the transitivity property?
+\item Draw the relation $\{(x,y)\|y\geq x^2\}.$
+\item Let $S_0$ be the equivalence relation on $\RR$ generated (in the sense of Lemma \ref{lemma:generating ERs}) by the empty set. Draw $S$ as a subset of the plane.
+\item Consider the equivalence relation $S_1$ generated by $\{(1,2),(1,3)\}$. Draw $S_1$ in the plane. Highlight the equivalence class containing $(1,2)$.
+\item The reflexivity property and the symmetry property have pleasing visualizations in $\RR\times\RR$; what are they? 
+\item Is there a nice heuristic for visualizing the transitivity property?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Рассмотрим множество $\RR$ всех действительных чисел. Изобразим координатную плоскость $\RR\times\RR$ с координатами $x$ и $y$. Бинарное отношение на $\RR$ — это подмножество $S\ss\RR\times\RR$, которое может быть изображено в виде множества точек на нашей плоскости. 
 \sexc Изобразите отношение $\{(x,y)\|y=x^2\}$. 
-\next Изобразите отношение $\{(x,y)\|y\geq x^2\}.$
-\next Пусть $S_0$ — отношение эквивалентности на $\RR$, порожденное (в смысле Леммы \ref{lemma:generating ERs}) пустым множеством. Изобразите $S$ как подмножество плоскости.
-\next Рассмотрим отношение эквивалентности $S_1$, порожденное $\{(1,2),(1,3)\}$. Изобразите $S_1$ на плоскости. Выделите класс эквивалентности, содержащий $(1,2)$.\endnote{Какая-то фигня про $(1,2)$, причем во второй редакции еще и с ответом. Класс эквивалентности определяется одним элементом $\RR$ (а не парой) и является подмножеством $\RR$ (а не плоскости).}
-\next У свойства рефлексивности и симметричности есть удобная визуализация в $\RR\times\RR$; какая? 
-\next Имеется ли хорошая эвристика для визуализации свойства транзитивности?
+\item Изобразите отношение $\{(x,y)\|y\geq x^2\}.$
+\item Пусть $S_0$ — отношение эквивалентности на $\RR$, порожденное (в смысле Леммы \ref{lemma:generating ERs}) пустым множеством. Изобразите $S$ как подмножество плоскости.
+\item Рассмотрим отношение эквивалентности $S_1$, порожденное $\{(1,2),(1,3)\}$. Изобразите $S_1$ на плоскости. Выделите класс эквивалентности, содержащий $(1,2)$.\endnote{Какая-то фигня про $(1,2)$, причем во второй редакции еще и с ответом. Класс эквивалентности определяется одним элементом $\RR$ (а не парой) и является подмножеством $\RR$ (а не плоскости).}
+\item У свойства рефлексивности и симметричности есть удобная визуализация в $\RR\times\RR$; какая? 
+\item Имеется ли хорошая эвристика для визуализации свойства транзитивности?
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
 Consider the binary relation $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$. 
 \sexc What is the equivalence relation generated by $R$? 
-\next How many equivalence classes are there?
+\item How many equivalence classes are there?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Рассмотрим бинарное отношение $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$. 
 \sexc Каковы классы эквивалентности, порожденные $R$? 
-\next Сколько всего здесь классов эквивалентности?
+\item Сколько всего здесь классов эквивалентности?
 \endsexc
 \end{exerciseRUS}
 
@@ -2257,7 +2468,7 @@ Consider the binary relation $R=\{(n,n+1)\|n\in\ZZ\}\ss\ZZ\times\ZZ$.
 Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and let $R\ss X\times X$ denote the relation such that $(x,y)\in R$ iff there exists an arrow connecting $x$ to $y$.%
 \footnote{The word {\em iff} means “if and only if”. In this case we are saying that the pair $(x,y)$ is in $R$ if and only if there exists an arrow connecting $x$ and $y$.\index{iff}}
 \sexc What is the equivalence relation $\sim$ generated by $R$? 
-\next What is the quotient $X/\sim$?
+\item What is the quotient $X/\sim$?
 \endsexc
 \end{exerciseENG}
 
@@ -2266,13 +2477,13 @@ Suppose $N$ is a network (or graph). Let $X$ be the nodes of the network, and le
 \footnote{Слово {\em ттт}\index{ттт} означает «тогда и только тогда, когда». В данном случае мы говорим, что пара $(x,y)$ принадлежит $R$, если и только если существует стрелка, соединяющая $x$ с $y$.}
 существует стрелка, соединяющая $x$ с $y$.
 \sexc Каково отношение эквивалентности $\sim$, порожденное $R$? 
-\next Каким будет фактор-множество $X/\sim$?
+\item Каким будет фактор-множество $X/\sim$?
 \endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Pushouts}{Пушауты и выталкивающие квадраты}}\label{sec:pushouts}
+\subsection{\caseENGRUS{Pushouts}{ / }{Пушауты и выталкивающие квадраты}}\label{sec:pushouts}
 
 \begin{definitionENG}[Pushout]\label{def:pushout}
 Suppose given the diagram of sets and functions below:
@@ -2384,14 +2595,14 @@ Let $W:=\NN=\{0,1,2,\ldots\}$ denote the set of natural numbers, let $X=\ZZ$ den
 \begin{exerciseENG}
 Let $i\taking R\ss X\times X$ be an equivalence relation (see Example \ref{ex:subset as function} for notation). Composing with the projections $\pi_1,\pi_2\taking X\times X\to X$, we have two maps $\pi_1\circ i,\taking R\to X$ and $\pi_2\circ i\taking R\to X$. 
 \sexc What is the pushout $$X\From{\pi_1\circ i}R\To{\pi_2\circ i}X?$$ 
-\next If $i\taking R\ss X\times X$ is not assumed to be an equivalence relation, we can still define the pushout above. Is there a relationship between the pushout $X\From{\pi_1\circ i}R\To{\pi_2\circ i}X$ and the equivalence relation generated by $R\ss X\times X$?
+\item If $i\taking R\ss X\times X$ is not assumed to be an equivalence relation, we can still define the pushout above. Is there a relationship between the pushout $X\From{\pi_1\circ i}R\To{\pi_2\circ i}X$ and the equivalence relation generated by $R\ss X\times X$?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $i\taking R\ss X\times X$ — это отношение эквивалентности (про обозначения см. Пример \ref{ex:subset as function}). Беря композицию с проекциями $\pi_1,\pi_2\taking X\times X\to X$, получим два отображения $\pi_1\circ i\taking R\to X$ и $\pi_2\circ i\taking R\to X$. 
 \sexc Каким будет пушаут $$X\From{\pi_1\circ i}R\To{\pi_2\circ i}X?$$ 
-\next Даже если $i\taking R\ss X\times X$ не обязательно отношение эквивалентности, мы все равно можем определить такой пушаут, как выше. Имеется ли связь между пушаутом $X\From{\pi_1\circ i}R\To{\pi_2\circ i}X$ и отношением эквивалентности, порожденным $R\ss X\times X$?
+\item Даже если $i\taking R\ss X\times X$ не обязательно отношение эквивалентности, мы все равно можем определить такой пушаут, как выше. Имеется ли связь между пушаутом $X\From{\pi_1\circ i}R\To{\pi_2\circ i}X$ и отношением эквивалентности, порожденным $R\ss X\times X$?
 \endsexc
 \end{exerciseRUS}
 
@@ -2433,7 +2644,7 @@ X\ar@/_1pc/[dddr]_{i_1}\ar[rd]_f&&Y\ar@/^1pc/[dddl]^{i_2}\ar[dl]^g\\
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Other finite colimits}{Другие конечные копределы}}
+\subsection{\caseENGRUS{Other finite colimits}{ / }{Другие конечные копределы}}
 
 \begin{definitionENG}[Coequalizer]\index{coequalizer}\label{def:coequalizer}
 Suppose given two parallel arrows 
@@ -2470,28 +2681,32 @@ Find a universal property enjoyed by the coequalizer of two arrows.
 \begin{exerciseENG}[Initial object]\label{exc:initial set}
 An initial set is a set $S$ such that for every set $A$, there exists a unique function $S\to A$. 
 \sexc Find an initial set. 
-\next Do you think that the notion {\em initial set} belongs in this section (Section \ref{sec:finite colimits})? How so? If coproducts, pushouts, and coequalizers are all colimits, what do colimits have in common?
+\item Do you think that the notion {\em initial set} belongs in this section (Section \ref{sec:finite colimits})? How so? If coproducts, pushouts, and coequalizers are all colimits, what do colimits have in common?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}[Инициальный объект]\label{exc:initial set}
 Инициальное множество — это множество $S$ такое, что для каждого множества $A$ существует единственная функция $S\to A$. 
 \sexc Найдите инициальное множество. 
-\next Как вы думаете, должно ли понятие {\em инициального множества} принадлежать данному разделу (Раздел \ref{sec:finite colimits})? Почему? Если копроизведения, пушауты и коуравнители являются одновременно копределами, то что общего имеют все копределы?
+\item Как вы думаете, должно ли понятие {\em инициального множества} принадлежать данному разделу (Раздел \ref{sec:finite colimits})? Почему? Если копроизведения, пушауты и коуравнители являются одновременно копределами, то что общего имеют все копределы?
 \endsexc
 \end{exerciseRUS}
 
 %%%%%% Section %%%%%%
 
-\section{\caseENGRUS{Other notions in $\Set$}{Другие понятия в $\Set$}}
+\section{\caseENGRUS{Other notions in $\Set$}{ / }{Другие понятия в $\Set$}}
 
+\begin{blockENG}
 In this section we discuss some left-over notions in the category of Sets.
+\end{blockENG}
 
+\begin{blockRUS}
 В данном разделе мы обсудим некоторые из оставшихся понятий в категории множеств. 
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Retractions}{Ретракции}}
+\subsection{\caseENGRUS{Retractions}{ / }{Ретракции}}
 
 \begin{definitionENG}
 Suppose we have a function $f\taking X\to Y$ and a function $g\taking Y\to X$ such that $g\circ f=\id_X$. In this case we call $f$ a {\em retract section} and we call $g$ a {\em retract projection}. \index{retraction}
@@ -2511,15 +2726,23 @@ Create an olog that includes sets $X$ and $Y$, and functions $f\taking X\to Y$ a
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Currying}{Каррирование}}\label{sec:currying}\index{currying}\index{materials!force extension curves}
+\subsection{\caseENGRUS{Currying}{ / }{Каррирование}}\label{sec:currying}\index{currying}\index{materials!force extension curves}
 
+\begin{blockENG}
 Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to “curry” the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information. 
+\end{blockENG}
 
+\begin{blockRUS}
 Каррирование — это идея о том, что в случае функции нескольких аргументов мы можем подставлять их в функцию или по одному, или все сразу. Например, рассмотрим функцию, которая берет материал $M$ и величину деформации $E$, и возвращает силу, возникающую в материале, если деформировать его соответствующим образом. Это функция $e\taking \fakebox{материал}\times\fakebox{деформация}\to\fakebox{сила}$. Эта функция принимает два аргумента сразу, однако удобно «каррировать» ее второй аргумент. Напомним, что $\Hom_\Set(\fakebox{деформация},\fakebox{сила})$ это множество всех теоретически возможных зависимостей силы от деформации. Каррирование преобразует $e$ в функцию $$e'\taking\fakebox{материал}\to\Hom_\Set(\fakebox{деформация},\fakebox{сила}).$$ Это более удобный способ «упаковать» ту же самую информацию. 
+\end{blockRUS}
 
+\begin{blockENG}
 In fact, it may be convenient to repackage this information another way. For any extension, we may want the function that takes a material and returns how much force it can transmit at that extension. This is a function $$e''\taking\fakebox{an extension}\to\Hom_\Set(\fakebox{a material},\fakebox{a force}).$$ 
+\end{blockENG}
 
+\begin{blockRUS}
 В принципе, удобным может оказаться и «переупаковывание» информации другим способом. Для каждой деформации мы можем получить функцию, которая принимает материал и возвращает силу, возникающую в нем при данной деформации. Так получается функция $$e''\taking\fakebox{деформация}\to\Hom_\Set(\fakebox{материал},\fakebox{сила}).$$ 
+\end{blockRUS}
 
 \begin{notationENG}\index{exponentials ! in $\Set$}
 Let $A$ and $B$ be sets. We sometimes denote the set of functions from $A$ to $B$ by 
@@ -2582,45 +2805,49 @@ Then for any $f\in\Hom_\Set(X\times A,Y)$ we have $\psi\circ\phi(f)(x,a)=\phi(f)
 \begin{exerciseENG}
 Let $X=\{1,2\}, A=\{a,b\}$, and $Y=\{x,y\}$. 
 \sexc\label{part:three distinct} Write down three distinct elements of $L:=\Hom_\Set(X\times A,Y)$. 
-\next Write down all the elements of $M:=\Hom_\Set(A,Y)$. 
-\next For each of the three elements $\ell\in L$ you chose in part (\ref{part:three distinct}), write down the corresponding function $\phi(\ell)\taking X\to M$ guaranteed by Proposition \ref{prop:curry}.
+\item Write down all the elements of $M:=\Hom_\Set(A,Y)$. 
+\item For each of the three elements $\ell\in L$ you chose in part (\ref{part:three distinct}), write down the corresponding function $\phi(\ell)\taking X\to M$ guaranteed by Proposition \ref{prop:curry}.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $X=\{1,2\}, A=\{a,b\}$ и $Y=\{x,y\}$. 
 \sexc\label{part:three distinct} Запишите три различных элемента множества $L:=\Hom_\Set(X\times A,Y)$. 
-\next Запишите все элементы множества $M:=\Hom_\Set(A,Y)$. 
-\next Для каждого из трех элементов $\ell\in L$, выбранных в пункте (\ref{part:three distinct}), запишите соответствующую функцию $\phi(\ell)\taking X\to M$, полученную из Утверждения \ref{prop:curry}.
+\item Запишите все элементы множества $M:=\Hom_\Set(A,Y)$. 
+\item Для каждого из трех элементов $\ell\in L$, выбранных в пункте (\ref{part:three distinct}), запишите соответствующую функцию $\phi(\ell)\taking X\to M$, полученную из Утверждения \ref{prop:curry}.
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:evaluation}\index{exponentials!evaluation of}
 Let $A$ and $B$ be sets. We know that $\Hom_\Set(A,B)=B^A$, so we have a function $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A$. Look at Proposition \ref{prop:curry}, making the substitutions $X=\Hom_\Set(A,B)$, $Y=B$, and  $A=A$. Consider the function $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B)$$ obtained as the inverse of (\ref{dia:curry bijection}). We have a canonical element $\id_{B^A}$ in the domain of $\phi^\m1$. We can apply the function $\phi^\m1$ and obtain an element $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B)$, which is itself a function, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
 \sexc Describe the function $ev$ in terms of how it operates on elements in its domain. 
-\next Why might one be tempted to denote this function by $ev$?
+\item Why might one be tempted to denote this function by $ev$?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:evaluation}\index{экспоненциальный объект!вычисление}
 Пусть $A$ и $B$ — это множества. Известно, что $\Hom_\Set(A,B)=B^A$, так что имеется функция $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A$. Взглянем на Утверждение \ref{prop:curry}, сделав подстановки $X=\Hom_\Set(A,B)$, $Y=B$ и  $A=A$. Рассмотрим функцию $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B)$$, полученную как обратную к (\ref{dia:curry bijection}). В области определения $\phi^\m1$ имеется канонический элемент $\id_{B^A}$. Мы можем применить функцию $\phi^\m1$ и получить элемент $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B)$, который сам является функцией, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
 \sexc Опишите функцию $ev$ в терминах того, как она действует на элементах своей области определения. 
-\next Что побудило нас назвать функцию $ev$?%
+\item Что побудило нас назвать функцию $ev$?%
 \endnote{
 На английском это сокращение от {\em evaluate} — вычислять, рассчитывать, оценивать.
 }
 \endsexc
 \end{exerciseRUS}
 
+\begin{blockENG}
 If $n\in\NN$ is a natural number, recall from (\ref{dia:underline n}) that there is a nice set $\ul{n}=\{1,2,\ldots,n\}$. If $A$ is a set, we often make the abbreviation 
 \begin{align}\label{dia:exponential abbrev}
 A^n:=A^{\ul{n}}.
 \end{align}
+\end{blockENG}
 
+\begin{blockRUS}
 Если $n\in\NN$ — это натуральное число, напомним (см. \ref{dia:underline n}), что имеется замечательное множество $\ul{n}=\{1,2,\ldots,n\}$. Если $A$ — это множество, мы часто используем сокращенную запись
 \begin{align}\label{dia:exponential abbrev}
 A^n:=A^{\ul{n}}.
 \end{align}
+\end{blockRUS}
 
 \begin{exerciseENG}\label{exc:two R2s}
 In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR$, but in (\ref{dia:exponential abbrev}) we say that $\RR^2$ is an abbreviation for $\RR^{\ul{2}}$. Use Exercise \ref{exc:generator for set}, Proposition \ref{prop:curry}, Exercise \ref{exc:coprod}, and the fact that 1+1=2, to prove that these are isomorphic, $\RR^{\ul{2}}\iso\RR\times\RR$.
@@ -2636,19 +2863,31 @@ In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Arithmetic of sets}{Арифметика множеств}}\label{sec:arithmetic of sets}\index{set!arithmetic of}\index{множество!арифметика}
+\subsection{\caseENGRUS{Arithmetic of sets}{ / }{Арифметика множеств}}\label{sec:arithmetic of sets}\index{set!arithmetic of}\index{множество!арифметика}
 
+\begin{blockENG}
 Proposition \ref{prop:arithmetic of sets} summarizes the properties of products, coproducts, and exponentials, and shows them all in a familiar light, namely that of arithmetic. In fact, one can think of the natural numbers as literally being the isomorphism classes of finite sets — that's what they are used for in counting. Consider the standard procedure for counting the elements of a set $S$, say cows in a field: one points to an element in $S$ and simultaneously says “1”, points to another element in $S$ and simultaneously says “2”, and so on until finished. This procedure amounts to nothing more than creating an isomorphism (one-to-one mapping) between $S$ and some set $\ul{n}$. 
+\end{blockENG}
 
+\begin{blockRUS}
 [Приведенное ниже] Утверждение \ref{prop:arithmetic of sets} подводит итог свойствам произведений, копроизведений и экспоненциальных объектов, и представляет их все в знакомом виде, а именно — в виде арифметики. В принципе, можно думать о натуральных числах буквально как о классах изоморфизма конечных множеств — ведь именно так они используются при счете. Рассмотрим стандартную процедуру подсчета элементов множества $S$, скажем, коров в поле: некто указывает на элемент $S$ [корову] и одновременно говорит “1”, указывает на другой элемент $S$ [другую корову] и одновременно говорит “2”, и так далее, пока они не закончатся. Эта процедура в целом представляет из себя ничто иное, как построение изоморфизма (отображения один-к-одному) между $S$ и некоторым [стандартным конечным] множеством $\ul{n}$. 
+\end{blockRUS}
 
+\begin{blockENG}
 Again, the natural numbers are the isomorphism classes of finite sets. Their behavior, i.e. the arithmetic of natural numbers, reflects the behavior of sets. For example the fact that multiplication distributes over addition is a fact about grids of dots as in Example \ref{ex:grid1}. The following proposition lays out such arithmetic properties of sets.
+\end{blockENG}
 
+\begin{blockRUS}
 Еще раз: натуральные числа являются классами изоморфизма конечных множеств. Их поведение, т.е арифметика натуральных чисел, отражает поведение множеств. Например, тот факт, что умножение дистрибутивно относительно сложения — это факт о сетках точек из Примера \ref{ex:grid1}. Следующее утверждение перечисляет подобные арифметические свойства чисел.
+\end{blockRUS}
 
+\begin{blockENG}
 In this proposition, we denote the coproduct of two sets $A$ and $B$ by the notation $A+B$ rather than $A\sqcup B$. It is a reasonable notation in general, and one that is often used. 
+\end{blockENG}
 
+\begin{blockRUS}
 В этом утверждении мы обозначаем копроизведение двух множеств $A$ и $B$ при помощи $A+B$, а не $A\sqcup B$. Это достаточно осмысленное обозначение в более общем случае, и его часто используют. 
+\end{blockRUS}
 
 \begin{propositionENG}\label{prop:arithmetic of sets}
 The following isomorphisms exist for any sets $A,B,$ and $C$ (except for one caveat, see Exercise \ref{exc:0 to the 0}). 
@@ -2712,20 +2951,28 @@ It is also true of natural numbers that if $a,b\in\NN$ and $ab=0$ then either $a
 Есть такой факт о натуральных числах: если $a,b\in\NN$ и $ab=0$, то либо $a=0$, либо $b=0$. Верно ли аналогичное утверждение обо всех множествах?
 \end{exerciseRUS}
 
+\begin{blockENG}
 Proposition \ref{prop:arithmetic of sets} is in some sense about isomorphisms. It says that understanding isomorphisms of sets reduces to understanding natural numbers. But note that there is much more going on in $\Set$ than isomorphisms; in particular there are functions that are not invertible.
+\end{blockENG}
 
+\begin{blockRUS}
 В некотором смысле Утверждение \ref{prop:arithmetic of sets} говорит об изоморфности. А именно, о том, что понимание изоморфности множеств сводится к пониманию натуральных чисел. Однако, обратите внимание, что в $\Set$ присутствует гораздо больше отображений, чем одни лишь изоморфизмы; в частности, там имеются необратимые функции.
+\end{blockRUS}
 
+\begin{blockENG}
 In grade school you probably never saw anything that looked like this:
 $$5^3\times 3\too 5$$
 And yet in Exercise \ref{exc:evaluation} we found a function $ev\taking B^A\times A\to B$ that exists for any sets $A,B$. This function $ev$ is not an isomorphism so it somehow does not show up as an equation of natural numbers. But it still has important meaning.%
 \footnote{Roughly, the existence of $ev\taking\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ says that given a dot in a $5\times 5\times 5$ grid of dots, and given one of the three axes, you can tell me the coordinate of that dot along that axis.} In terms of mere number, it looks like we are being told of an important function $\ul{575}\to\ul{5}$, which is bizarre. The issue here is precisely the one you confronted in Exercise \ref{exc:functions are not iso invariant}.
+\end{blockENG}
 
+\begin{blockRUS}
 В начальной школе вы, скорее всего, никогда не видели ничего похожего на это:
 $$5^3\times 3\too 5$$
 И все же в Упражнении \ref{exc:evaluation} мы обнаруживаем функцию $ev\taking B^A\times A\to B$, заданную для любых $A,B$. Эта функция $ev$ не является изоморфизмом, так что непохоже, чтобы она привела к чему-то вроде уравнения в натуральных числах. И все же у нее важный смысл.%
 \footnote{Грубо говоря, выделенная $ev\taking\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ говорит о том, что если задана некоторая точка в сетке из $5\times 5\times 5$ точек, а также выделена одна из трех осей, то по таким данным можно определить координату заданной точки по выделенной оси.}
 Если ограничиваться числами, это выглядит так, как будто нам сообщают об одной важной функции $\ul{575}\to\ul{5}$, что звучит странно. Эта проблема в точности та же, с которой вы сталкивались в Упражнении \ref{exc:functions are not iso invariant}.
+\end{blockRUS}
 
 \begin{exerciseENG}
 Explain why there is a canonical function $\ul{5}^{\ul{3}}\times\ul{3}\too \ul{5}$ but not a canonical function $\ul{575}\to\ul{5}$.
@@ -2745,7 +2992,7 @@ It is true that a set is isomorphic to any other set with the same number of ele
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Subobjects and characteristic functions}{Подобъекты и характеристические функции}}
+\subsection{\caseENGRUS{Subobjects and characteristic functions}{ / }{Подобъекты и характеристические функции}}
 
 \begin{definitionENG}\label{def:power set}
 For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\PP(B)$,\index{a symbol!$\PP$} to be the set of subsets of $B$.
@@ -2757,23 +3004,23 @@ For any set $B$, define the {\em power set of $B$}\index{power set}, denoted $\P
 
 \begin{exerciseENG}\label{exc:size of power sets}~
 \sexc How many elements does $\PP(\emptyset)$ have? 
-\next How many elements does $\PP(\singleton)$ have? 
-\next How many elements does $\PP(\{1,2,3,4,5,6\})$ have? 
-\next Any idea why they may have named it “power set”?
+\item How many elements does $\PP(\singleton)$ have? 
+\item How many elements does $\PP(\{1,2,3,4,5,6\})$ have? 
+\item Any idea why they may have named it “power set”?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:size of power sets}~
 \sexc Сколько всего элементов в $\PP(\emptyset)$? 
-\next Сколько всего элементов в $\PP(\singleton)$? 
-\next Сколько всего элементов в $\PP(\{1,2,3,4,5,6\})$? 
-\next Появились ли у вас соображения по поводу названия «множество-степень»?
+\item Сколько всего элементов в $\PP(\singleton)$? 
+\item Сколько всего элементов в $\PP(\{1,2,3,4,5,6\})$? 
+\item Появились ли у вас соображения по поводу названия «множество-степень»?
 \endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Simplicial complexes}{Симплициальные комплексы}}\label{sec:simplicial complex}
+\subsubsection{\caseENGRUS{Simplicial complexes}{ / }{Симплициальные комплексы}}\label{sec:simplicial complex}
 
 \begin{definitionENG}\label{def:simplicial complex}\index{simplicial complex}
 Let $V$ be a set and let $\PP(V)$ be its powerset. A subset $X\ss\PP(V)$ is called {\em downward-closed} if, for every $u\in X$ and every $u'\ss u$, we have $u'\in X$. We say that $X$ {\em contains all atoms} if for every $v\in V$ the singleton set $\{v\}$ is an element of $X$. 
@@ -2809,25 +3056,37 @@ Let $n\in\NN$ be a natural number and let $V=\ul{n+1}$. Define {\em the $n$-simp
 обозначаемый $\Delta^n$, как симплициальный комплекс $\PP(V)\ss\PP(V)$, т.е. все множество-степень, которое действительно замнуто вниз и содержит все атомы [как это требуется по определению]. 
 \end{exampleRUS}
 
+\begin{blockENG}
 We can draw a simplicial complex $X$ by first putting all the vertices on the page as dots. Then for every $x\in X_1$, we see that $x=\{v,v'\}$ consists of 2 vertices, so we draw an edge connecting $v$ and $v'$. For every $y\in X_2$ we see that $y=\{w,w',w''\}$ consists of 3 vertices, so we draw a (filled-in) triangle connecting them. All three edges will be drawn too because $X$ is assumed to be downward closed.
+\end{blockENG}
 
+\begin{blockRUS}
 Мы можем изобразить симплициальный комплекс $X$, нарисовав все вершины в виде точек. Потом для каждого $x\in X_1$ мы видим $x=\{v,v'\}$ состоит из 2 вершин, в результате мы нарисуем ребро, соединяющее $v$ и $v'$. Для каждого $y\in X_2$ мы видим, что $y=\{w,w',w''\}$ состоит из 3 вершин, поэтому нарисуем (сплошной) треугольник, соединяющий их. Все три ребра его уже нарисованы, поскольку $X$ предполагается замкнутым вниз.
+\end{blockRUS}
 
+\begin{blockENG}
 Thus, the 0-simplex $\Delta^0$, the 1-simplex $\Delta^1$, the 2-simplex $\Delta^2$, and the 3-simplex $\Delta^3$ are drawn here:
 \begin{center}
 \includegraphics[height=1.1in]{simplices}
 \end{center} 
+\end{blockENG}
 
+\begin{blockRUS}
 Вот, здесь нарисованы стандартные 0-симплекс $\Delta^0$, 1-симплекс $\Delta^1$, 2-симплекс $\Delta^2$ и 3-симплекс $\Delta^3$:
 \begin{center}
 \includegraphics[height=1.1in]{simplices}
 \end{center} 
+\end{blockRUS}
 
+\begin{blockENG}
 The $n$-simplices for various $n$'s are in no way all of the simplicial complexes. In general a simplicial complex is a union or “gluing together” of simplices in a prescribed manner. For example, consider the simplicial complex $X$ with vertices $X_0=\{1,2,3,4\},$ edges $X_1=\{\{1,2\},\{2,3\},\{2,4\}\},$ and no higher simplices $X_2=X_3=\cdots=\emptyset$. We might draw $X$ as follows:
 $$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
+\end{blockENG}
 
+\begin{blockRUS}
 Список стандартных $n$-симплексов для различных $n$ ни в коем случае не исчерпывает все виды симплициальных комплексов. В общем случае симплициальный комплекс является объединением или, вернее, результатом склейки отдельных симплексов предписанным образом. Например, рассмотрим симплициальный комплекс $X$ с вершинами $X_0=\{1,2,3,4\},$ ребрами $X_1=\{\{1,2\},\{2,3\},\{2,4\}\}$ и без симплексов высшей размерности $X_2=X_3=\cdots=\emptyset$. Мы могли бы изобразить $X$ так:
 $$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]\ar@{-}[d]&\LMO{3}\\&\LMO{4}}$$
+\end{blockRUS}
 
 \begin{exerciseENG}
 Let $X$ be the following simplicial complex, so that $X_0=\{A,B,\ldots,M\}$. 
@@ -2852,20 +3111,20 @@ Write out $X_2$ and $X_3$ (hint: the drawing of $X$ indicates that $X_3$ should 
 \begin{exerciseENG}
 The 2-simplex $\Delta^2$ is drawn as a filled-in triangle with vertices $V=\{1,2,3\}$. There is a simplicial complex $X=\partial\Delta^2$ that would be drawn as an empty triangle with the same set of vertices. 
 \sexc Draw $\Delta^2$ and $X$ side by side and make clear the difference.
-\next Write down the data for $X$ as a simplicial complex. In other words what are the sets $X_0, X_1, X_2, X_3,\ldots$?
+\item Write down the data for $X$ as a simplicial complex. In other words what are the sets $X_0, X_1, X_2, X_3,\ldots$?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Стандартный 2-симплекс $\Delta^2$ изображается сплошным треугольником с вершинами $V=\{1,2,3\}$. Имеется симплициальный комплекс $X=\partial\Delta^2$, который можно изобразить как пустой треугольник с тем же множеством вершин [и ребер]. 
 \sexc Нарисуйте $\Delta^2$ и $X$ рядом друг с другом, чтобы была видна разница между ними.
-\next Выпишите данные $X$ как симплициального комплекса. Другими словами, какими будут множества $X_0, X_1, X_2, X_3,\ldots$?
+\item Выпишите данные $X$ как симплициального комплекса. Другими словами, какими будут множества $X_0, X_1, X_2, X_3,\ldots$?
 \endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Subobject classifier}{Классификатор подобъектов}}
+\subsubsection{\caseENGRUS{Subobject classifier}{ / }{Классификатор подобъектов}}
 
 \begin{definitionENG}\label{def:subobject classifier}\index{subobject classifier!in $\Set$}
 Define the {\em subobject classifier} for $\Set$, denoted $\Omega$\index{a symbol!$\Omega$}, to be the set $\Omega:=\{True,False\}$, together with the function $\singleton\to\Omega$ sending the unique element to $True$.
@@ -2911,31 +3170,39 @@ Given a subset $B'\ss B$, we call the corresponding function $B\to\Omega$ the {\
 Для данного подмножества $B'\ss B$ назовем соответствующую функцию $B\to\Omega$ {\em характеристической функцией $B'$ в $B$.}
 \end{definitionRUS}
 
+\begin{blockENG}
 Let $B$ be any set and let $\PP(B)$ be its power set. By Proposition \ref{prop:characteristic function} there is a bijection between $\PP(B)$ and $\Omega^B$. Since $\Omega$ has cardinality 2, the cardinality of $\PP(B)$ is $2^{|B|}$, which explains the correct answer to Exercise \ref{exc:size of power sets}.
+\end{blockENG}
 
+\begin{blockRUS}
 Пусть $B$ — любое множество, а $\PP(B)$ — его множество-степень. Согласно Утверждению \ref{prop:characteristic function}, имеется биекция между $\PP(B)$ и $\Omega^B$. Покольку $\Omega$ имеется мощность 2, мощность $\PP(B)$ равняется $2^{|B|}$, что является верным ответом к Упражнению \ref{exc:size of power sets}.
+\end{blockRUS}
 
 \begin{exerciseENG}
 Let $f\taking A\to\Omega$ denote the characteristic function of some $A'\ss A$, and define $A''\ss A$ to be its complement, $A'':=A-A'$ (i.e. $a\in A''$ if and only if $a\not\in A'$). 
 \sexc What is the characteristic function of $A''\ss A$? 
-\next Can you phrase it in terms of some function $\Omega\to\Omega$?
+\item Can you phrase it in terms of some function $\Omega\to\Omega$?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Пусть $f\taking A\to\Omega$ обозначает характеристическую функцию некоторого $A'\ss A$; определим $A''\ss A$ как дополнение $A'':=A-A'$ (т.е. $a\in A''$ ттт $a\not\in A'$). 
 \sexc Какой будет характеристическая функция $A''\ss A$? 
-\next Сможете ли вы выразить это в терминах некоторой функции $\Omega\to\Omega$?
+\item Сможете ли вы выразить это в терминах некоторой функции $\Omega\to\Omega$?
 \endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Surjections, injections}{Сюръекции, инъекции}}
+\subsection{\caseENGRUS{Surjections, injections}{ / }{Сюръекции, инъекции}}
 
+\begin{blockENG}
 The classical definition of injections and surjections involves elements, which we give now. But a more robust notion involves all maps and will be given in Proposition \ref{prop:inj and surj}.
+\end{blockENG}
 
+\begin{blockRUS}
 Сейчас мы дадим классическое определение инъекций и сюръекций, которое использует элементы. Кроме того ниже, в Утверждении \ref{prop:inj and surj}, будет представлено более «надежное» определение, использующее только отображения.
+\end{blockRUS}
 
 \begin{definitionENG}\label{def:inj,surj,bij}\index{function!injection}\index{function!surjection}\index{function!bijection}
 Let $f\taking X\to Y$ be a function. We say that $f$ is {\em surjective} if, for all $y\in Y$ there exists some $x\in X$ such that $f(x)=y$. We say that $f$ is {\em injective} if, for all $x\in X$ and all $x'\in X$ with $f(x)=f(x')$ we have $x=x'$.
@@ -3131,39 +3398,55 @@ Consider the subobject classifier $\Omega$, the singleton $\singleton$ and the m
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Multisets, relative sets, and set-indexed sets}{Мультимножества, относительные множества, индексированные множества}}
+\subsection{\caseENGRUS{Multisets, relative sets, and set-indexed sets}{ / }{Мультимножества, относительные множества, индексированные множества}}
 
+\begin{blockENG}
 In this section we prepare ourselves for considering categories other than $\Set$, by looking at some categories related to $\Set$. 
+\end{blockENG}
 
+\begin{blockRUS}
 В данном разделе мы подготовим себя к изучению отличных от $\Set$ категорий, рассмотрев некоторые категории, связанные с $\Set$. 
+\end{blockRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Multisets}{Мультимножества}}\index{multiset}
+\subsubsection{\caseENGRUS{Multisets}{ / }{Мультимножества}}\index{multiset}
 
+\begin{blockENG}
 Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount of the document, we will not generally have $WC(X)=|X|$. The reason is that a set cannot contain the same element more than once, so words like “the” might be undercounted in $|X|$. A {\em multiset} is a set in which elements can be assigned a multiplicity, i.e. a number of times they are to be counted. 
+\end{blockENG}
 
+\begin{blockRUS}
 Рассмотрим множество $X$ слов в заданном документе. Если $WC(X)$ это число слов в документе, мы обычно не получим $WC(X)=|X|$. Причиной является то, что множество не может содержать один и тот же элемент более одного раза, поэтому часто встречающиеся слова не будут правильно учтены в $|X|$. {\em Мультимножество} — это множество, в котором каждому элементу может быть присвоена кратность, т.е. число раз, которое он встретился при подсчете. 
+\end{blockRUS}
 
+\begin{blockENG}
 But if $X$ and $Y$ are multisets, what is the appropriate type of mapping from $X$ to $Y$? Since every set is a multiset (in which each element has multiplicity 1), let's restrict ourselves to notions of mapping that agree with the usual one on sets. That is, if multisets $X$ and $Y$ happen to be sets then our mappings $X\to Y$ should just be functions.
+\end{blockENG}
 
+\begin{blockRUS}
 Однако, если $X$ и $Y$ — это мультимножества, то какой же тип подойдет нам в качестве отображений из $X$ в $Y$? Поскольку каждое множество является мультимножеством (в котором каждый элемент имеет кратность 1), давайте ограничимся только теми определениями отображений, что согласованы с обычным понятием отображения между множествами. То есть, если мультимножества $X$ и $Y$ окажутся обычными множествами, то наши отображения $X\to Y$ должны оказаться обычными функциями. 
+\end{blockRUS}
 
 \begin{exerciseENG}\label{exc:multiset 1}~
 \sexc Come up with some notion of mapping for multisets that generalizes functions when the notion is restricted to sets. 
-\next Suppose that $X=(1,1,2,3)$ and $Y=(a,b,b,b)$, i.e. $X=\{1,2,3\}$ with $1$ having multiplicity 2, and $Y=\{a,b\}$ with $b$ having multiplicity 3. What are all the maps $X\to Y$ in your notion?
+\item Suppose that $X=(1,1,2,3)$ and $Y=(a,b,b,b)$, i.e. $X=\{1,2,3\}$ with $1$ having multiplicity 2, and $Y=\{a,b\}$ with $b$ having multiplicity 3. What are all the maps $X\to Y$ in your notion?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:multiset 1}~
 \sexc Предложите понятие отображений между мультимножествами, которое превращается в понятие функций, если мы ограничиваемся множествами. 
-\next Предположим, что $X=(1,1,2,3)$ и $Y=(a,b,b,b)$, т.е. $X=\{1,2,3\}$, в котором $1$ имеет кратность $2$, а $Y=\{a,b\}$, в котором $b$ имеет кратность $3$. Перечислите все отображения $X\to Y$ согласно вашему определению.
+\item Предположим, что $X=(1,1,2,3)$ и $Y=(a,b,b,b)$, т.е. $X=\{1,2,3\}$, в котором $1$ имеет кратность $2$, а $Y=\{a,b\}$, в котором $b$ имеет кратность $3$. Перечислите все отображения $X\to Y$ согласно вашему определению.
 \endsexc
 \end{exerciseRUS}
 
+\begin{blockENG}
 In Chapter \ref{chap:categories} we will be getting to the definition of category, and you can test whether your notion of mapping in fact defines a category. Here is my definition of mapping for multisets.
+\end{blockENG}
 
+\begin{blockRUS}
 В Главе \ref{chap:categories} будет представлено определение категории, и тогда вы сможете проверить, соответствует ли ваше понятие отображений определению категории. Для сравнения, вот мое определение отображений мультимножеств.
+\end{blockRUS}
 
 \begin{definitionENG}\label{def:multiset}
 A {\em multiset} is a sequence $X:=(E,B,\pi)$ where $E$ and $B$ are sets and $\pi\taking E\to B$ is a surjective function. We refer to $E$ as the set of {\em element instances of $X$}, we refer to $B$ as the set of {\em element names of $X$}, and we refer to $\pi$ as the {\em naming function for $X$}. Given an element name $x\in B$, let $\pi^\m1(x)\ss E$ be the preimage; the number of elements in $\pi^\m1(x)$ is called the {\em multiplicity of $x$}.
@@ -3186,32 +3469,32 @@ Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping f
 \begin{exerciseENG}
 Suppose that a pseudo-multiset is defined to be almost the same as a multiset, except that $\pi$ is not required to be surjective. 
 \sexc Write down a pseudo-multiset that is not a multi-set. 
-\next Describe the difference between the two notions in terms of multiplicities. 
-\next Complexity of names aside, which do you think is a more useful notion: multiset or pseudo-multisets? 
+\item Describe the difference between the two notions in terms of multiplicities. 
+\item Complexity of names aside, which do you think is a more useful notion: multiset or pseudo-multisets? 
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Предположим, что {\em псевдомультимножество} определено почти так же, как мультимножество, за исключением того, что $\pi$ не обязательно должно быть сурьективным. 
 \sexc Запишите псевдомультимножество, не являющееся мультимножеством. 
-\next Опишите отличия этих понятий в терминах кратностей элементов. 
-\next Если не обращать внимания на сложность названий, то какое понятие, по вашему мнению, более полезно: мультимножество или псевдомультимножество? 
+\item Опишите отличия этих понятий в терминах кратностей элементов. 
+\item Если не обращать внимания на сложность названий, то какое понятие, по вашему мнению, более полезно: мультимножество или псевдомультимножество? 
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
 Consider the multisets described in Exercise \ref{exc:multiset 1}. 
 \sexc Write each of them in the form $(E,B,\pi)$, as in Definition \ref{def:multiset}. 
-\next In terms of the same definition, what are the mappings $X\to Y$? 
-\next If we remove the restriction that diagram \ref{dia:multiset map} must commute, how many mappings $X\to Y$ are there?
+\item In terms of the same definition, what are the mappings $X\to Y$? 
+\item If we remove the restriction that diagram \ref{dia:multiset map} must commute, how many mappings $X\to Y$ are there?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Рассмотрим мультимножества, описанные в Упражнении \ref{exc:multiset 1}. 
 \sexc Запишите каждое из них в виде $(E,B,\pi)$ согласно Определению \ref{def:multiset}. 
-\next В терминах того же определения, какими будут отображения $X\to Y$? 
-\next Если бы мы убрали требование, чтобы диаграмма \ref{dia:multiset map} коммутировала, сколько всего отображений $X\to Y$ было бы тогда?
+\item В терминах того же определения, какими будут отображения $X\to Y$? 
+\item Если бы мы убрали требование, чтобы диаграмма \ref{dia:multiset map} коммутировала, сколько всего отображений $X\to Y$ было бы тогда?
 \endsexc
 \end{exerciseRUS}
 
@@ -3239,11 +3522,15 @@ Consider the multisets described in Exercise \ref{exc:multiset 1}.
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Relative sets}{Относительные множества}}\label{sec:relative sets}\index{relative set}
+\subsubsection{\caseENGRUS{Relative sets}{ / }{Относительные множества}}\label{sec:relative sets}\index{relative set}
 
+\begin{blockENG}
 Let's continue with our ideas from multisets, but now suppose that we have a fixed set $B$ of names that we want to keep once and for all. Whenever someone discusses a set, each element must have a name in $B$. And whenever someone discusses a mapping, it must preserve the names. For example, if $B$ is the set of English words, then every document consists of an ordered set mapping to $B$ (e.g. $1\mapsto \tn{Suppose}, 2\mapsto\tn{that}, 3\mapsto\tn{we},$ etc.) A mapping from document $A$ to document $B$ would send each word found somewhere in $A$ to the same word found somewhere in $B$. This notion is defined carefully below.
+\end{blockENG}
 
+\begin{blockRUS}
 Продолжим наши идеи о мультимножествах, но на этот раз предположим, что у нас есть заданное множество имен $B$, которое мы зафиксируем раз и навсегда. Если обсуждается множество, то каждый его элемент должен иметь имя в $B$. Если же обсуждается отображение, то оно должно сохранять имена. Например, если $B$ — это множество слов естественного языка, то каждый документ состоит из упорядоченного множества с отображением его в $B$ (например, $1\mapsto \tn{Предположим}, 2\mapsto\tn{что}, 3\mapsto\tn{мы}$ и т.д.) Отображение документа $A$ в документ $B$ должно переводить каждое слово из $A$ в такое же слово из $B$. Эти понятия подробно определены ниже.
+\end{blockRUS}
 
 \begin{definitionENG}[Relative set]\label{def:relative sets}\index{relative set}
 Let $B$ be a set. A {\em relative set over $B$}, or simply a {\em set over $B$}, is a pair $(E,\pi)$ such that $E$ is a set and $\pi\taking E\to B$ is a function. A {\em mapping of relative sets over $B$}, denoted $f\taking (E,\pi)\to(E',\pi')$, is a function $f\taking E\to E'$ such that the triangle below commutes, i.e. $\pi=\pi'\circ f$,
@@ -3271,23 +3558,27 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can
 
 \begin{exerciseENG}~
 \sexc Let $\singleton$ denote a set with one element. What is the difference between sets over $\singleton$ and simply sets?
-\next Describe the sets relative to $\emptyset$. How many are there?
+\item Describe the sets relative to $\emptyset$. How many are there?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Пусть $\singleton$ обозначает множество с одним элементом. В чем разница между множествами над $\singleton$ и просто множествами [если она есть]?
-\next Опишите относительные множества над $\emptyset$. Сколько их всего?
+\item Опишите относительные множества над $\emptyset$. Сколько их всего?
 \endsexc
 \end{exerciseRUS}
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Indexed sets}{Индексированные множества}}\label{sec:indexed sets}\index{indexed set}
+\subsubsection{\caseENGRUS{Indexed sets}{ / }{Индексированные множества}}\label{sec:indexed sets}\index{indexed set}
 
+\begin{blockENG}
 Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the “obvious thing”.
+\end{blockENG}
 
+\begin{blockRUS}
 Пусть $A$ — это множество. Предположим, мы хотим сопоставить каждому элементу $a\in A$ некоторое множество $S_a$. Это называется $A$-индексированным множеством. Поскольку в теории категорий всегда интересуются определенным образом «узаконенными» отображениями между двумя отдельными структурами одного сорта, нам потребуется понятие $A$-индексированных отображений; пойдем очевидным путем. 
+\end{blockRUS}
 
 \begin{exampleENG}\label{ex:classroom seats}
 Let $C$ be a set of classrooms. For each $c\in C$ let $P_c$ denote the set of people in classroom $c$, and let $S_c$ denote the set of seats (chairs) in classroom $c$. Then $P$ and $S$ are $C$-indexed sets. The appropriate kind of mapping between them respects the indexes. That is, a mapping of multi-sets $P\to S$ should, for each classroom $c\in C$, be a function $P_c\to S_c$.%

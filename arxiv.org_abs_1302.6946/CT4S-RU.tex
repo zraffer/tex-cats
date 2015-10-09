@@ -1,8 +1,8 @@
 \documentclass{book}
 \usepackage[a4paper, top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
 
-\newif\ifENG \ENGtrue % change me
-\newif\ifRUS \RUSfalse % change me
+\newif\ifENG \ENGfalse % change me
+\newif\ifRUS \RUStrue % change me
 
 \usepackage{mystyle}
 
@@ -18,8 +18,8 @@
 \input{chapter1}
 \input{chapter2}
 
-%\appendix
-%\printendnotes[custom]
+\appendix
+\printendnotes[custom]
 
 \backmatter
 \printindex

@@ -6,7 +6,9 @@
 
 \ifENG\includecomment{blockENG}\else\excludecomment{blockENG}\fi
 \ifRUS\includecomment{blockRUS}\else\excludecomment{blockRUS}\fi
-\newcommand{\caseENGRUS}[2]{\ifENG #1 \fi\ifENG\ifRUS / \fi\fi\ifRUS #2 \fi}
+\newcommand{\caseENG}[1]{\ifENG #1 \fi}
+\newcommand{\caseRUS}[1]{\ifRUS #1 \fi}
+\newcommand{\caseENGRUS}[3]{\ifENG #1\fi\ifENG\ifRUS #2\fi\fi\ifRUS #3\fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -281,68 +283,49 @@
 {}% <Indent amount>
 {\bfseries}% <Theorem head font>
 {:}% <Punctuation after theorem head>
-{.5em}% <Space after theorem headi>
+{.5em}% <Space after theorem head>
 {}% <Theorem head spec (can be left empty, meaning `normal')>
 
 \theoremstyle{myth}
-\newtheorem{envENG}{\begin{english}Theorem\end{english}}[chapter]
-\newtheorem{envRUS}{\begin{english}Theorem\end{english}}[chapter]
+\newtheorem{envENG}{Theorem}[chapter]
+\newtheorem{envRUS}{Theorem}[chapter]
 
-%%%%%%%%%%%%%%%% theorem titles, ENG
+\newcommand{\genTh}[3]{
+    \ifENG\newtheorem{#1ENG}[envENG]{#2}\else\excludecomment{#1ENG}\fi
+    \ifRUS\newtheorem{#1RUS}[envRUS]{#3}\else\excludecomment{#1RUS}\fi
+}
 
-\newtheorem{theoremENG}[envENG]{\begin{english}Theorem\end{english}}
-\newtheorem{lemmaENG}[envENG]{\begin{english}Lemma\end{english}}
-\newtheorem{propositionENG}[envENG]{\begin{english}Proposition\end{english}}
-\newtheorem{corollaryENG}[envENG]{\begin{english}Corollary\end{english}}
-\newtheorem{factENG}[envENG]{\begin{english}Fact\end{english}}
+\genTh{theorem}{Theorem}{Теорема}
+\genTh{definition}{Definition}{Определение}
+\genTh{lemma}{Lemma}{Лемма}
+\genTh{proposition}{Proposition}{Утверждение}
+\genTh{corollary}{Corollary}{Следствие}
+\genTh{fact}{Fact}{Факт}
+\genTh{remark}{Remark}{Примечание}
+\genTh{example}{Example}{Пример}
+\genTh{warning}{Warning}{Предупреждение}
+\genTh{question}{Question}{Вопрос}
+\genTh{guess}{Guess}{Догадка}
+\genTh{answer}{Answer}{Ответ}
+\genTh{construction}{Construction}{Конструкция}
+\genTh{rules}{Rules of good practice}{Правила хорошего тона (рекомендации)}
+\genTh{exc}{Exercise}{Упражнение}
+\genTh{app}{Application}{Прикладной пример (применение)}
+\genTh{notation}{Notation}{Обозначение}
+\genTh{conjecture}{Conjecture}{Гипотеза}
+\genTh{postulate}{Postulate}{Постулат}
 
-\newtheorem{remarkENG}[envENG]{\begin{english}Remark\end{english}}
-\newtheorem{exampleENG}[envENG]{\begin{english}Example\end{english}}
-\newtheorem{warningENG}[envENG]{\begin{english}Warning\end{english}}
-\newtheorem{questionENG}[envENG]{\begin{english}Question\end{english}}
-\newtheorem{guessENG}[envENG]{\begin{english}Guess\end{english}}
-\newtheorem{answerENG}[envENG]{\begin{english}Answer\end{english}}
-\newtheorem{constructionENG}[envENG]{\begin{english}Construction\end{english}}
-\newtheorem{rulesENG}[envENG]{\begin{english}Rules of good practice\end{english}}
-\newtheorem{excENG}[envENG]{\begin{english}Exercise\end{english}}
-\newtheorem{appENG}[envENG]{\begin{english}Application\end{english}}
-\newtheorem{definitionENG}[envENG]{\begin{english}Definition\end{english}}
-\newtheorem{notationENG}[envENG]{\begin{english}Notation\end{english}}
-\newtheorem{conjectureENG}[envENG]{\begin{english}Conjecture\end{english}}
-\newtheorem{postulateENG}[envENG]{\begin{english}Postulate\end{english}}
+\ifENG\newenvironment{proofENG}{\begin{proof}[Proof]}{\end{proof}}\else\excludecomment{proofENG}\fi
+\ifRUS\newenvironment{proofRUS}{\begin{proof}[Доказательство]}{\end{proof}}\else\excludecomment{proofRUS}\fi
 
-\newenvironment{proofENG}{\begin{proof}[Proof (original)]}{\end{proof}}
-\newenvironment{exerciseENG}{\begin{excENG}}{\hspace*{\fill}$\lozenge$\end{excENG}}
-\newenvironment{applicationENG}{\begin{appENG}}{\hspace*{\fill}$\lozenge\lozenge$\end{appENG}}
-\newenvironment{sloganENG}{\addtocounter{envENG}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{envENG}: \begin{quote}{\bf “}\slshape}{{\bf ”}\end{quote}\end{sloppypar}\vspace{.1in}}
+\ifENG\newenvironment{exerciseENG}{\begin{excENG}}{\hspace*{\fill}$\lozenge$\end{excENG}}\else\excludecomment{exerciseENG}\fi
+\ifRUS\newenvironment{exerciseRUS}{\begin{excRUS}}{\hspace*{\fill}$\lozenge$\end{excRUS}}\else\excludecomment{exerciseRUS}\fi
 
-%%%%%%%%%%%%%%%% заголовки теорем, RUS
+\ifENG\newenvironment{applicationENG}{\begin{appENG}}{\hspace*{\fill}$\lozenge\lozenge$\end{appENG}}\else\excludecomment{applicationENG}\fi
+\ifRUS\newenvironment{applicationRUS}{\begin{appRUS}}{\hspace*{\fill}$\lozenge\lozenge$\end{appRUS}}\else\excludecomment{applicationRUS}\fi
 
-\newtheorem{theoremRUS}[envRUS]{Теорема}
-\newtheorem{lemmaRUS}[envRUS]{Лемма}
-\newtheorem{propositionRUS}[envRUS]{Утверждение}
-\newtheorem{corollaryRUS}[envRUS]{Следствие}
-\newtheorem{factRUS}[envRUS]{Факт}
-
-\newtheorem{remarkRUS}[envRUS]{Примечание}
-\newtheorem{exampleRUS}[envRUS]{Пример}
-\newtheorem{warningRUS}[envRUS]{Предупреждение}
-\newtheorem{questionRUS}[envRUS]{Вопрос}
-\newtheorem{guessRUS}[envRUS]{Догадка}
-\newtheorem{answerRUS}[envRUS]{Ответ}
-\newtheorem{constructionRUS}[envRUS]{Конструкция}
-\newtheorem{rulesRUS}[envRUS]{Правила хорошего тона (рекомендации)}
-\newtheorem{excRUS}[envRUS]{Упражнение}
-\newtheorem{appRUS}[envRUS]{Прикладной пример (применение)}
-\newtheorem{definitionRUS}[envRUS]{Определение}
-\newtheorem{notationRUS}[envRUS]{Обозначение}
-\newtheorem{conjectureRUS}[envRUS]{Гипотеза}
-\newtheorem{postulateRUS}[envRUS]{Постулат}
-
-\newenvironment{proofRUS}{\begin{proof}[Доказательство]}{\end{proof}}
-\newenvironment{exerciseRUS}{\begin{excRUS}}{\hspace*{\fill}$\lozenge$\end{excRUS}}
-\newenvironment{applicationRUS}{\begin{appRUS}}{\hspace*{\fill}$\lozenge\lozenge$\end{appRUS}}
-\newenvironment{sloganRUS}{\addtocounter{envRUS}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Лозунг}\;\arabic{envRUS}: \begin{quote}{\bf «}\slshape}{{\bf »}\end{quote}\end{sloppypar}\vspace{.1in}}
+\ifENG\newenvironment{sloganENG}{\addtocounter{envENG}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{envENG}: \begin{quote}{\bf “}\slshape}{{\bf ”}\end{quote}\end{sloppypar}\vspace{.1in}}\else\excludecomment{sloganENG}\fi
+\ifRUS\newenvironment{sloganRUS}{\addtocounter{envRUS}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Лозунг}\;\arabic{envRUS}: \begin{quote}{\bf «}\slshape}{{\bf »}\end{quote}\end{sloppypar}\vspace{.1in}}\else\excludecomment{sloganRUS}\fi
 
 %%%%%%%%%%%%%%%% 
 
@@ -372,30 +355,21 @@
 }
 \def\GrIn{{\bf GrIn}}
 \def\GrInSchema{\xymatrix{\LMO{Ar}\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LMO{V\!e}}}
-%\CompileMatrices
-%\pdfoutput=1
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
+%\def\next{\item}
 \def\sub{\begin{itemize}\item}
-\def\sexc{\begin{enumerate}[a.)]\setlength{\itemsep}{.1cm}\setlength{\parskip}{.1cm}\item}
-\def\next{\item}
 \def\endsub{\end{itemize}}
+\def\sexc{\begin{enumerate}[a.)]\setlength{\itemsep}{.1cm}\setlength{\parskip}{.1cm}\item}
 \def\endsexc{\end{enumerate}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{~\\
-    Category Theory for Scientists\\
-    Теория категорий для ученых
-  }
-\author{
-    David I. Spivak\\
-    Дэвид И. Спивак
-  }
-\titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large 
-    How can mathematics make this diagram meaningful?\\ 
-    Как математика может придать смысл этой диаграмме?\normalsize
-  }  
+\title{~\\\caseENGRUS{Category Theory for Scientists}{\\}{Теория категорий для ученых}}
+
+\author{\caseENGRUS{David I. Spivak}{\\}{Дэвид И. Спивак}}
+
+\titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large\caseENGRUS{How can mathematics make this diagram meaningful?}{\\}{Как математика может придать смысл этой диаграмме?}\normalsize}
 
