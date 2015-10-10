@@ -4,20 +4,34 @@
 
 \section{\caseENGRUS{Databases: schemas and instances}{ / }{Базы данных: схемы и экземпляры}}\label{sec:databases}
 
+\begin{blockENG}
 The first three sections of this chapter were about classical objects from mathematics. The present section is about databases, which are classical objects from computer science. These are truly “categories and functors, without admitting it” (see Theorem \ref{thm:equivalence of categories and schemas}).
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{What are databases?}{ / }{Что такое базы данных}}\label{sec:what are dbs}\index{database!tables}
 
+\begin{blockENG}
 Data, in particular the set of observations made during experiment, plays
 \footnote{The word data is generally considered to be the plural form of the word datum. However, individual datum elements are only useful when they are organized into structures (e.g. if one were to shuffle the cells in a spreadsheet, most would consider the data to be destroyed). It is the whole organized structure that really houses the information; the data must be in formation in order to be useful. Thus I will use the word {\em data} as a collective noun (akin to the word “sand”); it bridges the divide between the {\em individual datum elements} (akin to the grains of sand) and the {\em data set} (akin to a sand pile). In particular, I will often use the word data as a singular noun.\index{data}}
 a primary role in science of any kind. To be useful data must be organized, often in a row-and-column display called a table. Columns existing in different tables can refer to the same data.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 A database is a collection of tables, each table $T$ of which consists of a set of columns and a set of rows. We roughly explain the role of tables, columns, and rows as follows. The existence of table $T$ suggests the existence of a fixed methodology for observing objects or events of a certain type. Each column $c$ in $T$ prescribes a single kind or method of observation, so that the datum inhabiting any cell in column $c$ refers to an observation of that kind. Each row $r$ in $T$ has a fixed sourcing event or object, which can be observed using the methods prescribed by the columns. The cell $(r,c)$ refers to the observation of kind $c$ made on event $r$. All of the rows in $T$ should refer to uniquely identifiable objects or events of a single type, and the name of the table $T$ should refer to that type.
+\end{blockENG}
 
-\begin{example}\label{ex:graphene}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:graphene}
 When graphene is strained (lengthened by a factor of $x\geq 1$), it becomes stressed (carries a force in the direction of the lengthening). The following is a made-up set of data.
 
 \begin{align}\label{ex:first tables}\footnotesize
@@ -45,19 +59,30 @@ APP&Acme Pen and Paper&(617) 823-5603\\\bhline
 In the first table, titled “Graphene sample”, the rows refer to graphene samples, and the table is so named. Each graphene sample can be observed according to the source supplier from which it came, the strain that it was subjected to, and the stress that it carried. These observations are the columns.  In the second table, the rows refer to suppliers of various things, and the table is so named. Each supplier can be observed according to its full name and its phone number; these are the columns.
 
 In the left-hand table it appears either that each graphene sample was used only once, or that the person recording the data did not keep track of which samples were reused. If such details become important later, the lab may want to change the layout of the first table by adding on the appropriate column. This can be accomplished using morphisms of schemas, which will be discussed in Section \ref{sec:sch as category}.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:graphene}
+\end{exampleRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Primary keys, foreign keys, and data columns}{ / }{Первичные ключи, внешние ключи и столбцы данных}}\index{database!primary key}\index{database!foreign key}
 
+\begin{blockENG}
 There is a bit more structure in the above tables (Example \ref{ex:first tables}) then may first meet the eye. Each table has a {\em primary ID column}, found on the left, as well as some {\em data columns} and some {\em foreign key columns}. The primary key column is tasked with uniquely identifying different rows. Each data column houses elementary data of a certain sort. Perhaps most interesting from a structural point of view are the foreign key columns, because they link one table to another, creating a connection pattern between tables. Each foreign key column houses data that needs to be further unpacked. It thus refers us to another {\em foreign} table, in particular the primary ID column of that table. In Example \ref{ex:first tables} the {\tt Source} column was a foreign key to the {\tt Supplier} table.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Here is another example, lifted from \cite{Sp2}.
+\end{blockENG}
 
-\begin{example}\label{ex:department store 1}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:department store 1}
 Consider the bookkeeping necessary to run a department store. We keep track of a set of employees and a set of departments. For each employee $e$, we keep track of
 \begin{enumerate}[\hsp E.1\;]
 \item the {\bf first} name of $e$, which is a {\tt FirstNameString},
@@ -85,13 +110,16 @@ Display (\ref{dia:instance on maincat}) shows how such a database might look at 
 \bhline {\bf ID}&{\bf name}&{\bf secretary}\\\bbhline q10&Sales&101\\\hline x02&Production&102\\\bhline
 \end{tabular}
 \end{align}\vspace{.1in}
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:department store 1}
+\end{exampleRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Business rules}{ / }{Бизнес-правила}}\index{database!business rules}
 
+\begin{blockENG}
 Looking at the tables from Example \ref{ex:department store 1}, one may notice a few patterns. First, every employee works in the same department as his or manager. Second, every department's secretary works in that department. Perhaps the business counts on these rules for the way it structures itself. In that case the database should enforce those rules, i.e. it should check that whenever the data is updated, it conforms to the rules: 
 
 \begin{enumerate}[\hsp Rule 1\;]
@@ -101,15 +129,23 @@ Looking at the tables from Example \ref{ex:department store 1}, one may notice a
 \vspace{-.3in}\begin{align}\label{dia:rules}\end{align}\vspace{-.3in}
 
 Together, the statements E.1, E.2, E.3, E.4, D.1, and D.2 from Example \ref{ex:department store 1} and Rule 1 and Rule 2, constitute what we will call the {\em schema} of the database.\index{schema!of a database}\index{database!schema} We will formalize this idea in Section \ref{sec:schemas}.
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Data columns as foreign keys}{ / }{Столбцы данных как внешние ключи}}
 
+\begin{blockENG}
 To make everything consistent, we could even say that data columns are specific kinds of foreign keys. That is, each data column constitutes a foreign key to some non-branching {\em leaf table}\index{schema!leaf table}, which has no additional data. 
+\end{blockENG}
 
-\begin{example}\label{ex:department store 2}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:department store 2}
 Consider again Example \ref{ex:department store 1}. Note that first names and last names had a particular type, which we all but ignored above. We could cease to ignore them by adding three tables, as follows.
 
 \begin{align}\label{dia:instance on maincat 2}\footnotesize
@@ -128,32 +164,48 @@ Consider again Example \ref{ex:department store 1}. Note that first names and la
 \end{align}
 
 In combination, Displays (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) form a collection of tables with the property that every column is either a primary key or a foreign key. The notion of data column is now subsumed under the notion of foreign key column. Everything is either a primary key (one per table, labeled ID) or a foreign key column (everything else).
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:department store 2}
+\end{exampleRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Schemas}{ / }{Схемы}}\label{sec:schemas}
 
+\begin{blockENG}
 The above section may all seem intuitive or reasonable in some ways, but also a bit difficult to fully grasp, perhaps. It would be nice to summarize what is happening in a picture. Such a picture, which will basically be a graph, should capture the {\em conceptual layout} to which the data conforms, without yet being concerned with the individual data that may populate the tables in this instant. We proceed at first by example, giving the precise definition in Definition \ref{def:schema}.
+\end{blockENG}
 
-\begin{example}\label{ex:department store 3}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:department store 3}
 In Examples \ref{ex:department store 1} and \ref{ex:department store 2}, the conceptual layout for a department store was given, and some example tables were shown. We were instructed to keep track of employees, departments, and six types of data (E.1, E.2, E.3, E.4, D.1, and D.2), and we were instructed to follow two rules (Rule 1, Rule 2). All of this is summarized in the following picture:
 \begin{align}\label{dia:maincat schema}
 \MainCatLarge{\mcC:=\tn{ Schema for tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) conforming to (\ref{dia:rules})}}
 \end{align}
 The five tables from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as five vertices; this is also the number of primary ID columns. The six foreign key columns from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as six arrows; each points from a table to a foreign table. The two rules from (\ref{dia:rules}) are seen as statements at the top of Display (\ref{dia:maincat schema}).We will explain path equivalences in Definition \ref{def:congruence}.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:department store 3}
+\end{exampleRUS}
 
-\begin{exercise}\label{exc:schema for first tables}
+\begin{exerciseENG}\label{exc:schema for first tables}
 Come up with a schema (consisting of dots and arrows) describing the conceptual layout of information presented in Example \ref{ex:graphene}. 
-\end{exercise}
+\end{exerciseENG}
 
+\begin{exerciseRUS}\label{exc:schema for first tables}
+\end{exerciseRUS}
+
+\begin{blockENG}
 In order to define schemas, we must first define the notion of schematic equivalence relation, which is to hold on the set of paths of a graph $G$ (see Section \ref{sec:paths in graph}). Such an equivalence relation (in addition to being reflexive, symmetric, and transitive) has two sorts of additional properties: equivalent paths must have the same source and target, and the composition of equivalent paths with other equivalent paths must yield equivalent paths. Formally we have Definition \ref{def:congruence}.
+\end{blockENG}
 
-\begin{definition}\label{def:congruence}\index{PED}\index{congruence}\index{schema!Path equivalence declaration (PED)}\index{schema!congruence}\
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{definitionENG}\label{def:congruence}\index{PED}\index{congruence}\index{schema!Path equivalence declaration (PED)}\index{schema!congruence}\
 
 Let $G=(V,A,src,tgt)$ be a graph, and let $\Path_G$ denote the set of paths in $G$ (see Definition \ref{def:paths in graph}). A {\em path equivalence declaration} (or {\em PED}) is an expression of the form $p\simeq q$ where $p,q\in\Path_G$ have the same source and target, $src(p)=src(q)$ and $tgt(p)=tgt(q)$. 
 
@@ -165,57 +217,76 @@ A {\em congruence} on $G$ is a relation $\simeq$ on $\Path_G$ that has the follo
 \item Suppose $p,q\taking b\to c$ are paths, and $m\taking a\to b$ is an arrow. If $p\simeq q$ then $mp\simeq mq$. 
 \item Suppose $p,q\taking a\to b$ are paths, and $n\taking b\to c$ is an arrow. If $p\simeq q$ then $pn\simeq qn$.
 \end{enumerate}
+\end{definitionENG}
 
-\end{definition}
+\begin{definitionRUS}\label{def:congruence}\index{PED}\index{congruence}\index{schema!Path equivalence declaration (PED)}\index{schema!congruence}\
+\end{definitionRUS}
 
+\begin{blockENG}
 Any set of path equivalence declarations (PEDs) generates a congruence. We tend to elide the difference between a congruence and the set of PEDs that generates it.
+\end{blockENG}
 
-\begin{exercise}\label{exc:generating congruence}
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{exerciseENG}\label{exc:generating congruence}
 Consider the graph shown in (\ref{dia:maincat schema}), and the two declarations shown at the top. They generate a congruence. 
 \sexc Is it true that the following PED is an element of this congruence? $$\tn{{\tt Employee} manager manager worksIn $\stackrel{?}{\simeq}$ {\tt Employee} worksIn}$$ \item What about this one? $$\tn{{\tt Employee} worksIn secretary $\stackrel{?}{\simeq}$ {\tt Employee}}$$ 
 \item What about this one? $$\tn{{\tt Department} secretary manager worksIn name $\stackrel{?}{\simeq}$ {\tt Department} name}$$
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{lemma}\label{lemma:composing PEDs}
+\begin{exerciseRUS}\label{exc:generating congruence}
+\end{exerciseRUS}
 
+\begin{lemmaENG}\label{lemma:composing PEDs}
 Suppose that $G$ is a graph and $\simeq$ is a congruence on $G$. Suppose $p\simeq q\taking a\to b$ and $r\simeq s\taking b\to c$. Then $pr\simeq qs$.
+\end{lemmaENG}
 
-\end{lemma}
+\begin{lemmaRUS}\label{lemma:composing PEDs}
+\end{lemmaRUS}
 
-\begin{proof}
-
+\begin{proofENG}
 The picture to have in mind is this: $$\xymatrix@=13pt{&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]\\\LMO{a}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_p\ar@{-->}@/_1.5pc/[rrrr]^q&&&&\LMO{b}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_r\ar@{-->}@/_1.5pc/[rrrr]^s&&&&\LMO{c}\\&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]}$$ Applying condition (3) from Definition \ref{def:congruence} to each arrow in path $p$, it follows by induction that $pr\simeq ps$. Applying condition (4) to each arrow in path $s$, it follows similarly that $ps\simeq qs$. Because $\simeq$ is an equivalence relation, it follows that $pr\simeq qs$. 
+\end{proofENG}
 
-\end{proof}
+\begin{proofRUS}
+\end{proofRUS}
 
-\begin{definition}\label{def:schema}\index{schema}\index{database!schema}
-
+\begin{definitionENG}\label{def:schema}\index{schema}\index{database!schema}
 A {\em database schema} (or simply {\em schema}) $\mcC$ consists of a pair $\mcC:=(G,\simeq)$ where $G$ is a graph and $\simeq$ is a congruence on $G$. 
+\end{definitionENG}
 
-\end{definition}
+\begin{definitionRUS}\label{def:schema}\index{schema}\index{database!schema}
+\end{definitionRUS}
 
-\begin{example}
-
+\begin{exampleENG}
 The picture drawn in (\ref{dia:maincat schema}) has the makings of a schema. Pictured is a graph with two PEDs; these generate a congruence, as discussed in Exercise \ref{exc:generating congruence}.  
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
+\begin{blockENG}
 A schema can be converted into a system of tables each with a primary key and some number of foreign keys referring to other tables, as discussed in Section \ref{sec:what are dbs}. Definition \ref{def:schema} gives a precise conceptual understanding of what a schema is, and the following rules describe how to convert such a thing into a table layout.
+\end{blockENG}
 
-\begin{rules}\label{rules:schema to tables}\index{olog!rules}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{rulesENG}\label{rules:schema to tables}\index{olog!rules}
 Converting a schema $\mcC=(G,\simeq)$ into a table layout should be done as follows:
 \begin{enumerate}[(i)]
 \item There should be a table for every vertex in $G$ and if the vertex is named, the table should have that name;
 \item Each table should have a left-most column called ID, set apart from the other columns by a double vertical line; and
 \item To each arrow $a$ in $G$ having source vertex $s:=src(a)$ and target vertex $t:=tgt(a)$, there should be a foreign key column $a$ in table $s$, referring to table $t$; if the arrow $a$ is named, column $a$ should have that name.
 \end{enumerate}
+\end{rulesENG}
 
-\end{rules}
+\begin{rulesRUS}\label{rules:schema to tables}\index{olog!rules}
+\end{rulesRUS}
 
-\begin{example}[Discrete dynamical system]\label{ex:dds}\index{dynamical system!discrete}
-
+\begin{exampleENG}[Discrete dynamical system]\label{ex:dds}\index{dynamical system!discrete}
 Consider the schema 
 \begin{align}\label{dia:loop}
 \Loop:=\LoopSchema
@@ -241,44 +312,58 @@ H & G\\\hline
 \LMO{F}\ar[rr]&&\LMO{G}\ar@/^.5pc/[rr]&&\LMO{H}\ar@/^.5pc/[ll]^~
 }}}
 \end{align}
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[Discrete dynamical system]\label{ex:dds}\index{dynamical system!discrete}
+\end{exampleRUS}
 
-\begin{application}
-
+\begin{applicationENG}
 Imagine a \href{http://en.wikipedia.org/wiki/Chronon}{\text quantum-time} universe in which there are discrete time steps. We model it as a discrete dynamical system, i.e. a table of the form (\ref{dia:dds data}). For every possible state of the universe we include a row in the table. The state in the next instant is recorded in the second column.
+\end{applicationENG}
 
-\end{application}
+\begin{applicationRUS}
+\end{applicationRUS}
 
-\begin{example}[Finite hierarchy]\label{ex:finite hierarchy}\index{hierarchy}
-
+\begin{exampleENG}[Finite hierarchy]\label{ex:finite hierarchy}\index{hierarchy}
 The schema $\Loop$ can also be used to encode hierarchies, such as the manager relation from Examples \ref{ex:department store 1} and \ref{ex:department store 3}, 
 $$\fbox{\xymatrix{\LTO{E}\ar@(l,u)[]^{\tn{mgr}}}}$$
 One problem with this, however, is if a schema has even one loop, then it can have infinitely many paths (corresponding, e.g. to an employees manager's manager's manager's ... manager). 
 
 Sometimes we know that in a given company that process eventually ends, a famous example being that at Ben and Jerry's ice cream, there were only seven levels. In that case we know that an employee's 8th level manager is equal to his or her 7th level manager. This can be encoded by the PED $${\tt E} \tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\simeq{\tt E}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}$$ or more concisely, $\tn{mgr}^8=\tn{mgr}^7$.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[Finite hierarchy]\label{ex:finite hierarchy}\index{hierarchy}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Is there any nontrivial PED on $\Loop$ that holds for the data in Example \ref{ex:dds}? If so, what is it and how many equivalence classes of paths in $\Loop$ are there after you impose that relation?
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{exerciseENG}
 Let $P$ be a chess-playing program. Given any position (including the history of the game and choice of whose turn it is), $P$ will make a move. 
 \sexc Is this an example of a discrete dynamical system? 
 \item How do the rules for ending the game in a win or draw play out in this model? (Look up online how chess games end if you don't know.)
 \endsexc
-\end{exercise}
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Ologging schemas}{ / }{Превращение схем в ологи}}\label{sec:olog as db schema}\index{olog!as database schema}
 
+\begin{blockENG}
 It should be clear that a database schema is nothing but an olog in disguise. The difference is basically the readability requirements for ologs. There is an important new addition in this section, namely that we can fill out an olog with data. Conversely, we have seen that databases are not any harder to understand than ologs are.
+\end{blockENG}
 
-\begin{example}\label{ex:orbits}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:orbits}
 Consider the olog 
 \begin{align}\label{dia:moon1}\obox{}{.5in}{a moon}\Too{\tn{orbits}}\obox{}{.5in}{a planet}\end{align}
 We can document some instances of this relationship using the following tables: 
@@ -295,21 +380,29 @@ Titan & Saturn\\\bhline
 \end{align}  
 
 Clearly, this table of instances can be updated as more moons are discovered by the author (be it by telescope, conversation, or research).
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:orbits}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 In fact, Example \ref{ex:orbits} did not follow Rules \ref{rules:schema to tables}. Strictly following those rules, copy over the data from (\ref{dia:moon2}) into tables that are in accordance with schema (\ref{dia:moon1}).
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}~
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{exerciseENG}~
 \sexc Write down a schema, in terms of the boxes \fakebox{a thing I own} and \fakebox{a place} and one additional arrow, that might help one remember where they decided to put “random” things. 
 \item What is a good label for the arrow? 
 \item Fill in some rows of the corresponding set of tables for your own case.
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}\label{exc:father and child}
+\begin{exerciseRUS}~
+\end{exerciseRUS}
+
+\begin{exerciseENG}\label{exc:father and child}
 Consider the olog 
 $$
 \xymatrix{\obox{C}{.4in}{a child}\LA{rr}{has}&&\obox{F}{.5in}{a father}\ar@/^1pc/[ll]^{\tn{has as first}}\ar@/_1pc/[ll]_{\tn{has as tallest}}}
@@ -317,16 +410,23 @@ $$
 \sexc What path equivalence declarations would be appropriate for this olog? You can use $f\taking F\to C$, $t\taking F\to C$, and $h\taking C\to F$ if you prefer. 
 \item How many PEDs are in the congruence?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:father and child}
+\end{exerciseRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Instances}{ / }{Экземпляры}}
 
+\begin{blockENG}
 Given a database schema $(G,\simeq)$, an instance of it is just a bunch of tables whose data conform to the specified layout. These can be seen throughout the previous section, most explicitly in the relationship between schema (\ref{dia:maincat schema}) and tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}), and between schema (\ref{dia:loop}) and table (\ref{dia:dds data}). Below is the mathematical definition.
+\end{blockENG}
 
-\begin{definition}\label{def:instance}\index{database!instance}\index{instance}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{definitionENG}\label{def:instance}\index{database!instance}\index{instance}
 Let $\mcC=(G,\simeq)$ where $G=(V,A,src,tgt)$. An {\em instance on $\mcC$}, denoted $(\PK,\FK)\taking\mcC\to\Set$, is defined as follows: One announces some constituents (A. primary ID part, B. foreign key part) and asserts that they conform to a law (1. preservation of congruence). Specifically, one announces
 \begin{enumerate}[\hsp A.]
 \item a function $\PK\taking V\to \Set$; i.e. to each vertex $v\in V$ one provides a set $\PK(v)$;\footnote{The elements of $\PK(v)$ will be listed as the rows of table $v$, or more precisely as the leftmost cells of these rows.} and
@@ -337,10 +437,12 @@ One asserts that the following law holds for any vertices $v, w$ and paths $p=va
 \begin{enumerate}[\hsp 1.]
 \item If $p\simeq q$ then for all $x\in\PK(v)$, we have $$\FK(a_m)\circ\cdots\circ\FK(a_2)\circ\FK(a_1)(x)=\FK(a_n')\circ\cdots\circ\FK(a_2')\circ\FK(a_1')(x)$$ in $\PK(w).$
 \end{enumerate}
+\end{definitionENG}
 
-\end{definition}
+\begin{definitionRUS}\label{def:instance}\index{database!instance}\index{instance}
+\end{definitionRUS}
 
-\begin{exercise}\label{ex:self email}
+\begin{exerciseENG}\label{ex:self email}
 Consider the olog pictured below: 
 $$\mcC:=
 \fbox{\parbox{3.1in}{
@@ -388,30 +490,44 @@ Sue\\\bhline
 \item What is the function $\FK(\tn{is sent by})\taking\PK(\fakebox{an email})\to\PK(\fakebox{a person})$?
 \item Interpret the sentences at the bottom of $\mcC$ as the Englishification of a simple path equivalence declaration. Is it satisfied by the instance (\ref{dia:self email}); that is, does law 1. from Definition \ref{def:instance} hold?\index{Englishifiication}
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{example}[Monoid action table]\label{ex:monoid action table}
+\begin{exerciseRUS}\label{ex:self email}
+\end{exerciseRUS}
 
+\begin{exampleENG}[Monoid action table]\label{ex:monoid action table}
 In Example \ref{ex:monoid as olog}, we saw how a monoid $\mcM$ could be captured as an olog with only one object. As a database schema, this means there is only one table. Every generator of $\mcM$ would be a column of the table. The notion of database instance for such a schema is precisely the notion of action table from Section \ref{sec:monoid action table}. Note that a monoid can act on itself, in which case this action table is the monoid's multiplication table as in Example \ref{ex:multiplication table}, but it can also act on any other set as in Example \ref{ex:action table}. If $\mcM$ acts on a set $S$, then the set of rows in the action table will be $S$.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[Monoid action table]\label{ex:monoid action table}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Draw (as a graph) the schema for which Table \ref{dia:action table for FSM} is an instance.
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{exerciseENG}
 Suppose that $\mcM$ is a monoid and some instance of it is written out in table form. It's possible that $\mcM$ is a group. What evidence in an instance table for $\mcM$ might suggest that $\mcM$ is a group? 
-\end{exercise}
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Paths through a database}{ / }{Пути в базе данных}}
 
+\begin{blockENG}
 Let $\mcC:=(G,\simeq)$ be a schema and let $(\PK,\FK)\taking\mcC\to\Set$ be an instance on $\mcC$. Then for every arrow $a\taking v\to w$ in $G$ we get a function $\FK(a)\taking\PK(v)\to\PK(w)$. Functions can be composed, so in fact for every path through $G$ we get a function. Namely, if $p=v_0a_1,a_2,\ldots,a_n$ is a path from $v_0$ to $v_n$ then the instance provides a function $$\FK(p):=\FK(a_n)\circ\cdots\FK(a_2)\circ\FK(a_1)\taking\PK(v_0)\to\PK(v_n),$$ which first made an appearance as part of Law 1 in Definition \ref{def:instance}.
+\end{blockENG}
 
-\begin{example}\label{ex:paths as functions}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:paths as functions}
 Consider the department store schema from Example \ref{ex:department store 3}, and in (\ref{dia:maincat schema}) the path $[\tn{worksIn, secretary, last}]$ which points from {\tt Employee} to {\tt LastNameString}. The instance will let us interpret this path as a function from the set of employees to the set of last names; this could be a useful function to have around. The instance from (\ref{dia:instance on maincat}) would yield the following function 
 
 \begin{align*}
@@ -423,16 +539,23 @@ Consider the department store schema from Example \ref{ex:department store 3}, a
 103&Hilbert\\\bhline
 \end{tabular}
 \end{align*}
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:paths as functions}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Consider the path $p:=[f,f]$ on the $\Loop$ schema from (\ref{dia:loop}). Using the instance from (\ref{dia:dds data}), where $\PK(s)=\{A,B,C,D,E,F,G,H\}$, interpret $p$ as a function $\PK(s)\to\PK(s)$, and write this as a 2-column table, as above in Example \ref{ex:paths as functions}.
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}~
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{exerciseENG}~
 \sexc Given an instance $(\PK,\FK)$ on a schema $\mcC$, and given a trivial path $p$ (i.e. $p$ has length 0; it starts at some vertex but doesn't go anywhere), what function does $p$ yield?
 \item What are the domain and codomain of $p$?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
+\begin{exerciseRUS}~
+\end{exerciseRUS}
