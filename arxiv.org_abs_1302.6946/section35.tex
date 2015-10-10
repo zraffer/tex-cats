@@ -2,13 +2,13 @@
 
 %%%%%% Section %%%%%%
 
-\section{Databases: schemas and instances}\label{sec:databases}
+\section{\caseENGRUS{Databases: schemas and instances}{ / }{Базы данных: схемы и экземпляры}}\label{sec:databases}
 
 The first three sections of this chapter were about classical objects from mathematics. The present section is about databases, which are classical objects from computer science. These are truly “categories and functors, without admitting it” (see Theorem \ref{thm:equivalence of categories and schemas}).
 
 %%%% Subsection %%%%
 
-\subsection{What are databases?}\label{sec:what are dbs}\index{database!tables}
+\subsection{\caseENGRUS{What are databases?}{ / }{Что такое базы данных}}\label{sec:what are dbs}\index{database!tables}
 
 Data, in particular the set of observations made during experiment, plays
 \footnote{The word data is generally considered to be the plural form of the word datum. However, individual datum elements are only useful when they are organized into structures (e.g. if one were to shuffle the cells in a spreadsheet, most would consider the data to be destroyed). It is the whole organized structure that really houses the information; the data must be in formation in order to be useful. Thus I will use the word {\em data} as a collective noun (akin to the word “sand”); it bridges the divide between the {\em individual datum elements} (akin to the grains of sand) and the {\em data set} (akin to a sand pile). In particular, I will often use the word data as a singular noun.\index{data}}
@@ -50,7 +50,7 @@ In the left-hand table it appears either that each graphene sample was used only
 
 %% Subsubsection %%
 
-\subsubsection{Primary keys, foreign keys, and data columns}\index{database!primary key}\index{database!foreign key}
+\subsubsection{\caseENGRUS{Primary keys, foreign keys, and data columns}{ / }{Первичные ключи, внешние ключи и столбцы данных}}\index{database!primary key}\index{database!foreign key}
 
 There is a bit more structure in the above tables (Example \ref{ex:first tables}) then may first meet the eye. Each table has a {\em primary ID column}, found on the left, as well as some {\em data columns} and some {\em foreign key columns}. The primary key column is tasked with uniquely identifying different rows. Each data column houses elementary data of a certain sort. Perhaps most interesting from a structural point of view are the foreign key columns, because they link one table to another, creating a connection pattern between tables. Each foreign key column houses data that needs to be further unpacked. It thus refers us to another {\em foreign} table, in particular the primary ID column of that table. In Example \ref{ex:first tables} the {\tt Source} column was a foreign key to the {\tt Supplier} table.
 
@@ -90,7 +90,7 @@ Display (\ref{dia:instance on maincat}) shows how such a database might look at 
 
 %% Subsubsection %%
 
-\subsubsection{Business rules}\index{database!business rules}
+\subsubsection{\caseENGRUS{Business rules}{ / }{Бизнес-правила}}\index{database!business rules}
 
 Looking at the tables from Example \ref{ex:department store 1}, one may notice a few patterns. First, every employee works in the same department as his or manager. Second, every department's secretary works in that department. Perhaps the business counts on these rules for the way it structures itself. In that case the database should enforce those rules, i.e. it should check that whenever the data is updated, it conforms to the rules: 
 
@@ -104,7 +104,7 @@ Together, the statements E.1, E.2, E.3, E.4, D.1, and D.2 from Example \ref{ex:d
 
 %% Subsubsection %%
 
-\subsubsection{Data columns as foreign keys}
+\subsubsection{\caseENGRUS{Data columns as foreign keys}{ / }{Столбцы данных как внешние ключи}}
 
 To make everything consistent, we could even say that data columns are specific kinds of foreign keys. That is, each data column constitutes a foreign key to some non-branching {\em leaf table}\index{schema!leaf table}, which has no additional data. 
 
@@ -133,7 +133,7 @@ In combination, Displays (\ref{dia:instance on maincat}) and (\ref{dia:instance 
 
 %%%% Subsection %%%%
 
-\subsection{Schemas}\label{sec:schemas}
+\subsection{\caseENGRUS{Schemas}{ / }{Схемы}}\label{sec:schemas}
 
 The above section may all seem intuitive or reasonable in some ways, but also a bit difficult to fully grasp, perhaps. It would be nice to summarize what is happening in a picture. Such a picture, which will basically be a graph, should capture the {\em conceptual layout} to which the data conforms, without yet being concerned with the individual data that may populate the tables in this instant. We proceed at first by example, giving the precise definition in Definition \ref{def:schema}.
 
@@ -273,7 +273,7 @@ Let $P$ be a chess-playing program. Given any position (including the history of
 
 %% Subsubsection %%
 
-\subsubsection{Ologging schemas}\label{sec:olog as db schema}\index{olog!as database schema}
+\subsubsection{\caseENGRUS{Ologging schemas}{ / }{Превращение схем в ологи}}\label{sec:olog as db schema}\index{olog!as database schema}
 
 It should be clear that a database schema is nothing but an olog in disguise. The difference is basically the readability requirements for ologs. There is an important new addition in this section, namely that we can fill out an olog with data. Conversely, we have seen that databases are not any harder to understand than ologs are.
 
@@ -321,7 +321,7 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{Instances}
+\subsection{\caseENGRUS{Instances}{ / }{Экземпляры}}
 
 Given a database schema $(G,\simeq)$, an instance of it is just a bunch of tables whose data conform to the specified layout. These can be seen throughout the previous section, most explicitly in the relationship between schema (\ref{dia:maincat schema}) and tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}), and between schema (\ref{dia:loop}) and table (\ref{dia:dds data}). Below is the mathematical definition.
 
@@ -406,7 +406,7 @@ Suppose that $\mcM$ is a monoid and some instance of it is written out in table 
 
 %% Subsubsection %%
 
-\subsubsection{Paths through a database}
+\subsubsection{\caseENGRUS{Paths through a database}{ / }{Пути в базе данных}}
 
 Let $\mcC:=(G,\simeq)$ be a schema and let $(\PK,\FK)\taking\mcC\to\Set$ be an instance on $\mcC$. Then for every arrow $a\taking v\to w$ in $G$ we get a function $\FK(a)\taking\PK(v)\to\PK(w)$. Functions can be composed, so in fact for every path through $G$ we get a function. Namely, if $p=v_0a_1,a_2,\ldots,a_n$ is a path from $v_0$ to $v_n$ then the instance provides a function $$\FK(p):=\FK(a_n)\circ\cdots\FK(a_2)\circ\FK(a_1)\taking\PK(v_0)\to\PK(v_n),$$ which first made an appearance as part of Law 1 in Definition \ref{def:instance}.
 

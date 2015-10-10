@@ -2,17 +2,17 @@
 
 %%%%%% Section %%%%%%
 
-\section{Categories and functors commonly arising in mathematics}
+\section{\caseENGRUS{Categories and functors commonly arising in mathematics}{ / }{Категории и функторы, часто возникающие в математике}}
 
 %%%% Subsection %%%%
 
-\subsection{Monoids, groups, preorders, and graphs}\label{sec:mon grp pro as cat}
+\subsection{\caseENGRUS{Monoids, groups, preorders, and graphs}{ / }{Моноиды, группы, предпорядки и графы}}\label{sec:mon grp pro as cat}
 
 We saw in Section \ref{sec:categories} that there is a category $\Mon$ of monoids, a category $\Grp$ of groups, a category $\PrO$ of preorders, and a category $\Grph$ of graphs. In this section we show that each monoid $\mcM$, each group $\mcG$, and each preorder $\mcP$ can be considered as its own category. If each object in $\Mon$ is a category, we might hope that each morphism in $\Mon$ is just a functor, and this is true. The same holds for $\Grp$ and $\PrO$. We will deal with graphs in Section \ref{sec:graphs as functors}.
 
 %% Subsubsection %%
 
-\subsubsection{Monoids as categories}\label{sec:monoids as cats}\index{monoid!as category}
+\subsubsection{\caseENGRUS{Monoids as categories}{ / }{Моноиды как категории}}\label{sec:monoids as cats}\index{monoid!as category}
 
 In Example \ref{ex:monoid as olog} we said that to olog a monoid, we should use only one box. And again in Example \ref{ex:monoid action table} we said that a monoid action could be captured by only one table. These ideas emanated from the understanding that a monoid is perfectly modeled as a category with one object. 
 
@@ -102,7 +102,7 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{Groups as categories}\index{group!as category}
+\subsubsection{\caseENGRUS{Groups as categories}{ / }{Группы как категории}}\index{group!as category}
 
 A group is just a monoid $(M,e,\star)$ in which every element $m\in M$ is invertible, meaning there exists some $m'\in M$ with $m\star m'=e=m'\star m.$ If a monoid is the same thing as a category $\mcM$ with one object, then a group must be a category with one object and with an additional property having to do with invertibility. The elements of $M$ are the morphisms of the category $\mcM$, so we need a notion of invertibility for morphisms. Luckily we have such a notion already, namely isomorphism. We have the following:
 \begin{slogan}
@@ -123,7 +123,7 @@ Just as with monoids, an action of some group $(G,e,\star)$ on a set $S\in\Ob(\S
 
 %% Subsubsection %%
 
-\subsubsection{Monoid and group stationed at each object in a category}
+\subsubsection{\caseENGRUS{Monoid and group stationed at each object in a category}{ / }{Моноид и группа, связанные с каждым объектом категории}}
 
 If a monoid is just a category with one object, we can locate monoids in any category $\mcC$ by narrowing our gaze to one object in $\mcC$. Similarly for groups.
 
@@ -160,7 +160,7 @@ What is its group of automorphisms? Hint: every automorphism of $G$ will induce 
 
 %% Subsubsection %%
 
-\subsubsection{Preorders as categories}\label{sec:preorder as cat}\index{preorder!as category}
+\subsubsection{\caseENGRUS{Preorders as categories}{ / }{Предпорядки как категории}}\label{sec:preorder as cat}\index{preorder!as category}
 
 A preorder $(X,\leq)$ consists of a set $X$ and a binary relation $\leq$ that is reflexive and transitive. We can make from $(X,\leq)\in\Ob(\PrO)$ a category $\mcX\in\Ob(\Cat)$ as follows. Define $\Ob(\mcX)=X$ and for every two objects $x,y\in X$ define 
 $$\Hom_\mcX(x,y)=\begin{cases}\{“x\leq y”\}&\tn{ if } x\leq y\\\emptyset&\tn{ if } x\not\leq y\end{cases}$$
@@ -228,7 +228,7 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{Graphs as functors}\label{sec:graphs as functors}\index{graph!as functor}
+\subsubsection{\caseENGRUS{Graphs as functors}{ / }{Графы как функторы}}\label{sec:graphs as functors}\index{graph!as functor}
 
 Let $\mcC$ denote the category depicted below 
 \begin{align}\label{dia:graph index}
@@ -283,7 +283,7 @@ Let $\GrIn$ be the graph indexing category shown in (\ref{dia:graph index}) and 
 
 %%%% Subsection %%%%
 
-\subsection{Database schemas present categories}\label{sec:schemas and cats intro}\index{schema!as category presentation}
+\subsection{\caseENGRUS{Database schemas present categories}{ / }{Схемы баз данных представляют собой категории}}\label{sec:schemas and cats intro}\index{schema!as category presentation}
 
 Recall from Definition \ref{def:schema} that a database schema (or schema, for short) consists of a graph together with a certain kind of equivalence relation on its paths. In Section \ref{sec:sch as category} we will define a category $\Sch$ that has schemas as objects and appropriately modified graph homomorphisms as morphisms. In Section \ref{sec:proof of cat=sch} we prove that the category of schemas is equivalent (in the sense of Definition \ref{def:equiv of cats}) to the category of categories, $$\Sch\simeq\Cat.$$
 
@@ -317,7 +317,7 @@ Suppose that $G$ is a graph and that $\mcG$ is the schema generated by $G$ with 
 
 %% Subsubsection %%
 
-\subsubsection{Instances on a schema $\mcC$}\label{sec:instances}\index{database!instance}\index{instance}
+\subsubsection{\caseENGRUS{Instances on a schema $\mcC$}{ / }{Экземпляры схемы $\mcC$}}\label{sec:instances}\index{database!instance}\index{instance}
 
 If schemas are like categories, what are instances? Recall that an instance $I$ on a schema $\mcS=(G,\simeq)$ assigns to each vertex $v$ in $G$ a set of rows say $I(v)\in\Ob(\Set)$. And to every arrow $a\taking v\to v'$ in $G$ the instance assigns a function $I(a)\taking I(v)\to I(v')$. The rule is that given two equivalent paths, their compositions must give the same function. Concisely, an instance is a functor $I\taking\mcS\to\Set$. 
 
@@ -338,7 +338,7 @@ But now we know that if a graph is a set-valued functor then we can consider $\G
 
 %%%% Subsection %%%%
 
-\subsection{Spaces}\index{space}
+\subsection{\caseENGRUS{Spaces}{ / }{Пространства}}\index{space}
 
 Category theory was invented for use in algebraic topology, and in particular to discuss natural transformations between certain functors. We will get to natural transformations more formally in Section \ref{sec:nat trans}. For now, they are ways of relating functors. In the original use, Eilenberg and Mac Lane were interested in functors that connect topological spaces (shapes like spheres, etc.) to algebraic systems (groups, etc.) 
 
@@ -389,7 +389,7 @@ Every vector space has vector subspaces, ordered by inclusion (the origin is ins
 
 %% Subsubsection %%
 
-\subsubsection{Groupoids}\label{sec:groupoid}\index{groupoid}
+\subsubsection{\caseENGRUS{Groupoids}{ / }{Группоиды}}\label{sec:groupoid}\index{groupoid}
 
 Groupoids are like groups except a groupoid can have more than one object. 
 
@@ -456,11 +456,11 @@ Consider the set $A$ of all (well-formed) arithmetic expressions in the symbols 
 
 %%%% Subsection %%%%
 
-\subsection{Logic, set theory, and computer science}
+\subsection{\caseENGRUS{Logic, set theory, and computer science}{ / }{Логика, теория множеств и теоретическая информатика}}
 
 %% Subsubsection %%
 
-\subsubsection{The category of propositions}\label{sec:propositions}\index{a category!$\Prop$}
+\subsubsection{\caseENGRUS{The category of propositions}{ / }{Категория утверждений}}\label{sec:propositions}\index{a category!$\Prop$}
 
 Given a domain of discourse, a logical proposition is a statement that is evalued in any model of that domain as either true or “not always true”. For example, in the domain of real numbers we might have the proposition 
 $$\tn{For all real numbers }x\in\RR\tn{ there exists a real number } y\in\RR\tn{ such that }y>3x.$$
@@ -488,12 +488,12 @@ Take again the preorder $J$ of jurisdictions from Exercise \ref{exc:juris 1} and
 
 %% Subsubsection %%
 
-\subsubsection{A categorical characterization of $\Set$}\index{set!Lawvere's description of}
+\subsubsection{\caseENGRUS{A categorical characterization of $\Set$}{ / }{Категорная характеризация $\Set$}}\index{set!Lawvere's description of}
 The category $\Set$ of sets is fundamental in mathematics, but instead of thinking of it as something given or somehow special, it can be shown to merely be a category with certain properties, each of which can be phrased purely categorically. This was shown by Lawvere \cite{Law}. A very readable account is given in \cite{Le2}.
 
 %% Subsubsection %%
 
-\subsubsection{Categories in computer science}\index{CCCs}\index{category!cartesian closed}
+\subsubsection{\caseENGRUS{Categories in computer science}{ / }{Категории в теоретической информатике}}\index{CCCs}\index{category!cartesian closed}
 
 Computer science makes heavy use of trees, graphs, orders, lists, and monoids. We have seen that all of these are naturally viewed in the context of category theory, though it seems that such facts are rarely mentioned explicitly in computer science textbooks. However, categories are also used explicitly in the theory of programming languages (PL). Researchers in that field attempt to understand the connection between what programs are supposed to do (their denotation) and what they actually cause to occur (their operation). Category theory provides a useful mathematical formalism in which to study this.
 
@@ -505,7 +505,7 @@ We have also seen in Section \ref{sec:schemas and cats intro} that databases are
  
 %%%% Subsection %%%%
 
-\subsection{Categories applied in science} 
+\subsection{\caseENGRUS{Categories applied in science}{ / }{Применение категорий в науке}} 
 
 Categories are being used throughout mathematics to relate various subjects, as well as to draw out the essential structures within these subjects. For example, there is an active research for “categorifying” classical theories like that of knots, links, and braids \cite{Kho}. It is similarly applied in science, to clarify complex subjects. Here are some very brief descriptions of scientific disciplines to which category theory is applied.
 

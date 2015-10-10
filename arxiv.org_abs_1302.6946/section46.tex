@@ -2,13 +2,13 @@
 
 %%%%%% Section %%%%%%
 
-\section{Other notions in $\Cat$}
+\section{\caseENGRUS{Other notions in $\Cat$}{ / }{Другие понятия в $\Cat$}}
 
 In this section we discuss some leftover notions about categories. For example in Section \ref{sec:opposite} we explain a kind of duality for categories, in which arrows are flipped. For example reversing the order in a preorder is an example of this duality, as is the similarity between limits and colimits. In Section \ref{sec:grothendieck construction} we discuss the so-called Grothendieck construction which in some sense graphs functors, and we show that it is useful for transforming databases into the kind of format (RDF) used in scraping data off webpages. We define a general construction for creating categories in Section \ref{sec:comma}. Finally, in Section \ref{sec:arithmetic of categories} we show that precisely the same arithmetic statements that held for sets in Section \ref{sec:arithmetic of sets} hold for categories. 
 
 %%%% Subsection %%%%
 
-\subsection{Opposite categories}\label{sec:opposite}\index{functor!contravariant}\index{functor!covariant}
+\subsection{\caseENGRUS{Opposite categories}{ / }{Дуальные категории}}\label{sec:opposite}\index{functor!contravariant}\index{functor!covariant}
 
 People used to discuss two different kinds of functors between categories: the so-called {\em covariant functors} and the so-called {\em contravariant functors}. Covariant functors are what we have been calling functors. The reader may have come across the idea of contravariance when considering Exercise \ref{exc:points and opens in Top}.\footnote{Similarly, see Exercise \ref{exc:juris 2}.} There we saw that a continuous mapping of topological spaces $f\taking X\to Y$ does not induce a morphism of orders on their open sets $\Op(X)\to\Op(Y)$; that is not required by the notion of continuity. Instead, a morphism of topological spaces $f\taking X\to Y$ induces a morphism of orders $\Op(Y)\to\Op(X)$, going backwards. So we do not have a functor $\Top\to\PrO$ in this way, but it's quite close. One used to say that $\Op$ is a {\em contravariant functor} $\Top\to\PrO$.
 
@@ -59,7 +59,7 @@ This may seem very complicated compared to something we did earlier, namely simp
 
 %%%% Subsection %%%%
 
-\subsection{Grothendieck construction}\label{sec:grothendieck construction}\index{Grothendieck!construction}
+\subsection{\caseENGRUS{Grothendieck construction}{ / }{Конструкция Гротендика}}\label{sec:grothendieck construction}\index{Grothendieck!construction}
 
 Let $\mcC$ be a database schema (or category) and let $J\taking\mcC\to\Set$ be an instance. We have been drawing this in table form, but there is another standard way of laying out the data in $J$, called the \href{http://en.wikipedia.org/wiki/Resource_Description_Framework}{\em resource descriptive framework} or RDF. Developed for the web, RDF is a useful format when one does not have a schema in hand, e.g. when scraping information off of a website, one does not know what schema will be best. In these cases, information is stored in so-called RDF triples, which are of the form $$\la\tn{Subject, Predicate, Object}\ra$$\index{RDF}
 
@@ -196,7 +196,7 @@ and the functor $F\taking\mcM\to\Set$ is recorded in an action table in Example 
 
 %%%% Subsection %%%%
 
-\subsection{Full subcategory}\index{subcategory!full}
+\subsection{\caseENGRUS{Full subcategory}{ / }{Полная подкатегория}}\index{subcategory!full}
 
 \begin{definition}\label{def:full subcategory}
 
@@ -248,7 +248,7 @@ Including all identities and all compositions, how many morphisms are there in t
 
 %%%% Subsection %%%%
 
-\subsection{Comma categories}\label{sec:comma}\index{category!comma}
+\subsection{\caseENGRUS{Comma categories}{ / }{Категории запятой}}\label{sec:comma}\index{category!comma}
 
 Category theory includes a highly developed and interoperable catalogue of materials and production techniques. One such is the comma category.
 
@@ -291,7 +291,7 @@ Let $\mcC$ be a category and let $c,c'\in\Ob(\mcC)$ be objects. Consider them as
 
 %%%% Subsection %%%%
 
-\subsection{Arithmetic of categories}\label{sec:arithmetic of categories}
+\subsection{\caseENGRUS{Arithmetic of categories}{ / }{Арифметика категорий}}\label{sec:arithmetic of categories}
 
 In Section \ref{sec:arithmetic of sets}, we summarized some of the properties of products, coproducts, and exponentials for sets, attempting to show that they lined up precisely with familiar arithmetic properties of natural numbers. Astoundingly, we can do the same for categories.
 

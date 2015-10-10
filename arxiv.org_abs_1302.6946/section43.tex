@@ -2,7 +2,7 @@
 
 %%%%%% Section %%%%%%
 
-\section{Natural transformations}\label{sec:nat trans}
+\section{\caseENGRUS{Natural transformations}{ / }{Естественные преобразования}}\label{sec:nat trans}
 
 In this section we conclude our discussion of the {\bf Big 3}, by defining natural transformations. Category theory was originally invented to discuss natural transformations. These were sufficiently conceptually challenging that they required formalization and thus the invention of category theory. If we think of categories as domains (of discourse, interaction, comparability, etc.) and of functors as transformations between different domains, the natural transformations compare different transformations.
 
@@ -10,7 +10,7 @@ Natural transformations can seem a bit abstruse at first, but hopefully some exa
 
 %%%% Subsection %%%%
 
-\subsection{Definition and examples}
+\subsection{\caseENGRUS{Definition and examples}{ / }{Определение и примеры}}
 
 Let's begin with an example. There is a functor $\List\taking\Set\to\Set$, which sends a set $X$ to the set $\List(X)$ consisting of all lists whose entries are elements of $X$. Given a morphism $f\taking X\to Y$, we can transform a list with entries in $X$ into a list with entries in $Y$ by applying $f$ to each (this was worked out in Exercise \ref{exc:list as functor}).\index{a functor!$\List\taking\Set\to\Set$}. 
 
@@ -319,7 +319,7 @@ A natural transformation of two such functors $\alpha\taking G\to G'$ involves t
 
 %%%% Subsection %%%%
 
-\subsection{Vertical and horizontal composition}\label{sec:vert and hor}
+\subsection{\caseENGRUS{Vertical and horizontal composition}{ / }{Вертикальная и горизонтальная композиция}}\label{sec:vert and hor}
 
 In this section we discuss two types of compositions for natural transformations. The terms vertical and horizontal are used to describe them; these terms come from the following pictures:
 
@@ -332,7 +332,7 @@ We generally use $\circ$ to denote both kinds of composition, but if we want to 
 
 %% Subsubsection %%
 
-\subsubsection{Vertical composition of natural transformations}\index{natural transformation!vertical composition of}
+\subsubsection{\caseENGRUS{Vertical composition of natural transformations}{ / }{Вертикальная композиция естественных преобразований}}\index{natural transformation!vertical composition of}
 
 The following proposition proves that functors and natural transformations (using vertical composition) form a category.
 
@@ -400,7 +400,7 @@ Let $[1]$ denote the free arrow category as in Exercise \ref{exc:[1]}, and let $
 
 %% Subsubsection %%
 
-\subsubsection{Natural isomorphisms}\index{natural isomorphism}
+\subsubsection{\caseENGRUS{Natural isomorphisms}{ / }{Естественные изоморфизмы}}\index{natural isomorphism}
 
 Let $\mcC$ and $\mcD$ be categories. We have defined a category $\Fun(\mcC,\mcD)$ whose objects are functors $\mcC\to\mcD$ and whose morphisms are natural transformations. What are the isomorphisms in this category? 
 
@@ -437,7 +437,7 @@ Recall from Application \ref{app:change of fsm} that a finite state machine on a
 
 %% Subsubsection %%
 
-\subsubsection{Horizontal composition of natural transformations}
+\subsubsection{\caseENGRUS{Horizontal composition of natural transformations}{ / }{Горизонтальная композиция естественных преобразований}}
 
 \begin{example}[Whiskering]\label{ex:whiskering}\index{natural transformation!for adding functionality}
 
@@ -575,7 +575,7 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{The category of instances on a database schema}\index{a category!$\mcC\set$}\index{database!category of instances on}
+\subsection{\caseENGRUS{The category of instances on a database schema}{ / }{Категория экземпляров схемы базы данных}}\index{a category!$\mcC\set$}\index{database!category of instances on}
 
 In Section \ref{sec:schemas and cats intro} we showed that schemas are presentations of categories, and we will show in Section \ref{sec:cat equiv sch} that in fact the category of schemas is equivalent to the category of categories. In this section we therefore take license to blur the distinction between schemas and categories.
 
@@ -731,7 +731,7 @@ representing a discrete timeline. A place to start might be to use something lik
 
 %%%% Subsection %%%%
 
-\subsection{Equivalence of categories}\label{sec:equivalence of cats}
+\subsection{\caseENGRUS{Equivalence of categories}{ / }{Эквивалентность категорий}}\label{sec:equivalence of cats}
 
 We have a category $\Cat$ of categories, and in every category there is a notion of isomorphism between objects: one morphism each way, such that each round-trip composition is the identity. An isomorphism in $\Cat$, therefore, takes place between two categories, say $\mcC$ and $\mcD$: it is a functor $F\taking\mcC\to\mcD$ and a functor $G\taking\mcD\to\mcC$ such that $G\circ F=\id_\mcC$ and $F\circ G=\id_\mcD$. 
 

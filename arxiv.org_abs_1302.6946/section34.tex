@@ -2,7 +2,7 @@
 
 %%%%%% Section %%%%%%
 
-\section{Orders}\label{sec:orders}
+\section{\caseENGRUS{Orders}{ / }{Порядки}}\label{sec:orders}
 
 People usually think of certain sets as though they just {\em are} ordered, e.g. that an order is ordained by God. For example the natural numbers just {\em are} ordered. The letters in the alphabet just {\em are} ordered. But in fact we put orders on sets, and some are simply more commonly used in culture. One could order the letters in the alphabet by frequency of use and $e$ would come before $a$. Given different purposes, we can put different orders on the same set. For example in Exercise \ref{exc:divides as po} we will give a different ordering on the natural numbers that is useful in elementary number theory.
 
@@ -10,7 +10,7 @@ In science, we might order the set of materials in two different ways. In the fi
 
 %%%% Subsection %%%%
 
-\subsection{Definitions of preorder, partial order, linear order}
+\subsection{\caseENGRUS{Definitions of preorder, partial order, linear order}{ / }{Определения предпорядка, частичного порядка, линейного порядка}}
 
 \begin{definition}\label{def:orders}\index{order}
 
@@ -189,7 +189,7 @@ Let $X$ be the set of people and let $R\ss X\times X$ be the relation with $(x,y
 
 %%%% Subsection %%%%
 
-\subsection{Meets and joins}\label{sec:meets and joins}
+\subsection{\caseENGRUS{Meets and joins}{ / }{Пересечения и объединения}}\label{sec:meets and joins}
 
 Let $X$ be any set. Recall from Definition \ref{def:subobject classifier} that the powerset of $X$, denoted $\PP(X)$ is the set of subsets of $X$. There is a natural order on $\PP(X)$ given by the subset relationship, as exemplified in Exercise \ref{exc:power poset}. Given two elements $a,b\in\PP(X)$ we can consider them as subsets of $X$ and take their intersection as an element of $\PP(X)$ which we denote $a\wedge b$. We can also consider them as subsets of $X$ and take their union as an element of $\PP(X)$ which we denote $a\vee b$. The intersection and union operations are generalized in the following definition.
 
@@ -265,7 +265,7 @@ Consider the tree drawn in (\ref{dia:tree}).
 \endsexc
 \end{exercise}
 
-\subsection{Opposite order}
+\subsection{\caseENGRUS{Opposite order}{ / }{Дуальный порядок}}
 
 \begin{definition}\label{def:opposite order}\index{order!opposite}
 
@@ -292,7 +292,7 @@ Suppose that $\mcS:=(S,\leq)$ is a preorder, and that $s_1,s_2\in S$ have join $
 
 %%%% Subsection %%%%
 
-\subsection{Morphism of orders}
+\subsection{\caseENGRUS{Morphism of orders}{ / }{Морфизм порядков}}
 
 An order $(S,\leq)$, be it a preorder, a partial order, or a linear order, involves a set and a binary relations. For two orders to be comparable, their sets and their relations should be appropriately comparable.\index{appropriate comparison}
 
@@ -346,11 +346,11 @@ Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_I$ be the indiscr
 
 %%%% Subsection %%%%
 
-\subsection{Other applications}
+\subsection{\caseENGRUS{Other applications}{ / }{Другие применения}}
 
 %% Subsubsection %%
 
-\subsubsection{Biological classification}\index{biological classification}
+\subsubsection{\caseENGRUS{Biological classification}{ / }{Биологическая классификация}}\index{biological classification}
 
 \href{http://en.wikipedia.org/wiki/Biological_classification}{\text Biological classification} is a method for dividing the set of organisms into distinct classes, called taxa. In fact, it turns out that such a classification, say a phylogenetic tree, can be understood as a partial order $C$ on the set of taxa. The typical {\em ranking} of these taxa, including kingdom, phylum, etc., can be understood as morphism of orders $f\taking C\to [n]$, for some $n\in\NN$. 
 
@@ -385,7 +385,7 @@ Since the phylogenetic tree is a tree, it has all meets.
 
 %% Subsubsection %%
 
-\subsubsection{Security}\index{security}
+\subsubsection{\caseENGRUS{Security}{ / }{Безопасность}}\index{security}
 
 Security, say of sensitive information, is based on two things: a security clearance and “need to know.” The former, security clearance might have levels like “confidential”, “secret”, “top secret”. But maybe we can throw in “president” and some others too, like “plebe”. 
 
@@ -407,7 +407,7 @@ Let $P$ be the set of all people and let $\ol{I}$ be the set of all pieces of in
 
 %% Subsubsection %%
 
-\subsubsection{Spaces, e.g. geography}\index{space}
+\subsubsection{\caseENGRUS{Spaces, e.g. geography}{ / }{Пространства, в том числе, географические}}\index{space}
 
 Consider closed curves that can be drawn in the plane $\RR^2$, e.g. circles, ellipses, and kidney-bean shaped curves. The interiors of these closed curves (not including the boundary itself) are called {\em basic open sets in $\RR^2$}. The good thing about such an interior $U$ is that any point $p\in U$ is not on the boundary, so no matter how close $p$ is to the boundary of $U$, there will always be a tiny basic open set surrounding $p$ and completely contained in $U$. In fact, the union of any collection of basic open sets still has this property. An {\em open set in $\RR^2$} is any subset $U\ss \RR^2$ that can be formed as the union of a collection of basic open sets.
 

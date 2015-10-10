@@ -2,7 +2,7 @@
 
 %%%%%% Section %%%%%%
 
-\section{Categories of functors}
+\section{\caseENGRUS{Categories of functors}{ / }{Категории функторов}}
 
 For any two categories $\mcC$ and $\mcD$,
 \footnote{Technically $\mcC$ has to be small (see Remark \ref{rmk:small}), but as we said there, we are not worrying about that distinction in this book.}
@@ -10,7 +10,7 @@ we discussed the category $\Fun(\mcC,\mcD)$ of functors and natural transformati
 
 %%%% Subsection %%%%
 
-\subsection{Set-valued functors}
+\subsection{\caseENGRUS{Set-valued functors}{ / }{Функторы со значениями в $\Set$}}
 
 Let $\mcC$ be a category. Then we have been writing $\mcC\set$ to denote the functor category $\Fun(\mcC,\Set)$. Here is a nice result about these categories.
 
@@ -101,7 +101,7 @@ A similar argument works to show the analogous result for epimorphisms.
 
 %% Subsubsection %%
 
-\subsubsection{Representable functors}\label{sec:representable functors}
+\subsubsection{\caseENGRUS{Representable functors}{ / }{Представимые функторы}}\label{sec:representable functors}
 
 Given a category $\mcC$, there are certain functors $\mcC\to\Set$ that come with the package, one for every object in $\mcC$. So if $\mcC$ is a database schema, then for every table $c\in\Ob(\mcC)$ there is a certain database instance associated to it. These instances, i.e. set-valued functors, are called representable functors, and they'll be defined in Definition \ref{def:representable functor}. The idea is that if a database schema represents a conceptual layout of types (e.g. as an olog), then each type $T$ has an instance associated to it, standing for “the generic thing of type $T$ with all its generic attributes”.
 
@@ -182,7 +182,7 @@ In general, there is a representable functor for every type in an olog. The repr
 
 %% Subsubsection %%
 
-\subsubsection{Yoneda's lemma}\label{sec:yoneda}
+\subsubsection{\caseENGRUS{Yoneda's lemma}{ / }{Лемма Йонеды}}\label{sec:yoneda}
 
 One of the most powerful tools in category theory is Yoneda's lemma. It is often considered by new students to be quite abstract, but grounding it in databases may help.
 
@@ -331,7 +331,7 @@ in $\Fin$. The result about natural numbers {\color{red}follows}.
 
 %% Subsubsection %%
 
-\subsubsection{The subobject classifier $\Omega\in\Ob(\mcC\set)$}\index{subobject classifier!in $\mcC\set$}
+\subsubsection{\caseENGRUS{The subobject classifier $\Omega\in\Ob(\mcC\set)$}{ / }{Классификатор подобъектов $\Omega\in\Ob(\mcC\set)$}}\index{subobject classifier!in $\mcC\set$}
 
 If $\mcC$ is a category then the functor category $\mcC\set$ is a very nice kind of category, called a {\em topos}.\index{topos} Note that when $\mcC=\ul{1}$ is the terminal category, then we have an isomorphism $\mcC\set\iso\Set$, so the category of sets is a special case of a topos. What is so interesting about toposes (or topoi) is that they so nicely generalize many properties of $\Set$. In this short section we investigate only one such property, namely that $\mcC\set$ has a subobject classifier, denoted $\Omega\in\Ob(\mcC\set)$. In the case $\mcC=\ul{1}$, we saw back in Section \ref{def:subobject classifier} that the subobject classifier is $\{True,False\}\in\Ob(\Set)$. 
 
@@ -518,11 +518,11 @@ Write down $G\in\Ob(\GrIn\set)$ in tabular form.
 
 %%%% Subsection %%%%
 
-\subsection{Database instances in other categories}
+\subsection{\caseENGRUS{Database instances in other categories}{ / }{Экземпляры баз данных в других категориях}}
 
 %% Subsubsection %%
 
-\subsubsection{Representations of groups}\label{ex:reps of groups}
+\subsubsection{\caseENGRUS{Representations of groups}{ / }{Представления групп}}\label{ex:reps of groups}
 
 The classical mathematical subject of {\em representation theory}\index{representation theory} is the study of $\Fun(G,\Vect)$ where $G$ is a group and $\Vect$ is the category of vector spaces (over say $\RR$).\index{vector space}\index{a category!$\Vect$} Every such functor $F\taking G\to\Vect$ is called a {\em representation of $G$}. Since $G$ is a category with one object $\monOb$, $F$ consists of a single vector space $V=F(\monOb)$ together with an action of $G$ on it. 
 
@@ -538,13 +538,13 @@ A third possibility is to use monads, which allow the table to have only as many
 
 %% Subsubsection %%
 
-\subsubsection{Representations of quivers}
+\subsubsection{\caseENGRUS{Representations of quivers}{ / }{Представления колчанов}}
 
 Representation theory also studies representations of quivers. A {\em quiver} is just the free category (see Example \ref{ex:free category}\index{category!free category}\index{graph!free category on}) on a graph. If $P$ is a graph with free category $\mcP$ then a representation of the quiver $\mcP$ is a functor $F\taking\mcP\to\Vect$. Such a representation consists of a vector space at every vertex of $P$ and a linear transformation for every arrow. All of the discussion from Section \ref{ex:reps of groups} works in this setting, except that there is more than one table.
 
 %% Subsubsection %%
 
-\subsubsection{Other target categories}\label{sec:other targets}
+\subsubsection{\caseENGRUS{Other target categories}{ / }{Другие категории в качестве области значений}}\label{sec:other targets}
 
 One can imagine the value of using target categories other than $\Set$ or $\Vect$ for databases. 
 
@@ -564,7 +564,7 @@ Many other scientific disciplines could use the same kind of tool. For example, 
 
 %%%% Subsection %%%%
 
-\subsection{Sheaves}\label{sec:sheaves}\index{sheaves}
+\subsection{\caseENGRUS{Sheaves}{ / }{Пучки}}\label{sec:sheaves}\index{sheaves}
 
 Let $X$ be a topological space (see Example \ref{ex:topological space}), such as a sphere. In Section \ref{sec:other targets} we discussed continuous functions out of $X$, and their use in science (e.g. recording temperatures on the earth as a continuous map $X\to[-100,200]$). Sheaves allow us to consider the local-global nature of such maps, taking into account reparable discrepancies in data gathering tools. 
 
@@ -685,7 +685,7 @@ In Exercises \ref{exc:juris 1} and \ref{exc:juris 2} we discussed the idea of la
 
 %% Subsubsection %%
 
-\subsubsection{Sheaf of ologged concepts}\index{olog!sheaf of}
+\subsubsection{\caseENGRUS{Sheaf of ologged concepts}{ / }{Пучок концептов олога}}\index{olog!sheaf of}
 
 Definition \ref{def:sheaf} defines what should be called a sheaf of sets. We can discuss sheaves of groups or even sheaves of categories. Here is an application of the latter.
 
@@ -707,7 +707,7 @@ Imagine two groups of people $G_1$ and $G_2$ each making observations about the 
 
 %% Subsubsection %%
 
-\subsubsection{Time}
+\subsubsection{\caseENGRUS{Time}{ / }{Время}}
 
 One can use sheaves to model objects in time; Goguen gave an approach to this in \cite{Gog}. For another approach, let $\mcC$ be a database schema. The lifespan of information about the world is generally finite; that is, what was true yesterday is not always the case today. Thus we can associate to each interval $U$ of time the information that we deem to hold throughout $U$. This is sometimes called the {\em valid time}\index{data!valid time} of the data.
 

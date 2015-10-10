@@ -2,7 +2,7 @@
 
 %%%%%% Section %%%%%%
 
-\section{Monads}\label{sec:monads}\index{monad}
+\section{\caseENGRUS{Monads}{ / }{Монады}}\label{sec:monads}\index{monad}
 
 Monads would probably not have been invented without category theory, but they have been quite useful in formalizing algebra, calculating invariants of topological spaces, and imbedding non-functional operations into functional programming languages. We will mainly discuss monads in terms of how they can help us make modeling contexts explicit, and in so doing allow us to simplify the language we use in the model.
 
@@ -10,7 +10,7 @@ Much of the following material on monads is taken from \cite{Sp3}.
 
 %%%% Subsection %%%%
 
-\subsection{Monads formalize context}\index{monad!formalizing context}\index{context}
+\subsection{\caseENGRUS{Monads formalize context}{ / }{Монады формализуют контекст}}\index{monad!formalizing context}\index{context}
 
 Monads can formalize assumptions about the way one will do business throughout a domain. For example, suppose that we want to consider functions that do not have to return a value for all inputs. Such {\em partial functions}\index{partial functions} can be composed. Indeed, given a partial function $f\taking A\to B$ and a partial function $g\taking B\to C$, one gets a partial function $g\circ f\taking A\to C$ in an obvious way.
 
@@ -57,7 +57,7 @@ We will return to this in Examples \ref{ex:experimenter matters 2} and \ref{ex:e
 
 %%%% Subsection %%%%
 
-\subsection{Definition and examples}
+\subsection{\caseENGRUS{Definition and examples}{ / }{Определение и примеры}}
 
 What aspects of Example \ref{ex:partial function monad} are really about monads, and what aspects are just about partial functions in particular? It is a functor and a pair of natural transformations that showed up in (\ref{dia:first monad}), (\ref{dia:first eta}), and (\ref{dia:first mu}). In this section we will give the definition and a few examples. We will return to our story about how monads formalize context in Section \ref{sec:kleisli}.
 
@@ -141,7 +141,7 @@ Monads can be defined on categories other than $\Set$. In fact, for any category
 
 %%%% Subsection %%%%
 
-\subsection{Kleisli category of a monad}\label{sec:kleisli}
+\subsection{\caseENGRUS{Kleisli category of a monad}{ / }{Категория Клейсли монады}}\label{sec:kleisli}
 
 Given a monad $\top:=(T,\eta,\mu)$, we can form a new category $\Kls(\top)$.
 
@@ -241,7 +241,7 @@ The parenthetical statements can be removed if we assume them to always be aroun
 
 %% Subsubsection %%
 
-\subsubsection{Relaxing functionality constraint for ologs}\label{sec:relaxing ologs}
+\subsubsection{\caseENGRUS{Relaxing functionality constraint for ologs}{ / }{Ослабление ограничений на функциональность олога}}\label{sec:relaxing ologs}
 
 In Section \ref{sec:aspects} we said that every arrow in an olog has to be English-readable as a sentence, and it has to correspond to a function. For example, the arrow 
 \begin{align}\label{dia:non-functional but english}
@@ -254,7 +254,7 @@ In the context of the power set monad (see Exercise \ref{exc:power set monad}), 
 
 %%%% Subsection %%%%
 
-\subsection{Monads in databases}\label{sec:monads in db}\index{database!Kleisli}\index{instance!Kleisli}
+\subsection{\caseENGRUS{Monads in databases}{ / }{Монады в базах данных}}\label{sec:monads in db}\index{database!Kleisli}\index{instance!Kleisli}
 
 In this section we discuss how to record data in the presence of a monad. The idea is quite simple. Given a schema (category) $\mcC$, an ordinary instance is a functor $I\taking\mcC\to\Set$. But if $\top=(T,\eta,\mu)$ is a monad, then a {\em Kleisli $\top$-instance on $\mcC$} is a functor $J\taking\mcC\to\Kls(\top)$. Such a functor associates to every object $c\in\Ob(\mcC)$ a set $J(c)$, and to every arrow $f\taking c\to c'$ in $\mcC$ a morphism $J(f)\taking J(c)\to J(c')$ in $\Kls(\top)$. How does this look in terms of tables?
 
@@ -314,7 +314,7 @@ The context of these tables is that of partial functions, so we do not need a re
 
 \end{example}
 
-\subsubsection{Probability distributions}
+\subsubsection{\caseENGRUS{Probability distributions}{ / }{Распределения вероятностей}}
 
 Let $[0,1]\ss\RR$ denote the set of real numbers between $0$ and $1$. Let $X$ be a set and $p\taking X\to[0,1]$ a function. We say that $p$ is a {\em finitary probability distribution on $X$} if there exists a finite subset $W\ss X$ such that 
 \begin{align}\label{dia:sum to 1}
@@ -361,7 +361,7 @@ The composition formula for Kleisli categories is the desired one: to each star 
 
 %%%% Subsection %%%%
 
-\subsection{Monads and adjunctions}
+\subsection{\caseENGRUS{Monads and adjunctions}{ / }{Монады и сопряжения}}
 
 There is a strong connection between monads and adjunctions: every adjunction creates a monad, and every monad “comes from” an adjunction. For example, the $\List$ monad (Example \ref{ex:monad}) comes from the free-forgetful adjunction between sets and monoids
 $$\Adjoint{F}{\Set}{\Mon}{U}$$

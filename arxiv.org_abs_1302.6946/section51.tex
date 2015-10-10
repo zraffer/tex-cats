@@ -2,7 +2,7 @@
 
 %%%%%% Section %%%%%%
 
-\section{Adjoint functors}\index{adjoint functors}
+\section{\caseENGRUS{Adjoint functors}{ / }{Сопряженные функторы}}\index{adjoint functors}
 
 Just above, in the introduction to this chapter, I said that adjoint functors are like dictionaries that translate back and forth between different categories. How far can we take that analogy?
 
@@ -10,7 +10,7 @@ In the common understanding of dictionaries, we assume that the two languages (s
 
 %%%% Subsection %%%%
 
-\subsection{Discussion and definition}\label{sec:adjoints discuss and define}
+\subsection{\caseENGRUS{Discussion and definition}{ / }{Обсуждение и определение}}\label{sec:adjoints discuss and define}
 
 Consider the category of monoids and the category of sets. A monoid $(M,e,\star)$ is a set with an identity element and a multiplication formula that is associative. A set is just a set. A dictionary between $\Mon$ and $\Set$ should not be required to set up an even exchange, but instead an exchange that is appropriate to the structures at hand. It will be in the form of two functors, one we'll denote by $L\taking\Set\to\Mon$, and one we'll denote by $R\taking\Mon\to\Set$. But to say what “appropriate” means requires more work.\index{a functor!$\Set\to\Mon$}\index{a functor!$\Mon\to\Set$}
 
@@ -167,7 +167,7 @@ Again, the identity component $\id_{G'(d)}$ is sent to some morphism $G'(d)\to G
 
 %% Subsubsection %%
 
-\subsubsection{Quantifiers as adjoints}
+\subsubsection{\caseENGRUS{Quantifiers as adjoints}{ / }{Кванторы как сопряжения}}
 
 One of the simplest but neatest places that adjoints show up is between preimages and the logical quantifiers $\exists$ and $\forall$, which we first discussed in Notation \ref{not:basic math notation}. \index{preimage}\index{a symbol!$\forall$}\index{a symbol!$\exists$} The setting in which to discuss this is that of sets and their power preorders. That is, if $X$ is a set then recall from Section \ref{sec:meets and joins} that the power set $\PP(X)$ has a natural ordering by inclusion of subsets. 
 
@@ -209,7 +209,7 @@ In fact, “quantifiers as adjoints” is part of a larger story. Suppose we thi
 
 %%%% Subsection %%%%
 
-\subsection{Universal concepts in terms of adjoints}\label{sec:universal concepts}
+\subsection{\caseENGRUS{Universal concepts in terms of adjoints}{ / }{Универсальные конструкции в терминах сопряжений}}\label{sec:universal concepts}
 
 In this section we discuss how universal concepts, i.e. initial objects and terminal objects, colimits and limits, are easily phrased in the language of adjoint functors. We will say that a functor $F\taking\mcC\to\mcD$ {\em is a left adjoint} if there exists a functor $G\taking\mcD\to\mcC$ such that $F$ is a left adjoint of $G$. We showed in Proposition \ref{prop:unicity of adjoints} that if $F$ is a left adjoint of some functor $G$, then it is isomorphic to every other left adjoint of $G$, and $G$ is isomorphic to every other right adjoint of $F$.
 
@@ -282,7 +282,7 @@ The currying isomorphism $\Hom_\Set(A\times B,C)\iso\Hom_\Set(B,C^A)$ falls out 
 
 %%%% Subsection %%%%
 
-\subsection{Preservation of colimits or limits}
+\subsection{\caseENGRUS{Preservation of colimits or limits}{ / }{Сохранение копределов или пределов}}
 
 One useful fact about adjunctions is that left adjoints preserve all colimits and right adjoints preserve all limits. 
 
@@ -324,7 +324,7 @@ Its preorder $L(G\times H)$ does not have $(a,a)\leq(a,b)$, whereas this is the 
 
 %%%% Subsection %%%%
 
-\subsection{Data migration}\label{sec:data migration}\index{data migration}
+\subsection{\caseENGRUS{Data migration}{ / }{Миграция баз данных}}\label{sec:data migration}\index{data migration}
 
 As we saw in Sections \ref{sec:schemas and cats intro} and \ref{sec:instances}, a database schema is a category $\mcC$ and an instance is a functor $I\taking\mcC\to\Set$.  
 
@@ -344,7 +344,7 @@ It turns out that almost all the basic database operations are captured by these
 
 %% Subsubsection %%
 
-\subsubsection{Pullback: $\Delta$}\index{data migration!pullback $\Delta$}
+\subsubsection{\caseENGRUS{Pullback: $\Delta$}{ / }{Пулбек: $\Delta$}}\index{data migration!pullback $\Delta$}
 
 Given a functor $F\taking\mcC\to\mcD$ and a functor $I\taking\mcD\to\Set$, we can compose them to get a functor $I\circ F\taking\mcC\to\Set$. In other words, the presence of $F$ provides a way to convert $\mcD$-instances into $\mcC$-instances. In fact this conversion is functorial, meaning that morphisms of $\mcD$-instances are sent to morphisms of $\mcC$-instances. We denote the resulting functor by $\Delta_F\taking\mcD\set\to\mcC\set$ and call it {\em pullback along $F$}.
 
@@ -458,7 +458,7 @@ Write out the two tables associated to the $[1]$-instance $\Delta_F(I)\taking[1]
 
 %% Subsubsection %%
 
-\subsubsection{Left pushforward: $\Sigma$}\label{sec:left push}\index{data migration!left pushforward $\Sigma$}
+\subsubsection{\caseENGRUS{Left pushforward: $\Sigma$}{ / }{Левое расширение Кана: $\Sigma$}}\label{sec:left push}\index{data migration!left pushforward $\Sigma$}
 
 Let $F\taking\mcC\to\mcD$ be a functor. The functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint, $\Sigma_F\taking\mcC\set\to\mcD\set$. The rough idea is that $\Sigma_F$ performs parameterized colimits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Sigma_F(I)(d)$ is the colimit (think, union) of some diagram back home in $\mcC$. 
 
@@ -573,7 +573,7 @@ By the universal property of colimits, this induces the required function $$\col
 
 %% Subsubsection %%
 
-\subsubsection{Right pushforward: $\Pi$}\index{data migration!right pushforward $\Pi$}
+\subsubsection{\caseENGRUS{Right pushforward: $\Pi$}{ / }{Правое расширение Кана: $\Pi$}}\index{data migration!right pushforward $\Pi$}
 
 Let $F\taking\mcC\to\mcD$ be a functor. We heard in Section \ref{sec:left push} that the functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint. Here we explain that it has a right adjoint, $\Pi_F\taking\mcC\set\to\mcD\set$ as well. The rough idea is that $\Pi_F$ performs parameterized limits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Pi_F(I)(d)$ is the limit (think, fiber product) of some diagram back home in $\mcC$. 
 
