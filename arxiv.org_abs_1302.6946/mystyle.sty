@@ -13,6 +13,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{amsmath,amssymb}
+\usepackage{mathabx} % !!!
 \usepackage{unicode-math}
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -40,7 +41,6 @@
 \usepackage{makeidx,tabularx,dashbox}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[bookmarks=true,xetex,colorlinks=true,linkcolor=MidnightBlue,citecolor=cyan,backref=true,pdftitle={Category Theory for Scientists - Теория категорий для ученых}]{hyperref}
-%\usepackage{lmodern}
 \usepackage{graphicx,float}
 \usepackage{multirow}
 
@@ -154,8 +154,6 @@
 
 \def\rr{\raggedright}
 
-%\newcommand{\LMO}[1]{\bullet^{#1}}
-%\newcommand{\LTO}[1]{\bullet^{\tn{#1}}}
 \newcommand{\LMO}[1]{\stackrel{#1}{\bullet}}
 \newcommand{\LTO}[1]{\stackrel{\tt{#1}}{\bullet}}
 \newcommand{\LA}[2]{\ar[#1]^-{\tn {#2}}}
@@ -359,7 +357,6 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
-%\def\next{\item}
 \def\sub{\begin{itemize}\item}
 \def\endsub{\end{itemize}}
 \def\sexc{\begin{enumerate}[a.)]\setlength{\itemsep}{.1cm}\setlength{\parskip}{.1cm}\item}
@@ -372,4 +369,34 @@
 \author{\caseENGRUS{David I. Spivak}{\\}{Дэвид И. Спивак}}
 
 \titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large\caseENGRUS{How can mathematics make this diagram meaningful?}{\\}{Как математика может придать смысл этой диаграмме?}\normalsize}
+
+%%%% from original, to be eliminated
+
+\newtheorem{theorem}[subsubsection]{Theorem}
+\newtheorem{lemma}[subsubsection]{Lemma}
+\newtheorem{proposition}[subsubsection]{Proposition}
+\newtheorem{corollary}[subsubsection]{Corollary}
+\newtheorem{fact}[subsubsection]{Fact}
+
+\theoremstyle{remark}
+\newtheorem{remark}[subsubsection]{Remark}
+\newtheorem{example}[subsubsection]{Example}
+\newtheorem{warning}[subsubsection]{Warning}
+\newtheorem{question}[subsubsection]{Question}
+\newtheorem{guess}[subsubsection]{Guess}
+\newtheorem{answer}[subsubsection]{Answer}
+\newtheorem{construction}[subsubsection]{Construction}
+\newtheorem{rules}[subsubsection]{Rules of good practice}
+\newtheorem{exc}[subsubsection]{Exercise}
+\newenvironment{exercise}{\begin{exc}}{\hspace*{\fill}$\lozenge$\end{exc}}
+\newtheorem{app}[subsubsection]{Application}
+\newenvironment{application}{\begin{app}}{\hspace*{\fill}$\lozenge\lozenge$\end{app}}
+
+\newenvironment{slogan}{\addtocounter{subsubsection}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. \begin{quote}``\slshape}{"\end{quote}\end{sloppypar}\vspace{.1in}}
+
+\theoremstyle{definition}
+\newtheorem{definition}[subsubsection]{Definition}
+\newtheorem{notation}[subsubsection]{Notation}
+\newtheorem{conjecture}[subsubsection]{Conjecture}
+\newtheorem{postulate}[subsubsection]{Postulate}
 

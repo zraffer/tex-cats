@@ -1,0 +1,442 @@
+% section34.tex
+
+%%%%%% Section %%%%%%
+
+\section{Orders}\label{sec:orders}
+
+People usually think of certain sets as though they just {\em are} ordered, e.g. that an order is ordained by God. For example the natural numbers just {\em are} ordered. The letters in the alphabet just {\em are} ordered. But in fact we put orders on sets, and some are simply more commonly used in culture. One could order the letters in the alphabet by frequency of use and $e$ would come before $a$. Given different purposes, we can put different orders on the same set. For example in Exercise \ref{exc:divides as po} we will give a different ordering on the natural numbers that is useful in elementary number theory.
+
+In science, we might order the set of materials in two different ways. In the first, we consider material $A$ to be “before” material $B$ if $A$ is an ingredient or part of $B$, so water would be before concrete. But we could also order materials based on how electrically conductive they are, whereby concrete would be before water. This section is about different kinds of orders.
+
+%%%% Subsection %%%%
+
+\subsection{Definitions of preorder, partial order, linear order}
+
+\begin{definition}\label{def:orders}\index{order}
+
+Let $S$ be a set and $R\ss S\times S$ a binary relation on $S$; if $(s,s')\in R$ we will write $s\leq s'$. Then we say that $R$ is a {\em preorder}\index{order!preorder} if, for all $s,s',s''\in S$ we have
+\begin{description}
+\item[Reflexivity:] $s\leq s$, and
+\item[Transitivity:] if $s\leq s'$ and $s'\leq s''$, then $s\leq s''$.
+\end{description}
+We say that $R$ is a {\em partial order}\index{order!partial order} if it is a preorder and, in addition, for all $s,s'\in S$ we have
+\begin{description}
+\item[Antisymmetry:] If $s\leq s'$ and $s'\leq s$, then $s=s'$.
+\end{description}
+We say that $R$ is a {\em linear order}\index{order!linear order} if it is a partial order and, in addition, for all $s,s'\in S$ we have
+\begin{description}
+\item[Comparability:] Either $s\leq s'$ or $s'\leq s$.
+\end{description}
+We denote such a preorder (or partial order or linear order) by $(S,\leq)$.
+\end{definition}
+
+\begin{exercise}~
+\sexc Decide whether the table to the left in Display (\ref{dia:3 relations}) constitutes a linear order. 
+\item Show that neither of the other tables are even preorders.
+\endsexc
+\end{exercise}
+
+\begin{example}[Partial order not linear order]\label{ex:pre not par}
+
+We will draw an olog for playing cards. 
+\begin{align}\label{dia:card olog}
+\footnotesize
+\xymatrixnocompile@=15pt{
+\obox{}{.3in}{a diamond}\ar[dr]^{\tn{is}}&&\obox{}{.4in}{a heart}\ar[dl]_{\tn{is}}&&\obox{}{.35in}{a club}\ar[dr]^{\tn{is}}&&\obox{}{.4in}{a spade}\ar[dl]_{\tn{is}}\\
+&\obox{}{.25in}{a red card}\ar[drr]^{\tn{is}}&&&&\obox{}{.4in}{a black card}\ar[dll]_{\tn{is}}\\
+\obox{}{.45in}{a 4 of diamonds}\ar[d]^{\tn{is}}\ar[uu]_{\tn{is}}&&&\obox{}{.35in}{a card}&&&\obox{}{.4in}{a black queen}\ar[d]^{\tn{is}}\ar[ul]_{\tn{is}}\\
+\obox{}{.2in}{a 4}\ar[rr]^{\tn{is}}&&\obox{}{.4in}{a numbered card}\ar[ur]^{\tn{is}}&&\obox{}{.3in}{a face card}\ar[ul]_{\tn{is}}&&\obox{}{.4in}{a queen}\ar[ll]_{\tn{is}}
+}
+\end{align}
+We can put a binary relation on the set of boxes here by saying $A\leq B$ if there is a path $A\to B$. One can see immediately that this is a preorder because length=0 paths give reflexivity and concatenation of paths gives transitivity. To see that it is a partial order we only note that there are no loops. But this partial order is not a linear order because there is no path (in either direction) between, e.g., \fakebox{a 4 of diamonds} and \fakebox{a black queen}, so it violates the comparability condition.
+
+\end{example}
+
+\begin{remark}
+
+Note that olog (\ref{dia:card olog}) in Example \ref{ex:pre not par} is a good olog in the sense that given any collection of cards (e.g. choose 45 cards at random from each of 7 decks and throw them in a pile), they can be classified according to the boxes of (\ref{dia:card olog}) such that every arrow indeed constitutes a function (which happens to be injective). For example the arrow $\fakebox{a heart}\Too{\tn{is}}\fakebox{a red card}$ is a function from the set of chosen hearts to the set of chosen red cards.
+
+\end{remark}
+
+\begin{example}[Preorder not partial order]
+
+Every equivalence relation is a preorder but rarely are they partial orders. For example if $S=\{1,2\}$ and we put $R=S\times S$, then this is an equivalence relation. It is a preorder but not a partial order (because $1\leq 2$ and $2\leq 1$, but $1\neq 2$, so antisymmetry fails).
+
+\end{example}
+
+\begin{application}
+
+Classically, we think of time as linearly ordered. A nice model is $(\RR,\leq)$, the usual linear order on the set of real numbers. But according to the \href{http://en.wikipedia.org/wiki/Relativity_of_simultaneity}{\text theory of relativity}, there is not actually a single order to the events in the universe. Different observers correctly observe different orders on the set of events, and so in some sense on time itself. 
+
+\end{application}
+
+\begin{example}[Finite linear orders]\label{ex:finite lo}\index{linear order!finite}
+
+Let $n\in\NN$ be a natural number. Define a linear order on the set $\{0,1,2,\ldots,n\}$ in the standard way. Pictorially, 
+$$
+[n]:=\xymatrix{\LMO{0}\ar[r]&\LMO{1}\ar[r]&\LMO{2}\ar[r]&\cdots\ar[r]&\LMO{n}}
+$$\index{a symbol!$[n]$}
+
+Every finite linear order, i.e. linear order on a finite set, is of the above form. That is, though the labels might change, the picture would be the same. We can make this precise when we have a notion of morphism of orders (see Definition \ref{def:morphism of orders})
+
+\end{example}
+
+\begin{exercise}
+Let $S=\{1,2,3,4\}$. 
+\sexc Find a preorder $R\ss S\times S$ such that the set $R$ is as small as possible. Is it a partial order? Is it a linear order?
+\item Find a preorder $R'\ss S\times S$ such that the set $R'$ is as large as possible. Is it a partial order? Is it a linear order?
+\endsexc
+\end{exercise}
+
+\begin{exercise}~
+\sexc List all the preorder relations possible on the set $\{1,2\}$.
+\item For any $n\in\NN$, how many linear orders exist on the set $\{1,2,3,\ldots,n\}$. 
+\item Does your formula work when $n=0$?
+\endsexc
+\end{exercise}
+
+\begin{remark}\label{rem:preorder to graph}\index{preorder!converting to graph}
+
+We can draw any preorder $(S,\leq)$ as a graph with vertices $S$ and with an arrow $a\to b$ if $a\leq b$. These are precisely the graphs with the following two properties for any vertices $a,b\in S$:
+\begin{enumerate}[\hsp 1.]
+\item there is at most one arrow $a\to b$, and
+\item if there is a path from $a$ to $b$ then there is an arrow $a\to b$.
+\end{enumerate}
+If $(S,\leq)$ is a partial order then the associated graph has an additional “no loops” property,
+\begin{enumerate}[\hsp 3.]
+\item if $n\in\NN$ is an integer with $n\geq 2$ then there are no paths of length $n$ that start at $a$ and end at $a$.
+\end{enumerate}
+If $(S,\leq)$ is a linear order then there is an additional “comparability” property,
+\begin{enumerate}[\hsp 4.]
+\item for any two vertices $a,b$ there is an arrow $a\to b$ or an arrow $b\to a$.
+\end{enumerate}
+
+Given a graph $G$, we can create a binary relation $\leq$ on its set $S$ of vertices as follows. Say $a\leq b$ if there is a path in $G$ from $a$ to $b$. This relation will be reflexive and transitive, so it is a preorder. If the graph satisfies Property 3 then the preorder will be a partial order, and if the graph also satisfies Property 4 then the partial order will be a linear order. Thus graphs give us a nice way to visualize orders.\index{graph!converting to a preorder}
+
+\end{remark}
+
+\begin{slogan}
+A graph generates a preorder: $v\leq w$ if there is a path $v\to w$. This is a great way to picture a preorder. 
+\end{slogan}
+
+
+\begin{exercise}
+Let $G=(V,A,src,tgt)$ be the graph below. 
+$$\fbox{\xymatrix{
+\LMO{a}\ar[r]&\LMO{b}\ar@/^1pc/[r]&\LMO{c}\ar@/^1pc/[l]\ar[r]&\LMO{d}\\
+\LMO{e}&\LMO{f}\ar[l]\ar[r]&\LMO{g}\ar[ur]}}
+$$
+In the corresponding pre-order which of the following are true: 
+\sexc $a\leq b$?
+\item $a\leq c$?
+\item $c\leq b$?
+\item $b=c$?
+\item $e\leq f$?
+\item $f\leq d$?
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:power poset}\index{power set!as poset}~
+\sexc Let $S=\{1,2\}$. The subsets of $S$ form a partial order; draw the associated graph. 
+\item Repeat this for $Q=\emptyset$, $R=\{1\}$, and $T=\{1,2,3\}$. 
+\item Do you see $n$-dimensional cubes?
+\endsexc
+\end{exercise}
+
+\begin{definition}\label{def:clique}\index{preorder!clique in}
+
+Let $(S,\leq)$ be a preorder. A {\em clique} is a subset $S'\ss S$ such that for each $a,b\in S'$ one has $a\leq b$.
+
+\end{definition}
+
+\begin{exercise}
+True or false: a partial order is a preorder that has no cliques. (If false, is there a “nearby” true statement?)
+\end{exercise}
+
+\begin{example}\label{ex:preorder generated}\index{preorder!generated}
+
+Let $X$ be a set and $R\ss X\times X$ a relation. For elements $x,y\in X$ we will say there is an {\em $R$-path} from $x$ to $y$ if there exists a natural number $n\in\NN$ and elements $x_0,x_1,\ldots,x_n$ such that
+\begin{enumerate}
+\item $x_0=x$,
+\item $x_n=y$, and
+\item for all $i\in\NN$, if $0\leq i\leq n-1$ then $(x_i,x_{i+1})\in R$.
+\end{enumerate}
+Let $\ol{R}$ denote the relation where $(x,y)\in\ol{R}$ if there exists an $R$-path from $x$ to $y$. We call $\ol{R}$ the {\em preorder generated by $R$.} We note some facts about $\ol{R}$.
+\begin{description}
+\item[Containment.] If $(x,y)\in R$ then $(x,y)\in\ol{R}$. That is $R\ss\ol{R}$.
+\item[Reflexivity]. For all $x\in X$ we have $(x,x)\in\ol{R}$. 
+\item[Transitivity.] For all $x,y,z\in X$, if $(x,y)\in\ol{R}$ and $(y,z)\in\ol{R}$ then $(x,z)\in\ol{R}$.
+\end{description}
+To check the containment claim, just use $n=1$ so $x_0=x$ and $x_n=y$. To check the reflexivity claim, use $n=0$ so $x_0=x=y$ and condition 3 is vacuously satisfied. To check transitivitiy, suppose given $R$-paths $x=x_0,x_1,\ldots,x_n=y$ and $y=y_0,y_1,\ldots,y_p=z$; then $x=x_0,x_1,\ldots x_n,y_1,\ldots,y_p=z$ will be an $R$-path from $x$ to $z$.
+
+The point is that we can turn any relation into a preorder in a canonical way. Here is a concrete case of the above idea.
+
+Let $X=\{a,b,c,d\}$ and suppose given the relation $\{(a,b),(b,c),(b,d),(d,c),(c,c)\}$. This is neither reflexive nor transitive, so it's not a preorder. To make it a preorder we follow the above prescription. Starting with $R$-paths of length $n=0$ we put  $\{(a,a), (b,b), (c,c), (d,d)\}$ into $\ol{R}$. The $R$-paths of length 1 add our original elements, $\{(a,b),(b,c),(b,d),(d,c),(c,c)\}$. We don't mind redundancy (e.g. $(c,c)$), but from now on in this example we will only write down the new elements. The $R$-paths of length 2 add $\{(a,c),(a,d)\}$ to $\ol{R}$. One can check that $R$-paths of length 3 and above do not add anything new to $\ol{R}$, so we are done. The relation $$\ol{R}=\{(a,a), (b,b), (c,c), (d,d), (a,b), (b,c), (b,d), (d,c), (a,c), (a,d)\}$$ is reflexive and transitive, hence a preorder.
+
+\end{example}
+
+\begin{exercise}
+
+Let $X=\{a,b,c,d,e,f\}$ and let $R=\{(a,b),(b,c),(b,d),(d,e),(f,a)\}$. 
+\sexc What is the preorder $\ol{R}$ generated by $R$?
+\item Is it a partial order?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $X$ be the set of people and let $R\ss X\times X$ be the relation with $(x,y)\in R$ if $x$ is the child of $y$. Describe the preorder generated by $R$.
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Meets and joins}\label{sec:meets and joins}
+
+Let $X$ be any set. Recall from Definition \ref{def:subobject classifier} that the powerset of $X$, denoted $\PP(X)$ is the set of subsets of $X$. There is a natural order on $\PP(X)$ given by the subset relationship, as exemplified in Exercise \ref{exc:power poset}. Given two elements $a,b\in\PP(X)$ we can consider them as subsets of $X$ and take their intersection as an element of $\PP(X)$ which we denote $a\wedge b$. We can also consider them as subsets of $X$ and take their union as an element of $\PP(X)$ which we denote $a\vee b$. The intersection and union operations are generalized in the following definition.
+
+\begin{definition}\label{def:meets and joins}\index{preorder!meet}\index{preorder!join}\index{meet}\index{join}
+
+Let $(S,\leq)$ be a preorder and let $s,t\in S$ be elements. A {\em meet of $s$ and $t$} is an element $w\in S$ satisfying the following universal property: 
+\begin{itemize}
+\item $w\leq s$ and $w\leq t$ and, 
+\item for any $x\in S$, if $x\leq s$ and $x\leq t$ then $x\leq w$.
+\end{itemize}
+If $w$ is a meet of $s$ and $t$, we write $w\iso s\wedge t$.
+
+A {\em join of $s$ and $t$} is an element $w\in S$ satisfying the following universal property: 
+\begin{itemize}
+\item $s\leq w$ and $t\leq w$ and, 
+\item for any $x\in S$, if $s\leq x$ and $t\leq x$ then $w\leq x$.
+\end{itemize}
+If $w$ is a join of $s$ and $t$, we write $w\iso s\vee t$.
+
+\end{definition}
+
+That is, the meet of $s$ and $t$ is the biggest thing smaller than both, i.e. a {\em greatest lower bound}, and the join of $s$ and $t$ is the smallest thing bigger than both, i.e. a {\em least upper bound}. Note that the meet of $s$ and $t$ might be $s$ or $t$ itself.  Note that $s$ and $t$ may have more than one meet (or more than one join). However, any two meets of $s$ and $t$ must be in the same clique, by the universal property (and the same for joins).
+
+\begin{exercise}
+Consider the partial order from Example \ref{ex:pre not par}. 
+\sexc What is the join of \fakebox{a diamond} and \fakebox{a heart}? 
+\item What is the meet of \fakebox{a black card} and \fakebox{a queen}? 
+\item What is the meet of \fakebox{a diamond} and \fakebox{a card}?
+\endsexc
+\end{exercise}
+
+Not every two elements in a preorder need have a meet, nor need they have a join. 
+
+\begin{exercise}\label{exc:not all meets and joins}~
+\sexc If possible, find two elements in the partial order from Example \ref{ex:pre not par} that do not have a meet.
+\footnote{Use the displayed preorder, not any kind of “completion of what's there”.} 
+\item If possible, find two elements that do not have a join (in that preorder).
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+As mentioned in the introduction to this section, the power set $S:=\PP(X)$ of any set $X$ naturally has the structure of a partial order. Its elements $s\in S$ correspond to subsets $s\ss X$, and we put $s\leq t$ if and only if $s\ss t$ as subsets of $X$. The meet of two elements is their intersection as subsets of $X$, $s\wedge t= s\cap t$, and the join of two elements is their union as subsets of $X$, $s\vee t=s\cup t$.
+\sexc Is it possible to put a monoid structure on the set $S$ in which the multiplication formula is given by meets? If so, what would the identity element be?
+\item Is it possible to put a monoid structure on the set $S$ in which the multiplication formula is given by joins? If so, what would the identity element be?
+\endsexc
+\end{exercise}
+
+\begin{example}[Trees]\label{ex:tree}
+
+A {\em tree}\index{tree}\index{order!tree}, i.e. a system of nodes and branches, all of which emanate from a single node called the {\em root}\index{tree!root}, is a partial order, but generally not a linear order. A tree $(T,\leq)$ can either be oriented toward the root (so the root is the largest element) or away from the root (so the root is the smallest element); let's only consider the latter. 
+
+Below is a tree, pictured as a graph. The root is labeled $e$.
+\begin{align}\label{dia:tree}
+\xymatrix@=10pt{
+&&&&&&\LMO{a}\\
+&&\LMO{b}\ar[rr]&&\LMO{c}\ar[urr]\ar[rr]\ar[drr]&&\LMO{d}\\
+\LMO{e}\ar[urr]\ar[drr]&&&&&&\LMO{f}\\
+&&\LMO{g}\ar[rr]\ar[drr]&&\LMO{h}\\
+&&&&\LMO{i}
+}
+\end{align}
+
+In a tree, every pair of elements $s, t\in T$ has a meet $s\wedge t$ (their closest mutual ancestor). On the other hand if $s$ and $t$ have a join $c=s\vee t$ then either $c=s$ or $c=t$. 
+
+\end{example}
+
+\begin{exercise}
+Consider the tree drawn in (\ref{dia:tree}).
+\sexc What is the meet $i\wedge h$?
+\item What is the meet $h\wedge b$?
+\item What is the join $b\vee a$?
+\item What is the join $b\vee g$?
+\endsexc
+\end{exercise}
+
+\subsection{Opposite order}
+
+\begin{definition}\label{def:opposite order}\index{order!opposite}
+
+Let $\mcS:=(S,\leq)$ be a preorder. The {\em opposite preorder}, denoted $\mcS\op$ is the preorder $(S,\leq\op)$ having the same set of elements but where $s\leq\op s'$ iff $s'\leq s$.
+
+\end{definition}
+
+\begin{example}
+
+Recall the preorder $\mcN:=(\NN,{\tt divides})$ from Exercise \ref{exc:divides as po}. Then $\mcN\op$ is the set of natural numbers but where $m\leq n$ iff $m$ is a multiple of $n$. So $6\leq 2$ and $6\leq 3$.
+
+\end{example}
+
+\begin{exercise}
+Suppose that $\mcS:=(S,\leq)$ is a preorder. 
+\sexc If $\mcS$ is a partial order, is $\mcS\op$ also a partial order? 
+\item If $\mcS$ is a linear order, is $\mcS\op$ a linear order?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Suppose that $\mcS:=(S,\leq)$ is a preorder, and that $s_1,s_2\in S$ have join $t$ in $\mcS$. The preorder $\mcS\op$ has the same elements as $\mcS$. Is $t$ the join of $s_1$ and $s_2$ in $\mcS\op$, or is it their meet, or is it not necessarily their meet nor their join?
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Morphism of orders}
+
+An order $(S,\leq)$, be it a preorder, a partial order, or a linear order, involves a set and a binary relations. For two orders to be comparable, their sets and their relations should be appropriately comparable.\index{appropriate comparison}
+
+\begin{definition}\label{def:morphism of orders}\index{order!morphism}
+
+Let $\mcS:=(S,\leq)$ and $\mcS':=(S',\leq')$ be preorders (respectively partial orders or linear orders). A {\em morphism of preorders} (resp. {\em of partial orders} or {\em of linear orders}) $f$ {\em from $\mcS$ to $\mcS'$}, denoted $f\taking\mcS\to\mcS'$, is a function $f\taking S\to S'$ such that, for every pair of elements $s_1,s_2\in S$, if $s_1\leq s_2$ then $f(s_1)\leq' f(s_2)$.
+
+\end{definition}
+
+\begin{example}
+
+Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $X'\ss X$, its image $f(X')\ss Y$ is a subset (see Section \ref{sec:functions}). Thus we have a function $F\taking\PP(X)\to\PP(Y)$, given by taking images. This is a morphism of partial orders $(\PP(X),\ss)\to(\PP(Y),\ss)$. Indeed, if $a\ss b$ in $\PP(X)$ then $f(a)\ss f(b)$ in $\PP(Y)$.
+
+\end{example}
+
+\begin{application}
+
+It's often said that “a team is only as strong as its weakest member”. Is this true for materials? The hypothesis that a material is only as strong as its weakest constituent can be understood as follows. 
+
+Recall from the introduction to this section (see \ref{sec:orders}, page \pageref{sec:orders}) that we can put several different orders on the set $M$ of materials. One example there was the order given by constituency ($m\leq_C m'$ if $m$ is an ingredient or constituent of $m'$). Another order is given by strength: $m\leq_S m'$ if $m'$ is stronger than $m$ (in some fixed setting). 
+
+Is it true that if material $m$ is a constituent of material $m'$ then the strength of $m'$ is less than or equal to the strength of $m$? This is the substance of our quote above. Mathematically the question would be posed, “is there a morphism of preorders $(M,\leq_C)\too(M,\leq_S\op)$?”
+
+\end{application}
+
+\begin{exercise}
+Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $Y'\ss Y$, its preimage $f^\m1(Y')\ss X$ is a subset (see Definition \ref{def:preimage}). Thus we have a function $F\taking\PP(Y)\to\PP(X)$, given by taking preimages. Is it a morphism of partial orders?
+\end{exercise}
+
+\begin{example}\label{ex:discrete and indiscrete}
+
+Let $S$ be a set. The smallest preorder structure that can be put on $S$ is to say $a\leq b$ iff $a=b$. This is indeed reflexive and transitive, and it is called the {\em discrete preorder on $S$}.\index{preorder!discrete}
+
+The largest preorder structure that can be put on $S$ is to say $a\leq b$ for all $a,b\in S$. This again is reflexive and transitive, and it is called the {\em indiscrete preorder on $S$}.\index{preorder!indiscrete}
+
+\end{example}
+
+\begin{exercise}
+Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_D$ be the discrete preorder on $S$. Given a morphism of preorders $(S,\leq_D)\to (T,\leq_T)$ we get a function $S\to T$. 
+\sexc Which functions $S\to T$ arise in this way? 
+\item Given a morphism of preorders $(T,\leq_T)\to(S,\leq_D)$, we get a function $T\to S$. In terms of $\leq_T$, which functions $T\to S$ arise in this way?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_I$ be the indiscrete preorder on $S$. Given a morphism of preorders $(S,\leq_I)\to (T,\leq_T)$ we get a function $S\to T$. 
+\sexc In terms of $\leq_T$, which functions $S\to T$ arise in this way? 
+\item Given a morphism of preorders $(T,\leq_T)\to(S,\leq_I)$, we get a function $T\to S$. In terms of $\leq_T$, which functions $T\to S$ arise in this way?
+\endsexc
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Other applications}
+
+%% Subsubsection %%
+
+\subsubsection{Biological classification}\index{biological classification}
+
+\href{http://en.wikipedia.org/wiki/Biological_classification}{\text Biological classification} is a method for dividing the set of organisms into distinct classes, called taxa. In fact, it turns out that such a classification, say a phylogenetic tree, can be understood as a partial order $C$ on the set of taxa. The typical {\em ranking} of these taxa, including kingdom, phylum, etc., can be understood as morphism of orders $f\taking C\to [n]$, for some $n\in\NN$. 
+
+For example we may have a tree (see Example \ref{ex:tree}) that looks like this 
+$$
+\xymatrix@=10pt{
+&&\LTO{Archaea}\ar[rr]&&\LTO{Pyrodicticum}\\
+&&&&\LTO{Spirochetes}\\
+\LTO{Life}\ar[rr]\ar[ddrr]\ar[uurr]&&\LTO{Bacteria}\ar[rr]\ar[rru]&&\LTO{Aquifex}\\
+&&&&\LTO{Fungi}\\
+&&\LTO{Eukaryota}\ar[rr]\ar[urr]&&\LTO{Animals}\ar[rrr]&&&\LTO{Homo Sapien}}
+$$
+
+We also have a linear order that looks like this:
+$$
+\xymatrix{\LTO{Life}\ar[r]&\LTO{Domain}\ar[r]&\LTO{Kingdom}\ar[r]&\LTO{Phylum}\ar[r]&\cdots\ar[r]&\LTO{Genus}\ar[r]&\LTO{Species}}
+$$
+and the ranking system that puts Eukaryota at Domain and Hopo Sapien at Species is an order-preserving function from the dots upstairs to the dots downstairs; that is, it is a morphism of preorders.
+
+\begin{exercise}
+Since the phylogenetic tree is a tree, it has all meets.
+\sexc Determine the meet of dogs and humans. 
+\item If we did not require the phylogenetic partial order to be a tree, what would it mean if two taxa (nodes in the phylogenetic partial order), say $a$ and $b$, had join $c$ with $c\neq a$ and $c\neq b$?
+\endsexc
+\end{exercise}
+
+\begin{exercise}~
+\sexc In your favorite scientific realm, are there any interesting classification systems that are actually orders? 
+\item Choose one; what would meets and joins mean in that setting?
+\endsexc
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Security}\index{security}
+
+Security, say of sensitive information, is based on two things: a security clearance and “need to know.” The former, security clearance might have levels like “confidential”, “secret”, “top secret”. But maybe we can throw in “president” and some others too, like “plebe”. 
+
+\begin{exercise}
+Does it appear that security clearance is a preorder, a partial order, or a linear order?
+\end{exercise}
+
+Need-to-know is another classification of people. For each bit of information, we do not necessarily want everyone to know about it, even everyone of the specified clearance. It is only disseminated to those that need to know. 
+
+\begin{exercise}
+Let $P$ be the set of all people and let $\ol{I}$ be the set of all pieces of information known by the government. For each subset $I\ss\ol{I}$, let $K(I)\ss P$ be the set of people that need to know every piece of information in $I$. Let $S=\{K(I)\|I\ss\ol{I}\}$ be the set of all “need-to-know groups”, with the subset relation denoted $\leq$. 
+
+\sexc Is $(S,\leq)$ a preorder? If not, find a nearby preorder. 
+\item If $I_1\ss I_2$ do we always have $K(I_1)\ss K(I_2)$ or $K(I_2)\ss K(I_1)$ or possibly neither? 
+\item Should the preorder $(S,\leq)$ have all meets? 
+\item Should $(S,\leq)$ have all joins?
+\endsexc
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Spaces, e.g. geography}\index{space}
+
+Consider closed curves that can be drawn in the plane $\RR^2$, e.g. circles, ellipses, and kidney-bean shaped curves. The interiors of these closed curves (not including the boundary itself) are called {\em basic open sets in $\RR^2$}. The good thing about such an interior $U$ is that any point $p\in U$ is not on the boundary, so no matter how close $p$ is to the boundary of $U$, there will always be a tiny basic open set surrounding $p$ and completely contained in $U$. In fact, the union of any collection of basic open sets still has this property. An {\em open set in $\RR^2$} is any subset $U\ss \RR^2$ that can be formed as the union of a collection of basic open sets.
+
+\begin{example}
+
+Let $U=\{(x,y)\in\RR^2\|x>0\}$. To see that $U$ is open, define the following sets: for any $a,b\in\RR$, let $S(a,b)$ be the square parallel to the axes, with side length 1, where the upper left corner is $(a,b)$. Let $S'(a,b)$ be the interior of $S(a,b)$. Then each $S'(a,b)$ is open, and $U$ is the union of $S'(a,b)$ over the collection of all $a>0$ and all $b$,$$U=\bigcup_{\parbox{.35in}{\tiny$a,b\in\RR,\\~\;\;a>0$}}S'(a,b).$$ 
+
+\end{example}\index{geography}
+
+The idea of open sets extends to spaces beyond $\RR^2$. For example, on the earth one could define a basic open set to be the interior of any region one can “draw a circle around” (with a metaphorical pen), and define open sets to be unions of basic open sets. 
+
+\begin{exercise}
+Let $S$ be the set of open subsets on earth, as defined in the above paragraph. 
+\sexc If $\leq$ is the subset relation, is $(S,\leq)$ a preorder or a partial order? 
+\item Does it have meets, does it have joins?
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:cosheaf of temps}
+
+Let $S$ be the set of open subsets of earth as defined above. To each open subset of earth suppose we know the range of recorded temperature throughout $s$ (i.e. the low and high throughout the region). Thus to each element $s\in S$ we assign an interval $T(s):=\{x\in\RR\|a\leq x\leq b\}$. If we order the set $V$ of intervals of $\RR$ by the subset relation, it gives a partial order on $V$. 
+\sexc Does our assignment $T\taking S\to V$ amount to a morphism of orders? 
+\item Does it preserve meets or joins? (Hint: it doesn't preserve both.)
+\endsexc
+\end{exercise}
+
+\begin{exercise}~
+\sexc Can you think of a space relevant to your favorite area of science for which it makes sense to assign an interval of real numbers to each open set somehow, analogously to Exercise \ref{exc:cosheaf of temps}? For example for a sample of some material under stress, perhaps the strain on each open set is somehow an interval? 
+\item Repeat the questions from Exercise \ref{exc:cosheaf of temps}.
+\endsexc
+\end{exercise}
+

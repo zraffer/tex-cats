@@ -1,0 +1,541 @@
+% section23.tex
+
+%%%%%% Section %%%%%%
+
+\section{\caseENGRUS{Ologs}{ / }{Ологи}}\label{sec:ologs}\index{olog}\index{олог}
+
+\begin{blockENG}
+In this course we will ground the mathematical ideas in applications whenever possible. To that end we introduce ologs, which will serve as a bridge between mathematics and various conceptual landscapes. The following material is taken from \cite{SK}, an introduction to ologs.
+\begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr an amino acid found in dairy}\LAL{dr}{is}&\obox{A}{.5in}{arginine}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{has}\LAL{l}{is}\LA{d}{is}&\obox{E}{.9in}{\rr an electrically-charged side chain}\LA{d}{is}\\&\obox{X}{.9in}{an amino acid}\LAL{dl}{has}\LA{dr}{has}\LA{r}{has}&\smbox{R}{a side chain}\\\mebox{N}{an amine group}&&\mebox{C}{a carboxylic acid}}}\end{align}  
+\end{blockENG}
+
+\begin{blockRUS}
+В данном курсе мы, насколько это возможно, привяжем математические идеи к прикладным примерам (применениям). Для этих целей мы введем ологи, которые будут служить мостом между математикой и различными системами понятий. Следующий материал взят из \cite{SK}, введения в ологи.%
+\endnote{
+TODO ...(ниже написан дикий ужас. переписать для инженеров)...
+
+Казалось бы, мы только что рассмотрели {\em множества}, {\em функции} и {\em равенства}, и у читателя может возникнуть вопрос, зачем нам далее вводить типы, аспекты и факты, которые, как кажется на первый взгляд, дублируют эти понятия теории множеств, только в новой терминологии. На самом деле {\em типы} из ологов играют роль переменных, имеющих в качестве значений множества, {\em аспекты} — переменных-функций, а {\em факты} обозначают равенства с параметрами. Хорошо, это переменные, но зачем нам вводить такие переменные, если у нас уже есть математическая нотация, в которой мы можем обозначать переменные обычными буквами? Во-первых, типы ологов являются более содержательными обозначениями, чем буквы, которые для прикладных целей все равно пришлось бы обобщать. Во-вторых, весь олог имеет вид {\em одной} большой переменной, которой мы можем приписывать различные значения, отражающие состояния нашего знания о понятиях, охваченных ологом, аналогично тому, как схема базы данных подразумевает различные состояния хранимой в ней информации. Более формально, далее в книге автор пояснит, что олог — это небольшая категория, еще один пример центрального понятия данной книги. Кроме того, введение ологов связано с таким уровнем рассмотрения формальных теорий, как метатеория и теория моделей. В свете сказанного выше о формальных методах, на олог можно смотреть как на небольшую прикладную теорию (и категорные утверждения об категории-ологе — это утверждения метатеории), тогда как состояния олога — будучи функторами из категории-олога в категорию множеств — являются моделями нашей теории. Мы понимаем, что данное примечание забегает вперед, используя понятия, которые будут введены в книге позже, однако оно написано для того, чтобы дать общее представление о целях введения этих понятий.
+}
+\begin{align}\label{dia:arginine}\fbox{\xymatrixnocompile{\obox{D}{1in}{\rr аминокислота, находящаяся в молокопродуктах}\LAL{dr}{является}&\obox{A}{.5in}{аргинин}\ar@{}[dl]|(.3){\checkmark}\ar@{}[dr]|(.3){\checkmark}\LA{r}{имеет}\LAL{l}{является}\LA{d}{является}&\obox{E}{.9in}{\rr электрически заряженная боковая цепь}\LA{d}{является}\\&\obox{X}{.9in}{аминокислота}\LAL{dl}{имеет}\LA{dr}{имеет}\LA{r}{имеет}&\smbox{R}{боковая цепь}\\\mebox{N}{аминогруппа}&&\mebox{C}{карбоновая кислота}}}\end{align}
+\end{blockRUS}
+
+%%%% Subsection %%%%
+
+\subsection{\caseENGRUS{Types}{ / }{Типы}}\index{olog!types}\index{олог!типы}
+
+\begin{blockENG}
+A type is an abstract concept, a distinction the author has made.  We represent each type as a box containing a {\em singular indefinite noun phrase.}   Each of the following four boxes is a type: 
+\begin{align}\label{dia:types}\xymatrixnocompile{\fbox{a man}&\fbox{an automobile}\\\obox{}{1.5in}{a pair $(a,w)$, where $w$ is a woman and $a$ is an automobile}&\obox{}{1.5in}{a pair $(a,w)$ where $w$ is a woman and $a$ is a blue automobile owned by $w$}}\end{align}
+\end{blockENG}
+
+\begin{blockRUS}
+Тип это абстрактное понятие, основанное на понятном для его автора характеристическом критерии. Мы изображаем каждый тип прямоугольником, содержащим {\em словосочетание на основе существительного в единственном числе.} Каждый из следующих четырех прямоугольников является типом: 
+\begin{align}\label{dia:types}\xymatrixnocompile{\fbox{человек}&\fbox{автомобиль}\\\obox{}{1.5in}{пара $(a,w)$, где $w$ это женщина и $a$ это автомобиль}&\obox{}{1.5in}{пара $(a,w)$ где $w$ это женщина и $a$ это синий автомобиль, которым владеет $w$}}\end{align}
+\end{blockRUS}
+
+\begin{blockENG}
+Each of the four boxes in (\ref{dia:types}) represents a type of thing, a whole class of things, and the label on that box is what one should call {\em each example} of that class.  Thus \fakebox{a man} does not represent a single man, but the set of men, each example of which is called “a man”.  Similarly, the bottom right box represents an abstract type of thing, which probably has more than a million examples, but the label on the box indicates the common name for each such example.  
+\end{blockENG}
+
+\begin{blockRUS}
+Каждый из четырех прямоугольников в (\ref{dia:types}) изображает тип вещи, целый класс вещей, а метка на этом прямоугольнике это то, что называется {\em общим представителем} данного класса. Таким образом \fakebox{человек} изображает не единственного человека, а целое множество людей, общий представитель которого называется «человек».  Аналогично, нижний правый прямоугольник изображает абстрактный тип вещей, который, возможно, имеет более миллиона представителей, а метка на прямоугольнике обозначает общее имя для всех представителей.
+\end{blockRUS}
+
+\begin{blockENG}
+Typographical problems emerge when writing a text-box in a line of text, e.g. the text-box \fbox{a man} seems out of place here, and the more in-line text-boxes there are, the worse it gets.  To remedy this, I will denote types which occur in a line of text with corner-symbols; e.g. I will write \fakebox{a man} instead of \fbox{a man}.
+\end{blockENG}
+
+\begin{blockRUS}
+При печати прямоугольников с тестом внутри абзаца возникают проблемы типографского характера, например прямоугольник \fbox{человек} здесь выглядит выползающим за границы строки, и чем больше таких прямоугольников используется, тем хуже они выглядят. Чтобы исправить это, я буду обозначать типы, которые появляются внутри текста, символами-уголками; например, я буду писать \fakebox{человек} вместо \fbox{человек}.
+\end{blockRUS}
+
+%% Subsubsection %%
+
+\subsubsection{\caseENGRUS{Types with compound structures}{ / }{Составные типы}}
+
+\begin{blockENG}
+Many types have compound structures; i.e. they are composed of smaller units.  Examples include 
+\begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr a man and a woman}&\obox{}{1.3in}{\rr a food portion $f$ and a child $c$ such that $c$ ate all of $f$}&\labox{}{a triple $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}}\end{align} 
+It is good practice to declare the variables in a “compound type”, as I did in the last two cases of (\ref{dia:compound}).  In other words, it is preferable to replace the first box above with something like $$\obox{}{.8in}{a man $m$ and a woman $w$}\hsp\tn{or}\hsp\obox{}{1.1in}{\rr a pair $(m,w)$ where $m$ is a man and $w$ is a woman}$$ so that the variables $(m,w)$ are clear.
+\end{blockENG}
+
+\begin{blockRUS}
+Многие типы имеют составную структуру; то есть они составлены из меньших частей.  Примеры включают
+\begin{align}\label{dia:compound}\xymatrixnocompile{\obox{}{.7in}{\rr мужчина и женщина}&\obox{}{1.3in}{\rr порция еды $f$ и ребенок $c$ такие, что $c$ въел всю $f$}&\labox{}{тройка $(p,a,j)$, где $p$ это статья, $a$ это автор $p$, и $j$ это журнал, в котором $p$ была опубликована}}\end{align}  
+Хорошей практикой является объявлять пременные в «составном типе», как я это сделал в последних двух случаях (\ref{dia:compound}).  Другими словами, предпочтительно заменить первый прямоугольник выше на нечто вроде $$\obox{}{.8in}{мужчина $m$ и женщина $w$}\hsp\tn{либо}\hsp\obox{}{1.1in}{\rr пара $(m,w)$ где $m$ это мужчина и $w$ это женщина}$$ с тем, чтобы переменные $(m,w)$ были явными.
+\end{blockRUS}
+
+\begin{rulesENG}\label{rules:types}\index{olog!rules}
+A type is presented as a text box.  The text in that box should 
+\begin{enumerate}[(i)]
+\item begin with the word “a” or “an”;
+\item refer to a distinction made and recognizable by the olog's author;
+\item refer to a distinction for which instances can be documented;
+\item declare all variables in a compound structure. 
+\end{enumerate}
+\end{rulesENG}
+
+\begin{rulesRUS}\label{rules:types}\index{олог!правила}
+ Тип изображается прямоугольником с текстом. Текст в этом прямоугольнике должен:
+\begin{enumerate}[(i)]
+\item быть обобщающим термином;
+\item относиться к критерию, придуманному и понятному автору олога;
+\item относиться к критерию, определяющего класс, описание экземпляров которого может быть записано;
+\item явно описывать все переменные в составной структуре. 
+\end{enumerate}
+\end{rulesRUS}
+
+\begin{blockENG}
+The first, second, and third rules ensure that the class of things represented by each box appears to the author as a well-defined set.  The fourth rule encourages good “readability” of arrows, as will be discussed next in Section \ref{sec:aspects}.  
+\end{blockENG}
+
+\begin{blockRUS}
+Первое, второе и третье правила обеспечивают, чтобы класс вещей, изображаемый каждым прямоугольником, представлялся бы автору в виде корректно определенного множества.  Четвертое правило способствует хорошей «читабельности» стрелок, что будет обсуждаться в Разделе \ref{sec:aspects}.
+\end{blockRUS}
+
+\begin{blockENG}
+I will not always follow the rules of good practice throughout this document.  I think of these rules being followed “in the background” but that I have “nicknamed” various boxes.  So \fakebox{Steve} may stand as a nickname for \fakebox{a thing classified as Steve} and \fakebox{arginine} as a nickname for \fakebox{a molecule of arginine}. However, when pressed, one should always be able to rename each type according to the rules of good practice.
+\end{blockENG}
+
+\begin{blockRUS}
+В данном документе я не всегда буду следовать своим рекомендациям. Я думаю об этих правилах где-то на фоне, но я также даю «псевдонимы» некоторым прямоугольникам.  Так \fakebox{Стив} может употребляться в качестве псевдонима для \fakebox{вещь, классифицируемая как Стив} и \fakebox{аргинин} — в качестве псевдонима для \fakebox{молекула аргинина}. Однако, в случае необходимости, всегда нужно уметь переименовывать каждый тип в соответствии с этими рекомендациями. 
+\end{blockRUS}
+
+%%%% Subsection %%%%
+
+\subsection{\caseENGRUS{Aspects}{ / }{Аспекты}}\label{sec:aspects}\index{olog!aspects}\index{олог!аспекты}
+
+\begin{blockENG}
+An aspect of a thing $x$ is a way of viewing it, a particular way in which $x$ can be regarded or measured.  For example, a woman can be regarded as a person; hence “being a person” is an aspect of a woman.  A molecule has a molecular mass (say in daltons), so “having a molecular mass” is an aspect of a molecule.  In other words, by {\em aspect} we simply mean a function. The domain $A$ of the function $f\taking A\to B$ is the thing we are measuring, and the codomain is the set of possible “answers” or results of the measurement. 
+\begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{a woman}\LA{r}{is}&\fbox{a person}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{a molecule}\LA{rr}{has as molecular mass (Da)}&\hspace{.7in}&\fbox{a positive real number}}\end{align}
+\end{blockENG}
+
+\begin{blockRUS}
+Аспект вещи $x$ это способ смотреть на нее, подход, в рамках которого к $x$ определенным образом относятся или измеряют ее.  Например, к женщине можно относиться как к личности; таким образом, «являться личностью» это аспект женщины.  Молекула имеет молекулярную массу (скажем, в дальтонах), так что «иметь молекулярную массу» это аспект молекулы.  Другими словами, под {\em аспектом} мы просто подразумеваем функцию. Область определения $A$ функции $f\taking A\to B$ это вещь, которая подвергается измерению, а область значений это множество возможных «ответов» или результатов такого измерения. 
+\begin{align}\label{dia:aspect 1}\xymatrixnocompile{\fbox{женщина}\LA{r}{является}&\fbox{личность}}\end{align}\begin{align}\label{dia:aspect 2}\xymatrixnocompile{\fbox{молекула}\LA{rr}{имеет молекулярную массу (Da)}&\hspace{.7in}&\fbox{положительное действительное число}}\end{align} 
+\end{blockRUS}
+
+\begin{blockENG}
+So for the arrow in (\ref{dia:aspect 1}), the domain is the set of women (a set with perhaps 3 billion elements); the codomain is the set of persons (a set with perhaps 6 billion elements).   We can imagine drawing an arrow from each dot in the “woman” set to a unique dot in the “person” set, just as in (\ref{dia:setmap}).  No woman points to two different people, nor to zero people — each woman is exactly one person — so the rules for a function are satisfied.  Let us now concentrate briefly on the arrow in (\ref{dia:aspect 2}).  The domain is the set of molecules, the codomain is the set $\RR_{>0}$ of positive real numbers.  We can imagine drawing an arrow from each dot in the “molecule” set to a single dot in the “positive real number” set.  No molecule points to two different masses, nor can a molecule have no mass: each molecule has exactly one mass.  Note however that two different molecules can point to the same mass.
+\end{blockENG}
+
+\begin{blockRUS}
+Таким образом, для стрелки из (\ref{dia:aspect 1}), область это множество женщин (множество с предположительно 3 миллиардами элементов); кообласть это множество личностей (множество с предположительно 6 миллиардами элементов).  Мы можем вообразить стрелку из каждой точки в множестве «женщина» к единственной точке в множестве «личность», аналогично (\ref{dia:setmap}).  Ни одна женщина не укажет ни на двух различных людей, ни на ноль людей — каждая женщина является в точности одной личностью — так что правила функции удовлетворены.  Давайте теперь сосредоточимся ненадолго на стрелке из (\ref{dia:aspect 2}).  Область определения здесь это множество молекул, область значений — множество $\RR_{>0}$ положительных действительных чисел.  В данном случае мы можем вообразить стрелку из каждой точки в множестве «молекула» к единственной точке в множестве «положительное действительное число».  Ни одна молекула ни укажет на две различные массы, ни останется без массы: ведь каждая молекула имеет в точности одну массу.  Заметим, однако, что на одну массу могут указывать две различные молекулы.
+\end{blockRUS}
+
+%% Subsubsection %%
+
+\subsubsection{\caseENGRUS{Invalid aspects}{ / }{Некорректные аспекты}}\label{sec:invalid aspect}\index{olog!invalid aspects}\index{олог!некорректные аспекты}
+
+\begin{blockENG}
+I tried above to clarify what it is that makes an aspect “valid”, namely that it must be a “functional relationship.”  In this subsection I will show two arrows which on their face may appear to be aspects, but which on closer inspection are not functional (and hence are not valid as aspects).  
+\end{blockENG}
+
+\begin{blockRUS}
+Выше я попытался разъяснить, что делает аспект «корректным», в частности, что он должен быть «функциональным отношением».  В этом подразделе я покажу две стрелки, которые на первый взгляд могут показаться аспектами, но которые при ближайшем рассмотрении не являются функциональными (и поэтому некорректны в качестве аспектов).   
+\end{blockRUS}
+
+\begin{blockENG}
+Consider the following two arrows:
+\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 1}
+\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
+\end{align}
+\vspace{-.13in}
+\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 2}
+\xymatrixnocompile{\fbox{a mechanical pencil}\LA{r}{uses}&\fbox{a piece of lead}}
+\end{align}  
+A person may have no children or may have more than one child, so the first arrow is invalid: it is not a function.  Similarly, if we drew an arrow from each mechanical pencil to each piece of lead it uses, it would not be a function.
+\end{blockENG}
+
+\begin{blockRUS}
+Рассмотрим следующие две стрелки:
+\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 1}
+\xymatrixnocompile{\fbox{человек}\LA{r}{имеет}&\fbox{ребенок}}
+\end{align}
+\vspace{-.13in}
+\begin{align}\tag{\arabic{subsection}.\arabic{equation}*}\addtocounter{equation}{1}\label{dia:invalid 2}
+\xymatrixnocompile{\fbox{механический карандаш}\LA{r}{ использует }&\fbox{графитовый стержень}}
+\end{align}  
+Человек может не иметь детей или может иметь более одного ребенка, так что первая стрелка некорректна: это не функция.  Аналогично, если мы нарисуем стрелку от каждого механического карандаша к каждому графитовому стержню, который он использует, это не будет функцией. 
+\end{blockRUS}
+
+\begin{warningENG}\label{warn:worldview}\index{a warning!different worldviews}
+The author of an olog has a world-view, some fragment of which is captured in the olog.  When person A examines the olog of person B, person A may or may not “agree with it.”  For example, person B may have the following olog $$\fbox{\xymatrix{&\fbox{a marriage}\LA{dr}{ includes}\LAL{dl}{includes }\\\fbox{a man}&&\fbox{a woman}}}$$ which associates to each marriage a man and a woman.  Person A may take the position that some marriages involve two men or two women, and thus see B's olog as “wrong.”  Such disputes are not “problems” with either A's olog or B's olog, they are discrepancies between world-views.  Hence, throughout this paper, a reader R may see a displayed olog and notice a discrepancy between R's world-view and my own, but R should not worry that this is a problem.  This is not to say that ologs need not follow rules, but instead that the rules are enforced to ensure that an olog is structurally sound, rather than that it “correctly reflects reality,” whatever that may mean.
+
+Consider the aspect $\fakebox{an object}\Too{\tn{has}}\fakebox{a weight}$. At some point in history, this would have been considered a valid function. Now we know that the same object would have a different weight on the moon than it has on earth. Thus as world-views change, we often need to add more information to our olog. Even the validity of $\fakebox{an object on earth}\Too{\tn{has}}\fakebox{a weight}$ is questionable. However to build a model we need to choose a level of granularity and try to stay within it, or the whole model evaporates into the nothingness of truth!
+\end{warningENG}
+
+\begin{warningRUS}\label{warn:worldview}\index{предупреждение!различные картины мира}
+У автора олога имеется картина мира, отдельный  фрагмент которой охвачен конкретным ологом. Если человек А проверит олог человека Б, то человек А может как согласиться с ним, так и нет.  Например, у человека Б может быть следующий олог $$\fbox{\xymatrix{&\fbox{брак}\LA{dr}{включает}\LAL{dl}{включает}\\\fbox{мужчина}&&\fbox{женщина}}},$$ который сопоставляет каждому браку мужчину и женщину.  Человек А может занять такую позицию, что некоторые браки включают двух мужчин, либо женщин, и поэтому считать олог человека Б неправильным. Такие дискусии не являются проблемами непосредственно олога А или олога Б, они появляются при наличии расхождений в картинах мира.  Поэтому, внутри данной книги, читатель Ч может увидеть показанный в ней олог и заметить расхождение между картиной мира Ч и моей собственной, но Ч не стоит беспокоиться об этом как о реальной проблеме.  Это не значит, что ологи не будут соотвествовать правилам, тем не менее правила требуют только того, чтобы отдельный олог был структурно непротиворечив, а не чтобы он «корректно отражал реальность,» что бы это ни значило. 
+
+Рассмотрим аспект $\fakebox{объект}\Too{\tn{имеет}}\fakebox{вес}$. В исторической перспективе это могло бы быть корректной функцией.  Сейчас же мы знаем, что тот же самый объект имел бы различный вес на Луне и на Земле. Таким образом, при изменении картины мира нам зачастую требуется добавлять больше информации в наш олог. Даже корректность такого олога: $\fakebox{объект на Земле}\Too{\tn{имеет}}\fakebox{вес}$ остается под вопросом. Однако для того, чтобы построить модель, нам необходимо выбрать определенный уровень детализации и пытаться его придерживаться, в противном случае вся модель целиком растворится в верных, но несущественных сведениях! 
+\end{warningRUS}
+
+\begin{remarkENG}
+In keeping with Warning \ref{warn:worldview}, the arrows (\ref{dia:invalid 1}) and (\ref{dia:invalid 2}) may not be wrong but simply reflect that the author has a strange world-view or a strange vocabulary.  Maybe the author believes that every mechanical pencil uses exactly one piece of lead.  If this is so, then $\fakebox{a mechanical pencil}\To{\tn{uses}}\fakebox{a piece of lead}$ is indeed a valid aspect!   Similarly, suppose the author meant to say that each person {\em was once} a child, or that a person has an inner child.  Since every person has one and only one inner child (according to the author), the map $\fakebox{a person}\To{\tn{has as inner child}}\fakebox{a child}$ is a valid aspect.  We cannot fault the olog if the author has a view, but note that we have changed the name of the label to make his or her intention more explicit.
+\end{remarkENG}
+
+\begin{remarkRUS}
+В свете Предупреждения \ref{warn:worldview}, стрелочки (\ref{dia:invalid 1}) и (\ref{dia:invalid 2}) могут быть не ошибочными, а просто отражать тот факт, что у автора странная картина мира, либо же странный словарь.  Возможно, автор верит, будто каждый механический карандаш использует в точности один графитовый стержень.  Если это так, то $$\fakebox{механический карандаш}\To{\tn{использует}}\fakebox{графитовый стержень}$$ будет в действительности корректным аспектом!  Аналогично, предположим, что автор хотел сказать, будто каждый человек {\em однажды был} ребенком, или что внутри личности живет внутренний ребенок.  Поскольку каждая личность имеет одного и только одного внутреннего ребенка (если верить этому автору), отображение $\fakebox{личность}\To{\tn{имеет внутреннего ребенка}}\fakebox{ребенок}$ это корректный аспект.  Мы не можем считать олог ошибочным, если автор имеет собственную точку зрения, однако обратите внимание, что мы сменили надпись в ологе, чтобы сделать более явными мысли его автора. 
+\end{remarkRUS}
+
+%% Subsubsection %%
+
+\subsubsection{\caseENGRUS{Reading aspects and paths as English phrases}{ / }{Прочтение аспектов и путей как фраз естественного языка}}
+
+\begin{blockENG}
+Each arrow (aspect) $X\To{f} Y$ can be read by first reading the label on its source box (domain of definition) $X$, then the label on the arrow $f$, and finally the label on its target box (set of values) $Y$.  For example, the arrow \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{a book}\LA{rrr}{has as first author}&&&\smbox{}{a person}}}\end{align} is read “a book has as first author a person”.  
+\end{blockENG}
+
+\begin{blockRUS}
+Каждуя стрелку (аспект) $X\To{f} Y$ можно прочесть так: сначала читаем метку на прямоугольнике, из которого выходит стрелка, то есть область определения $X$, затем метку на стрелке $f$, и, наконец, метку на целевом прямоугольнике, то есть область значений $Y$ (возможно, в соответствующем падеже).  Например, стрелка \begin{align}\label{dia:first author}\fbox{\xymatrixnocompile{\smbox{}{книга}\LA{rrr}{имеет первого автора}&&&\smbox{}{человек}}}\end{align} читается «книга имеет [в качестве] первого автора человека».%
+\endnote{
+TODO Попробовать поменять подобные [в качестве] на [с помощью].
+}
+\end{blockRUS}
+
+\begin{remarkENG}
+Note that the map in (\ref{dia:first author}) is a valid aspect, but that a similarly benign-looking map $\fakebox{a book}\To{\tn{has as author}}\fakebox{a person}$ would not be valid, because it is not functional.  The authors of an olog must be vigilant about this type of mistake because it is easy to miss and it can corrupt the olog.
+\end{remarkENG}
+
+\begin{remarkRUS}
+Заметим, что отображение в (\ref{dia:first author}) будет корректным аспектом; в то же время выглядящее в равной степени невинно отображение $\fakebox{книга}\To{\tn{имеет автора}}\fakebox{человек}$ не будет корректным, поскольку оно не является функциональным.  Авторы олога должны самостоятельно следить за подобного рода ошибками, ибо их легко пропустить и они могут испортить весь олог.
+\end{remarkRUS}
+
+\begin{blockENG}
+Sometimes the label on an arrow can be shortened or dropped altogether if it is obvious from context.  We will discuss this more in Section \ref{sec:facts} but here is a common example from the way I write ologs. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr a pair $(x,y)$ where $x$ and $y$ are integers}\ar[dl]_x\ar[dr]^y\\\smbox{B}{an integer}&&\smbox{B}{an integer}}}\end{align}  Neither arrow is readable by the protocol given above (e.g. “a pair $(x,y)$ where $x$ and $y$ are integers $x$ an integer” is not an English sentence), and yet it is obvious what each map means.  For example, given $(8,11)$ in $A$, arrow $x$ would yield $8$ and arrow $y$ would yield $11$.  The label $x$ can be thought of as a nickname for the full name “yields, via the value of $x$,” and similarly for $y$.  I do not generally use the full name for fear that the olog would become cluttered with text.
+\end{blockENG}
+
+\begin{blockRUS}
+Иногда метку на стрелке можно сократить или опустить совсем, если она очевидна из контекста.  Мы обсудим это подробнее в Разделе \ref{sec:facts}, а здесь приведем достаточно общий пример того, как я записываю ологи. \begin{align}\label{dia:pair of integers}\fbox{\xymatrixnocompile{&\obox{A}{1.2in}{\rr пара $(x,y)$, где $x$ и $y$ это целые числа}\ar[dl]_x\ar[dr]^y\\\smbox{B}{целое число}&&\smbox{B}{целое число}}}\end{align}  Ни одна из стрелок не читается по описанному выше протоколу («пара $(x,y)$, где $x$ и $y$ это целые числа $x$ целое число» не будет корректным выражением естественного языка), и все же очевидно, что каждое отображение означает.  Например, если $(8,11)$ это $A$, то стрелка $x$ выдаст $8$, а стрелка $y$ выдаст $11$.  О метке $x$ можно думать, как о псевдониме для полного имени «взять и выдать $x$», и аналогично для $y$.  Как правило, я не использую полные имена во избежание захламления олога текстом. 
+\end{blockRUS}
+
+\begin{blockENG}
+One can also read paths through an olog by inserting the word “which” after each intermediate box.%
+\footnote{If the intended elements of an intermediate box are humans, it is polite to use “who” rather than “which”, and other such conventions may be upheld if one so desires.}
+For example the following olog has two paths of length 3 (counting arrows in a chain): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{a child}\LA{r}{is}&\fbox{a person}\LA{rr}{has as parents}\LAL{dr}{has, as birthday}&&\obox{}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\LA{r}{$w$}&\fbox{a woman}\\&&\fbox{a date}\LA{r}{includes}&\fbox{a year}}}\end{align}  \normalsize The top path is read “a child is a person, who has as parents a pair $(w,m)$ where $w$ is a woman and $m$ is a man, which yields, via the value of $w$, a woman.”  The reader should read and understand the content of the bottom path, which associates to every child a year.  
+\end{blockENG}
+
+\begin{blockRUS}
+В ологе можно читать целые пути, вставляя слово «который» после каждого промежуточного прямоугольника.%
+%\footnote{Если элементами промежуточного типа являются одушевленные существа, более вежливо говорить «кто», а не «который»; при желании можно следовать этому правилу и другим подобным договоренностям.}
+Возьмем для примера следующий олог, который имеет два пути длины 3 (считаем стрелки в цепи): \small\begin{align}\label{olog:paths}\fbox{\xymatrixnocompile{\fbox{ребенок}\LA{r}{является}&\fbox{человек}\LA{rr}{имеет родителей}\LAL{dr}{имеет день рождения}&&\obox{}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\LA{r}{$w$}&\fbox{женщина}\\&&\fbox{дата}\LA{r}{включает}&\fbox{год}}}\end{align}  \normalsize Верхний путь читается «ребенок является человеком, который имеет [в качестве] родителей пару $(w,m)$, где $w$ это женщина и $m$ мужчина, из которой можно получить [в качестве] $w$ женщину.»  Читателю следует прочесть и разобраться в смысле нижнего пути, который сопоставляет каждому ребенку некоторый год.  
+\end{blockRUS}
+
+%% Subsubsection %%
+
+\subsubsection{\caseENGRUS{Converting non-functional relationships to aspects}{ / }{Преобразование нефункциональных отношений в аспекты}}\label{sec:relations}
+
+\begin{blockENG}
+There are many relationships that are not functional, and these cannot be considered aspects.  Often the word “has” indicates a relationship — sometimes it is functional as in $\fakebox{a person}\To{\tn{ has }}\fakebox{a stomach}$, and sometimes it is not, as in $\fakebox{a father}\To{\tn{has}}\fakebox{a child}$. Obviously, a father may have more than one child. This one is easily fixed by realizing that the arrow should go the other way: there is a function $\fakebox{a child}\To{\tn{has}}\fakebox{a father}$. 
+\end{blockENG}
+
+\begin{blockRUS}
+Имеется много отношений, не являющихся функциональными, и их нельзя рассматривать в качестве аспектов. Зачастую слово «имеет» означает отношение, и иногда оно функционально, как в $\fakebox{человек}\To{\tn{ имеет }}\fakebox{желудок}$, но иногда — нет, как в $\fakebox{отец}\To{\tn{имеет}}\fakebox{ребенок}$. Очевидно, отец может иметь более одного ребенка. Эту стрелку легко исправить, если понять, что на самом деле она должна идти в другую сторону: имеется функция $\fakebox{ребенок}\To{\tn{имеет}}\fakebox{отец}$. 
+\end{blockRUS}
+
+\begin{blockENG}
+What about $\fakebox{a person}\To{\tn{owns}}\fakebox{a car}$. Again, a person may own no cars or more than one car, but this time a car can be owned by more than one person too. A quick fix would be to replace it by $\fakebox{a person}\To{\tn{owns}}\fakebox{a set of cars}$.   This is ok, but the relationship between \fakebox{a car} and \fakebox{a set of cars} then becomes an issue to deal with later.  There is another way to indicate such “non-functional” relationships. In this case it would look like this:
+$$
+\fbox{\xymatrix{&\obox{}{1.15in}{a pair $(p,c)$ where $p$ is a person, $c$ is a car, and $p$ owns $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
+\obox{}{.5in}{a person}&&\obox{}{.3in}{a car}}}
+$$
+This setup will ensure that everything is properly organized. In general, relationships can involve more than two types, and the general situation looks like this $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  For example, $$\fbox{\xymatrixnocompile{&\labox{R}{a sequence $(p,a,j)$ where $p$ is a paper, $a$ is an author of $p$, and $j$ is a journal in which $p$ was published}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{a paper}&\smbox{A_2}{an author}&\smbox{A_3}{a journal}}}$$ 
+\end{blockENG}
+
+\begin{blockRUS}
+Но как быть с $\fakebox{человек}\To{\tn{владеет}}\fakebox{автомобиль}$? Опять же, у человека может не быть автомобиля или может быть много автомобилей, но в этот раз и автомобиль может находиться во владении более одного человека. Минимальным исправлением будет замена $\fakebox{человек}\To{\tn{владеет}}\fakebox{множество автомобилей}$.  С такой стрелкой все в порядке, но отношение между \fakebox{автомобиль} и \fakebox{множество автомобилей} станет тогда проблемой, которой мы займемся позже.  Имеется другой способ обозначить подобные «нефункциональные» отношения. В данном случае он будет выглядеть так:
+$$
+\fbox{\xymatrix{&\obox{}{1.15in}{пара $(p,c)$, где $p$ это человек, $c$ это машина, и $p$ владеет $c$.}\ar[ddl]_p\ar[ddr]^c\\\\
+\obox{}{.5in}{человек}&&\obox{}{.3in}{машина}}}
+$$
+Эта конструкция гарантирует, что все организовано должным образом. В общем случае отношения могут включать более двух типов, и общая ситуация будет выглядеть так: $$\fbox{\xymatrixnocompile{&&\fbox{$R$}\ar[ddll]\ar[ddl]\ar[ddr]\\\\\fbox{$A_1$}&\fbox{$A_2$}&\cdots&\fbox{$A_n$}}}$$  Например, $$\fbox{\xymatrixnocompile{&\labox{R}{последовательность $(p,a,j)$, где $p$ это статья, $a$ это автор $p$, и $j$ это журнал, в котором $p$ опубликована}\ar[ddl]_p\ar[dd]_a\ar[ddr]^j\\\\\smbox{A_1}{статья}&\smbox{A_2}{автор}&\smbox{A_3}{журнал}}}$$ 
+\end{blockRUS}
+
+\begin{exerciseENG}
+On page \pageref{dia:invalid 1} we indicate a so-called invalid aspect, namely 
+\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{a person}\LA{r}{has}&\fbox{a child}}
+\end{align}
+Create a (valid) olog that captures the parent-child relationship; your olog should still have boxes \fakebox{a person} and \fakebox{a child} but may have an additional box.
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+На странице \pageref{dia:invalid 1} мы рассмотрели так называемый некорректный аспект, в частности 
+\begin{align}\tag{\ref{dia:invalid 1}}\xymatrixnocompile{\fbox{человек}\LA{r}{имеет}&\fbox{ребенок}}
+\end{align}
+Создайте (корректный) олог, который описывает отношение ребенок-родитель; ваш олог должен иметь такие же прямоугольники \fakebox{человек} и \fakebox{ребенок}, и может содержать дополнительные прямоугольники.
+\end{exerciseRUS}
+
+\begin{rulesENG}\label{rules:aspects}\index{olog!rules}
+An aspect is presented as a labeled arrow, pointing from a source box to a target box.  The arrow text should
+\begin{enumerate}[(i)]
+\item begin with a verb;
+\item yield an English sentence, when the source-box text followed by the arrow text followed by the target-box text is read; and
+\item refer to a functional relationship: each instance of the source type should give rise to a specific instance of the target type.
+\end{enumerate}
+\end{rulesENG}
+
+\begin{rulesRUS}\label{rules:aspects}\index{олог!правила}
+Аспект изображается стрелкой с меткой, указывающей из области определения в область значений.  Текст над стрелкой должен
+\begin{enumerate}[(i)]
+\item начинаться с глагола или отглагольного существительного;
+\item образовывать фразу естественного языка при помещении между меткой области определения и меткой области значений;
+\item обозначать функциональное отношение: каждый экземпляр исходного типа должен порождать единственный экземпляр типа-результата.
+\end{enumerate}
+\end{rulesRUS}
+
+%%%% Subsection %%%%
+
+\subsection{\caseENGRUS{Facts}{ / }{Факты}}\label{sec:facts}\index{olog!facts}\index{олог!факты}
+
+\begin{blockENG}
+In this section I will discuss facts, which are simply “path equivalences” in an olog. It is the notion of path equivalences that make category theory so powerful. 
+\end{blockENG}
+
+\begin{blockRUS}
+В этом разделе мы обсудим факты, или попросту «эквивалентности путей» в ологе. Именно понятие эквивалентности путей делает теорию категорий такой мощной. 
+\end{blockRUS}
+
+\begin{blockENG}
+A {\em path}\index{olog!path in} in an olog is a head-to-tail sequence of arrows. That is, any path starts at some box $B_0$, then follows an arrow emanating from $B_0$ (moving in the appropriate direction), at which point it lands at another box $B_1$, then follows any arrow emanating from $B_1$, etc, eventually landing at a box $B_n$ and stopping there. The number of arrows is the {\em length} of the path. So a path of length 1 is just an arrow, and a path of length 0 is just a box. We call $B_0$ the {\em source} and $B_n$ the {\em target} of the path.
+\end{blockENG}
+
+\begin{blockRUS}
+{\em Путь}\index{олог!путь} в ологе это связная направленная последовательность стрелок. Другими словами, любой путь начинается в прямоугольнике $B_0$, затем идет по стрелке, исходящей из $B_0$ (двигаясь в правильном направлении), из нее он переходит в следующий прямоугольник $B_1$, затем идет по любой стрелке, исходящей из $B_1$, и т.д., и наконец приходит в $B_n$ и останавливается там. Число стрелок — это {\em длина} пути. Таким образом, путь длины $1$ это единственная стрелка, а путь длины $0$ это отдельный прямоугольник. Мы называем $B_0$ {\em началом} и $B_n$ {\em концом} пути. 
+\end{blockRUS}
+
+\begin{blockENG}
+Given an olog, the author may want to declare that two paths are equivalent.  For example consider the two paths from $A$ to $C$ in the olog 
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has as parents}\LAL{drr}{\parbox{.8in}{has as mother}}&&\obox{B}{.8in}{\rr a pair $(w,m)$ where $w$ is a woman and $m$ is a man}\ar@{}[dll]|(.4){\checkmark}\LA{d}{yields as $w$}\\&&\smbox{C}{a woman}}}\end{align}  We know as English speakers that a woman parent is called a mother, so these two paths $A\to C$ should be equivalent.  A more mathematical way to say this is that the triangle in Olog (\ref{olog:commute}) {\em commutes}. That is, path equivalences are simply commutative diagrams as in Section \ref{sec:comm diag}. In the example above we concisely say “a woman parent is equivalent to a mother.”  We declare this by defining the diagonal map in (\ref{olog:commute}) to be {\em the composition} of the horizontal map and the vertical map. 
+\end{blockENG}
+
+\begin{blockRUS}
+Автор любого олога может объявить, что два выбранных пути в этом ологе эквивалентны.  Например, рассмотрим два пути из $A$ в $C$ в ологе
+\begin{align}\label{olog:commute}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет родителей}\LAL{drr}{\parbox{.8in}{имеет мать}}&&\obox{B}{.8in}{\rr пара $(w,m)$, где $w$ это женщина и $m$ это мужчина}\ar@{}[dll]|(.4){\checkmark}\LA{d}{выдает $w$}\\&&\smbox{C}{женщина}}}\end{align} Носители естественного языка обычно знают, что женщина-родитель называется матерью, поэтому эти два пути $A\to C$ должны быть эквивалентны.  Более математический способ выразить то же самое — назвать треугольник в Ологе (\ref{olog:commute}) {\em коммутирующим}. То есть, эквивалентности путей это просто коммутативные диаграммы из Раздела \ref{sec:comm diag}. О примере выше мы кратко говорим «женщина-родитель эквивалентна матери.»  Чтобы заявить об этом, мы определяем диагональное отображение в (\ref{olog:commute}) как {\em композицию} горизонтального отображения и вертикального. 
+\end{blockRUS}
+
+\begin{blockENG}
+I generally prefer to indicate a commutative diagram by drawing a check-mark, $\checkmark$, in the region bounded by the two paths, as in Olog (\ref{olog:commute}).  Sometimes, however, one cannot do this unambiguously on the 2-dimensional page.  In such a case I will indicate the commutative diagrams (fact) by writing an equation.  For example to say that the diagram $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ commutes, we could either draw a checkmark inside the square or write the equation $A\;f\;g\simeq A\;h\;i$ above it\index{a symbol!$\simeq$}.%
+\footnote{We defined function composition on page \ref{function composition}, but here we're using a different notation.\index{a warning!notation for composition} There we would have said $g\circ f = i\circ h$, which is in the backwards-seeming {\em classical order}.\index{composition!classical order} Category theorists and others often prefer the {\em diagrammatic order}\index{composition!diagrammatic order} for writing compositions, which is $f;g = h;i$. For ologs, we follow the latter because it makes for better English sentences, and for the same reason we add the source object to the equation, writing $A f g \simeq A h i$.}
+
+Either way, it means that “$f$ then $g$” is equivalent to “$h$ then $i$”.  
+\end{blockENG}
+
+\begin{blockRUS}
+Обычно я предпочитаю обозначать коммутативность диаграммы при помощи отметки $\checkmark$ в области, ограниченной двумя путями, как в Ологе (\ref{olog:commute}).  Однако, иногда сделать это непротиворечивым образом на двумерной странице невозможно.  В таком случае я буду обозначать коммутативную диаграмму (факт) при помощи уравнения.  Например, чтобы сказать, что диаграмма $$\xymatrix{A\ar[r]^f\ar[d]_h&B\ar[d]^g\\C\ar[r]_i&D}$$ коммутирует, мы можем либо нарисовать отметку внутри квадрата, либо записать уравнение $A\;f\;g\simeq A\;h\;i$ над ним\index{символ!$\simeq$}.%
+\footnote{Мы определили композицию функций на странице \ref{function composition}, но здесь мы используем другое обозначение.\index{предупреждение!обозначение композиции} Там мы бы сказали, что $g\circ f = i\circ h$, следуя {\em классическому порядку}, который выглядит идущим задом-наперед.\index{композиция!классический порядок} Категорные теоретики и другие часто предпочитают {\em диаграммный порядок}\index{композиция!диаграммный порядок} для записи композиции, а именно $f;g = h;i$. В случае ологов мы используем последний вариант, потому что он лучше соответствует порядку слов естественного языка, и по тем же причинам мы добавили объект-начало в уравнение $A f g \simeq A h i$.}
+ 
+В любом случае, это означает, что «$f$ потом $g$» эквивалентно «$h$ потом $i$». 
+\end{blockRUS}
+
+\begin{blockENG}
+Here is another, more scientific example:
+\begin{align*}
+\fbox{\xymatrix{
+\obox{}{1in}{a DNA sequence}\LA{rr}{is transcribed to}\LAL{drr}{codes for}&\hspace{.1in}&\obox{}{1.1in}{an RNA sequence}\ar@{}[dll]|(.35){\checkmark}\LA{d}{is translated to}\\
+&&\obox{}{.6in}{a protein}}}
+\end{align*}
+Note how this diagram gives us the established terminology for the various ways in which DNA, RNA, and protein are related in this context.
+\end{blockENG}
+
+\begin{blockRUS}
+Вот другой, более научный пример:
+\begin{align*}
+\fbox{\xymatrix{
+\obox{}{1in}{последовательность ДНК}\LA{rr}{транскрипция}\LAL{drr}{кодирование}&\hspace{.1in}&\obox{}{1.1in}{последовательность РНК}\ar@{}[dll]|(.35){\checkmark}\LA{d}{трансляция}\\
+&&\obox{}{.6in}{белок}}}
+\end{align*}
+Заметим, что данная диаграмма сообщает нам общепринятую терминологию касательно различных способов, которыми ДНК, РНК и белки участвуют в таком контексте. 
+\end{blockRUS}
+
+\begin{exerciseENG}\label{exc:family olog}
+Create an olog for human nuclear biological families that includes the concept of person, man, woman, parent, father, mother, and child. Make sure to label all the arrows, and make sure each arrow indicates a valid aspect in the sense of Section \ref{sec:invalid aspect}. Indicate with check-marks ($\checkmark$) the diagrams that are intended to commute. If the 2-dimensionality of the page prevents a check-mark from being unambiguous, indicate the intended commutativity with an equation.
+\end{exerciseENG}
+
+\begin{exerciseRUS}\label{exc:family olog}
+Сочините олог для человеческих биологических {\em нуклеарных семей} [термин социологии], который бы включал понятия человека, мужчины, женщины, родителя, отца, матери и ребенка. Убедитесь, что размечены все стрелки, и что каждая стрелка обозначает корректный аспект в смысле Раздела \ref{sec:invalid aspect}. Обозначьте отметками ($\checkmark$) диаграммы, которые должны коммутировать. Если двумерность страницы мешает отметкам быть непротиворечивыми, обозначьте требуемую коммутативность уравнениями. 
+\end{exerciseRUS}
+
+\begin{exampleENG}[Non-commuting diagram]
+In my conception of the world, the following diagram does not commute:
+\begin{align}\label{dia:non-commuting}
+\xymatrixnocompile@=50pt{\obox{}{.5in}{a person}\LA{r}{has as father}\LAL{dr}{lives in}&\obox{}{.4in}{a man}\LA{d}{lives in}\\&\obox{}{.4in}{a city}}
+\end{align}
+The non-commutativity of Diagram (\ref{dia:non-commuting}) does not imply that, in my conception, no person lives in the same city as his or her father. Rather it implies that, in my conception, it is not the case that {\em every} person lives in the same city as his or her father.
+\end{exampleENG}
+
+\begin{exampleRUS}[Некоммутативная диаграмма]
+В соответствии с моей картиной мира, следующая диаграмма не будет коммутировать:
+\begin{align}\label{dia:non-commuting}
+\xymatrixnocompile@=50pt{\obox{}{.5in}{человек}\LA{r}{имеет отца}\LAL{dr}{живет в}&\obox{}{.4in}{мужчина}\LA{d}{живет в}\\&\obox{}{.4in}{город}}
+\end{align}
+Из некоммутативности Диаграммы (\ref{dia:non-commuting}) не следует, будто по моему мнению ни один человек не живет в одном городе со своим отцом. Вместо этого из нее следует, что по моему мнению не верно, будто {\em каждый} человек живет в одном городе со своим отцом. 
+\end{exampleRUS}
+
+\begin{exerciseENG}
+Create an olog about a scientific subject, preferably one you think about often. The olog should have at least five boxes, five arrows, and one commutative diagram. 
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+Сочините олог о каком-нибудь научном предмете, лучше всего о том, о котором вы думаете чаще всего. Олог должен содержать по крайней мере пять прямоугольников, пять стрелок и одну коммутитивную диаграмму. 
+\end{exerciseRUS}
+
+%% Subsubsection %%
+
+\subsubsection{\caseENGRUS{A formula for writing facts as English}{ / }{Рецепт для записи фактов естественным языком}}\index{olog!facts in English}\index{олог!факты на естественном языке}
+
+\begin{blockENG}
+Every fact consists of two paths, say $P$ and $Q$, that are to be declared equivalent. The paths $P$ and $Q$ will necessarily have the same source, say $s$, and target, say $t$, but their lengths may be different, say $m$ and $n$ respectively.%
+\footnote{If the source equals the target, $s=t$, then it is possible  to have $m=0$ or $n=0$, and the ideas below still make sense.} 
+We draw these paths as 
+\begin{align}\label{dia:two paths for equivalence}
+P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
+Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\ar[r]^{g_3}&\cdots\ar[r]^{g_{n-1}}&\LMO{b_{n-1}}\ar[r]^{g_n}&\LMO{b_n=t}}
+\end{align}
+Every part $\ell$ of an olog (i.e. every box and every arrow) has an associated English phrase, which we write as $\qtE{\ell}$. Using a dummy variable $x$ we can convert a fact into English too. The following general formula is a bit difficult to understand, see Example \ref{ex:English fact}, but here goes. The fact $P\simeq Q$ from (\ref{dia:two paths for equivalence}) can be Englishified as follows:
+
+\begin{align}\label{dia:Englishification}\index{Englishification}
+&\tn{Given }x,\qtE{s},\tn{ consider the following. We know that }x\tn{ is }\qtE{s}, \\
+\nonumber&\tn{which } \qtE{f_1}\;\qtE{a_1}, \tn{ which } \qtE{f_2}\;\qtE{a_2}, \tn{ which }\ldots \; \qtE{f_{m-1}}\;\qtE{a_{m-1}}, \tn{ which } \qtE{f_m}\;\qtE{t}\\
+\nonumber&\tn{that we'll call } P(x).\\
+\nonumber&\tn{We also know that }x\tn{ is } \qtE{s},\\
+\nonumber&\tn{which } \qtE{g_1}\;\qtE{b_1}, \tn{ which }\qtE{g_2}\;\qtE{b_2}, \tn{ which }\ldots\;\qtE{g_{n-1}}\;\qtE{b_{n-1}}, \tn{ which } \qtE{g_n}\;\qtE{t}\\
+\nonumber&\tn{that we'll call } Q(x).\\
+\nonumber&\tn{Fact: whenever }x\tn{ is }\qtE{s},\tn{ we will have }P(x)=Q(x).
+\end{align}
+\end{blockENG}
+
+\begin{blockRUS}
+Каждый факт состоит из двух путей, допустим, $P$ и $Q$, которые мы намерены объявить эквивалентными. Пути $P$ и $Q$ обязательно должны иметь общее начало и конец, скажем, $s$ и $t$, однако их длины могут отличаться, скажем, $m$ и $n$ соответственно.%
+\footnote{Если начало совпадает с концом, $s=t$, то возможна ситуация $m=0$ или $n=0$, при этом все сказанное ниже остается осмысленным и в таком случае.} 
+Мы изображает пути так 
+\begin{align}\label{dia:two paths for equivalence}
+P:&\hsp\xymatrix@=22pt{\LMO{a_0=s}\ar[r]^{f_1}&\LMO{a_1}\ar[r]^{f_2}&\LMO{a_2}\ar[r]^{f_3}&\cdots\ar[r]^{f_{m-1}}&\LMO{a_{m-1}}\ar[r]^{f_m}&\LMO{a_m=t}}\\\nonumber
+Q:&\hsp\xymatrix@=23pt{\LMO{b_0=s}\ar[r]^{g_1}&\LMO{b_1}\ar[r]^{g_2}&\LMO{b_2}\ar[r]^{g_3}&\cdots\ar[r]^{g_{n-1}}&\LMO{b_{n-1}}\ar[r]^{g_n}&\LMO{b_n=t}}
+\end{align}
+Каждой части $\ell$ олога (т.е. каждому прямоугольнику и каждой стрелке) можно сопоставить фразу естественного языка, которую мы обозначим $\qtR{\ell}$. Используя вспомогательную переменную $x$ мы можем превести на естественный язык и каждый факт. Следующая общая формула немного сложна для понимания, см. Пример \ref{ex:English fact}, но вот она. Факт $P\simeq Q$ из (\ref{dia:two paths for equivalence}) переводится на естественный язык следующим образом:%
+\endnote{
+В оригинале рецепт на английском, имеющем более строгую структуру предложения и не имеющем падежей; потому механическое конструирование предложений довольно естественно ложится на разговорный английский. В русском требуется согласование частей речи и перестановка слов, — например, «верблюд имеет два горба» звучит не очень естественно; гораздо более естественно звучало бы «у верблюда [есть] два горба.»
+}
+
+\begin{align}\label{dia:Englishification}\index{перевод на естественный язык}
+&\tn{Для данного }\qtR{s}\;x\tn{ рассмотрим следующее.}\\
+\nonumber&\tn{Для известного }\qtR{s}\;x\\
+\nonumber&\tn{который }\qtR{f_1}\;\qtR{a_1},\tn{который }\qtR{f_2}\;\qtR{a_2},\\ 
+\nonumber&\ldots\tn{который }\qtR{f_{m-1}}\;\qtR{a_{m-1}},\tn{который }\qtR{f_m}\;\qtR{t},\\
+\nonumber&\tn{обозначим последнее }P(x).\\
+\nonumber&\tn{Для известного }\qtR{s}\;x\\
+\nonumber&\tn{который }\qtR{g_1}\;\qtR{b_1},\tn{который }\qtR{g_2}\;\qtR{b_2},\\
+\nonumber&\ldots\tn{который }\qtR{g_{n-1}}\;\qtR{b_{n-1}},\tn{который }\qtR{g_n}\;\qtR{t},\\
+\nonumber&\tn{обозначим последнее }Q(x).\\
+\nonumber&\tn{Факт: для любого }\qtR{s}\;x\tn{ верно равенство }P(x)=Q(x).
+\end{align}
+\end{blockRUS}
+
+\begin{exampleENG}\label{ex:English fact}
+Consider the olog
+\begin{align}\label{olog:commute2}\fbox{\xymatrixnocompile{\smbox{A}{a person}\LA{rr}{has}\LAL{drr}{\parbox{.8in}{lives in}}&&\obox{B}{.7in}{\rr an address}\ar@{}[dll]|(.4){\checkmark}\LA{d}{is in}\\&&\smbox{C}{a city}}}
+\end{align}
+To put the fact that Diagram \ref{olog:commute2} commutes into English, we first Englishify the two paths: $F$=“a person has an address, which is in a city” and $G$=“a person lives in a city”. The source of both is $s$=“a person” and the target of both is $t$=“a city”.
+write:
+\begin{align*}
+&\tn{Given }x,\tn{a person, consider the following. We know that } x\tn{ is a person,}\\
+&\tn{which has an address, which is in a city}\\
+&\tn{that we'll call } P(x).\\
+&\tn{We also know that }x\tn{ is a person,}\\
+&\tn{which lives in a city}\\
+&\tn{that we'll call } Q(x).\\
+&\tn{Fact: whenever }x\tn{ is a person, we will have }P(x)=Q(x).
+\end{align*}
+\end{exampleENG}
+
+\begin{exampleRUS}\label{ex:English fact}
+Рассмотрим олог
+\begin{align}\label{olog:commute2}\fbox{\xymatrixnocompile{\smbox{A}{человек}\LA{rr}{имеет}\LAL{drr}{\parbox{.8in}{проживает в}}&&\obox{B}{.7in}{\rr адрес}\ar@{}[dll]|(.4){\checkmark}\LA{d}{находится в}\\&&\smbox{C}{город}}}
+\end{align}
+Чтобы перевести факт коммутативности Диаграммы \ref{olog:commute2} на естественный язык, мы вначале переведем два пути: $F$=«человек имеет адрес, который находится в городе» и $G$=«человек проживает в городе». Началом обоих является $s$=«человек», а концом — $t$=«город».
+Запишем:
+\begin{align*}
+&\tn{Для данного человека }x,\tn{ рассмотрим следующее.}\\
+&\tn{Для известного человека }x\\
+&\tn{который имеет адрес, который находится в городе}\\
+&\tn{обозначим последний }P(x).\\
+&\tn{Для известного человека }x\\
+&\tn{который живет в городе}\\
+&\tn{обозначим последний }Q(x).\\
+&\tn{Факт: для любого человека }x\tn{ верно равенство }P(x)=Q(x).
+\end{align*}
+\end{exampleRUS}
+
+\begin{exerciseENG}
+This olog was taken from \cite{Sp1}.
+\begin{align}\label{dia:phone paths}\xymatrix{&\obox{N}{1in}{a phone number}\LA{rr}{has}&&\obox{C}{.8in}{an area code}\ar@{}[dll]|{\checkmark}\LA{d}{corresponds to}\\\obox{OLP}{1.2in}{an operational landline phone}\LA{ru}{is assigned}\LAL{r}{is}&\obox{P}{1in}{a physical phone}\LAL{rr}{\parbox{.55in}{\scriptsize is currently located in}}&&\obox{R}{.5in}{a region}}
+\end{align} 
+It says that a landline phone is physically located in the region that its phone number is assigned. Translate this fact into English using the formula from \ref{dia:Englishification}.
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+Этот олог взят из \cite{Sp1}.
+\begin{align}\label{dia:phone paths}\xymatrix{&\obox{N}{1in}{телефонный номер}\LA{rr}{имеет}&&\obox{C}{.8in}{код региона}\ar@{}[dll]|{\checkmark}\LA{d}{соответствует}\\\obox{OLP}{1.2in}{стационарный телефон}\LA{ru}{присвоен номер}\LAL{r}{является}&\obox{P}{1in}{физический телефон}\LAL{rr}{\parbox{.55in}{\scriptsize размещается в}}&&\obox{R}{.5in}{регион}}
+\end{align} 
+Он говорит, что стационарный телефон физически размещается в том же регионе, к которому приписан его телефонный номер. Переведите это факт на естественный язык, используя рецепт из \ref{dia:Englishification}. 
+\end{exerciseRUS}
+
+\begin{exerciseENG}
+In the above olog (\ref{dia:phone paths}), suppose that the box \fakebox{an operational landline phone} is replaced with the box \fakebox{an operational mobile phone}. Would the diagram still commute?
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+В ологе выше (\ref{dia:phone paths}) предположим, что прямоугольник \fakebox{стационарный телефон} заменен прямоугольником \fakebox{мобильный телефон}. Будет ли диаграмма и дальше коммутировать? 
+\end{exerciseRUS}
+
+%% Subsubsection %%
+
+\subsubsection{\caseENGRUS{Images}{ / }{Образы}}\label{sec:images}\index{olog!images}\index{image!in olog}\index{олог!образы}\index{образ!в ологе}
+
+\begin{blockENG}
+In this section we discuss a specific kind of fact, generated by any aspect. Recall that every function has an image, meaning the subset of elements in the codomain that are “hit” by the function. For example the function $f(x)=2*x\taking \ZZ\to\ZZ$ has as image the set of all even numbers.
+\end{blockENG}
+
+\begin{blockRUS}
+В этом разделе мы обсудим особый вид фактов, порождаемых каждым аспектом. Напомним, что каждая функция имеет образ, под которым мы подразумеваем подмножество элементов в области значений, в которые можно «попасть» функцией. Например, для функции $f(x)=2*x\taking \ZZ\to\ZZ$ образом будет множество всех четных чисел.
+\end{blockRUS}
+
+\begin{blockENG}
+Similarly the set of mothers arises as is the image of the “has as mother” function, as shown below 
+$$
+\xymatrix{\obox{P}{.5in}{a person}\LAL{rd}{has}\LA{rr}{$\stackrel{f\taking P\to P}{\tn{has as mother}}$}&&\obox{P}{.5in}{a person}\\
+&\obox{M=\im(f)}{.6in}{a mother}\LAL{ur}{is}\ar@{}[u]|(.6){\checkmark}
+}$$
+\end{blockENG}
+
+\begin{blockRUS}
+Аналогично, множество матерей возникает как образ функции «имеет в качестве матери» как это показано ниже
+$$
+\xymatrix{\obox{P}{.5in}{человек}\LAL{rd}{имеет}\LA{rr}{$\stackrel{f\taking P\to P}{\tn{имеет мать}}$}&&\obox{P}{.5in}{человек}\\
+&\obox{M=\im(f)}{.6in}{мать}\LAL{ur}{является}\ar@{}[u]|(.6){\checkmark}
+}$$ 
+\end{blockRUS}
+
+\begin{exerciseENG}
+For each of the following types, write down a function for which it is the image, or say “not clearly an image type”:
+\sexc \fakebox{a book}
+\item \fakebox{a material that has been fabricated by a process of type $T$}
+\item \fakebox{a bicycle owner}
+\item \fakebox{a child}
+\item \fakebox{a used book}
+\item \fakebox{an inhabited residence}
+\endsexc
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+Для каждого из следующих типов, запишите функцию, для которой оно будет образом, или скажите, что оно «не является очевидным типом-образом»:
+\sexc \fakebox{книга}
+\item \fakebox{материал, полученный обработкой типа $T$}
+\item \fakebox{владелец велосипеда}
+\item \fakebox{ребенок}
+\item \fakebox{использованная книга}
+\item \fakebox{обитаемое помещение}
+\endsexc
+\end{exerciseRUS}
+

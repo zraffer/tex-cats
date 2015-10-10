@@ -1,0 +1,601 @@
+% section41.tex
+
+%%%%%% Section %%%%%%
+
+\section{Categories and Functors}
+
+In this section we give the standard definition of categories and functors. These, together with natural transformations (Section \ref{sec:nat trans}), form the backbone of category theory. We also give some examples.
+
+%%%% Subsection %%%%
+
+\subsection{Categories}\label{sec:categories}
+
+In everyday speech we think of a category as a kind of thing. A category consists of a collection of things, all of which are related in some way. In mathematics, a category can also be construed as a collection of things and a type of relationship between pairs of such things. For this kind of thing-relationship duo to count as a category, we need to check two rules, which have the following flavor: every thing must be related to itself by simply being itself, and if one thing is related to another and the second is related to a third, then the first is related to the third. In a category, the “things” are called {\em objects} and the “relationships” are called {\em morphisms}.
+
+In various places throughout this book so far we have discussed things of various sorts, e.g. sets, monoids, graphs. In each case we discussed how such things should be appropriately compared\index{appropriate comparison}. In each case the “things” will stand as the objects and the “appropriate comparisons” will stand as the morphisms in the category. Here is the definition.
+
+\begin{definition}\label{def:category}\index{category}\index{hom-set}\index{morphism}
+
+A {\em category} $\mcC$ is defined as follows: One announces some constituents (A. objects, B. morphisms, C. identities, D. compositions) and asserts that they conform to some laws (1. identity law, 2. associativity law). Specifically, one announces:
+\begin{enumerate}[\hsp A.]
+\item a collection $\Ob(\mcC)$, elements of which are called {\em objects};\index{a symbol!$\Ob$}
+\item for every pair $x,y\in\Ob(\mcC)$, a set $\Hom_\mcC(x,y)\in\Set$.\index{a symbol!$\Hom_\mcC$} It is called the {\em hom-set from $x$ to $y$}; its elements are called {\em morphisms from $x$ to $y$};
+\footnote{The reason for the notation $\Hom$ and the word {\em hom-set} is that morphisms are often called {\em homomorphisms}, e.g. in group theory.}
+\item for every object $x\in\Ob(\mcC)$, a specified morphism denoted $\id_x\in\Hom_\mcC(x,x)$ called {\em the identity morphism on $x$}; and
+\item for every three objects $x,y,z\in\Ob(\mcC)$, a function $$\circ\taking\Hom_\mcC(y,z)\times\Hom_\mcC(x,y)\to\Hom_\mcC(x,z),$$ called {\em the composition formula}.\index{a symbol!$\circ$}\index{composition!of morphisms}
+\end{enumerate}
+Given objects $x,y\in\Ob(\mcC)$, we can denote a morphism $f\in\Hom_\mcC(x,y)$ by $f\taking x\to y$; we say that $x$ is the {\em domain} of $f$ and that $y$ is the {\em codomain} of $f$. Given also $g\taking y\to z$, the composition formula is written using infix notation, so $g\circ f\taking x\to z$ means $\circ(g,f)\in\Hom_\mcC(x,z)$.
+
+One asserts that the following law holds:
+\begin{enumerate}[\hsp 1.]
+\item for every $x,y\in\Ob(\mcC)$ and every morphism $f\taking x\to y$, we have
+$$f\circ\id_x=f\hsp\tn{and}\hsp\id_y\circ f=f;$$ \hsp{and};
+\item if $w,x,y,z\in\Ob(\mcC)$ are any objects and $f\taking w\to x,\;\;g\taking x\to y,\;\;$ and $h\taking y\to z$ are any morphisms, then the two ways to compose are the same:$$(h\circ g)\circ f = h\circ(g\circ f) \in\Hom_\mcC(w,z).$$
+\end{enumerate}
+\end{definition}
+
+\begin{remark}\label{rmk:small}\index{category!small}
+
+There is perhaps much that is unfamiliar about Definition \ref{def:category} but there is also one thing that is strange about it. The objects $\Ob(\mcC)$ of $\mcC$ are said to be a “collection” rather than a set. This is because we sometimes want to talk about the category of all sets, in which every possible set is an objects, and if we try to say that the collection of sets is itself, we run into \href{http://en.wikipedia.org/wiki/Russell's_paradox}{\text Russell's paradox}. Modeling this was a sticking point in the foundations of category theory, but it was eventually fixed by Grothendieck's notion of expanding universes.\index{Grothendieck!expanding universes} Roughly the idea is to choose some huge set $\kappa$ (with certain properties making it a {\em universe}), to work entirely inside of it when possible, and to call anything in that world {\em $\kappa$-small} (or just {\em small} if $\kappa$ is clear from context). When we need to look at $\kappa$ itself, we  choose an even bigger universe $\kappa'$ and work entirely within it.
+
+A category in which the collection $\Ob(\mcC)$ is a set (or in the above language, a small set) is called a {\em small category}. From here on out we will not take care of the difference, referring to $\Ob(\mcC)$ as a set. We do not think this will do any harm to scientists using category theory, at least not in the beginning phases of their learning.\index{a warning!“set'' of objects in a category}
+
+\end{remark}
+
+\begin{example}[The category $\Set$ of sets]\index{a category!$\Set$}
+
+Chapter \ref{chap:sets} was all about the category of sets, denoted $\Set$. The objects are the sets and the morphisms are the functions; we even used the current notation, referring to the set of functions $X\to Y$ as $\Hom_\Set(X,Y)$. The composition formula $\circ$ is given by function composition, and for every set $X$, the identity function $\id_X\taking X\to X$ serves as the identity morphism for $X\in\Ob(\Set)$. The two laws clearly hold, so $\Set$ is indeed a category. 
+
+\end{example}
+
+\begin{example}[The category $\Fin$ of finite sets]\index{a category!$\Fin$}\label{ex:Fin}
+
+Inside the category $\Set$ is a {\em subcategory} $\Fin\ss\Set$, called the {\em category of finite sets}. Whereas an object $S\in\Ob(\Set)$ is a set that can have arbitrary cardinality, we define $\Fin$ such that its objects include all (and only) the sets $S$ with finitely many elements, i.e. $|S|=n$ for some natural number $n\in\NN$. Every object of $\Fin$ is an object of $\Set$, but not vice versa.
+
+Although $\Fin$ and $\Set$ have a different collection of objects, their morphisms are in some sense “the same”. For any two finite sets $S,S'\in\Ob(\Fin)$, we can also think of $S,S'\in\Ob(\Set)$, and we have
+$$\Hom_\Fin(S,S')=\Hom_\Set(S,S').$$
+That is a morphism in $\Fin$ between finite sets $S$ and $S'$ is simply a function $f\taking S\to S'$.
+
+\end{example}
+
+\begin{example}[The category $\Mon$ of monoids]\label{ex:mon is cat}\index{a category!$\Mon$}
+
+We defined monoids in Definition \ref{def:monoid} and monoid homomorphisms in Definition \ref{def:monoid hom}. Every monoid $\mcM:=(M,e,\star_M)$ has an identity homomorphism $\id_\mcM\taking\mcM\to\mcM$, given by the identity function $\id_M\taking M\to M$. To compose two monoid homomorphisms $f\taking\mcM\to\mcM'$ and $g\taking\mcM'\to\mcM''$, we compose their underlying functions $f\taking M\to M'$ and $g\taking M'\to M''$, and check that the result $g\circ f$ is a monoid homomorphism. Indeed,
+$$g\circ f(e)=g(e')=e''$$
+$$g\circ f(m_1\star_Mm_2)=g(f(m_1)\star_{M'}f(m_2))=g\circ f(m_1)\star_{M''}g\circ f(m_2).$$
+It is clear that the two laws hold, so $\Mon$ is a category.
+
+\end{example}
+
+\begin{exercise}[The category $\Grp$ of groups]\index{a category!$\Grp$}
+Suppose we set out to define a category $\Grp$, having groups as objects and group homomorphisms as morphisms, see Definition \ref{def:group homomorphism}. Show (to the level of detail of Example \ref{ex:mon is cat}) that the rest of the conditions for $\Grp$ to be a category are satisfied.
+\end{exercise}
+
+\begin{exercise}[The category $\PrO$ of preorders]\index{a category!$\PrO$}
+Suppose we set out to define a category $\PrO$, having preorders as objects and preorder homomorphisms as morphisms (see Definition \ref{def:morphism of orders}). Show (to the level of detail of Example \ref{ex:mon is cat} that the rest of the conditions for $\PrO$ to be a category are satisfied.
+\end{exercise}
+
+\begin{example}[Non-category 1]
+
+So what's not a category? Two things can go wrong: either one fails to specify all the relevant constituents (A, B, C, D from Definition \ref{def:category}, or the constituents do not obey the laws (1, 2).\index{category!non-example}
+
+Let $G$ be the following graph,
+$$G=\fbox{\xymatrix{\LMO{a}\ar[r]^f&\LMO{b}\ar[r]^g&\LMO{c}}}.$$
+Suppose we try to define a category $\mcG$ by faithfully recording vertices as objects and arrows as morphisms. Will that be a category?
+
+Following that scheme, we put $\Ob(\mcG)=\{a,b,c\}$. For all 9 pairs of objects we need a hom-set.
+Say 
+\begin{align*}
+\begin{array}{lll}
+\Hom_\mcG(a,a)=\emptyset&\hsp\Hom_\mcG(a,b)=\{f\}&\hsp\Hom_\mcG(a,c)=\emptyset\\
+\Hom_\mcG(b,a)=\emptyset&\hsp\Hom_\mcG(b,b)=\emptyset&\hsp\Hom_\mcG(b,c)=\{g\}\\
+\Hom_\mcG(c,a)=\emptyset&\hsp\Hom_\mcG(c,b)=\emptyset&\hsp\Hom_\mcG(c,c)=\emptyset
+\end{array}
+\end{align*}
+If we say we are done, the listener should object that we have given neither identities nor a composition formula. In fact, it is impossible to give identities under our scheme, because e.g. $\Hom_\mcG(a,a)=\emptyset$.
+
+Suppose we fix that problem, adding an element to each of our “diagonals” so that 
+$$\Hom_\mcG(a,a)=\{\id_a\},\hsp\Hom_\mcG(b,b)=\{\id_b\},\hsp\tn{and}\hsp\Hom_\mcG(c,c)=\{\id_c\}.$$ What about a composition formula? We need a function $\Hom_\mcG(a,b)\times\Hom_\mcG(b,c)\to\Hom_\mcG(a,c)$, but the domain is nonempty and the codomain is empty; there is no such function. 
+
+Again, we must make a change, adding an element to make $$\Hom_\mcG(a,c)=\{h\}.$$ We would now say $g\circ f=h$. Finally, this does the trick and we have a category. A computer could check this quickly, as can someone with good intuition for categories; for everyone else, it may be a painstaking process involving determining whether there is a unique composition formula for each of the 27 pairs of hom-sets and whether the associative law holds in the 81 necessary cases. Luckily this computation is “sparse” (lots of $\emptyset$'s), so it's not as bad as it first seems.
+
+Redrawing all the morphisms as arrows, our graph has become:
+$$G=\fbox{\xymatrix{\LMO{a}\ar@(ul,dl)[]_{\id_a}\ar[r]^f\ar@/_1pc/[rr]_h&\LMO{b}\ar@(ur,ul)[]_{\id_b}\ar[r]^g&\LMO{c}\ar@(ur,dr)[]^{\id_c}}}$$
+
+\end{example}
+
+\begin{example}[Non-category 2]\index{category!non-example}
+
+In this example, we will make a faux-category $\mcF$ with one object and many morphisms. The problem here will be our composition formula. 
+
+Define $\mcF$ to have one object $\Ob(\mcF)=\singleton$, and $\Hom_\mcF(\smiley,\smiley)=\NN$. Define $\id_{\smiley}=1\in\NN$. Define the composition formula $\circ\taking\NN\times\NN\to\NN$ by $m\circ n=m^n$. This is a perfectly cromulent function, but it does not work right as a composition formula. Indeed, for the identity law to hold, we would need $m^1=m=1^m$, and one side of this is false. For the associativity law to hold, we would need $(m^n)^p=m^{(n^p)}$, but this is also not the case.
+
+To fix this problem we have to completely revamp our composition formula. It would work to use multiplication, $m\circ n=m*n$. Then the identity law would read $1*m=m=m*1$, and that holds; and the associativity law would read $(m*n)*p=m*(n*p)$, and that holds.
+
+\end{example}
+
+\begin{example}[The category of preorders with joins]\label{ex:preorders with joins}
+
+Suppose that we are only interested in preorders $(X,\leq)$ for which every pair of elements has a join. We saw in Exercise \ref{exc:not all meets and joins} that not all preorders have this property. However we can create a category $\mcC$ in which every object does have this property. To begin we put $\Ob(\mcC)=\{(X,\leq)\in\Ob(\PrO)\| (X,\leq)\tn{ has all joins}\}.$ But what about morphisms?
+
+One option would be to put in no morphisms (other than identities), and to just consider this collection of objects as having no structure other than a set.
+
+Another option would be to put in exactly the same morphisms as in $\PrO$: for any objects $a,b\in\Ob(\mcC)$ we consider $a$ and $b$ as regular old preorders, and put $\Hom_\mcC(a,b):=\Hom_{\PrO}(a,b)$. The resulting category of preorders with joins is called the {\em full subcategory of $\PrO$ spanned by the preorders with joins}.\index{subcategory!full}\footnote{The definition of full subcategories will be given as Definition \ref{def:full subcategory}.}
+
+A third option, and the one perhaps that would jump out to a category theorist, is to take the choice about how we define our objects as a clue to how we should define our morphisms. Namely, if we are so interested in joins, perhaps we want joins to be preserved under morphisms. That is, if $f\taking (X,\leq_X)\to (Y,\leq_Y)$ is a morphism of preorders then for any join $w=x\vee x'$ in $X$ we might want to enforce that $f(w)=f(x)\vee f(x')$ in $Y$. Thus a third possibility for the morphisms of $\mcC$ would be $$\Hom_\mcC(a,b):=\{f\in\Hom_{\PrO}(a,b)\|f \tn{ preserves joins}\}.$$ One can check easily that the identity morphisms preserve joins and that compositions of join-preserving morphisms are join-preserving, so this version of homomorphisms makes for a well-defined category.
+
+\end{example}
+
+\begin{example}[Category $\FLin$ of finite linear orders]\label{ex:FLin}\index{a category!$\FLin$}
+
+We have a category $\PrO$ of preorders, and some of its objects are finite (nonempty) linear orders. Let $\FLin$ be the full subcategory of $\PrO$ spanned by the linear orders. That is, following Definition \ref{def:morphism of orders}, given linear orders $X,Y$, every morphism of preorders $X\to Y$ counts as a morphism in $\FLin$: $$\Hom_\FLin(X,Y)=\Hom_\PrO(X,Y).$$ 
+
+\end{example}
+
+\begin{exercise}
+Let $\FLin$ be the category of finite linear orders, defined in Example \ref{ex:FLin}. For $n\in\NN$, let $[n]$ be the linear order defined in Example \ref{ex:finite lo}. What are the cardinalities of the following sets: 
+\sexc $\Hom_{\FLin}([0],[3])$; 
+\item $\Hom_\FLin([3],[0])$;
+\item $\Hom_\FLin([2],[3])$;
+\item $\Hom_\FLin([1],[n])$?
+\item (Challenge) $\Hom_\FLin([m],[n])$?
+\endsexc
+
+It turns out that the category $\FLin$ of linear orders is sufficiently rich that much of algebraic topology (the study of arbitrary spaces, such as Mobius strips and $7$-dimensional spheres) can be understood in its terms. See Example \ref{ex:simplicial set}.
+\end{exercise}
+
+\begin{example}[Category of graphs]\index{a category!$\Grph$}
+
+We defined graphs in Definition \ref{def:graph} and graph homomorphisms in Definition \ref{def:graph homomorphism}. To see that these are sufficient to form a category is considered routine to a seasoned category-theorist, so let's see why. 
+
+Since a morphism from $\mcG=(V,A,src,tgt)$ to $\mcG'=(V',A',src',tgt')$ involves two functions $f_0\taking V\to V'$ and $f_1\taking A\to A'$, the identity and composition formulas will simply arise from the identity and composition formulas for sets. Associativity will follow similarly. The only thing that needs to be checked, really, is that the composition of two such things, each satisfying (\ref{dia:graph hom}), will itself satisfy (\ref{dia:graph hom}). Just for completeness, we check that now.
+
+Suppose that $f=(f_0,f_1)\taking\mcG\to\mcG'$ and $g=(g_0,g_1)\taking\mcG'\to\mcG''$ are graph homomorphisms, where $\mcG''=(V'',A'',src'',tgt'')$. Then in each diagram below
+\begin{align}\label{dia:graph hom comp}
+\xymatrix{A\ar[r]^{f_1}\ar[d]^{src}&A'\ar[r]^{g_1}\ar[d]^{src'}&A''\ar[d]^{src''}\\V\ar[r]_{f_0}&V'\ar[r]_{g_0}&V''
+}\hspace{1in}
+\xymatrix{A\ar[r]^{f_1}\ar[d]^{tgt}&A'\ar[d]^{tgt'}\ar[r]^{g_1}&A''\ar[d]^{tgt''}\\V\ar[r]_{f_0}&V'\ar[r]_{g_0}&V''
+}
+\end{align}
+the left-hand square commutes because $f$ is a graph homomorphism and the right-hand square commutes because $g$ is a graph homomorphism. Thus the whole rectangle commutes, meaning that $g\circ f$ is a graph homomorphism, as desired. 
+
+We denote the category of graphs and graph homomorphisms by $\Grph$.
+
+\end{example}
+
+\begin{remark}
+
+When one is struggling to understand basic definitions, notation, and style, a phase which naturally occurs when learning new mathematics (or any new language), the above example will probably appear long and tiring. I'd say you've mastered the basics when the above example really does feel straightforward. Around this time, I imagine you'll begin to get a sense of the remarkable organisational potential of the categorical way of thinking.
+
+\end{remark} 
+
+\begin{exercise}\label{exc:vector field 1}\index{vector field}
+Let $F$ be a vector field on $\RR^2$. \href{http://en.wikipedia.org/wiki/Line_integral#Line_integral_of_a_vector_field}{Recall} that for two points $x,x'\in\RR^2$, any curve $C$ with endpoints $x$ and $x'$, and any parameterization $r\taking [a,b]\to C$, the line integral $\int_CF(r)\cdot dr$ returns a real number. It does not depend on $r$, except its orientation (direction). Therefore, if we think of $C$ has having an orientation, say going from $x$ to $x'$, then $\int_CF$ is a well-defined real number. If $C$ goes from $x$ to $x'$, let's suggestively write $C\taking x\to x'$. Define an equivalence relation $\sim$ on the set of oriented curves in $\RR^2$ by saying $C\sim C'$ if
+\begin{itemize}
+\item $C$ and $C'$ start at the same point,
+\item $C$ and $C'$ end at the same point, and
+\item $\int_CF=\int_{C'}F$.
+\end{itemize}
+
+Suppose we try to make a category $\mcC_F$ as follows. Put $\Ob(\mcC_F)=\RR^2$, and for every pair of points $x,x'\in\RR^2$, let $\Hom_{\mcC_F}(x,x')=\{C\taking x\to x'\}/\sim$, where $C\taking x\to x'$ is an oriented curve and $\sim$ means “same line integral”, as explained above. 
+
+Is there an identity morphism and a composition formula that will make $\mcC_F$ into a category? 
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Isomorphisms}
+
+In any category we have a notion of isomorphism between objects.
+
+\begin{definition}\index{isomorphism}\index{morphism!inverse}
+
+Let $\mcC$ be a category and let $X,Y\in\Ob(\mcC)$ be objects. An {\em isomorphism $f$ from $X$ to $Y$} is a morphism $f\taking X\to Y$ in $\mcC$, such that there exists a morphism $g\taking Y\to X$ in $\mcC$ such that $$g\circ f=\id_X\hsp\tn{and}\hsp f\circ g=\id_Y.$$ In this case we say that the morphism $f$ is {\em invertible} and that $g$ is the {\em inverse} of $f$. We may also say that the objects $X$ and $Y$ are {\em isomorphic}.
+
+\end{definition}
+
+\begin{example}
+
+If $\mcC=\Set$ is the category of sets, then the above definition coincides precisely with the one given in Definition \ref{def:iso in set}.
+
+\end{example}
+
+\begin{exercise}
+Suppose that $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ are graphs and that $f=(f_0,f_1)\taking G\to G'$ is a graph homomorphism (as in Definition \ref{def:graph homomorphism}). 
+\sexc If $f$ is an isomorphism in $\Grph$, does this imply that $f_0\taking V\to V'$ and $f_1\taking A\to A'$ are isomorphisms in $\Set$?
+\item  If so, why; and if not, show a counterexample (where $f$ is an isomorphism but either $f_0$ or $f_1$ is not).
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Suppose that $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ are graphs and that $f=(f_0,f_1)\taking G\to G'$ is a graph homomorphism (as in Definition \ref{def:graph homomorphism}). 
+\sexc If $f_0\taking V\to V'$ and $f_1\taking A\to A'$ are isomorphisms in $\Set$, does this imply that $f$ is an isomorphism in $\Grph$?
+\item If so, why; and if not, show a counterexample (where $f_0$ and $f_1$ are isomorphisms but $f$ is not).
+\endsexc
+\end{exercise}
+
+\begin{lemma}\label{lemma:isomorphic ER}
+
+Let $\mcC$ be a category and let $\sim$ be the relation on $\Ob(\mcC)$ given by saying $X\sim Y$ iff $X$ and $Y$ are isomorphic. Then $\sim$ is an equivalence relation.
+
+\end{lemma}
+
+\begin{proof}
+
+The proof of Lemma \ref{lemma:isomorphic ER in Set} can be mimicked in this more general setting.
+
+\end{proof}
+
+%% Subsubsection %%
+
+\subsubsection{Another viewpoint on categories}
+
+Here is an alternate definition of category, using the work we did in Chapter \ref{chap:sets}.
+
+\begin{exercise}\label{exc:cat in set}
+
+Suppose we begin our definition of category as follows. 
+
+A {\em category}, $\mcC$ consists of a sequence $(\Ob(\mcC),\Hom_\mcC,dom,cod,\ids,\circ)$, where 
+\begin{enumerate}
+\item $\Ob(\mcC)$ is a set,\footnote{See Remark \ref{rmk:small}.}
+\item $\Hom_\mcC$ is a set, and $dom,cod\taking\Hom_\mcC\to\Ob(\mcC)$ are functions, 
+\item $\ids\taking\Ob(\mcC)\to\Hom_\mcC$ is a function, and 
+\item $\circ$ is a function as depicted in the commutative diagram below
+\begin{align}\label{dia:pullback version of cat}
+\xymatrix{
+\Hom_\mcC\ar@/^1pc/[drrr]^{cod}\ar@/_1pc/[dddr]_{dom}&&\\
+&\Hom_\mcC\times_{\Ob(\mcC)}\Hom_\mcC\ar@{}[ur]|{\checkmark}\ar@{}[ddl]|(.4){\checkmark}\ar[ul]_\circ\ar[r]\ar[d]\ullimit&\Hom_\mcC\ar[r]_{cod}\ar[d]^{dom}&\Ob(\mcC)\\
+&\Hom_\mcC\ar[r]_{cod}\ar[d]^{dom}&\Ob(\mcC)\\
+&\Ob(\mcC)
+}
+\end{align}
+\end{enumerate}
+
+\sexc Express the fact that for any $x\in\Ob(\mcC)$ the morphism $\id_x$ points from $x$ to $x$ in terms of the functions $\id,dom,cod$. 
+\item Express the condition that composing a morphism $f$ with an appropriate identity morphism yields $f$.
+\item Express the associativity law in these terms (Hint: Proposition \ref{prop:pasting} may be useful).
+\endsexc
+\end{exercise}
+
+\begin{example}[Partial olog for a category]
+
+Below is an olog that captures some of the essential structures of a category.
+
+\begin{align}\label{dia:olog for cats}
+\xymatrixnocompile@=30pt{
+\obox{}{.72in}{a morphism in $\mcC$}\ar@/^1pc/[drrr]^{\hsp\tn{has as codomain}}\ar@/_1pc/[dddr]_{\tn{has as domain}}&&&\\
+&\obox{}{.85in}{a pair $(g,f)$ of composable morphisms}\ar@{}[l]|{\checkmark}\ar@{}[ur]|{\checkmark}\ar[ul]_{\;\;\tn{has as composition}}\ar[r]^{\parbox{.3in}{\scriptsize\rr\tn{yields as $g$}}}\ar[d]_{\tn{yields as $f$}}\ar@{}[rd]|(.35)*+{\lrcorner}&\obox{}{.72in}{a morphism in $\mcC$}\ar[r]_{\parbox{.4in}{\scriptsize\rr\tn{has as codomain}}}\ar[d]^{\tn{has as domain}}&\obox{}{.8in}{an object of $\mcC$}\\
+&\obox{}{.72in}{a morphism in $\mcC$}\ar[r]_{\parbox{.4in}{\scriptsize\rr\tn{has as codomain}}}\ar[d]^{\tn{has as domain}}&\obox{}{.8in}{an object of $\mcC$}\\
+&\obox{}{.8in}{an object of $\mcC$}
+}
+\end{align}
+
+Missing from (\ref{dia:olog for cats}) is the notion of identity morphism (as an arrow from \fakebox{an object of $\mcC$} to \fakebox{a morphism in $\mcC$}) and the associated path equivalences, as well as the identity and associativity laws. All of these can be added to the olog, at the expense of some clutter.
+
+\end{example}
+
+\begin{remark}
+
+Perhaps it is already clear that category theory is very interconnected. It may feel like everything relates to everything, and this feeling may intensify as you go on. However, the relationships between different notions are rigorously defined, and not random. Moreover, almost everything presented in this book can be formalized in a proof system like \href{http://en.wikipedia.org/wiki/Coq}{\text Coq} (the most obvious exceptions being things like the readability requirement of ologs and the modeling of scientific applications).
+
+Whenever you feel cognitive vertigo, look to formal definitions as the ground of your understanding. It is good practice to make sure that the intuition you've developed actually “touches down” on that ground, i.e. that your way of thinking can be built up solidly from the foundational definitions.
+
+\end{remark}
+
+%%%% Subsection %%%%
+
+\subsection{Functors}
+
+A category $\mcC=(\Ob(\mcC),\Hom_\mcC,dom,cod,\ids,\circ)$, involves a set of objects, a set of morphisms, a notion of domains and codomains, a notion of identity morphisms, and a composition formula. For two categories to be comparable, these various components should be appropriately comparable.\index{appropriate comparison}
+
+\begin{definition}\label{def:functor}\index{functor}
+
+Let $\mcC$ and $\mcC'$ be categories. A {\em functor $F$ from $\mcC$ to $\mcC'$}, denoted $F\taking\mcC\to\mcC'$, is defined as follows: One announces some constituents (A. on-objects part, B. on-morphisms part) and asserts that they conform to some laws (1. preservation of identities, 2. preservation of composition). Specifically, one announces
+\begin{enumerate}[\hsp A.]
+\item a function $\Ob(F)\taking\Ob(\mcC)\to\Ob(\mcC')$, which we sometimes denote simply by $F\taking\Ob(\mcC)\to\Ob(\mcC')$; and
+\item for every pair of objects $c,d\in\Ob(\mcC)$, a function $$\Hom_F(c,d)\taking\Hom_\mcC(c,d)\to\Hom_{\mcC'}(F(c),F(d)),$$ which we sometimes denote simply by $F\taking\Hom_\mcC(c,d)\to\Hom_{\mcC'}(F(c),F(d))$.
+\end{enumerate}
+One asserts that the following laws hold:
+\begin{enumerate}[\hsp 1.]
+\item Identities are preserved by $F$. That is, for any object $c\in\Ob(\mcC)$, we have $F(\id_c)=\id_{F(c)}$; and
+\item Composition is preserved by $F$. That is, for any objects $b,c,d\in\Ob(\mcC)$ and morphisms $g\taking b\to c$ and $h\taking c\to d$, we have $F(h\circ g)=F(h)\circ F(g)$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}[Monoids have underlying sets]
+
+Recall from Definition \ref{def:monoid} that if $\mcM=(M,e,\star)$ is a monoid, then $M$ is a set. And recall from Definition \ref{def:monoid hom} that if $f\taking\mcM\to\mcM'$ is a monoid homomorphism then $f\taking M\to M'$ is a function. Thus we have a functor $$U\taking\Mon\to\Set$$\index{a functor!$\Mon\to\Set$} that takes every monoid to its underlying set and every monoid homomorphism to its underlying function. 
+
+Given two monoids $\mcM=(M,e,\star)$ and $\mcM'=(M',e',\star')$, there may be many functions from $M$ to $M'$ that do not arise from monoid homomorphisms. It is often useful to speak of such functions. For example, one could assign to every command in one video game $V$ a command in another video game $V'$, but this may not work in the “monoidy way” when performing a sequence of commands. By being able to speak of $M$ as a set, or as $\mcM$ as a monoid, and understanding the relationship $U$ between them, we can be clear about where we stand at all times in our discussion.
+
+\end{example}
+
+\begin{example}[Groups have underlying monoids]\label{ex:grp to monoid}
+
+Recall that a group is just a monoid $(M,e,\star)$ with the extra property that every element $m\in M$ has an inverse $m'\star m=e=m\star m'$. Thus to every group we can assign its {\em underlying monoid}. Similarly, a group homomorphism is just a monoid homomorphism of its underlying monoids. This means that there is a functor $$U\taking\Grp\to\Mon$$\index{a functor!$\Grp\to\Mon$} that sends every group or group homomorphism to its underlying monoid or monoid homomorphism. That identity and composition are preserved is obvious.
+
+\end{example}
+
+\begin{slogan}
+Out of all our available actions, some are reversable. 
+\end{slogan}
+
+\begin{application}
+
+Suppose you're a scientist working with symmetries. But then suppose that the symmetry breaks somewhere, or you add some extra observable which is not reversible under the symmetry. You want to seamlessly relax the requirement that every action be reversible without changing anything else. You want to know where you can go, or what's allowed. The answer is to simply pass from the category of groups (or group actions) to the category of monoids (or monoid actions). 
+
+We can also reverse this change of perspective. Recall that in Example \ref{ex:monoid as olog} we discussed a monoid $M$ controlling the actions of a video game character. The character position ($P$) could be moved up ($u$), moved down ($d$), or moved right ($r$). The path equivalences $P.u.d=P$ and $P.d.u=P$ imply that these two actions are mutually inverse, whereas moving right has no inverse. This, plus equivalences $P.r.u=P.u.r$ and $P.r.d=P.d.r$, defined a monoid $M$. 
+
+Inside $M$ is a submonoid $G$, which includes just upward and downward movement. It has one object, just like $M$, i.e. $\Ob(M)=\{P\}=\Ob(G)$. But it has fewer morphisms. In fact there is a monoid isomorphism $G\iso\ZZ$ because we can assign to any movement in $G$ the number of ups, e.g. $P.u.u.u.u.u$ is assigned the integer $5$, $P.d.d.d$ is assigned the integer $-3$, and $P.d.u.u.d.d.u$ is assigned the integer $0\in\ZZ$. But $\ZZ$ is a group, because every integer has an inverse.
+
+Thus we can consider $G$ as a group $G_1\in\Ob(\Grp)$ or as a monoid $G_2\in\Ob(\Mon)$. It is better to consider $G$ as a group, because groups are more structured than monoids. It's as though putting $G$ in $\Grp$ gives it more “potential energy” than putting it in $\Mon$ — we can always “drop it down” from $\Grp$ to $\Mon$, but not vice versa. The way to make this precise is that we can make use of the functor $U\taking\Grp\to\Mon$ from Example \ref{ex:grp to monoid} and find that $U(G_1)=G_2$. But to find a functor $F\taking\Mon\to\Grp$ such that $F(G_2)=G_1$ would be much more ad hoc. 
+
+The upshot is that we can use functors to compare groups and monoids.
+
+\end{application}
+
+\begin{example}
+
+Recall that we have a category $\Set$ of sets and a category $\Fin$ of finite sets. We said that $\Fin$ was a subcategory of $\Set$. In fact we can think of this “subcategory” relationship in terms of functors, just like we thought of the “subset” relationship in terms of functions in Example \ref{ex:subset as function}. That is, if we have a subset $S\ss S'$, then every element $s\in S$ is an element of $S'$, so we make a function $f\taking S\to S'$ such that $f(s)=s\in S'$. 
+
+To give a functor $i\taking\Fin\to\Set$, we have to announce how it will work on objects and how it will work on morphisms. We begin by announcing a function $i\taking\Ob(\Fin)\to\Ob(\Set)$. But that's easy because $\Ob(\Fin)\ss\Ob(\Set)$, so we proceed as above: $i(S)=S$ for any $S\in\Ob(\Fin)$. We also have announce, for each pair of objects $S,S'\in\Ob(\Fin)$, a function $$i\taking\Hom_\Fin(S,S')\to\Hom_\Set(S,S').$$ But again, that's easy because we know by definition (see Example \ref{ex:Fin}) that these two sets are equal, $\Hom_\Fin(S,S')=\Hom_\Set(S,S')$. Hence we can simply take $i$ to be the identity function on morphisms. It is easy to see that identites and compositions are preserved by $i$. Therefore, we have defined a functor $i$.
+
+\end{example}
+
+\begin{exercise}[Forgetful functors between types of orders]
+A partial order is just a preorder with a special property. A linear order is just a partial order with a special property.
+\sexc Is there an “obvious” functor $\FLin\to\PrO$\index{a functor!$\FLin\to\PrO$}?
+\item Is there an “obvious” functor $\PrO\to\FLin$?
+\endsexc
+\end{exercise}
+
+\begin{proposition}[Preorders to graphs]\label{prop:pro to grph}
+
+Let $\PrO$ be the category of preorders and $\Grph$ be the category of graphs. There is a functor $P\taking\PrO\to\Grph$\index{a functor!$\PrO\to\Grph$} such that for any preorder $\mcX=(X,\leq)$, the graph $P(\mcX)$ has vertices $X$.
+
+\end{proposition}
+
+\begin{proof}
+
+Given a preorder $\mcX=(X,\leq_X)$, we can make a graph $F(\mcX)$ with vertices $X$ and an arrow $x\to x'$ whenever $x\leq_X x'$, as in Remark \ref{rem:preorder to graph}. More precisely, the preorder $\leq_X$ is a relation, i.e. a subset $R_\mcX\ss X\times X$, which we think of as a function $i\taking R_\mcX\to X\times X$. Composing with projections $\pi_1,\pi_2\taking X\times X\to X$ gives us $$src_\mcX:=\pi_1\circ i\taking R_\mcX\to X\hsp\tn{and}\hsp tgt_\mcX:=\pi_2\circ i\taking R_\mcX\to X.$$ Then we put $F(\mcX):=(X,R_\mcX,src_\mcX,tgt_\mcX)$. This gives us a function $F\taking\Ob(\PrO)\to\Ob(\Grph)$.
+
+Suppose now that $f\taking\mcX\to\mcY$ is a preorder morphism (where $\mcY=(Y,\leq_Y)$). This is a function $f\taking X\to Y$ such that for any $(x,x')\in X\times X$, if $x\leq_X x'$ then $f(x)\leq f(x')$. But that's the same as saying that there exists a dotted arrow making the following diagram of sets commute
+$$
+\xymatrix{R_\mcX\ar[r]\ar@{..>}[d]&X\times X\ar[d]^{f\times f}\\R_\mcY\ar[r]&Y\times Y
+}
+$$
+(Note that there cannot be two different dotted arrows making that diagram commute because $R_\mcY\to Y\times Y$ is a monomorphism.) 
+Our commutative square is precisely what's needed for a graph homomorphism, as shown in Exercise \ref{exc:single condition for graph hom}. Thus, we have defined $F$ on objects and on morphisms. It is clear that $F$ preserves identity and composition.
+
+\end{proof}
+
+\begin{exercise}
+In Proposition \ref{prop:pro to grph} we gave a functor $P\taking\PrO\to\Grph$.
+\sexc  Is every graph $G\in\Ob(\Grph)$ in the image of $P$ (or more precisely, is the function $$\Ob(P)\taking\Ob(\PrO)\to\Ob(\Grph)$$ surjective)?
+\item If so, why; if not, name a graph not in the image.
+\item Suppose that $G, H\in\Ob(\Grph)$ are two graphs that are in the image of $P$. Is every graph homomorphism $f\taking G\to H$ in the image of $\Hom_P$? In other words, does every graph homomorphism between $G$ and $H$ come from a preorder homomorphism?
+\endsexc
+\end{exercise}
+
+\begin{remark}
+
+There is a functor $W\taking\PrO\to\Set$\index{a functor!$\PrO\to\Set$} sending $(X,\leq)$ to $X$. There is a functor $T\taking\Grph\to\Set$\index{a functor!$\Grph\to\Set$} sending $(V,A,src,tgt)$ to $V$. When we understand the category of categories (Section \ref{sec:cat of cats}), it will be clear that Proposition \ref{prop:pro to grph} can be summarized as a commutative triangle in $\Cat$, 
+$$
+\xymatrix@=15pt{\PrO\ar[rr]^P\ar[ddr]_W&&\Grph\ar[ddl]^T\\\\&\Set}
+$$
+
+\end{remark}
+
+\begin{exercise}[Graphs to preorders]\label{exc:grph to pro}
+Recall from (\ref{dia:image}) that every function $f\taking A\to B$ has an image, $\im_f(A)\ss B$. Use this idea and Example \ref{ex:preorder generated} to construct a functor $Im\taking\Grph\to\PrO$\index{a functor!$\Grph\to\PrO$} such that for any graph $G=(V,A,src,tgt)$, the preorder has elements given by the vertices of $G$ (i.e. we have $Im(G)=(V,\leq_G)$, for some ordering $\leq_G$).
+\end{exercise}
+
+\begin{exercise}
+What is the preorder $Im(G)$ when $G\in\Ob(\Grph)$ is the following graph?
+$$
+G:=\parbox{2in}{\fbox{\xymatrix{\LMO{v}\ar[r]^f&\LMO{w}\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\LMO{x}\\\LMO{y}\ar@(l,u)[]^i\ar@/^1pc/[r]^j&\LMO{z}\ar@/^1pc/[l]^k}}}
+$$
+\end{exercise}
+
+\begin{exercise}
+Consider the functor $Im\taking\Grph\to\PrO$ constructed in Exercise \ref{exc:grph to pro}.
+\sexc Is every preorder $\mcX\in\Ob(\PrO)$ in the image of $Im$ (or more precisely in the image of $\Ob(Im)\taking\Ob(\Grph)\to\Ob(\PrO)$)?
+\item If so, why; if not, name a preorder not in the image.
+\item Suppose that $\mcX,\mcY\in\Ob(\PrO)$ are two preorders that are in the image of $Im$. Is every preorder morphism $f\taking\mcX\to\mcY$ in the image of $\Hom_{Im}$? In other words, does every preorder homomorphism between $\mcX$ and $\mcY$ come from a graph homomorphism?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+We have functors $P\taking\PrO\to\Grph$ and $Im\taking\Grph\to\PrO$.
+\sexc What can you say about $Im\circ P\taking\PrO\to\PrO$?
+\item What can you say about $P\circ Im\taking\Grph\to\Grph$?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Consider the functors $P\taking\PrO\to\Grph$ and $Im\taking\Grph\to\PrO$. And consider the chain graph $[n]$ of length $n$ from Example \ref{ex:[n] as graph} and the linear order $[n]$ of length $n$ from Example \ref{ex:finite lo}. To differentiate the two, let's rename them for this exercise as $[n]_{\Grph}\in\Ob(\Grph)$ and $[n]_{\PrO}\in\Ob(\PrO)$. We see a similarity between $[n]_{\Grph}$ and $[n]_{\PrO}$, and we might hope that our functors help us formalize this similarity. That is, we might hope that one of the following hold: 
+$$P([n]_{\PrO})\iso^? [n]_{\Grph}\hsp\tn{or}\hsp Im([n]_{\Grph})\iso^? [n]_{\PrO}.$$ 
+Do either, both, or neither of these hold?
+\end{exercise}
+
+\begin{remark}
+
+In the course announcement for 18-S996, I wrote the following:
+\begin{quote}
+It is often useful to focus ones study by viewing an individual thing, or a group of things, as though it exists in isolation. However, the ability to rigorously change our point of view, seeing our object of study in a different context, often yields unexpected insights. Moreover this ability to change perspective is indispensable for effectively communicating with and learning from others. It is the relationships between things, rather than the things in and by themselves, that are responsible for generating the rich variety of phenomena we observe in the physical, informational, and mathematical worlds.
+\end{quote}
+This holds at many different levels. For example, one can study a group (in the sense of Definition \ref{def:group}) in isolation, trying to understand its subgroups or its automorphisms, and this is mathematically interesting. But one can also view it as a quotient of something else, or as a subgroup of something else. One can view the group as a monoid and look at monoid homomorphisms to or from it. One can look at the group in the context of symmetries by seeing how it acts on sets. These changes of viewpoint are all clearly and formally expressible within category theory. We know how the different changes of viewpoint compose and how they fit together in a larger context. 
+
+\end{remark}
+
+\begin{exercise}~
+\sexc Is the above quote also true in your scientific discipline of expertise? How so? 
+\item Can you imagine a way that category theory can help catalogue the kinds of relationships or changes of viewpoint that exist in your discipline? 
+\item What kinds of structures that you use often really deserve to be better formalized?
+\endsexc
+Keep this kind of question in mind for your final project.
+\end{exercise}
+
+\begin{example}[Free monoids]\label{ex:free monoid}\index{monoid!free}
+
+Let $G$ be a set. We saw in \ref{def:free monoid} that $\List(G)$ is a monoid, called the free monoid on $G$. Given a function $f\taking G\to G'$, there is an induced function $\List(f)\taking\List(G)\to\List(G')$, and this preserves the identity element $[\;]$ and concatenation of lists, so $\List(f)$ is a monoid homomorphism. It is easy to check that $\List\taking\Set\to\Mon$\index{a functor!$\Set\to\Mon$} is a functor.
+
+\end{example}
+
+\begin{application}\label{app:polymerase}
+In Application \ref{app:DNA RNA} we discussed an isomorphism $\tn{Nuc}_\tn{DNA}\iso\tn{Nuc}_\tn{RNA}$ given by RNA transcription. Applying the functor $\List$ we get a function $$\List(\tn{Nuc}_\tn{DNA})\To{\iso}\List(\tn{Nuc}_\tn{RNA}),$$ which will send sequences of DNA nucleotides to sequences of RNA nucleotides and vice versa. This is performed by polymerases.
+
+\end{application}
+
+\begin{exercise}\label{exc:list as functor}\index{list!as functor}
+Let $G=\{1,2,3,4,5\}, G'=\{a,b,c\}$, and let $f\taking G\to G'$ be given by the sequence $(a,c,b,a,c)$.\footnote{See Exercise \ref{exc:sequence} in case there is any confusion with this.} Then if $L=[1,1,3,5,4,5,3,2,4,1]$, what is $\List(f)(L)$?
+\end{exercise}
+
+\begin{exercise}\label{exc:rephrase functors}
+We can rephrase our notion of functor in terms compatible with Exercise \ref{exc:cat in set}. We would begin by saying that a functor $F\taking\mcC\to\mcC'$ consists of two functions, $$\Ob(F)\taking\Ob(\mcC)\to\Ob(\mcC')\hsp\tn{and}\hsp\Hom_F\taking\Hom_\mcC\to\Hom_{\mcC'},$$ which we call the {\em on-objects part} and the {\em on-morphisms part}, respectively. They must follow some rules, expressed by the commutativity of the following squares in $\Set$:
+\begin{align}\label{dia:rephrase functors}
+\xymatrix{
+\Hom_\mcC\ar[r]^{dom}\ar[d]_{\Hom_F}&\Ob(\mcC)\ar[d]^{\Ob(F)}\\
+\Hom_{\mcC'}\ar[r]_{dom}&\Ob(\mcC')
+}
+\hspace{1in}
+\xymatrix{
+\Hom_\mcC\ar[r]^{cod}\ar[d]_{\Hom_F}&\Ob(\mcC)\ar[d]^{\Ob(F)}\\
+\Hom_{\mcC'}\ar[r]_{cod}&\Ob(\mcC')}
+\end{align}
+\begin{align}\label{dia:rephrase functors 2}
+\xymatrix{
+\Ob(\mcC)\ar[d]_{\Ob(F)}\ar[r]^{\id}&\Hom_\mcC\ar[d]^{\Hom_F}\\
+\Ob(\mcC')\ar[r]_{\id}&\Hom_{\mcC'}
+}
+\hspace{1in}
+\xymatrix{
+\Hom_\mcC\times_{\Ob(\mcC)}\Hom_{\mcC}\ar[r]^-{\circ}\ar[d]_{}&\Hom_\mcC\ar[d]^{\Hom_F}\\
+\Hom_{\mcC'}\times_{\Ob(\mcC')}\Hom_{\mcC'}\ar[r]_-{\circ}&\Hom_{\mcC'}}
+\end{align}
+Where does the (unlabeled) left-hand function in the bottom right diagram come from? Hint: use Exercise \ref{exc:pointwise map of fp}.
+
+Consider Diagram (\ref{dia:pullback version of cat}) and imagine it as though contained in a pane of glass. Then imagine a parallel pane of glass involving $\mcC'$ in place of $\mcC$ everywhere. 
+\sexc Draw arrows from the $\mcC$ pane to the $\mcC'$ pane, each labeled $\Ob(F)$ or $\Hom_F$ as seems appropriate.
+\item If $F$ is a functor (i.e. satisfies (\ref{dia:rephrase functors}) and (\ref{dia:rephrase functors 2})), do all the squares in your drawing commute?
+\item  Does the definition of functor involve anything not captured in this setup?
+\endsexc
+\end{exercise}
+
+\begin{example}[Paths-graph]\label{ex:paths-graph}\index{graph!paths-graph}
+
+Let $G=(V,A,src,tgt)$ be a graph. Then for any pair of vertices $v,w\in G$, there is a set $\Path_G(v,w)$ of paths from $v$ to $w$; see Definition \ref{def:paths in graph}. In fact there is a set $\Path_G$ and functions $\ol{src},\ol{tgt}\taking\Path_G\to V$. That information is enough to define a new graph, $$\Paths(G):=(V,\Path_G,\ol{src},\ol{tgt}).$$
+
+Moreover, given a graph homomorphism $f\taking G\to G'$, every path in $G$ is sent under $f$ to a path in $G'$. So $\Paths\taking\Grph\to\Grph$\index{a functor!$\Paths\taking\Grph\to\Grph$} is a functor.
+
+\end{example}
+
+\begin{exercise}\label{exc:morphisms on paths-graphs}~
+\sexc Consider the graph $G$ from Example \ref{ex:graph hom}. Draw the paths-graph $\Paths(G)$ for $G$. 
+\item Repeating the above exercise for $G'$ from the same example would be hard, because the path graph $\Paths(G')$ has infinitely many arrows. However, the graph homomorphism $f\taking G\to G'$ does induce a morphism of paths-graphs $\Paths(f)\taking\Paths(G)\to\Paths(G')$, and it is possible to say how that acts on the vertices and arrows of $\Paths(G)$. Please do so.
+\item Given a graph homomorphism $f\taking G\to G'$ and two paths $p\taking v\to w$ and $q\taking w\to x$ in $G$, is it true that $\Paths(f)$ preserves the concatenation? What does that even mean?
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:functors preserve isos}
+Suppose that $\mcC$ and $\mcD$ are categories, $c,c'\in\Ob(\mcC)$ are objects, and $F\taking\mcC\to\mcD$ is a functor. Suppose that $c$ and $c'$ are isomorphic in $\mcC$. Show that this implies that $F(c)$ and $F(c')$ are isomorphic in $\mcD$.
+\end{exercise}
+
+\begin{example}\label{ex:non-isomorphism of graphs via functors}
+
+For any graph $G$, we can assign its set of loops $Eq(G)$ as in Exercise \ref{exc:(co)equalizer of graph}. This assignment is functorial in that given a graph homomorphism $G\to G'$ there is an induced function $Eq(G)\to Eq(G')$. Similarly, we can functorially assign the set of connected components of the graph, $Coeq(G)$. In other words $Eq\taking\Grph\to\Set$ and $Coeq\taking\Grph\to\Set$ are functors. The assignment of vertex set and arrow set are two more functors $\Grph\to\Set$.
+
+Suppose you want to decide whether two graphs $G$ and $G'$ are isomorphic. Supposing that the graphs have thousands of vertices and thousands of arrows, this could take a long time. However, the functors above, in combination with Exercise \ref{exc:functors preserve isos} give us some things to try.
+
+The first thing to do is to count the number of loops of each, because these numbers are generally small. If the number of loops in $G$ is different than the number of loops in $G'$ then because functors preserve isomorphisms, $G$ and $G'$ cannot be isomorphic. Similarly one can count the number of connected components, again generally a small number; if the number of components in $G$ is different than the number of components in $G'$ then $G\not\iso G'$. Similarly, one can simply count the number of vertices or the number of arrows in $G$ and $G'$. These are all isomorphism invariants.  
+
+All this is a bit like trying to decide if a number is prime by checking if it's even, if its digits add up to a multiple of 3, or it ends in a 5; these tests do not determine the answer, but they offer some level of discernment.
+
+\end{example}
+
+\begin{remark}
+
+In the introduction I said that functors allow ideas in one domain to be rigorously imported to another. Example \ref{ex:non-isomorphism of graphs via functors} is a first taste. Because functors preserve isomorphisms, we can tell graphs apart by looking at them in a simpler category, $\Set$. There is relatively simple theorem in $\Set$ that says that for different natural numbers $m,n$ the sets $\ul{m}$ and $\ul{n}$ are never isomorphic. This theorem is transported via our four functors to four different theorems about telling graphs apart.
+
+\end{remark}
+
+%% Subsubsection %%
+
+\subsubsection{The category of categories}\label{sec:cat of cats}
+
+Recall from Remark \ref{rmk:small} that a small category $\mcC$ is one in which $\Ob(\mcC)$ is a set. We have not really been paying attention to this issue, and everything we have said so far works whether $\mcC$ is small or not. In the following definition we really ought to be a little more careful, so we are. 
+
+\begin{proposition}\index{a category!$\Cat$}
+
+There exists a category, called {\em the category of small categories} and denoted $\Cat$, in which the objects are the small categories and the morphisms are the functors, $$\Hom_\Cat(\mcC,\mcD)=\{F\taking\mcC\to\mcD\| F \tn{ is a functor}\}.$$ That is, there are identity functors, functors can be composed, and the identity and associativity laws hold.
+ 
+\end{proposition}
+
+\begin{proof}
+
+We follow Definition \ref{def:category}. We have specified $\Ob(\Cat)$ and $\Hom_\Cat$ already. Given a small category $\mcC$, there is an identity functor $\id_\mcC\taking\mcC\to\mcC$ that is identity on the set of objects and the set of morphisms. And given a functor $F\taking\mcC\to\mcD$ and a functor $G\taking\mcD\to\mcE$, it is easy to check that $G\circ F\taking \mcC\to\mcE$, defined by composition of functions $\Ob(G)\circ\Ob(F)\taking\Ob(\mcC)\to\Ob(\mcE)$ and $\Hom_G\circ\Hom_F\taking\Hom_\mcC\to\Hom_\mcE$ (see Exercise \ref{exc:rephrase functors}), is a functor. For the same reasons, it is easy to show that functors obey the identity law and the composition formula. Therefore this specification of $\Cat$ satisfies the definition of being a category. 
+
+\end{proof}
+
+\begin{example}[Categories have underlying graphs]\label{ex:underlying graph}\index{category!underlying graph of}
+
+Let $\mcC=(\Ob(\mcC),\Hom_\mcC,dom,cod,\ids,\circ)$ be a category (see Exercise \ref{exc:cat in set}). Then $(\Ob(\mcC),\Hom_\mcC,dom,cod)$ is a graph, which we will call the {\em graph underlying $\mcC$} and denote by $U(\mcC)\in\Ob(\Grph)$. A functor $F\taking\mcC\to\mcD$ induces a graph morphism $U(F)\taking U(\mcC)\to U(\mcD)$, as seen in (\ref{dia:rephrase functors}). So we have a functor, $$U\taking\Cat\to\Grph.$$
+
+\end{example}
+
+\begin{example}[Free category on a graph]\label{ex:free category}\index{category!free category}\index{graph!free category on}
+
+In Example \ref{ex:paths-graph}, we discussed a functor $\Paths\taking\Grph\to\Grph$\index{a functor!$\Paths\taking\Grph\to\Grph$} that considered all the paths in a graph $G$ as the arrows of a new graph $\Paths(G)$. In fact, $\Paths(G)$ could be construed as a category, which we will denote $F(G)\in\Ob(\Cat)$ and call {\em the free category generated by $G$}. 
+
+Here, the objects of the category $F(G)$ are the vertices of $G$. For any two vertices $v,v'$ the hom-set $\Hom_{F(G)}(v,v')$ is the set of paths in $G$ from $v$ to $v'$. The identity elements are given by the trivial paths, and the composition formula is given by concatenation of paths. 
+
+To see that $F$ is a functor, we need to see that a graph homomorphism $f\taking G\to G'$ induces a functor $F(f)\taking F(G)\to F(G')$. But this was shown in Exercise \ref{exc:morphisms on paths-graphs}. Thus we have a functor $$F\taking\Grph\to\Cat$$\index{a functor!$\Grph\to\Cat$} called {\em the free category} functor.
+
+\end{example}
+
+\begin{exercise}\label{exc:[1]}
+Let $G$ be the graph depicted $$\LMO{v_0}\Too{\;\;e\;\;}\LMO{v_1},$$ and let $[1]\in\Ob(\Cat)$ denote the free category on $G$ (see Example \ref{ex:free category}). We call $[1]$ the {\em free arrow category}.
+\sexc What are its objects?
+\item For every pair of objects in $[1]$, write down the hom-set.
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $G$ be the graph whose vertices are all cities in the US and whose arrows are airplane flights connecting cities. What idea is captured by the free category on $G$?
+\end{exercise}
+
+\begin{exercise}\label{exc:free underlying cat grph}
+Let $F\taking\Grph\to\Cat$ denote the free category functor from Example \ref{ex:free category}, and let $U\taking\Cat\to\Grph$\index{a functor!$\Cat\to\Grph$} denote the underlying graph functor from Example \ref{ex:underlying graph}. We have seen the composition $U\circ F\taking\Grph\to\Grph$ before; what was it called?
+\end{exercise}
+
+\begin{exercise}
+Recall the graph $G$ from Example \ref{ex:graph}. Let $\mcC=F(G)$ be the free category on $G$.
+\sexc What is $\Hom_\mcC(v,x)$?
+\item What is $\Hom_\mcC(x,v)$?
+\endsexc
+\end{exercise}
+
+\begin{example}[Discrete graphs, discrete categories]\label{ex:discrete graph discrete cat}\index{category!discrete}
+
+There is a functor $Disc\taking\Set\to\Grph$\index{a functor!$Disc\taking\Set\to\Grph$} that sends a set $S$ to the graph $$Disc(S):=(S,\emptyset,!,!),$$ where $!\taking\emptyset\to S$ is the unique function. We call $Disc(S)$ the {\em discrete graph on the set $S$}. It is clear that a function $S\to S'$ induces a morphism of discrete graphs. Now applying the free category functor $F\taking\Grph\to\Cat$, we get the so-called {\em discrete category on the set $S$}, which we also might call $Disc\taking\Set\to\Cat$.\index{a functor!$Disc\taking\Set\to\Cat$} 
+
+\end{example}
+
+\begin{exercise}
+Recall from (\ref{dia:underline n}) the definition of the set $\ul{n}$ for any natural number $n\in\NN$, and let $D_n:=Disc(\ul{n})\in\Ob(\Cat)$.
+\sexc List all the morphisms in $D_4$. 
+\item List all the functors $D_3\to D_2.$
+\endsexc
+\end{exercise}
+
+\begin{exercise}[Terminal category]\label{exc:term cat}\index{a category!terminal}
+Let $\mcC$ be a category. How many functors are there $\mcC\to D_1$, where $D_1:=Disc(\ul{1})$ is the discrete category on one element?
+\end{exercise}
+
+We sometimes refer to $Disc(\ul{1})$ as the {\em terminal category} (for reasons that will be made clear in Section \ref{sec:lims and colims in a cat}), and for simplicity denote it by $\ul{1}$.
+
+\begin{exercise}\label{exc:Ob is a functor}
+If someone said “$\Ob$ is a functor from $\Cat$ to $\Set$,” what might they mean? \index{a functor!$\Ob\taking\Cat\to\Set$}
+\end{exercise}
+

@@ -1,0 +1,939 @@
+% section45.tex
+
+%%%%%% Section %%%%%%
+
+\section{Limits and colimits}
+
+Limits and colimits are universal constructions, meaning they represent certain ideals of behavior in a category. When it comes to sets that map to $A$ and $B$, the $(A\times B)$-grid is ideal—it projects on to both $A$ and $B$ as straightforwardly as possible. When it comes to sets that can interpret the elements of both $A$ and $B$, the disjoint union $A\sqcup B$ is ideal—it includes both $A$ and $B$ without confusion or superfluity. These are limits and colimits in $\Set$. Limits and colimits exist in other categories as well.
+
+Limits in a preorder are meets, colimits in a preorder are joins. Limits and colimits also exist for database instances and monoid actions, allowing us to discuss for example the product or union of different state machines. Limits and colimits exist for spaces, giving rise to products and unions, as well as quotients.
+
+Limits and colimits do not exist in every category; when $\mcC$ is complete with respect to limits (or colimits), these limits always seem to mean something valuable to human intuition. For example, when a subject has already been studied for a long time before category theory came around, it often turns out that classically interesting constructions in the subject correspond to limits and colimits in its categorification $\mcC$. For example products, unions, equivalence relations, etc. are classical ideas in set theory that are naturally captured by limits and colimits in $\Set$. 
+
+%%%% Subsection %%%%
+
+\subsection{Products and coproducts in a category}
+
+In Sections \ref{sec:prods and coprods in set}, we discussed products and coproducts in the category $\Set$ of sets. Now we discuss the same notions in an arbitrary category. For both products and coproducts we will begin with examples and then write down the general concept, but we'll work on products first.
+
+%% Subsubsection %%
+
+\subsubsection{Products}\index{products}
+
+The product of two sets is a grid, which projects down onto each of the two sets. This is good intuition for products in general.
+
+\begin{example}\label{ex:product of preorders}
+
+Given two preorders, $\mcX_1:=(X_1,\leq_1)$ and $\mcX_2:=(X_2,\leq_2)$, we can take their product and get a new preorder $\mcX_1\times\mcX_2$. Both $\mcX_1$ and $\mcX_2$ have underlying sets (namely $X_1$ and $X_2$), so we might hope that the underlying set of $\mcX_1\times\mcX_2$ is the set $X_1\times X_2$ of ordered pairs, and this turns out to be true. We have a notion of less-than on $\mcX_1$ and we have a notion of less-than on $\mcX_2$; we need to construct a notion of less-than on $\mcX_1\times\mcX_2$. So, given two ordered pairs $(x_1,x_2)$ and $(x_1',x_2')$, when should we say that $(x_1,x_2)\leq_{1,2}(x_1',x_2')$ holds? The obvious guess is to say that it holds iff both $x_1\leq_1x_1'$ and $x_2\leq_2x_2'$ hold, and this works:
+$$\mcX_1\times\mcX_2:=(X_1\times X_2,\leq_{1,2})$$
+
+Note that the projection functions $X_1\times X_2\to X_1$ and $X_1\times X_2\to X_2$ induce morphisms of preorders. That is, if $(x_1,x_2)\leq_{1,2}(x_1',x_2')$ then in particular $x_1\leq x_1'$. So we have preorder morphisms
+$$\xymatrix@=15pt{&\mcX_1\times\mcX_2\ar[ldd]\ar[rdd]\\\\\mcX_1&&\mcX_2}$$
+
+\end{example}
+
+\begin{exercise}
+Suppose that you have a partial order $(S,\leq_S)$ on songs (so you know some songs are preferable to others but sometimes you can't compare). And suppose you have a partial order $(A,\leq_A)$ on pieces of art. You're about to be given a pair $(s,a)$ including a song and a piece of art. Does the product partial order $\mcS\times\mcA$ provide a reasonable guess for your preferences on pairs?  
+\end{exercise}
+
+\begin{exercise}\label{exc:divides as po}
+Consider the partial order $\leq$ on $\NN$ given by standard “less-than-or-equal-to”, so $5\leq 9$ etc. And consider another partial order, {\tt divides} on $\NN$, where $a\;{\tt divides}\;b$ if “$a$ goes into $b$ evenly”, i.e. if there exists $n\in\NN$ such that $a*n=b$, so $5\;{\tt divides}\;35$. If we call the product order $(X,\preceq):=(\NN,\leq)\times(\NN,{\tt divides})$, which of the following are true: 
+$$(2,4)\preceq(3,4)? \hsp (2,4)\preceq(3,5)?\hsp (2,4)\preceq (8,0)?\hsp (2,4)\preceq(0,0)?$$
+\end{exercise}
+
+\begin{example}\label{ex:product of graphs}
+Given two graphs $G_1=(V_1,A_1,src_1,tgt_1)$ and $G_2=(V_2,A_2,src_2,tgt_2)$, we can take their product and get a new graph $G_1\times G_2$. The vertices will be the grid of vertices $V_1\times V_2$, so each vertex in $G_1\times G_2$ is labeled by a pair of vertices, one from $G_1$ and one from $G_2$. When should an arrow connect $(v_1,v_2)$ to $(v_1',v_2')$? Whenever we can find an arrow in $G_1$ connecting $v_1$ to $v_1'$ and we can find an arrow in $G_2$ connecting $v_2$ to $v_2'$. It turns out there is a simple formula for the set of arrows in $G_1\times G_2$, namely $A_1\times A_2$.
+
+Let's write $G:=G_1\times G_2$ and say $G=(V,A,src,tgt)$. We now know that $V=V_1\times V_2$ and $A=A_1\times A_2$. What should the source and target functions $A\to V$ be? Given a function $src_1\taking A_1\to V_1$ and a function $src_2\taking A_2\to V_2$, the universal property of products in $\Set$ (Lemma \ref{lemma:up for prod} or better Example \ref{ex:product to product}) provides a unique function 
+$$src:=src_1\times src_2\taking A_1\times A_2\to V_1\times V_2$$ 
+Namely the source of arrow $(a_1,a_2)$ will be the vertex $(src_1(a_1),src_2(a_2))$. Similarly we have a ready-made choice of target function $tgt=tgt_1\times tgt_2$. We have now defined the product graph.
+
+Here's a concrete example. Let $I$ and $J$ be as drawn below:
+\begin{align*}
+&I:=\parbox{.8in}{\fbox{\xymatrix{\LMO{v}\ar[d]_f\\\LMO{w}\ar@/_1pc/[d]_g\ar@/^1pc/[d]^h\\\LMO{x}}}}\hspace{.6in}
+&J:=\parbox{1.8in}{\fbox{\xymatrix{\LMO{q}\ar[r]^i&\LMO{r}\ar@/^1pc/[r]^j&\LMO{s}\ar@/^1pc/[l]^k\ar[r]^\ell&\LMO{t}}}}\\
+&\small
+\begin{array}{| l || l | l |}\bhline
+\multicolumn{3}{|c|}{{\tt Arrow}\;\; (I)}\\\bhline
+{\bf ID}&{\bf src}&{\bf tgt}\\\bbhline
+f&v&w\\\hline
+g&w&x\\\hline
+h&w&x\\\bhline
+\end{array}
+\hsp
+\begin{array}{| l ||}\bhline
+\multicolumn{1}{|c|}{{\tt Vertex}\;\; (I)}\\\bhline
+{\bf ID}\\\bbhline
+v\\\hline
+w\\\hline
+x\\\bhline
+\end{array}\hsp
+&\small
+\begin{array}{| l || l | l |}\bhline
+\multicolumn{3}{|c|}{{\tt Arrow}\;\; (J)}\\\bhline
+{\bf ID}&{\bf src}&{\bf tgt}\\\bbhline
+i&q&r\\\hline
+j&r&s\\\hline
+k&s&r\\\hline
+\ell&s&t\\\bhline
+\end{array}
+\hsp
+\begin{array}{| l ||}\bhline
+\multicolumn{1}{|c|}{{\tt Vertex}\;\; (J)}\\\bhline
+{\bf ID}\\\bbhline
+q\\\hline
+r\\\hline
+s\\\hline
+t\\\bhline
+\end{array}
+\end{align*}
+The product $I\times J$ drawn below has, as expected $3*4=12$ vertices and $3*4=12$ arrows: 
+$$\parbox{2.4in}{\boxtitle{$I\times J:=$}\fbox{\xymatrix{
+\LMO{(v,q)}\ar[rd]^{(f,i)}&\LMO{(v,r)}\ar[rd]&\LMO{(v,s)}\ar[ld]\ar[rd]&\LMO{(v,t)}\\
+\LMO{(w,q)}\ar@/^1ex/[rd]\ar@/_1ex/[rd]&\LMO{(w,r)}\ar@/^1ex/[rd]\ar@/_1ex/[rd]&\LMO{(w,s)}\ar@/^1ex/[ld]\ar@/_1ex/[ld]\ar@/^1ex/[rd]\ar@/_1ex/[rd]&\LMO{(w,t)}\\
+\LMO{(x,q)}&\LMO{(x,r)}&\LMO{(x,s)}&\LMO{(x,t)}
+}}}
+\hspace{.5in}\tiny
+\begin{array}{| l || l | l |}\bhline
+\multicolumn{3}{|c|}{{\tt Arrow}\;\; (I\times J)}\\\bhline
+{\bf ID}&{\bf src}&{\bf tgt}\\\bbhline
+(f,i)&(v,q)&(w,r)\\\hline
+(f,j)&(v,r)&(w,s)\\\hline
+(f,k)&(v,s)&(w,r)\\\hline
+(f,\ell)&(v,s)&(w,t)\\\hline
+(g,i)&(w,q)&(x,r)\\\hline
+(g,j)&(w,r)&(x,s)\\\hline
+(g,k)&(w,s)&(x,r)\\\hline
+(g,\ell)&(w,s)&(x,t)\\\hline
+(h,i)&(w,q)&(x,r)\\\hline
+(h,j)&(w,r)&(x,s)\\\hline
+(h,k)&(w,s)&(x,r)\\\hline
+(h,\ell)&(w,s)&(x,t)\\\bhline
+\end{array}
+\hsp
+\begin{array}{| l ||}\bhline
+\multicolumn{1}{|c|}{{\tt Vertex}\;\; (I\times J)}\\\bhline
+{\bf ID}\\\bbhline
+(v,q)\\\hline
+(v,r)\\\hline
+(v,s)\\\hline
+(v,t)\\\hline
+(w,q)\\\hline
+(w,r)\\\hline
+(w,s)\\\hline
+(w,t)\\\hline
+(x,q)\\\hline
+(x,r)\\\hline
+(x,s)\\\hline
+(x,t)\\\bhline
+\end{array}
+$$
+
+Here is the most important thing to notice. Look at the {\tt Arrow} table for $I\times J$, and for each ordered pair, look only at the second entry in all three columns; you will see something that matches with the {\tt Arrow} table for $J$. Do the same for $I$, and again you'll see a perfect match. These “matchings” are readily-visible graph homomorphisms $I\times J\to I$ and $I\times J\to J$ in $\Grph$. 
+
+\end{example}
+
+\begin{exercise}
+Let $[1]=\fbox{$\LMO{0}\To{\;f\;}\LMO{1}$}$ be the linear order graph of length 1 and let $P=\Paths([1])$ be its paths-graph, as in Example \ref{ex:paths-graph} (so $P$ should have three arrows and two vertices). Draw the graph $P\times P$. 
+\end{exercise}
+
+\begin{exercise}
+Recall from Example \ref{ex:dds} that a discrete dynamical system (DDS) is a set $s$ together with a function $f\taking s\to s$. By now it should be clear that if 
+$$\Loop:=\LoopSchema$$\index{a schema!$\Loop$}
+is the loop schema, then a DDS is simply an instance (a functor) $I\taking\Loop\to\Set$. We have not yet discussed products of DDS's, but perhaps you can guess how they should work.  For example, consider the instances $I,J\taking\Loop\to\Set$ tabulated below:
+\begin{align*}
+\begin{tabular}{| l || c |}\bhline
+\multicolumn{2}{| c |}{s\;\; (I)}\\\bhline 
+{\bf ID}&{\bf f}\\\bbhline
+A & C\\\hline
+B & C\\\hline
+C & C\\\hline
+\end{tabular}
+\hspace{.7in}
+\begin{tabular}{| l || c |}\bhline
+\multicolumn{2}{| c |}{s\;\; (J)}\\\bhline 
+{\bf ID}&{\bf f}\\\bbhline
+x & y\\\hline
+y & x\\\hline
+z & z\\\hline
+\end{tabular}
+\end{align*}~
+\sexc Make a guess and tabulate $I\times J$. Then draw it.\footnote{The result is not necessarily inspiring, but at least computing it is straightforward.}
+\item Recall the notion of natural transformations between functors (see Example \ref{ex:graph hom as NT done out}), which in the case of functors $\Loop\to\Set$ are the morphisms of instances. Do you see clearly that there is a morphism of instances $I\times J\to I$ and $I\times J\to J$? Just check that if you look only at the left-hand coordinates in your $I\times J$, you see something compatible with $I$. 
+\endsexc
+\end{exercise}
+
+In every case above, what's most important to recognize is that there are projection maps $I\times J\to I$ and $I\times J\to J$, and that the construction of $I\times J$ seems as straightforward as possible, subject to having these projections. It is time to give the definition.
+
+\begin{definition}\label{def:products in a cat}\index{products}
+
+Let $\mcC$ be a category and let $X,Y\in\Ob(\mcC)$ be objects. A {\em span on $X$ and $Y$} consists of three constituents $(Z,p,q)$, where $Z\in\Ob(\mcC)$ is an object, and where $p\taking Z\to X$ and $q\taking Z\to Y$ are morphisms in $\mcC$. 
+$$\xymatrix@=15pt{&Z\ar[ldd]_p\ar[rdd]^q\\\\X&&Y}$$   
+
+A {\em product of $X$ and $Y$} is a span $X\From{\pi_1}X\times Y\To{\pi_2}Y$, \footnote{The names $X\times Y$ and $\pi_1,\pi_2$ are not mathematically important, they are pedagogically suggestive.} such that for any other span $X\From{p}Z\To{q}Y$ there {\em exists a unique} morphism $t_{p,q}\taking Z\to X\times Y$ such that the diagram below commutes:
+$$
+\xymatrix@=15pt{&X\times Y\ar[ldd]_{\pi_1}\ar[rdd]^{\pi_2}\\\\X&&Y\\\\&Z\ar[uul]^{p}\ar[uur]_q\ar@{-->}[uuuu]^{t_{p,q}}}
+$$
+\end{definition}
+
+\begin{remark}\label{rem:gateway}\index{gateway}\index{universal property}
+
+Definition \ref{def:products in a cat} endows the product of two objects with something known as a {\em universal property}. It says that a product of two objects $X$ and $Y$ maps to those two objects, and serves as a gateway for all who do the same. “None shall map to $X$ and $Y$ except through me!” This grandiose property is held by  products in all the various categories we have discussed so far. It is what I meant when I said things like “$X\times Y$ maps to both $X$ and $Y$ and does so as straightforwardly as possible”.  The grid of dots obtained as the product of two sets has such a property, as was shown in Example \ref{ex:grid2}.
+
+\end{remark}
+
+\begin{example}
+
+In Example \ref{ex:product of preorders} we discussed products of preorders. In this example we will discuss products in an individual preorder. That is, by Proposition \ref{prop:preorders to cats}, there is a functor $\PrO\to\Cat$\index{a functor!$\PrO\to\Cat$} that realizes every preorder as a category. If $\mcP=(P,\leq)$ is a preorder, what are products in $\mcP$? Given two objects $a,b\in\Ob(\mcP)$ we first consider spans on $a$ and $b$, i.e. $a\from z\to b$. That would be some $z$ such that $z\leq a$ and $z\leq b$. The product will be such a span $a\geq a\times b\leq b$, but such that every other spanning object $z$ is less than or equal to $a\times b$. In other words $a\times b$ is as big as possible subject to the condition of being less than $a$ and less than $b$. This is precisely the meet of $a$ and $b$ (see Definition \ref{def:meets and joins}). 
+
+\end{example}
+
+\begin{example}\label{ex:products dont exist}\index{products!as not always existing}
+
+Note that the product of two objects in a category $\mcC$ may not exist. Let's return to preorders to see this phenomenon.
+
+Consider the set $\RR^2$, and say that $(x_1,y_1)\leq (x_2,y_2)$ if there exists $\ell\geq 1$ such that $x_1\ell=x_2$ and $y_1\ell=y_2$; in other words, point $p$ is less than point $q$ if, in order to travel from $q$ to the origin along a straight line, one must pass through $p$ along the way. 
+\footnote{Note that $(0,0)$ is not related to anything else.} 
+We have given a perfectly good partial order, but $p:=(1,0)$ and $q:=(0,1)$ do not have a product. Indeed, it would have to be a non-zero point that was on the same line-through-the origin as $p$ and the same line-through-the-origin as $q$, of which there are none.
+
+\end{example}
+
+\begin{example}
+
+Note that there can be more than one product of two objects in a category $\mcC$, but that any two choices will be canonically isomorphic. Let's return once more to preorders to see this phenomenon.
+
+Consider the set $\RR^2$ and say that $(x_1,y_1)\leq (x_2,y_2)$ if $x_1^2+y_1^2\leq x_2^2+y_2^2$, in other words if the former is on a smaller 0-circle (by which I mean “circle centered at the origin”) than the latter is. 
+
+For any two points $p,q$ there will be lots of points that serve as products: anything on the smaller of their two 0-circles will suffice. Given any two points $a,b$ on this smaller circle, we will have a unique isomorphism $a\iso b$ because $a\leq b$ and $b\leq a$ and all morphisms are unique in a preorder.
+
+\end{example}
+
+\begin{exercise}
+Consider the preorder $\mcP$ of cards in a deck, shown in Example \ref{ex:pre not par}; it is not the entire story of cards in a deck, but take it to be so. In other words, be like a computer and take what's there at face value. Consider the preorder $\mcP$ as a category (by way of the functor $\PrO\to\Cat$\index{a functor!$\PrO\to\Cat$}).
+\sexc For each of the following pairs, what is their product in $\mcP$ (if it exists)?
+\begin{align*}
+&\fakebox{a diamond}\times\fakebox{a heart}\;? \hsp &\fakebox{a queen}\times\fakebox{a black card}\;?\\
+& \fakebox{a card}\times\fakebox{a red card}\;?\hsp&\fakebox{a face card}\times\fakebox{a black card}\;?
+\end{align*}
+\item How would these answers differ if $\mcP$ was completed to the “whole story” partial order classifying cards in a deck?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $X$ be a set, and consider it as a discrete category. Given two objects $x,y\in\Ob(X)$, under what conditions will there exist a product $x\times y$?
+\end{exercise}
+
+\begin{exercise}
+Let $f\taking\RR\to\RR$ be a function, like you would see in 6th grade (maybe $f(x)=x+7$). A typical thing to do is to graph $f$ as a curve running through the plane $\RR^2:=\RR\times\RR$. This curve can be understood as a function $F\taking\RR\to\RR^2$.
+\sexc Given some $x\in\RR$, what are the coordinates of $F(x)\in\RR^2$? 
+\item Obtain $F\taking\RR\to\RR^2$ using the universal property given in Definition \ref{def:products in a cat}. 
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Consider the preorder $(\NN,{\tt divides})$, discussed in Exercise \ref{exc:divides as po}, where e.g. $5\leq 15$ but $5\not\leq 6$. \sexc What is the product of $9$ and $12$ in this category?
+\item Is there a standard name for products in this category?
+\endsexc
+\end{exercise}
+
+\begin{example}\label{ex:[1]x[1]}
+
+All products exist in the category $\Cat$. Given two categories $\mcC$ and $\mcD$, there is a product category $\mcC\times\mcD$. We have $\Ob(\mcC\times\mcD)=\Ob(\mcC)\times\Ob(\mcD)$ and for any two objects $(c,d)$ and $(c',d')$, we have $$\Hom_{\mcC\times\mcD}((c,d),(c',d'))=\Hom_\mcC(c,c')\times\Hom_\mcC(d,d').$$ The composition formula is “obvious”.
+
+Let $[1]\in\Ob(\Cat)$ denote the linear order category of length 1, drawn $$[1]:=\fbox{\xymatrix{\LMO{0}\ar[r]^f&\LMO{1}}}$$ As a schema it has one arrow, but as a category it has three morphisms. So we expect $[1]\times[1]$ to have 9 morphisms, and that's true. In fact, $[1]\times[1]$ looks like a commutative square:
+\begin{align}\label{dia:comm square}
+\xymatrix@=40pt{
+\LMO{(0,0)}\ar[r]^{\id_0\times f}\ar[d]_{f\times\id_0}&\LMO{(0,1)}\ar[d]^{f\times\id_1}\\
+\LMO{(1,0)}\ar[r]_{\id_1\times f}&\LMO{(1,1)}}
+\end{align}
+We see only four morphisms here, but there are also four identities and one morphism $(0,0)\to(1,1)$ given by composition of either direction. It is a minor miracle that the categorical product somehow “knows” that this square should commute; however, this is not the mere preference of man but instead the dictate of God! By which I mean, this follows rigorously from the definitions we already gave of $\Cat$ and products.
+
+\end{example}
+
+%% Subsubsection %%
+
+\subsubsection{Coproducts}\index{coproducts}
+
+The coproduct of two sets is their disjoint union, which includes non-overlapping copies of each of the two sets. This is good intuition for coproducts in general.
+
+\begin{example}
+
+Given two preorders, $\mcX_1:=(X_1,\leq_1)$ and $\mcX_2:=(X_2,\leq_2)$, we can take their coproduct and get a new preorder $\mcX_1\sqcup\mcX_2$. Both $\mcX_1$ and $\mcX_2$ have underlying sets (namely $X_1$ and $X_2$), so we might hope that the underlying set of $\mcX_1\times\mcX_2$ is the disjoint union $X_1\sqcup X_2$, and that turns out to be true. We have a notion of less-than on $\mcX_1$ and we have a notion of less-than on $\mcX_2$. 
+
+Given an element $x\in X_1\sqcup X_2$ and an element $x'\in X_1\sqcup X_2$, how can we use $\leq_1$ and $\leq_2$ to compare $x_1$ and $x_2$? The relation $\leq_1$ only knows how to compare elements of $X_1$ and the relation $\leq_2$ only knows how to compare elements of $X_2$. But $x$ and $x'$ may come from different homes; e.g. $x\in X_1$ and $x'\in X_2$, in which case neither $\leq_1$ nor $\leq_2$ gives any clue about which should be bigger. 
+
+So when should we say that $x\leq_{1\sqcup 2} x'$ holds? The obvious guess is to say that $x$ is less than $x'$ iff somebody says it is; that is, if both $x$ and $x'$ are from the same home and the local ordering has $x\leq x'$. To be precise, we say $x\leq_{1\sqcup 2}x'$ if and only if either one of the following conditions hold:
+\begin{itemize}
+\item $x\in X_1$ and $x'\in X_1$ and $x\leq_1x'$, or
+\item $x\in X_2$ and $x'\in X_2$ and $x\leq_2x'$.
+\end{itemize}
+With $\leq_{1\sqcup 2}$ so defined, one checks that it is not only a preorder, but that it serves as a coproduct of $\mcX_1$ and $\mcX_2$, 
+$$\mcX_1\sqcup\mcX_2:=(X_1\sqcup X_2,\leq_{1\sqcup 2}).$$
+
+Note that the inclusion functions $X_1\to X_1\sqcup X_2$ and $X_2\to X_1\sqcup X_2$ induce morphisms of preorders. That is, if $x,x'\in X_1$ are elements such that $x\leq_1x'$ in $\mcX_1$ then the same will hold in $\mcX_1\sqcup\mcX_2$. So we have preorder morphisms
+$$\xymatrix@=15pt{&\mcX_1\sqcup\mcX_2\\\\\mcX_1\ar[ruu]&&\mcX_2\ar[luu]}$$
+
+\end{example}
+
+\begin{exercise}
+Suppose that you have a partial order $\mcA:=(A,\leq_A)$ on apples (so you know some apples are preferable to others but sometimes you can't compare). And suppose you have a partial order $\mcO:=(O,\leq_O)$ on oranges. You're about to be given two pieces of fruit from a basket of apples and oranges. Is the coproduct partial order $\mcA\sqcup\mcO$ a reasonable guess for your preferences, or does it seem biased?
+\end{exercise}
+
+\begin{example}\label{ex:coproduct of graphs}
+Given two graphs $G_1=(V_1,A_1,src_1,tgt_1)$ and $G_2=(V_2,A_2,src_2,tgt_2)$, we can take their coproduct and get a new graph $G_1\sqcup G_2$. The vertices will be the disjoint union of vertices $V_1\sqcup V_2$, so each vertex in $G_1\sqcup G_2$ is labeled either by a vertex in $G_1$ or by one in $G_2$ (and if any labels are shared, then something must be done to differentiate them). When should an arrow connect $v$ to $v'$? Whenever both are from the same component (i.e. either $v,v'\in V_1$ or $v,v'\in V_2$) and we can find an arrow connecting them in that component. It turns out there is a simple formula for the set of arrows in $G_1\sqcup G_2$, namely $A_1\sqcup A_2$.
+
+Let's write $G:=G_1\sqcup G_2$ and say $G=(V,A,src,tgt)$. We now know that $V=V_1\sqcup V_2$ and $A=A_1\sqcup A_2$. What should the source and target functions $A\to V$ be? Given a function $src_1\taking A_1\to V_1$ and a function $src_2\taking A_2\to V_2$, the universal property of coproducts in $\Set$ can be used to specify a unique function 
+$$src:=src_1\sqcup src_2\taking A_1\sqcup A_2\to V_1\sqcup V_2.$$ 
+Namely for any arrow $a\in A$, we know either $a\in A_1$ or $a\in A_2$ (and not both), so the source of $a$ will be the vertex $src_1(a)$ if $a\in A_1$ and $src_2(a)$ if $a\in A_2$. Similarly we have a ready-made choice of target function $tgt=tgt_1\sqcup tgt_2$. We have now defined the coproduct graph.
+
+Here's a real example. Let $I$ and $J$ be as in Example \ref{ex:graph hom as NT done out}, drawn below:
+\begin{align*}
+&I:=\parbox{.8in}{\fbox{\xymatrix{\LMO{v}\ar[d]_f\\\LMO{w}\ar@/_1pc/[d]_g\ar@/^1pc/[d]^h\\\LMO{x}}}}\hspace{.6in}
+&J:=\parbox{1.8in}{\fbox{\xymatrix{\LMO{q}\ar[r]^i&\LMO{r}\ar@/^1pc/[r]^j&\LMO{s}\ar@/^1pc/[l]^k\ar[r]^\ell&\LMO{t}\\&&&\LMO{u}}}}\\
+&\small
+\begin{array}{| l || l | l |}\bhline
+\multicolumn{3}{|c|}{{\tt Arrow}\;\; (I)}\\\bhline
+{\bf ID}&{\bf src}&{\bf tgt}\\\bbhline
+f&v&w\\\hline
+g&w&x\\\hline
+h&w&x\\\bhline
+\end{array}
+\hsp
+\begin{array}{| l ||}\bhline
+\multicolumn{1}{|c|}{{\tt Vertex}\;\; (I)}\\\bhline
+{\bf ID}\\\bbhline
+v\\\hline
+w\\\hline
+x\\\bhline
+\end{array}\hsp
+&\small
+\begin{array}{| l || l | l |}\bhline
+\multicolumn{3}{|c|}{{\tt Arrow}\;\; (J)}\\\bhline
+{\bf ID}&{\bf src}&{\bf tgt}\\\bbhline
+i&q&r\\\hline
+j&r&s\\\hline
+k&s&r\\\hline
+\ell&s&t\\\bhline
+\end{array}
+\hsp
+\begin{array}{| l ||}\bhline
+\multicolumn{1}{|c|}{{\tt Vertex}\;\; (J)}\\\bhline
+{\bf ID}\\\bbhline
+q\\\hline
+r\\\hline
+s\\\hline
+t\\\hline
+u\\\bhline
+\end{array}
+\end{align*}
+The coproduct $I\sqcup J$ drawn below has, as expected $3+5=8$ vertices and $3+4=7$ arrows: 
+$$\parbox{2.4in}{\boxtitle{$I\sqcup J:=$}\fbox{\xymatrix{
+\LMO{v}\ar[d]_f\\
+\LMO{w}\ar@/_1pc/[d]_g\ar@/^1pc/[d]^h&\LMO{q}\ar[r]^i&\LMO{r}\ar@/^1pc/[r]^j&\LMO{s}\ar@/^1pc/[l]^k\ar[r]^\ell&\LMO{t}\\
+\LMO{x}&&&&\LMO{u}
+}}}
+\hspace{.5in}\small
+\begin{array}{| l || l | l |}\bhline
+\multicolumn{3}{|c|}{{\tt Arrow}\;\; (I\sqcup J)}\\\bhline
+{\bf ID}&{\bf src}&{\bf tgt}\\\bbhline
+f&v&w\\\hline
+g&w&x\\\hline
+h&w&x\\\hline
+i&q&r\\\hline
+j&r&s\\\hline
+k&s&r\\\hline
+\ell&s&t\\\bhline
+\end{array}
+\hsp
+\begin{array}{| l ||}\bhline
+\multicolumn{1}{|c|}{{\tt Vertex}\;\; (I\sqcup J)}\\\bhline
+{\bf ID}\\\bbhline
+v\\\hline
+w\\\hline
+x\\\hline
+q\\\hline
+r\\\hline
+s\\\hline
+t\\\hline
+u\\\bhline
+\end{array}
+$$
+
+Here is the most important thing to notice. Look at the {\tt Arrow} table $I$ and notice that there is a way to send each row to a row in $I\sqcup J$, such that all the foreign keys match. Similarly in the arrow table and the two vertex tables for $J$. These “matchings” are readily-visible graph homomorphisms $I\to I\sqcup J$ and $J\to I\sqcup J$ in $\Grph$. 
+
+\end{example}
+
+\begin{exercise}
+Recall from Example \ref{ex:dds} that a discrete dynamical system (DDS) is a set $s$ together with a function $f\taking s\to s$; if 
+$$\Loop:=\LoopSchema$$
+is the loop schema, then a DDS is simply an instance (a functor) $I\taking\Loop\to\Set$. We have not yet discussed coproducts of DDS's, but perhaps you can guess how they should work.  For example, consider the instances $I,J\taking\Loop\to\Set$ tabulated below:
+\begin{align*}
+\begin{tabular}{| l || c |}\bhline
+\multicolumn{2}{| c |}{s\;\; (I)}\\\bhline 
+{\bf ID}&{\bf f}\\\bbhline
+A & C\\\hline
+B & C\\\hline
+C & C\\\hline
+\end{tabular}
+\hspace{.7in}
+\begin{tabular}{| l || c |}\bhline
+\multicolumn{2}{| c |}{s\;\; (J)}\\\bhline 
+{\bf ID}&{\bf f}\\\bbhline
+x & y\\\hline
+y & x\\\hline
+z & z\\\hline
+\end{tabular}
+\end{align*}
+Make a guess and tabulate $I\sqcup J$. Then draw it.
+\end{exercise}
+
+In every case above (preorders, graphs, DDSs), what's most important to recognize is that there are inclusion maps $I\to I\sqcup J$ and $J\to I\sqcup J$, and that the construction of $I\sqcup J$ seems as straightforward as possible, subject to having these inclusions. It is time to give the definition.
+
+\begin{definition}\label{def:coproducts in a cat}
+
+Let $\mcC$ be a category and let $X,Y\in\Ob(\mcC)$ be objects. A {\em cospan on $X$ and $Y$}\index{cospan} consists of three constituents $(Z,i,j)$, where $Z\in\Ob(\mcC)$ is an object, and where $i\taking X\to Z$ and $j\taking Y\to Z$ are morphisms in $\mcC$. 
+$$\xymatrix@=15pt{&Z\\\\X\ar[ruu]^i&&Y\ar[luu]_j}$$   
+
+A {\em coproduct of $X$ and $Y$} is a cospan $X\To{\iota_1}X\sqcup Y\From{\iota_2}Y$, \footnote{The names $X\sqcup Y$ and $\iota_1,\iota_2$ are not mathematically important, they are pedagogically suggestive.} such that for any other cospan $X\To{i}Z\From{j}Y$ there {\em exists a unique} morphism $s_{i,j}\taking X\sqcup Y\to Z$ such that the diagram below commutes:
+$$
+\xymatrix@=15pt{&X\sqcup Y\ar@{-->}[dddd]_{s_{i,j}}\\\\X\ar[uur]^{\iota_1}\ar[ddr]_i&&Y\ar[uul]_{\iota_2}\ar[ddl]^j\\\\&Z}
+$$
+\end{definition}
+
+\begin{remark}
+
+Definition \ref{def:products in a cat} endows the coproduct of two objects with a {\em universal property}. It says that a coproduct of two objects $X$ and $Y$ receives maps from those two objects, and serves as a gateway for all who do the same. “None shall receive maps from $X$ and $Y$ except through me!” This grandiose property is held by all the coproducts we have discussed so far. It is what I meant when I said things like “$X\sqcup Y$ receives maps from both $X$ and $Y$ and does so as straightforwardly as possible”.  The disjoint union of dots obtained as the coproduct of two sets has such a property, as can be seen by thinking about Example \ref{ex:coprod of dots}.
+
+\end{remark}
+
+\begin{example}
+
+By Proposition \ref{prop:preorders to cats}, there is a functor $\PrO\to\Cat$\index{a functor!$\PrO\to\Cat$} that realizes every preorder as a category. If $\mcP=(P,\leq)$ is a preorder, what are coproducts in $\mcP$? Given two objects $a,b\in\Ob(\mcP)$ we first consider cospans on $a$ and $b$, i.e. $a\to z\from b$. A cospan of $a$ and $b$ is any $z$ such that $a\leq z$ and $b\leq z$. The coproduct will be such a cospan $a\leq a\sqcup b\geq b$, but such that every other cospanning object $z$ is greater than or equal to $a\sqcup b$. In other words $a\sqcup b$ is as small as possible subject to the condition of being bigger than $a$ and bigger than $b$. This is precisely the join of $a$ and $b$ (see Definition \ref{def:meets and joins}).
+
+\end{example}
+
+Just as for products, the coproduct of two objects in a category $\mcC$ may not exist, or it may not be unique. The non-uniqueness is much less “bad” because given two candidate coproducts, they will be canonically isomorphic. They may not be equal, but they are isomorphic. But coproducts might not exist at all in certain categories. We will explore that a bit below.
+
+\begin{example}
+
+Consider the set $\RR^2$ and partial order from Example \ref{ex:products dont exist} where $(x_1,y_1)\leq (x_2,y_2)$ if there exists $\ell\geq 1$ such that $x_1\ell=x_2$ and $y_1\ell=y_2$. Again the points $p:=(1,0)$ and $q:=(0,1)$ do not have a coproduct. Indeed, it would have to be a non-zero point that was on the same line-through-the origin as $p$ and the same line-through-the-origin as $q$, of which there are none.
+
+\end{example}
+
+\begin{exercise}
+Consider the preorder $\mcP$ of cards in a deck, shown in Example \ref{ex:pre not par}; it is not the entire story of cards in a deck, but take it to be so. In other words, be like a computer and take what's there at face value. Consider the preorder $\mcP$ as a category (by way of the functor $\PrO\to\Cat$). For each of the following pairs, what is their coproduct in $\mcP$ (if it exists)?
+\sexc 
+\begin{tabbing}
+\hspace{.5in}\= \fakebox{a diamond}$\sqcup$\fakebox{a heart}\;?\hspace{.5in} \=\fakebox{a queen}$\sqcup$\fakebox{a black card}\;?\\\\
+\> \fakebox{a card}$\sqcup$\fakebox{a red card}\;?\>\fakebox{a face card}$\sqcup$\fakebox{a black card}\;?
+\end{tabbing}
+\item How would these answers differ if $\mcP$ was completed to the “whole story” partial order classifying cards in a deck?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $X$ be a set, and consider it as a discrete category. Given two objects $x,y\in\Ob(X)$, under what conditions will there exist a coproduct $x\sqcup y$?
+\end{exercise}
+
+\begin{exercise}
+Consider the preorder $(\NN,{\tt divides})$, discussed in Exercise \ref{exc:divides as po}, where e.g. $5\leq 15$ but $5\not\leq 6$. \sexc What is the coproduct of $9$ and $12$ in that category?
+\item Is there a standard name for coproducts in that category?
+\endsexc
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Diagrams in a category}\label{sec:diagrams in a category}\index{diagram}
+
+We have been drawing diagrams since the beginning of the book. What is it that we have been drawing pictures {\em of}? The answer is that we have been drawing functors.
+
+\begin{definition}\index{diagram}\index{indexing category}
+
+Let $\mcC$ and $I$ be categories.
+\footnote{In fact, the indexing category $I$ is usually assumed to be small in the sense of Remark \ref{rmk:small}, meaning that its collection of objects is a set.}
+An {\em $I$-shaped diagram in $\mcC$} is simply a functor $d\taking I\to\mcC$. In this case $I$ is called the {\em indexing category} for the diagram.
+
+\end{definition}
+
+Suppose given an indexing category $I$ and an $I$-shaped diagram $X\taking I\to\mcC$. One draws this as follows. For each object in $q\in I$, draw a dot labeled by $X(q)$; if several objects in $I$ point to the same object in $\mcC$, then several dots will be labeled the same way. Draw the images of morphisms $f\taking q\to q'$ in $I$ by drawing arrows between dots $X(q)$ and $X(q')$, and label each arrow by the image morphism $X(f)$ in $\mcC$. Again, if several morphisms in $I$ are sent to the same morphism in $\mcC$, then several arrows will be labeled the same way. One can abbreviate this process by not drawing {\em every} morphism in $I$, so long as every morphism in $I$ is represented by a unique path in $\mcC$, i.e. as long as the drawing is sufficiently unambiguous as a depiction of $X\taking I\to\mcC$.
+
+\begin{example}\label{ex:comm vs noncomm diags}
+
+Consider the commutative diagram in $\Set$ drawn below:
+\begin{align}\label{dia:comm diag of nats in set}
+\xymatrix{\NN\ar[r]^{+1}\ar[d]_{*2}&\NN\ar[d]^{*2}\\\NN\ar[r]_{+2}&\ZZ}
+\end{align}
+This is the drawing of a functor $d\taking[1]\times[1]\to\Set$ (see Example \ref{ex:[1]x[1]}). With notation for the objects and morphisms of $[1]\times[1]$ as shown in Diagram (\ref{dia:comm square}), we have $d(0,0)=d(0,1)=d(1,0)=\NN$ and $d(1,1)=\ZZ$ (for some reason..) and $d(\id_0,f)\taking\NN\to\NN$ given by $n\mapsto n+1$, etc. 
+
+The fact that $d$ is a functor means it must respect composition formulas, which implies that Diagram (\ref{dia:comm diag of nats in set}) commutes. Recall from Section \ref{sec:comm diag} that not all diagrams one can draw will commute; one must specify that a given diagram commutes if he or she wishes to communicate this fact. But then how is a {\em non-commuting diagram} to be understood as a functor?
+
+Let $G\in\Ob(\Grph)$ denote the following graph 
+$$\xymatrix{\LMO{(0,0)}\ar[r]^f\ar[d]_h&\LMO{(0,1)}\ar[d]^{g}\\\LMO{(1,0)}\ar[r]_{i}&\LMO{(1,1)}}$$
+Recall the free category functor $F\taking\Grph\to\Cat$ from Example \ref{ex:free category}. The free category $F(G)\in\Ob(\Cat)$ on $G$ looks almost like $[1]\times[1]$ except that since $[f,g]$ is a different path in $G$ than is $[h,i]$, they become different morphisms in $F(G)$. A functor $F(G)\to\Set$ might be drawn the same way that (\ref{dia:comm diag of nats in set}) is, but it would be a diagram that would {\em not} be said to commute.
+
+We call $[1]\times [1]$ the {\em commutative square indexing category}. 
+\footnote{We might call what is here denoted by $F(G)$ the {\em noncommutative square indexing category}.}
+
+\end{example}
+
+\begin{exercise}
+Consider $[2]$, the linear order category of length 2.
+\sexc Is $[2]$ the appropriate indexing category for commutative triangles?
+\item If not, what is?
+\endsexc
+\end{exercise}
+
+\begin{example}
+
+Recall that an equalizer in $\Set$ was a diagram of sets that looked like this:
+\begin{align}\label{dia:equalizer diag}
+\xymatrix{\LMO{E}\ar[r]^f&\LMO{A}\ar@<.5ex>[r]^{g_1}\ar@<-.5ex>[r]_{g_2}&\LMO{B}}
+\end{align}
+where $g_1\circ f=g_2\circ f$. What is the indexing category for such a diagram? It is the schema (\ref{dia:equalizer diag}) with the PED $[f,g_1]\simeq[f,g_2]$. That is, in some sense you're seeing the indexing category, but the PED needs to be declared.
+
+\end{example}
+
+\begin{exercise}\label{exc:coincidence}
+Let $\mcC$ be a category, $A\in\Ob(\mcC)$ an object, and $f\taking A\to A$ a morphism in $\mcC$. Consider the two diagrams in $\mcC$ drawn below:
+$$\fbox{\xymatrix{\LMO{A}\ar[r]^f&\LMO{A}\ar[r]^f&\LMO{A}\ar[r]^f&\cdots}}\hspace{1in}\fbox{\xymatrix{\LMO{A}\ar@(ul,dl)[]_f}}$$
+\sexc Should these two diagrams have the same indexing category?
+\item If they should have the same indexing category, what is causing or allowing the pictures to appear different?
+\item If they should not have the same indexing category, what coincidence makes the two pictures have so much in common?
+\endsexc
+\end{exercise}
+
+\begin{definition}\label{def:lcone}\index{cone!left}
+
+Let $I\in\Ob(\Cat)$ be a category. The {\em left cone on $I$}, denoted $I\lcone$\index{a symbol!$\lcone$}, is the category defined as follows. On objects we put $\Ob(I\lcone)=\{-\infty\}\sqcup\Ob(I)$, and we call the new object $-\infty$ the {\em cone point of $I\lcone$}. On morphisms we add a single new morphism $s_b\taking-\infty\to b$ for every object $b\in\Ob(I)$; more precisely,
+$$\Hom_{I\lcone}(a,b)=
+\begin{cases}
+\Hom_I(a,b)&\tn{ if }a,b\in\Ob(I)\\
+\{s_b\}&\tn{ if }a=-\infty, b\in\Ob(I)\\
+\{\id_{-\infty}\}&\tn{ if } a=b=-\infty\\
+\emptyset&\tn{ if } a\in\Ob(I), b=-\infty.
+\end{cases}$$
+The composition formula is in some sense obvious. To compose two morphisms both in $I$, compose as dictated by $I$; if one has $-\infty$ as source then there will be a unique choice of composite.
+
+There is an obvious inclusion of categories,
+\begin{align}\label{dia:inclusion into cone}
+I\to I\lcone.
+\end{align}
+
+\end{definition}
+
+\begin{remark}\label{rem:schemas are cats!}
+
+Note that the specification of $I\lcone$ given in Definition \ref{def:lcone} works just as well if $I$ is considered a schema and we are constructing a schema $I\lcone$: add the new object $-\infty$ and the new arrows $s_b\taking-\infty\to b$ for each $b\in\Ob(I)$, and for every morphism $f\taking b\to b'$ in $I$ add a PED $[s_{b'}]\simeq[s_b,f]$. We generally will not distinguish between categories and schemas, since they are equivalent.
+
+\end{remark}
+
+\begin{example}\label{ex:stars}\index{a category!$\Star_n$}
+
+For a natural number $n\in\NN$, we define the {\em $n$-leaf star schema}, denoted $\Star_n$, to be the category (or schema, see Remark \ref{rem:schemas are cats!}) $\ul{n}\lcone$, where $\ul{n}$ is the discrete category on $n$ objects. Below we draw $\Star_0, \Star_1, \Star_2$, and $\Star_3$.
+$$
+\parbox{.3in}{\boxtitle{$\Star_0$}\fbox{$\LMO{-\infty}$}}
+\hspace{.5in}
+\parbox{.4in}{\boxtitle{$\Star_1$}\fbox{\xymatrix@=15pt{\LMO{-\infty}\ar[dd]_{s_1}\\\\\LMO{1}}}}
+\hspace{.5in}
+\parbox{1.1in}{\boxtitle{$\Star_2$}\fbox{\xymatrix@=15pt{&\LMO{-\infty}\ar[ddl]_{s_1}\ar[ddr]^{s_2}\\\\\LMO{1}&&\LMO{2}}}}
+\hspace{.5in}
+\parbox{1.1in}{\boxtitle{$\Star_3$}\fbox{\xymatrix@=15pt{&\LMO{-\infty}\ar[ddl]_{s_1}\ar[dd]_{s_2}\ar[ddr]^{s_3}\\\\\LMO{1}&\LMO{2}&\LMO{3}}}}
+$$
+
+\end{example}
+
+\begin{exercise}
+Let $\mcC_0:=\ul{0}$ denote the empty category and for any natural number $n\in\NN$, let $\mcC_{n+1}=(\mcC_n)\lcone.$ Draw $\mcC_4$.  
+\end{exercise}
+
+\begin{exercise}
+Let $\mcC$ be the graph indexing schema as in (\ref{dia:graph index}). What is $\mcC\lcone$ and how does it compare to (\ref{dia:equalizer diag})? 
+\end{exercise}
+
+\begin{definition}\label{def:rcone}\index{cone!right}
+
+Let $I\in\Ob(\Cat)$ be a category. The {\em right cone on $I$}, denoted $I\rcone$,\index{a symbol!$\rcone$} is the category defined as follows. On objects we put $\Ob(I\rcone)=\Ob(I)\sqcup\{\infty\}$, and we call the new object $\infty$ the {\em cone point of $I\rcone$}. On morphisms we add a single new morphism $t_b\taking b\to\infty$ for every object $b\in \Ob(I)$; more precisely,
+$$\Hom_{I\rcone}(a,b)=
+\begin{cases}
+\Hom_I(a,b)&\tn{ if }a,b\in\Ob(I)\\
+\{t_b\}&\tn{ if }a\in\Ob(I), b=\infty\\
+\{\id_{\infty}\}&\tn{ if } a=b=\infty\\
+\emptyset&\tn{ if } a=\infty,b\in\Ob(I).
+\end{cases}$$
+The composition formula is in some sense obvious. To compose two morphisms both in $I$, compose as dictated by $I$; if one has $\infty$ as target then there will be a unique choice of composite.
+
+There is an obvious inclusion of categories $I\to I\rcone$.
+
+\end{definition}
+
+\begin{exercise}
+Let $\mcC$ be the category $(\ul{2}\lcone)\rcone$, where $\ul{2}$ is the discrete category on two objects. Then $\mcC$ is somehow square-shaped, but what category is it exactly? Looking at Example \ref{ex:comm vs noncomm diags}, is $\mcC$ the commutative diagram indexing category $[1]\times[1]$, is it the non-commutative diagram indexing category $F(G)$, or is it something else?
+\end{exercise}
+
+%%%% Subsection %%%%
+
+\subsection{Limits and colimits in a category}\label{sec:lims and colims in a cat}
+
+Let $\mcC$ be a category, let $I$ be an indexing category (which just means that $I$ is a category that we're about to use as the indexing category for a diagram), and let $D\taking I\to\mcC$ an $I$-shaped diagram (which just means a functor). It is in relation to this setup that we can discuss the limit or colimit. In general the limit of a diagram $D\taking I\to\mcC$ will be a $I\lcone$ shaped diagram $\lim D\taking I\lcone\to\mcC$. In the case of products $I=\ul{2}$ and $I\lcone=\Star_2$ looks like a span (see Example \ref{ex:stars}). But out of all the $I\lcone$-shaped diagrams, which is the limit of $D$? Answer: the one with the universal “gateway” property, see Remark \ref{rem:gateway}.
+
+%% Subsubsection %%
+
+\subsubsection{Universal objects}
+
+\begin{definition}\index{initial object}\index{terminal object}
+
+Let $\mcC$ be a category. An object $a\in\Ob(\mcC)$ is called {\em initial} if, for all objects $c\in\Ob(\mcC)$ there exists a unique morphism $a\to c$, i.e. $|\Hom_\mcC(a,c)|=1$. An object $z\in\Ob(\mcC)$ is called {\em terminal} if, for all objects $c\in\Ob(\mcC)$ there is exists a unique morphism $c\to z$, i.e. $|\Hom_\mcC(c,z)|=1$. 
+
+\end{definition}
+
+An object in a category is called {\em universal} if it is either initial or terminal, but we rarely use that term in practice, preferring to be specific about whether the object is initial or terminal. The word {\em final} is synonymous with the word terminal, but we'll try to constantly use terminal. 
+
+Colimits will end up being defined as initial things of a certain sort, and limits will end up being defined as terminal things of a certain sort. But we will get to that in Section \ref{sec:examples of limits}.
+
+\begin{warning}\index{a warning!misuse of {\em the}}
+
+A category $\mcC$ may have more than one initial object; similarly a category $\mcC$ may have more than one terminal object. We will see in Example \ref{ex:universal obs in set} that any set with one element, e.g. $\{*\}$ or $\singleton$, is a terminal object in $\Set$. These terminal sets have the same number of elements, but they are not the exact-same set; two sets having the same cardinality means precisely that there exists an isomorphism between them.
+
+In fact, Proposition \ref{prop:initials are isomorphic} below shows that in any category $\mcC$, any two terminal objects in $\mcC$ are isomorphic (similarly, any two initial objects in $\mcC$ are isomorphic). While there are many isomorphisms in $\Set$ between $\{1,2,3\}$ and $\{a,b,c\}$, there is only one isomorphism between $\{*\}$ and $\smiley$. This is always the case for universal objects: there is a unique isomorphism between any two terminal (respectively initial) objects in any category.
+
+As a result, people often speak of {\em the} initial object in $\mcC$ or {\em the} terminal object in $\mcC$, as though there was only one. “It's unique up to unique ismorphism!” is the justification for this use of the so-called definite article {\em the} rather than the indefinite article {\em a}. This is not a very misleading way of speaking, because just like the president today does not contain exactly the same atoms as the president yesterday, the difference is unimportant. But we still mention this as a warning: if $\mcC$ has a terminal object, we may speak of it as though it were unique, calling it {\em the terminal object}, and similarly for initial objects.
+
+We will use the definite article throughout this document, e.g. in Example \ref{ex:universal obs in set} we will discuss the initial object in $\Set$ and the terminal object in $\Set$. This is common throughout mathematical literature as well.
+
+\end{warning}
+
+\begin{proposition}\label{prop:initials are isomorphic}
+
+Let $\mcC$ be a category and let $a_1,a_2\in\Ob(\mcC)$ both be initial objects. Then there is a unique isomorphism $a_1\To{\iso}a_2$. (Similarly, for any two terminal objects in $\mcC$ there is a unique isomorphism between them.) 
+
+\end{proposition}
+
+\begin{proof}
+
+Suppose $a_1$ and $a_2$ are initial. Since $a_1$ is initial there is a unique morphism $f\taking a_1\to a_2$; there is also a unique morphism $a_1\to a_1$, which must be $\id_{a_1}$. Since $a_2$ is initial there is a unique morphism $g\taking a_2\to a_1$; there is also a unique morphism $a_2\to a_2$, which must be $\id_{a_2}$. So $g\circ f=\id_{a_1}$ and $f\circ g=\id_{a_2}$, which means that $f$ is the desired (unique) isomorphism.
+
+The proof for terminal objects is appropriately “dual”.
+
+\end{proof}
+
+\begin{example}\label{ex:universal obs in set}
+
+The initial object in $\Set$ is the set $a$ for which there is always one way to map from $a$ to anything else. Given $c\in\Ob(\Set)$ there is exactly one function $\emptyset\to c$, because there are no choices to be made, so the empty set $\emptyset$ is the initial object in $\Set$.
+
+The terminal object in $\Set$ is the set $z$ for which there is always one way to map to $z$ from anything else. Given $c\in\Ob(\Set)$ there is exactly one function $c\to\singleton$, where $\singleton$ is any set with one element, because there are no choices to be made: everything in $c$ must be sent to the single element in $\singleton$. There are lots of terminal objects in $\Set$, and they are all isomorphic to $\ul{1}$.
+
+\end{example}
+
+\begin{example}
+
+The initial object in $\Grph$ is the graph $a$ for which there is always one way to map from $a$ to anything else. Given $c\in\Ob(\Grph)$, there is exactly one function $\emptyset\to c$, where $\emptyset\in\Grph$ is the empty graph; so $\emptyset$ is the initial object.
+
+The terminal object in $\Grph$ is more interesting. It is $\Loop$, the graph with one vertex and one arrow. In fact there are infinitely many terminal objects in $\Grph$, but all of them are isomorphic to $\Loop$. 
+
+\end{example}
+
+\begin{exercise}
+Let $X$ be a set, let $\PP(X)$ be the set of subsets of $X$ (see Definition \ref{def:subobject classifier}). We can regard $\PP(X)$ as a preorder under inclusion of subsets (see for example Section \ref{sec:meets and joins}). And we can regard preorders as categories using a functor $\PrO\to\Cat$ (see Proposition \ref{prop:preorders to cats}).
+\sexc What is the initial object in $\PP(X)$?
+\item What is the terminal object in $\PP(X)$? 
+\endsexc
+\end{exercise}
+
+\begin{example}\label{ex:initial monoid terminal monoid}\index{monoid!initial}\index{monoid!terminal}
+
+The initial object in the category $\Mon$ of monoids is the trivial monoid, $\ul{1}$. For any monoid $M$, a morphism of monoids $\ul{1}\to M$ is a functor between 1-object categories and these are determined by where they send morphisms. Since $\ul{1}$ has only the identity morphism and functors must preserve identities, there is no choice involved in finding a monoid morphism $\ul{1}\to M$.
+
+Similarly, the terminal object in $\Mon$ is also the trivial monoid, $\ul{1}$. For any monoid $M$, a morphism of monoids $M\to\ul{1}$ sends everything to the identity; there is no choice.
+
+\end{example}
+
+\begin{exercise}~
+\sexc What is the initial object in $\Grp$, the category of groups?
+\item What is the terminal object in $\Grp$?
+\endsexc
+\end{exercise}
+\begin{example}
+
+Recall the preorder $\Prop$ of logical propositions from Section \ref{sec:propositions}. The initial object is a proposition that implies all others. It turns out that “FALSE” is such a proposition. The proposition “FALSE” is like “$1\neq1$”; in logical formalism it can be shown that if “FALSE” is true then everything is true.
+
+The terminal object in $\Prop$ is a proposition that is implied by all others. It turns out that “TRUE” is such a proposition. In logical formalism, everything implies that “TRUE” is true.
+
+\end{example}
+
+\begin{example}
+
+The discrete category $\ul{2}$ has no initial object and no terminal object. The reason is that it has two objects $1,2$, but no maps from one to the other, so $\Hom_{\ul{2}}(1,2)=\Hom_{\ul{2}}(2,1)=\emptyset$.
+
+\end{example}
+
+\begin{exercise}
+Recall the {\tt divides} preorder from Exercise \ref{exc:divides as po}, where $5\;{\tt divides}\;15$.
+\sexc Considering this preorder as a category, does it have an initial object?
+\item Does it have a terminal object?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $\mcM=(\List(\{a,b\}),[\;],\plpl)$ denote the free monoid on $\{a,b\}$ (see Definition \ref{def:free monoid}), considered as a category (via Theorem \ref{thm:mon to cat}).
+\sexc Does it have an initial object?
+\item Does it have a terminal object?
+\item Which monoids have initial (respectively terminal) objects?
+\endsexc
+\end{exercise}
+
+\begin{exercise}
+Let $S$ be a set and consider the indiscrete category $K_S\in\Ob(\Cat)$ on objects $S$ (see Example \ref{ex:indiscrete cat equiv to terminal}).
+\sexc For what $S$ does $K_S$ have an initial object?
+\item For what $S$ does $K_S$ have a terminal object?
+\endsexc
+\end{exercise}
+
+%% Subsubsection %%
+
+\subsubsection{Examples of limits}\label{sec:examples of limits}
+
+Let $\mcC$ be a category and let $X,Y\in\Ob(\mcC)$ be objects. Definition \ref{def:products in a cat} defines a product  of $X$ and $Y$ to be a span $X\From{\pi_1}X\times Y\To{\pi_2}Y$ such that for every other span $X\From{p}Z\To{q}Y$ there exists a unique morphism $Z\to X\times Y$ making the triangles commute. It turns out that we can enunciate this in our newly formed language of universal objects by saying that the span $X\From{\pi_1}X\times Y\To{\pi_2}Y$ is itself a terminal object in the category of spans on $X$ and $Y$. Phrasing the definition of products in this way will be generalizable to defining arbitrary limits.
+
+\begin{construction}[Products]\index{products}
+
+Let $\mcC$ be a category and let $X_1,X_2$ be objects. We can consider this setup as a diagram $X\taking\ul{2}\to\mcC$, where $X(1)=X_1$ and $X(2)=X_2$. Consider the category $\ul{2}\lcone=\Star_2$, which is drawn in Example \ref{ex:stars}; the inclusion $i\taking\ul{2}\to\ul{2}\lcone$, as in (\ref{dia:inclusion into cone}); and the category of functors $\Fun(\ul{2}\lcone,\mcC)$. The objects in $\Fun(\ul{2}\lcone,\mcC)$ are spans in $\mcC$ and the morphisms are natural transformations between them. Given a functor $S\taking\ul{2}\lcone\to\mcC$ we can compose with $i\taking\ul{2}\to\ul{2}\lcone$ to get a functor $\ul{2}\to\mcC$. We want that to be $X$.
+$$\xymatrix@=30pt{\ul{2}\ar[r]^{X}\ar[d]_i&\mcC\\\ul{2}\lcone\ar[ur]_S}$$
+So we are ready to define the category of spans on $X_1$ and $X_2$.
+
+Define the {\em category of spans on $X$}, denoted $\mcC_{/X}$, to be the category whose objects and morphisms are as follows:
+\begin{align}\label{dia:slice for products}
+\Ob(\mcC_{/X})&=\{S\taking\ul{2}\lcone\to\mcC\|S\circ i=X\}\\
+\nonumber\Hom_{\mcC_{/X}}(S,S')&=\{\alpha\taking S\to S'\|\alpha\circ i=\id_X\}.
+\end{align}
+The product of $X_1$ and $X_2$ was defined in Definition \ref{def:products in a cat}; we can now recast $X_1\times X_2$ as the terminal object in $\mcC_{/X}$.
+
+To bring this down to earth, an object in $\mcC_{/X}$ can be pictured as a diagram in $\mcC$ of the following form:
+$$\xymatrix@=15pt{&Z\ar[ldd]_p\ar[rdd]^q\\\\X_1&&X_2}$$   
+In other words, the objects of $\mcC_{/X}$ are spans, each of which we might write in-line as $X_1\From{p}Z\To{q}X_2$. A morphism in $\mcC_{/X}$ from object $X_1\From{p}Z\To{q}X_2$ to object $X_1\From{p'}Z'\To{q'}X_2$ consists of a morphism $\ell\taking Z\to Z'$, such that $p'\circ\ell=p$ and $q'\circ\ell=q$. So the set of such morphisms in $\mcC_{/X}$ are all the $\ell$'s that make the right-hand diagram commute:
+\footnote{To be completely pedantic, according to (\ref{dia:slice for products}), the morphisms in $\mcC_{/X}$ should be drawn like this:
+\begin{align*}
+\Hom_{\mcC_{/X}}\normalsize\left(\parbox{1in}{\xymatrix@=8pt{&Z\ar[ldd]_p\ar[rdd]^q\\\\X_1&&X_2}}\hspace{.2in},\hspace{.2in}\parbox{1in}{\xymatrix@=8pt{&Z'\ar[ldd]_{p'}\ar[rdd]^{q'}\\\\X_1&&X_2}}\right)\hspace{.2in}=\hspace{.2in}\left\{\;\;\parbox{1in}{\xymatrix@=15pt{&Z\ar[ldd]_{p}\ar[rdd]^{q}\ar@{-->}[ddddd]^{\alpha^{}_{-\infty}}\\\\X_1\ar@{=}[d]_{\alpha_1}&&X_2\ar@{=}[d]^{\alpha_2}\\X_1&&X_2\\\\&Z'\ar[uul]^{p'}\ar[uur]_{q'}}}\;\;\right\}
+\end{align*}
+But this is going a bit overboard. The point is, the set $\Hom_{\mcC_{/X}}$ is the set of morphisms serving the role of $\alpha_{-\infty}\taking Z\to Z'$.}
+\begin{align}\label{dia:morphism of spans}
+\Hom_{\mcC_{/X}}\normalsize\left(\parbox{1in}{\xymatrix@=8pt{&Z\ar[ldd]_p\ar[rdd]^q\\\\X_1&&X_2}}\hspace{.2in},\hspace{.2in}\parbox{1in}{\xymatrix@=8pt{&Z'\ar[ldd]_{p'}\ar[rdd]^{q'}\\\\X_1&&X_2}}\right)\hspace{.2in}=\hspace{.2in}\left\{\;\;\parbox{1in}{\xymatrix@=15pt{&Z\ar[ldd]_{p}\ar[rdd]^{q}\ar@{-->}[dddd]^\ell\\\\X_1&&X_2\\\\&Z'\ar[uul]^{p'}\ar[uur]_{q'}}}\;\;\right\}
+\end{align}
+
+Each object in $\mcC_{/X}$ is a span on $X_1$ and $X_2$, and each morphism in $\mcC_{/X}$ is a “morphism of cone points in $\mcC$ making everything in sight commute”. The terminal object in $\mcC_{/X}$ is the product of $X_1$ and $X_2$; see Definition \ref{def:products in a cat}.
+
+\end{construction}
+
+It may be strange to have a category in which the objects are spans in another category. But once you admit this possibility, the notion of morphism between spans is totally sensible. Or if it isn't, then stare at (\ref{dia:morphism of spans}) for 30 seconds and say to yourself “When in Rome..!” These are the aqueducts of category theory, and they work wonders.
+
+\begin{example}\label{ex:category of spans}
+
+Consider the arbitrary 6-object category $\mcC$ drawn below, in which the three diagrams that can commute do:
+$$\mcC:=\parbox{3in}{\fbox{\xymatrix@=39pt{&&\LMO{X_1}&\\\LMO{A}\ar@/^1pc/[urr]^a&\LMO{B}\ar[l]_f\ar@{}[u]|(.4){\checkmark}\ar[ur]_{b_1}\ar[dr]^{b_2}&&\LMO{C}\ar@{}[u]|(.4){\checkmark}\ar@{}[d]|(.4){\checkmark}\ar[ul]^{c_1}\ar[dl]_{c_2}\ar[r]^g&\LMO{D}\ar@/_1pc/[llu]_{d_1}\ar@/^1pc/[lld]^{d_2}\\&&\LMO{X_2}&}}}$$
+Let $X\taking\ul{2}\to\mcC$ be given by $X(1)=X_1$ and $X(2)=X_2$. Then the category of spans on $X$ might be drawn
+$$\mcC_{/X}\iso\fbox{\xymatrix{&\LMO{(B,b_1,b_2)}&&\LMO{(C,c_1,c_2)}\ar[r]^g&\LMO{(D,d_1,d_2)}}}$$
+
+\end{example}
+
+%% Subsubsection %%
+
+\subsubsection{Definition of limit}
+
+\begin{definition}\label{def:slice and limit}\index{category!slice}\index{slice}\index{limit}
+
+Let $\mcC$ be a category, let $I$ be a category; let $I\lcone$ be the left cone on $I$, and let $i\taking I\to I\lcone$ be the inclusion. Suppose that $X\taking I\to\mcC$ is an $I$-shaped diagram in $\mcC$. The {\em slice category of $\mcC$ over $X$} denoted $\mcC_{/X}$\index{a symbol!$\mcC_{/X}$} is the category whose objects and morphisms are as follows:
+\begin{align*}
+\Ob(\mcC_{/X})&=\{S\taking I\lcone\to\mcC\|S\circ i=X\}\\
+\Hom_{\mcC_{/X}}(S,S')&=\{\alpha\taking S\to S'\|\alpha\circ i=\id_X\}.
+\end{align*}
+
+A {\em limit of $X$}, denoted $\lim_IX$ or $\lim X$,\index{a symbol!$\lim$} is a terminal object in $\mcC_{/X}$.
+
+\end{definition}
+
+\paragraph{Pullbacks}\index{pullback}\index{universal property!pullback}
+
+The relevant indexing category for pullbacks is the cospan, $I=\ul{2}\rcone$ drawn as to the left below: 
+$$
+\parbox{1.2in}{\boxtitle{$I$}\fbox{\xymatrix{\LMO{0}\ar[rd]&&\LMO{1}\ar[ld]\\&\LMO{2}}}}
+\hspace{1in}
+\parbox{1.5in}{\boxtitle{$X\taking I\to\mcC$}\dbox{\xymatrix{\LMO{X_0}\ar[rd]&&\LMO{X_1}\ar[ld]\\&\LMO{X_2}}}}
+\;\;\footnote{We use a dash box here because we're not drawing the whole category but merely a diagram existing inside $\mcC$.}
+$$
+A $I$-shaped diagram in $\mcC$ is a functor $X\taking I\to\mcC$, which we might draw as to the right above (e.g. $X_0\in\Ob(\mcC)$).
+
+An object $S$ in the slice category $\mcC_{/X}$ is a commutative diagram $S\taking I\lcone\to\mcC$ over $X$, which looks like the box to the left below: 
+$$
+\parbox{1.5in}{\boxtitle{$S\in\Ob(\mcC_{/X})$}\dbox{\xymatrix{&S_{-\infty}\ar[rd]\ar[ld]\\\LMO{X_0}\ar[rd]&&\LMO{X_1}\ar[ld]\\&\LMO{X_2}}}}
+\hspace{1in}
+\parbox{1.5in}{\boxtitle{$f\taking S\to S'$}\dbox{\xymatrix{&S_{-\infty}\ar@/^1pc/[rdd]\ar@/_1pc/[ldd]\ar[d]^f\\&S'_{-\infty}\ar[rd]\ar[ld]\\\LMO{X_0}\ar[rd]&&\LMO{X_1}\ar[ld]\\&\LMO{X_2}}}}
+$$
+A morphism in $\mcC_{/X}$ is drawn in the dashbox to the right above. A terminal object in $\mcC_{/X}$ is precisely the “gateway” we want, i.e. the limit of $X$ is the pullback $X_0\times_{X_2}X_1$.
+
+\begin{exercise}\index{equalizer}
+Let $I$ be the graph indexing category (see \ref{dia:graph index}).
+\sexc What is $I\lcone$?
+\item Now let $G\taking I\to\Set$ be the graph from Example \ref{ex:graph}. Give an example of an object in $\Set_{/G}$. 
+\item We have already given a name to the limit of $G\taking I\to\Set$; what is it?
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:terminal as limit}
+Let $\mcC$ be a category and let $I=\emptyset$ be the empty category. There is a unique functor $X\taking\emptyset\to\mcC$.
+\sexc What is the slice category $\mcC_{/X}$?
+\item What is the limit of $X$?
+\endsexc
+\end{exercise}
+
+\begin{example}
+
+Often one wants to take the limit of some strange diagram. We have now constructed the limit for any shape diagram. For example, if we want to take the product of more than two, say $n$, objects, we could use the diagram shape $I=\ul{n}$ whose cone is $\Star_n$ from Example \ref{ex:stars}.
+
+\end{example}
+
+\begin{example}\label{ex:product version of nat trans}\index{natural transformation!as functor}
+
+We have now defined limits in any category, so we have defined limits in $\Cat$. Let $[1]$ denote the category depicted 
+$$\xymatrix{\LMO{0}\ar[r]^e&\LMO{1}}$$
+and let $\mcC$ be a category. Naming two categories is the same thing as naming a functor $X\taking\ul{2}\to\Cat$, so we now have such a functor. Its limit is denoted $[1]\times\mcC$. It turns out that $[1]\times\mcC$ looks like a “$\mcC$-shaped prism”. It consists of two panes, front and back say, each having the precise shape as $\mcC$ (same objects, same arrows, same composition), and morphisms from the front pane to the back pane making all front-to-back squares commute. For example, if $\mcC$ looked was the category generated by the schema to the left below, then $\mcC\times[1]$ would be the category generated by the schema to the right below:
+$$
+\xymatrix{
+\LMO{A}\ar[rr]^f\ar[dd]_g&&\LMO{B}\ar[dd]^h\\\\\LMO{C}&&\LMO{D}
+}
+\hspace{1in}
+\xymatrix@=20pt{
+&\LMO{A1}\ar[rr]^{f1}\ar'[d][dd]_(.6){g1}&&\LMO{B1}\ar[dd]^{h1}\\
+\LMO{A0}\ar[ur]^{Ae}\ar[rr]^(.6){f0}\ar[dd]_{g0}&&\LMO{B0}\ar[ur]^{Be}\ar[dd]^{h0}\\
+&\LMO{C1}&&\LMO{D1}\\
+\LMO{C0}\ar[ur]_{Ce}&&\LMO{D0}\ar[ur]_{De}&
+}
+$$
+
+It turns out that a natural transformation $\alpha\taking F\to G$ between functors $F,G\taking\mcC\to\mcD$ is the same thing as a functor $\mcC\times[1]\to\mcD$ such that the front pane is sent via $F$ and the back pane is sent via $G$. The components are captured by the front-to-back morphisms, and the naturality is captured by the commutativity of the front-to-back squares in $\mcC\times[1]$.
+
+\end{example}
+
+\begin{remark}\index{relative set!as slice category}
+
+Recall in Section \ref{sec:relative sets} we described relative sets. In fact, Definition \ref{def:relative sets} basically defines a category of relative sets over any fixed set $B$. Let $\ul{1}$ denote the discrete category on one object, and note that providing a functor $\ul{1}\to\Set$ is the same as simply providing a set, so consider $B\taking\ul{1}\to\Set$. Then the slice category $\Set_{/B}$, as defined in Definition \ref{def:slice and limit} is precisely the category of relative sets over $B$: it has the same objects and morphisms as was described in Definition \ref{def:relative sets}.
+
+\end{remark}
+
+%% Subsubsection %%
+
+\subsubsection{Definition of colimit}
+
+The definition of colimits is appropriately “dual” to the definition of limits. Instead of looking at left cones, we look at right cones; instead of being interested in terminal objects, we are interested in initial objects.
+
+\begin{definition}\label{def:coslice and colimit}\index{coslice}\index{category!coslice}\index{colimit}
+
+Let $\mcC$ be a category, let $I$ be a category; let $I\rcone$ be the right cone on $I$, and let $i\taking I\to I\rcone$ be the inclusion. Suppose that $X\taking I\to\mcC$ is an $I$-shaped diagram in $\mcC$. The {\em coslice category of $\mcC$ over $X$} denoted $\mcC_{X/}$\index{a symbol!$\mcC_{X/}$} is the category whose objects and morphisms are as follows:
+\begin{align*}
+\Ob(\mcC_{X/})&=\{S\taking I\rcone\to\mcC\|S\circ i=X\}\\
+\Hom_{\mcC_{X/}}(S,S')&=\{\alpha\taking S\to S'\|\alpha\circ i=\id_X\}.
+\end{align*}
+
+A {\em colimit of $X$}, denoted $\colim_IX$ or $\colim X$,\index{a symbol!$\colim$} is an initial object in $\mcC_{X/}$.
+
+\end{definition}
+
+\paragraph{Pushouts}\index{pushout}
+
+The relevant indexing category for pushouts is the span, $I=\ul{2}\lcone$ drawn as to the left below: 
+$$
+\parbox{1.2in}{\boxtitle{$I$}\fbox{\xymatrix{\LMO{1}&&\LMO{2}\\&\LMO{0}\ar[ul]\ar[ur]}}}
+\hspace{1in}
+\parbox{1.5in}{\boxtitle{$X\taking I\to\mcC$}\dbox{\xymatrix{\LMO{X_1}&&\LMO{X_2}\\&\LMO{X_0}\ar[ul]\ar[ur]}}}
+$$
+An $I$-shaped diagram in $\mcC$ is a functor $X\taking I\to\mcC$, which we might draw as to the right above (e.g. $X_0\in\Ob(\mcC)$).
+
+An object $S$ in the coslice category $\mcC_{X/}$ is a commutative diagram $S\taking I\rcone\to\mcC$ over $X$, which looks like the box to the left below: 
+$$
+\parbox{1.5in}{\boxtitle{$S\in\Ob(\mcC_{X/})$}\dbox{\xymatrix{&S_{\infty}\\\LMO{X_1}\ar[ru]&&\LMO{X_2}\ar[lu]\\&\LMO{X_0}\ar[ul]\ar[ur]}}}
+\hspace{1in}
+\parbox{1.5in}{\boxtitle{$f\taking S\to S'$}\dbox{\xymatrix{&S'_{\infty}\\&S_{\infty}\ar[u]_f\\
+\LMO{X_1}\ar[ur]\ar@/^1pc/[ruu]&&\LMO{X_2}\ar[lu]\ar@/_1pc/[luu]\\\
+&\LMO{X_0}\ar[ur]\ar[ul]}}}
+$$
+A morphism in $\mcC_{X/}$ is drawn in the dashbox to the right above. An initial object in $\mcC_{X/}$ is precisely the “gateway” we want; i.e. the colimit of $X$ is the pushout, $X_1\sqcup_{X_0}X_2$.
+
+\begin{exercise}
+Let $I$ be the graph indexing category (see \ref{dia:graph index}).
+\sexc What is $I\rcone$?
+\item Now let $G\taking I\to\Set$ be the graph from Example \ref{ex:graph}. Give an example of an object in $\Set_{G/}$. 
+\item We have already given a name to the colimit of $G\taking I\to\Set$; what is it?
+\endsexc
+\end{exercise}
+
+\begin{exercise}\label{exc:initial as colimit}
+Let $\mcC$ be a category and let $I=\emptyset$ be the empty category. There is a unique functor $X\taking\emptyset\to\mcC$.
+\sexc What is the coslice category $\mcC_{X/}$?
+\item What is the colimit of $X$ (assuming it exists)?
+\endsexc
+\end{exercise}
+
+\begin{example}[Cone as colimit]
+
+We have now defined colimits in any category, so we have defined colimits in $\Cat$. Let $\mcC$ be a category and recall from Example \ref{ex:product version of nat trans} the category $\mcC\times[1]$. The inclusion of the front pane is a functor $i_0\taking\mcC\to\mcC\times[1]$ (similarly, the inclusion of the back pane is a functor $i_1\taking\mcC\to\mcC\times[1]$). Finally let $t\taking\mcC\to\ul{1}$ be the unique functor to the terminal category (see Exercise \ref{exc:term cat}). We now have a diagram in $\Cat$ of the form 
+$$\xymatrix{\mcC\ar[r]^{i_0}\ar[d]_{t}&\mcC\times[1]\\\ul{1}}$$
+The colimit (i.e. the pushout) of this diagram in $\Cat$ slurps down the entire front pane of $\mcC\times[1]$ to a point, and the resulting category is isomorphic to $\mcC\lcone$. Figure \ref{fig:left cone} is a drawing of this phenomenon.
+\begin{figure}[H]
+$$
+\parbox{1in}{~\vspace{.6in}\boxtitle{\color{blue}{$\mcC:=$}}\cfbox{blue}{\parbox{.7in}{\xymatrix@=15pt{
+\LMO{A_0}\ar[rr]\ar[dd]&&\LMO{B_0}\ar[dd]\\\\\LMO{C_0}&&\LMO{D_0}
+}}}}
+\parbox{1.1in}{~\vspace{.6in}\\\xymatrix{~\ar@[blue][rr]^{i_0}&\hspace{.1in}&~}}
+\parbox{1.7in}{\boxtitle{\color{blue}{$\mcC\times[1]$}}\cfbox{blue}{\parbox{1.4in}{\xymatrix@=15pt{
+&\LMO{A_1}\ar[rr]\ar'[d][dd]&&\LMO{B_1}\ar[dd]\\
+\LMO{A_0}\ar[ur]\ar[rr]\ar[dd]&&\LMO{B_0}\ar[ur]\ar[dd]\\
+&\LMO{C_1}&&\LMO{D_1}\\
+\LMO{C_0}\ar[ur]&&\LMO{D_0}\ar[ur]&
+}}}}
+$$
+$$
+\hspace{-.5in}\xymatrix{~\ar@[blue][dd]_t\\\\~}\hspace{2.3in}\xymatrix{~\ar@[blue][dd]\\\\~}
+$$
+$$
+\hspace{.4in}\parbox{.3in}{\cfbox{blue}{$\LMO{-\infty}$}\begin{center}\color{blue}{$\ul{1}$}\end{center}}
+\parbox{1.6in}{\xymatrix{~\ar@[blue][rr]&\hspace{.6in}&~}\vspace{.15in}~}
+\parbox{1.7in}{\cfbox{blue}{\parbox{1.7in}{
+\xymatrix{
+\LMO{A_1}\ar[rr]\ar[dd]&&\LMO{B_1}\ar[dd]\\
+&\LMO{-\infty}\ar[ur]\ar[dr]\ar[ul]\ar[dl]\\
+\LMO{C_1}&&\LMO{D_1}}}}\begin{center}\color{blue}{$\mcC\lcone\iso(\mcC\times[1])\sqcup_{\mcC}\ul{1}$}\end{center}}
+$$
+\caption{Let $\mcC$ be the category drawn in the upper left corner. The left cone $\mcC\lcone$ on $\mcC$ is obtained as a pushout in $\Cat$. We first make a prism $\mcC\times[1]$, and then identify the front pane with a point.}
+\label{fig:left cone}
+\end{figure}
+(Similarly, the pushout of the analogous diagram for $i_1$ would give $\mcC\rcone$.)
+
+\end{example}
+
+\begin{example}\label{ex:pushout in Top}\index{pushout!of topological spaces}
+
+Consider the category $\Top$ of topological spaces. The (hollow) circle is a topological space which people often denote $S^1$ (for “1-dimensional sphere”). The filled-in circle, also called a 2-dimensional disk, is denoted $D^2$. The inclusion of the circle into the disk is continuous so we have a morphism in $\Top$ of the form $i\taking S^1\to D^2$. The terminal object in $\Top$ is the one-point space $\singleton$, and so there is a unique morphism $t\taking S^1\to\singleton$. The pushout of the diagram $D^2\From{i}S^1\To{t}\singleton$ is isomorphic to the 2-dimensional sphere (the exterior of a tennis ball), $S^2$. The reason is that we have slurped the entire bounding circle to a point, and the category of topological spaces has the right morphisms to ensure that the resulting space really is a sphere. 
+
+\end{example}
+
+\begin{application}\index{subway}
+
+Consider the symmetric graph $G_n$ consisting of a chain of $n$ vertices, 
+$$\xymatrix{\LMO{1}\ar@{-}[r]&\LMO{2}\ar@{-}[r]&\cdots\ar@{-}[r]&\LMO{n}}$$
+Think of this as modeling a subway line. There are $n$-many graph homomorphisms $G_1\to G_n$ given by the various vertices. One can create \href{http://en.wikipedia.org/wiki/Transit_map}{\text transit maps} using colimits. For example, the colimit of the diagram to the left is the symmetric graph drawn to the right below.
+$$
+\colim\left(\parbox{1.2in}{
+\xymatrix{
+G_1\ar[r]^4\ar[d]_4&\color{orange}{G_7}&G_1\ar[l]_6\ar[d]^1\\
+\color{purple}{G_5}&&\color{ForestGreen}{G_3}\\
+G_1\ar[u]^2\ar[r]_3&\color{blue}{G_7}&G_1\ar[u]_2\ar[l]^5
+}}\right)
+\hspace{.3in}\tn{can be drawn}\hspace{-.4in}
+\parbox{3in}{\xymatrix@=12pt{
+&&&\bullet_{\color{purple}{5}}\ar@{-}[d]\\
+\LMO{{\color{orange}{1}}}\ar@{-}[r]&\LMO{{\color{orange}{2}}}\ar@{-}[r]&\LMO{{\color{orange}{3}}}\ar@{-}[r]&\LMO{{\color{orange}{4}}}_{\color{purple}{4}}\ar@{-}[r]\ar@{-}[d]&\LMO{{\color{orange}{5}}}\ar@{-}[r]&\LMO{{\color{orange}{6}}}_{\color{ForestGreen}{1}}\ar@{-}[r]\ar@{-}[dd]&\LMO{{\color{orange}{7}}}\\
+&&&\bullet_{\color{purple}{3}}\ar@{-}[d]\\
+&\LMO{{\color{blue}{1}}}\ar@{-}[r]&\LMO{{\color{blue}{2}}}\ar@{-}[r]&\LMO{{\color{blue}{3}}}_{\color{purple}{2}}\ar@{-}[r]\ar@{-}[d]&\LMO{{\color{blue}{4}}}\ar@{-}[r]&\LMO{{\color{blue}{5}}}_{\color{ForestGreen}{2}}\ar@{-}[d]\ar@{-}[r]&\LMO{{\color{blue}{6}}}\ar@{-}[r]&\LMO{{\color{blue}{7}}}\\
+&&&\bullet_{\color{purple}{1}}&&\bullet_{\color{ForestGreen}{3}}}}
+$$ 
+
+\end{application}
+
