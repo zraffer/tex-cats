@@ -1,21 +1,35 @@
-% section41.tex
+\documentclass[CT4S-EN-RU]{subfiles}
 
-%%%%%% Section %%%%%%
+\begin{document}
 
 \section{\caseENGRUS{Categories and Functors}{ / }{Категории и функторы}}
 
+\begin{blockENG}
 In this section we give the standard definition of categories and functors. These, together with natural transformations (Section \ref{sec:nat trans}), form the backbone of category theory. We also give some examples.
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Categories}{ / }{Категории}}\label{sec:categories}
 
+\begin{blockENG}
 In everyday speech we think of a category as a kind of thing. A category consists of a collection of things, all of which are related in some way. In mathematics, a category can also be construed as a collection of things and a type of relationship between pairs of such things. For this kind of thing-relationship duo to count as a category, we need to check two rules, which have the following flavor: every thing must be related to itself by simply being itself, and if one thing is related to another and the second is related to a third, then the first is related to the third. In a category, the “things” are called {\em objects} and the “relationships” are called {\em morphisms}.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 In various places throughout this book so far we have discussed things of various sorts, e.g. sets, monoids, graphs. In each case we discussed how such things should be appropriately compared\index{appropriate comparison}. In each case the “things” will stand as the objects and the “appropriate comparisons” will stand as the morphisms in the category. Here is the definition.
+\end{blockENG}
 
-\begin{definition}\label{def:category}\index{category}\index{hom-set}\index{morphism}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{definitionENG}\label{def:category}\index{category}\index{hom-set}\index{morphism}
 A {\em category} $\mcC$ is defined as follows: One announces some constituents (A. objects, B. morphisms, C. identities, D. compositions) and asserts that they conform to some laws (1. identity law, 2. associativity law). Specifically, one announces:
 \begin{enumerate}[\hsp A.]
 \item a collection $\Ob(\mcC)$, elements of which are called {\em objects};\index{a symbol!$\Ob$}
@@ -32,51 +46,63 @@ One asserts that the following law holds:
 $$f\circ\id_x=f\hsp\tn{and}\hsp\id_y\circ f=f;$$ \hsp{and};
 \item if $w,x,y,z\in\Ob(\mcC)$ are any objects and $f\taking w\to x,\;\;g\taking x\to y,\;\;$ and $h\taking y\to z$ are any morphisms, then the two ways to compose are the same:$$(h\circ g)\circ f = h\circ(g\circ f) \in\Hom_\mcC(w,z).$$
 \end{enumerate}
-\end{definition}
+\end{definitionENG}
 
-\begin{remark}\label{rmk:small}\index{category!small}
+\begin{definitionRUS}\label{def:category}\index{category}\index{hom-set}\index{morphism}
+\end{definitionRUS}
 
+\begin{remarkENG}\label{rmk:small}\index{category!small}
 There is perhaps much that is unfamiliar about Definition \ref{def:category} but there is also one thing that is strange about it. The objects $\Ob(\mcC)$ of $\mcC$ are said to be a “collection” rather than a set. This is because we sometimes want to talk about the category of all sets, in which every possible set is an objects, and if we try to say that the collection of sets is itself, we run into \href{http://en.wikipedia.org/wiki/Russell's_paradox}{\text Russell's paradox}. Modeling this was a sticking point in the foundations of category theory, but it was eventually fixed by Grothendieck's notion of expanding universes.\index{Grothendieck!expanding universes} Roughly the idea is to choose some huge set $\kappa$ (with certain properties making it a {\em universe}), to work entirely inside of it when possible, and to call anything in that world {\em $\kappa$-small} (or just {\em small} if $\kappa$ is clear from context). When we need to look at $\kappa$ itself, we  choose an even bigger universe $\kappa'$ and work entirely within it.
 
 A category in which the collection $\Ob(\mcC)$ is a set (or in the above language, a small set) is called a {\em small category}. From here on out we will not take care of the difference, referring to $\Ob(\mcC)$ as a set. We do not think this will do any harm to scientists using category theory, at least not in the beginning phases of their learning.\index{a warning!“set'' of objects in a category}
+\end{remarkENG}
 
-\end{remark}
+\begin{remarkRUS}\label{rmk:small}\index{category!small}
+\end{remarkRUS}
 
-\begin{example}[The category $\Set$ of sets]\index{a category!$\Set$}
-
+\begin{exampleENG}[The category $\Set$ of sets]\index{a category!$\Set$}
 Chapter \ref{chap:sets} was all about the category of sets, denoted $\Set$. The objects are the sets and the morphisms are the functions; we even used the current notation, referring to the set of functions $X\to Y$ as $\Hom_\Set(X,Y)$. The composition formula $\circ$ is given by function composition, and for every set $X$, the identity function $\id_X\taking X\to X$ serves as the identity morphism for $X\in\Ob(\Set)$. The two laws clearly hold, so $\Set$ is indeed a category. 
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[The category $\Set$ of sets]\index{a category!$\Set$}
+\end{exampleRUS}
 
-\begin{example}[The category $\Fin$ of finite sets]\index{a category!$\Fin$}\label{ex:Fin}
-
+\begin{exampleENG}[The category $\Fin$ of finite sets]\index{a category!$\Fin$}\label{ex:Fin}
 Inside the category $\Set$ is a {\em subcategory} $\Fin\ss\Set$, called the {\em category of finite sets}. Whereas an object $S\in\Ob(\Set)$ is a set that can have arbitrary cardinality, we define $\Fin$ such that its objects include all (and only) the sets $S$ with finitely many elements, i.e. $|S|=n$ for some natural number $n\in\NN$. Every object of $\Fin$ is an object of $\Set$, but not vice versa.
 
 Although $\Fin$ and $\Set$ have a different collection of objects, their morphisms are in some sense “the same”. For any two finite sets $S,S'\in\Ob(\Fin)$, we can also think of $S,S'\in\Ob(\Set)$, and we have
 $$\Hom_\Fin(S,S')=\Hom_\Set(S,S').$$
 That is a morphism in $\Fin$ between finite sets $S$ and $S'$ is simply a function $f\taking S\to S'$.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[The category $\Fin$ of finite sets]\index{a category!$\Fin$}\label{ex:Fin}
+\end{exampleRUS}
 
-\begin{example}[The category $\Mon$ of monoids]\label{ex:mon is cat}\index{a category!$\Mon$}
-
+\begin{exampleENG}[The category $\Mon$ of monoids]\label{ex:mon is cat}\index{a category!$\Mon$}
 We defined monoids in Definition \ref{def:monoid} and monoid homomorphisms in Definition \ref{def:monoid hom}. Every monoid $\mcM:=(M,e,\star_M)$ has an identity homomorphism $\id_\mcM\taking\mcM\to\mcM$, given by the identity function $\id_M\taking M\to M$. To compose two monoid homomorphisms $f\taking\mcM\to\mcM'$ and $g\taking\mcM'\to\mcM''$, we compose their underlying functions $f\taking M\to M'$ and $g\taking M'\to M''$, and check that the result $g\circ f$ is a monoid homomorphism. Indeed,
 $$g\circ f(e)=g(e')=e''$$
 $$g\circ f(m_1\star_Mm_2)=g(f(m_1)\star_{M'}f(m_2))=g\circ f(m_1)\star_{M''}g\circ f(m_2).$$
 It is clear that the two laws hold, so $\Mon$ is a category.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[The category $\Mon$ of monoids]\label{ex:mon is cat}\index{a category!$\Mon$}
+\end{exampleRUS}
 
-\begin{exercise}[The category $\Grp$ of groups]\index{a category!$\Grp$}
+\begin{exerciseENG}[The category $\Grp$ of groups]\index{a category!$\Grp$}
 Suppose we set out to define a category $\Grp$, having groups as objects and group homomorphisms as morphisms, see Definition \ref{def:group homomorphism}. Show (to the level of detail of Example \ref{ex:mon is cat}) that the rest of the conditions for $\Grp$ to be a category are satisfied.
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}[The category $\PrO$ of preorders]\index{a category!$\PrO$}
+\begin{exerciseRUS}[The category $\Grp$ of groups]\index{a category!$\Grp$}
+\end{exerciseRUS}
+
+\begin{exerciseENG}[The category $\PrO$ of preorders]\index{a category!$\PrO$}
 Suppose we set out to define a category $\PrO$, having preorders as objects and preorder homomorphisms as morphisms (see Definition \ref{def:morphism of orders}). Show (to the level of detail of Example \ref{ex:mon is cat} that the rest of the conditions for $\PrO$ to be a category are satisfied.
-\end{exercise}
+\end{exerciseENG}
 
-\begin{example}[Non-category 1]
+\begin{exerciseRUS}[The category $\PrO$ of preorders]\index{a category!$\PrO$}
+\end{exerciseRUS}
 
+\begin{exampleENG}[Non-category 1]
 So what's not a category? Two things can go wrong: either one fails to specify all the relevant constituents (A, B, C, D from Definition \ref{def:category}, or the constituents do not obey the laws (1, 2).\index{category!non-example}
 
 Let $G$ be the following graph,
@@ -85,13 +111,7 @@ Suppose we try to define a category $\mcG$ by faithfully recording vertices as o
 
 Following that scheme, we put $\Ob(\mcG)=\{a,b,c\}$. For all 9 pairs of objects we need a hom-set.
 Say 
-\begin{align*}
-\begin{array}{lll}
-\Hom_\mcG(a,a)=\emptyset&\hsp\Hom_\mcG(a,b)=\{f\}&\hsp\Hom_\mcG(a,c)=\emptyset\\
-\Hom_\mcG(b,a)=\emptyset&\hsp\Hom_\mcG(b,b)=\emptyset&\hsp\Hom_\mcG(b,c)=\{g\}\\
-\Hom_\mcG(c,a)=\emptyset&\hsp\Hom_\mcG(c,b)=\emptyset&\hsp\Hom_\mcG(c,c)=\emptyset
-\end{array}
-\end{align*}
+TODO%\input{section41x1}
 If we say we are done, the listener should object that we have given neither identities nor a composition formula. In fact, it is impossible to give identities under our scheme, because e.g. $\Hom_\mcG(a,a)=\emptyset$.
 
 Suppose we fix that problem, adding an element to each of our “diagonals” so that 
@@ -101,21 +121,23 @@ Again, we must make a change, adding an element to make $$\Hom_\mcG(a,c)=\{h\}.$
 
 Redrawing all the morphisms as arrows, our graph has become:
 $$G=\fbox{\xymatrix{\LMO{a}\ar@(ul,dl)[]_{\id_a}\ar[r]^f\ar@/_1pc/[rr]_h&\LMO{b}\ar@(ur,ul)[]_{\id_b}\ar[r]^g&\LMO{c}\ar@(ur,dr)[]^{\id_c}}}$$
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[Non-category 1]
+\end{exampleRUS}
 
-\begin{example}[Non-category 2]\index{category!non-example}
-
+\begin{exampleENG}[Non-category 2]\index{category!non-example}
 In this example, we will make a faux-category $\mcF$ with one object and many morphisms. The problem here will be our composition formula. 
 
 Define $\mcF$ to have one object $\Ob(\mcF)=\singleton$, and $\Hom_\mcF(\smiley,\smiley)=\NN$. Define $\id_{\smiley}=1\in\NN$. Define the composition formula $\circ\taking\NN\times\NN\to\NN$ by $m\circ n=m^n$. This is a perfectly cromulent function, but it does not work right as a composition formula. Indeed, for the identity law to hold, we would need $m^1=m=1^m$, and one side of this is false. For the associativity law to hold, we would need $(m^n)^p=m^{(n^p)}$, but this is also not the case.
 
 To fix this problem we have to completely revamp our composition formula. It would work to use multiplication, $m\circ n=m*n$. Then the identity law would read $1*m=m=m*1$, and that holds; and the associativity law would read $(m*n)*p=m*(n*p)$, and that holds.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[Non-category 2]\index{category!non-example}
+\end{exampleRUS}
 
-\begin{example}[The category of preorders with joins]\label{ex:preorders with joins}
-
+\begin{exampleENG}[The category of preorders with joins]\label{ex:preorders with joins}
 Suppose that we are only interested in preorders $(X,\leq)$ for which every pair of elements has a join. We saw in Exercise \ref{exc:not all meets and joins} that not all preorders have this property. However we can create a category $\mcC$ in which every object does have this property. To begin we put $\Ob(\mcC)=\{(X,\leq)\in\Ob(\PrO)\| (X,\leq)\tn{ has all joins}\}.$ But what about morphisms?
 
 One option would be to put in no morphisms (other than identities), and to just consider this collection of objects as having no structure other than a set.
@@ -123,16 +145,19 @@ One option would be to put in no morphisms (other than identities), and to just 
 Another option would be to put in exactly the same morphisms as in $\PrO$: for any objects $a,b\in\Ob(\mcC)$ we consider $a$ and $b$ as regular old preorders, and put $\Hom_\mcC(a,b):=\Hom_{\PrO}(a,b)$. The resulting category of preorders with joins is called the {\em full subcategory of $\PrO$ spanned by the preorders with joins}.\index{subcategory!full}\footnote{The definition of full subcategories will be given as Definition \ref{def:full subcategory}.}
 
 A third option, and the one perhaps that would jump out to a category theorist, is to take the choice about how we define our objects as a clue to how we should define our morphisms. Namely, if we are so interested in joins, perhaps we want joins to be preserved under morphisms. That is, if $f\taking (X,\leq_X)\to (Y,\leq_Y)$ is a morphism of preorders then for any join $w=x\vee x'$ in $X$ we might want to enforce that $f(w)=f(x)\vee f(x')$ in $Y$. Thus a third possibility for the morphisms of $\mcC$ would be $$\Hom_\mcC(a,b):=\{f\in\Hom_{\PrO}(a,b)\|f \tn{ preserves joins}\}.$$ One can check easily that the identity morphisms preserve joins and that compositions of join-preserving morphisms are join-preserving, so this version of homomorphisms makes for a well-defined category.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[The category of preorders with joins]\label{ex:preorders with joins}
+\end{exampleRUS}
 
-\begin{example}[Category $\FLin$ of finite linear orders]\label{ex:FLin}\index{a category!$\FLin$}
-
+\begin{exampleENG}[Category $\FLin$ of finite linear orders]\label{ex:FLin}\index{a category!$\FLin$}
 We have a category $\PrO$ of preorders, and some of its objects are finite (nonempty) linear orders. Let $\FLin$ be the full subcategory of $\PrO$ spanned by the linear orders. That is, following Definition \ref{def:morphism of orders}, given linear orders $X,Y$, every morphism of preorders $X\to Y$ counts as a morphism in $\FLin$: $$\Hom_\FLin(X,Y)=\Hom_\PrO(X,Y).$$ 
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}[Category $\FLin$ of finite linear orders]\label{ex:FLin}\index{a category!$\FLin$}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Let $\FLin$ be the category of finite linear orders, defined in Example \ref{ex:FLin}. For $n\in\NN$, let $[n]$ be the linear order defined in Example \ref{ex:finite lo}. What are the cardinalities of the following sets: 
 \sexc $\Hom_{\FLin}([0],[3])$; 
 \item $\Hom_\FLin([3],[0])$;
@@ -142,7 +167,10 @@ Let $\FLin$ be the category of finite linear orders, defined in Example \ref{ex:
 \endsexc
 
 It turns out that the category $\FLin$ of linear orders is sufficiently rich that much of algebraic topology (the study of arbitrary spaces, such as Mobius strips and $7$-dimensional spheres) can be understood in its terms. See Example \ref{ex:simplicial set}.
-\end{exercise}
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
 \begin{example}[Category of graphs]\index{a category!$\Grph$}
 
@@ -599,3 +627,4 @@ We sometimes refer to $Disc(\ul{1})$ as the {\em terminal category} (for reasons
 If someone said “$\Ob$ is a functor from $\Cat$ to $\Set$,” what might they mean? \index{a functor!$\Ob\taking\Cat\to\Set$}
 \end{exercise}
 
+\end{document}

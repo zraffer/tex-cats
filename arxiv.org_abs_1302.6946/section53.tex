@@ -1,6 +1,6 @@
-% section53.tex
+\documentclass[CT4S-EN-RU]{subfiles}
 
-%%%%%% Section %%%%%%
+\begin{document}
 
 \section{\caseENGRUS{Monads}{ / }{Монады}}\label{sec:monads}\index{monad}
 
@@ -432,3 +432,4 @@ This monad is related to holding on to an internal state variable of type $A$. E
 
 Computer scientists in programming language theory have found monads to be very useful (\cite{Mog}). In much the same way, monads on $\Set$ can be useful in databases, as discussed in Section \ref{sec:monads in db}. Another, totally different way to use monads in databases is by using a mapping between schemas to produce in each one an internal model of the other. That is, for any functor $F\taking\mcC\to\mcD$, i.e. mapping of database schemas, the adjunction $(\Sigma_F,\Delta_F)$ produces a monad on $\mcC\set$, and the adjunction $(\Delta_F,\Pi_F)$ produces a monad on $\mcD\set$. If one interprets the $\List$ monad as producing in $\Set$ an internal model of the category $\Mon$ of monoids, one can similarly interpret the above monads on $\mcC\set$ and $\mcD\set$ as producing internal models of each within the other.
 
+\end{document}

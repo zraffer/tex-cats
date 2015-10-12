@@ -1,34 +1,28 @@
 \ProvidesPackage{mystyle}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[a4paper, top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
 
 \usepackage{comment}
-
 \ifENG\includecomment{blockENG}\else\excludecomment{blockENG}\fi
 \ifRUS\includecomment{blockRUS}\else\excludecomment{blockRUS}\fi
 \newcommand{\caseENG}[1]{\ifENG #1 \fi}
 \newcommand{\caseRUS}[1]{\ifRUS #1 \fi}
 \newcommand{\caseENGRUS}[3]{\ifENG #1\fi\ifENG\ifRUS #2\fi\fi\ifRUS #3\fi}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usepackage{amsmath,amssymb}
-\usepackage{mathabx} % !!!
+\usepackage{mathabx}
 \usepackage{unicode-math}
 \usepackage{fontspec}
 \usepackage{polyglossia}
 \usepackage{savesym}
-\setmainfont{XITS}%{Ubuntu}
+\setmainfont{XITS}
 \setmathfont{XITS Math}
 \setmainlanguage{russian}
 \setotherlanguage{english}
-\newfontfamily\russianfont{XITS}%{Ubuntu}
+\newfontfamily\russianfont{XITS}
 \newfontfamily\cyrillicfonttt{Ubuntu Mono}
 
 \usepackage{tocbibind}
 \usepackage[titles]{tocloft}
-%\renewcommand{\cftchapfont}{\russianfont}
-%\renewcommand{\cftsecfont}{\russianfont}
 
 \usepackage{etex}
 \usepackage{amsthm,amscd}
@@ -57,6 +51,7 @@
 \DeclareInstance{enotez-list}{custom}{paragraph}%
 {notes-sep=.5\baselineskip, format=\normalfont, number=\textsuperscript{(#1)}}
 
+\usepackage[bottom]{footmisc}
 \usepackage{perpage}
 \renewcommand{\thefootnote}{(\roman{footnote})}
 \makeatletter
@@ -85,7 +80,6 @@
 \def\AA{{\mathbb A}}
 \def\PP{{\mathbb P}}
 \def\NN{{\mathbb N}}
-
 
 \def\Hom{\tn{Hom}}
 \def\Path{\tn{Path}}

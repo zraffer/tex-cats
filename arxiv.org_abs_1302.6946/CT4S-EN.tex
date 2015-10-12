@@ -1,32 +1,25 @@
 \documentclass{book}
-\usepackage[a4paper, top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
-
-\newif\ifENG \ENGtrue % change me
-\newif\ifRUS \RUSfalse % change me
-
-\usepackage{mystyle}
-
+\newif\ifENG\ENGtrue % change me
+\newif\ifRUS\RUSfalse % change me
+\usepackage{mystyle,subfiles}
 \begin{document}
-\begin{russian}
-
+\begin{english}
 \frontmatter
 \maketitle
-\input{chapter0}
+\subfile{chapter0}
 \tableofcontents
 
 \mainmatter
-\input{chapter1}
-\input{chapter2}
-\input{chapter3}
-\input{chapter4}
-\input{chapter5}
-
-%\appendix
+\subfile{chapter1}
+\subfile{chapter2}
+\subfile{chapter3}
+\subfile{chapter4}
+\subfile{chapter5}
+\appendix
 %\printendnotes[custom]
 
 \backmatter
 \printindex
-\input{biblio}
-
-\end{russian}
+\subfile{biblio}
+\end{english}
 \end{document}
