@@ -1,12 +1,37 @@
 \ProvidesPackage{mystyle}
 \usepackage[a4paper, top=2cm, bottom=2cm, left=3cm, right=3cm]{geometry}
 
-\usepackage{comment}
-\ifENG\includecomment{blockENG}\else\excludecomment{blockENG}\fi
-\ifRUS\includecomment{blockRUS}\else\excludecomment{blockRUS}\fi
-\newcommand{\caseENG}[1]{\ifENG #1 \fi}
-\newcommand{\caseRUS}[1]{\ifRUS #1 \fi}
-\newcommand{\caseENGRUS}[3]{\ifENG #1\fi\ifENG\ifRUS #2\fi\fi\ifRUS #3\fi}
+\usepackage{comment,ifthen}
+\ifENG\newenvironment{blockENG}{\begin{english}}{\end{english}}
+  \else\excludecomment{blockENG}\fi
+\ifRUS\newenvironment{blockRUS}{\begin{russian}}{\end{russian}}
+  \else\excludecomment{blockRUS}\fi
+\ifENG\newcommand{\caseENG}[1]{\textenglish{#1}}
+  \else\newcommand{\caseENG}[1]{}\fi
+\ifRUS\newcommand{\caseRUS}[1]{\textrussian{#1}}
+  \else\newcommand{\caseRUS}[1]{}\fi
+\ifENG
+  \ifRUS\newcommand{\caseENGRUS}[3]{\textenglish{#1}#2\textrussian{#3}}
+    \else\newcommand{\caseENGRUS}[3]{\textenglish{#1}}\fi
+\else
+  \ifRUS\newcommand{\caseENGRUS}[3]{\textrussian{#3}}
+    \else\newcommand{\caseENGRUS}[3]{#2}\fi\fi
+\newcommand{\genTh}[3]{
+  \ifENG
+    \newtheorem{the#1ENG}[envENG]{#2}
+    \newenvironment{#1ENG}[1][deFauLT]%
+      {\begin{english}%
+        \ifthenelse{\equal{##1}{deFauLT}}{\begin{the#1ENG}}{\begin{the#1ENG}[##1]}}%
+      {\end{the#1ENG}\end{english}}
+    \else\excludecomment{#1ENG}\fi
+  \ifRUS
+    \newtheorem{the#1RUS}[envRUS]{#3}
+    \newenvironment{#1RUS}[1][deFauLT]%
+      {\begin{russian}%
+        \ifthenelse{\equal{##1}{deFauLT}}{\begin{the#1RUS}}{\begin{the#1RUS}[##1]}}%
+      {\end{the#1RUS}\end{russian}}
+    \else\excludecomment{#1RUS}\fi
+}
 
 \usepackage{amsmath,amssymb}
 \usepackage{mathabx}
@@ -20,6 +45,7 @@
 \setotherlanguage{english}
 \newfontfamily\russianfont{XITS}
 \newfontfamily\cyrillicfonttt{Ubuntu Mono}
+\newfontfamily\latinfonttt{Ubuntu Mono}
 
 \usepackage{tocbibind}
 \usepackage[titles]{tocloft}
@@ -279,11 +305,6 @@
 \theoremstyle{myth}
 \newtheorem{envENG}{Theorem}[chapter]
 \newtheorem{envRUS}{Theorem}[chapter]
-
-\newcommand{\genTh}[3]{
-    \ifENG\newtheorem{#1ENG}[envENG]{#2}\else\excludecomment{#1ENG}\fi
-    \ifRUS\newtheorem{#1RUS}[envRUS]{#3}\else\excludecomment{#1RUS}\fi
-}
 
 \genTh{theorem}{Theorem}{Теорема}
 \genTh{definition}{Definition}{Определение}
