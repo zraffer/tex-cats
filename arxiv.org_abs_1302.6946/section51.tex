@@ -4,30 +4,74 @@
 
 \section{\caseENGRUS{Adjoint functors}{ / }{Сопряженные функторы}}\index{adjoint functors}
 
+\begin{blockENG}
 Just above, in the introduction to this chapter, I said that adjoint functors are like dictionaries that translate back and forth between different categories. How far can we take that analogy?
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 In the common understanding of dictionaries, we assume that the two languages (say French and English) are equally expressive, and that a good dictionary will be an even exchange of ideas. But in category theory we often have two categories that are not on the same conceptual level. This is most clear in the case of so-called {\em free-forgetful adjunctions}. In Section \ref{sec:adjoints discuss and define} we will explore the sense in which each adjunction provides a dictionary between two categories that are not necessarily on an equal footing, so to speak.
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Discussion and definition}{ / }{Обсуждение и определение}}\label{sec:adjoints discuss and define}
 
+\begin{blockENG}
 Consider the category of monoids and the category of sets. A monoid $(M,e,\star)$ is a set with an identity element and a multiplication formula that is associative. A set is just a set. A dictionary between $\Mon$ and $\Set$ should not be required to set up an even exchange, but instead an exchange that is appropriate to the structures at hand. It will be in the form of two functors, one we'll denote by $L\taking\Set\to\Mon$, and one we'll denote by $R\taking\Mon\to\Set$. But to say what “appropriate” means requires more work.\index{a functor!$\Set\to\Mon$}\index{a functor!$\Mon\to\Set$}
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Let's bring it down to earth with an analogy.\index{adjunction!analogy: babies and adults} A one-year-old can make repeatable noises and an adult can make repeatable noises. One might say “after all, talking is nothing but making repeatable noises.” But the adult's repeatable noises are called words, they form sentences, and these sentences can cause nuclear wars. There is something more in adult language than there is simply in repeatable sounds. In the same vein, a tennis match can be viewed as physics, but you won't see the match. So we have something analogous to two categories here: ((repeated noises)) and ((meaningful words)). We are looking for adjoint functors going back and forth, serving as the appropriate sort of dictionary.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 To translate baby talk into adult language we would make every repeated noise a kind of word, thereby granting it meaning. We don't know what a given repeated noise should mean, but we give it a slot in our conceptual space, always pondering “I wonder what she means by Konnen..” On the other hand, to translate from meaningful words to repeatable noises is easy. We just hear the word as a repeated noise, which is how the baby probably hears it.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Adjoint functors often come in the form of “free” and “forgetful”. Here we freely add Konnen to our conceptual space without having any idea how it adheres to the rest of the child's noises or feelings. But it doesn't act like a sound to us, it acts like a word; we don't know what it means but we figure it means something. Conversely, the translation going the other way is “forgetful”, forgetting the meaning of our words and just hearing them as sounds. The baby hears our words and accepts them as mere sounds, not knowing that there is anything extra to get.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Back to sets and monoids, the sets are like the babies from our story: they are simple objects full of unconnected dots. The monoids are like adults, forming words and performing actions. In the monoid, each element means something and combines with other elements in some way. There are lots of different sets and lots of different monoids, just as there are many babies and many adults, but there are patterns to the behavior of each kind and we put them in different categories.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Applying free functor $L\taking\Set\to\Mon$ to a set $X$ makes every element $x\in X$ a word, and these words can be strung together to form more complex words. (We discussed the free functor in Section \ref{sec:free monoid}.) Since a set such as $X$ carries no information about the meaning or structure of its various elements, the free monoid $F(X)$ does not relate different words in any way. To apply the forgetful functor $R\taking\Mon\to\Set$ to a monoid, even a structured one, is to simply forget that its elements are anything but mere elements of a set. It sends a monoid $(M,1,\star)$ to the set $M$. 
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 The analogy is complete. However, this is all just ideas. Let's give a definition, then return to our sets, monoids, sounds, and words.
+\end{blockENG}
 
-\begin{definition}\label{def:adjunction}\index{adjunction}\index{functor!adjoint}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{definitionENG}\label{def:adjunction}\index{adjunction}\index{functor!adjoint}
 Let $\mcB$ and $\mcA$ be categories. \footnote{Throughout this definition, notice that $B$'s come before $A$'s, especially in (\ref{dia:adjunction isomorphism}), which might be confusing. It was a stylistic choice to match with the {\bf B}abies and {\bf A}dults discussion above and below this definition.}
 An {\em adjunction between $\mcB$ and $\mcA$} is a pair of functors 
 $$L\taking\mcB\to\mcA\hsp\tn{and}\hsp R\taking\mcA\to\mcB$$ 
@@ -44,17 +88,19 @@ The functor $L$ is called the {\em left adjoint} and the functor $R$ is called t
 \footnote{The left adjoint does not have to be called $L$, nor does the right adjoint have to be called $R$, of course. This is suggestive.}
 We often denote this setup by 
 $$\adjoint{L}{\mcB}{\mcA}{R}$$
+\end{definitionENG}
 
-\end{definition}
+\begin{definitionRUS}\label{def:adjunction}\index{adjunction}\index{functor!adjoint}
+\end{definitionRUS}
 
-\begin{proposition}\label{prop:free forgetful monoid}
-
+\begin{propositionENG}\label{prop:free forgetful monoid}
 Let $L\taking\Set\to\Mon$ be the functor sending $X\in\Ob(\Set)$ to the free monoid $L(X):=(\List(X),[\;],\plpl)$, as in Definition \ref{def:free monoid}. Let $R\taking\Mon\to\Set$ be the functor sending each monoid $\mcM:=(M,1,\star)$ to its underlying set $R(\mcM):=M$. Then $L$ is left adjoint to $R$.
+\end{propositionENG}
 
-\end{proposition}
+\begin{propositionRUS}\label{prop:free forgetful monoid}
+\end{propositionRUS}
 
-\begin{proof}
-
+\begin{proofENG}
 If we can find a natural isomorphism of sets 
 $$\alpha_{X,\mcM}\taking\Hom_\Mon(L(X),\mcM)\to\Hom_\Set(X,R(\mcM))$$
 we will have succeeded in showing that these functors are adjoint.
@@ -62,11 +108,12 @@ we will have succeeded in showing that these functors are adjoint.
 Suppose given an element $f\in\Hom_\Mon(L(X),\mcM)$, i.e. a monoid homomorphism $f\taking\List(X)\to M$ (sending $[\;]$ to $1$ and list concatenation to $\star$). Then in particular we can apply $f$ to the singleton list $[x]$ for any $x\in X$. This gives a function $X\to M$ by $x\mapsto f([x])$, and this is $\alpha_{X,\mcM}(f)\taking X\to M=R(\mcM)$. We need only to supply an inverse $\beta_{X,\mcM}\taking\Hom_\Set(X,R(\mcM))\to\Hom_\Mon(L(X),\mcM).$
 
 Suppose given an element $g\in\Hom_\Set(X,R(\mcM))$, i.e. a function $g\taking X\to M$. Then to any list $\ell=[x_1,x_2,\ldots,x_n]\in\List(X)$ we can assign $\beta_{X,\mcM}(\ell):=g(x_1)\star g(x_2)\star\cdots\star g(x_n)$ (if $\ell=[\;]$ is the empty list, assign $\beta_{X,\mcM}([\;]):=1$). We now have a function $\List(X)\to M$. It is a monoid homomorphism because it respects identity and composition. It is easy to check that $\beta$ and $\alpha$ are mutually inverse, completing the proof.
+\end{proofENG}
 
-\end{proof}
+\begin{proofRUS}
+\end{proofRUS}
 
-\begin{example}
-
+\begin{exampleENG}
 We need to ground our discussion in some concrete mathematics. In Proposition \ref{prop:free forgetful monoid} we provided our long-awaited adjunction between sets and monoids. A set $X$ gets transformed into a monoid by considering lists in $X$; a monoid $\mcM$ gets transformed into a set by forgetting the multiplication law. So we have a functor going one way and the other, 
 $$L\taking\Set\to\Mon,\hspace{1in}R\taking\Mon\to\Set,$$
 but an adjunction is more than that: it includes a guarantee about the relationship between these two functors. What is the relationship between $L$ and $R$? Consider an arbitrary monoid $\mcM=(M,1,*)$.
@@ -78,46 +125,75 @@ This set classifies all the ways to pick three elements out of the underlying se
 Now we ask what Equation (\ref{dia:adjunction isomorphism}) means. The equation
 $$\Hom_\Mon(L(\{a,b,c\}),\mcM)\iso\Hom_\Set(\{a,b,c\},R(\mcM)).$$
 tells us that somehow we can answer the same question completely from within the category of monoids. In fact it tells us how to do so, namely as $\Hom_\Mon(\List(\{1,2,3\},\mcM)$.  Exercise \ref{ex:monoid adjunction} looks at how that should go. The answer is “hidden” in the proof of Proposition \ref{prop:free forgetful monoid}.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
-\begin{exercise}\label{ex:monoid adjunction}
+\begin{exerciseENG}\label{ex:monoid adjunction}
 Let $X=\{a,b,c\}$ and let $\mcM=(\NN,1,*)$ be the multiplicative monoid of natural numbers (see Example \ref{ex:multiplication table}). Let $f\taking X\to\NN$ be the function given by $f(a)=7, f(b)=2, f(c)=2$, and let $\beta_{X,\mcM}\taking\Hom_\Set(X,R(\mcM))\to\Hom_\Mon(L(X),\mcM)$ be as in the proof of Proposition \ref{prop:free forgetful monoid}. What is $\beta_{X,\mcM}(f)([b,b,a,c])$?
-\end{exercise}
+\end{exerciseENG}
 
+\begin{exerciseRUS}\label{ex:monoid adjunction}
+\end{exerciseRUS}
+
+\begin{blockENG}
 Let us look once more at the adjunction between adults and babies. Using the notation of Definition \ref{def:adjunction} $\mcA$ is the “adult category” of meaningful words and $\mcB$ is the “baby category” of repeated noises. The left adjoint turns every repeated sound into a meaningful word (having “free” meaning) and the right adjoint “forgets” the meaning of any word and considers it merely as a sound. 
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 At the risk of taking this simple analogy too far, let's have a go at the heart of the issue: how to conceive of the isomorphism (\ref{dia:adjunction isomorphism}) of $\Hom$'s. Once we have freely given a slot to each of baby's repeated sounds, we try to find a mapping from the lexicon $L(B)$ of these new words to our own lexicon $A$ of meaningful words; these are mappings in the adult category $\mcA$ of the form $L(B)\to A.$ And (stretching it) the baby tries to find a mapping (which we might see as emulation) from her set $B$ of repeatable sounds to the set $R(A)$ of the sounds the adult seems to repeat. If there was a global system for making these transformations that would establish  (\ref{dia:adjunction isomorphism}) and hence the adjunction.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Note that the directionality of the adjunction makes a difference. If $L\taking\mcB\to\mcA$ is left adjoint to $R\taking\mcA\to\mcB$ we rarely have an isomorphism $\Hom_\mcA(A,L(B))\iso\Hom_\mcB(R(A),B)$. In the case of babies and adults, we see that it would make little sense to look for a mapping in the category of meaningful words from the adult lexicon to the wordifications of baby-sounds, because there is unlikely to be a good candidate for most of our words. That is, to which of our child's repeated noises would we assign the concept “weekday”? 
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Again, the above is simply an analogy, and almost certainly not formalizable. The next example shows mathematically the point we tried to make in the previous paragraph, that the directionality of an adjunction is not arbitrary.
+\end{blockENG}
 
-\begin{example}\label{ex:adjunction monoids and sets}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:adjunction monoids and sets}
 Let $L\taking\Set\to\Mon$ and $R\taking\Mon\to\Set$ be the free and forgetful functors from Proposition \ref{prop:free forgetful monoid}. We know that $L$ is left adjoint to $R$; however $L$ is {\em not} right adjoint to $R$. In other words, we can show that the necessary natural isomorphism cannot exist.
 
 Let $X=\{a,b\}$ and let $\mcM=(\{1\},1,!)$ be the trivial monoid. Then the necessary natural isomorphism would need to give us a bijection 
 $$\Hom_\Mon(\mcM,L(X))\iso^?\Hom_\Set(\{1\},X).$$ 
 But the left-hand side has one element, because $\mcM$ is the initial object in $\Mon$ (see Example \ref{ex:initial monoid terminal monoid}), whereas the right-hand side has two elements. Therefore no isomorphism can exist.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:adjunction monoids and sets}
+\end{exampleRUS}
 
-\begin{example}
-
+\begin{exampleENG}
 Preorders have underlying sets, giving rise to a functor $U\taking\PrO\to\Set$.\index{a functor!$\PrO\to\Set$} The functor $U$ has both a left adjoint and a right adjoint. The left adjoint of $U$ is $D\taking\Set\to\PrO$,\index{a functor!$\Set\to\PrO$} sending a set $X$ to the discrete preorder on $X$ (the preorder with underlying set $X$, having the fewest possible $\leq$'s). The right adjoint of $U$ is $I\taking\Set\to\PrO$, sending a set $X$ to the indiscrete preorder on $X$ (the preorder with underlying set $X$, having the most possible $\leq$'s). See Example \ref{ex:discrete and indiscrete}. 
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Let $U\taking\Grph\to\Set$\index{a functor!$\Grph\to\Set$} denote the functor sending a graph to its underlying set of vertices. This functor has both a left and a right adjoint. 
 \sexc What functor $\Set\to\Grph$ is the left adjoint of $U$?
 \item What functor $\Set\to\Grph$ is the right adjoint of $U$?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{example}\label{ex:other adjunctions}\index{currying!as adjunction}
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
+\begin{exampleENG}\label{ex:other adjunctions}\index{currying!as adjunction}
 Here are some other adjunctions:
 
 \begin{itemize}
@@ -128,14 +204,19 @@ Here are some other adjunctions:
 \item The forgetful functor from posets to preorders has a left adjoint given by quotient by isomorphism relation.
 \item Given a set $A$, the functor $(-\times A)\taking\Set\to\Set$ has a right adjoint $\Hom(A,-)$ (this was called currying in Section \ref{sec:currying}). 
 \end{itemize}
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:other adjunctions}\index{currying!as adjunction}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Let $F\taking\mcC\to\mcD$ and $G\taking\mcD\to\mcC$ be mutually inverse equivalences of categories (see Definition \ref{def:equiv of cats}). Are they adjoint in one direction or the other?
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{exerciseENG}
 The discrete category functor $Disc\taking\Set\to\Cat$ has a left adjoint $p\taking\Cat\to\Set$. 
 \sexc For an arbitrary object $X\in\Ob(\Set)$ and an arbitrary object $\mcC\in\Ob(\Cat)$, write down the adjunction isomorphism.
 \item Let $\mcC$ be the free category on the graph $G$:
@@ -145,34 +226,55 @@ $$
 and let $X=\{1,2,3\}$. How many elements does the set $\Hom_\Set(\mcC,Disc(X))$ have?
 \item What can you do to an arbitrary category $\mcC$ to make a set $p(\mcC)$ such that the adjunction isomorphism holds? That is, how does the functor $p$ behave on objects?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{blockENG}
 The following proposition says that all adjoints to a given functor are isomorphic to each other. 
+\end{blockENG}
 
-\begin{proposition}\label{prop:unicity of adjoints}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{propositionENG}\label{prop:unicity of adjoints}
 Let $\mcC$ and $\mcD$ be categories, let $F\taking\mcC\to\mcD$ be a functor, and let $G,G'\taking\mcD\to\mcC$ also be functors. If both $G$ and $G'$ are right adjoint (respectively left adjoint) to $F$ then there is a natural isomorphism $\phi\taking G\to G'$.
+\end{propositionENG}
 
-\end{proposition}
+\begin{propositionRUS}\label{prop:unicity of adjoints}
+\end{propositionRUS}
 
-\begin{proof}
-
+\begin{proofENG}
 Suppose that both $G$ and $G'$ are right adjoint to $F$ (the case of $G$ and $G'$ being left adjoint is similarly proved). We first give a formula for the components of $\phi\taking G\to G'$ and its inverse $\psi\taking G'\to G$. Given an object $d\in\Ob(\mcD)$, we use $c=G(d)$ to obtain two natural isomorphisms, one from each adjunction: 
 $$\Hom_\mcC(G(d),G(d))\iso\Hom_\mcD(F(G(d)),d)\iso\Hom_\mcC(G(d),G'(d)).$$
 The identity component $\id_{G(d)}$ is then sent to some morphism $G(d)\to G'(d)$, which we take to be $\phi_d$. Similarly, we use $c'=G'(d)$ to obtain two natural isomorphisms, one from each adjunction:
 $$\Hom_\mcC(G'(d),G'(d))\iso\Hom_\mcD(F(G'(d)),d)\iso\Hom_\mcC(G'(d),G(d)).$$
 Again, the identity component $\id_{G'(d)}$ is sent to some morphism $G'(d)\to G(d)$, which we take to be $\psi_d$. The naturality of the isomorphisms implies that $\phi$ and $\psi$ are natural transformations, and it is straightforward to check that they are mutually inverse.
+\end{proofENG}
 
-\end{proof}
+\begin{proofRUS}
+\end{proofRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Quantifiers as adjoints}{ / }{Кванторы как сопряжения}}
 
+\begin{blockENG}
 One of the simplest but neatest places that adjoints show up is between preimages and the logical quantifiers $\exists$ and $\forall$, which we first discussed in Notation \ref{not:basic math notation}. \index{preimage}\index{a symbol!$\forall$}\index{a symbol!$\exists$} The setting in which to discuss this is that of sets and their power preorders. That is, if $X$ is a set then recall from Section \ref{sec:meets and joins} that the power set $\PP(X)$ has a natural ordering by inclusion of subsets. 
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Given a function $f\taking X\to Y$ and a subset $V\ss Y$ the preimage is $f^\m1(V):=\{x\in X\|f(x)\in V\}$. If $V'\ss V$ then $f^\m1(V')\ss f^\m1(V)$, so in fact $f^\m1\taking\PP(Y)\to\PP(X)$ can be considered a functor (where of course we are thinking of preorders as categories). The quantifiers appear as adjoints of $f^\m1$.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Let's begin with the left adjoint of $f^\m1\taking\PP(Y)\to\PP(X)$. It is a functor $L_f\taking\PP(X)\to\PP(Y)$. Choose an object $U\ss X$ in $\PP(X)$. It turns out that
 $$L_f(U)=\{y\in Y\|\exists x\in f^\m1(y)\tn{ such that }x\in U\}.$$
 And the right adjoint $R_f\taking\PP(X)\to\PP(Y)$, when applied to $U$ is 
@@ -182,9 +284,12 @@ $$
 \xymatrix{\PP(X)\ar@/^1.2pc/[rr]^{\exists_f}\ar@/_1.2pc/[rr]^{\forall_f}&&\PP(Y)\ar[ll]_{f^\m1}.}
 $$
 We will see in the next example why this notation is apt.
+\end{blockENG}
 
-\begin{example}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}
 In logic or computer science, the quantifiers $\exists$ and $\forall$ are used to ask whether any or all elements of a set have a certain property. For example, one may have a set of natural numbers and want to know whether any or all are even or odd.
 Let $Y=\{{\tt even,odd}\}$, and let $p\taking\NN\to Y$ be the function that takes assigns to each natural number its parity (even or odd). Because the elements of $\PP(\NN)$ and $\PP(Y)$ are ordered by “inclusion of subsets”, we can construe these orders as categories (by Proposition \ref{prop:preorders to cats}). That's all old; what's new is that we have adjunctions between these categories
 $$
@@ -194,43 +299,81 @@ Given a subset $U\ss\NN$, i.e. an object $U\in\Ob(\PP(\NN))$, we investigate the
 \footnote{It may not be clear that by this point we have also handled the question, “is every element of $U$ even?” One simply checks that {\tt odd} is not an element of $\exists_pU$.}
 
 We explain just one of these in terms of the definitions. Let $V=\{{\tt even}\}\ss Y$. Then $f^\m1(V)\ss\NN$ is the set of even numbers, and there is a morphism $f^\m1(V)\to U$ in $\PP(\NN)$ if and only if $U$ contains all the even numbers. Therefore, the adjunction isomorphism $\Hom_{\PP(\NN)}(f^\m1(V),U)\iso\Hom_{\PP(Y)}(V,\forall_pU)$ says that $V\ss\forall_pU$, i.e. $\forall_p(U)$ includes the element {\tt even} if and only if $U$ contains all the even numbers, as we said above.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 The national Scout jamboree is a gathering of Boy Scouts from troops across the US. Let $X$ be the set of Boy Scouts in the US, and let $Y$ be the set of Boy Scout troops in the US. Let $t\taking X\to Y$ be the function that assigns to each Boy Scout his troop. Let $U\ss X$ be the set of Boy Scouts in attendance at this years jamboree. What is the meaning of the objects $\exists_tU$ and $\forall_tU$?
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{exerciseENG}
 Let $X$ be a set and $U\ss X$ a subset. Find a set $Y$ and a function $f\taking X\to Y$ such that $\exists_f(U)$ somehow tells you whether $U$ is non-empty, and such that $\forall_f(U)$ somehow tells you whether $U=X$.
-\end{exercise}
+\end{exerciseENG}
 
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{blockENG}
 In fact, “quantifiers as adjoints” is part of a larger story. Suppose we think of elements of a set $X$ as bins, or storage areas. An element of $\PP(X)$ can be construed as an injection $U\inj X$, i.e. an assignment of a bin to each element of $U$, with at most one element of $U$ in each bin. Relaxing that restriction, we may consider arbitrary sets $U$ and assignments $U\to X$ of a bin to each element $u\in U$. Given a function $f\taking X\to Y$, we can generalize $\exists_f$ and $\forall_f$ to functors denoted $\Sigma_f$ and $\Pi_f$, which will parameterize disjoint unions and products (respectively) over $y\in Y$. This will be discussed in Section \ref{sec:data migration}.
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Universal concepts in terms of adjoints}{ / }{Универсальные конструкции в терминах сопряжений}}\label{sec:universal concepts}
 
+\begin{blockENG}
 In this section we discuss how universal concepts, i.e. initial objects and terminal objects, colimits and limits, are easily phrased in the language of adjoint functors. We will say that a functor $F\taking\mcC\to\mcD$ {\em is a left adjoint} if there exists a functor $G\taking\mcD\to\mcC$ such that $F$ is a left adjoint of $G$. We showed in Proposition \ref{prop:unicity of adjoints} that if $F$ is a left adjoint of some functor $G$, then it is isomorphic to every other left adjoint of $G$, and $G$ is isomorphic to every other right adjoint of $F$.
+\end{blockENG}
 
-\begin{example}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}
 Let $\mcC$ be a category and $t\taking\mcC\to\ul{1}$ the unique functor to the terminal category. Then $t$ is a left adjoint if and only if $\mcC$ has a terminal object, and $t$ is a right adjoint if and only if $\mcC$ has an initial object. The proofs are dual, so let's focus on the first.
 
 The functor $t$ has a right adjoint $R\taking\ul{1}\to\mcC$ if and only if there is an isomorphism $$\Hom_\mcC(c,r)\iso\Hom_{\ul{1}}(t(c),1),$$ where $r=R(1)$. But $\Hom_{\ul{1}}(t(c),1)$ has one element. Thus $t$ has a right adjoint iff there is a unique morphism $c\to r$ in $\mcC$. This is the definition of $r$ being a terminal object.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
+\begin{blockENG}
 When we defined colimits and limits in Definitions \ref{def:coslice and colimit} and \ref{def:slice and limit} we did so for individual $I$-shaped diagrams $X\taking I\to\mcC$. Using adjoints we can define the limit of every $I$-shaped diagram in $\mcC$ at once.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Let $t\taking\mcC\to\ul{1}$ denote the unique functor to the terminal category. Given an object $c\in\Ob(\mcC)$, consider it as a functor $c\taking\ul{1}\to\mcC$. Then $c\circ t\taking I\to\mcC$ is the {\em constant functor at $c$}\index{functor!constant}, sending each object in $I$ to the same $\mcC$-object $c$, and every morphism in $I$ to $\id_c$. This induces a functor that we denote by $\Delta_t\taking\mcC\to\Fun(I,\mcC)$.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Suppose we want to take the colimit or limit of $X$. We are given an object $X$ of $\Fun(I,\mcC)$ and we want back an object of $\mcC$. We could hope, and it turns out to be true, that the adjoints of $\Delta_t$ are the limit and colimit. Indeed let $\Sigma_t\taking\Fun(I,\mcC)\to\mcC$ be the left adjoint of $\Delta_t$, and let $\Pi_t\taking\Fun(I,\mcC)\to\mcC$ be the right adjoint of $\Delta_t$. Then $\Sigma_t$ is the functor that takes colimits, and $\Pi_t$ is the functor that takes limits.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 We will work with a generalization of colimits and limits in Section \ref{sec:data migration}. But for now, let's bring this down to earth with a concrete example.
+\end{blockENG}
 
-\begin{example}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}
 Let $\mcC=\Set$, and let $I=\ul{3}$. The category $\Fun(I,\Set)$ is the category of $\{1,2,3\}$-indexed sets, e.g. $(\ZZ,\NN,\ZZ)\in\Ob(\Fun(I,\Set))$ is an object of it. The functor $\Delta_t\taking\Set\to\Fun(I,\Set)$ acts as follows. Given a set $c\in\Ob(\Set)$, consider it as a functor $c\taking\ul{1}\to\Set$, and the composite $c\circ t\taking I\to\Set$ is the constant functor. That is, $\Delta_t(c)\taking I\to\Set$ is the $\{1,2,3\}$--indexed set $(c,c,c)$.
 
 To say that $\Delta_t$ has a right adjoint called $\Pi_t\taking\Fun(I,\Set)\to\Set$ and that it “takes limits” should mean that if we look through the definition of right adjoint, we will see that the formula will somehow yield the appropriate limit. Fix a functor $D\taking I\to\Set$, so $D(1),D(2),$ and $D(3)$ are sets. The limit $\lim D$ of $D$ is the product $D(1)\times D(2)\times D(3)$. For example, if $D=(\ZZ,\NN,\ZZ)$ then $\lim D=\ZZ\times\NN\times\ZZ$. How does this fact arise in the definition of adjoint?
@@ -256,13 +399,19 @@ $$\xymatrix{&c\ar[ddl]_{f(1)}\ar[dd]^{f(2)}\ar[ddr]^{f(3)}\ar@/_2pc/[dddd]_\ell\
 D(1)&D(2)&D(3)\\\\
 &D(1)\times D(2)\times D(3)\ar[uul]^{\pi_1}\ar[uu]_{\pi_2}\ar[uur]_{\pi_3}
 }$$
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
+\begin{blockENG}
 It is not hard to show that the composition of left adjoints is a left adjoint, and the composition of right adjoints is a right adjoint. In the following example we show how currying (as in Sections \ref{sec:currying} and \ref{ex:other adjunctions}) arises out of a certain combination of data migration functors. 
+\end{blockENG}
 
-\begin{example}[Currying via $\Delta,\Sigma,\Pi$]\index{currying!via data migration functors}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}[Currying via $\Delta,\Sigma,\Pi$]\index{currying!via data migration functors}
 Let $A,B,$ and $C$ be sets. Consider the unique functor $a\taking A\to\ul{1}$ and consider $B$ and $C$ as functors $\ul{1}\Too{B}\Set$ and $\ul{1}\Too{C}\Set$ respectively. 
 $$\xymatrix{A\ar[r]^a&\ul{1}\ar@/^1pc/[r]^B\ar@/_1pc/[r]_C&\Set}$$
 Note that $\ul{1}\set\iso\Set$, and we will elide the difference. Our goal is to see currying arise out of the adjunction between $\Sigma_a\circ\Delta_a$ and $\Pi_a\circ\Delta_a$, which tells us that there is an isomorphism
@@ -275,65 +424,81 @@ $$\Sigma_a(\Delta_a(B))=\left(\coprod_{a\in A}B\right)\iso A\times B.$$
 Similarly $\Delta_a(C)\taking A\to\Set$ assigns to each element $a\in A$ the set $C$. Since $\Pi_A$ takes products, we have a bijection
 $$\Pi_a(\Delta_a(C))=\left(\prod_{a\in A}C\right)\iso C^A.$$
 The currying isomorphism $\Hom_\Set(A\times B,C)\iso\Hom_\Set(B,C^A)$ falls out of (\ref{dia:migration for currying}).
+\end{exampleENG}
 
-\end{example}
-
-
+\begin{exampleRUS}[Currying via $\Delta,\Sigma,\Pi$]\index{currying!via data migration functors}
+\end{exampleRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Preservation of colimits or limits}{ / }{Сохранение копределов или пределов}}
 
+\begin{blockENG}
 One useful fact about adjunctions is that left adjoints preserve all colimits and right adjoints preserve all limits. 
+\end{blockENG}
 
-\begin{proposition}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{propositionENG}
 Let $\adjoint{L}{\mcB}{\mcA}{R}$ be an adjunction. For any indexing category $I$ and functor $D\taking I\to\mcB$, if $D$ has a colimit in $\mcB$ then there is a unique isomorphism 
 $$L(\colim D)\iso \colim (L\circ D).$$
 
 Similarly, for any $I\in\Ob(\Cat)$ and functor $D\taking I\to\mcA$, if $D$ has a limit in $\mcA$ then there is a unique isomorphism 
 $$R(\lim D)\iso \lim (R\circ D).$$
+\end{propositionENG}
 
-\end{proposition}
+\begin{propositionRUS}
+\end{propositionRUS}
 
-\begin{proof}
-
+\begin{proofENG}
 The proof is simple if one knows the Yoneda lemma (Section \ref{sec:yoneda}). I have decided to skip it to keep the book shorter. See \cite{Mac}.
+\end{proofENG}
 
-\end{proof}
+\begin{proofRUS}
+\end{proofRUS}
 
-\begin{example}
-
+\begin{exampleENG}
 Since $\Ob\taking\Cat\to\Set$ is both a left adjoint and a right adjoint, it must preserve both limits and colimits. This means that if you want to know the set of objects in the fiber product of some categories, you can simply take the fiber product of the set of objects in those categories, $$\Ob(\mcA\times_\mcC\mcB)\iso\Ob(\mcA)\times_{\Ob(\mcC)}\Ob(\mcB).$$ While the right-hand side might look daunting, it is just a fiber product in $\Set$ which is quite understandable.
 
 This is greatly simplifying. If one thinks through what defines a limit in $\Cat$, one is dragged through notions of slice categories and terminal objects in them. These slice categories are in $\Cat$ so they involve several categories and functors, and it gets hairy or even hopeless to a beginner. Knowing that the objects are given by a simple fiber product makes the search for limits in $\Cat$ much simpler. 
 
 For example, if $[n]$ is the linear order category of length $n$ then $[n]\times[m]$ has $nm+n+m+1$ objects because $[n]$ has $n+1$ objects and $[m]$ has $m+1$ objects. 
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
-\begin{example}
-
+\begin{exampleENG}
 The “path poset” functor $L\taking\Grph\to\PrO$ given by existence of paths (see Exercise \ref{exc:grph to pro}) is left adjoint to the functor $R\taking\PrO\to\Grph$ given by replacing $\leq$'s by arrows. This means that $L$ preserves colimits. So taking the union of graphs $G$ and $H$ results in a graph whose path poset  $L(G\sqcup H)$ is the union of the path posets of $G$ and $H$. But this is not so for products. 
 
 Let $G=H=\fbox{\xymatrix{\LMO{a}\ar[r]^f&\LMO{b}}}$. Then $L(G)=L(H)=[1]$, the linear order of length 1. But the product $G\times H$ in $\Grph$ looks like the graph 
 $$\xymatrix{\LMO{(a,a)}\ar[rd]&\LMO{(a,b)}\\\LMO{(b,a)}&\LMO{(b,b)}}$$
 Its preorder $L(G\times H)$ does not have $(a,a)\leq(a,b)$, whereas this is the case in $L(G)\times L(H)$.
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Data migration}{ / }{Миграция баз данных}}\label{sec:data migration}\index{data migration}
 
+\begin{blockENG}
 As we saw in Sections \ref{sec:schemas and cats intro} and \ref{sec:instances}, a database schema is a category $\mcC$ and an instance is a functor $I\taking\mcC\to\Set$.  
+\end{blockENG}
 
-\begin{notation}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{notationENG}
 Let $\mcC$ be a category. Throughout this section we denote by $\mcC\set$ the category $\Fun(\mcC,\Set)$ of functors from $\mcC$ to $\Set$, i.e. the category of instances on $\mcC$. 
+\end{notationENG}
 
-\end{notation}
+\begin{notationRUS}
+\end{notationRUS}
 
+\begin{blockENG}
 In this section we discuss what happens to the resulting instances when different schemas are connected by a functor, say $F\taking\mcC\to\mcD$. It turns out that three adjoint functors emerge: $\Delta_F\taking\mcD\set\to\mcC\set$, $\Sigma_F\taking\mcC\set\to\mcD\set$, and $\Pi_F\taking\mcC\set\to\mcD\set$, where $\Delta_F$ is adjoint to both, 
 $$
 \adjoint{\Sigma_F}{\mcC\set}{\mcD\set}{\Delta_F}
@@ -341,33 +506,62 @@ $$
 \adjoint{\Delta_F}{\mcD\set}{\mcC\set}{\Pi_F.}
 $$
 It turns out that almost all the basic database operations are captured by these three functors. For example, $\Delta_F$ handles the job of duplicating or deleting tables, as well as duplicating or deleting columns in a single table. The functor $\Sigma_F$ handles taking unions, and the functor $\Pi_F$ handles joining tables together, matching columns, or selecting the rows with certain properties (e.g. everyone whose first name is Mary).
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Pullback: $\Delta$}{ / }{Пулбек: $\Delta$}}\index{data migration!pullback $\Delta$}
 
+\begin{blockENG}
 Given a functor $F\taking\mcC\to\mcD$ and a functor $I\taking\mcD\to\Set$, we can compose them to get a functor $I\circ F\taking\mcC\to\Set$. In other words, the presence of $F$ provides a way to convert $\mcD$-instances into $\mcC$-instances. In fact this conversion is functorial, meaning that morphisms of $\mcD$-instances are sent to morphisms of $\mcC$-instances. We denote the resulting functor by $\Delta_F\taking\mcD\set\to\mcC\set$ and call it {\em pullback along $F$}.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 We have seen an example of this before in Example \ref{ex:whiskering}, where we showed how a monoid homomorphism $F\taking\mcM'\to\mcM$ could add functionality to a finite state machine. More generally, we can use pullbacks to reorganize data, copying and deleting tables and columns. 
+\end{blockENG}
 
-\begin{remark}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{remarkENG}
 Given a functor $F\taking\mcC\to\mcD$, which we think of as a schema translation, the functor $\Delta_F\taking\mcD\set\to\mcC\set$ “goes the opposite way”. The reasoning is simple to any explain (composition of functors) but something about it is often very strange to people, at first. The rough idea of this “contravariance” is captured by the role-reversal in the following slogan:
+\end{remarkENG}
 
-\begin{slogan} 
+\begin{remarkRUS}
+\end{remarkRUS}
+
+\begin{sloganENG} 
 If I get my information from you, then your information becomes my information. 
-\end{slogan}
+\end{sloganENG}
 
-\end{remark}
+\begin{sloganRUS} 
+\end{sloganRUS}
 
+\begin{blockENG}
 Consider the following functor $F\taking\mcC\to\mcD$: 
 \footnote{This example was taken from \cite{Sp1}, \url{http://arxiv.org/abs/1009.1166}.}
 \begin{align}\label{dia:translation}
 \mcC:=\parbox{1.2in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T1}}\ar[uur]\ar[ur]\ar[dr]&&\color{red}{\LTO{T2}}\ar[ul]\ar[dl]\ar[ddl]\\&\LTO{Last}\\&\LTO{Salary}}}}\Too{F}\parbox{.8in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T}}\ar[uur]\ar[ur]\ar[dr]\ar[ddr]\\&\LTO{Last}\\&\LTO{Salary}}}}=:\mcD
 \end{align}
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Let's spend a moment recalling how to “read” schemas. In schema $\mcC$ there are leaf tables {\tt SSN, First, Last, Salary}, which represent different kinds of basic data. More interestingly, there are two {\em fact tables}\index{schema!leaf table}\index{schema!fact table}. The first is called {\tt T1} and it relates {\tt SSN, First,} and ${\tt Last}$. The second is called {\tt T2} and it relates {\tt First, Last,} and {\tt Salary}.
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 The functor $F\taking\mcC\to\mcD$ relates $\mcC$ to a schema with a single fact table relating all four attributes: {\tt SSN, First, Last,} and {\tt Salary}. We are interested in $\Delta_F\taking\mcD\set\to\mcC\set$. Suppose given the following database instance $I\taking\mcD\to\Set$ on $\mcD$:
 $$
 \begin{tabular}{| l || l | l | l | l |}\bhline\multicolumn{5}{| c |}{{\tt T}}\\\bhline {\bf ID}&{\bf SSN}&{\bf First}&{\bf Last}&{\bf Salary}\\\bbhline XF667&115-234&Bob&Smith&\$250\\\hline XF891&122-988&Sue&Smith&\$300\\\hline XF221&198-877&Alice&Jones&\$100\\\bhline
@@ -385,9 +579,19 @@ $$
 \begin{tabular}{| l ||}\bhline\multicolumn{1}{| c |}{{\tt Salary}}\\\bhline {\bf ID}\\\bbhline \$100\\\hline \$150\\\hline \$200\\\hline \$250\\\hline \$300\\\bhline
 \end{tabular}
 $$
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 How do you get the instance $\Delta_F(I)\taking\mcC\to\Set$? The formula was given above: compose $I$ with $F$. In terms of tables, it feels like duplicating table {\tt T} as {\tt T1} and {\tt T2}, but deleting a column from each in accordance with the definition of $\mcC$ in (\ref{dia:translation}). Here is the result, $\Delta_F(I)$, in table form:
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 $$\begin{tabular}{| l || l | l | l |}\bhline\multicolumn{4}{| c |}{{\tt T1}}\\\bhline {\bf ID}&{\bf SSN}&{\bf First}&{\bf Last}\\\bbhline XF667&115-234&Bob&Smith\\\hline XF891&122-988&Sue&Smith\\\hline XF221&198-877&Alice&Jones\\\bhline
 \end{tabular}
 \hspace{.5in}
@@ -406,15 +610,22 @@ $$
 \begin{tabular}{| l ||}\bhline\multicolumn{1}{| c |}{{\tt Salary}}\\\bhline {\bf ID}\\\bbhline \$100\\\hline \$150\\\hline \$200\\\hline \$250\\\hline \$300\\\bhline
 \end{tabular}
 $$
+\end{blockENG}
 
-\begin{exercise}\index{leaf table}
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{exerciseENG}\index{leaf table}
 Let $\mcC=(G,\simeq)$ be a schema. A leaf table is an object $c\in\Ob(\mcC)$ with no outgoing arrows.
 \sexc Write the condition of being a “leaf table” mathematically in three different languages: that of graphs (using symbols $V,A,src,tgt$), that of categories (using $\Hom_\mcC$, etc.), and that of tables (in terms of columns, tables, rows, etc.).
 \item In the language of categories, is there a difference between a terminal object and a leaf table? Explain.
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
+\begin{exerciseRUS}\index{leaf table}
+\end{exerciseRUS}
+
+\begin{exerciseENG}
 Consider the schemas $$[1]=\fbox{$\LMO{\color{blue}{0}}\Too{f}\LMO{\color{red}{1}}$}\hsp\tn{and}\hsp [2]=\fbox{$\LMO{\color{blue}{0}}\Too{g}\LMO{1}\Too{h}\LMO{\color{red}{2}}$},$$ and the functor $F\taking [1]\to[2]$ given by sending $0\mapsto 0$ and $1\mapsto 2$. 
 \sexc How many possibilities are there for $F(f)$?
 \item Now suppose $I\taking[2]\to\Set$ is given by the following tables. 
@@ -454,18 +665,30 @@ Verb\\\bhline
 $$
 Write out the two tables associated to the $[1]$-instance $\Delta_F(I)\taking[1]\to\Set$.
 \endsexc
-\end{exercise}
+\end{exerciseENG}
+
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Left pushforward: $\Sigma$}{ / }{Левое расширение Кана: $\Sigma$}}\label{sec:left push}\index{data migration!left pushforward $\Sigma$}
 
+\begin{blockENG}
 Let $F\taking\mcC\to\mcD$ be a functor. The functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint, $\Sigma_F\taking\mcC\set\to\mcD\set$. The rough idea is that $\Sigma_F$ performs parameterized colimits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Sigma_F(I)(d)$ is the colimit (think, union) of some diagram back home in $\mcC$. 
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Left pushforwards (also known as left Kan extensions) are discussed at length in \cite{Sp1}; here we begin with some examples from that paper.\index{Kan extension!left}
+\end{blockENG}
 
-\begin{example}\label{ex:left pushforward and skolem}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}\label{ex:left pushforward and skolem}
 We again use the functor $F\taking\mcC\to\mcD$ drawn below
 \begin{align}\tag{\ref{dia:translation}}\mcC:=\parbox{1.2in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T1}}\ar[uur]\ar[ur]\ar[dr]&&\color{red}{\LTO{T2}}\ar[ul]\ar[dl]\ar[ddl]\\&\LTO{Last}\\&\LTO{Salary}}}}\Too{F}\parbox{.8in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T}}\ar[uur]\ar[ur]\ar[dr]\ar[ddr]\\&\LTO{Last}\\&\LTO{Salary}}}}=:\mcD
 \end{align}
@@ -547,16 +770,22 @@ T1-003-Salary\\\bhline
 $$
 
 As you can see, there was no set salary information for any data coming from table {\tt T1} nor any set SSN information for any data coming form table {\tt T2}. But the definition of adjoint, given in Definition \ref{def:adjunction}, yielded the universal response: freely add new variables that take the place of missing information. It turns out that this idea already has a name in logic, {\em Skolem variables}, and a name in database theory, {\em labeled nulls}.\index{labeled null}\index{Skolem variable}
+\end{exampleENG}
 
-\end{example}
+\begin{exampleRUS}\label{ex:left pushforward and skolem}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Consider the functor $F\taking\ul{3}\to\ul{2}$ sending $1\mapsto 1, 2\mapsto 2, 3\mapsto 2$.
 \sexc Write down an instance $I\taking\ul{3}\to\Set$.
 \item Given the description that “$\Sigma_F$ performs a parameterized colimit”, make an educated guess about what $\Sigma_F(I)$ will be. Give your answer in the form of two sets that are made up from the three sets you already wrote down.
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{blockENG}
 We now briefly give the actual formula for computing left pushforwards. Suppose that $F\taking\mcC\to\mcD$ is a functor and let $I\taking\mcC\to\Set$ be a set-valued functor on $\mcC$. Then $\Sigma_F(I)\taking\mcD\to\Set$ is defined as follows. Given an object $d\in\Ob(\mcD)$ we first form the comma category (see Definition \ref{def:comma category}) for the setup
 $$\mcC\To{F}\mcD\From{d}\ul{1}$$
 and denote it by $(F\down d)$. There is a canonical projection functor $\pi\taking(F\down d)\to\mcC$, which we can compose with $I\taking\mcC\to\Set$ to obtain a functor $(F\down d)\to\Set$. We are ready to define $\Sigma_F(I)(d)$ to be its colimit,
@@ -570,17 +799,30 @@ $$
 }
 $$
 By the universal property of colimits, this induces the required function $$\colim_{(F\down d)}I\circ\pi\Too{\Sigma_F(I)(g)}\colim_{(F\down d')}I\circ\pi'.$$
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 %% Subsubsection %%
 
 \subsubsection{\caseENGRUS{Right pushforward: $\Pi$}{ / }{Правое расширение Кана: $\Pi$}}\index{data migration!right pushforward $\Pi$}
 
+\begin{blockENG}
 Let $F\taking\mcC\to\mcD$ be a functor. We heard in Section \ref{sec:left push} that the functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint. Here we explain that it has a right adjoint, $\Pi_F\taking\mcC\set\to\mcD\set$ as well. The rough idea is that $\Pi_F$ performs parameterized limits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Pi_F(I)(d)$ is the limit (think, fiber product) of some diagram back home in $\mcC$. 
+\end{blockENG}
 
+\begin{blockRUS}
+\end{blockRUS}
+
+\begin{blockENG}
 Right pushforwards (also known as right Kan extensions) are discussed at length in \cite{Sp1}; here we begin with some examples from that paper.\index{Kan extension!right}
+\end{blockENG}
 
-\begin{example}
+\begin{blockRUS}
+\end{blockRUS}
 
+\begin{exampleENG}
 We once again use the functor $F\taking\mcC\to\mcD$ from Example \ref{ex:left pushforward and skolem}. We will apply the right pushforward $\Pi_F$ to instance $I\taking\mcC\to\Set$ from that example.
 \footnote{To repeat for convenience,
 \begin{align}\tag{\ref{dia:translation}}\mcC:=\parbox{1.2in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T1}}\ar[uur]\ar[ur]\ar[dr]&&\color{red}{\LTO{T2}}\ar[ul]\ar[dl]\ar[ddl]\\&\LTO{Last}\\&\LTO{Salary}}}}\Too{F}\parbox{.8in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T}}\ar[uur]\ar[ur]\ar[dr]\ar[ddr]\\&\LTO{Last}\\&\LTO{Salary}}}}=:\mcD
@@ -614,15 +856,22 @@ The instance $\Pi_F(I)$ will put data in all 5 tables in $\mcD$. In {\tt T} it w
 \end{tabular}
 \end{center}
 Looking at {\tt T1} and {\tt T2}, there were only two ways to match first and last names.
-\end{example}
+\end{exampleENG}
 
-\begin{exercise}
+\begin{exampleRUS}
+\end{exampleRUS}
+
+\begin{exerciseENG}
 Consider the functor $F\taking\ul{3}\to\ul{2}$ sending $1\mapsto 1, 2\mapsto 2, 3\mapsto 2$.
 \sexc Write down an instance $I\taking\ul{3}\to\Set$.
 \item Given the description that “$\Pi_F$ performs a parameterized limit”, make an educated guess about what $\Pi_F(I)$ will be. Give your answer in the form of two sets that are made up from the three sets you already wrote down.
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
+\begin{exerciseRUS}
+\end{exerciseRUS}
+
+\begin{blockENG}
 We now briefly give the actual formula for computing right pushforwards. Suppose that $F\taking\mcC\to\mcD$ is a functor and let $I\taking\mcC\to\Set$ be a set-valued functor on $\mcC$. Then $\Pi_F(I)\taking\mcD\to\Set$ is defined as follows. Given an object $d\in\Ob(\mcD)$ we first form the comma category (see Definition \ref{def:comma category}) for the setup
 $$\ul{1}\To{d}\mcD\From{F}\mcC$$
 and denote it by $(d\down F)$. There is a canonical projection functor $\pi\taking(d\down F)\to\mcC$, which we can compose with $I\taking\mcC\to\Set$ to obtain a functor $(d\down F)\to\Set$. We are ready to define $\Pi_F(I)(d)$ to be its limit,
@@ -636,5 +885,9 @@ $$
 }
 $$
 By the universal property of limits, this induces the required function $$\lim_{(d\down F)}I\circ\pi\Too{\Pi_F(I)(g)}\lim_{(d'\down F)}I\circ\pi'.$$
+\end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 \end{document}
