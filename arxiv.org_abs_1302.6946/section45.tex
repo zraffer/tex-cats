@@ -554,11 +554,14 @@ We have been drawing diagrams since the beginning of the book. What is it that w
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{definition}\index{diagram}\index{indexing category}
+\begin{definitionENG}\index{diagram}\index{indexing category}
 Let $\mcC$ and $I$ be categories.
 \footnote{In fact, the indexing category $I$ is usually assumed to be small in the sense of Remark \ref{rmk:small}, meaning that its collection of objects is a set.}
 An {\em $I$-shaped diagram in $\mcC$} is simply a functor $d\taking I\to\mcC$. In this case $I$ is called the {\em indexing category} for the diagram.
-\end{definition}
+\end{definitionENG}
+
+\begin{definitionRUS}\index{diagram}\index{indexing category}
+\end{definitionRUS}
 
 \begin{blockENG}
 Suppose given an indexing category $I$ and an $I$-shaped diagram $X\taking I\to\mcC$. One draws this as follows. For each object in $q\in I$, draw a dot labeled by $X(q)$; if several objects in $I$ point to the same object in $\mcC$, then several dots will be labeled the same way. Draw the images of morphisms $f\taking q\to q'$ in $I$ by drawing arrows between dots $X(q)$ and $X(q')$, and label each arrow by the image morphism $X(f)$ in $\mcC$. Again, if several morphisms in $I$ are sent to the same morphism in $\mcC$, then several arrows will be labeled the same way. One can abbreviate this process by not drawing {\em every} morphism in $I$, so long as every morphism in $I$ is represented by a unique path in $\mcC$, i.e. as long as the drawing is sufficiently unambiguous as a depiction of $X\taking I\to\mcC$.
@@ -716,9 +719,12 @@ Let $\mcC$ be a category, let $I$ be an indexing category (which just means that
 
 \subsubsection{\caseENGRUS{Universal objects}{ / }{Универсальные объекты}}
 
-\begin{definition}\index{initial object}\index{terminal object}
+\begin{definitionENG}\index{initial object}\index{terminal object}
 Let $\mcC$ be a category. An object $a\in\Ob(\mcC)$ is called {\em initial} if, for all objects $c\in\Ob(\mcC)$ there exists a unique morphism $a\to c$, i.e. $|\Hom_\mcC(a,c)|=1$. An object $z\in\Ob(\mcC)$ is called {\em terminal} if, for all objects $c\in\Ob(\mcC)$ there is exists a unique morphism $c\to z$, i.e. $|\Hom_\mcC(c,z)|=1$. 
-\end{definition}
+\end{definitionENG}
+
+\begin{definitionRUS}\index{initial object}\index{terminal object}
+\end{definitionRUS}
 
 \begin{blockENG}
 An object in a category is called {\em universal} if it is either initial or terminal, but we rarely use that term in practice, preferring to be specific about whether the object is initial or terminal. The word {\em final} is synonymous with the word terminal, but we'll try to constantly use terminal. 
@@ -800,58 +806,61 @@ Similarly, the terminal object in $\Mon$ is also the trivial monoid, $\ul{1}$. F
 \begin{exampleRUS}\label{ex:initial monoid terminal monoid}\index{monoid!initial}\index{monoid!terminal}
 \end{exampleRUS}
 
-\begin{exercise}~
+\begin{exerciseENG}~
 \sexc What is the initial object in $\Grp$, the category of groups?
 \item What is the terminal object in $\Grp$?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{example}
+\begin{exerciseRUS}~
+\end{exerciseRUS}
+
+\begin{exampleENG}
 Recall the preorder $\Prop$ of logical propositions from Section \ref{sec:propositions}. The initial object is a proposition that implies all others. It turns out that “FALSE” is such a proposition. The proposition “FALSE” is like “$1\neq1$”; in logical formalism it can be shown that if “FALSE” is true then everything is true.
 
 The terminal object in $\Prop$ is a proposition that is implied by all others. It turns out that “TRUE” is such a proposition. In logical formalism, everything implies that “TRUE” is true.
-\end{example}
+\end{exampleENG}
 
-\begin{example}
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
-\begin{example}
+\begin{exampleENG}
 The discrete category $\ul{2}$ has no initial object and no terminal object. The reason is that it has two objects $1,2$, but no maps from one to the other, so $\Hom_{\ul{2}}(1,2)=\Hom_{\ul{2}}(2,1)=\emptyset$.
-\end{example}
+\end{exampleENG}
 
-\begin{example}
-\end{example}
+\begin{exampleRUS}
+\end{exampleRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Recall the {\tt divides} preorder from Exercise \ref{exc:divides as po}, where $5\;{\tt divides}\;15$.
 \sexc Considering this preorder as a category, does it have an initial object?
 \item Does it have a terminal object?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
-\end{exercise}
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Let $\mcM=(\List(\{a,b\}),[\;],\plpl)$ denote the free monoid on $\{a,b\}$ (see Definition \ref{def:free monoid}), considered as a category (via Theorem \ref{thm:mon to cat}).
 \sexc Does it have an initial object?
 \item Does it have a terminal object?
 \item Which monoids have initial (respectively terminal) objects?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
-\end{exercise}
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
-\begin{exercise}
+\begin{exerciseENG}
 Let $S$ be a set and consider the indiscrete category $K_S\in\Ob(\Cat)$ on objects $S$ (see Example \ref{ex:indiscrete cat equiv to terminal}).
 \sexc For what $S$ does $K_S$ have an initial object?
 \item For what $S$ does $K_S$ have a terminal object?
 \endsexc
-\end{exercise}
+\end{exerciseENG}
 
-\begin{exercise}
-\end{exercise}
+\begin{exerciseRUS}
+\end{exerciseRUS}
 
 %% Subsubsection %%
 
