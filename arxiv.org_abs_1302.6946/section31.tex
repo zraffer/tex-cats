@@ -2,43 +2,57 @@
 
 \begin{document}
 
-\section{\caseENGRUS{Monoids}{ / }{Моноиды}}\label{sec:monoids}\index{monoid}
+\section{\caseENGRUS{Monoids}{ / }{Моноиды}}\label{sec:monoids}
 
 \begin{blockENG}
 A common way to interpret phenomena we see around us is to say that agents are acting on objects. For example, in a computer drawing program, the user {\em acts on} the canvas in certain prescribed ways. Choices of actions from an available list can be performed in sequence to transform one image into another. As another example, one might investigate the notion that time {\em acts on} the position of hands on a clock in a prescribed way. A first rule for actions is this: the performance of a sequence of several actions is itself the performance of an action—a more complex action, but an action nonetheless.
 \end{blockENG}
 
 \begin{blockRUS}
+Общепринятым способом интерпретировать феномены, которые мы наблюдаем вокруг, является объяснение их воздействием на объекты некоторых факторов. Например, в программе компьютерной графики, пользователь {\em воздействует на} область рисования заранее определенными способами. Выбор действий из списка всех доступных [в данной программе] может быть повторен многократно, преобразуя в результате одно изображение в другое. В качестве другого примера можно рассмотреть то, как время {\em воздействует на} положение стрелок на часах заранее определенным способом. Первое правило воздействия такое: проведение последовательно нескольких воздействий само является проведением воздействия, — более сложного, но все равно воздействия.
 \end{blockRUS}
 
 \begin{blockENG}
-Mathematical objects called {\em monoids} and {\em groups} are tasked with encoding the agent's perspective in all this, i.e. what the agent can do, and what happens when different actions are done in succession. A monoid can be construed as a set of actions, together with a formula that encodes how a sequence of actions is itself considered an action. A group is the same as a monoid, except that every action is required to be reversible. In this section we concentrate on monoids; we will get to groups in Section \ref{sec:groups}.
+Mathematical objects called {\em monoids} and {\em groups} are tasked with encoding the agent's perspective in all this, i.e. what the agent can do, and what happens when different actions are done in succession. A monoid can be constructed as a set of actions, together with a formula that encodes how a sequence of actions is itself considered an action. A group is the same as a monoid, except that every action is required to be reversible. In this section we concentrate on monoids; we will get to groups in Section \ref{sec:groups}.
 \end{blockENG}
+
+\begin{blockRUS}
+Математические объекты под названием {\em моноиды} и {\em группы} предназначены для формализации всего этого с точки зрения воздействующего фактора, т.е. что этот фактор может делать, и что происходит, когда различные действия выполнены последовательно. Моноид можно сконструировать из множества действий, взятого вместе со правилом, согласно которому последовательность действий может рассматриваться как одно действие. Группа — это то же, что и моноид, за исключением того, что каждое действие должно быть обратимым. В этом разделе мы сосредоточимся на моноидах; до групп мы доберемся в Разделе \ref{sec:groups}.
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
 \subsection{\caseENGRUS{Definition and examples}{ / }{Определение и примеры}}
 
-\begin{definitionENG}[Monoid]\label{def:monoid}
+\begin{definitionENG}[Monoid]\label{def:monoid}\index{monoid}
 A {\em monoid} is a sequence $(M,e,\star)$, where $M$ is a set, $e\in M$ is an element, and $\star\taking M\times M\to M$ is a function, such that the following conditions hold for all $m,n,p\in M$:
 \begin{itemize}
 \item $m\star e=m$,
 \item $e\star m=m$, and
 \item $(m\star n)\star p=m\star(n\star p)$.
 \end{itemize}
-We refer to $e$ as the {\em identity element}\index{monoid!identity element of} and to $\star$ as the {\em multiplication formula} for the monoid.\index{monoid!multiplication formula}
-\footnote{Although the function $\star\taking M\times M\to M$ is called the multiplication formula, it may have nothing to do with multiplication. It is nothing more than a formula for taking two inputs and returning an output; calling it “multiplication” is suggestive of its origins, rather than prescriptive of its behavior.} 
-We call the first two rules {\em identity laws} and the third rule the {\em associativity law} for monoids. 
+We refer to $e$ as the {\em identity element}\index{monoid!identity element of} and to $\star$ as the {\em multiplication formula} for the monoid.\index{monoid!multiplication formula}%
+\footnote{Although the function $\star\taking M\times M\to M$ is called the multiplication formula, it may have nothing to do with multiplication. It is nothing more than a formula for taking two inputs and returning an output; calling it “multiplication” is suggestive of its origins, rather than prescriptive of its behavior.}
+We call the first two rules {\em identity laws} and the third rule the {\em associativity law} for monoids.
 \end{definitionENG}
 
-\begin{definitionRUS}[Monoid]\label{def:monoid}
+\begin{definitionRUS}[Моноид]\label{def:monoid}\index{моноид}
+{\em Моноид} — это последовательность $(M,e,\star)$, где $M$ — множество, $e\in M$ — элемент, а $\star\taking M\times M\to M$ — функция такая, что следующие условия выполняются для всех $m,n,p\in M$:
+\begin{itemize}
+\item $m\star e=m$,
+\item $e\star m=m$,
+\item $(m\star n)\star p=m\star(n\star p)$.
+\end{itemize}
+Мы называем элемент $e$ — {\em единицей}\index{моноид!единица}, а $\star$ — {\em правилом умножения} данного моноида.\index{моноид!правило умножения}%
+\footnote{Хотя функция $\star\taking M\times M\to M$ называется правилом умножения, оно может не иметь ничего общего с умножением. Это не более, чем алгоритм, берущий два исходных значения и возвращающий результат; именование его «умножением» должно быть скорее намеком на его истоки, а не требованием к его поведению.}
+Мы называем первые два условия {\em свойствами единицы}, а третье {\em ассоциативным законом} для моноидов.
 \end{definitionRUS}
 
 \begin{remarkENG}
-To be pedantic, the conditions from Definition \ref{def:monoid} should be stated 
+To be pedantic, the conditions from Definition \ref{def:monoid} should be stated
 \begin{itemize}
 \item $\star(m,e)=m$,
-\item $\star(e,m)=m$, and 
+\item $\star(e,m)=m$, and
 \item $\star(\star(m,n),p)=\star(m,(\star(n,p))$.
 \end{itemize} The way they are written in Definition \ref{def:monoid} is called {\em infix notation},\index{infix notation} and we often use infix notation without mentioning it. That is, given a function $\cdot\taking A\times B\to C$, we may write $a\cdot b$ rather than $\cdot(a,b)$.
 \end{remarkENG}
@@ -54,16 +68,16 @@ Let $M=\NN$ be the set of natural numbers. Let $e=0$ and let $\star\taking M\tim
 \end{exampleRUS}
 
 \begin{remarkENG}
-Sometimes we are working with a monoid $(M,e,\star)$, and the identity $e$ and multiplication $\star$ are somehow clear from context. In this case we might refer to the set $M$ as though it were the whole monoid. For example, if we were discussing the monoid from Example \ref{ex:monoid 0}, we might refer to it as $\NN$. The danger comes because sets may have multiple monoid structures, as we see below in Exercise \ref{exc:monoid 1}. 
+Sometimes we are working with a monoid $(M,e,\star)$, and the identity $e$ and multiplication $\star$ are somehow clear from context. In this case we might refer to the set $M$ as though it were the whole monoid. For example, if we were discussing the monoid from Example \ref{ex:monoid 0}, we might refer to it as $\NN$. The danger comes because sets may have multiple monoid structures, as we see below in Exercise \ref{exc:monoid 1}.
 \end{remarkENG}
 
 \begin{remarkRUS}
 \end{remarkRUS}
 
 \begin{exampleENG}[Non-monoid]
-If $M$ is a set, we might call a function $f\taking M\times M\to M$ an {\em operation on $M$}. For example, if $M=\NN$ is the set of natural numbers, we can consider the operation $f\taking\NN\to\NN$ called exponentiation. For example $f(2,5)=2*2*2*2*2=32$ and $f(7,2)=49.$ This is indeed an operation, but it is not part of any monoid. For one thing there is no possible unit. Trying the obvious choice of $e=1$, we see that $a^1=a$ (good), but that $1^a=1$ (bad: we need it to be $a$). For another thing, this operation is not associative because in general $a^{b^c}\neq (a^b)^c$. For example, $2^{1^2}=2$ but $(2^1)^2=4$. 
+If $M$ is a set, we might call a function $f\taking M\times M\to M$ an {\em operation on $M$}. For example, if $M=\NN$ is the set of natural numbers, we can consider the operation $f\taking\NN\to\NN$ called exponentiation. For example $f(2,5)=2*2*2*2*2=32$ and $f(7,2)=49.$ This is indeed an operation, but it is not part of any monoid. For one thing there is no possible unit. Trying the obvious choice of $e=1$, we see that $a^1=a$ (good), but that $1^a=1$ (bad: we need it to be $a$). For another thing, this operation is not associative because in general $a^{b^c}\neq (a^b)^c$. For example, $2^{1^2}=2$ but $(2^1)^2=4$.
 
-One might also attempt to consider an operation $f\taking M\times M\to M$ that, upon closer inspection, aren't even operations. For example, if $M=\ZZ$ then exponentiation is not even an operation. Indeed, $f(2,-1)=2^{-1}=\frac{1}{2}$, and this is not an integer. To have a function $f\taking M\times M\to M$, we need that every element of the domain, in this case every pair of integers, has an output under $f$. So there is no such function $f$. 
+One might also attempt to consider an operation $f\taking M\times M\to M$ that, upon closer inspection, aren't even operations. For example, if $M=\ZZ$ then exponentiation is not even an operation. Indeed, $f(2,-1)=2^{-1}=\frac{1}{2}$, and this is not an integer. To have a function $f\taking M\times M\to M$, we need that every element of the domain, in this case every pair of integers, has an output under $f$. So there is no such function $f$.
 \end{exampleENG}
 
 \begin{exampleRUS}[Non-monoid]
@@ -91,8 +105,8 @@ In both Example \ref{ex:monoid 0} and Exercise \ref{exc:monoid 1}, the monoids $
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Recall the notion of commutativity for monoids from Exercise \ref{ex:commutative monoid}. 
-\sexc What is the smallest set $M$ that you can give the structure of a non-commutative monoid? 
+Recall the notion of commutativity for monoids from Exercise \ref{ex:commutative monoid}.
+\sexc What is the smallest set $M$ that you can give the structure of a non-commutative monoid?
 \item What is the smallest set $M$ that you can give the structure of a monoid?
 \endsexc
 \end{exerciseENG}
@@ -127,8 +141,8 @@ In fact, the product of any list of monoid elements is the same, regardless of p
 \subsubsection{\caseENGRUS{Free monoids and finitely presented monoids}{ / }{Свободные и конечно представимые моноиды}}\label{sec:free monoid}
 
 \begin{definitionENG}\label{def:list}\index{list}
-Let $X$ be a set. A {\em list in $X$} is a pair $(n,f)$ where $n\in\NN$ is a natural number (called the {\em length of the list}) and $f\taking\ul{n}\to X$ is a function, where $\ul{n}=\{1,2,\ldots,n\}$. We may denote such a list by 
-$$(n,f)=[f(1),f(2),\ldots,f(n)].$$ 
+Let $X$ be a set. A {\em list in $X$} is a pair $(n,f)$ where $n\in\NN$ is a natural number (called the {\em length of the list}) and $f\taking\ul{n}\to X$ is a function, where $\ul{n}=\{1,2,\ldots,n\}$. We may denote such a list by
+$$(n,f)=[f(1),f(2),\ldots,f(n)].$$
 The {\em empty list} is the unique list in which $n=0$; we may denote it by $[\;]$. Given an element $x\in X$ the {\em singleton list on $x$} is the list $[x]$. Given a list $L=(n,f)$ and a number $i\in\NN$ with $i\leq n$, the {\em $i$th entry of $L$} is the element $f(i)\in X$. \index{entry!in list}
 
 Given two lists $L=(n,f)$ and $L'=(n',f')$, define the {\em concatenation of $L$ and $L'$}\index{list!concatenation}\index{concatenation!of lists}, denoted $L\plpl L'$,\index{a symbol!$\plpl$} to be the list $(n+n',f\plpl f')$, where $f\plpl f'\taking \ul{n+n'}\to X$ is given on $i\leq n+n'$ by
@@ -158,8 +172,8 @@ Let $X$ be a set. The {\em free monoid generated by $X$} is the sequence $M:=(\L
 \end{definitionRUS}
 
 \begin{exerciseENG}
-Let $\singleton$ denote a one-element set. 
-\sexc What is the free monoid generated by $\singleton$? 
+Let $\singleton$ denote a one-element set.
+\sexc What is the free monoid generated by $\singleton$?
 \item What is the free monoid generated by $\emptyset$?
 \endsexc
 \end{exerciseENG}
@@ -176,10 +190,10 @@ In the definition below, we will define a monoid $M$  by specifying some generat
 
 \begin{definitionENG}[Presented monoid]\label{def:presented monoid}\index{monoid!presented}
 Let $G$ be a finite set, let $n\in\NN$ be a natural number,
-\footnote{The number $n\in\NN$ is going to stand for the number of relations we declare.} 
+\footnote{The number $n\in\NN$ is going to stand for the number of relations we declare.}
 and for each $1\leq i\leq n$, let $m_i$ and $m_i'$ be elements of $\List(G)$.
-\footnote{Each $m_i$ and $m_i'$ are going to be made equal in the set $M$.} 
-The {\em monoid presented by generators $G$ and relations $\{(m_i,m_i')\|1\leq i\leq n\}$} is the monoid $\mcM=(M,e,\star)$ defined as follows. Let $\sim$ denote the equivalence relation on $\List(G)$ generated by $\{(xm_iy\sim xm_i'y)\|x,y\in\List(G), 1\leq i\leq n\}$, and define $M=\List(G)/\sim$. Let $e=[\;]$ and let $a * b$ be obtained by concatenating representing lists. 
+\footnote{Each $m_i$ and $m_i'$ are going to be made equal in the set $M$.}
+The {\em monoid presented by generators $G$ and relations $\{(m_i,m_i')\|1\leq i\leq n\}$} is the monoid $\mcM=(M,e,\star)$ defined as follows. Let $\sim$ denote the equivalence relation on $\List(G)$ generated by $\{(xm_iy\sim xm_i'y)\|x,y\in\List(G), 1\leq i\leq n\}$, and define $M=\List(G)/\sim$. Let $e=[\;]$ and let $a * b$ be obtained by concatenating representing lists.
 \end{definitionENG}
 
 \begin{definitionRUS}[Presented monoid]\label{def:presented monoid}\index{monoid!presented}
@@ -193,13 +207,13 @@ Every free monoid is a presented monoid, because we can just take the set of rel
 \end{remarkRUS}
 
 \begin{exampleENG}\label{ex:presented monoid}
-Let $G=\{a,b,c,d\}$. Think of these as buttons that can be pressed. The free monoid $\List(G)$ is the set of all ways of pressing buttons, e.g. pressing $a$ then $a$ then $c$ then $c$ then $d$ corresponds to the list $[a,a,c,c,d]$. The idea of presented monoids is that you notice that pressing $[a,a,c]$ always gives the same result as pressing $[d,d]$. You also notice that pressing $[c,a,c,a]$ is the same thing as doing nothing. 
+Let $G=\{a,b,c,d\}$. Think of these as buttons that can be pressed. The free monoid $\List(G)$ is the set of all ways of pressing buttons, e.g. pressing $a$ then $a$ then $c$ then $c$ then $d$ corresponds to the list $[a,a,c,c,d]$. The idea of presented monoids is that you notice that pressing $[a,a,c]$ always gives the same result as pressing $[d,d]$. You also notice that pressing $[c,a,c,a]$ is the same thing as doing nothing.
 
 In this case, we would have $m_1=[a,a,c]$, $m_1'=[d,d]$, and $m_2=[c,a,c,a], m_2'=[\;]$ and relations $\{(m_1,m_1'), (m_2,m_2')\}$. Really this means that we're equating $m_1$ with $m_1'$ and $m_2$ with $m_2'$, which for convenience we'll write out:
 $${\color{blue}{[a,a,c]}}={\color{blue}{[d,d]}}\hsp\tn{and}\hsp{\color{red}{[a,c,a,c]}}={\color{red}{[\;]}}
-$$ 
+$$
 
-To see how this plays out, we give an example of a calculation in $M=\List(G)/\sim$. Namely, 
+To see how this plays out, we give an example of a calculation in $M=\List(G)/\sim$. Namely,
 \begin{align*}
 [b,c,b,{\color{blue}{d,d}},a,c,a,a,c,d] = [b,c,b,a,a,{\color{red}{c,a,c,a}},a,c,d] &= [b,c,b,a,{\color{blue}{a,a,c}},d]\\
 &= [b,c,b,a,d,d,d].
@@ -210,7 +224,7 @@ To see how this plays out, we give an example of a calculation in $M=\List(G)/\s
 \end{exampleRUS}
 
 \begin{applicationENG}[Buffer]\label{app:buffer}
-Let $G=\{a,b,c,\ldots\,z\}$. Suppose we have a \href{http://en.wikipedia.org/wiki/Data_buffer}{\text buffer} of 32 characters and we want to consider the set of lists of length at most 32 to be a monoid. We simply have to decide what happens when someone types a list of length more than 32. 
+Let $G=\{a,b,c,\ldots\,z\}$. Suppose we have a \href{http://en.wikipedia.org/wiki/Data_buffer}{\text buffer} of 32 characters and we want to consider the set of lists of length at most 32 to be a monoid. We simply have to decide what happens when someone types a list of length more than 32.
 
 One option is to say that the last character typed overwrites the 32nd entry, $$[a_1,a_2,\ldots,a_{31},a_{32},b]\sim_1[a_1,a_2,\ldots,a_{31},b].$$ Another option is to say that any character typed after\_32 entries is discarded, $$[a_1,a_2,\ldots,a_{31},a_{32},b]\sim_2[a_1,a_2,\ldots,a_{31},a_{32}].$$ Both of these yield finitely presented monoids, generated by $G$. (In case it's useful, the number of necessary relations in both cases is $26^{33}$.)
 \end{applicationENG}
@@ -226,8 +240,8 @@ Let's consider the buffer concept again (see Application \ref{app:buffer}), but 
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $K:=\{BS,a,b,c,\ldots,z\}$, a set having 27 elements. Suppose you want to think of $BS\in K$ as the “backspace key” and the elements $a,b,\ldots z\in K$ as the letter keys on a keyboard. Then the free monoid $\List(K)$ is not quite appropriate as a model because we want $[a,b,d,BS]=[a,b]$. 
-\sexc Choose a set of relations for which the monoid presented by generators $K$ and the chosen relations is appropriate to this application. 
+Let $K:=\{BS,a,b,c,\ldots,z\}$, a set having 27 elements. Suppose you want to think of $BS\in K$ as the “backspace key” and the elements $a,b,\ldots z\in K$ as the letter keys on a keyboard. Then the free monoid $\List(K)$ is not quite appropriate as a model because we want $[a,b,d,BS]=[a,b]$.
+\sexc Choose a set of relations for which the monoid presented by generators $K$ and the chosen relations is appropriate to this application.
 \item Under your relations, how does $[BS]$ compare with $[\;]$? Is that suitable?
 \endsexc
 \end{exerciseENG}
@@ -240,7 +254,7 @@ Let $K:=\{BS,a,b,c,\ldots,z\}$, a set having 27 elements. Suppose you want to th
 \subsubsection{\caseENGRUS{Cyclic monoids}{ / }{Циклические моноиды}}
 
 \begin{definitionENG}
-A monoid is called {\em cyclic}\index{monoid!cyclic} if it has a presentation involving only one generator. 
+A monoid is called {\em cyclic}\index{monoid!cyclic} if it has a presentation involving only one generator.
 \end{definitionENG}
 
 \begin{definitionRUS}
@@ -271,7 +285,7 @@ To see the mathematical source of this intuitive depiction, see Example \ref{ex:
 \end{exampleRUS}
 
 \begin{exerciseENG}[Classify the cyclic monoids]\label{exc:classify cyclic}
-Classify all the cyclic monoids up to isomorphism. That is, come up with a naming system such that every cyclic monoid can be given a name in your system, such that no two non-isomorphic cyclic monoids have the same name, and such that no name exists in the system unless it refers to a cyclic monoid. 
+Classify all the cyclic monoids up to isomorphism. That is, come up with a naming system such that every cyclic monoid can be given a name in your system, such that no two non-isomorphic cyclic monoids have the same name, and such that no name exists in the system unless it refers to a cyclic monoid.
 
 Hint: one might see a pattern in which the three monoids in Example \ref{ex:cyclic} correspond respectively to $\infty$, $1$, and $12$, and then think “Cyclic monoids can be classified by (i.e. systematically named by elements of) the set $\NN\sqcup\{\infty\}$.” That idea is on the right track, but is not correct.
 \end{exerciseENG}
@@ -289,7 +303,7 @@ Let $(M,e,\star)$ be a monoid and let $S$ be a set. An {\em action of $(M,e,\sta
 \item $e\acts s=s$
 \item $m\acts(n\acts s)=(m\star n)\acts s$.
 \footnote{
-Definition \ref{def:monoid action} actually defines a {\em left action}\index{action!left} of $(M,e,\star)$ on $S$. A {\em right action}\index{action!right} is like a left action except the order of operations is somehow reversed. We will not really use right-actions in this text, but we briefly define it here for completeness. With notation as above, the only difference is in the second condition. We replace it by the condition that for all $m,n\in M$ and all $s\in S$ we have 
+Definition \ref{def:monoid action} actually defines a {\em left action}\index{action!left} of $(M,e,\star)$ on $S$. A {\em right action}\index{action!right} is like a left action except the order of operations is somehow reversed. We will not really use right-actions in this text, but we briefly define it here for completeness. With notation as above, the only difference is in the second condition. We replace it by the condition that for all $m,n\in M$ and all $s\in S$ we have
 $$m\acts(n\acts s)=(n\star m)\acts s
 $$}
 \end{itemize}
@@ -321,8 +335,8 @@ One can think of this as an action of the monoid of time on the clock.
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:clock}~
-\sexc Realize the set $T:=[0,12)\ss\RR$ as the coequalizer of a pair of arrows $\RR\tto\RR$. 
-\item For any $x\in\RR$, realize the mapping $x\cdot-\taking T\to T$, implied by Example \ref{ex:clocks}, using the universal property of coequalizers. 
+\sexc Realize the set $T:=[0,12)\ss\RR$ as the coequalizer of a pair of arrows $\RR\tto\RR$.
+\item For any $x\in\RR$, realize the mapping $x\cdot-\taking T\to T$, implied by Example \ref{ex:clocks}, using the universal property of coequalizers.
 \item Prove that it is an action.
 \endsexc
 \end{exerciseENG}
@@ -331,9 +345,9 @@ One can think of this as an action of the monoid of time on the clock.
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $B$ denote the set of buttons (or positions) of a video game controller (other than, say `start' and `select'), and consider the free monoid $\List(B)$ on $B$. 
+Let $B$ denote the set of buttons (or positions) of a video game controller (other than, say `start' and `select'), and consider the free monoid $\List(B)$ on $B$.
 \sexc What would it mean for $\List(B)$ to act on the set of states of some game? Imagine a video game $G'$ that uses the controller, but for which $\List(B)$ would not be said to act on the states of $G'$. Now imagine a simple game $G$ for which $\List(B)$ would be said to act.
-\item Can you think of a state $s$ of $G$, and two distinct elements $\ell,\ell'\in\List(B)$ such that $\ell\acts s=\ell'\acts s$? In video game parlance, what would you call an element $b\in B$ such that, for every state $s\in G$, one has $b\acts s=s$? 
+\item Can you think of a state $s$ of $G$, and two distinct elements $\ell,\ell'\in\List(B)$ such that $\ell\acts s=\ell'\acts s$? In video game parlance, what would you call an element $b\in B$ such that, for every state $s\in G$, one has $b\acts s=s$?
 \item In video game parlance, what would you call a state $s\in S$ such that, for every sequence of buttons $\ell\in\List(B)$, one has $\ell\acts s=s$?
 \endsexc
 \end{exerciseENG}
@@ -342,8 +356,8 @@ Let $B$ denote the set of buttons (or positions) of a video game controller (oth
 \end{exerciseRUS}
 
 \begin{applicationENG}
-Let $f\taking\RR\to\RR$ be a differentiable function of which we want to find roots (points $x\in\RR$ such that $f(x)=0$). Let $x_0\in\RR$ be a starting point. For any $n\in\NN$ we can apply \href{http://en.wikipedia.org/wiki/Newton's_method}{\text Newton's method} to $x_n$ to get $$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.$$ 
-This is a monoid (namely $\NN$, the free monoid on one generator) acting on a set (namely $\RR$). 
+Let $f\taking\RR\to\RR$ be a differentiable function of which we want to find roots (points $x\in\RR$ such that $f(x)=0$). Let $x_0\in\RR$ be a starting point. For any $n\in\NN$ we can apply \href{http://en.wikipedia.org/wiki/Newton's_method}{\text Newton's method} to $x_n$ to get $$x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}.$$
+This is a monoid (namely $\NN$, the free monoid on one generator) acting on a set (namely $\RR$).
 
 However, Newton's method can get into trouble. For example at a critical point it causes division by 0, and sometimes it can oscillate or overshoot. In these cases we want to perturb a bit to the left or right. To have these actions available to us, we would add “perturb” elements to our monoid. Now we have more available actions at any point, but at the cost of using a more complicated monoid.
 
@@ -354,7 +368,7 @@ When publishing an experimental finding, there may be some deep methodological q
 \end{applicationRUS}
 
 \begin{remarkENG}
-A monoid is useful for understanding how an agent acts on the set of states of an object, but there is only one {\em kind} of action. At any point, all actions are available. In reality it is often the case that contexts can change and different actions are available at different times. For example on a computer, the commands available in one application have no meaning in another. This will get us to categories in the next chapter. 
+A monoid is useful for understanding how an agent acts on the set of states of an object, but there is only one {\em kind} of action. At any point, all actions are available. In reality it is often the case that contexts can change and different actions are available at different times. For example on a computer, the commands available in one application have no meaning in another. This will get us to categories in the next chapter.
 \end{remarkENG}
 
 \begin{remarkRUS}
@@ -365,7 +379,7 @@ A monoid is useful for understanding how an agent acts on the set of states of a
 \subsubsection{\caseENGRUS{Monoids actions as ologs}{ / }{Действия моноидов как ологи}}
 
 \begin{blockENG}
-If monoids are understood in terms of how they act on sets, then it is reasonable to think of them in terms of ologs. In fact, the ologs associated to monoids are precisely those ologs that have exactly one type (and possibly many arrows and commutative diagrams). 
+If monoids are understood in terms of how they act on sets, then it is reasonable to think of them in terms of ologs. In fact, the ologs associated to monoids are precisely those ologs that have exactly one type (and possibly many arrows and commutative diagrams).
 \end{blockENG}
 
 \begin{blockRUS}
@@ -427,7 +441,7 @@ The following proposition expresses the notion of finite state automata in terms
 \end{blockRUS}
 
 \begin{propositionENG}
-Let $\Sigma, S$ be finite non-empty sets. Giving a function $\delta\taking\Sigma\times S\to S$ is equivalent to giving an action of the free monoid $\List(\Sigma)$ on $S$. 
+Let $\Sigma, S$ be finite non-empty sets. Giving a function $\delta\taking\Sigma\times S\to S$ is equivalent to giving an action of the free monoid $\List(\Sigma)$ on $S$.
 \end{propositionENG}
 
 \begin{propositionRUS}
@@ -455,8 +469,8 @@ A finite state machine is an action of a free monoid on a finite set.
 \end{blockRUS}
 
 \begin{exerciseENG}
-Consider the functions $\phi$ and $\psi$ above. 
-\sexc Show that for any $f\taking\Sigma\times S\to S$, the map $\psi(f)\taking\List(\Sigma)\times S\to S$ constitutes an action. 
+Consider the functions $\phi$ and $\psi$ above.
+\sexc Show that for any $f\taking\Sigma\times S\to S$, the map $\psi(f)\taking\List(\Sigma)\times S\to S$ constitutes an action.
 \item Show that $\phi$ and $\psi$ are mutually inverse functions (i.e. $\phi\circ\psi=\id_{\Hom(\Sigma\times S,S)}$ and $\psi\circ\phi=\id_{A}.$)
 \endsexc
 \end{exerciseENG}
@@ -469,7 +483,7 @@ Consider the functions $\phi$ and $\psi$ above.
 \subsection{\caseENGRUS{Monoid action tables}{ / }{Таблицы действия моноидов}}\label{sec:monoid action table}\index{action table}
 
 \begin{blockENG}
-Let $M$ be a monoid generated by the set $G=\{g_1,\ldots,g_m\}$, and with some relations, and suppose that $\alpha\taking M\times S\to S$ is an action of $M$ on a set $S=\{s_1,\ldots,s_n\}$. We can represent the action $\alpha$ using an {\em action table} whose columns are the elements of $G$ and whose rows are the elements of $S$. In each cell $(row,col)$, where $row\in S$ and $col\in G$, we put the element $\alpha(col,row)\in S$. 
+Let $M$ be a monoid generated by the set $G=\{g_1,\ldots,g_m\}$, and with some relations, and suppose that $\alpha\taking M\times S\to S$ is an action of $M$ on a set $S=\{s_1,\ldots,s_n\}$. We can represent the action $\alpha$ using an {\em action table} whose columns are the elements of $G$ and whose rows are the elements of $S$. In each cell $(row,col)$, where $row\in S$ and $col\in G$, we put the element $\alpha(col,row)\in S$.
 \end{blockENG}
 
 \begin{exampleENG}[Action table]\label{ex:action table}
@@ -538,13 +552,13 @@ Let $\NN$ be the additive monoid of natural numbers, let $S=\{0,1,2,\ldots,11\}$
 \subsection{\caseENGRUS{Monoid homomorphisms}{ / }{Гомоморфизмы моноидов}}
 
 \begin{blockENG}
-A monoid $(M,e,\star)$ involves a set, an identity element, and a multiplication formula. For two monoids to be comparable, their sets, their identity elements, and their multiplication formulas should be appropriately comparable.\index{appropriate comparison} For example the additive monoids $\NN$ and $\ZZ$ should be comparable because $\NN\ss\ZZ$ is a subset, the identity elements in both cases are the same $e=0$, and the multiplication formulas are both integer addition. 
+A monoid $(M,e,\star)$ involves a set, an identity element, and a multiplication formula. For two monoids to be comparable, their sets, their identity elements, and their multiplication formulas should be appropriately comparable.\index{appropriate comparison} For example the additive monoids $\NN$ and $\ZZ$ should be comparable because $\NN\ss\ZZ$ is a subset, the identity elements in both cases are the same $e=0$, and the multiplication formulas are both integer addition.
 \end{blockENG}
 
 \begin{definitionENG}\label{def:monoid hom}\index{monoid!homomorphism}
 Let $\mcM:=(M,e,\star)$ and $\mcM':=(M',e',\star')$ be monoids. A {\em monoid homomorphism $f$ from $\mcM$ to $\mcM'$}, denoted $f\taking\mcM\to\mcM'$, is a function $f\taking M\to M'$ satisfying two conditions:
 \begin{itemize}
-\item $f(e)=e'$, and 
+\item $f(e)=e'$, and
 \item $f(m_1\star m_2)=f(m_1)\star'f(m_2)$, for all $m_1,m_2\in M$.
 \end{itemize}
 The set of monoid homomorphisms from $\mcM$ to $\mcM'$ is denoted $\Hom_{\Mon}(\mcM,\mcM')$.
@@ -554,7 +568,7 @@ The set of monoid homomorphisms from $\mcM$ to $\mcM'$ is denoted $\Hom_{\Mon}(\
 \end{definitionRUS}
 
 \begin{exampleENG}[From $\NN$ to $\ZZ$]\label{ex:nat to int}
-As stated above, the inclusion map $i\taking\NN\to\ZZ$ induces a monoid homomorphism $(\NN,0,+)\to(\ZZ,0,+)$ because $i(0)=0$ and $i(n_1+n_2)=i(n_1)+i(n_2)$. 
+As stated above, the inclusion map $i\taking\NN\to\ZZ$ induces a monoid homomorphism $(\NN,0,+)\to(\ZZ,0,+)$ because $i(0)=0$ and $i(n_1+n_2)=i(n_1)+i(n_2)$.
 
 Let $i_5\taking\NN\to\ZZ$ denote the function $i_5(n)=5*n$, so $i_5(4)=20$. This is also a monoid homomorphism because $i_5(0)=5*0=0$ and $i_5(n_1+n_2)=5*(n_1+n_2)=5*n_1+5*n_2=i_5(n_1)+i_5(n_2).$
 \end{exampleENG}
@@ -568,7 +582,7 @@ Let $R=\{a,c,g,u\}$ and let $T=R^3$, the set of triplets in $R$. Let $\mcR=\List
 
 If $A$ be the set of amino acids and $\mcA=\List(A)$ the free monoid on $A$, the process of \href{http://en.wikipedia.org/wiki/Translation_(biology)}{\text translation} gives a monoid homomorphism $G\taking\mcT\to\mcA$, turning a list of RNA triplets into a polypeptide. But how do we go from a list of RNA nucleotides to a polypeptide? The answer is that there is no good way to do this mathematically. So what is going wrong?
 
-The answer is that there should not be a monoid homomorphism $\mcR\to\mcA$ because not all sequences of nucleotides produce a polypeptide; for example if the sequence has only two elements, it does not code for a polypeptide. There are several possible remedies to this problem. One is to take the image of $F$, which is a submonoid $\mcR'\ss\mcR$. It is not hard to see that there is a monoid homomorphism $F'\taking\mcR'\to\mcT$, and we can compose it with $G$ to get our desired monoid homomorphism $G\circ F'\taking\mcR'\to\mcA$. 
+The answer is that there should not be a monoid homomorphism $\mcR\to\mcA$ because not all sequences of nucleotides produce a polypeptide; for example if the sequence has only two elements, it does not code for a polypeptide. There are several possible remedies to this problem. One is to take the image of $F$, which is a submonoid $\mcR'\ss\mcR$. It is not hard to see that there is a monoid homomorphism $F'\taking\mcR'\to\mcT$, and we can compose it with $G$ to get our desired monoid homomorphism $G\circ F'\taking\mcR'\to\mcA$.
 \footnote{Adding stop-codons to the mix we can handle more of $\mcR$, e.g. sequences that don't have a multiple-of-three many nucleotides.}
 \end{applicationENG}
 
@@ -576,7 +590,7 @@ The answer is that there should not be a monoid homomorphism $\mcR\to\mcA$ becau
 \end{applicationRUS}
 
 \begin{exampleENG}\label{ex:trivial monoid homomorphism}\index{monoid!trivial homomorphism}
-Given any monoids $\mcM$ there is a unique monoid homomorphism from $\mcM$ to the trivial monoid $\ul{1}$ (see Example \ref{ex:trivial monoid}). There is also a unique homomorphism $\ul{1}\to\mcM$. These facts together have an upshot: between any two monoids $\mcM$ and $\mcM'$ we can always construct a homomorphism 
+Given any monoids $\mcM$ there is a unique monoid homomorphism from $\mcM$ to the trivial monoid $\ul{1}$ (see Example \ref{ex:trivial monoid}). There is also a unique homomorphism $\ul{1}\to\mcM$. These facts together have an upshot: between any two monoids $\mcM$ and $\mcM'$ we can always construct a homomorphism
 $$\mcM\Too{!}\ul{1}\Too{!}\mcM'$$
 which we call the {\em trivial homomorphism $\mcM\to\mcM'$}.\index{trivial homomorphism!of monoids} A morphism $\mcM\to\mcM'$ that is not trivial is called a {\em nontrivial homomorphism}.
 \end{exampleENG}
@@ -592,14 +606,14 @@ Let $\mcM=(\ZZ,0,+)$ and $\mcM'=(\NN,0,+)$. The only monoid homomorphism $f\taki
 \end{propositionRUS}
 
 \begin{proofENG}
-Let $f\taking\mcM\to\mcM'$ be a monoid homomorphism, and let $n=f(1)$ and $n'=f(-1)$ in $\NN$. Then we know that since $0=1+(-1)$ in $\ZZ$ we must have $0=f(0)=f(1+(-1))=f(1)+f(-1)=n+n'\in\NN$. But if $n\geq 1$ then this is impossible, so $n=0$. Similarly $n'=0$. Any element $m\in\ZZ$ can be written $m=1+1+\cdots+1$ or as $m=-1+-1+\cdots+-1$, and it is easy to see that $f(1)+f(1)+\cdots+f(1)=0=f(-1)+f(-1)+\cdots+f(-1)$. Therefore, $f(m)=0$ for all $m\in\ZZ$. 
+Let $f\taking\mcM\to\mcM'$ be a monoid homomorphism, and let $n=f(1)$ and $n'=f(-1)$ in $\NN$. Then we know that since $0=1+(-1)$ in $\ZZ$ we must have $0=f(0)=f(1+(-1))=f(1)+f(-1)=n+n'\in\NN$. But if $n\geq 1$ then this is impossible, so $n=0$. Similarly $n'=0$. Any element $m\in\ZZ$ can be written $m=1+1+\cdots+1$ or as $m=-1+-1+\cdots+-1$, and it is easy to see that $f(1)+f(1)+\cdots+f(1)=0=f(-1)+f(-1)+\cdots+f(-1)$. Therefore, $f(m)=0$ for all $m\in\ZZ$.
 \end{proofENG}
 
 \begin{proofRUS}
 \end{proofRUS}
 
 \begin{exerciseENG}
-For any $m\in\NN$ let $i_m\taking\NN\to\ZZ$ be the function $i_m(n)=m*n$. All such functions are monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$. Do any monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$ not come in this way? For example, what about using $n\mapsto 5*n-1$ or $n\mapsto n^2$, or some other function? 
+For any $m\in\NN$ let $i_m\taking\NN\to\ZZ$ be the function $i_m(n)=m*n$. All such functions are monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$. Do any monoid homomorphisms $(\NN,0,+)\to(\ZZ,0,+)$ not come in this way? For example, what about using $n\mapsto 5*n-1$ or $n\mapsto n^2$, or some other function?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -633,9 +647,9 @@ $$\Hom_\Mon(F(G),\mcM)\To{\iso}\Hom_\Set(G,M).$$
 \end{propositionRUS}
 
 \begin{proofENG}
-We provide a function $\phi\taking\Hom_\Mon(F(G),\mcM)\to\Hom_\Set(G,M)$ and a function $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$ and show that they are mutually inverse. Let us first construct $\phi$. Given a monoid homomorphism $f\taking F(G)\to\mcM$, we need to provide $\phi(f)\taking G\to M$. Given any $g\in G$ we define $\phi(f)(g):=f([g]).$ 
+We provide a function $\phi\taking\Hom_\Mon(F(G),\mcM)\to\Hom_\Set(G,M)$ and a function $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$ and show that they are mutually inverse. Let us first construct $\phi$. Given a monoid homomorphism $f\taking F(G)\to\mcM$, we need to provide $\phi(f)\taking G\to M$. Given any $g\in G$ we define $\phi(f)(g):=f([g]).$
 
-Now let us construct $\psi$. Given $p\taking G\to M$, we need to provide $\psi(p)\taking\List(G)\to\mcM$ such that $\psi(p)$ is a monoid homomorphism. For a list $L=[g_1,\ldots,g_n]\in\List(G)$, define $\psi(p)(L):=p(g_1)\star\cdots\star p(g_n)\in M$. In particular, $\psi(p)([\;])=e$. It is not hard to see that this is a monoid homomorphism. It is also easy to see that $\phi\circ\psi(p)=p$ for all $p\in\Hom_\Set(G,M)$. We show that $\psi\circ\phi(f)=f$ for all $f\in\Hom_\Mon(F(G),\mcM)$. Choose $L=[g_1,\ldots,g_n]\in\List(G)$. Then 
+Now let us construct $\psi$. Given $p\taking G\to M$, we need to provide $\psi(p)\taking\List(G)\to\mcM$ such that $\psi(p)$ is a monoid homomorphism. For a list $L=[g_1,\ldots,g_n]\in\List(G)$, define $\psi(p)(L):=p(g_1)\star\cdots\star p(g_n)\in M$. In particular, $\psi(p)([\;])=e$. It is not hard to see that this is a monoid homomorphism. It is also easy to see that $\phi\circ\psi(p)=p$ for all $p\in\Hom_\Set(G,M)$. We show that $\psi\circ\phi(f)=f$ for all $f\in\Hom_\Mon(F(G),\mcM)$. Choose $L=[g_1,\ldots,g_n]\in\List(G)$. Then
 $$\psi(\phi f)(L)=(\phi f)(g_1)\star\cdots\star(\phi f)(g_n)=f[g_1]\star\cdots\star f[g_n]=f([g_1,\ldots,g_n])=f(L).$$
 \end{proofENG}
 
@@ -668,7 +682,7 @@ Let $\mcM:=(M,e,\star)$ and $\mcM':=(M',e',\star')$ be monoids, $f\taking\mcM\to
 \end{propositionRUS}
 
 \begin{proofENG}
-Refer to Remark \ref{rmk:monoid action}; we assume $\alpha$ is a monoid action and want to show that $\Delta_f(\alpha)$ is too. We have $\Delta_f(\alpha)(e,s)=\alpha(f(e),s)=\alpha(e',s)=s$. We also have 
+Refer to Remark \ref{rmk:monoid action}; we assume $\alpha$ is a monoid action and want to show that $\Delta_f(\alpha)$ is too. We have $\Delta_f(\alpha)(e,s)=\alpha(f(e),s)=\alpha(e',s)=s$. We also have
 \begin{align*}
 \Delta_f(\alpha)(m,\Delta_f(\alpha)(n,s))=\alpha(f(m),\alpha(f(n),s))&=\alpha(f(m)\star' f(n),s)\\
 &=\alpha(f(m\star n),s)\\
