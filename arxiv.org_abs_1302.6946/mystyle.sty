@@ -19,16 +19,14 @@
 \newcommand{\genTh}[3]{
   \ifENG
     \newtheorem{the#1ENG}[envENG]{#2}
-    \newenvironment{#1ENG}[1][deFauLT]%
-      {\begin{english}%
-        \ifthenelse{\equal{##1}{deFauLT}}{\begin{the#1ENG}}{\begin{the#1ENG}[##1]}}%
+    \newenvironment{#1ENG}[1][]%
+      {\begin{english}\begin{the#1ENG}[##1]}%
       {\end{the#1ENG}\end{english}}
     \else\excludecomment{#1ENG}\fi
   \ifRUS
     \newtheorem{the#1RUS}[envRUS]{#3}
-    \newenvironment{#1RUS}[1][deFauLT]%
-      {\begin{russian}%
-        \ifthenelse{\equal{##1}{deFauLT}}{\begin{the#1RUS}}{\begin{the#1RUS}[##1]}}%
+    \newenvironment{#1RUS}[1][]%
+      {\begin{russian}\begin{the#1RUS}[##1]}%
       {\end{the#1RUS}\end{russian}}
     \else\excludecomment{#1RUS}\fi
 }
@@ -46,6 +44,7 @@
 \newfontfamily\russianfont{XITS}
 \newfontfamily\cyrillicfonttt{Ubuntu Mono}
 \newfontfamily\latinfonttt{Ubuntu Mono}
+\PolyglossiaSetup{russian}{indentfirst=true}
 
 \usepackage{tocbibind}
 \usepackage[titles]{tocloft}
@@ -337,7 +336,7 @@
 \ifENG\newenvironment{sloganENG}{\addtocounter{envENG}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{envENG}: \begin{quote}{\bf “}\slshape}{{\bf ”}\end{quote}\end{sloppypar}\vspace{.1in}}\else\excludecomment{sloganENG}\fi
 \ifRUS\newenvironment{sloganRUS}{\addtocounter{envRUS}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Лозунг}\;\arabic{envRUS}: \begin{quote}{\bf «}\slshape}{{\bf »}\end{quote}\end{sloppypar}\vspace{.1in}}\else\excludecomment{sloganRUS}\fi
 
-%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%
 
 \def\Finm{{\mathbf{Fin}_{m}}}
 \def\Prb{{\mathbf{Prb}}}
@@ -411,4 +410,3 @@
 \newtheorem{notation}[subsubsection]{Notation}
 \newtheorem{conjecture}[subsubsection]{Conjecture}
 \newtheorem{postulate}[subsubsection]{Postulate}
-
