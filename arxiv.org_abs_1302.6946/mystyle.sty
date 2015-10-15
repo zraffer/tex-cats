@@ -19,15 +19,11 @@
 \newcommand{\genTh}[3]{
   \ifENG
     \newtheorem{the#1ENG}[envENG]{#2}
-    \newenvironment{#1ENG}[1][]%
-      {\begin{english}\begin{the#1ENG}[##1]}%
-      {\end{the#1ENG}\end{english}}
+    \newenvironment{#1ENG}[1][]{\begin{english}\begin{the#1ENG}[##1]}{\end{the#1ENG}\end{english}}
     \else\excludecomment{#1ENG}\fi
   \ifRUS
     \newtheorem{the#1RUS}[envRUS]{#3}
-    \newenvironment{#1RUS}[1][]%
-      {\begin{russian}\begin{the#1RUS}[##1]}%
-      {\end{the#1RUS}\end{russian}}
+    \newenvironment{#1RUS}[1][]{\begin{russian}\begin{the#1RUS}[##1]}{\end{the#1RUS}\end{russian}}
     \else\excludecomment{#1RUS}\fi
 }
 
@@ -69,9 +65,9 @@
 
 \usepackage[backref=true, totoc=chapter, split=chapter]{enotez}
 \DeclareTranslation{russian}{enotez-title}{Примечания переводчика}
-\DeclareTranslation{russian}{enotez-splitted-title}{Примечания к <name> <ref>}
-\DeclareTranslation{russian}{enotez-section}{разделу}
-\DeclareTranslation{russian}{enotez-chapter}{главе}
+\DeclareTranslation{russian}{enotez-splitted-title}{<name> <ref>}
+\DeclareTranslation{russian}{enotez-section}{К разделу}
+\DeclareTranslation{russian}{enotez-chapter}{К главе}
 \renewcommand*\enotezwritemark[1]{\textsuperscript{(#1)}}
 \DeclareInstance{enotez-list}{custom}{paragraph}%
 {notes-sep=.5\baselineskip, format=\normalfont, number=\textsuperscript{(#1)}}
@@ -198,7 +194,6 @@
 \newcommand{\TriLeft}[7]{\xymatrix{#1\ar[dr]_{#2}\ar[rr]^{#3}&&#4\ar[dl]^{#5}\\&#6\ar@{}[u] |{\Longleftarrow}\ar@{}[u]|>>>>{#7}}}
 \newcommand{\TriIso}[7]{\xymatrix{#1\ar[dr]_{#2}\ar[rr]^{#3}&&#4\ar[dl]^{#5}\\&#6\ar@{}[u] |{\Longleftrightarrow}\ar@{}[u]|>>>>{#7}}}
 
-
 \newcommand{\arr}[1]{\ar@<.5ex>[#1]\ar@<-.5ex>[#1]}
 \newcommand{\arrr}[1]{\ar@<.7ex>[#1]\ar@<0ex>[#1]\ar@<-.7ex>[#1]}
 \newcommand{\arrrr}[1]{\ar@<.9ex>[#1]\ar@<.3ex>[#1]\ar@<-.3ex>[#1]\ar@<-.9ex>[#1]}
@@ -215,7 +210,7 @@
 \newcommand{\prodmap}[2]{\la#1,#2\ra}
 \newcommand{\pb}[3]{\prodmap{#1}{#2}_{#3}}
 \newcommand{\coprodmap}[2]{{\left\{\parbox{.1in}{#1\\#2}\right.}}
-\newcommand{\po}[3]{\coprodmap{#1}{#2}}
+\newcommand{\po}[3]{\coprodmap{#1}{#2}^{#3}}
 
 \def\id{\tn{id}}
 \def\ids{\tn{ids}}
@@ -353,15 +348,6 @@
 \def\ND{{\mathbf{ND}}}
 \def\Poset{{\mathbf{Poset}}}
 
-\newcommand{\MainCatLarge}[1]{
-	\stackrel{#1}{
-		\parbox{4.5in}{\fbox{\parbox{4.4in}{\begin{center}\underline{{\tt Employee} manager worksIn $\simeq$ {\tt Employee} worksIn}\hsp  \underline{{\tt Department} secretary worksIn $\simeq$ {\tt Department}}\end{center}~\\\\\\
-			\xymatrix@=8pt{&\LTO{Employee}\ar@<.5ex>[rrrrr]^{\tn{worksIn}}\ar@(l,u)[]+<5pt,10pt>^{\tn{manager}}\ar[dddl]_{\tn{first}}\ar[dddr]^{\tn{last}}&&&&&\LTO{Department}\ar@<.5ex>[lllll]^{\tn{secretary}}\ar[ddd]^{\tn{name}}\\\\\\\LTO{FirstNameString}&&\LTO{LastNameString}&~&~&~&\LTO{DepartmentNameString}
-			}
-		}}}
-	}
-}
-
 \def\GrIn{{\mathbf{GrIn}}}
 \def\GrInSchema{\xymatrix{\LMO{Ar}\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LMO{V\!e}}}
 
@@ -381,32 +367,13 @@
 
 \titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large\caseENGRUS{How can mathematics make this diagram meaningful?}{\\}{Как математика может придать смысл этой диаграмме?}\normalsize}
 
-%%%% from original, to be eliminated
+%%%%%%%%%%%%%%%%%%%
 
-\newtheorem{theorem}[subsubsection]{Theorem}
-\newtheorem{lemma}[subsubsection]{Lemma}
-\newtheorem{proposition}[subsubsection]{Proposition}
-\newtheorem{corollary}[subsubsection]{Corollary}
-\newtheorem{fact}[subsubsection]{Fact}
-
-\theoremstyle{remark}
-\newtheorem{remark}[subsubsection]{Remark}
-\newtheorem{example}[subsubsection]{Example}
-\newtheorem{warning}[subsubsection]{Warning}
-\newtheorem{question}[subsubsection]{Question}
-\newtheorem{guess}[subsubsection]{Guess}
-\newtheorem{answer}[subsubsection]{Answer}
-\newtheorem{construction}[subsubsection]{Construction}
-\newtheorem{rules}[subsubsection]{Rules of good practice}
-\newtheorem{exc}[subsubsection]{Exercise}
-\newenvironment{exercise}{\begin{exc}}{\hspace*{\fill}$\lozenge$\end{exc}}
-\newtheorem{app}[subsubsection]{Application}
-\newenvironment{application}{\begin{app}}{\hspace*{\fill}$\lozenge\lozenge$\end{app}}
-
-\newenvironment{slogan}{\addtocounter{subsubsection}{1}\vspace{.1in}\begin{sloppypar}\noindent{\em Slogan}\;\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. \begin{quote}"\slshape}{"\end{quote}\end{sloppypar}\vspace{.1in}}
-
-\theoremstyle{definition}
-\newtheorem{definition}[subsubsection]{Definition}
-\newtheorem{notation}[subsubsection]{Notation}
-\newtheorem{conjecture}[subsubsection]{Conjecture}
-\newtheorem{postulate}[subsubsection]{Postulate}
+\newcommand{\MainCatLarge}[1]{
+  \stackrel{#1}{
+    \parbox{4.5in}{\fbox{\parbox{4.4in}{\begin{center}\underline{{\tt Employee} manager worksIn $\simeq$ {\tt Employee} worksIn}\hsp  \underline{{\tt Department} secretary worksIn $\simeq$ {\tt Department}}\end{center}~\\\\\\
+      \xymatrix@=8pt{&\LTO{Employee}\ar@<.5ex>[rrrrr]^{\tn{worksIn}}\ar@(l,u)[]+<5pt,10pt>^{\tn{manager}}\ar[dddl]_{\tn{first}}\ar[dddr]^{\tn{last}}&&&&&\LTO{Department}\ar@<.5ex>[lllll]^{\tn{secretary}}\ar[ddd]^{\tn{name}}\\\\\\\LTO{FirstNameString}&&\LTO{LastNameString}&~&~&~&\LTO{DepartmentNameString}
+      }
+    }}}
+  }
+}
