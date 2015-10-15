@@ -12,7 +12,7 @@ Just above, in the introduction to this chapter, I said that adjoint functors ar
 \end{blockRUS}
 
 \begin{blockENG}
-In the common understanding of dictionaries, we assume that the two languages (say French and English) are equally expressive, and that a good dictionary will be an even exchange of ideas. But in category theory we often have two categories that are not on the same conceptual level. This is most clear in the case of so-called {\em free-forgetful adjunctions}. In Section \ref{sec:adjoints discuss and define} we will explore the sense in which each adjunction provides a dictionary between two categories that are not necessarily on an equal footing, so to speak.
+In the common understanding of dictionaries, we assume that the two languages (say French and English) are equally expressive, and that a good dictionary will be an even exchange of ideas. But in category theory we often have two categories that are not on the same conceptual level. This is most clear in the case of so-called {\em free-forgetful adjunctions}. In Section~\ref{sec:adjoints discuss and define} we will explore the sense in which each adjunction provides a dictionary between two categories that are not necessarily on an equal footing, so to speak.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -58,7 +58,7 @@ Back to sets and monoids, the sets are like the babies from our story: they are 
 \end{blockRUS}
 
 \begin{blockENG}
-Applying free functor $L\taking\Set\to\Mon$ to a set $X$ makes every element $x\in X$ a word, and these words can be strung together to form more complex words. (We discussed the free functor in Section \ref{sec:free monoid}.) Since a set such as $X$ carries no information about the meaning or structure of its various elements, the free monoid $F(X)$ does not relate different words in any way. To apply the forgetful functor $R\taking\Mon\to\Set$ to a monoid, even a structured one, is to simply forget that its elements are anything but mere elements of a set. It sends a monoid $(M,1,\star)$ to the set $M$. 
+Applying free functor $L\taking\Set\to\Mon$ to a set $X$ makes every element $x\in X$ a word, and these words can be strung together to form more complex words. (We discussed the free functor in Section~\ref{sec:free monoid}.) Since a set such as $X$ carries no information about the meaning or structure of its various elements, the free monoid $F(X)$ does not relate different words in any way. To apply the forgetful functor $R\taking\Mon\to\Set$ to a monoid, even a structured one, is to simply forget that its elements are anything but mere elements of a set. It sends a monoid $(M,1,\star)$ to the set $M$. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -76,7 +76,7 @@ Let $\mcB$ and $\mcA$ be categories. \footnote{Throughout this definition, notic
 An {\em adjunction between $\mcB$ and $\mcA$} is a pair of functors 
 $$L\taking\mcB\to\mcA\hsp\tn{and}\hsp R\taking\mcA\to\mcB$$ 
 together with a natural isomorphism
-\footnote{The natural isomorphism $\alpha$ (see Lemma \ref{lemma:natural iso}) is between two functors $\mcB\op\times\mcA\to\Set$, namely the functor $(B,A)\mapsto\Hom_\mcA(L(B),A)$ and the functor $(B,A)\mapsto\Hom_\mcB(B,R(A))$.} 
+\footnote{The natural isomorphism $\alpha$ (see Lemma~\ref{lemma:natural iso}) is between two functors $\mcB\op\times\mcA\to\Set$, namely the functor $(B,A)\mapsto\Hom_\mcA(L(B),A)$ and the functor $(B,A)\mapsto\Hom_\mcB(B,R(A))$.} 
 whose component for any objects $A\in\Ob(\mcA)$ and $B\in\Ob(\mcB)$ is: 
 \begin{align}\label{dia:adjunction isomorphism}
 \alpha_{B,A}\taking\Hom_\mcA(L(B),A)\Too{\iso}\Hom_\mcB(B,R(A)).
@@ -94,7 +94,7 @@ $$\adjoint{L}{\mcB}{\mcA}{R}$$
 \end{definitionRUS}
 
 \begin{propositionENG}\label{prop:free forgetful monoid}
-Let $L\taking\Set\to\Mon$ be the functor sending $X\in\Ob(\Set)$ to the free monoid $L(X):=(\List(X),[\;],\plpl)$, as in Definition \ref{def:free monoid}. Let $R\taking\Mon\to\Set$ be the functor sending each monoid $\mcM:=(M,1,\star)$ to its underlying set $R(\mcM):=M$. Then $L$ is left adjoint to $R$.
+Let $L\taking\Set\to\Mon$ be the functor sending $X\in\Ob(\Set)$ to the free monoid $L(X):=(\List(X),[\;],\plpl)$, as in Definition~\ref{def:free monoid}. Let $R\taking\Mon\to\Set$ be the functor sending each monoid $\mcM:=(M,1,\star)$ to its underlying set $R(\mcM):=M$. Then $L$ is left adjoint to $R$.
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:free forgetful monoid}
@@ -114,7 +114,7 @@ Suppose given an element $g\in\Hom_\Set(X,R(\mcM))$, i.e. a function $g\taking X
 \end{proofRUS}
 
 \begin{exampleENG}
-We need to ground our discussion in some concrete mathematics. In Proposition \ref{prop:free forgetful monoid} we provided our long-awaited adjunction between sets and monoids. A set $X$ gets transformed into a monoid by considering lists in $X$; a monoid $\mcM$ gets transformed into a set by forgetting the multiplication law. So we have a functor going one way and the other, 
+We need to ground our discussion in some concrete mathematics. In Proposition~\ref{prop:free forgetful monoid} we provided our long-awaited adjunction between sets and monoids. A set $X$ gets transformed into a monoid by considering lists in $X$; a monoid $\mcM$ gets transformed into a set by forgetting the multiplication law. So we have a functor going one way and the other, 
 $$L\taking\Set\to\Mon,\hspace{1in}R\taking\Mon\to\Set,$$
 but an adjunction is more than that: it includes a guarantee about the relationship between these two functors. What is the relationship between $L$ and $R$? Consider an arbitrary monoid $\mcM=(M,1,*)$.
 
@@ -124,21 +124,21 @@ This set classifies all the ways to pick three elements out of the underlying se
 
 Now we ask what Equation (\ref{dia:adjunction isomorphism}) means. The equation
 $$\Hom_\Mon(L(\{a,b,c\}),\mcM)\iso\Hom_\Set(\{a,b,c\},R(\mcM)).$$
-tells us that somehow we can answer the same question completely from within the category of monoids. In fact it tells us how to do so, namely as $\Hom_\Mon(\List(\{1,2,3\},\mcM)$.  Exercise \ref{ex:monoid adjunction} looks at how that should go. The answer is “hidden” in the proof of Proposition \ref{prop:free forgetful monoid}.
+tells us that somehow we can answer the same question completely from within the category of monoids. In fact it tells us how to do so, namely as $\Hom_\Mon(\List(\{1,2,3\},\mcM)$.  Exercise~\ref{ex:monoid adjunction} looks at how that should go. The answer is “hidden” in the proof of Proposition~\ref{prop:free forgetful monoid}.
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{ex:monoid adjunction}
-Let $X=\{a,b,c\}$ and let $\mcM=(\NN,1,*)$ be the multiplicative monoid of natural numbers (see Example \ref{ex:multiplication table}). Let $f\taking X\to\NN$ be the function given by $f(a)=7, f(b)=2, f(c)=2$, and let $\beta_{X,\mcM}\taking\Hom_\Set(X,R(\mcM))\to\Hom_\Mon(L(X),\mcM)$ be as in the proof of Proposition \ref{prop:free forgetful monoid}. What is $\beta_{X,\mcM}(f)([b,b,a,c])$?
+Let $X=\{a,b,c\}$ and let $\mcM=(\NN,1,*)$ be the multiplicative monoid of natural numbers (see Example~\ref{ex:multiplication table}). Let $f\taking X\to\NN$ be the function given by $f(a)=7, f(b)=2, f(c)=2$, and let $\beta_{X,\mcM}\taking\Hom_\Set(X,R(\mcM))\to\Hom_\Mon(L(X),\mcM)$ be as in the proof of Proposition~\ref{prop:free forgetful monoid}. What is $\beta_{X,\mcM}(f)([b,b,a,c])$?
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{ex:monoid adjunction}
 \end{exerciseRUS}
 
 \begin{blockENG}
-Let us look once more at the adjunction between adults and babies. Using the notation of Definition \ref{def:adjunction} $\mcA$ is the “adult category” of meaningful words and $\mcB$ is the “baby category” of repeated noises. The left adjoint turns every repeated sound into a meaningful word (having “free” meaning) and the right adjoint “forgets” the meaning of any word and considers it merely as a sound. 
+Let us look once more at the adjunction between adults and babies. Using the notation of Definition~\ref{def:adjunction} $\mcA$ is the “adult category” of meaningful words and $\mcB$ is the “baby category” of repeated noises. The left adjoint turns every repeated sound into a meaningful word (having “free” meaning) and the right adjoint “forgets” the meaning of any word and considers it merely as a sound. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -166,18 +166,18 @@ Again, the above is simply an analogy, and almost certainly not formalizable. Th
 \end{blockRUS}
 
 \begin{exampleENG}\label{ex:adjunction monoids and sets}
-Let $L\taking\Set\to\Mon$ and $R\taking\Mon\to\Set$ be the free and forgetful functors from Proposition \ref{prop:free forgetful monoid}. We know that $L$ is left adjoint to $R$; however $L$ is {\em not} right adjoint to $R$. In other words, we can show that the necessary natural isomorphism cannot exist.
+Let $L\taking\Set\to\Mon$ and $R\taking\Mon\to\Set$ be the free and forgetful functors from Proposition~\ref{prop:free forgetful monoid}. We know that $L$ is left adjoint to $R$; however $L$ is {\em not} right adjoint to $R$. In other words, we can show that the necessary natural isomorphism cannot exist.
 
 Let $X=\{a,b\}$ and let $\mcM=(\{1\},1,!)$ be the trivial monoid. Then the necessary natural isomorphism would need to give us a bijection 
 $$\Hom_\Mon(\mcM,L(X))\iso^?\Hom_\Set(\{1\},X).$$ 
-But the left-hand side has one element, because $\mcM$ is the initial object in $\Mon$ (see Example \ref{ex:initial monoid terminal monoid}), whereas the right-hand side has two elements. Therefore no isomorphism can exist.
+But the left-hand side has one element, because $\mcM$ is the initial object in $\Mon$ (see Example~\ref{ex:initial monoid terminal monoid}), whereas the right-hand side has two elements. Therefore no isomorphism can exist.
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:adjunction monoids and sets}
 \end{exampleRUS}
 
 \begin{exampleENG}
-Preorders have underlying sets, giving rise to a functor $U\taking\PrO\to\Set$.\index{a functor!$\PrO\to\Set$} The functor $U$ has both a left adjoint and a right adjoint. The left adjoint of $U$ is $D\taking\Set\to\PrO$,\index{a functor!$\Set\to\PrO$} sending a set $X$ to the discrete preorder on $X$ (the preorder with underlying set $X$, having the fewest possible $\leq$'s). The right adjoint of $U$ is $I\taking\Set\to\PrO$, sending a set $X$ to the indiscrete preorder on $X$ (the preorder with underlying set $X$, having the most possible $\leq$'s). See Example \ref{ex:discrete and indiscrete}. 
+Preorders have underlying sets, giving rise to a functor $U\taking\PrO\to\Set$.\index{a functor!$\PrO\to\Set$} The functor $U$ has both a left adjoint and a right adjoint. The left adjoint of $U$ is $D\taking\Set\to\PrO$,\index{a functor!$\Set\to\PrO$} sending a set $X$ to the discrete preorder on $X$ (the preorder with underlying set $X$, having the fewest possible $\leq$'s). The right adjoint of $U$ is $I\taking\Set\to\PrO$, sending a set $X$ to the indiscrete preorder on $X$ (the preorder with underlying set $X$, having the most possible $\leq$'s). See Example~\ref{ex:discrete and indiscrete}. 
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -202,7 +202,7 @@ Here are some other adjunctions:
 \item The underlying graph functor $\Cat\to\Grph$\index{a functor!$\Cat\to\Grph$}\index{a functor!$\Grph\to\Cat$} has a left adjoint $\Grph\to\Cat$ given by the free category.
 \item The functor $\PrO\to\Grph$, \index{a functor!$\PrO\to\Grph$} given by drawing edges for $\leq$'s, has a left adjoint given by existence of paths.
 \item The forgetful functor from posets to preorders has a left adjoint given by quotient by isomorphism relation.
-\item Given a set $A$, the functor $(-\times A)\taking\Set\to\Set$ has a right adjoint $\Hom(A,-)$ (this was called currying in Section \ref{sec:currying}). 
+\item Given a set $A$, the functor $(-\times A)\taking\Set\to\Set$ has a right adjoint $\Hom(A,-)$ (this was called currying in Section~\ref{sec:currying}). 
 \end{itemize}
 \end{exampleENG}
 
@@ -210,7 +210,7 @@ Here are some other adjunctions:
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Let $F\taking\mcC\to\mcD$ and $G\taking\mcD\to\mcC$ be mutually inverse equivalences of categories (see Definition \ref{def:equiv of cats}). Are they adjoint in one direction or the other?
+Let $F\taking\mcC\to\mcD$ and $G\taking\mcD\to\mcC$ be mutually inverse equivalences of categories (see Definition~\ref{def:equiv of cats}). Are they adjoint in one direction or the other?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -261,7 +261,7 @@ Again, the identity component $\id_{G'(d)}$ is sent to some morphism $G'(d)\to G
 \subsubsection{\caseENGRUS{Quantifiers as adjoints}{ / }{Кванторы как сопряжения}}
 
 \begin{blockENG}
-One of the simplest but neatest places that adjoints show up is between preimages and the logical quantifiers $\exists$ and $\forall$, which we first discussed in Notation \ref{not:basic math notation}. \index{preimage}\index{a symbol!$\forall$}\index{a symbol!$\exists$} The setting in which to discuss this is that of sets and their power preorders. That is, if $X$ is a set then recall from Section \ref{sec:meets and joins} that the power set $\PP(X)$ has a natural ordering by inclusion of subsets. 
+One of the simplest but neatest places that adjoints show up is between preimages and the logical quantifiers $\exists$ and $\forall$, which we first discussed in Notation~\ref{not:basic math notation}. \index{preimage}\index{a symbol!$\forall$}\index{a symbol!$\exists$} The setting in which to discuss this is that of sets and their power preorders. That is, if $X$ is a set then recall from Section~\ref{sec:meets and joins} that the power set $\PP(X)$ has a natural ordering by inclusion of subsets. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -291,7 +291,7 @@ We will see in the next example why this notation is apt.
 
 \begin{exampleENG}
 In logic or computer science, the quantifiers $\exists$ and $\forall$ are used to ask whether any or all elements of a set have a certain property. For example, one may have a set of natural numbers and want to know whether any or all are even or odd.
-Let $Y=\{{\tt even,odd}\}$, and let $p\taking\NN\to Y$ be the function that takes assigns to each natural number its parity (even or odd). Because the elements of $\PP(\NN)$ and $\PP(Y)$ are ordered by “inclusion of subsets”, we can construe these orders as categories (by Proposition \ref{prop:preorders to cats}). That's all old; what's new is that we have adjunctions between these categories
+Let $Y=\{{\tt even,odd}\}$, and let $p\taking\NN\to Y$ be the function that takes assigns to each natural number its parity (even or odd). Because the elements of $\PP(\NN)$ and $\PP(Y)$ are ordered by “inclusion of subsets”, we can construe these orders as categories (by Proposition~\ref{prop:preorders to cats}). That's all old; what's new is that we have adjunctions between these categories
 $$
 \xymatrix{\PP(\NN)\ar@/^1.2pc/[rr]^{\exists_p}\ar@/_1.2pc/[rr]^{\forall_p}&&\PP(Y)\ar[ll]_{p^\m1}.}
 $$
@@ -319,7 +319,7 @@ Let $X$ be a set and $U\ss X$ a subset. Find a set $Y$ and a function $f\taking 
 \end{exerciseRUS}
 
 \begin{blockENG}
-In fact, “quantifiers as adjoints” is part of a larger story. Suppose we think of elements of a set $X$ as bins, or storage areas. An element of $\PP(X)$ can be construed as an injection $U\inj X$, i.e. an assignment of a bin to each element of $U$, with at most one element of $U$ in each bin. Relaxing that restriction, we may consider arbitrary sets $U$ and assignments $U\to X$ of a bin to each element $u\in U$. Given a function $f\taking X\to Y$, we can generalize $\exists_f$ and $\forall_f$ to functors denoted $\Sigma_f$ and $\Pi_f$, which will parameterize disjoint unions and products (respectively) over $y\in Y$. This will be discussed in Section \ref{sec:data migration}.
+In fact, “quantifiers as adjoints” is part of a larger story. Suppose we think of elements of a set $X$ as bins, or storage areas. An element of $\PP(X)$ can be construed as an injection $U\inj X$, i.e. an assignment of a bin to each element of $U$, with at most one element of $U$ in each bin. Relaxing that restriction, we may consider arbitrary sets $U$ and assignments $U\to X$ of a bin to each element $u\in U$. Given a function $f\taking X\to Y$, we can generalize $\exists_f$ and $\forall_f$ to functors denoted $\Sigma_f$ and $\Pi_f$, which will parameterize disjoint unions and products (respectively) over $y\in Y$. This will be discussed in Section~\ref{sec:data migration}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -330,7 +330,7 @@ In fact, “quantifiers as adjoints” is part of a larger story. Suppose we thi
 \subsection{\caseENGRUS{Universal concepts in terms of adjoints}{ / }{Универсальные конструкции в терминах сопряжений}}\label{sec:universal concepts}
 
 \begin{blockENG}
-In this section we discuss how universal concepts, i.e. initial objects and terminal objects, colimits and limits, are easily phrased in the language of adjoint functors. We will say that a functor $F\taking\mcC\to\mcD$ {\em is a left adjoint} if there exists a functor $G\taking\mcD\to\mcC$ such that $F$ is a left adjoint of $G$. We showed in Proposition \ref{prop:unicity of adjoints} that if $F$ is a left adjoint of some functor $G$, then it is isomorphic to every other left adjoint of $G$, and $G$ is isomorphic to every other right adjoint of $F$.
+In this section we discuss how universal concepts, i.e. initial objects and terminal objects, colimits and limits, are easily phrased in the language of adjoint functors. We will say that a functor $F\taking\mcC\to\mcD$ {\em is a left adjoint} if there exists a functor $G\taking\mcD\to\mcC$ such that $F$ is a left adjoint of $G$. We showed in Proposition~\ref{prop:unicity of adjoints} that if $F$ is a left adjoint of some functor $G$, then it is isomorphic to every other left adjoint of $G$, and $G$ is isomorphic to every other right adjoint of $F$.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -346,7 +346,7 @@ The functor $t$ has a right adjoint $R\taking\ul{1}\to\mcC$ if and only if there
 \end{exampleRUS}
 
 \begin{blockENG}
-When we defined colimits and limits in Definitions \ref{def:coslice and colimit} and \ref{def:slice and limit} we did so for individual $I$-shaped diagrams $X\taking I\to\mcC$. Using adjoints we can define the limit of every $I$-shaped diagram in $\mcC$ at once.
+When we defined colimits and limits in Definitions~\ref{def:coslice and colimit} and~\ref{def:slice and limit} we did so for individual $I$-shaped diagrams $X\taking I\to\mcC$. Using adjoints we can define the limit of every $I$-shaped diagram in $\mcC$ at once.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -367,7 +367,7 @@ Suppose we want to take the colimit or limit of $X$. We are given an object $X$ 
 \end{blockRUS}
 
 \begin{blockENG}
-We will work with a generalization of colimits and limits in Section \ref{sec:data migration}. But for now, let's bring this down to earth with a concrete example.
+We will work with a generalization of colimits and limits in Section~\ref{sec:data migration}. But for now, let's bring this down to earth with a concrete example.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -405,7 +405,7 @@ D(1)&D(2)&D(3)\\\\
 \end{exampleRUS}
 
 \begin{blockENG}
-It is not hard to show that the composition of left adjoints is a left adjoint, and the composition of right adjoints is a right adjoint. In the following example we show how currying (as in Sections \ref{sec:currying} and \ref{ex:other adjunctions}) arises out of a certain combination of data migration functors. 
+It is not hard to show that the composition of left adjoints is a left adjoint, and the composition of right adjoints is a right adjoint. In the following example we show how currying (as in Sections~\ref{sec:currying} and~\ref{ex:other adjunctions}) arises out of a certain combination of data migration functors. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -452,7 +452,7 @@ $$R(\lim D)\iso \lim (R\circ D).$$
 \end{propositionRUS}
 
 \begin{proofENG}
-The proof is simple if one knows the Yoneda lemma (Section \ref{sec:yoneda}). I have decided to skip it to keep the book shorter. See \cite{Mac}.
+The proof is simple if one knows the Yoneda lemma (Section~\ref{sec:yoneda}). I have decided to skip it to keep the book shorter. See \cite{Mac}.
 \end{proofENG}
 
 \begin{proofRUS}
@@ -470,7 +470,7 @@ For example, if $[n]$ is the linear order category of length $n$ then $[n]\times
 \end{exampleRUS}
 
 \begin{exampleENG}
-The “path poset” functor $L\taking\Grph\to\PrO$ given by existence of paths (see Exercise \ref{exc:grph to pro}) is left adjoint to the functor $R\taking\PrO\to\Grph$ given by replacing $\leq$'s by arrows. This means that $L$ preserves colimits. So taking the union of graphs $G$ and $H$ results in a graph whose path poset  $L(G\sqcup H)$ is the union of the path posets of $G$ and $H$. But this is not so for products. 
+The “path poset” functor $L\taking\Grph\to\PrO$ given by existence of paths (see Exercise~\ref{exc:grph to pro}) is left adjoint to the functor $R\taking\PrO\to\Grph$ given by replacing $\leq$'s by arrows. This means that $L$ preserves colimits. So taking the union of graphs $G$ and $H$ results in a graph whose path poset  $L(G\sqcup H)$ is the union of the path posets of $G$ and $H$. But this is not so for products. 
 
 Let $G=H=\fbox{\xymatrix{\LMO{a}\ar[r]^f&\LMO{b}}}$. Then $L(G)=L(H)=[1]$, the linear order of length 1. But the product $G\times H$ in $\Grph$ looks like the graph 
 $$\xymatrix{\LMO{(a,a)}\ar[rd]&\LMO{(a,b)}\\\LMO{(b,a)}&\LMO{(b,b)}}$$
@@ -485,7 +485,7 @@ Its preorder $L(G\times H)$ does not have $(a,a)\leq(a,b)$, whereas this is the 
 \subsection{\caseENGRUS{Data migration}{ / }{Миграция баз данных}}\label{sec:data migration}
 
 \begin{blockENG}
-As we saw in Sections \ref{sec:schemas and cats intro} and \ref{sec:instances}, a database schema is a category $\mcC$ and an instance is a functor $I\taking\mcC\to\Set$.  
+As we saw in Sections~\ref{sec:schemas and cats intro} and~\ref{sec:instances}, a database schema is a category $\mcC$ and an instance is a functor $I\taking\mcC\to\Set$.  
 \end{blockENG}
 
 \begin{blockRUS}
@@ -523,7 +523,7 @@ Given a functor $F\taking\mcC\to\mcD$ and a functor $I\taking\mcD\to\Set$, we ca
 \end{blockRUS}
 
 \begin{blockENG}
-We have seen an example of this before in Example \ref{ex:whiskering}, where we showed how a monoid homomorphism $F\taking\mcM'\to\mcM$ could add functionality to a finite state machine. More generally, we can use pullbacks to reorganize data, copying and deleting tables and columns. 
+We have seen an example of this before in Example~\ref{ex:whiskering}, where we showed how a monoid homomorphism $F\taking\mcM'\to\mcM$ could add functionality to a finite state machine. More generally, we can use pullbacks to reorganize data, copying and deleting tables and columns. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -769,7 +769,7 @@ T1-003-Salary\\\bhline
 \end{tabular}
 $$
 
-As you can see, there was no set salary information for any data coming from table {\tt T1} nor any set SSN information for any data coming form table {\tt T2}. But the definition of adjoint, given in Definition \ref{def:adjunction}, yielded the universal response: freely add new variables that take the place of missing information. It turns out that this idea already has a name in logic, {\em Skolem variables}, and a name in database theory, {\em labeled nulls}.\index{labeled null}\index{Skolem variable}
+As you can see, there was no set salary information for any data coming from table {\tt T1} nor any set SSN information for any data coming form table {\tt T2}. But the definition of adjoint, given in Definition~\ref{def:adjunction}, yielded the universal response: freely add new variables that take the place of missing information. It turns out that this idea already has a name in logic, {\em Skolem variables}, and a name in database theory, {\em labeled nulls}.\index{labeled null}\index{Skolem variable}
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:left pushforward and skolem}
@@ -786,7 +786,7 @@ Consider the functor $F\taking\ul{3}\to\ul{2}$ sending $1\mapsto 1, 2\mapsto 2, 
 \end{exerciseRUS}
 
 \begin{blockENG}
-We now briefly give the actual formula for computing left pushforwards. Suppose that $F\taking\mcC\to\mcD$ is a functor and let $I\taking\mcC\to\Set$ be a set-valued functor on $\mcC$. Then $\Sigma_F(I)\taking\mcD\to\Set$ is defined as follows. Given an object $d\in\Ob(\mcD)$ we first form the comma category (see Definition \ref{def:comma category}) for the setup
+We now briefly give the actual formula for computing left pushforwards. Suppose that $F\taking\mcC\to\mcD$ is a functor and let $I\taking\mcC\to\Set$ be a set-valued functor on $\mcC$. Then $\Sigma_F(I)\taking\mcD\to\Set$ is defined as follows. Given an object $d\in\Ob(\mcD)$ we first form the comma category (see Definition~\ref{def:comma category}) for the setup
 $$\mcC\To{F}\mcD\From{d}\ul{1}$$
 and denote it by $(F\down d)$. There is a canonical projection functor $\pi\taking(F\down d)\to\mcC$, which we can compose with $I\taking\mcC\to\Set$ to obtain a functor $(F\down d)\to\Set$. We are ready to define $\Sigma_F(I)(d)$ to be its colimit,
 $$\Sigma_F(I)(d):=\colim_{(F\down d)}I\circ\pi.$$
@@ -809,7 +809,7 @@ By the universal property of colimits, this induces the required function $$\col
 \subsubsection{\caseENGRUS{Right pushforward: $\Pi$}{ / }{Правое расширение Кана: $\Pi$}}
 
 \begin{blockENG}
-Let $F\taking\mcC\to\mcD$ be a functor. We heard in Section \ref{sec:left push} that the functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint. Here we explain that it has a right adjoint, $\Pi_F\taking\mcC\set\to\mcD\set$ as well. The rough idea is that $\Pi_F$ performs parameterized limits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Pi_F(I)(d)$ is the limit (think, fiber product) of some diagram back home in $\mcC$. 
+Let $F\taking\mcC\to\mcD$ be a functor. We heard in Section~\ref{sec:left push} that the functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint. Here we explain that it has a right adjoint, $\Pi_F\taking\mcC\set\to\mcD\set$ as well. The rough idea is that $\Pi_F$ performs parameterized limits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Pi_F(I)(d)$ is the limit (think, fiber product) of some diagram back home in $\mcC$. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -823,7 +823,7 @@ Right pushforwards (also known as right Kan extensions) are discussed at length 
 \end{blockRUS}
 
 \begin{exampleENG}
-We once again use the functor $F\taking\mcC\to\mcD$ from Example \ref{ex:left pushforward and skolem}. We will apply the right pushforward $\Pi_F$ to instance $I\taking\mcC\to\Set$ from that example.
+We once again use the functor $F\taking\mcC\to\mcD$ from Example~\ref{ex:left pushforward and skolem}. We will apply the right pushforward $\Pi_F$ to instance $I\taking\mcC\to\Set$ from that example.
 \footnote{To repeat for convenience,
 \begin{align}\tag{\ref{dia:translation}}\mcC:=\parbox{1.2in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T1}}\ar[uur]\ar[ur]\ar[dr]&&\color{red}{\LTO{T2}}\ar[ul]\ar[dl]\ar[ddl]\\&\LTO{Last}\\&\LTO{Salary}}}}\Too{F}\parbox{.8in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T}}\ar[uur]\ar[ur]\ar[dr]\ar[ddr]\\&\LTO{Last}\\&\LTO{Salary}}}}=:\mcD
 \end{align}
@@ -872,7 +872,7 @@ Consider the functor $F\taking\ul{3}\to\ul{2}$ sending $1\mapsto 1, 2\mapsto 2, 
 \end{exerciseRUS}
 
 \begin{blockENG}
-We now briefly give the actual formula for computing right pushforwards. Suppose that $F\taking\mcC\to\mcD$ is a functor and let $I\taking\mcC\to\Set$ be a set-valued functor on $\mcC$. Then $\Pi_F(I)\taking\mcD\to\Set$ is defined as follows. Given an object $d\in\Ob(\mcD)$ we first form the comma category (see Definition \ref{def:comma category}) for the setup
+We now briefly give the actual formula for computing right pushforwards. Suppose that $F\taking\mcC\to\mcD$ is a functor and let $I\taking\mcC\to\Set$ be a set-valued functor on $\mcC$. Then $\Pi_F(I)\taking\mcD\to\Set$ is defined as follows. Given an object $d\in\Ob(\mcD)$ we first form the comma category (see Definition~\ref{def:comma category}) for the setup
 $$\ul{1}\To{d}\mcD\From{F}\mcC$$
 and denote it by $(d\down F)$. There is a canonical projection functor $\pi\taking(d\down F)\to\mcC$, which we can compose with $I\taking\mcC\to\Set$ to obtain a functor $(d\down F)\to\Set$. We are ready to define $\Pi_F(I)(d)$ to be its limit,
 $$\Pi_F(I)(d):=\lim_{(d\down F)}I\circ\pi.$$

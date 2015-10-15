@@ -6,7 +6,7 @@
 
 \begin{blockENG}
 For any two categories $\mcC$ and $\mcD$,
-\footnote{Technically $\mcC$ has to be small (see Remark \ref{rmk:small}), but as we said there, we are not worrying about that distinction in this book.}
+\footnote{Technically $\mcC$ has to be small (see Remark~\ref{rmk:small}), but as we said there, we are not worrying about that distinction in this book.}
 we discussed the category $\Fun(\mcC,\mcD)$ of functors and natural transformations between them. In this section we discuss functor categories a bit more and give some important applications within mathematics (sheaves) that extend to the real world.
 \end{blockENG}
 
@@ -43,14 +43,14 @@ The dual proof holds for colimits.
 \begin{applicationENG}
 When taking in data about a scientific subject, one often finds that the way one thinks about the problem changes over time. We understand this phenomenon in the language of databases in terms of a \href{http://en.wikipedia.org/wiki/Schema_evolution}{\text series of schemas} $\mcC_1,\mcC_2,\ldots,\mcC_n$, perhaps indexed chronologically. The problem is that old data is held in old schemas and we want to see it in our current understanding. The first step is to transfer all the old data to our new schema in the freest possible way, that is, making no assumptions about how to fill in the new fields. If one creates functors $F_i\taking\mcC_i\to\mcC_{i+1}$ from each of these schemas to the next, then we can push the data forward using $\Sigma_{F_i}$. 
 
-Doing this we will have $n$ datasets on $\mcD:=\mcC_n$, namely one for each “epoch of understanding”. Since the category $\mcD\set$ has all colimits, we can take the union of these datasets and get one. It will have many Skolem variables (see Example \ref{ex:left pushforward and skolem}), and these need to be handled in a coherent way. However, the universality of left adjoints could be interpreted as saying that any reasonable formula for handling this old data can be applied to our results.
+Doing this we will have $n$ datasets on $\mcD:=\mcC_n$, namely one for each “epoch of understanding”. Since the category $\mcD\set$ has all colimits, we can take the union of these datasets and get one. It will have many Skolem variables (see Example~\ref{ex:left pushforward and skolem}), and these need to be handled in a coherent way. However, the universality of left adjoints could be interpreted as saying that any reasonable formula for handling this old data can be applied to our results.
 \end{applicationENG}
 
 \begin{applicationRUS}
 \end{applicationRUS}
 
 \begin{exerciseENG}\label{exc:universal objects in C-set}\index{initial object!in $\mcC\set$}\index{terminal object!in $\mcC\set$}
-By Proposition \ref{prop:inst closed under colim lim}, the category $\mcC\set$ is closed under taking limits. By Exercises \ref{exc:terminal as limit} and \ref{exc:initial as colimit}, this means in particular that $\mcC\set$ has an initial object and a terminal object. 
+By Proposition~\ref{prop:inst closed under colim lim}, the category $\mcC\set$ is closed under taking limits. By Exercises~\ref{exc:terminal as limit} and~\ref{exc:initial as colimit}, this means in particular that $\mcC\set$ has an initial object and a terminal object. 
 \sexc Let $A\in\Ob(\mcC\set)$ be the initial object, considered as a functor $A\taking\mcC\to\Set$. For any $c\in\Ob(\mcC)$, what is the set $A(c)$?
 \item Let $Z\in\Ob(\mcC\set)$ be the terminal object, considered as a functor $Z\taking\mcC\to\Set$. For any $c\in\Ob(\mcC)$, what is the set $Z(c)$?
 \endsexc
@@ -60,7 +60,7 @@ By Proposition \ref{prop:inst closed under colim lim}, the category $\mcC\set$ i
 \end{exerciseRUS}
 
 \begin{blockENG}
-Proposition \ref{prop:inst closed under colim lim} says that we can add or multiply database states together. In fact, database states on $\mcC$ form what is called a {\em topos} which means that just about every consideration we made for sets holds for instances on any schema. Perhaps the simplest schema is $\mcC=\fbox{$\bullet$}$, on which the relevant topos is indeed $\Set$. But schemas can be arbitrarily complex, and it is impressive that all of these considerations make sense in such generality. Here is a table that makes a comparison between these domains.
+Proposition~\ref{prop:inst closed under colim lim} says that we can add or multiply database states together. In fact, database states on $\mcC$ form what is called a {\em topos} which means that just about every consideration we made for sets holds for instances on any schema. Perhaps the simplest schema is $\mcC=\fbox{$\bullet$}$, on which the relevant topos is indeed $\Set$. But schemas can be arbitrarily complex, and it is impressive that all of these considerations make sense in such generality. Here is a table that makes a comparison between these domains.
 \begin{center}
 \begin{tabular}{| l | l |}\bhline
 \multicolumn{2}{| c |}{Dictionary between $\Set$ and $\mcC\set$}\\\hline
@@ -85,7 +85,7 @@ Surjections, injections&Epimorphisms, monomorphisms\\\bhline
 \end{blockRUS}
 
 \begin{blockENG}
-In the above table we said that elements of a set are akin to representable functors in $\mcC\set$, but we have not yet defined those; we do so in Section \ref{sec:representable functors}. First we briefly discuss monomorphisms and epimorphisms in general (Definition \ref{def:mono, epi}) and then in $\mcC\set$ (Proposition \ref{prop:epi mono in c-set}). 
+In the above table we said that elements of a set are akin to representable functors in $\mcC\set$, but we have not yet defined those; we do so in Section~\ref{sec:representable functors}. First we briefly discuss monomorphisms and epimorphisms in general (Definition~\ref{def:mono, epi}) and then in $\mcC\set$ (Proposition~\ref{prop:epi mono in c-set}). 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -109,7 +109,7 @@ if $h\circ f=h'\circ f$ then $h=h'$.
 \end{definitionRUS}
 
 \begin{blockENG}
-In the category of sets, monomorphisms are the same as injections and epimorphisms are the same as surjections (see Proposition \ref{prop:inj and surj}). The same is true in $\mcC\set$: one can check “table by table” that a morphism of instances is mono or epi.
+In the category of sets, monomorphisms are the same as injections and epimorphisms are the same as surjections (see Proposition~\ref{prop:inj and surj}). The same is true in $\mcC\set$: one can check “table by table” that a morphism of instances is mono or epi.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -138,7 +138,7 @@ A similar argument works to show the analogous result for epimorphisms.
 \subsubsection{\caseENGRUS{Representable functors}{ / }{Представимые функторы}}\label{sec:representable functors}
 
 \begin{blockENG}
-Given a category $\mcC$, there are certain functors $\mcC\to\Set$ that come with the package, one for every object in $\mcC$. So if $\mcC$ is a database schema, then for every table $c\in\Ob(\mcC)$ there is a certain database instance associated to it. These instances, i.e. set-valued functors, are called representable functors, and they'll be defined in Definition \ref{def:representable functor}. The idea is that if a database schema represents a conceptual layout of types (e.g. as an olog), then each type $T$ has an instance associated to it, standing for “the generic thing of type $T$ with all its generic attributes”.
+Given a category $\mcC$, there are certain functors $\mcC\to\Set$ that come with the package, one for every object in $\mcC$. So if $\mcC$ is a database schema, then for every table $c\in\Ob(\mcC)$ there is a certain database instance associated to it. These instances, i.e. set-valued functors, are called representable functors, and they'll be defined in Definition~\ref{def:representable functor}. The idea is that if a database schema represents a conceptual layout of types (e.g. as an olog), then each type $T$ has an instance associated to it, standing for “the generic thing of type $T$ with all its generic attributes”.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -319,14 +319,14 @@ Ms. Smith&Deb\\\bhline
 \end{exampleRUS}
 
 \begin{blockENG}
-Yoneda's lemma (\ref{lemma:Yoneda}) is about the set of natural transformations $Y_{\tt Child}\to I$. Recall from Definition \ref{def:natural transformation} that a search for natural transformations can get a bit tedious. Yoneda's lemma makes the calculation quite trivial. In our case there are exactly four such natural transformations, and they are completely determined by where $\smiley$ goes. In some sense the symbol $\smiley$ {\em represents} child-ness in our database. 
+Yoneda's lemma (\ref{lemma:Yoneda}) is about the set of natural transformations $Y_{\tt Child}\to I$. Recall from Definition~\ref{def:natural transformation} that a search for natural transformations can get a bit tedious. Yoneda's lemma makes the calculation quite trivial. In our case there are exactly four such natural transformations, and they are completely determined by where $\smiley$ goes. In some sense the symbol $\smiley$ {\em represents} child-ness in our database. 
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exerciseENG}
-Consider the schema $\mcC$ and instance $I\taking\mcC\to\Set$ from Example \ref{ex:yoneda}. Let $Y_{\tt Child}$ be the representable functor as above. 
+Consider the schema $\mcC$ and instance $I\taking\mcC\to\Set$ from Example~\ref{ex:yoneda}. Let $Y_{\tt Child}$ be the representable functor as above. 
 \sexc Let $\alpha\taking Y_{\tt Child}\to I$ be the natural transformation sending $\smiley$ to Amy. What is $\alpha_{\tn{Child}}(\tn{firstChild(mother}(\smiley)))$?
 \footnote{There is a lot of clutter, perhaps. Note that “firstChild(mother($\smiley$))” is a row in the {\tt Child} table. Assuming that the math follows the meaning, if $\smiley$ points to Amy, where should firstChild(Mother($\smiley$)) point?}
 \item Let $\alpha\taking Y_{\tt Child}\to I$ be the natural transformation sending $\smiley$ to Bob. What is $\alpha_{\tt Child}(\tn{firstChild(mother}(\smiley)))$?
@@ -340,7 +340,7 @@ Consider the schema $\mcC$ and instance $I\taking\mcC\to\Set$ from Example \ref{
 \end{exerciseRUS}
 
 \begin{blockENG}
-We saw in Section \ref{sec:representable functors} that a representable functor is a mathematically-generated database instance for an abstract thing of type $T$. It creates placeholders for every attribute that things of type $T$ are supposed to have.
+We saw in Section~\ref{sec:representable functors} that a representable functor is a mathematically-generated database instance for an abstract thing of type $T$. It creates placeholders for every attribute that things of type $T$ are supposed to have.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -361,25 +361,25 @@ Yoneda's lemma is considered by many category theory lovers to be the most impor
 \end{blockRUS}
 
 \begin{exampleENG}\label{ex:yoneda for cyclic monoid}
-In Example \ref{ex:cyclic monoid (7,4)}, we discussed the cyclic monoid $\mcM$ generated by the symbol $Q$ and subject to the relation $Q^7=Q^4$. We drew a picture like this: 
+In Example~\ref{ex:cyclic monoid (7,4)}, we discussed the cyclic monoid $\mcM$ generated by the symbol $Q$ and subject to the relation $Q^7=Q^4$. We drew a picture like this: 
 \begin{align}\label{dia:grothendieck yoneda (4,7)}
 \xymatrix@=15pt{
 \LMO{Q^0}\ar[rr]&&\LMO{Q^1}\ar[rr]&&\LMO{Q^2}\ar[rr]&&\LMO{Q^3}\ar[rr]&&\LMO{Q^4}\ar[dr]\\
 &&&&&&&\LMO{Q^6}\ar[ur]&&\LMO{Q^5}\ar[ll]
 }
 \end{align}
-We are finally ready to give the mathematical foundation for this picture. Since $\mcM$ is a category with one object, $\monOb$, there is a unique representable functor (up to isomorphism) $Y:=Y_\monOb\taking\mcM\to\Set$. A functor $\mcM\to\Set$ can be thought of as a set with an $\mcM$-action, as discussed in Section \ref{sec:monoids as cats}. Here the required set is 
+We are finally ready to give the mathematical foundation for this picture. Since $\mcM$ is a category with one object, $\monOb$, there is a unique representable functor (up to isomorphism) $Y:=Y_\monOb\taking\mcM\to\Set$. A functor $\mcM\to\Set$ can be thought of as a set with an $\mcM$-action, as discussed in Section~\ref{sec:monoids as cats}. Here the required set is 
 $$Y(\monOb)=\Hom_\mcM(\monOb,\monOb)\iso\{Q^0,Q^1,Q^2,Q^3,Q^4,Q^5,Q^6\}$$ 
 and the action is pretty straightforward (it is called the {\em principal action}). We might say that (\ref{dia:grothendieck yoneda (4,7)}) is a picture of this principal action of $\mcM$. 
 
-However, we can go one step further. Given a functor $Y\taking\mcM\to\Set$, we can take its category of elements, $\int_\mcM Y$ as in Section \ref{sec:grothendieck construction}. The category $\int_\mcM Y$ has objects $Y(\monOb)\in\Ob(\Set)$, i.e. the set of dots in (\ref{dia:grothendieck yoneda (4,7)}), and it has a unique morphism $Q^i\to Q^j$ for every path of length $\leq 6$ from $Q^i$ to $Q^j$ in that picture.
+However, we can go one step further. Given a functor $Y\taking\mcM\to\Set$, we can take its category of elements, $\int_\mcM Y$ as in Section~\ref{sec:grothendieck construction}. The category $\int_\mcM Y$ has objects $Y(\monOb)\in\Ob(\Set)$, i.e. the set of dots in (\ref{dia:grothendieck yoneda (4,7)}), and it has a unique morphism $Q^i\to Q^j$ for every path of length $\leq 6$ from $Q^i$ to $Q^j$ in that picture.
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:yoneda for cyclic monoid}
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Let $c\in\Ob(\mcC)$ be an object and let $I\in\Ob(\mcC\set)$ be another object. Consider $c$ also as a functor $c\taking\ul{1}\to\mcC$ and recall the pullback functor $\Delta_c\taking\mcC\set\to\Set$ and its left adjoint $\Sigma_c\taking\Set\to\mcC\set$ from Section \ref{sec:data migration}.
+Let $c\in\Ob(\mcC)$ be an object and let $I\in\Ob(\mcC\set)$ be another object. Consider $c$ also as a functor $c\taking\ul{1}\to\mcC$ and recall the pullback functor $\Delta_c\taking\mcC\set\to\Set$ and its left adjoint $\Sigma_c\taking\Set\to\mcC\set$ from Section~\ref{sec:data migration}.
 \sexc What is the set $\Delta_c(I)$?
 \item What is $\Hom_\Set(\singleton,\Delta_c(I))$?
 \item What is $\Hom_{\mcC\set}(\Sigma_c(\singleton),I)$?
@@ -391,7 +391,7 @@ Let $c\in\Ob(\mcC)$ be an object and let $I\in\Ob(\mcC\set)$ be another object. 
 \end{exerciseRUS}
 
 \begin{lemmaENG}[Yoneda's lemma, part 2]
-Let $\mcC$ be a category. The assignment $c\mapsto Y_c$ from Lemma \ref{lemma:Yoneda} extends to a functor $Y\taking\mcC\op\to\mcC\set$, and this functor is fully faithful. 
+Let $\mcC$ be a category. The assignment $c\mapsto Y_c$ from Lemma~\ref{lemma:Yoneda} extends to a functor $Y\taking\mcC\op\to\mcC\set$, and this functor is fully faithful. 
 
 In particular, if $c,c'\in\Ob(\mcC)$ are objects and there is an isomorphism $Y_c\iso Y_{c'}$ in $\mcC\set$, then there is an isomorphism $c\iso c'$ in $\mcC$.
 \end{lemmaENG}
@@ -441,7 +441,7 @@ in $\Fin$. The result about natural numbers {\color{red}follows}.
 \subsubsection{\caseENGRUS{The subobject classifier $\Omega\in\Ob(\mcC\set)$}{ / }{Классификатор подобъектов $\Omega\in\Ob(\mcC\set)$}}
 
 \begin{blockENG}
-If $\mcC$ is a category then the functor category $\mcC\set$ is a very nice kind of category, called a {\em topos}.\index{topos} Note that when $\mcC=\ul{1}$ is the terminal category, then we have an isomorphism $\mcC\set\iso\Set$, so the category of sets is a special case of a topos. What is so interesting about toposes (or topoi) is that they so nicely generalize many properties of $\Set$. In this short section we investigate only one such property, namely that $\mcC\set$ has a subobject classifier, denoted $\Omega\in\Ob(\mcC\set)$. In the case $\mcC=\ul{1}$, we saw back in Section \ref{def:subobject classifier} that the subobject classifier is $\{True,False\}\in\Ob(\Set)$. 
+If $\mcC$ is a category then the functor category $\mcC\set$ is a very nice kind of category, called a {\em topos}.\index{topos} Note that when $\mcC=\ul{1}$ is the terminal category, then we have an isomorphism $\mcC\set\iso\Set$, so the category of sets is a special case of a topos. What is so interesting about toposes (or topoi) is that they so nicely generalize many properties of $\Set$. In this short section we investigate only one such property, namely that $\mcC\set$ has a subobject classifier, denoted $\Omega\in\Ob(\mcC\set)$. In the case $\mcC=\ul{1}$, we saw back in Section~\ref{def:subobject classifier} that the subobject classifier is $\{True,False\}\in\Ob(\Set)$. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -466,14 +466,14 @@ $$
 \end{definitionRUS}
 
 \begin{blockENG}
-In terms of databases, what this means is that for every schema $\mcC$ there is some special instance $\Omega_\mcC\in\Ob(\mcC\set)$ that somehow classifies sub-instances.\index{subobject classifier!in $\mcC\set$} When our schema is the terminal category, $\mcC=\ul{1}$, instances are sets and we saw in Definition \ref{def:subobject classifier} that the subobject classifier is $\Omega_{\ul{1}}=\{True, False\}$. One might think that the subobject classifier for $\mcC\set$ should just consist of a two-element set table-by-table, i.e. that for every $c\in\Ob(\mcC)$ we should have $\Omega_{\mcC}=^?\{True,False\}$, but this is not correct. 
+In terms of databases, what this means is that for every schema $\mcC$ there is some special instance $\Omega_\mcC\in\Ob(\mcC\set)$ that somehow classifies sub-instances.\index{subobject classifier!in $\mcC\set$} When our schema is the terminal category, $\mcC=\ul{1}$, instances are sets and we saw in Definition~\ref{def:subobject classifier} that the subobject classifier is $\Omega_{\ul{1}}=\{True, False\}$. One might think that the subobject classifier for $\mcC\set$ should just consist of a two-element set table-by-table, i.e. that for every $c\in\Ob(\mcC)$ we should have $\Omega_{\mcC}=^?\{True,False\}$, but this is not correct. 
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-In fact, for any object $c\in\Ob(\mcC)$, it is easy to say what $\Omega_\mcC(c)$ should be. We know by Yoneda's lemma (Lemma \ref{lemma:Yoneda}) that $\Omega_\mcC(c)=\Hom_{\mcC\set}(Y_c,\Omega_\mcC)$, where $Y_c$ is the functor represented by $c$. There is a bijection between $\Hom_{\mcC\set}(Y_c,\Omega_\mcC)$ and the set of sub-instances of $Y_c$. Each morphism $f\taking c\to d$ in $\mcC$ induces a morphism $Y_f\taking Y_d\to Y_c$, and the map $\Omega_\mcC(f)\taking\Omega_\mcC(c)\to\Omega_\mcC(d)$ sends a sub-instance $A\ss Y_c$ to the pullback 
+In fact, for any object $c\in\Ob(\mcC)$, it is easy to say what $\Omega_\mcC(c)$ should be. We know by Yoneda's lemma (Lemma~\ref{lemma:Yoneda}) that $\Omega_\mcC(c)=\Hom_{\mcC\set}(Y_c,\Omega_\mcC)$, where $Y_c$ is the functor represented by $c$. There is a bijection between $\Hom_{\mcC\set}(Y_c,\Omega_\mcC)$ and the set of sub-instances of $Y_c$. Each morphism $f\taking c\to d$ in $\mcC$ induces a morphism $Y_f\taking Y_d\to Y_c$, and the map $\Omega_\mcC(f)\taking\Omega_\mcC(c)\to\Omega_\mcC(d)$ sends a sub-instance $A\ss Y_c$ to the pullback 
 $$
 \xymatrix{Y_f^\m1(A)\ar[r]\ar[d]\ullimit&A\ar[d]\\Y_d\ar[r]_{Y_f}&Y_c}
 $$
@@ -697,7 +697,7 @@ Another possibility is to use the fact that there is a functor $U\taking\Vect\to
 \end{blockRUS}
 
 \begin{blockENG}
-A third possibility is to use monads, which allow the table to have only as many rows as $V$ has dimensions. This is a considerable savings of space. See Section \ref{sec:monads}.
+A third possibility is to use monads, which allow the table to have only as many rows as $V$ has dimensions. This is a considerable savings of space. See Section~\ref{sec:monads}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -708,7 +708,7 @@ A third possibility is to use monads, which allow the table to have only as many
 \subsubsection{\caseENGRUS{Representations of quivers}{ / }{Представления колчанов}}
 
 \begin{blockENG}
-Representation theory also studies representations of quivers. A {\em quiver} is just the free category (see Example \ref{ex:free category}\index{category!free category}\index{graph!free category on}) on a graph. If $P$ is a graph with free category $\mcP$ then a representation of the quiver $\mcP$ is a functor $F\taking\mcP\to\Vect$. Such a representation consists of a vector space at every vertex of $P$ and a linear transformation for every arrow. All of the discussion from Section \ref{ex:reps of groups} works in this setting, except that there is more than one table.
+Representation theory also studies representations of quivers. A {\em quiver} is just the free category (see Example~\ref{ex:free category}\index{category!free category}\index{graph!free category on}) on a graph. If $P$ is a graph with free category $\mcP$ then a representation of the quiver $\mcP$ is a functor $F\taking\mcP\to\Vect$. Such a representation consists of a vector space at every vertex of $P$ and a linear transformation for every arrow. All of the discussion from Section~\ref{ex:reps of groups} works in this setting, except that there is more than one table.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -746,7 +746,7 @@ Many other scientific disciplines could use the same kind of tool. For example, 
 \subsection{\caseENGRUS{Sheaves}{ / }{Пучки}}\label{sec:sheaves}
 
 \begin{blockENG}
-Let $X$ be a topological space (see Example \ref{ex:topological space}), such as a sphere. In Section \ref{sec:other targets} we discussed continuous functions out of $X$, and their use in science (e.g. recording temperatures on the earth as a continuous map $X\to[-100,200]$). Sheaves allow us to consider the local-global nature of such maps, taking into account reparable discrepancies in data gathering tools. 
+Let $X$ be a topological space (see Example~\ref{ex:topological space}), such as a sphere. In Section~\ref{sec:other targets} we discussed continuous functions out of $X$, and their use in science (e.g. recording temperatures on the earth as a continuous map $X\to[-100,200]$). Sheaves allow us to consider the local-global nature of such maps, taking into account reparable discrepancies in data gathering tools. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -764,7 +764,7 @@ A consistent system of translation formulas is called a {\em sheaf}. It does not
 \end{applicationRUS}
 
 \begin{blockENG}
-The following definitions (Definitions \ref{def:presheaf}, \ref{def:sheaf}) make the notion of sheaf precise, but we must go slowly (because it will already feel quick to the novice). For every region $U$, we can record the value of some function (say temperature) throughout $U$; although this record might consist of a mountain of data (a temperature for each point in $U$!), we think of it as one thing. That is, it is one element in the set of value-assignments throughout $U$. A sheaf holds the set of possible values-assignments-throughout-$U$'s for all the different regions $U$, as well as how a value-assignment-throughout-$U$ restricts to a value-assignment-throughout-$V$ for any subset $V\ss U$.
+The following definitions (Definitions~\ref{def:presheaf},~\ref{def:sheaf}) make the notion of sheaf precise, but we must go slowly (because it will already feel quick to the novice). For every region $U$, we can record the value of some function (say temperature) throughout $U$; although this record might consist of a mountain of data (a temperature for each point in $U$!), we think of it as one thing. That is, it is one element in the set of value-assignments throughout $U$. A sheaf holds the set of possible values-assignments-throughout-$U$'s for all the different regions $U$, as well as how a value-assignment-throughout-$U$ restricts to a value-assignment-throughout-$V$ for any subset $V\ss U$.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -773,7 +773,7 @@ The following definitions (Definitions \ref{def:presheaf}, \ref{def:sheaf}) make
 \begin{definitionENG}\label{def:presheaf}\index{presheaf}
 Let $X$ be a topological space, let $\Op(X)$ denote its partial order of open sets, and let $\Op(X)\op$ be the opposite category. A {\em presheaf on $X$} is a functor $\mcO\taking\Op(X)\op\to\Set$. For every open set $U\ss X$ we refer to the set $\mcO(U)$ as the {\em set of values-assignments throughout $U$ of $\mcO$}. If $V\ss U$ is an open subset, it corresponds to an arrow in $\Op(X)$ and applying the functor $\mcO$ yields a function called the {\em restriction map from $U$ to $V$} and denoted $\rho_{V,U}\taking\mcO(U)\to\mcO(V)$. Given $a\in\mcO(U)$, we may denote $\rho_{V,U}(a)$ by $a|_V$; it is called {\em the restriction of $a$ to $V$}.
 
-The {\em category of presheaves on $X$} is simply $\Op(X)\op\set$; see Definition \ref{def:mcC-set}.
+The {\em category of presheaves on $X$} is simply $\Op(X)\op\set$; see Definition~\ref{def:mcC-set}.
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:presheaf}\index{presheaf}
@@ -835,16 +835,16 @@ The presheaf $\mcO$ is called a {\em sheaf} if it satisfies the sheaf condition 
 \end{definitionRUS}
 
 \begin{exampleENG}
-Let $X=\RR$ and let $U, V_1,V_2,V_3$ be the open cover given in Example \ref{ex:open cover}. Given a measurement taken throughout $V_1$, a measurement taken throughout $V_2$, and a measurement taken throughout $V_3$, we have elements $a_1\in\mcO(V_1), a_2\in\mcO(V_2),$ and $a_3\in\mcO(V_3)$. If they are in agreement on the overlap intervals, we can {\em glue} \index{sheaf!glueing} them to give a measurement throughout $U$.
+Let $X=\RR$ and let $U, V_1,V_2,V_3$ be the open cover given in Example~\ref{ex:open cover}. Given a measurement taken throughout $V_1$, a measurement taken throughout $V_2$, and a measurement taken throughout $V_3$, we have elements $a_1\in\mcO(V_1), a_2\in\mcO(V_2),$ and $a_3\in\mcO(V_3)$. If they are in agreement on the overlap intervals, we can {\em glue} \index{sheaf!glueing} them to give a measurement throughout $U$.
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{remarkENG}
-In Application \ref{app:sheaves of temperature}, we said that sheaves would help us patch together information from different sources. Even if different temperature-recording devices $T_i$ and $T_j$ registered different temperatures on an overlapping region $U_i\cap U_j$, we said they could be patched together if there was a consistent translation system between their results. What is actually needed is a set of isomorphisms 
+In Application~\ref{app:sheaves of temperature}, we said that sheaves would help us patch together information from different sources. Even if different temperature-recording devices $T_i$ and $T_j$ registered different temperatures on an overlapping region $U_i\cap U_j$, we said they could be patched together if there was a consistent translation system between their results. What is actually needed is a set of isomorphisms 
 $$p_{i,j}\taking T_i|_{U_{i,j}}\To{\iso} T_j|_{U_{i,j}}$$ 
-that translate between them, and that these $p_{i,j}$'s act in concert with one another. This (when precisely defined,) is called \href{http://en.wikipedia.org/wiki/Descent_theory}{\em descent data}.\index{descent data}\index{sheaf!descent data}. The way it interacts with our definition of sheaf given in Definitions \ref{def:presheaf} and \ref{def:sheaf} is buried in the restriction maps $\rho$ for the overlaps as subsets $U_{i,j}\ss U_i$ and $U_{i,j}\ss U_j$. We will not explain further here. One can see \cite{Gro}.
+that translate between them, and that these $p_{i,j}$'s act in concert with one another. This (when precisely defined,) is called \href{http://en.wikipedia.org/wiki/Descent_theory}{\em descent data}.\index{descent data}\index{sheaf!descent data}. The way it interacts with our definition of sheaf given in Definitions~\ref{def:presheaf} and~\ref{def:sheaf} is buried in the restriction maps $\rho$ for the overlaps as subsets $U_{i,j}\ss U_i$ and $U_{i,j}\ss U_j$. We will not explain further here. One can see \cite{Gro}.
 \end{remarkENG}
 
 \begin{remarkRUS}
@@ -893,7 +893,7 @@ We can imagine the same type of prediction systems for other domains as well, su
 \end{applicationRUS}
 
 \begin{exampleENG}
-In Exercises \ref{exc:juris 1} and \ref{exc:juris 2} we discussed the idea of laws being dictated or respected throughout a jurisdiction. If $X$ is earth, to every jurisdiction $U\ss X$ we assign the set $\mcO(U)$ of laws that are dictated to hold throughout $U$. Given a law on $U$ and a law on $V$, we can see if they amount to the same law on $U\cap V$. For example, on $U$ a law  might say “no hunting near rivers” and on $V$ a law might say “no hunting in public areas”. It just so happens that on $U\cap V$ all public areas are near rivers and vice versa, so the laws agree there. These laws patch together to form a single rule about hunting that is enforced throughout the union $U\cup V$, respected by all jurisdictions within it.
+In Exercises~\ref{exc:juris 1} and~\ref{exc:juris 2} we discussed the idea of laws being dictated or respected throughout a jurisdiction. If $X$ is earth, to every jurisdiction $U\ss X$ we assign the set $\mcO(U)$ of laws that are dictated to hold throughout $U$. Given a law on $U$ and a law on $V$, we can see if they amount to the same law on $U\cap V$. For example, on $U$ a law  might say “no hunting near rivers” and on $V$ a law might say “no hunting in public areas”. It just so happens that on $U\cap V$ all public areas are near rivers and vice versa, so the laws agree there. These laws patch together to form a single rule about hunting that is enforced throughout the union $U\cup V$, respected by all jurisdictions within it.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -904,14 +904,14 @@ In Exercises \ref{exc:juris 1} and \ref{exc:juris 2} we discussed the idea of la
 \subsubsection{\caseENGRUS{Sheaf of ologged concepts}{ / }{Пучок концептов олога}}
 
 \begin{blockENG}
-Definition \ref{def:sheaf} defines what should be called a sheaf of sets. We can discuss sheaves of groups or even sheaves of categories. Here is an application of the latter.
+Definition~\ref{def:sheaf} defines what should be called a sheaf of sets. We can discuss sheaves of groups or even sheaves of categories. Here is an application of the latter.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-Recall the notion of simplicial complexes discussed in Section \ref{sec:simplicial complex}\index{simplicial complex}. They look like this: 
+Recall the notion of simplicial complexes discussed in Section~\ref{sec:simplicial complex}\index{simplicial complex}. They look like this: 
 \begin{align}\label{dia:olog network}
 \includegraphics[height=3in]{OlogNetwork5}
 \end{align} 

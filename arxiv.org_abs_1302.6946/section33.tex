@@ -114,7 +114,7 @@ $$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition \ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B$, where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B$. Draw the associated graph $(A\sqcup B,A,src,tgt)$.
+Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition~\ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B$, where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B$. Draw the associated graph $(A\sqcup B,A,src,tgt)$.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -130,11 +130,11 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary funct
 \end{exerciseRUS}
 
 \begin{exampleENG}
-Recall from Construction \ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition \ref{def:span}) $A\From{f}R\To{g}B$. Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
+Recall from Construction~\ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition~\ref{def:span}) $A\From{f}R\To{g}B$. Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
 $$
 \xymatrix{&A\ar[dr]^i\\R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g&&V\\&B\ar[ur]_j}
 $$ 
-Then $(V,R,src,tgt)$ is a graph that would be drawn exactly as we specified the drawing of spans in Construction \ref{const:bipartite}.
+Then $(V,R,src,tgt)$ is a graph that would be drawn exactly as we specified the drawing of spans in Construction~\ref{const:bipartite}.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -158,7 +158,7 @@ Let $G=(V,A,src,tgt)$ be a graph; we want to spread it out over discrete time, s
 
 Let $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ be the graph depicted 
 $$\xymatrix{\LMO{0}\ar[r]^0&\LMO{1}\ar[r]^1&\LMO{2}\ar[r]^2&\cdots}$$
-When we get to limits in a category, we will understand that products can be taken in the category of graphs (see  Example \ref{ex:product of graphs}), and $N\times G$ will make sense. For now, we construct it by hand.
+When we get to limits in a category, we will understand that products can be taken in the category of graphs (see  Example~\ref{ex:product of graphs}), and $N\times G$ will make sense. For now, we construct it by hand.
 
 Let $T(G)=(V\times \NN,A\times\NN,src',tgt')$ be a new graph, where for $a\in A$ and $n\in\NN$ we have $src'(a,n):=(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1)$. This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
 
@@ -181,7 +181,7 @@ Let $G$ be the graph depicted below:
 $$
 \xymatrix{\LMO{a}\ar@/^1pc/[rr]^w\ar@(lu,ld)[]_x&&\LMO{b}\ar@/^1pc/[ll]^y\ar@(ur,dr)[]^z}
 $$
-Draw (using ellipses “$\cdots$” if necessary) the graph $T(G)$ defined in Example \ref{ex:ZxG}.
+Draw (using ellipses “$\cdots$” if necessary) the graph $T(G)$ defined in Example~\ref{ex:ZxG}.
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:secret turing}
@@ -205,7 +205,7 @@ $$
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:(co)equalizer of graph}
-A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer and coequalizer (see Definitions \ref{def:equalizer} and \ref{def:coequalizer}). 
+A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer and coequalizer (see Definitions~\ref{def:equalizer} and~\ref{def:coequalizer}). 
 \sexc What feature of a graph is captured by the equalizer of its source and target functions? 
 \item What feature of a graph is captured by the coequalizer of its source and target functions?
 \endsexc
@@ -313,7 +313,7 @@ The colors indicate our choice of function $f_0\taking V\to V'$. Given that choi
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n$, as in Example \ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G$, or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G$?
+Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n$, as in Example~\ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G$, or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G$?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -429,8 +429,8 @@ A relation on $\RR$ is a subset of $\RR\times\RR$, and one can indicate such a s
 \end{exerciseRUS}
 
 \begin{exerciseENG}[Going around the loops]
-\sexc Given a binary relation $R\ss S\times S$, you know from Exercise \ref{exc:rel to graph} how to construct a graph out of it, and from Exercise \ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
-\item Given a graph $(V,A,src,tgt)$, you know from Exercise \ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise \ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
+\sexc Given a binary relation $R\ss S\times S$, you know from Exercise~\ref{exc:rel to graph} how to construct a graph out of it, and from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
+\item Given a graph $(V,A,src,tgt)$, you know from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise~\ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
 \endsexc
 \end{exerciseENG}
 

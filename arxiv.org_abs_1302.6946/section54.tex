@@ -66,7 +66,7 @@ An {\em operad} $\mcO$ is defined as follows: One announces some constituents (A
 called {\em the composition formula}.
 \end{enumerate}
 Given an $n$-indexed set of objects $x\taking n\to\Ob(\mcO)$ and an object $y\in\Ob(\mcO)$, we sometimes abuse notation and denote the set of morphisms from $x$ to $y$ by $\mcO(x_1,\ldots,x_n;y)$.
-\footnote{There are three abuses of notation when writing $\mcO(x_1,\ldots,x_n;y)$, which we will fix one by one. First, it confuses the set $n\in\Ob(\Fin)$ with its cardinality $|n|\in\NN$. But rather than writing $\mcO(x_1,\ldots,x_{|n|};y)$, it would be more consistent to write $\mcO(x(1),\ldots,x(|n|);y)$, because we have assigned subscripts another meaning in part D. But even this notation unfoundedly suggests that the set $n$ has been endowed with a linear ordering, which it has not. This may be seen as a more serious abuse, but see Remark \ref{rem:symmetry}.}
+\footnote{There are three abuses of notation when writing $\mcO(x_1,\ldots,x_n;y)$, which we will fix one by one. First, it confuses the set $n\in\Ob(\Fin)$ with its cardinality $|n|\in\NN$. But rather than writing $\mcO(x_1,\ldots,x_{|n|};y)$, it would be more consistent to write $\mcO(x(1),\ldots,x(|n|);y)$, because we have assigned subscripts another meaning in part D. But even this notation unfoundedly suggests that the set $n$ has been endowed with a linear ordering, which it has not. This may be seen as a more serious abuse, but see Remark~\ref{rem:symmetry}.}
 We may write $\Hom_\mcO(x_1,\ldots,x_n;y)$, in place of $\mcO(x_1,\ldots,x_n;y)$, when convenient. We can denote a morphism $\phi\in\mcO_n(x;y)$ by $\phi\taking x\to y$ or by $\phi\taking (x_1,\ldots,x_n)\to y$; we say that each $x_i$ is a {\em domain object} of $\phi$ and that $y$ is the {\em codomain object} of $\phi$. We use infix notation for the composition formula, e.g. writing $\psi\circ(\phi_1,\ldots,\phi_n)$.
 
 One asserts that the following laws hold:
@@ -104,7 +104,7 @@ $$
 \end{definitionRUS}
 
 \begin{remarkENG}\label{rem:symmetry}
-In this remark we will discuss the abuse of notation in Definition \ref{def:operad} and how it relates to an action of a symmetric group on each morphism set in our definition of operad. We follow the notation of Definition \ref{def:operad}, especially following the use of subscripts in the composition formula.
+In this remark we will discuss the abuse of notation in Definition~\ref{def:operad} and how it relates to an action of a symmetric group on each morphism set in our definition of operad. We follow the notation of Definition~\ref{def:operad}, especially following the use of subscripts in the composition formula.
 
 Suppose that $\mcO$ is an operad, $z\in\Ob(\mcO)$ is an object, $y\taking n\to\Ob(\mcO)$ is an $n$-indexed set of objects, and $\phi\taking y\to z$ is a morphism. If we linearly order $n$, enabling us to write $\phi\taking (y(1),\ldots,y(|n|))\to z$, then changing the linear ordering amounts to finding an isomorphism of finite sets $\sigma\taking m\To{\iso} n$, where $|m|=|n|$. Let $x=y\circ\sigma$ and for each $i\in n$, note that $m_i=\sigma^\m1(\{i\})=\{\sigma^\m1(i)\}$, so $x_i=x|_{\sigma^\m1(i)}=y(i)$. Taking $\id_{x_i}\in\mcO_{m_i}(x_i;y(i))$ for each $i\in n$, and using the identity law, we find that the composition formula induces a bijection $\mcO_n(y;z)\To{\iso}\mcO_m(x;z)$, which we might denote by 
 $$\sigma\taking\mcO(y(1),y(2),\ldots,y(n);z)\iso\mcO\big(y(\sigma(1)),y(\sigma(2)),\ldots,y(\sigma(n));z\big).$$
@@ -130,7 +130,7 @@ An operad commonly used in mathematics is called the {\em little $n$-cubes opera
 \begin{center}
 \includegraphics[height=2in]{square1}
 \end{center}
-The composition law says that given a positioning of small squares inside a large square, and given a positioning of tiny squares inside each of those small squares, we get a positioning of tiny squares inside a large square. A picture is shown in Figure \ref{fig:composition law for squares}.
+The composition law says that given a positioning of small squares inside a large square, and given a positioning of tiny squares inside each of those small squares, we get a positioning of tiny squares inside a large square. A picture is shown in Figure~\ref{fig:composition law for squares}.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=\textwidth]{square2}
@@ -146,7 +146,7 @@ Hopefully, what we meant by “self-similarity” in the introduction to this se
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:little shapes}
-Consider an operad $\mcO$ like the little squares operad from Example \ref{ex:little squares}, except with three objects: square, circle, equilateral triangle. A morphism is again a non-overlapping positioning of shapes inside of a shape. 
+Consider an operad $\mcO$ like the little squares operad from Example~\ref{ex:little squares}, except with three objects: square, circle, equilateral triangle. A morphism is again a non-overlapping positioning of shapes inside of a shape. 
 \sexc Draw an example of a morphism $f$ from two circles and a square to a triangle.
 \item Find three other morphisms that compose into $f$, and draw the composite.
 \endsexc
@@ -167,7 +167,7 @@ If operads are like categories, then we can define things like functors and call
 \end{blockRUS}
 
 \begin{warningENG}\index{a warning!operad functors}
-What we call operad functors in Definition \ref{def:operad morphism} are usually (if not always) called {\em operad morphisms}. We thought that the terminology clash between morphisms {\em of} operads and morphisms {\em in} an operad was too confusing. It is similar to what would occur in regular category theory (e.g. Chapter \ref{chap:categories}) if we replaced the term “functor” with the term “category morphism”. 
+What we call operad functors in Definition~\ref{def:operad morphism} are usually (if not always) called {\em operad morphisms}. We thought that the terminology clash between morphisms {\em of} operads and morphisms {\em in} an operad was too confusing. It is similar to what would occur in regular category theory (e.g. Chapter~\ref{chap:categories}) if we replaced the term “functor” with the term “category morphism”. 
 \end{warningENG}
 
 \begin{warningRUS}\index{a warning!operad functors}
@@ -182,7 +182,7 @@ Let $\mcO$ and $\mcO'$ be operads. An {\em operad functor from $\mcO$ to $\mcO'$
 As in B. above, we often denote $\Ob(F)$, and also each $F_n$, simply by $F$. The laws that govern these constituents are as follows:
 \begin{enumerate}[\hsp 1.]
 \item For each object $x\in\Ob(\mcO)$, the equation $F(\id_x)=\id_{Fx}$ holds.
-\item Let $s\taking m\to n$ be a morphism in $\Fin$. Let $z\in\Ob(\mcO)$ be an object, let $y\taking n\to\Ob(\mcO)$ be an $n$-indexed set of objects, and let $x\taking m\to\Ob(\mcO)$ be an $m$-indexed set of objects. Then, with notation as in Definition \ref{def:operad}, the following diagram of sets commutes:
+\item Let $s\taking m\to n$ be a morphism in $\Fin$. Let $z\in\Ob(\mcO)$ be an object, let $y\taking n\to\Ob(\mcO)$ be an $n$-indexed set of objects, and let $x\taking m\to\Ob(\mcO)$ be an $m$-indexed set of objects. Then, with notation as in Definition~\ref{def:operad}, the following diagram of sets commutes:
 \begin{align}\label{dia:operad functor on composition}
 \xymatrix{
 \mcO_n(y;z)\times\prod_{i\in n}\mcO_{m_i}(x_i;y(i))\ar[r]^-F\ar[d]_\circ&
@@ -199,7 +199,7 @@ We denote the category of operads and operad functors by $\Oprd$.
 \end{definitionRUS}
 
 \begin{exerciseENG}
-Let $\mcO$ denote the little squares operad from Example \ref{ex:little squares} and let $\mcO'$ denote the operad you constructed in Exercise \ref{exc:little shapes}.
+Let $\mcO$ denote the little squares operad from Example~\ref{ex:little squares} and let $\mcO'$ denote the operad you constructed in Exercise~\ref{exc:little shapes}.
 \sexc Can you come up with an operad functor $\mcO\to\mcO'$?
 \item Is it possible to find an operad functor $\mcO'\to\mcO$? 
 \endsexc
@@ -270,7 +270,7 @@ Finally, a morphism of algebras $S\taking A\to B$ would consist of a coherent sy
 \end{applicationRUS}
 
 \begin{exerciseENG}
-Consider again the little squares operad $\mcO$ from Example \ref{ex:little squares}. Suppose we wanted to use this operad to describe those \href{http://en.wikipedia.org/wiki/Photographic_mosaic}{\text photographic mosaics}. 
+Consider again the little squares operad $\mcO$ from Example~\ref{ex:little squares}. Suppose we wanted to use this operad to describe those \href{http://en.wikipedia.org/wiki/Photographic_mosaic}{\text photographic mosaics}. 
 \sexc Come up with an algebra $P\taking\mcO\to\Sets$ that sends the square to the set of all photos that can be pasted into that square. What does $P$ do on morphisms in $\mcO$?
 \item Come up with an algebra $C\taking\mcO\to\Sets$ that sends each square to the set of all colors (visible frequencies of light). In other words, $C(\square)$ is the set of colors, not the set of ways to color the square. What does $C$ do on morphisms in $\mcO$. Hint: use some kind of averaging scheme for the morphisms.
 \item Guess: if someone were to appropriately define morphisms of $\mcO$-algebras (something akin to natural transformations between functors $\mcO\to\Sets$), do you think there would some a morphism of algebras $P\to C$?
@@ -291,7 +291,7 @@ Here we describe an {\em operad of relations}, which we will denote by $\mcR$. T
 \end{align} 
 such that the induced function $R\too(x_1\times x_2\times\cdots\times x_n\times x')$ is an injection.
 
-We use a composition formula similar to that in Definition \ref{def:composite span}. Namely, we form a fiber product
+We use a composition formula similar to that in Definition~\ref{def:composite span}. Namely, we form a fiber product
 $$\xymatrix{&&FP\ar[rd]\ar[ld]\\&\prod_{i\in\ul{n}}R_i\ar[ld]\ar[rd]&&S\ar[ld]\ar[rd]\\\prod_{i\in\ul{n}}\prod_{j\in\ul{m_i}}x_{i,j}&&\prod_{i\in\ul{n}}y_i&&z}$$
 One can show that the induces function $FP\too\left(\prod_{i\in\ul{n}}\prod_{j\in\ul{m_i}}x_i\right)\times y$ is an injection, so we have a valid composition formula. Finally, the associativity and identity laws hold.
 \footnote{Technically we need to use isomorphism classes of cone points, but we don't worry about this here.}
@@ -303,14 +303,14 @@ One can show that the induces function $FP\too\left(\prod_{i\in\ul{n}}\prod_{j\i
 \begin{applicationENG}\label{app:entity by experience}
 Suppose we are trying to model \href{http://en.wikipedia.org/wiki/Life}{\text life} in the following way. We define an entity as a set of phenomena, but in order to use colloquial language we say the entity {\em is able to experience} that set of phenomena. We also want to be able to put entities together to form a super-entity, so we have a notion of morphism $f\taking(e_1,\ldots,e_n)\too e'$ defined as a relation as in (\ref{dia:operad of relations}). The idea is that the morphism $f$ is a way of translating between the phenomena that may be experienced by the sub-entities and the phenomena that may be experienced by the super-entity. 
 
-The operad $\mcR$ from Example \ref{ex:operad of relations} becomes useful as a language for discussing issues in this domain.
+The operad $\mcR$ from Example~\ref{ex:operad of relations} becomes useful as a language for discussing issues in this domain.
 \end{applicationENG}
 
 \begin{applicationRUS}\label{app:entity by experience}
 \end{applicationRUS}
 
 \begin{exampleENG}\label{ex:algebra on operad of rels}
-Let $\mcR$ be the operad of relations from Example \ref{ex:operad of relations}. Consider the algebra $S\taking\mcR\to\Sets$ given by $S(x)=\PP(x)$. Given a morphism $\prod_ix_i\from R\to y$ and subsets $x_i'\ss x_i$, we have a subset $\prod_ix_i'\ss\prod_ix_i$. We take the fiber product
+Let $\mcR$ be the operad of relations from Example~\ref{ex:operad of relations}. Consider the algebra $S\taking\mcR\to\Sets$ given by $S(x)=\PP(x)$. Given a morphism $\prod_ix_i\from R\to y$ and subsets $x_i'\ss x_i$, we have a subset $\prod_ix_i'\ss\prod_ix_i$. We take the fiber product
 $$\xymatrix@=15pt{&FP\ar[rr]\ar[ld]&&R\ar[ld]\ar[rd]\\\prod_ix_i'\ar[rr]&&\prod_ix_i&&y}$$
 and the image of $FP\to y$ is a subset of $y$. 
 \end{exampleENG}
@@ -319,7 +319,7 @@ and the image of $FP\to y$ is a subset of $y$.
 \end{exampleRUS}
 
 \begin{applicationENG}\label{app:desire}
-Following Application \ref{app:entity by experience} we can use Example \ref{ex:algebra on operad of rels} as a model of survival. Each entity survives only for a subset of the phenomena that it can experience. Under this interpretation, the algebra from Example \ref{ex:algebra on operad of rels} defines survival as the survival of all parts. That is, suppose that we understand how a super-entity is composed of sub-entities in the sense that we have a translation between the set of phenomena that may be experienced across the sub-entities and the set of phenomena that may be experienced by the super-entity. Then the super-entity will survive exactly those phenomena which translate to phenomena for which each sub-entity desires. 
+Following Application~\ref{app:entity by experience} we can use Example~\ref{ex:algebra on operad of rels} as a model of survival. Each entity survives only for a subset of the phenomena that it can experience. Under this interpretation, the algebra from Example~\ref{ex:algebra on operad of rels} defines survival as the survival of all parts. That is, suppose that we understand how a super-entity is composed of sub-entities in the sense that we have a translation between the set of phenomena that may be experienced across the sub-entities and the set of phenomena that may be experienced by the super-entity. Then the super-entity will survive exactly those phenomena which translate to phenomena for which each sub-entity desires. 
 
 Perhaps a better term than survival would be “allowance”. A bureaucracy consists of a set of smaller bureaucracies, each of which allows certain phenomena to pass; the whole bureaucracy allows something to pass if and only if, when translated to the perspective of each sub-bureaucracy, it is allowed to pass there.
 \end{applicationENG}
@@ -352,7 +352,7 @@ There is an operad functor $\mcW\to\mcS$ given by sending $(C,v)$ to $\prod_{c\i
 \begin{applicationENG}
 In cognitive neuroscience or in industrial economics, it may be that we want to understand the behavior of an entity such as a mind, a society, or a business in terms of its structure. Knowing the connection pattern (\href{http://en.wikipedia.org/wiki/Connectome}{connectome}, \href{http://en.wikipedia.org/wiki/Supply_chain}{supply chain}) of sub-entities should help us understand how big changes are generated from small ones.
 
-Under the functor $\mcW\to\mcS$ the algebra $\mcS\to\Sets$ from Application \ref{app:desire} becomes an algebra $\mcW\to\Sets$. To each entity we now associate some subset of the value-assignments it can carry. 
+Under the functor $\mcW\to\mcS$ the algebra $\mcS\to\Sets$ from Application~\ref{app:desire} becomes an algebra $\mcW\to\Sets$. To each entity we now associate some subset of the value-assignments it can carry. 
 \end{applicationENG}
 
 \begin{applicationRUS}

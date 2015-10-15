@@ -5,7 +5,7 @@
 \section{\caseENGRUS{Categories and schemas are equivalent}{ / }{Категории и схемы эквивалентны}, \texorpdfstring{$\Cat\simeq\Sch$}{Cat = Sch}}\label{sec:cat equiv sch}
 
 \begin{blockENG}
-Perhaps it is intuitively clear that schemas are somehow equivalent to categories, and in this section we make that precise. The basic idea was already laid out in Section \ref{sec:schemas and cats intro}.
+Perhaps it is intuitively clear that schemas are somehow equivalent to categories, and in this section we make that precise. The basic idea was already laid out in Section~\ref{sec:schemas and cats intro}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -16,14 +16,14 @@ Perhaps it is intuitively clear that schemas are somehow equivalent to categorie
 \subsection{\caseENGRUS{The category $\Sch$ of schemas}{ / }{Категория $\Sch$ схем}}\label{sec:sch as category}
 
 \begin{blockENG}
-Recall from Definition \ref{def:schema} that a schema consists of a pair $\mcC:=(G,\simeq)$, where $G=(V,A,src,tgt)$ is a graph and $\simeq$ is a congruence, meaning a kind of equivalence relation on the paths in $G$ (see Definition \ref{def:congruence}. If we think of a schema as being analogous to a category, what should fulfill the role of functors? That is, what are to be the morphisms in $\Sch$?\index{category!as equivalent to schema}\index{schema!as equivalent to category}
+Recall from Definition~\ref{def:schema} that a schema consists of a pair $\mcC:=(G,\simeq)$, where $G=(V,A,src,tgt)$ is a graph and $\simeq$ is a congruence, meaning a kind of equivalence relation on the paths in $G$ (see Definition~\ref{def:congruence}. If we think of a schema as being analogous to a category, what should fulfill the role of functors? That is, what are to be the morphisms in $\Sch$?\index{category!as equivalent to schema}\index{schema!as equivalent to category}
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-Unfortunately, ones first guess may give the wrong notion if we want an equivalence $\Sch\simeq\Cat$. Since objects in $\Sch$ are graphs with additional structure, one might imagine that a morphism $\mcC\to\mcC'$ in $\Sch$ should be a graph homomorphism (as in Definition \ref{def:graph homomorphism}) that preserves said structure. But graph homomorphisms require that arrows be sent to arrows, whereas we are more interested in paths than in individual arrows—the arrows are merely useful for presentation. 
+Unfortunately, ones first guess may give the wrong notion if we want an equivalence $\Sch\simeq\Cat$. Since objects in $\Sch$ are graphs with additional structure, one might imagine that a morphism $\mcC\to\mcC'$ in $\Sch$ should be a graph homomorphism (as in Definition~\ref{def:graph homomorphism}) that preserves said structure. But graph homomorphisms require that arrows be sent to arrows, whereas we are more interested in paths than in individual arrows—the arrows are merely useful for presentation. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -37,7 +37,7 @@ If instead we define morphisms between schemas to be maps that send paths in $\m
 \end{blockRUS}
 
 \begin{blockENG}
-Recall from Examples \ref{ex:paths-graph} and \ref{ex:concat paths of paths} the paths-graph functor $\Paths\taking\Grph\to\Grph$,\index{a functor!$\Paths\taking\Grph\to\Grph$} the paths of paths functor $\Paths\circ\Paths\taking\Grph\to\Grph$, and the natural transformations for any graph $G$, 
+Recall from Examples~\ref{ex:paths-graph} and~\ref{ex:concat paths of paths} the paths-graph functor $\Paths\taking\Grph\to\Grph$,\index{a functor!$\Paths\taking\Grph\to\Grph$} the paths of paths functor $\Paths\circ\Paths\taking\Grph\to\Grph$, and the natural transformations for any graph $G$, 
 \begin{align}\label{dia:proto paths monad}
 \eta_G\taking G\to\Paths(G)\hsp\tn{and}\hsp\mu_G\taking\Paths(\Paths(G))\to\Paths(G).
 \end{align}
@@ -70,7 +70,7 @@ This says that given a function from arrows in $G$ to paths in $G'$, a path in $
 
 \begin{definitionENG}[Schema morphism]\label{def:schema morphism}\index{schema!morphism}
 Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs, and let $\mcC=(G,\simeq_G)$ and $\mcC'=(G',\simeq_{G'})$ be schemas. A {\em schema morphism $F$ from $\mcC$ to $\mcD$}, denoted $F\taking\mcC\to\mcD$ is a graph homomorphism 
-\footnote{By Definition \ref{def:graph homomorphism}, a graph homomorphism $F\taking G\to\Paths(G')$ will consist of a vertex part $F_0\taking V\to V'$ and an arrows part $F_1\taking E\to\Path(G')$. See also Definition \ref{def:paths in graph}.}
+\footnote{By Definition~\ref{def:graph homomorphism}, a graph homomorphism $F\taking G\to\Paths(G')$ will consist of a vertex part $F_0\taking V\to V'$ and an arrows part $F_1\taking E\to\Path(G')$. See also Definition~\ref{def:paths in graph}.}
 $$F\taking G\to\Paths(G')$$ that satisfies the following condition for any paths $p$ and $q$ in $G$: 
 \begin{align}\label{dia:path cond for schema morphism}
 \tn{if \;\;$p\simeq_G q$ \;\;then\;\; $\Paths_F(p)\simeq_{G'}\Paths_F(q)$}.
@@ -78,7 +78,7 @@ $$F\taking G\to\Paths(G')$$ that satisfies the following condition for any paths
 
 Two schema morphisms $E,F\taking\mcC\to\mcC'$ are considered identical if they agree on vertices (i.e. $E_0=F_0$) and if, for every arrow $f$ in $G$, there is a path equivalence in $G'$ $$E_1(f)\simeq_{G'}F_1(f).$$
 
-We now define the {\em category of schemas}, denoted $\Sch$,\index{a category!$\Sch$} to be the category whose objects are schemas as in Definition \ref{def:schema} and whose morphisms are schema morphisms defined as above. The identity morphism on schema $\mcC=(G,\simeq_G)$ is the schema morphism $\id_\mcC:=\eta_G\taking G\to\Paths(G)$ as defined in Equation (\ref{dia:proto paths monad}). We need only understand how to compose schema morphisms $F\taking\mcC\to\mcC'$ and $F'\taking\mcC'\to\mcC''$. On objects their composition is obvious. Given an arrow in $\mcC$, it is sent to a path in $\mcC'$; each arrow in that path is sent to a path in $\mcC''$. We then have a path of paths which we can concatenate (via $\mu_{G''}\taking\Paths(\Paths(G''))\to\Paths(G'')$ as in \ref{dia:proto paths monad}) to get a path in $\mcC''$ as desired.
+We now define the {\em category of schemas}, denoted $\Sch$,\index{a category!$\Sch$} to be the category whose objects are schemas as in Definition~\ref{def:schema} and whose morphisms are schema morphisms defined as above. The identity morphism on schema $\mcC=(G,\simeq_G)$ is the schema morphism $\id_\mcC:=\eta_G\taking G\to\Paths(G)$ as defined in Equation (\ref{dia:proto paths monad}). We need only understand how to compose schema morphisms $F\taking\mcC\to\mcC'$ and $F'\taking\mcC'\to\mcC''$. On objects their composition is obvious. Given an arrow in $\mcC$, it is sent to a path in $\mcC'$; each arrow in that path is sent to a path in $\mcC''$. We then have a path of paths which we can concatenate (via $\mu_{G''}\taking\Paths(\Paths(G''))\to\Paths(G'')$ as in~\ref{dia:proto paths monad}) to get a path in $\mcC''$ as desired.
 \end{definitionENG}
 
 \begin{definitionRUS}[Schema morphism]\label{def:schema morphism}\index{schema!morphism}
@@ -100,7 +100,7 @@ $$
 \xymatrix{\LMO{a}\ar[r]^g\ar[rd]_i&\LMO{b}\ar[d]^h\\&\LMO{c}
 }}}
 $$
-We impose on $\mcC$ the path equivalence declaration $[g,h]\simeq[i]$ and show that in this case $\mcC$ and $[2]$ are isomorphic in $\Sch$. We have a schema morphism $F\taking[2]\to\mcC$ sending $0\mapsto a, 1\mapsto b, 2\mapsto c$, and sending each arrow in $[2]$ to an arrow in $\mcC$. And we have a schema morphism $F'\taking\mcC\to[2]$ which reverses this mapping on vertices; note that $F'$ must send the arrow $i$ in $\mcC$ to the path $[f_1,f_2]$ in $[2]$, which is ok! The roundtrip $F'\circ F\taking [2]\to[2]$ is identity. The roundtrip $F\circ F'\taking\mcC\to\mcC$ may look like it's not the identity; indeed it sends vertices to themselves but it sends $i$ to the path $[g,h]$. But according to Definition \ref{def:schema morphism}, this schema morphism is considered identical to $\id_\mcC$ because there is a path equivalence $\id_\mcC(i)=[i]\simeq[g,h]=F\circ F'(i).$
+We impose on $\mcC$ the path equivalence declaration $[g,h]\simeq[i]$ and show that in this case $\mcC$ and $[2]$ are isomorphic in $\Sch$. We have a schema morphism $F\taking[2]\to\mcC$ sending $0\mapsto a, 1\mapsto b, 2\mapsto c$, and sending each arrow in $[2]$ to an arrow in $\mcC$. And we have a schema morphism $F'\taking\mcC\to[2]$ which reverses this mapping on vertices; note that $F'$ must send the arrow $i$ in $\mcC$ to the path $[f_1,f_2]$ in $[2]$, which is ok! The roundtrip $F'\circ F\taking [2]\to[2]$ is identity. The roundtrip $F\circ F'\taking\mcC\to\mcC$ may look like it's not the identity; indeed it sends vertices to themselves but it sends $i$ to the path $[g,h]$. But according to Definition~\ref{def:schema morphism}, this schema morphism is considered identical to $\id_\mcC$ because there is a path equivalence $\id_\mcC(i)=[i]\simeq[g,h]=F\circ F'(i).$
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -117,7 +117,7 @@ Consider the schema $[2]$ and the schema $\mcC$ pictured above, except where thi
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:finite hierarchies 1}
-Consider the graph $\Loop$ pictured below $$\Loop:=\LoopSchema$$ and for any natural number $n$, let $\mcL_n$ denote the schema $(\Loop,\simeq_n)$ where $\simeq_n$ is the PED $f^{n+1}\simeq f^n$. This is the “finite hierarchy” schema of Example \ref{ex:finite hierarchy}. Let $\ul{1}$ denote the graph with one vertex and no arrows; consider it as a schema.
+Consider the graph $\Loop$ pictured below $$\Loop:=\LoopSchema$$ and for any natural number $n$, let $\mcL_n$ denote the schema $(\Loop,\simeq_n)$ where $\simeq_n$ is the PED $f^{n+1}\simeq f^n$. This is the “finite hierarchy” schema of Example~\ref{ex:finite hierarchy}. Let $\ul{1}$ denote the graph with one vertex and no arrows; consider it as a schema.
 \sexc Is $\ul{1}$ isomorphic to $\mcL_1$ in $\Sch$?
 \item Is it isomorphic to any (other) $\mcL_n$?
 \endsexc
@@ -127,7 +127,7 @@ Consider the graph $\Loop$ pictured below $$\Loop:=\LoopSchema$$ and for any nat
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $\Loop$ and $\mcL_n$ be the schemas defined in Exercise \ref{exc:finite hierarchies 1}.
+Let $\Loop$ and $\mcL_n$ be the schemas defined in Exercise~\ref{exc:finite hierarchies 1}.
 \sexc What is the cardinality of the set $\Hom_\Sch(\mcL_3,\mcL_5)$?
 \item What is the cardinality of the set $\Hom_\Sch(\mcL_5,\mcL_3)$? Hint: the cardinality of the set $\Hom_\Sch(\mcL_4,\mcL_9)$ is 8.
 \endsexc
@@ -141,18 +141,18 @@ Let $\Loop$ and $\mcL_n$ be the schemas defined in Exercise \ref{exc:finite hier
 \subsection{\caseENGRUS{Proving the equivalence}{ / }{Доказательство эквивалентности}}\label{sec:proof of cat=sch}
 
 \begin{constructionENG}[From schema to category]
-We will define a functor $L\taking\Sch\to\Cat$\index{a functor!$\Sch\to\Cat$}. Let $\mcC=(G,\simeq)$ be a categorical schema, where $G=(V,A,src,tgt)$. Define $L(\mcC)$ to be the category with $\Ob(L(\mcC))=V$, and with $\Hom_{L(\mcC)}(v_1,v_2):=\Path_G(v,w)/\simeq$, i.e. the set of paths in $G$, modulo the path equivalence relation for $\mcC$. The composition of morphisms is defined by concatenation of paths, and Lemma \ref{lemma:composing PEDs} ensures that such composition is well-defined. We have thus defined $L$ on objects of $\Sch$.
+We will define a functor $L\taking\Sch\to\Cat$\index{a functor!$\Sch\to\Cat$}. Let $\mcC=(G,\simeq)$ be a categorical schema, where $G=(V,A,src,tgt)$. Define $L(\mcC)$ to be the category with $\Ob(L(\mcC))=V$, and with $\Hom_{L(\mcC)}(v_1,v_2):=\Path_G(v,w)/\simeq$, i.e. the set of paths in $G$, modulo the path equivalence relation for $\mcC$. The composition of morphisms is defined by concatenation of paths, and Lemma~\ref{lemma:composing PEDs} ensures that such composition is well-defined. We have thus defined $L$ on objects of $\Sch$.
 
 Given a schema morphism $F\taking\mcC\to\mcC'$, where $\mcC'=(G',\simeq')$, we need to produce a functor $L(F)\taking L(\mcC)\to L(\mcC')$. The objects of $L(\mcC)$ and $L(\mcC')$ are the vertices of $G$ and $G'$ respectively, and $F$ provides the necessary function on objects. Diagram (\ref{dia:kleisli comp in graph}) provides a function $\Paths_F\taking\Paths(G)\to\Paths(G')$ will provide the requisite function for morphisms. 
 
-A morphism in $L(\mcC)$ is an equivalence class of paths in $\mcC$. For any representative path $p\in\Paths(G)$, we have $\Paths_F(p)\in\Paths(G')$, and if $p\simeq q$ then $\Paths_F(p)\simeq'\Paths_F(q)$ by condition \ref{dia:path cond for schema morphism}. Thus $\Paths_F$ indeed provides us with a function $\Hom_{L(\mcC)}\to\Hom_{L(\mcC')}$. This defines $L$ on morphisms in $\Sch$. It is clear that $L$ preserves composition and identities, so it is a functor.
+A morphism in $L(\mcC)$ is an equivalence class of paths in $\mcC$. For any representative path $p\in\Paths(G)$, we have $\Paths_F(p)\in\Paths(G')$, and if $p\simeq q$ then $\Paths_F(p)\simeq'\Paths_F(q)$ by condition~\ref{dia:path cond for schema morphism}. Thus $\Paths_F$ indeed provides us with a function $\Hom_{L(\mcC)}\to\Hom_{L(\mcC')}$. This defines $L$ on morphisms in $\Sch$. It is clear that $L$ preserves composition and identities, so it is a functor.
 \end{constructionENG}
 
 \begin{constructionRUS}[From schema to category]
 \end{constructionRUS}
 
 \begin{constructionENG}[From category to schema]
-We will define a functor $R\taking\Cat\to\Sch$.\index{a functor!$\Cat\to\Sch$} Let $\mcC=(\Ob(\mcC),\Hom_\mcC,dom,cod,\ids,\circ)$ be a category (see Exercise \ref{exc:cat in set}). Let $R(\mcC)=(G,\simeq)$ where $G$ is the graph $$G=(\Ob(\mcC),\Hom_\mcC,dom,cod),$$ and with $\simeq$ defined as the congruence generated by the following path equivalence declarations: for any composable sequence of morphisms $f_1,f_2,\ldots,f_n$ (with $dom(f_{i+1})=cod(f_i)$ for each $1\leq i\leq n-1$) we put 
+We will define a functor $R\taking\Cat\to\Sch$.\index{a functor!$\Cat\to\Sch$} Let $\mcC=(\Ob(\mcC),\Hom_\mcC,dom,cod,\ids,\circ)$ be a category (see Exercise~\ref{exc:cat in set}). Let $R(\mcC)=(G,\simeq)$ where $G$ is the graph $$G=(\Ob(\mcC),\Hom_\mcC,dom,cod),$$ and with $\simeq$ defined as the congruence generated by the following path equivalence declarations: for any composable sequence of morphisms $f_1,f_2,\ldots,f_n$ (with $dom(f_{i+1})=cod(f_i)$ for each $1\leq i\leq n-1$) we put 
 \begin{align}\label{dia:composition formula}
 [f_1,f_2,\ldots,f_n]\simeq [f_n\circ\cdots\circ f_2\circ f_1].
 \end{align} 
@@ -176,7 +176,7 @@ It is clear that there is a natural isomorphism $\alpha\taking\id_\Cat\To{\iso} 
 
 Before giving an isomorphism $\beta\taking\id_\Sch\To{\iso}R\circ L$, we briefly describe $R(L(\mcS))=:(G',\simeq')$ for a schema $\mcS=(G,\simeq)$. Write $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$. On vertices we have $V=V'$. On arrows we have $A'=\Path_G/\simeq$. The congruence $\simeq'$ for $R(L(\mcS))$ is imposed in (\ref{dia:composition formula}). Under $\simeq'$, every path of paths in $G$ is made equivalent to its concatenation, considered as a path of length 1 in $G'$. 
 
-There is a natural transformation $\beta\taking\id_\Sch\to R\circ L$ whose $\mcS$-component sends each arrow in $G$ to a certain path of length 1 in $G'$. We need to see that $\beta_\mcS$ has an inverse. But this is straightforward: every arrow $f$ in $R\circ L(\mcS)$ is an  equivalence class of paths in $\mcS$; choose any one and send $f$ there; by Definition \ref{def:schema morphism} any other choice will give the identical morphism of schemas. It is easy to show that the roundtrips are identities (again up to the notion of identity given in Definition \ref{def:schema morphism}).
+There is a natural transformation $\beta\taking\id_\Sch\to R\circ L$ whose $\mcS$-component sends each arrow in $G$ to a certain path of length 1 in $G'$. We need to see that $\beta_\mcS$ has an inverse. But this is straightforward: every arrow $f$ in $R\circ L(\mcS)$ is an  equivalence class of paths in $\mcS$; choose any one and send $f$ there; by Definition~\ref{def:schema morphism} any other choice will give the identical morphism of schemas. It is easy to show that the roundtrips are identities (again up to the notion of identity given in Definition~\ref{def:schema morphism}).
 \end{proofENG}
 
 \begin{proofRUS}[Sketch of proof]

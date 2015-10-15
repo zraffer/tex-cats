@@ -5,7 +5,7 @@
 \section{\caseENGRUS{Other notions in $\Cat$}{ / }{Другие понятия в $\Cat$}}
 
 \begin{blockENG}
-In this section we discuss some leftover notions about categories. For example in Section \ref{sec:opposite} we explain a kind of duality for categories, in which arrows are flipped. For example reversing the order in a preorder is an example of this duality, as is the similarity between limits and colimits. In Section \ref{sec:grothendieck construction} we discuss the so-called Grothendieck construction which in some sense graphs functors, and we show that it is useful for transforming databases into the kind of format (RDF) used in scraping data off webpages. We define a general construction for creating categories in Section \ref{sec:comma}. Finally, in Section \ref{sec:arithmetic of categories} we show that precisely the same arithmetic statements that held for sets in Section \ref{sec:arithmetic of sets} hold for categories. 
+In this section we discuss some leftover notions about categories. For example in Section~\ref{sec:opposite} we explain a kind of duality for categories, in which arrows are flipped. For example reversing the order in a preorder is an example of this duality, as is the similarity between limits and colimits. In Section~\ref{sec:grothendieck construction} we discuss the so-called Grothendieck construction which in some sense graphs functors, and we show that it is useful for transforming databases into the kind of format (RDF) used in scraping data off webpages. We define a general construction for creating categories in Section~\ref{sec:comma}. Finally, in Section~\ref{sec:arithmetic of categories} we show that precisely the same arithmetic statements that held for sets in Section~\ref{sec:arithmetic of sets} hold for categories. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -16,7 +16,7 @@ In this section we discuss some leftover notions about categories. For example i
 \subsection{\caseENGRUS{Opposite categories}{ / }{Дуальные категории}}\label{sec:opposite}
 
 \begin{blockENG}
-People used to discuss two different kinds of functors between categories: the so-called {\em covariant functors} and the so-called {\em contravariant functors}. Covariant functors are what we have been calling functors. The reader may have come across the idea of contravariance when considering Exercise \ref{exc:points and opens in Top}.\footnote{Similarly, see Exercise \ref{exc:juris 2}.} There we saw that a continuous mapping of topological spaces $f\taking X\to Y$ does not induce a morphism of orders on their open sets $\Op(X)\to\Op(Y)$; that is not required by the notion of continuity. Instead, a morphism of topological spaces $f\taking X\to Y$ induces a morphism of orders $\Op(Y)\to\Op(X)$, going backwards. So we do not have a functor $\Top\to\PrO$ in this way, but it's quite close. One used to say that $\Op$ is a {\em contravariant functor} $\Top\to\PrO$.
+People used to discuss two different kinds of functors between categories: the so-called {\em covariant functors} and the so-called {\em contravariant functors}. Covariant functors are what we have been calling functors. The reader may have come across the idea of contravariance when considering Exercise~\ref{exc:points and opens in Top}.\footnote{Similarly, see Exercise~\ref{exc:juris 2}.} There we saw that a continuous mapping of topological spaces $f\taking X\to Y$ does not induce a morphism of orders on their open sets $\Op(X)\to\Op(Y)$; that is not required by the notion of continuity. Instead, a morphism of topological spaces $f\taking X\to Y$ induces a morphism of orders $\Op(Y)\to\Op(X)$, going backwards. So we do not have a functor $\Top\to\PrO$ in this way, but it's quite close. One used to say that $\Op$ is a {\em contravariant functor} $\Top\to\PrO$.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -38,14 +38,14 @@ $$\Hom_{\mcC\op}(c,c'):=\Hom_\mcC(c',c).$$
 \end{definitionRUS}
 
 \begin{exampleENG}
-If $n\in\NN$ is a natural number and $\ul{n}$ the corresponding discrete category, then $\ul{n}\op=\ul{n}$. Recall  the span category $I=\ul{2}\lcone$ from Definition \ref{def:products in a cat}. Its opposite is the cospan category $I\op=\ul{2}\rcone$, from Definition \ref{def:coproducts in a cat}.
+If $n\in\NN$ is a natural number and $\ul{n}$ the corresponding discrete category, then $\ul{n}\op=\ul{n}$. Recall  the span category $I=\ul{2}\lcone$ from Definition~\ref{def:products in a cat}. Its opposite is the cospan category $I\op=\ul{2}\rcone$, from Definition~\ref{def:coproducts in a cat}.
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Let $\mcC$ be the category from Example \ref{ex:category of spans}. Draw $\mcC\op$.
+Let $\mcC$ be the category from Example~\ref{ex:category of spans}. Draw $\mcC\op$.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -66,14 +66,14 @@ This follows straightforwardly from the definitions.
 \end{proofRUS}
 
 \begin{exerciseENG}
-In Exercises \ref{exc:points and opens in Top}, \ref{exc:juris 1}, and \ref{exc:juris 2} there were questions about whether a certain function $\Ob(\mcC)\to\Ob(\mcD)$ extended to a functor $\mcC\to\mcD$. In each case, see if the proposed function would extend to a “contravariant functor” i.e. to a functor $\mcC\op\to\mcD$.
+In Exercises~\ref{exc:points and opens in Top},~\ref{exc:juris 1}, and~\ref{exc:juris 2} there were questions about whether a certain function $\Ob(\mcC)\to\Ob(\mcD)$ extended to a functor $\mcC\to\mcD$. In each case, see if the proposed function would extend to a “contravariant functor” i.e. to a functor $\mcC\op\to\mcD$.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exampleENG}[Simplicial sets]\label{ex:simplicial set}\index{simplicial set}
-Recall from Example \ref{ex:finite linear orders} the category $\bD$ of linear orders $[n]$. For example, $[1]$ is the linear order $0\leq 1$ and $[2]$ is the linear order $0\leq 1\leq2$. Both $[1]$ and $[2]$ are objects of $\bD$.\index{a category!$\bD$} There are 6 morphisms from $[1]$ to $[2]$, which we could denote $$\Hom_{\bD}([1],[2])=\{(0,0), (0,1), (0,2), (1,1), (1,2), (2,2)\}.$$
+Recall from Example~\ref{ex:finite linear orders} the category $\bD$ of linear orders $[n]$. For example, $[1]$ is the linear order $0\leq 1$ and $[2]$ is the linear order $0\leq 1\leq2$. Both $[1]$ and $[2]$ are objects of $\bD$.\index{a category!$\bD$} There are 6 morphisms from $[1]$ to $[2]$, which we could denote $$\Hom_{\bD}([1],[2])=\{(0,0), (0,1), (0,2), (1,1), (1,2), (2,2)\}.$$
 
 It may seem strange, but the category $\bD\op$ turns out to be quite useful in algebraic topology. It is the indexing category for a combinatorial approach to the homotopy theory of spaces. That is, we can represent something like the category of spaces and continuous maps using the functor category $\sSet:=\Fun(\bD\op,\Set)$,\index{a category!$\sSet$} which is called the {\em category of simplicial sets}. 
 
@@ -136,7 +136,7 @@ There is a natural functor $\pi_J\taking\int_\mcC J\too\mcC$. It sends each obje
 \end{definitionRUS}
 
 \begin{exampleENG}
-Let $A$ be a set, and consider it as a discrete category. We saw in Exercise \ref{exc:indexed sets as functors} that a functor $S\taking A\to\Set$ is the same thing as an $A$-indexed set, as discussed in Section \ref{sec:indexed sets}. We will follow Definition \ref{def:indexed sets} and for each $a\in A$ write $S_a:=S(a)$.
+Let $A$ be a set, and consider it as a discrete category. We saw in Exercise~\ref{exc:indexed sets as functors} that a functor $S\taking A\to\Set$ is the same thing as an $A$-indexed set, as discussed in Section~\ref{sec:indexed sets}. We will follow Definition~\ref{def:indexed sets} and for each $a\in A$ write $S_a:=S(a)$.
 
 What is the category of elements of a functor $S\taking A\to\Set$? The objects of $\int_AS$ are pairs $(a,s)$ where $a\in A$ and $s\in S(a)$. Since $A$ has nothing but identity morphisms, $\int_AS$ has nothing but identity morphisms; i.e. it is the discrete category on a set. In fact that set is the disjoint union $$\varint_AS=\bigsqcup_{a\in A}S_a.$$ The functor $\pi_S\taking\int_AS\to A$ sends each element in $S_a$ to the element $a\in A$. 
 
@@ -162,7 +162,7 @@ $$
 \;\;A=\fbox{\xymatrix@=33pt{\hspace{.25in}\LTO{BOS}&\LTO{NYC}&\LTO{LA}&\LTO{DC}\hspace{.2in}}}
 $$
 
-We also see that the category of elements construction has converted an $A$-indexed set into a relative set over $A$, as in Definition \ref{def:relative sets}.
+We also see that the category of elements construction has converted an $A$-indexed set into a relative set over $A$, as in Definition~\ref{def:relative sets}.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -177,7 +177,7 @@ So lets examine a more interesting database schema and instance. This is taken f
 \end{blockRUS}
 
 \begin{applicationENG}\index{RDF!as category of elements}
-Consider the schema below, which we first encountered in Example \ref{ex:department store 3}:
+Consider the schema below, which we first encountered in Example~\ref{ex:department store 3}:
 \begin{align}\label{dia:basic cat}\mcC:=\MainCatLarge{}\end{align}
 And consider the instance $J\taking\mcC\to\Set$, which we first encountered in (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2})
 
@@ -244,9 +244,9 @@ The Grothendieck construction takes structured, boxed-up data and flattens it by
 \end{sloganRUS}
 
 \begin{exerciseENG}\label{exc:FSM as elements of monoid action}\index{finite state machine}
-Recall from Section \ref{sec:FSMs} that a finite state machine is a free monoid $(\List(\Sigma),[\;],\plpl)$ acting on a set $X$. Recall also that we can consider a monoid as a category $\mcM$ with one object and a monoid action as a set-valued functor $F\taking\mcM\to\Set$, (see Section \ref{sec:monoids as cats}). In the case of Figure \ref{fig:fsa} the monoid in question is $\List(a,b)$, which can be drawn as the schema
+Recall from Section~\ref{sec:FSMs} that a finite state machine is a free monoid $(\List(\Sigma),[\;],\plpl)$ acting on a set $X$. Recall also that we can consider a monoid as a category $\mcM$ with one object and a monoid action as a set-valued functor $F\taking\mcM\to\Set$, (see Section~\ref{sec:monoids as cats}). In the case of Figure~\ref{fig:fsa} the monoid in question is $\List(a,b)$, which can be drawn as the schema
 $$\fbox{\xymatrix{\monOb\ar@(ul,dl)[]_(.3)a\ar@(ul,dl)[]_(.7){~}\ar@(ur,dr)[]^(.3)b\ar@(ur,dr)[]^(.7){~}}}$$
-and the functor $F\taking\mcM\to\Set$ is recorded in an action table in Example \ref{ex:action table}. What is $\int_\mcM F$? How does it relate to the picture in Figure \ref{fig:fsa}?
+and the functor $F\taking\mcM\to\Set$ is recorded in an action table in Example~\ref{ex:action table}. What is $\int_\mcM F$? How does it relate to the picture in Figure~\ref{fig:fsa}?
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:FSM as elements of monoid action}\index{finite state machine}
@@ -281,14 +281,14 @@ The following are examples of full subcategories. We will name them in the form 
 \end{exampleRUS}
 
 \begin{remarkENG}
-A subcategory $\mcC\ss\mcD$ is (up to isomorphism) just a functor $i\taking\mcC\to\mcD$ that happens to be injective on objects and arrows. The subcategory is full if and only if $i$ is a full functor in the sense of Definition \ref{def:full faithful}.
+A subcategory $\mcC\ss\mcD$ is (up to isomorphism) just a functor $i\taking\mcC\to\mcD$ that happens to be injective on objects and arrows. The subcategory is full if and only if $i$ is a full functor in the sense of Definition~\ref{def:full faithful}.
 \end{remarkENG}
 
 \begin{remarkRUS}
 \end{remarkRUS}
 
 \begin{exampleENG}
-Let $\mcC$ be a category, let $X\ss\Ob(\mcC)$ be a set of objects, and let $\mcC_{\Ob=X}$ denote the full subcategory of $\mcC$ spanned by $X$. We can realize this as a fiber product of categories. Indeed, recall that for any set, we can form the indiscrete category on that set; see Example \ref{ex:indiscrete cat equiv to terminal}. In fact, we have a functor $Ind\taking\Set\to\Cat$.\index{a functor!$Ind\taking\Set\to\Cat$} Thus our function $X\to\Ob(\mcC)$ can be converted into a functor between indiscrete categories $Ind(X)\to Ind(\Ob(\mcC))$. There is also a functor $\mcC\to Ind(\Ob(\mcC))$ sending each object to itself. Then the full subcategory of $\mcC$ spanned by $X$ is the fiber product of categories,
+Let $\mcC$ be a category, let $X\ss\Ob(\mcC)$ be a set of objects, and let $\mcC_{\Ob=X}$ denote the full subcategory of $\mcC$ spanned by $X$. We can realize this as a fiber product of categories. Indeed, recall that for any set, we can form the indiscrete category on that set; see Example~\ref{ex:indiscrete cat equiv to terminal}. In fact, we have a functor $Ind\taking\Set\to\Cat$.\index{a functor!$Ind\taking\Set\to\Cat$} Thus our function $X\to\Ob(\mcC)$ can be converted into a functor between indiscrete categories $Ind(X)\to Ind(\Ob(\mcC))$. There is also a functor $\mcC\to Ind(\Ob(\mcC))$ sending each object to itself. Then the full subcategory of $\mcC$ spanned by $X$ is the fiber product of categories,
 $$\xymatrix{\mcC_{\Ob=X}\ar[r]\ar[d]&\mcC\ar[d]\\Ind(X)\ar[r]&Ind(\Ob(\mcC))}$$
 \end{exampleENG}
 
@@ -344,11 +344,11 @@ When two categories $\mcA,\mcB$ can be interpreted in a common setting $\mcC$, t
 \end{sloganRUS}
 
 \begin{exampleENG}
-Let $\mcC$ be a category and $I\taking\mcC\to\Set$ a functor. In this example we show that the comma category construction captures the notion of taking the category of elements $\int_\mcC I$; see Definition \ref{def:grothendieck}. 
+Let $\mcC$ be a category and $I\taking\mcC\to\Set$ a functor. In this example we show that the comma category construction captures the notion of taking the category of elements $\int_\mcC I$; see Definition~\ref{def:grothendieck}. 
 
 Consider the set $\ul{1}$, the category $Disc(\ul{1})$, and the functor $F\taking Disc(\ul{1})\to\Set$ sending the unique object to the set $\ul{1}$. We use the comma category setup $\ul{1}\Too{F}\Set\Fromm{I}\mcC$. There is an isomorphism of categories 
 $$\int_\mcC I\iso (F\down I).$$
-Indeed, an object in $(F\down I)$ is a triple $(a,b,f)$ where $a\in\Ob(\ul{1}), b\in\Ob(\mcC)$, and $f\taking F(a)\to I(b)$ is a morphism in $\Set$. There is only one object in $\ul{1}$, so this reduces to a pair $(b,f)$ where $b\in\Ob(\mcC)$ and $f\taking \singleton\to I(b)$. The set of functions $\singleton\to I(b)$ is isomorphic to $I(b)$, as we saw in Exercise \ref{exc:generator for set}. So we have reduced $\Ob(F\down I)$ to the set of pairs $(b,x)$ where $b\in\Ob(\mcC)$ and $x\in I(b)$; this is $\Ob(\int_\mcC I)$. Because there is only one function $\ul{1}\to\ul{1}$, a morphism $(b,x)\to(b',x')$ in $(F\down I)$ boils down to a morphism $r\taking b\to b'$ such that the diagram 
+Indeed, an object in $(F\down I)$ is a triple $(a,b,f)$ where $a\in\Ob(\ul{1}), b\in\Ob(\mcC)$, and $f\taking F(a)\to I(b)$ is a morphism in $\Set$. There is only one object in $\ul{1}$, so this reduces to a pair $(b,f)$ where $b\in\Ob(\mcC)$ and $f\taking \singleton\to I(b)$. The set of functions $\singleton\to I(b)$ is isomorphic to $I(b)$, as we saw in Exercise~\ref{exc:generator for set}. So we have reduced $\Ob(F\down I)$ to the set of pairs $(b,x)$ where $b\in\Ob(\mcC)$ and $x\in I(b)$; this is $\Ob(\int_\mcC I)$. Because there is only one function $\ul{1}\to\ul{1}$, a morphism $(b,x)\to(b',x')$ in $(F\down I)$ boils down to a morphism $r\taking b\to b'$ such that the diagram 
 $$\xymatrix{\ul{1}\ar[r]^x\ar@{=}[d]&I(b)\ar[d]^{I(r)}\\\ul{1}\ar[r]_{x'}&I(b')}$$
 commutes. But such diagrams are in one-to-one correspondence with the diagrams needed for morphisms in $\int_\mcC I$.
 \end{exampleENG}
@@ -368,7 +368,7 @@ Let $\mcC$ be a category and let $c,c'\in\Ob(\mcC)$ be objects. Consider them as
 \subsection{\caseENGRUS{Arithmetic of categories}{ / }{Арифметика категорий}}\label{sec:arithmetic of categories}
 
 \begin{blockENG}
-In Section \ref{sec:arithmetic of sets}, we summarized some of the properties of products, coproducts, and exponentials for sets, attempting to show that they lined up precisely with familiar arithmetic properties of natural numbers. Astoundingly, we can do the same for categories.
+In Section~\ref{sec:arithmetic of sets}, we summarized some of the properties of products, coproducts, and exponentials for sets, attempting to show that they lined up precisely with familiar arithmetic properties of natural numbers. Astoundingly, we can do the same for categories.
 \end{blockENG}
 
 \begin{blockRUS}

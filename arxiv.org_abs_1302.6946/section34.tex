@@ -5,7 +5,7 @@
 \section{\caseENGRUS{Orders}{ / }{Порядки}}\label{sec:orders}
 
 \begin{blockENG}
-People usually think of certain sets as though they just {\em are} ordered, e.g. that an order is ordained by God. For example the natural numbers just {\em are} ordered. The letters in the alphabet just {\em are} ordered. But in fact we put orders on sets, and some are simply more commonly used in culture. One could order the letters in the alphabet by frequency of use and $e$ would come before $a$. Given different purposes, we can put different orders on the same set. For example in Exercise \ref{exc:divides as po} we will give a different ordering on the natural numbers that is useful in elementary number theory.
+People usually think of certain sets as though they just {\em are} ordered, e.g. that an order is ordained by God. For example the natural numbers just {\em are} ordered. The letters in the alphabet just {\em are} ordered. But in fact we put orders on sets, and some are simply more commonly used in culture. One could order the letters in the alphabet by frequency of use and $e$ would come before $a$. Given different purposes, we can put different orders on the same set. For example in Exercise~\ref{exc:divides as po} we will give a different ordering on the natural numbers that is useful in elementary number theory.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -66,7 +66,7 @@ We can put a binary relation on the set of boxes here by saying $A\leq B$ if the
 \end{exampleRUS}
 
 \begin{remarkENG}
-Note that olog (\ref{dia:card olog}) in Example \ref{ex:pre not par} is a good olog in the sense that given any collection of cards (e.g. choose 45 cards at random from each of 7 decks and throw them in a pile), they can be classified according to the boxes of (\ref{dia:card olog}) such that every arrow indeed constitutes a function (which happens to be injective). For example the arrow $\fakebox{a heart}\Too{\tn{is}}\fakebox{a red card}$ is a function from the set of chosen hearts to the set of chosen red cards.
+Note that olog (\ref{dia:card olog}) in Example~\ref{ex:pre not par} is a good olog in the sense that given any collection of cards (e.g. choose 45 cards at random from each of 7 decks and throw them in a pile), they can be classified according to the boxes of (\ref{dia:card olog}) such that every arrow indeed constitutes a function (which happens to be injective). For example the arrow $\fakebox{a heart}\Too{\tn{is}}\fakebox{a red card}$ is a function from the set of chosen hearts to the set of chosen red cards.
 \end{remarkENG}
 
 \begin{remarkRUS}
@@ -92,7 +92,7 @@ $$
 [n]:=\xymatrix{\LMO{0}\ar[r]&\LMO{1}\ar[r]&\LMO{2}\ar[r]&\cdots\ar[r]&\LMO{n}}
 $$\index{a symbol!$[n]$}
 
-Every finite linear order, i.e. linear order on a finite set, is of the above form. That is, though the labels might change, the picture would be the same. We can make this precise when we have a notion of morphism of orders (see Definition \ref{def:morphism of orders})
+Every finite linear order, i.e. linear order on a finite set, is of the above form. That is, though the labels might change, the picture would be the same. We can make this precise when we have a notion of morphism of orders (see Definition~\ref{def:morphism of orders})
 \end{exampleENG}
 
 \begin{exampleRUS}[Finite linear orders]\label{ex:finite lo}\index{linear order!finite}
@@ -234,7 +234,7 @@ Let $X$ be the set of people and let $R\ss X\times X$ be the relation with $(x,y
 \subsection{\caseENGRUS{Meets and joins}{ / }{Пересечения и объединения}}\label{sec:meets and joins}
 
 \begin{blockENG}
-Let $X$ be any set. Recall from Definition \ref{def:subobject classifier} that the powerset of $X$, denoted $\PP(X)$ is the set of subsets of $X$. There is a natural order on $\PP(X)$ given by the subset relationship, as exemplified in Exercise \ref{exc:power poset}. Given two elements $a,b\in\PP(X)$ we can consider them as subsets of $X$ and take their intersection as an element of $\PP(X)$ which we denote $a\wedge b$. We can also consider them as subsets of $X$ and take their union as an element of $\PP(X)$ which we denote $a\vee b$. The intersection and union operations are generalized in the following definition.
+Let $X$ be any set. Recall from Definition~\ref{def:subobject classifier} that the powerset of $X$, denoted $\PP(X)$ is the set of subsets of $X$. There is a natural order on $\PP(X)$ given by the subset relationship, as exemplified in Exercise~\ref{exc:power poset}. Given two elements $a,b\in\PP(X)$ we can consider them as subsets of $X$ and take their intersection as an element of $\PP(X)$ which we denote $a\wedge b$. We can also consider them as subsets of $X$ and take their union as an element of $\PP(X)$ which we denote $a\vee b$. The intersection and union operations are generalized in the following definition.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -267,7 +267,7 @@ That is, the meet of $s$ and $t$ is the biggest thing smaller than both, i.e. a 
 \end{blockRUS}
 
 \begin{exerciseENG}
-Consider the partial order from Example \ref{ex:pre not par}. 
+Consider the partial order from Example~\ref{ex:pre not par}. 
 \sexc What is the join of \fakebox{a diamond} and \fakebox{a heart}? 
 \item What is the meet of \fakebox{a black card} and \fakebox{a queen}? 
 \item What is the meet of \fakebox{a diamond} and \fakebox{a card}?
@@ -285,7 +285,7 @@ Not every two elements in a preorder need have a meet, nor need they have a join
 \end{blockRUS}
 
 \begin{exerciseENG}\label{exc:not all meets and joins}~
-\sexc If possible, find two elements in the partial order from Example \ref{ex:pre not par} that do not have a meet.
+\sexc If possible, find two elements in the partial order from Example~\ref{ex:pre not par} that do not have a meet.
 \footnote{Use the displayed preorder, not any kind of “completion of what's there”.} 
 \item If possible, find two elements that do not have a join (in that preorder).
 \endsexc
@@ -348,7 +348,7 @@ Let $\mcS:=(S,\leq)$ be a preorder. The {\em opposite preorder}, denoted $\mcS\o
 \end{definitionRUS}
 
 \begin{exampleENG}
-Recall the preorder $\mcN:=(\NN,{\tt divides})$ from Exercise \ref{exc:divides as po}. Then $\mcN\op$ is the set of natural numbers but where $m\leq n$ iff $m$ is a multiple of $n$. So $6\leq 2$ and $6\leq 3$.
+Recall the preorder $\mcN:=(\NN,{\tt divides})$ from Exercise~\ref{exc:divides as po}. Then $\mcN\op$ is the set of natural numbers but where $m\leq n$ iff $m$ is a multiple of $n$. So $6\leq 2$ and $6\leq 3$.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -390,7 +390,7 @@ Let $\mcS:=(S,\leq)$ and $\mcS':=(S',\leq')$ be preorders (respectively partial 
 \end{definitionRUS}
 
 \begin{exampleENG}
-Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $X'\ss X$, its image $f(X')\ss Y$ is a subset (see Section \ref{sec:functions}). Thus we have a function $F\taking\PP(X)\to\PP(Y)$, given by taking images. This is a morphism of partial orders $(\PP(X),\ss)\to(\PP(Y),\ss)$. Indeed, if $a\ss b$ in $\PP(X)$ then $f(a)\ss f(b)$ in $\PP(Y)$.
+Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $X'\ss X$, its image $f(X')\ss Y$ is a subset (see Section~\ref{sec:functions}). Thus we have a function $F\taking\PP(X)\to\PP(Y)$, given by taking images. This is a morphism of partial orders $(\PP(X),\ss)\to(\PP(Y),\ss)$. Indeed, if $a\ss b$ in $\PP(X)$ then $f(a)\ss f(b)$ in $\PP(Y)$.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -399,7 +399,7 @@ Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every sub
 \begin{applicationENG}
 It's often said that “a team is only as strong as its weakest member”. Is this true for materials? The hypothesis that a material is only as strong as its weakest constituent can be understood as follows. 
 
-Recall from the introduction to this section (see \ref{sec:orders}, page \pageref{sec:orders}) that we can put several different orders on the set $M$ of materials. One example there was the order given by constituency ($m\leq_C m'$ if $m$ is an ingredient or constituent of $m'$). Another order is given by strength: $m\leq_S m'$ if $m'$ is stronger than $m$ (in some fixed setting). 
+Recall from the introduction to this section (see~\ref{sec:orders}, page \pageref{sec:orders}) that we can put several different orders on the set $M$ of materials. One example there was the order given by constituency ($m\leq_C m'$ if $m$ is an ingredient or constituent of $m'$). Another order is given by strength: $m\leq_S m'$ if $m'$ is stronger than $m$ (in some fixed setting). 
 
 Is it true that if material $m$ is a constituent of material $m'$ then the strength of $m'$ is less than or equal to the strength of $m$? This is the substance of our quote above. Mathematically the question would be posed, “is there a morphism of preorders $(M,\leq_C)\too(M,\leq_S\op)$?”
 \end{applicationENG}
@@ -408,7 +408,7 @@ Is it true that if material $m$ is a constituent of material $m'$ then the stren
 \end{applicationRUS}
 
 \begin{exerciseENG}
-Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $Y'\ss Y$, its preimage $f^\m1(Y')\ss X$ is a subset (see Definition \ref{def:preimage}). Thus we have a function $F\taking\PP(Y)\to\PP(X)$, given by taking preimages. Is it a morphism of partial orders?
+Let $X$ and $Y$ be sets, let $f\taking X\to Y$ be a function. Then for every subset $Y'\ss Y$, its preimage $f^\m1(Y')\ss X$ is a subset (see Definition~\ref{def:preimage}). Thus we have a function $F\taking\PP(Y)\to\PP(X)$, given by taking preimages. Is it a morphism of partial orders?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -459,7 +459,7 @@ Let $S$ be a set and let $(T,\leq_T)$ be a preorder. Let $\leq_I$ be the indiscr
 \end{blockRUS}
 
 \begin{blockENG}
-For example we may have a tree (see Example \ref{ex:tree}) that looks like this 
+For example we may have a tree (see Example~\ref{ex:tree}) that looks like this 
 $$
 \xymatrix@=10pt{
 &&\LTO{Archaea}\ar[rr]&&\LTO{Pyrodicticum}\\
@@ -587,8 +587,8 @@ Let $S$ be the set of open subsets of earth as defined above. To each open subse
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
-\sexc Can you think of a space relevant to your favorite area of science for which it makes sense to assign an interval of real numbers to each open set somehow, analogously to Exercise \ref{exc:cosheaf of temps}? For example for a sample of some material under stress, perhaps the strain on each open set is somehow an interval? 
-\item Repeat the questions from Exercise \ref{exc:cosheaf of temps}.
+\sexc Can you think of a space relevant to your favorite area of science for which it makes sense to assign an interval of real numbers to each open set somehow, analogously to Exercise~\ref{exc:cosheaf of temps}? For example for a sample of some material under stress, perhaps the strain on each open set is somehow an interval? 
+\item Repeat the questions from Exercise~\ref{exc:cosheaf of temps}.
 \endsexc
 \end{exerciseENG}
 

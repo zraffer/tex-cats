@@ -71,7 +71,7 @@ This monad is sometimes called the {\em maybe monad} in computer science, becaus
 
 However, it may be the case that even ascertaining someones age or income, which is done by asking that person, is subject to who in $A$ is doing the asking, and so we again want to consider the experimenter as part of the equation. In this case, we can use a monad to hide the fact that everything in sight is assumed to be influenced by $A$. In other words, we want to announce once and for all our modeling context—that every observable is possibly influenced by the observer—so that it can recede into the background.
 
-We will return to this in Examples \ref{ex:experimenter matters 2} and \ref{ex:experimenter matters 3}.
+We will return to this in Examples~\ref{ex:experimenter matters 2} and~\ref{ex:experimenter matters 3}.
 \end{applicationENG}
 
 \begin{applicationRUS}\label{app:experimenter matters}
@@ -82,7 +82,7 @@ We will return to this in Examples \ref{ex:experimenter matters 2} and \ref{ex:e
 \subsection{\caseENGRUS{Definition and examples}{ / }{Определение и примеры}}
 
 \begin{blockENG}
-What aspects of Example \ref{ex:partial function monad} are really about monads, and what aspects are just about partial functions in particular? It is a functor and a pair of natural transformations that showed up in (\ref{dia:first monad}), (\ref{dia:first eta}), and (\ref{dia:first mu}). In this section we will give the definition and a few examples. We will return to our story about how monads formalize context in Section \ref{sec:kleisli}.
+What aspects of Example~\ref{ex:partial function monad} are really about monads, and what aspects are just about partial functions in particular? It is a functor and a pair of natural transformations that showed up in (\ref{dia:first monad}), (\ref{dia:first eta}), and (\ref{dia:first mu}). In this section we will give the definition and a few examples. We will return to our story about how monads formalize context in Section~\ref{sec:kleisli}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -112,7 +112,7 @@ We sometimes refer to the functor $T$ as though it were the whole monad; we call
 \end{definitionRUS}
 
 \begin{exampleENG}[List monad]\label{ex:monad}\index{a monad!List}
-We now go through Definition \ref{def:monad} using what is called the $\List$ monad.\index{list} The first step is to give a functor $\List\taking\Set\to\Set$, which we did in Example \ref{ex:free monoid}. Recall that if $X=\{p,q,r\}$ then $\List(X)$ includes the empty list $[\;]$, singleton lists, such as $[p]$, and any other list of elements in $X$, such as $[p,p,r,q,p]$. Given a function $f\taking X\to Y$, one obtains a function $\List(f)\taking\List(X)\to\List(Y)$ by entry-wise application of $f$.
+We now go through Definition~\ref{def:monad} using what is called the $\List$ monad.\index{list} The first step is to give a functor $\List\taking\Set\to\Set$, which we did in Example~\ref{ex:free monoid}. Recall that if $X=\{p,q,r\}$ then $\List(X)$ includes the empty list $[\;]$, singleton lists, such as $[p]$, and any other list of elements in $X$, such as $[p,p,r,q,p]$. Given a function $f\taking X\to Y$, one obtains a function $\List(f)\taking\List(X)\to\List(Y)$ by entry-wise application of $f$.
 
 As a monad, the functor $\List$ comes with two natural transformations, a unit map $\eta$ and a multiplication map $\mu$. Given a set $X$, the unit map $\eta_X\taking X\to\List(X)$ returns singleton lists as follows
 $$\xymatrix@=.5pt{
@@ -126,7 +126,7 @@ $$\xymatrix@=.5pt{
 &\List(\List(X))\ar[rr]^{\mu_X}&\hspace{.7in}&\List(X)\\
 \ar@{..}[rrr]+<.6in,0pt>&&&\\\\\\
 &\big[[q, p, r], [], [q, r, p, r], [r]\big]\ar@{|->}[rr]&&[q, p, r, q, r, p, r, r]}$$
-The naturality of $\eta$ and $\mu$ just mean that these maps work appropriately well under term-by-term replacement by a function $f\taking X\to Y$. Finally the three monad laws from Definition \ref{def:monad} can be exemplified as follows:
+The naturality of $\eta$ and $\mu$ just mean that these maps work appropriately well under term-by-term replacement by a function $f\taking X\to Y$. Finally the three monad laws from Definition~\ref{def:monad} can be exemplified as follows:
 $$\xymatrix@=30pt{[p, q, q]\ar@{|->}[r]^-{\id_\List\circ\eta}\ar@{=}[rd]&\big[[p], [q], [q]\big]\ar@{|->}[d]^\mu\\&[p, q, q]}\hspace{.8in}
 \xymatrix@=30pt{[p, q, q]\ar@{|->}[r]^-{\eta\circ\id_\List}\ar@{=}[rd]&\big[[p, q, q]\big]\ar@{|->}[d]^\mu\\&[p,q,q]}$$
 \vspace{.1in}
@@ -140,7 +140,7 @@ $$\xymatrix@=30pt{\Big[\big[[p, q], [r]\big], \big[[], [r, q, q]\big]\Big]\ar@{|
 Let $\PP\taking\Set\to\Set$ be the powerset functor, so that given a function $f\taking X\to Y$ the function $\PP(f)\taking\PP(X)\to\PP(Y)$ is given by taking images.
 \sexc Make sense of the following statement: “with $\eta$ defined by singleton subsets and with $\mu$ defined by union, $\top:=(\PP,\eta,\mu)$ is a monad”.
 \item  With $X=\{a,b\}$, write down the function $\eta_X$ as a 2-row, 2-column table, and write down the function $\mu_X$ as a 16-row, 2-column table (you can stop after 5 rows if you fully get it).
-\item Check that you believe the monad laws from Definition \ref{def:monad}.
+\item Check that you believe the monad laws from Definition~\ref{def:monad}.
 \endsexc
 \end{exerciseENG}
 
@@ -155,7 +155,7 @@ Here is the monad for partial functions. The functor $T\taking\Set\to\Set$ sends
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:exceptions}
-Let $E$ be a set, elements we will refer to as {\em exceptions}\index{exceptions}\index{a monad!exceptions}. We imagine that a function $f\taking X\to Y$ either outputs a value or one of these exceptions, which might be things like “overflow!” or “division by zero!”, etc. Let $T\taking\Set\to\Set$ be the functor $X\mapsto X\sqcup E$. Follow Example \ref{ex:partial functions as monad} and come up with a unit map $\eta$ and a multiplication map $\mu$ for which $(T,\eta,\mu)$ is a monad.
+Let $E$ be a set, elements we will refer to as {\em exceptions}\index{exceptions}\index{a monad!exceptions}. We imagine that a function $f\taking X\to Y$ either outputs a value or one of these exceptions, which might be things like “overflow!” or “division by zero!”, etc. Let $T\taking\Set\to\Set$ be the functor $X\mapsto X\sqcup E$. Follow Example~\ref{ex:partial functions as monad} and come up with a unit map $\eta$ and a multiplication map $\mu$ for which $(T,\eta,\mu)$ is a monad.
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:exceptions}
@@ -163,7 +163,7 @@ Let $E$ be a set, elements we will refer to as {\em exceptions}\index{exceptions
 
 \begin{exampleENG}\label{ex:experimenter matters 2}
 Fix a set $A$. Let $T\taking\Set\to\Set$ be given by $T(X)=X^A=\Hom_\Set(A,X)$; this is a functor. For a set $X$, let $\eta_X\taking X\to T(X)$ be given by the constant function, $x\mapsto c_x\taking A\to X$ where $c_x(a)=x$ for all $a\in A$. To specify a function
-$$\mu_X\taking\Hom_\Set(A,T(X))\to\Hom_\Set(A,X),$$ we curry and need a function $A\times\Hom_\Set(A,T(X))\to X$. We have an evaluation function (see Exercise \ref{exc:evaluation}) $ev\taking A\times\Hom_\Set(A,T(X))\to T(X)$, and we have an identity function $\id_A\taking A\to A$, so we have a function $(\id_A\times ev)\taking A\times\Hom_\Set(A,T(X))\too A\times T(X)$. Composing that with another evaluation function $A\times\Hom_\Set(A,X)\to X$ yields our desired $\mu_X$. Namely, for all $b\in A$ and $f\in\Hom(A,T(X))$ we have
+$$\mu_X\taking\Hom_\Set(A,T(X))\to\Hom_\Set(A,X),$$ we curry and need a function $A\times\Hom_\Set(A,T(X))\to X$. We have an evaluation function (see Exercise~\ref{exc:evaluation}) $ev\taking A\times\Hom_\Set(A,T(X))\to T(X)$, and we have an identity function $\id_A\taking A\to A$, so we have a function $(\id_A\times ev)\taking A\times\Hom_\Set(A,T(X))\too A\times T(X)$. Composing that with another evaluation function $A\times\Hom_\Set(A,X)\to X$ yields our desired $\mu_X$. Namely, for all $b\in A$ and $f\in\Hom(A,T(X))$ we have
 $$\mu_X(f)(b)=f(b)(b).$$
 \end{exampleENG}
 
@@ -171,7 +171,7 @@ $$\mu_X(f)(b)=f(b)(b).$$
 \end{exampleRUS}
 
 \begin{remarkENG}\index{monad!on $\Grph$}\index{a monad!$\Paths$}
-Monads can be defined on categories other than $\Set$. In fact, for any category $\mcC$ one can take Definition \ref{def:monad} and replace every occurrence of $\Set$ with $\mcC$ and obtain the definition for monads on $\mcC$. We have actually seen a monad $(\Paths,\eta,\mu)$ on the category $\Grph$ of graphs before, namely in Examples \ref{ex:graph to paths} and \ref{ex:concat paths of paths}. That is, $\Paths\taking\Grph\to\Grph$, which sends a graph to its paths-graph\index{graph!paths-graph} is the functor part. The unit map $\eta$ includes a graph into its paths-graph using the observation that every arrow is a path of length 1. And the multiplication map $\mu$ concatenates paths of paths. The Kleisli category of this monad (see Definition \ref{def:kleisli}) is used, e.g. in (\ref{dia:kleisli comp in graph}) to define morphisms of database schemas.
+Monads can be defined on categories other than $\Set$. In fact, for any category $\mcC$ one can take Definition~\ref{def:monad} and replace every occurrence of $\Set$ with $\mcC$ and obtain the definition for monads on $\mcC$. We have actually seen a monad $(\Paths,\eta,\mu)$ on the category $\Grph$ of graphs before, namely in Examples~\ref{ex:graph to paths} and~\ref{ex:concat paths of paths}. That is, $\Paths\taking\Grph\to\Grph$, which sends a graph to its paths-graph\index{graph!paths-graph} is the functor part. The unit map $\eta$ includes a graph into its paths-graph using the observation that every arrow is a path of length 1. And the multiplication map $\mu$ concatenates paths of paths. The Kleisli category of this monad (see Definition~\ref{def:kleisli}) is used, e.g. in (\ref{dia:kleisli comp in graph}) to define morphisms of database schemas.
 \end{remarkENG}
 
 \begin{remarkRUS}\index{monad!on $\Grph$}\index{a monad!$\Paths$}
@@ -196,7 +196,7 @@ Let $\top=(T,\eta,\mu)$ be a monad on $\Set$. Form a new category, called the {\
 \end{definitionRUS}
 
 \begin{exampleENG}
-Recall the monad $\top$ for partial functions, $T(X)=X\sqcup\singleton$, from Example \ref{ex:partial functions as monad}. The Kleisli category $\Kls(\top)$ has sets as objects, but a morphism $f\taking X\to Y$ means a function $X\to Y\sqcup\singleton$, i.e a partial function. Given another morphism $g\taking Y\to Z$, the composition formula in $\Kls(\top)$ ensures that $g\circ f\taking X\to Z$ has the appropriate behavior.
+Recall the monad $\top$ for partial functions, $T(X)=X\sqcup\singleton$, from Example~\ref{ex:partial functions as monad}. The Kleisli category $\Kls(\top)$ has sets as objects, but a morphism $f\taking X\to Y$ means a function $X\to Y\sqcup\singleton$, i.e a partial function. Given another morphism $g\taking Y\to Z$, the composition formula in $\Kls(\top)$ ensures that $g\circ f\taking X\to Z$ has the appropriate behavior.
 
 Note how this monad allows us to make explicit our assumption that all functions are partial, and then hide it away from our notation.
 \end{exampleENG}
@@ -214,22 +214,22 @@ The point is that any ordinary function (morphism in $\Set$) has an interpretati
 \end{remarkRUS}
 
 \begin{exampleENG}\label{ex:experimenter matters 3}
-In this example we return to the setting laid out by Application \ref{app:experimenter matters} where we had a set $A$ of experimenters and assumed that the person doing the experiment may affect the outcome. We use the monad $\top=(T,\eta,\mu)$ from Example \ref{ex:experimenter matters 2} and hope that $\Kls(\top)$ will conform to our understanding of how to manage the affect of the experimenter on data.
+In this example we return to the setting laid out by Application~\ref{app:experimenter matters} where we had a set $A$ of experimenters and assumed that the person doing the experiment may affect the outcome. We use the monad $\top=(T,\eta,\mu)$ from Example~\ref{ex:experimenter matters 2} and hope that $\Kls(\top)$ will conform to our understanding of how to manage the affect of the experimenter on data.
 
 The objects of $\Kls(\top)$ are ordinary sets, but a map $f\taking X\to Y$ in $\Kls(\top)$ is a function $X\to Y^A$. By currying this is the same as a function $X\times A\to Y$, as desired. To compose $f$ with $g\taking Y\to Z$ in $\Kls(\top)$, we follow the formula. It turns out to be equivalent to the following. We have a function $X\times A\to Y$ and a function $Y\times A\to Z$. Modifying the first slightly, we have a function $X\times A\to Y\times A$, by identity on $A$, and we can now compose to get $X\times A\to Z$.
 
 What does this say in terms of experimenters affecting data gathering? It says that if we work within $\Kls(\top)$ then we will be able to assume that the experimenter is being taken into account; all proposed functions $X\to Y$ are actually functions $A\times X\to Y$. The natural way to compose these experiments is that we only consider the data from one experiment to feed into another if the experimenter is the same in both experiments.
-\footnote{This requirement seems a bit stringent, but it can be mitigated in a variety of ways. One such way is to notice that by Remark \ref{rem:ordinary are kleisli} that we have not added any requirement, because any old way of doing business yields a valid new way of doing business (we just say “every experimenter would get the same result”). Another way would be to hand off the experiment results to another person, who could carry it forward (see Example \ref{ex:preorder monad}).}
+\footnote{This requirement seems a bit stringent, but it can be mitigated in a variety of ways. One such way is to notice that by Remark~\ref{rem:ordinary are kleisli} that we have not added any requirement, because any old way of doing business yields a valid new way of doing business (we just say “every experimenter would get the same result”). Another way would be to hand off the experiment results to another person, who could carry it forward (see Example~\ref{ex:preorder monad}).}
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:experimenter matters 3}
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:kleisli powerset relations}
-In Exercise \ref{exc:power set monad} we discussed the power set monad $\top=(\PP,\eta,\mu)$.
+In Exercise~\ref{exc:power set monad} we discussed the power set monad $\top=(\PP,\eta,\mu)$.
 \sexc Can you find a way to relate the morphisms in $\Kls(\top)$ to relations? That is, given a morphism $f\taking A\to B$ in $\Kls(\top)$, is there a natural way to associate to it a relation $R\ss A\times B$?
-\item How does the composition formula in $\Kls(\top)$ relate to the composition of relations given in Definition \ref{def:composite span}?
-\footnote{Actually, Definition \ref{def:composite span} is about composing spans, but a relation $R\ss A\times B$ is a kind of span, $R\to A\times B$.}
+\item How does the composition formula in $\Kls(\top)$ relate to the composition of relations given in Definition~\ref{def:composite span}?
+\footnote{Actually, Definition~\ref{def:composite span} is about composing spans, but a relation $R\ss A\times B$ is a kind of span, $R\to A\times B$.}
 \endsexc
 \end{exerciseENG}
 
@@ -268,7 +268,7 @@ Morphisms in the Kleisli category $\Kls(\top)$ can be curried to be functions $f
 \begin{remarkENG}\label{rem:state monad}
 One of the most important monads in computer science is the so-called {\em state monad}. It is used when one wants to allow a program to mutate state variables (e.g. in the program 
 \begin{quote}if $x>4$ then $x:=x+1$ else Print “done”)\end{quote}
-$x$ is a state variable. The state monad is a special case of the monad discussed in Example \ref{ex:preorder monad}. Given any set $A$, the usual {\em state monad of type $A$} is obtained by giving $A$ the indiscrete preorder (see Example \ref{ex:discrete and indiscrete}). More explicitly it is a monad with functor part $$X\mapsto (A\times X)^X,$$ and it will be briefly discussed in Example \ref{ex:currying gives state}.
+$x$ is a state variable. The state monad is a special case of the monad discussed in Example~\ref{ex:preorder monad}. Given any set $A$, the usual {\em state monad of type $A$} is obtained by giving $A$ the indiscrete preorder (see Example~\ref{ex:discrete and indiscrete}). More explicitly it is a monad with functor part $$X\mapsto (A\times X)^X,$$ and it will be briefly discussed in Example~\ref{ex:currying gives state}.
 \end{remarkENG}
 
 \begin{remarkRUS}\label{rem:state monad}
@@ -280,7 +280,7 @@ Here we reconsider the image from the front cover of this book, reproduced here.
 \includegraphics[width=.8\textwidth]{ScientificMethod}
 \end{center}
 
-It looks like an olog, and all ologs are database schemas (see Section \ref{sec:olog as db schema}). But how is “analyzed by a person yields” a function from observations to hypotheses? The very name belies the fact that it is an invalid aspect in the sense of Section \ref{sec:invalid aspect}, because given an observation there may be more than one hypothesis yielded, corresponding to which person is doing the observing. In fact, all of the arrows in this diagram correspond to some hidden context involving people: the prediction is dependent on who analyzes the hypothesis, the specification of an experiment is dependent on who is motivated to specify it, and experiments may result in different observations by different observers. 
+It looks like an olog, and all ologs are database schemas (see Section~\ref{sec:olog as db schema}). But how is “analyzed by a person yields” a function from observations to hypotheses? The very name belies the fact that it is an invalid aspect in the sense of Section~\ref{sec:invalid aspect}, because given an observation there may be more than one hypothesis yielded, corresponding to which person is doing the observing. In fact, all of the arrows in this diagram correspond to some hidden context involving people: the prediction is dependent on who analyzes the hypothesis, the specification of an experiment is dependent on who is motivated to specify it, and experiments may result in different observations by different observers. 
 
 Without monads, the model of science proposed by this olog would be difficult to believe in. But by choosing a monad we can make explicit (and then hide from discourse) our implicit assumption that “of course this is all dependent on which human is doing the science”. The choice of monad is an additional modeling choice. Do we want to incorporate the partial order of time? Do we want the scientist to be modified by each function (i.e. the person is changed when analyzing an observation to yield a hypothesis)? These are all interesting possibilities. 
 
@@ -303,7 +303,7 @@ The parenthetical statements can be removed if we assume them to always be aroun
 \subsubsection{\caseENGRUS{Relaxing functionality constraint for ologs}{ / }{Ослабление ограничений на функциональность олога}}\label{sec:relaxing ologs}
 
 \begin{blockENG}
-In Section \ref{sec:aspects} we said that every arrow in an olog has to be English-readable as a sentence, and it has to correspond to a function. For example, the arrow 
+In Section~\ref{sec:aspects} we said that every arrow in an olog has to be English-readable as a sentence, and it has to correspond to a function. For example, the arrow 
 \begin{align}\label{dia:non-functional but english}
 \xymatrix{\fbox{a person}\LA{r}{has}&\fbox{a child}}
 \end{align}
@@ -315,7 +315,7 @@ We'll call olog in which every arrow corresponds to a function (the only option 
 \end{blockRUS}
 
 \begin{blockENG}
-In the context of the power set monad (see Exercise \ref{exc:power set monad}), a morphism $f\taking X\to Y$ between sets $X$ and $Y$ becomes a binary relation on $X$ and $Y$, rather than a function, as seen in Exercise \ref{exc:kleisli powerset relations}. So in that context, the arrow in (\ref{dia:non-functional but english}) becomes valid. An olog in which arrows correspond to mere binary relations rather than functions might be called a {\em relational olog}.\index{olog!relational}
+In the context of the power set monad (see Exercise~\ref{exc:power set monad}), a morphism $f\taking X\to Y$ between sets $X$ and $Y$ becomes a binary relation on $X$ and $Y$, rather than a function, as seen in Exercise~\ref{exc:kleisli powerset relations}. So in that context, the arrow in (\ref{dia:non-functional but english}) becomes valid. An olog in which arrows correspond to mere binary relations rather than functions might be called a {\em relational olog}.\index{olog!relational}
 \end{blockENG}
 
 \begin{blockRUS}
@@ -347,11 +347,11 @@ To represent a {\em Kleisli}\index{database!Kleisli}\index{instance!Kleisli} dat
 \end{blockRUS}
 
 \begin{exampleENG}
-Let $\top=(T,\eta,\mu)$ be the monad for partial functions, as discussed in Example \ref{ex:partial function monad}. Given any schema $\mcC$, we can represent a Kleisli $\top$-instance $I\taking\mcC\to\Kls(\top)$ in tabular format. To every object $c\in\Ob(\mcC)$ we'll have a set $I(c)$ of rows, and given a column $c\to c'$ every row will produce either a value in $I(c')$ or fail to produce a value; this is the essence of partial functions. We might denote the absence of a value using $\smiley$.
+Let $\top=(T,\eta,\mu)$ be the monad for partial functions, as discussed in Example~\ref{ex:partial function monad}. Given any schema $\mcC$, we can represent a Kleisli $\top$-instance $I\taking\mcC\to\Kls(\top)$ in tabular format. To every object $c\in\Ob(\mcC)$ we'll have a set $I(c)$ of rows, and given a column $c\to c'$ every row will produce either a value in $I(c')$ or fail to produce a value; this is the essence of partial functions. We might denote the absence of a value using $\smiley$.
 
 Consider the schema indexing graphs 
 $$\mcC:=\fbox{\xymatrix{\LTO{Arrow}\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LTO{Vertex}}}$$
-As we discussed in Section \ref{sec:graphs as functors}, an ordinary instance on $\mcC$ represents a graph. 
+As we discussed in Section~\ref{sec:graphs as functors}, an ordinary instance on $\mcC$ represents a graph. 
 \begin{align*}
 I:=\parbox{2in}{\fbox{\xymatrix{\bullet^v\ar[r]^f&\bullet^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\bullet^x}}}
 \hspace{.5in}
@@ -419,7 +419,7 @@ For any set $X$, let $\Dist(X)$ denote the set of finitary probability distribut
 \end{blockRUS}
 
 \begin{exampleENG}[Markov chains]\label{ex:markov}\index{Markov chain}\index{a schema!$\Loop$}
-Let $\Loop$ be the loop schema, $$\Loop:=\LoopSchema$$ as in Example \ref{ex:dds}. A $\Dist$-instance on $\Loop$ is equivalent to a time-homogeneous Markov chain. To be explicit, a functor $\delta\taking\Loop\to\Kls{\Dist}$ assigns to the unique object $s\in\Ob(\Loop)$ a set $S=\delta(s)$, which we call the state space, and to $f\taking s\to s$ a function $\delta(f)\taking S\to\Dist(S)$, which sends each element $x\in S$ to some probability distribution on elements of $S$. For example, the table $\delta$ on the left corresponds to the Markov matrix $M$ on the right below:
+Let $\Loop$ be the loop schema, $$\Loop:=\LoopSchema$$ as in Example~\ref{ex:dds}. A $\Dist$-instance on $\Loop$ is equivalent to a time-homogeneous Markov chain. To be explicit, a functor $\delta\taking\Loop\to\Kls{\Dist}$ assigns to the unique object $s\in\Ob(\Loop)$ a set $S=\delta(s)$, which we call the state space, and to $f\taking s\to s$ a function $\delta(f)\taking S\to\Dist(S)$, which sends each element $x\in S$ to some probability distribution on elements of $S$. For example, the table $\delta$ on the left corresponds to the Markov matrix $M$ on the right below:
 \begin{align}
 \delta:=
 \begin{tabular}{| l || l |}\bhline
@@ -461,9 +461,9 @@ The composition formula for Kleisli categories is the desired one: to each star 
 \subsection{\caseENGRUS{Monads and adjunctions}{ / }{Монады и сопряжения}}
 
 \begin{blockENG}
-There is a strong connection between monads and adjunctions: every adjunction creates a monad, and every monad “comes from” an adjunction. For example, the $\List$ monad (Example \ref{ex:monad}) comes from the free-forgetful adjunction between sets and monoids
+There is a strong connection between monads and adjunctions: every adjunction creates a monad, and every monad “comes from” an adjunction. For example, the $\List$ monad (Example~\ref{ex:monad}) comes from the free-forgetful adjunction between sets and monoids
 $$\Adjoint{F}{\Set}{\Mon}{U}$$
-(see Proposition \ref{prop:free forgetful monoid}). That is, for any set $X$, the free monoid on $X$ is $$F(X)=(\List(X),[\;],\plpl),$$ and the underlying set of that monoid is $U(F(X))=\List(X)$. Now it may seem like there was no reason to use monoids at all—the set $\List(X)$ was needed in order to discuss $F(X)$—but it will turn out that the unit $\eta$ and multiplication $\mu$ will come drop out of the adjunction too. First, we discuss the unit and counit of an adjunction.
+(see Proposition~\ref{prop:free forgetful monoid}). That is, for any set $X$, the free monoid on $X$ is $$F(X)=(\List(X),[\;],\plpl),$$ and the underlying set of that monoid is $U(F(X))=\List(X)$. Now it may seem like there was no reason to use monoids at all—the set $\List(X)$ was needed in order to discuss $F(X)$—but it will turn out that the unit $\eta$ and multiplication $\mu$ will come drop out of the adjunction too. First, we discuss the unit and counit of an adjunction.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -484,7 +484,7 @@ $$\epsilon_d\taking L\circ R(d)\to d.$$
 \end{definitionRUS}
 
 \begin{blockENG}
-Below we will show how to use the unit and counit of any adjunction to make a monad. We first walk through the process in Example \ref{ex:list adjunction makes monad}.
+Below we will show how to use the unit and counit of any adjunction to make a monad. We first walk through the process in Example~\ref{ex:list adjunction makes monad}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -500,16 +500,16 @@ $$T\circ T=U\circ F\circ U\circ F\Too{\id_U\diamond\epsilon\diamond \id_F}U\circ
 \end{exampleRUS}
 
 \begin{blockENG}
-The general procedure for extracting a monad from an adjunction is analogous to that shown in Example \ref{ex:list adjunction makes monad}. Given any adjunction 
+The general procedure for extracting a monad from an adjunction is analogous to that shown in Example~\ref{ex:list adjunction makes monad}. Given any adjunction 
 $$\Adjoint{L}{\mcC}{\mcD}{R}$$
-We define $\top=R\circ L\taking\mcC\to\mcC$, we define $\eta\taking\id_\mcC\to \top$ to be the unit of the adjunction (as in Definition \ref{def:unit and counit of adjunction}), and we define $\mu\taking \top\circ \top\to \top$ to be the natural transformation $\id_R\diamond\epsilon\diamond\id_L\taking RLRL\to RL,$ obtained by applying the counit $\epsilon\taking LR\to\id_\mcD$.
+We define $\top=R\circ L\taking\mcC\to\mcC$, we define $\eta\taking\id_\mcC\to \top$ to be the unit of the adjunction (as in Definition~\ref{def:unit and counit of adjunction}), and we define $\mu\taking \top\circ \top\to \top$ to be the natural transformation $\id_R\diamond\epsilon\diamond\id_L\taking RLRL\to RL,$ obtained by applying the counit $\epsilon\taking LR\to\id_\mcD$.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-The above procedure produces monads on arbitrary categories $\mcC$, whereas our definition of monad (Definition \ref{def:monad}) considers only the case $\mcC=\Set$. However, this definition can be generalized to arbitrary categories $\mcC$ by simply replacing every occurrence of the string $\Set$ with the string $\mcC$.\index{monad!on arbitrary category} Similarly, our definition of Kleisli categories (Definition \ref{def:kleisli}) considers only the case $\mcC=\Set$, but again the generalization to arbitrary categories $\mcC$ is straightforward. In Proposition \ref{prop:monad to adjunction}, it may be helpful to again put $\mcC=\Set$ if one is at all disoriented.
+The above procedure produces monads on arbitrary categories $\mcC$, whereas our definition of monad (Definition~\ref{def:monad}) considers only the case $\mcC=\Set$. However, this definition can be generalized to arbitrary categories $\mcC$ by simply replacing every occurrence of the string $\Set$ with the string $\mcC$.\index{monad!on arbitrary category} Similarly, our definition of Kleisli categories (Definition~\ref{def:kleisli}) considers only the case $\mcC=\Set$, but again the generalization to arbitrary categories $\mcC$ is straightforward. In Proposition~\ref{prop:monad to adjunction}, it may be helpful to again put $\mcC=\Set$ if one is at all disoriented.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -525,7 +525,7 @@ such that the monad $(\top,\eta,\mu)$ is obtained (up to isomorphism) by the abo
 \end{propositionRUS}
 
 \begin{proofENG}[Sketch of proof]
-The functor $L\taking\mcC\to\mcK$ was discussed in Remark \ref{rem:ordinary are kleisli}. We define it to be identity on objects (recall that $\Ob(\mcK)=\Ob(\mcC)$). Given objects $c,c'\in\Ob(\mcC)$ the function
+The functor $L\taking\mcC\to\mcK$ was discussed in Remark~\ref{rem:ordinary are kleisli}. We define it to be identity on objects (recall that $\Ob(\mcK)=\Ob(\mcC)$). Given objects $c,c'\in\Ob(\mcC)$ the function
 $$\Hom_\mcC(c,c')\Too{L}\Hom_\mcK(c,c')=\Hom_\mcC(c,\top(c'))$$
 is given by $f\mapsto \eta_{c'}\circ f$. The fact that this is a functor (i.e. that it preserves composition) follows from a monad axiom.
 
@@ -544,7 +544,7 @@ We will not continue on to show that these are adjoint or that they produce the 
 \begin{exampleENG}\label{ex:currying gives state}
 Let $A\in\Ob(\Set)$ be a set, and recall the currying adjunction 
 $$\Adjoint{A\times-}{\Set}{\Set}{-^A}$$
-discussed briefly in Example \ref{ex:other adjunctions}. The corresponding monad $St_A$ is typically called the {\em state monad of type $A$} in programming language theory. Given a set $X$, we have $$St_A(X)=(A\times X)^A.$$ In the Kleisli category $\Kls(St_A)$ a morphism from $X$ to $Y$ is a function of the form $X\to (A\times Y)^A$, but this can be curried to a function $A\times X\to A\times Y$. 
+discussed briefly in Example~\ref{ex:other adjunctions}. The corresponding monad $St_A$ is typically called the {\em state monad of type $A$} in programming language theory. Given a set $X$, we have $$St_A(X)=(A\times X)^A.$$ In the Kleisli category $\Kls(St_A)$ a morphism from $X$ to $Y$ is a function of the form $X\to (A\times Y)^A$, but this can be curried to a function $A\times X\to A\times Y$. 
 
 This monad is related to holding on to an internal state variable of type $A$. Every morphism ostensibly from $X$ to $Y$ actually takes as input not only an element of $X$ but also the current state $a\in A$, and it produces as output not only an element of $Y$ but an updated state as well.
 \end{exampleENG}
@@ -553,7 +553,7 @@ This monad is related to holding on to an internal state variable of type $A$. E
 \end{exampleRUS}
 
 \begin{blockENG}
-Computer scientists in programming language theory have found monads to be very useful (\cite{Mog}). In much the same way, monads on $\Set$ can be useful in databases, as discussed in Section \ref{sec:monads in db}. Another, totally different way to use monads in databases is by using a mapping between schemas to produce in each one an internal model of the other. That is, for any functor $F\taking\mcC\to\mcD$, i.e. mapping of database schemas, the adjunction $(\Sigma_F,\Delta_F)$ produces a monad on $\mcC\set$, and the adjunction $(\Delta_F,\Pi_F)$ produces a monad on $\mcD\set$. If one interprets the $\List$ monad as producing in $\Set$ an internal model of the category $\Mon$ of monoids, one can similarly interpret the above monads on $\mcC\set$ and $\mcD\set$ as producing internal models of each within the other.
+Computer scientists in programming language theory have found monads to be very useful (\cite{Mog}). In much the same way, monads on $\Set$ can be useful in databases, as discussed in Section~\ref{sec:monads in db}. Another, totally different way to use monads in databases is by using a mapping between schemas to produce in each one an internal model of the other. That is, for any functor $F\taking\mcC\to\mcD$, i.e. mapping of database schemas, the adjunction $(\Sigma_F,\Delta_F)$ produces a monad on $\mcC\set$, and the adjunction $(\Delta_F,\Pi_F)$ produces a monad on $\mcD\set$. If one interprets the $\List$ monad as producing in $\Set$ an internal model of the category $\Mon$ of monoids, one can similarly interpret the above monads on $\mcC\set$ and $\mcD\set$ as producing internal models of each within the other.
 \end{blockENG}
 
 \begin{blockRUS}

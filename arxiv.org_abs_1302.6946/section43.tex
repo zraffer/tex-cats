@@ -23,7 +23,7 @@ Natural transformations can seem a bit abstruse at first, but hopefully some exa
 \subsection{\caseENGRUS{Definition and examples}{ / }{Определение и примеры}}
 
 \begin{blockENG}
-Let's begin with an example. There is a functor $\List\taking\Set\to\Set$, which sends a set $X$ to the set $\List(X)$ consisting of all lists whose entries are elements of $X$. Given a morphism $f\taking X\to Y$, we can transform a list with entries in $X$ into a list with entries in $Y$ by applying $f$ to each (this was worked out in Exercise \ref{exc:list as functor}).\index{a functor!$\List\taking\Set\to\Set$}. 
+Let's begin with an example. There is a functor $\List\taking\Set\to\Set$, which sends a set $X$ to the set $\List(X)$ consisting of all lists whose entries are elements of $X$. Given a morphism $f\taking X\to Y$, we can transform a list with entries in $X$ into a list with entries in $Y$ by applying $f$ to each (this was worked out in Exercise~\ref{exc:list as functor}).\index{a functor!$\List\taking\Set\to\Set$}. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -104,7 +104,7 @@ A\ar[r]^{\id_A}\ar[d]_{f}&A\ar[d]^{g\circ f}\\
 B\ar[r]_{g}&C
 }
 $$
-It is clear that this diagram commutes, so our components $\alpha_0$ and $\alpha_1$ satisfy the law of Definition \ref{def:natural transformation}, making $\alpha$ a natural transformation.
+It is clear that this diagram commutes, so our components $\alpha_0$ and $\alpha_1$ satisfy the law of Definition~\ref{def:natural transformation}, making $\alpha$ a natural transformation.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -146,7 +146,7 @@ $$
 \end{proofRUS}
 
 \begin{exampleENG}\label{ex:nattrans [1]}
-Let $\color{red}{\mcC}=\color{blue}{\mcD}=\color{black}{[1]}$ be the linear order of length 1, thought of as a category (by Proposition \ref{prop:preorders to cats}). There are three functors $\mcC\to\mcD$, which we can write as $(0,0), (0,1),$ and $(1,1)$; these are depicted left to right below.
+Let $\color{red}{\mcC}=\color{blue}{\mcD}=\color{black}{[1]}$ be the linear order of length 1, thought of as a category (by Proposition~\ref{prop:preorders to cats}). There are three functors $\mcC\to\mcD$, which we can write as $(0,0), (0,1),$ and $(1,1)$; these are depicted left to right below.
 $$\xymatrix{
 \LMO{\color{red}{0}}\ar@{|->}[r]\ar@[red][d]_f&\LMO{\color{blue}{0}}\ar@[blue][d]^f&&\LMO{\color{red}{0}}\ar@{|->}[r]\ar@[red][d]_f&\LMO{\color{blue}{0}}\ar@[blue][d]^f&&\LMO{\color{red}{0}}\ar@{|->}[dr]\ar@[red][d]_f&\LMO{\color{blue}{0}}\ar@[blue][d]^f\\
 \LMO{\color{red}{1}}\ar@{|->}[ur]&\LMO{\color{blue}{1}}&&\LMO{\color{red}{1}}\ar@{|->}[r]&\LMO{\color{blue}{1}}&&\LMO{\color{red}{1}}\ar@{|->}[r]&\LMO{\color{blue}{1}}
@@ -154,7 +154,7 @@ $$\xymatrix{
 $$
 These are just functors so far. What are the natural transformations say $\alpha\taking (0,0)\to(0,1)$? To specify a natural transformation, we must specify a component for each object in $\mcC$. In our case $\alpha_0\taking 0\to 0$ and $\alpha_1\taking 0\to 1$. There is only one possible choice: $\alpha_0=\id_0$ and $\alpha_1=f$. Now that we have chosen components we need to check the naturality squares. 
 
-There are three morphisms in $\mcC$, namely $\id_0, f, \id_1$. By Lemma \ref{lemma:generators for nattrans}, we need only check the naturality square for $f$. We write it twice below, once in the abstract notation and once in concrete notation:
+There are three morphisms in $\mcC$, namely $\id_0, f, \id_1$. By Lemma~\ref{lemma:generators for nattrans}, we need only check the naturality square for $f$. We write it twice below, once in the abstract notation and once in concrete notation:
 $$
 \xymatrix{
 F(0)\ar[r]^{\alpha_0}\ar[d]_{F(f)}&G(0)\ar[d]^{G(f)}\\
@@ -172,7 +172,7 @@ This commutes, so $\alpha$ is indeed a natural transformation.
 \end{exampleRUS}
 
 \begin{exerciseENG}
-With notation as in Example \ref{ex:nattrans [1]},
+With notation as in Example~\ref{ex:nattrans [1]},
 \sexc how many natural transformations are there $(0,0)\to (1,1)$?
 \item how many natural transformations are there $(0,0)\to (0,0)$?
 \item how many natural transformations are there $(0,1)\to (0,0)$?
@@ -204,7 +204,7 @@ Let $\mcC$ and $\mcD$ be categories, and suppose that $d\in\Ob(\mcD)$ is a termi
 \end{exerciseRUS}
 
 \begin{applicationENG}\label{app:change of fsm}\index{natural transformation!as refinement of model}
-In Figure \ref{fig:fsa} we drew a \href{http://en.wikipedia.org/wiki/Finite-state_machine}{finite state machine} on alphabet $\Sigma=\{a,b\}$, and in Example \ref{ex:action table} we showed the associated action table. It will be reproduced below. Imagine this was your model for understanding the behavior of some system when acted on by commands $a$ and $b$. And suppose that a collaborator tells you that she has a more refined notion that fits with the same data. Her notion has 6 states rather than 3, but it's “compatible”. What might that mean? 
+In Figure~\ref{fig:fsa} we drew a \href{http://en.wikipedia.org/wiki/Finite-state_machine}{finite state machine} on alphabet $\Sigma=\{a,b\}$, and in Example~\ref{ex:action table} we showed the associated action table. It will be reproduced below. Imagine this was your model for understanding the behavior of some system when acted on by commands $a$ and $b$. And suppose that a collaborator tells you that she has a more refined notion that fits with the same data. Her notion has 6 states rather than 3, but it's “compatible”. What might that mean? 
 
 Let's call the original state machine $X$ and the new model $Y$.
 
@@ -242,7 +242,7 @@ State 2B&State 0&State 0\\\bhline
 
 How are these models compatible? Looking at the table for $Y$, if one removes the distinction between States 1A, 1B, 1C and between States 2A and 2B, then one returns with the table for $X$. The table for $Y$ is more specific, but it is fully compatible with table $X$. The sense in which it is compatible is precisely the sense defined by there being a natural transformation.
 
-Recall that $\mcM=(\List(\Sigma),[\;],\plpl)$ is a monoid, and that a monoid is simply a category with one object, say $\Ob(\mcM)=\{\monOb\}$ (see Section \ref{sec:mon grp pro as cat}). With $\Sigma=\{a,b\}$, the monoid $\mcM$ can be visualized as follows:
+Recall that $\mcM=(\List(\Sigma),[\;],\plpl)$ is a monoid, and that a monoid is simply a category with one object, say $\Ob(\mcM)=\{\monOb\}$ (see Section~\ref{sec:mon grp pro as cat}). With $\Sigma=\{a,b\}$, the monoid $\mcM$ can be visualized as follows:
 $$
 \mcM=\fbox{\xymatrix{\LMO{\monOb}\ar@(ul,dl)[]_a\ar@(ur,dr)[]^b}}
 $$
@@ -292,7 +292,7 @@ Y(\monOb)\ar[r]^{Y(a)}\ar[d]^{\alpha_\monOb}&Y(\monOb)\ar[r]^{Y(a)}\ar[d]^{\alph
 X(\monOb)\ar[r]_{X(a)}&X(\monOb)\ar[r]_{X(a)}&X(\monOb)\ar[r]_{X(b)}&X(\monOb)
 }
 $$
-Since each small square above commutes (as checked by tables \ref{dia:naturality for a} and \ref{dia:naturality for b}), the big outer rectangle commutes too.
+Since each small square above commutes (as checked by tables~\ref{dia:naturality for a} and~\ref{dia:naturality for b}), the big outer rectangle commutes too.
 
 To recap, the notion of compatibility between $Y$ and $X$ is one that can be checked and agreed upon by humans, but doing so it is left implicit, and it may be difficult to explain to an outsider what exactly was agreed to, especially in more complex situations. It is quite convenient to simply claim “there is a natural transformation from $Y$ to $X$.”
 \end{applicationENG}
@@ -310,7 +310,7 @@ Let $F\taking\mcC\to\mcD$ be a functor. Suppose someone said “the identity on 
 \end{exerciseRUS}
 
 \begin{exampleENG}
-Let $[1]\in\Ob(\Cat)$ be the free arrow category described in Exercise \ref{exc:[1]} and let $\mcD$ be any category. To specify a functor $F\taking[1]\to\mcD$ requires the specification of two objects, $F(v_1), F(v_2)\in\Ob(\mcD)$ and a morphism $F(e)\taking F(v_1)\to F(v_2)$ in $\mcD$. The identity and composition formulas are taken care of once that much is specified. To recap, a functor $F\taking[1]\to\mcD$ is the same thing as a morphism in $\mcD$.
+Let $[1]\in\Ob(\Cat)$ be the free arrow category described in Exercise~\ref{exc:[1]} and let $\mcD$ be any category. To specify a functor $F\taking[1]\to\mcD$ requires the specification of two objects, $F(v_1), F(v_2)\in\Ob(\mcD)$ and a morphism $F(e)\taking F(v_1)\to F(v_2)$ in $\mcD$. The identity and composition formulas are taken care of once that much is specified. To recap, a functor $F\taking[1]\to\mcD$ is the same thing as a morphism in $\mcD$.
 
 Thus, choosing two functors $F,G\taking[1]\to\mcD$ is precisely the same thing as choosing two morphisms in $\mcD$. Let us call them $f\taking a_0\to a_1$ and $g\taking b_0\to b_1$, where to be clear we have $f=F(e), a_0=F(v_0), a_1=F(v_1)$ and $g=G(e), b_0=G(v_0), b_1=G(v_1)$. 
 
@@ -325,7 +325,7 @@ In other words, a functor $[1]\to\mcD$ is an arrow in $\mcD$ and a natural trans
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:graph to paths}
-Recall that to any graph $G$ we can associate the so-called paths-graph $\Paths(G)$, as described in Example \ref{ex:paths-graph}. This is a functor $\Paths\taking\Grph\to\Grph$.\index{a functor!$\Paths\taking\Grph\to\Grph$} There is also an identity functor $\id_{\Grph}\taking\Grph\to\Grph$. A natural transformation $\eta\taking\id_\Grph\to\Paths$ would consist of a graph homomorphism $\eta_G\taking \id_\Grph(G)\to\Paths(G)$ for every graph $G$. But $\id_\Grph(G)=G$ by definition, so we need $\eta_G\taking G\to\Paths(G)$. Recall that $\Paths(G)$ has the same vertices as $G$ and every arrow in $G$ counts as a path (of length 1). So there is an obvious graph homomorphism from $G$ to $\Paths(G)$. It is not hard to see that the necessary naturality squares commute.
+Recall that to any graph $G$ we can associate the so-called paths-graph $\Paths(G)$, as described in Example~\ref{ex:paths-graph}. This is a functor $\Paths\taking\Grph\to\Grph$.\index{a functor!$\Paths\taking\Grph\to\Grph$} There is also an identity functor $\id_{\Grph}\taking\Grph\to\Grph$. A natural transformation $\eta\taking\id_\Grph\to\Paths$ would consist of a graph homomorphism $\eta_G\taking \id_\Grph(G)\to\Paths(G)$ for every graph $G$. But $\id_\Grph(G)=G$ by definition, so we need $\eta_G\taking G\to\Paths(G)$. Recall that $\Paths(G)$ has the same vertices as $G$ and every arrow in $G$ counts as a path (of length 1). So there is an obvious graph homomorphism from $G$ to $\Paths(G)$. It is not hard to see that the necessary naturality squares commute.
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:graph to paths}
@@ -334,14 +334,14 @@ Recall that to any graph $G$ we can associate the so-called paths-graph $\Paths(
 \begin{exampleENG}\label{ex:concat paths of paths}
 For any graph $G$ we can associate the paths-graph $\Paths(G)$, and nothing stops us from doing that twice to yield a new graph $\Paths(\Paths(G))$. Let's think through what a path of paths in $G$ is. It's a head-to-tail sequence of arrows in $\Paths(G)$, meaning a head-to-tail sequence of paths in $G$. These composable sequences of paths (or “paths of paths”) are the individual arrows in $\Paths(\Paths(G))$. (The vertices in $\Paths(G)$ and $\Paths(\Paths(G))$ are the same as those in $G$, and all source and target functions are as expected.)
 
-Clearly, given such a sequence of paths in $G$, we could compose them to one big path in $G$ with the same endpoints. In other words, there is graph morphism $\mu_G\taking\Paths(\Paths(G))\to\Paths(G)$, that one might call “concatenation”. In fact, this concatenation extends to a natural transformation $$\mu\taking\Paths\circ\Paths\to\Paths$$ between functors $\Grph\to\Grph$. In Example \ref{ex:graph to paths}, we compared a graph to its paths-graph using a natural transformation $\id_{\Grph}\to\Paths$; here we are making a similar kind of comparison.
+Clearly, given such a sequence of paths in $G$, we could compose them to one big path in $G$ with the same endpoints. In other words, there is graph morphism $\mu_G\taking\Paths(\Paths(G))\to\Paths(G)$, that one might call “concatenation”. In fact, this concatenation extends to a natural transformation $$\mu\taking\Paths\circ\Paths\to\Paths$$ between functors $\Grph\to\Grph$. In Example~\ref{ex:graph to paths}, we compared a graph to its paths-graph using a natural transformation $\id_{\Grph}\to\Paths$; here we are making a similar kind of comparison.
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:concat paths of paths}
 \end{exampleRUS}
 
 \begin{remarkENG}
-In Example \ref{ex:graph to paths} we saw that there is a natural transformation sending each graph into its paths-graph. There is a formal sense in which a category is nothing more than a kind of reverse mapping. That is, to specify a category is the same thing as to specify a graph $G$ together with a graph homomorphism $\Paths(G)\to G$. The formalities involve monads, which we will discuss in Section \ref{sec:monads}.
+In Example~\ref{ex:graph to paths} we saw that there is a natural transformation sending each graph into its paths-graph. There is a formal sense in which a category is nothing more than a kind of reverse mapping. That is, to specify a category is the same thing as to specify a graph $G$ together with a graph homomorphism $\Paths(G)\to G$. The formalities involve monads, which we will discuss in Section~\ref{sec:monads}.
 \end{remarkENG}
 
 \begin{remarkRUS}
@@ -369,11 +369,11 @@ For any graph $(V,A,src,tgt)$ we can extract the set of arrows or the set of ver
 \end{exerciseRUS}
 
 \begin{exampleENG}[Graph homomorphisms are natural transformations]\label{ex:graph hom as NT}
-As discussed above (see Diagram \ref{dia:graph index}), there is a category $\GrIn$ for which a functor $G\taking\GrIn\to\Set$ is the same thing as a graph. Namely, we have 
+As discussed above (see Diagram~\ref{dia:graph index}), there is a category $\GrIn$ for which a functor $G\taking\GrIn\to\Set$ is the same thing as a graph. Namely, we have 
 \begin{align*}
 \GrIn:=\fbox{\GrInSchema}
 \end{align*}
-A natural transformation of two such functors $\alpha\taking G\to G'$ involves two components, $\alpha_{Ar}\taking G(Ar)\to G'(Ar)$ and $\alpha_{V\!e}\taking G(V\!e)\to G'(V\!e)$, and two naturality squares, one for $src$ and one for $tgt$. This is precisely the same thing as a graph homomorphism, as defined in Definition \ref{def:graph homomorphism}.
+A natural transformation of two such functors $\alpha\taking G\to G'$ involves two components, $\alpha_{Ar}\taking G(Ar)\to G'(Ar)$ and $\alpha_{V\!e}\taking G(V\!e)\to G'(V\!e)$, and two naturality squares, one for $src$ and one for $tgt$. This is precisely the same thing as a graph homomorphism, as defined in Definition~\ref{def:graph homomorphism}.
 \end{exampleENG}
 
 \begin{exampleRUS}[Graph homomorphisms are natural transformations]\label{ex:graph hom as NT}
@@ -416,7 +416,7 @@ $$\Hom_{\Fun(\mcC,\mcD)}(F,G)=\{\alpha\taking F\to G\|\alpha\tn{ is a natural tr
 \end{propositionRUS}
 
 \begin{proofENG}
-We showed in Exercise \ref{exc:id nat trans} that there for any functor $F\taking\mcC\to\mcD$, there is an identity natural transformation $\id_F\taking F\to F$ (its component at $c\in\Ob(\mcC)$ is $\id_{F(c)}\taking F(c)\to F(c)$). 
+We showed in Exercise~\ref{exc:id nat trans} that there for any functor $F\taking\mcC\to\mcD$, there is an identity natural transformation $\id_F\taking F\to F$ (its component at $c\in\Ob(\mcC)$ is $\id_{F(c)}\taking F(c)\to F(c)$). 
 
 Given a natural transformation $\alpha\taking F\to G$ and a natural transformation $\beta\taking G\to H$, we propose for the composite $\beta\circ\alpha$ the transformation $\gamma\taking F\to H$ having components $\beta_c\circ\alpha_c$ for every $c\in\Ob(\mcC)$. To see that $\gamma$ is indeed a natural transformation, one simply puts together naturality squares for $\alpha$ and $\beta$ to get naturality squares for $\beta\circ\alpha$. 
 
@@ -434,7 +434,7 @@ We sometimes denote the category $\Fun(\mcC,\mcD)$ by $\mcD^\mcC$.
 \end{notationRUS}
 
 \begin{exampleENG}
-Recall from Exercise \ref{exc:Ob is a functor} that there is a functor $\Ob\taking\Cat\to\Set$\index{a functor!$\Ob\taking\Cat\to\Set$} sending a category to its set of objects. And recall from Example \ref{ex:discrete graph discrete cat} that there is a functor $Disc\taking\Set\to\Cat$\index{a functor!$Disc\taking\Set\to\Cat$} sending a set to the discrete category with that set of objects (all morphisms in $Disc(S)$ are identity morphisms). Let $P\taking\Cat\to\Cat$ be the composition $P=Disc\circ\Ob$. Then $P$ takes a category and makes a new category with the same objects but no morphisms. It's like crystal meth for categories.
+Recall from Exercise~\ref{exc:Ob is a functor} that there is a functor $\Ob\taking\Cat\to\Set$\index{a functor!$\Ob\taking\Cat\to\Set$} sending a category to its set of objects. And recall from Example~\ref{ex:discrete graph discrete cat} that there is a functor $Disc\taking\Set\to\Cat$\index{a functor!$Disc\taking\Set\to\Cat$} sending a set to the discrete category with that set of objects (all morphisms in $Disc(S)$ are identity morphisms). Let $P\taking\Cat\to\Cat$ be the composition $P=Disc\circ\Ob$. Then $P$ takes a category and makes a new category with the same objects but no morphisms. It's like crystal meth for categories.
 
 Let $\id_\Cat\taking\Cat\to\Cat$ be the identity functor. There is a natural transformation $i\taking P\to\id_\Cat$. For any category $\mcC$, the component $i_\mcC\taking P(\mcC)\to\mcC$ is pretty easily understood. It is a morphism of categories, i.e. a functor. The two categories $P(\mcC)$ and $\mcC$ have the same set of objects, namely $\Ob(\mcC)$, so our functor is identity on objects; and $P(\mcC)$ has no non-identity morphisms, so nothing else needs be specified.
 \end{exampleENG}
@@ -485,7 +485,7 @@ Let $\ul{0}$ represent the discrete category on 0 objects; it has no objects and
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $[1]$ denote the free arrow category as in Exercise \ref{exc:[1]}, and let $\mcC$ be the graph indexing category from (\ref{dia:graph index}). Draw the underlying graph of the category $\Fun([1],\mcC)$, and then specify which pairs of paths in that graph correspond to commutative diagrams in $\Fun([1],\mcC)$.
+Let $[1]$ denote the free arrow category as in Exercise~\ref{exc:[1]}, and let $\mcC$ be the graph indexing category from (\ref{dia:graph index}). Draw the underlying graph of the category $\Fun([1],\mcC)$, and then specify which pairs of paths in that graph correspond to commutative diagrams in $\Fun([1],\mcC)$.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -510,7 +510,7 @@ Let $\mcC$ and $\mcD$ be categories and let $F,G\taking\mcC\to\mcD$ be functors.
 \end{lemmaRUS}
 
 \begin{proofENG}
-First suppose that $\alpha$ is an isomorphism with inverse $\beta\taking G\to F$, and let $\beta_c\taking G(c)\to F(c)$ denote its $c$ component. We know that $\alpha\circ\beta=\id_G$ and $\beta\circ\alpha=\id_F$. Using the definitions of composition and identity given in Proposition \ref{prop:Fun(C,D)}, this means that for every $c\in\Ob(\mcC)$ we have $\alpha_c\circ\beta_c=\id_{G(c)}$ and $\beta_c\circ\alpha_c=\id_{F(c)}$; in other words $\alpha_c$ is an isomorphism.
+First suppose that $\alpha$ is an isomorphism with inverse $\beta\taking G\to F$, and let $\beta_c\taking G(c)\to F(c)$ denote its $c$ component. We know that $\alpha\circ\beta=\id_G$ and $\beta\circ\alpha=\id_F$. Using the definitions of composition and identity given in Proposition~\ref{prop:Fun(C,D)}, this means that for every $c\in\Ob(\mcC)$ we have $\alpha_c\circ\beta_c=\id_{G(c)}$ and $\beta_c\circ\alpha_c=\id_{F(c)}$; in other words $\alpha_c$ is an isomorphism.
 
 Second suppose that each $\alpha_c$ is an isomorphism with inverse $\beta_c\taking G(c)\to F(c)$. We need to see that these components assemble into a natural transformation; i.e. for every morphism $h\taking c\to c'$ in $\mcC$ the right-hand square 
 $$
@@ -532,7 +532,7 @@ F(h)\circ\beta_c=\beta_{c'}\circ\alpha_{c'}\circ F(h)\circ\beta_c=\beta_{c'}\cir
 \end{proofRUS}
 
 \begin{exerciseENG}
-Recall from Application \ref{app:change of fsm} that a finite state machine on alphabet $\Sigma$ can be understood as a functor $\mcM\to\Set$, where $\mcM=\List(\Sigma)$ is the free monoid generated by $\Sigma$. In that example we also discussed how natural transformations provide a nice language for changing state machines. Describe what kinds of changes are made by natural isomorphisms.
+Recall from Application~\ref{app:change of fsm} that a finite state machine on alphabet $\Sigma$ can be understood as a functor $\mcM\to\Set$, where $\mcM=\List(\Sigma)$ is the free monoid generated by $\Sigma$. In that example we also discussed how natural transformations provide a nice language for changing state machines. Describe what kinds of changes are made by natural isomorphisms.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -545,7 +545,7 @@ Recall from Application \ref{app:change of fsm} that a finite state machine on a
 \begin{exampleENG}[Whiskering]\label{ex:whiskering}\index{natural transformation!for adding functionality}
 Suppose that $\mcM=\List(a,b)$ and $\mcM'=\List(m,n,p)$ are free monoids, and let $F\taking\mcM'\to\mcM$ be given by sending $[m]\mapsto[a], [n]\mapsto[b]$, and $[p]\mapsto[b,a,a]$. An application of this might be if the sequence $[b,a,a]$ was commonly used in practice and one wanted to add a new button just for that sequence.
 
-Recall Application \ref{app:change of fsm}. Let $X\taking\mcM\to\Set$ and $Y\taking\mcM\to\Set$ be the functors, and let $\alpha\taking Y\to X$ be the natural transformation found there. We reproduce them here: 
+Recall Application~\ref{app:change of fsm}. Let $X\taking\mcM\to\Set$ and $Y\taking\mcM\to\Set$ be the functors, and let $\alpha\taking Y\to X$ be the natural transformation found there. We reproduce them here: 
 \begin{align*}
 \fbox{\includegraphics[height=.9in]{FSM1}}\hspace{.5in}
 &\fbox{\includegraphics[height=1in]{FSM2}}\\\\
@@ -644,7 +644,7 @@ $$\beta\diamond\alpha\taking G_1\circ F_1\to G_2\circ F_2.$$
 \end{definitionRUS}
 
 \begin{remarkENG}
-Whiskering a natural transformation $\alpha$ with a functor $F$ is the same thing as horizontally composing $\alpha$ with the identity natural transformation $\id_F$. This is true for both pre- and post- whiskering. For example in the notation of Definition \ref{def:whiskering} we have 
+Whiskering a natural transformation $\alpha$ with a functor $F$ is the same thing as horizontally composing $\alpha$ with the identity natural transformation $\id_F$. This is true for both pre- and post- whiskering. For example in the notation of Definition~\ref{def:whiskering} we have 
 $$\alpha\diamond F = \alpha\diamond\id_F\hsp\tn{and}\hsp H\diamond\alpha=\id_H\diamond\alpha.$$
 \end{remarkENG}
 
@@ -652,7 +652,7 @@ $$\alpha\diamond F = \alpha\diamond\id_F\hsp\tn{and}\hsp H\diamond\alpha=\id_H\d
 \end{remarkRUS}
 
 \begin{remarkENG}
-All of the above is somehow similar to the world of paths inside a database schema $\mcS$, as seen in Definition \ref{def:congruence}. Indeed, a congruence on the paths of $\mcS$ is an equivalence relation that is closed under composition. The equivalence relation part is analogous to the fact that natural transformations can be composed vertically. The closure under composition part (Properties (3) and (4) in Definition \ref{def:congruence}) is analogous to pre- and post whiskering. See also Lemma \ref{lemma:composing PEDs}. 
+All of the above is somehow similar to the world of paths inside a database schema $\mcS$, as seen in Definition~\ref{def:congruence}. Indeed, a congruence on the paths of $\mcS$ is an equivalence relation that is closed under composition. The equivalence relation part is analogous to the fact that natural transformations can be composed vertically. The closure under composition part (Properties (3) and (4) in Definition~\ref{def:congruence}) is analogous to pre- and post whiskering. See also Lemma~\ref{lemma:composing PEDs}. 
 
 This is being mentioned only as a curiosity and a way for the reader to draw connections, not with any additional purpose at this time.
 \end{remarkENG}
@@ -693,14 +693,14 @@ $$
 \subsection{\caseENGRUS{The category of instances on a database schema}{ / }{Категория экземпляров схемы базы данных}}
 
 \begin{blockENG}
-In Section \ref{sec:schemas and cats intro} we showed that schemas are presentations of categories, and we will show in Section \ref{sec:cat equiv sch} that in fact the category of schemas is equivalent to the category of categories. In this section we therefore take license to blur the distinction between schemas and categories.
+In Section~\ref{sec:schemas and cats intro} we showed that schemas are presentations of categories, and we will show in Section~\ref{sec:cat equiv sch} that in fact the category of schemas is equivalent to the category of categories. In this section we therefore take license to blur the distinction between schemas and categories.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-If $\mcC$ is a schema, i.e. a category, then as we discussed in Section \ref{sec:instances}, an instance on $\mcC$ is a functor $I\taking\mcC\to\Set$. But now we have a notion beyond categories and functors, namely that of natural transformations. So we make the following definition.
+If $\mcC$ is a schema, i.e. a category, then as we discussed in Section~\ref{sec:instances}, an instance on $\mcC$ is a functor $I\taking\mcC\to\Set$. But now we have a notion beyond categories and functors, namely that of natural transformations. So we make the following definition.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -714,7 +714,7 @@ Let $\mcC$ be a schema (or category). The {\em category of instances on $\mcC$}\
 \end{definitionRUS}
 
 \begin{remarkENG}
-One might object to Definition \ref{def:mcC-set} on the grounds that database instances should not be infinite. This is a reasonable perspective, so it is a pleasant fact that the above definition can be modified easily to accomodate it. The subcategory $\Fin$ (see Example \ref{ex:Fin}) of finite sets can be substituted for $\Set$ in Definition \ref{def:mcC-set}. One could define the {\em category of finite instances on $\mcC$} as $\mcC-\Fin=\Fun(\mcC,\Fin)$. Almost all of the ideas in this book will make perfect sense in $\mcC-\Fin$.
+One might object to Definition~\ref{def:mcC-set} on the grounds that database instances should not be infinite. This is a reasonable perspective, so it is a pleasant fact that the above definition can be modified easily to accomodate it. The subcategory $\Fin$ (see Example~\ref{ex:Fin}) of finite sets can be substituted for $\Set$ in Definition~\ref{def:mcC-set}. One could define the {\em category of finite instances on $\mcC$} as $\mcC-\Fin=\Fun(\mcC,\Fin)$. Almost all of the ideas in this book will make perfect sense in $\mcC-\Fin$.
 \end{remarkENG}
 
 \begin{remarkRUS}
@@ -728,7 +728,7 @@ Natural transformations should serve as some kind of morphism between instances 
 \end{blockRUS}
 
 \begin{blockENG}
-Our first clue comes from Application \ref{app:change of fsm}. There we considered the case of a monoid $\mcM$, and we thought about a natural transformation between two functors $X,Y\taking\mcM\to\Set$, considered as different finite state machines. The notion of natural transformation captured the idea of one model being a refinement of another. This same kind of idea works for databases with more than one table (categories with more than one object), but the whole thing is a bit opaque. Let's work it through slowly.
+Our first clue comes from Application~\ref{app:change of fsm}. There we considered the case of a monoid $\mcM$, and we thought about a natural transformation between two functors $X,Y\taking\mcM\to\Set$, considered as different finite state machines. The notion of natural transformation captured the idea of one model being a refinement of another. This same kind of idea works for databases with more than one table (categories with more than one object), but the whole thing is a bit opaque. Let's work it through slowly.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -765,21 +765,21 @@ There are 343 natural transformations $I\to J$. Perhaps some of them make more s
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:indexed sets as functors}\index{indexed set!as functor}
-Recall the notion of set-indexed sets from Definition \ref{def:indexed sets}. Let $A$ be a set, and come up with a schema $\mcA$ such that instances on $\mcA$ are $A$-indexed sets. Is our current notion of morphism between instances (i.e. natural transformations) well-aligned with the above definition of “mapping of $A$-indexed sets”?
+Recall the notion of set-indexed sets from Definition~\ref{def:indexed sets}. Let $A$ be a set, and come up with a schema $\mcA$ such that instances on $\mcA$ are $A$-indexed sets. Is our current notion of morphism between instances (i.e. natural transformations) well-aligned with the above definition of “mapping of $A$-indexed sets”?
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:indexed sets as functors}\index{indexed set!as functor}
 \end{exerciseRUS}
 
 \begin{blockENG}
-For a general schema (or category) $\mcC$, let us think through what a morphism $\alpha\taking I\to J$ between instances $I,J\taking\mcC\to\Set$ is. For each object $c\in\Ob(\mcC)$ there is a component $\alpha_c\taking I(c)\to J(c)$. This means that just like in Example \ref{ex:nts on term}, there is for each table $c$ a function from the rows in $I$'s manifestation of $c$ to the rows in $J$'s manifestation of $c$. So to make a natural transformation, such a function has to be specified table by table. But then we have to contend with naturality squares, one for every arrow in $\mcC$. Arrows in $\mcC$ correspond to foreign key columns in the database. The naturality requirement was already covered in Application \ref{app:change of fsm} (and see especially how (\ref{dia:naturality squares for fsm}) is checked in (\ref{dia:naturality for a}) and (\ref{dia:naturality for b})).
+For a general schema (or category) $\mcC$, let us think through what a morphism $\alpha\taking I\to J$ between instances $I,J\taking\mcC\to\Set$ is. For each object $c\in\Ob(\mcC)$ there is a component $\alpha_c\taking I(c)\to J(c)$. This means that just like in Example~\ref{ex:nts on term}, there is for each table $c$ a function from the rows in $I$'s manifestation of $c$ to the rows in $J$'s manifestation of $c$. So to make a natural transformation, such a function has to be specified table by table. But then we have to contend with naturality squares, one for every arrow in $\mcC$. Arrows in $\mcC$ correspond to foreign key columns in the database. The naturality requirement was already covered in Application~\ref{app:change of fsm} (and see especially how (\ref{dia:naturality squares for fsm}) is checked in (\ref{dia:naturality for a}) and (\ref{dia:naturality for b})).
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exampleENG}\label{ex:graph hom as NT done out}\index{graph homomorphism!as functor}
-We saw in Section \ref{sec:graphs as functors} that graphs can be regarded as functors $\mcG\to\Set$, where $\mcG\iso\GrIn$ is the “schema for graphs” shown here: 
+We saw in Section~\ref{sec:graphs as functors} that graphs can be regarded as functors $\mcG\to\Set$, where $\mcG\iso\GrIn$ is the “schema for graphs” shown here: 
 $$\mcG:=\fbox{\xymatrix{\LTO{Arrow}\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LTO{Vertex}}}$$\index{a schema!indexing graphs}
 
 A database instance $I\taking\mcG\to\Set$ on $\mcG$ consists of two tables. Here is an example instance:
@@ -837,7 +837,7 @@ First off, nothing can be sent to $u$ because arrows must go to arrows and $u$ t
 \end{exampleRUS}
 
 \begin{exerciseENG}
-If $I,J\taking\mcG\to\Set$ are as in Example \ref{ex:graph hom as NT done out}, how many natural transformations are there $J\to I$?
+If $I,J\taking\mcG\to\Set$ are as in Example~\ref{ex:graph hom as NT done out}, how many natural transformations are there $J\to I$?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -859,7 +859,7 @@ v_0\\\hline
 v_1\\\bhline
 \end{array}
 \end{align*}
-Let $I\taking\mcG\to\Set$ be as in Example \ref{ex:graph hom as NT done out}.
+Let $I\taking\mcG\to\Set$ be as in Example~\ref{ex:graph hom as NT done out}.
 \sexc How many natural transformations are there $Y_A\to I$?
 \item With $J$ as above, how many natural transformations are there $Y_A\to J$?
 \item Do you have any conjecture about the way natural transformations $Y_A\to X$ behave for arbitrary graphs $X\taking\mcG\to\Set$?
@@ -871,7 +871,7 @@ Let $I\taking\mcG\to\Set$ be as in Example \ref{ex:graph hom as NT done out}.
 
 \begin{blockENG}
 In terms of databases, this notion of instance morphism $I\to J$ is fairly benign. For every table its a mapping from the set of rows in $I$'s version of the table to $J$'s version of the table, such that all the foreign keys are respected. We will see that this notion of morphism has excellent formal properties, so that projections, unions, and joins of tables (the typical database operations) would be predicted to be “obviously interesting” by a category theorist who had no idea what a database was.
-\footnote{More precisely, given a functor between schemas $F\taking\mcC\to\mcD$, the pullback $\Delta_F\taking\mcD\set\to\mcC\set$, its left $\Sigma_F$ and its right adjoint $\Pi_F$ constitute these important queries. See Section \ref{sec:data migration}.}
+\footnote{More precisely, given a functor between schemas $F\taking\mcC\to\mcD$, the pullback $\Delta_F\taking\mcD\set\to\mcC\set$, its left $\Sigma_F$ and its right adjoint $\Pi_F$ constitute these important queries. See Section~\ref{sec:data migration}.}
 \end{blockENG}
 
 \begin{blockRUS}
@@ -885,7 +885,7 @@ However, something is also missing from the natural transformation picture. A ve
 \end{blockRUS}
 
 \begin{blockENG}
-It is interesting to consider how updates of $\mcC$-instances should be understood category theoretically. We might want a category $Upd_\mcC$ whose objects are $\mcC$-instances and whose morphisms are updates. But then what is the composition formula? Is there a unique morphism $I\to J$ whenever $J$ can be obtained as an update on $I$? Because in that case, we would be defining $Upd_\mcC$ to be the indiscrete category on the set of $\mcC$-instances (see Example \ref{ex:indiscrete cat equiv to terminal}).
+It is interesting to consider how updates of $\mcC$-instances should be understood category theoretically. We might want a category $Upd_\mcC$ whose objects are $\mcC$-instances and whose morphisms are updates. But then what is the composition formula? Is there a unique morphism $I\to J$ whenever $J$ can be obtained as an update on $I$? Because in that case, we would be defining $Upd_\mcC$ to be the indiscrete category on the set of $\mcC$-instances (see Example~\ref{ex:indiscrete cat equiv to terminal}).
 \end{blockENG}
 
 \begin{blockRUS}
@@ -953,7 +953,7 @@ To be an equivalence, the same has to hold for the other roundtrip, $i'=F\circ F
 \begin{exerciseENG}
 Let $\mcC$ and $\mcC'$ be categories. Suppose that $F\taking\mcC\to\mcC'$ is an isomorphism of categories.
 \sexc Is it an equivalence of categories?
-\item What are the components of $\alpha$ and $\alpha'$ (with notation as in Definition \ref{def:equiv of cats})?
+\item What are the components of $\alpha$ and $\alpha'$ (with notation as in Definition~\ref{def:equiv of cats})?
 \endsexc
 \end{exerciseENG}
 
@@ -961,16 +961,16 @@ Let $\mcC$ and $\mcC'$ be categories. Suppose that $F\taking\mcC\to\mcC'$ is an 
 \end{exerciseRUS}
 
 \begin{exampleENG}\label{ex:indiscrete cat equiv to terminal}
-Let $S$ be a set and let $S\times S\ss S\times S$ be the complete relation on $S$, which is a preorder $K_S$. Recall from Proposition \ref{prop:preorders to cats} that we have a functor $i\taking\PrO\to\Cat$,\index{a functor!$\PrO\to\Cat$} and the resulting category $i(K_S)$ is called the {\em indiscrete category on $S$}; it has objects $S$ and a single morphism between every pair of objects. Here is a picture of $K_{\{1,2,3\}}$:
+Let $S$ be a set and let $S\times S\ss S\times S$ be the complete relation on $S$, which is a preorder $K_S$. Recall from Proposition~\ref{prop:preorders to cats} that we have a functor $i\taking\PrO\to\Cat$,\index{a functor!$\PrO\to\Cat$} and the resulting category $i(K_S)$ is called the {\em indiscrete category on $S$}; it has objects $S$ and a single morphism between every pair of objects. Here is a picture of $K_{\{1,2,3\}}$:
 $$\xymatrix@=15pt{\LMO{1}\ar@(l,u)[]\ar@/^.5pc/[rr]\ar@/^.5pc/[rdd]&&\LMO{2}\ar@(u,r)[]\ar@/^.5pc/[ll]\ar@/^.5pc/[ldd]\\\\&\LMO{3}\ar@(dr,dl)[]_~\ar@/^.5pc/[uur]\ar@/^.5pc/[uul]}$$
 
-It is easy check that $K_{\ul{1}}$, the indiscrete category on one element, is isomorphic to $\ul{1}$, the discrete category on one object, also known as the terminal category (see Exercise \ref{exc:term cat}). The category $\ul{1}$ consists of one object, its identity morphism, and nothing else. 
+It is easy check that $K_{\ul{1}}$, the indiscrete category on one element, is isomorphic to $\ul{1}$, the discrete category on one object, also known as the terminal category (see Exercise~\ref{exc:term cat}). The category $\ul{1}$ consists of one object, its identity morphism, and nothing else. 
 
 The only way that $K_S$ can be isomorphic to $\ul{1}$ is if $S$ has one element.
-\footnote{One way to see this is that by Exercise \ref{exc:Ob is a functor}, we have a functor $\Ob\taking\Cat\to\Set$, and we know by Exercise \ref{exc:functors preserve isos} that functors preserve isomorphisms, so an isomorphism between categories must restrict to an isomorphism between their sets of objects. The only sets that are isomorphic to $\ul{1}$ have one element.} 
+\footnote{One way to see this is that by Exercise~\ref{exc:Ob is a functor}, we have a functor $\Ob\taking\Cat\to\Set$, and we know by Exercise~\ref{exc:functors preserve isos} that functors preserve isomorphisms, so an isomorphism between categories must restrict to an isomorphism between their sets of objects. The only sets that are isomorphic to $\ul{1}$ have one element.} 
 On the other hand, there is an equivalence of categories $$K_S\simeq\ul{1}$$ for every set $S\neq\emptyset$. 
 
-In fact, there are many such equivalences, one for each element of $S$. To see this, let $S$ be a nonempty set and choose an element $s_0\in S$. For every $s\in S$, there is a unique isomorphism $k_s\taking s\To{\iso}s_0$ in $K_S$. Let $F\taking K_S\to\ul{1}$ be the only possible functor (see Exercise \ref{exc:term cat}), and let $F'\taking\ul{1}\to K_S$ send the unique object in $\ul{1}$ to the object $s_0$. 
+In fact, there are many such equivalences, one for each element of $S$. To see this, let $S$ be a nonempty set and choose an element $s_0\in S$. For every $s\in S$, there is a unique isomorphism $k_s\taking s\To{\iso}s_0$ in $K_S$. Let $F\taking K_S\to\ul{1}$ be the only possible functor (see Exercise~\ref{exc:term cat}), and let $F'\taking\ul{1}\to K_S$ send the unique object in $\ul{1}$ to the object $s_0$. 
 
 Note that $F'\circ F=\id_{\ul{1}}\taking\ul{1}\to\ul{1}$ is the identity, but that $F\circ F'\taking K_S\to K_S$ sends everything to $s_0$. Let $\alpha=\id_{\ul{1}}$ and define $\alpha'\taking\id_{K_S}\to F\circ F'$ by $\alpha'_s=k_s$. Note that $\alpha'_s$ is an isomorphism for each $s\in\Ob(K_S)$, and note that $\alpha'$ is a natural transformation (hence natural isomorphism) because every possible square commutes in $K_S$. This completes the proof, initiated in the paragraph above, that the category $K_S$ is equivalent to $\ul{1}$ for every nonempty set $S$, and that this fact can be witnessed by any element $s_0\in S$.
 \end{exampleENG}
@@ -979,7 +979,7 @@ Note that $F'\circ F=\id_{\ul{1}}\taking\ul{1}\to\ul{1}$ is the identity, but th
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:finite linear orders}
-Consider the category $\FLin$, described in Example \ref{ex:FLin}, of finite nonempty linear orders. For every natural number $n\in\NN$, let $[n]\in\Ob(\FLin)$ denote the linear order shown in Example \ref{ex:finite lo}. Define a category $\bD$\index{a category!$\bD$} whose objects are given by $\Ob(\bD)=\{[n]\|n\in\NN\}$ and with $\Hom_{\bD}([m],[n])=\Hom_{\FLin}([m],[n])$. The difference between $\FLin$ and $\bD$ is only that objects in $\FLin$ may have “funny labels”, e.g. 
+Consider the category $\FLin$, described in Example~\ref{ex:FLin}, of finite nonempty linear orders. For every natural number $n\in\NN$, let $[n]\in\Ob(\FLin)$ denote the linear order shown in Example~\ref{ex:finite lo}. Define a category $\bD$\index{a category!$\bD$} whose objects are given by $\Ob(\bD)=\{[n]\|n\in\NN\}$ and with $\Hom_{\bD}([m],[n])=\Hom_{\FLin}([m],[n])$. The difference between $\FLin$ and $\bD$ is only that objects in $\FLin$ may have “funny labels”, e.g. 
 $$\xymatrix{\LMO{5}\ar[r]&\LMO{x}\ar[r]&\LMO{“Sam”}}$$ 
 whereas objects in $\bD$ all have standard labels, e.g.
 $$\xymatrix{\LMO{0}\ar[r]&\LMO{1}\ar[r]&\LMO{2}}$$
@@ -994,7 +994,7 @@ the required natural isomorphism $\id_{\FLin}\to F'\circ F$. The other natural i
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Recall from Definition \ref{def:cardinality} that a set $X$ is called finite if there exists a natural number $n\in\NN$ and an isomorphism of sets $X\to\ul{n}$. Let $\Fin$\index{a category!$\Fin$} denote the category whose objects are the finite sets and whose morphisms are the functions. Let $\mcS$ denote the category whose objects are the sets $\ul{n}$ and whose morphisms are again the functions. For every object $X\in\Ob(\Fin)$ there exists an isomorphism $p_X\taking X\to\ul{n}$ for some unique object $\ul{n}\in\Ob(\mcS)$. Find an equivalence of categories $\Fin\To{\simeq}\mcS$. 
+Recall from Definition~\ref{def:cardinality} that a set $X$ is called finite if there exists a natural number $n\in\NN$ and an isomorphism of sets $X\to\ul{n}$. Let $\Fin$\index{a category!$\Fin$} denote the category whose objects are the finite sets and whose morphisms are the functions. Let $\mcS$ denote the category whose objects are the sets $\ul{n}$ and whose morphisms are again the functions. For every object $X\in\Ob(\Fin)$ there exists an isomorphism $p_X\taking X\to\ul{n}$ for some unique object $\ul{n}\in\Ob(\mcS)$. Find an equivalence of categories $\Fin\To{\simeq}\mcS$. 
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -1010,7 +1010,7 @@ We say that two categories $\mcC$ and $\mcD$ are equivalent if there exists an e
 \begin{exampleENG}\label{ex:Z1 not equiv Z2}
 Consider the group $\ZZ_2:=(\{0,1\},0,+)$, where $1+1=0$. As a category, $\ZZ_2$ has one object $\monOb$ and two morphisms, namely $0,1$, such that $0$ is the identity. Since $\ZZ_2$ is a group, the morphism $1\taking\monOb\to\monOb$ must have an inverse $x$, meaning $1+x=0$, and $x=1$ is the only solution.
 
-The point is that the morphism $1$ in $\ZZ_2$ is an isomorphism. Let $\mcC=\ul{1}$ be the terminal category as in Exercise \ref{exc:term cat}. One might accidentally believe that $\mcC$ is equivalent to $\ZZ_2$, but this is not the case! The argument in favor of the accidental belief is that we have unique functors $F\taking\ZZ_2\to\mcC$ and $F'\taking\mcC\to\ZZ_2$ (and this is true); the roundtrip $F\circ F'\taking\mcC\to\mcC$ is the identity (and this is true); and for the roundtrip $F'\circ F\taking\ZZ_2\to\ZZ_2$ both morphisms in $\ZZ_2$ are isomorphisms, so any choice of morphism $\alpha_\monOb\taking\monOb\to F'\circ F(\monOb)$ will be an isomorphism (and this is true). The problem is that no such $\alpha_\monOb$ will be a natural transformation.
+The point is that the morphism $1$ in $\ZZ_2$ is an isomorphism. Let $\mcC=\ul{1}$ be the terminal category as in Exercise~\ref{exc:term cat}. One might accidentally believe that $\mcC$ is equivalent to $\ZZ_2$, but this is not the case! The argument in favor of the accidental belief is that we have unique functors $F\taking\ZZ_2\to\mcC$ and $F'\taking\mcC\to\ZZ_2$ (and this is true); the roundtrip $F\circ F'\taking\mcC\to\mcC$ is the identity (and this is true); and for the roundtrip $F'\circ F\taking\ZZ_2\to\ZZ_2$ both morphisms in $\ZZ_2$ are isomorphisms, so any choice of morphism $\alpha_\monOb\taking\monOb\to F'\circ F(\monOb)$ will be an isomorphism (and this is true). The problem is that no such $\alpha_\monOb$ will be a natural transformation.
 
 When we roundtrip $F'\circ F\taking\ZZ_2\to\ZZ_2$, the image of $1\taking\monOb\to\monOb$ is $F'\circ F(1)=0=\id_{\monOb}$. So the naturality square for the morphism $1$ looks like this:
 $$
@@ -1023,7 +1023,7 @@ where we still haven't decided whether we want $\alpha_\monOb$ to be $0$ or $1$.
 \end{exampleRUS}
 
 \begin{definitionENG}[Skeleton]\index{skeleton}
-Let $\mcC$ be a category. We saw in Lemma \ref{lemma:isomorphic ER} that the relation of “being isomorphic” is an equivalence relation $\cong$ on $\Ob(\mcC)$. An {\em election in $\mcC$} is a choice $E$ of the following sort:
+Let $\mcC$ be a category. We saw in Lemma~\ref{lemma:isomorphic ER} that the relation of “being isomorphic” is an equivalence relation $\cong$ on $\Ob(\mcC)$. An {\em election in $\mcC$} is a choice $E$ of the following sort:
 \begin{itemize}
 \item for each $\cong$-equivalence class $S\ss\Ob(\mcC)$ a choice of object $s_E\in S$, called the {\em elected object for $S$}, and
 \item for each object $c\in\Ob(\mcC)$ a choice of isomorphism $i_c\taking s_E\to c$ and $j_c\taking c\to s_E$ with $i_c\circ j_c=\id_c$ and $j_c\circ i_c=\id_{s_E}$, where $s_E$ is an elected object (depending on $c$).
@@ -1127,7 +1127,7 @@ The fact that $\alpha$ is bijective implies that the vertical function is surjec
 \end{proofRUS}
 
 \begin{exerciseENG}
-Let $\ZZ_2$ be the group (as category) from Example \ref{ex:Z1 not equiv Z2}. Are there any fully faithful functors $\ZZ_2\to\ul{1}$?
+Let $\ZZ_2$ be the group (as category) from Example~\ref{ex:Z1 not equiv Z2}. Are there any fully faithful functors $\ZZ_2\to\ul{1}$?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
