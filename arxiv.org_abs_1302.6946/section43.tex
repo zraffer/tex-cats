@@ -398,7 +398,7 @@ We generally use $\circ$ to denote both kinds of composition, but if we want to 
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Vertical composition of natural transformations}{ / }{Вертикальная композиция естественных преобразований}}\index{natural transformation!vertical composition of}
+\subsubsection{\caseENGRUS{Vertical composition of natural transformations}{ / }{Вертикальная композиция естественных преобразований}}
 
 \begin{blockENG}
 The following proposition proves that functors and natural transformations (using vertical composition) form a category.
@@ -407,7 +407,7 @@ The following proposition proves that functors and natural transformations (usin
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{propositionENG}\label{prop:Fun(C,D)}
+\begin{propositionENG}\label{prop:Fun(C,D)}\index{natural transformation!vertical composition of}
 Let $\mcC$ and $\mcD$ be categories. There exists a category, called {\em the category of functors from $\mcC$ to $\mcD$} and denoted $\Fun(\mcC,\mcD)$\index{a symbol!$\Fun$}, whose objects are the functors $\mcC\to\mcD$ and whose morphisms are the natural transformations,
 $$\Hom_{\Fun(\mcC,\mcD)}(F,G)=\{\alpha\taking F\to G\|\alpha\tn{ is a natural transformation}\}.$$That is, there are identity natural transformations, natural transformations can be composed, and the identity and associativity laws hold.
 \end{propositionENG}
@@ -493,7 +493,7 @@ Let $[1]$ denote the free arrow category as in Exercise \ref{exc:[1]}, and let $
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Natural isomorphisms}{ / }{Естественные изоморфизмы}}\index{natural isomorphism}
+\subsubsection{\caseENGRUS{Natural isomorphisms}{ / }{Естественные изоморфизмы}}
 
 \begin{blockENG}
 Let $\mcC$ and $\mcD$ be categories. We have defined a category $\Fun(\mcC,\mcD)$ whose objects are functors $\mcC\to\mcD$ and whose morphisms are natural transformations. What are the isomorphisms in this category? 
@@ -502,7 +502,7 @@ Let $\mcC$ and $\mcD$ be categories. We have defined a category $\Fun(\mcC,\mcD)
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{lemmaENG}\label{lemma:natural iso}
+\begin{lemmaENG}\label{lemma:natural iso}\index{natural isomorphism}
 Let $\mcC$ and $\mcD$ be categories and let $F,G\taking\mcC\to\mcD$ be functors. A natural transformation $\alpha\taking F\to G$ is an isomorphism in $\Fun(\mcC,\mcD)$ if and only if the component $\alpha_c\taking F(c)\to G(c)$ is an isomorphism for each object $c\in\Ob(\mcC)$. In this case $\alpha$ is called a {\em natural isomorphism}.
 \end{lemmaENG}
 
@@ -690,7 +690,7 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{The category of instances on a database schema}{ / }{Категория экземпляров схемы базы данных}}\index{a category!$\mcC\set$}\index{database!category of instances on}
+\subsection{\caseENGRUS{The category of instances on a database schema}{ / }{Категория экземпляров схемы базы данных}}
 
 \begin{blockENG}
 In Section \ref{sec:schemas and cats intro} we showed that schemas are presentations of categories, and we will show in Section \ref{sec:cat equiv sch} that in fact the category of schemas is equivalent to the category of categories. In this section we therefore take license to blur the distinction between schemas and categories.
@@ -707,7 +707,7 @@ If $\mcC$ is a schema, i.e. a category, then as we discussed in Section \ref{sec
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:mcC-set}
-Let $\mcC$ be a schema (or category). The {\em category of instances on $\mcC$}, denoted $\mcC\set$, is $\Fun(\mcC,\Set)$. Its objects are $\mcC$-instances (i.e. functors $\mcC\to\Set)$ and its morphisms are natural transformations.
+Let $\mcC$ be a schema (or category). The {\em category of instances on $\mcC$}\index{a category!$\mcC\set$}\index{database!category of instances on}, denoted $\mcC\set$, is $\Fun(\mcC,\Set)$. Its objects are $\mcC$-instances (i.e. functors $\mcC\to\Set)$ and its morphisms are natural transformations.
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:mcC-set}

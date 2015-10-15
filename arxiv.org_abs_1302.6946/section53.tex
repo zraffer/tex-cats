@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\section{\caseENGRUS{Monads}{ / }{Монады}}\label{sec:monads}\index{monad}
+\section{\caseENGRUS{Monads}{ / }{Монады}}\label{sec:monads}
 
 \begin{blockENG}
 Monads would probably not have been invented without category theory, but they have been quite useful in formalizing algebra, calculating invariants of topological spaces, and imbedding non-functional operations into functional programming languages. We will mainly discuss monads in terms of how they can help us make modeling contexts explicit, and in so doing allow us to simplify the language we use in the model.
@@ -20,10 +20,10 @@ Much of the following material on monads is taken from \cite{Sp3}.
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Monads formalize context}{ / }{Монады формализуют контекст}}\index{monad!formalizing context}\index{context}
+\subsection{\caseENGRUS{Monads formalize context}{ / }{Монады формализуют контекст}}
 
 \begin{blockENG}
-Monads can formalize assumptions about the way one will do business throughout a domain. For example, suppose that we want to consider functions that do not have to return a value for all inputs. Such {\em partial functions}\index{partial functions} can be composed. Indeed, given a partial function $f\taking A\to B$ and a partial function $g\taking B\to C$, one gets a partial function $g\circ f\taking A\to C$ in an obvious way.
+Monads can formalize assumptions about the way one will do business throughout a domain. For example, suppose that we want to consider functions that do not have to return a value for all inputs.\index{monad!formalizing context}\index{context} Such {\em partial functions}\index{partial functions} can be composed. Indeed, given a partial function $f\taking A\to B$ and a partial function $g\taking B\to C$, one gets a partial function $g\circ f\taking A\to C$ in an obvious way.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -323,7 +323,7 @@ In the context of the power set monad (see Exercise \ref{exc:power set monad}), 
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Monads in databases}{ / }{Монады в базах данных}}\label{sec:monads in db}\index{database!Kleisli}\index{instance!Kleisli}
+\subsection{\caseENGRUS{Monads in databases}{ / }{Монады в базах данных}}\label{sec:monads in db}
 
 \begin{blockENG}
 In this section we discuss how to record data in the presence of a monad. The idea is quite simple. Given a schema (category) $\mcC$, an ordinary instance is a functor $I\taking\mcC\to\Set$. But if $\top=(T,\eta,\mu)$ is a monad, then a {\em Kleisli $\top$-instance on $\mcC$} is a functor $J\taking\mcC\to\Kls(\top)$. Such a functor associates to every object $c\in\Ob(\mcC)$ a set $J(c)$, and to every arrow $f\taking c\to c'$ in $\mcC$ a morphism $J(f)\taking J(c)\to J(c')$ in $\Kls(\top)$. How does this look in terms of tables?
@@ -340,7 +340,7 @@ Recall that to represent an ordinary database instance $I\taking\mcC\to\Set$, we
 \end{blockRUS}
 
 \begin{blockENG}
-To represent a {\em Kleisli} database instance $J\taking\mcC\to\Kls{\top}$ is similar; we again use a tabular format in which every object $c\in\Ob(\mcC)$ is displayed as a table including one ID column and an additional column for every arrow emanating from $c$. In the ID column of table $c$ are again elements of the set $J(c)$; however in the column assigned to some arrow $f\taking c\to c'$ are not elements of $J(c')$ but $T$-values in $J(c')$, i.e. elements of $T(J(c'))$. 
+To represent a {\em Kleisli}\index{database!Kleisli}\index{instance!Kleisli} database instance $J\taking\mcC\to\Kls{\top}$ is similar; we again use a tabular format in which every object $c\in\Ob(\mcC)$ is displayed as a table including one ID column and an additional column for every arrow emanating from $c$. In the ID column of table $c$ are again elements of the set $J(c)$; however in the column assigned to some arrow $f\taking c\to c'$ are not elements of $J(c')$ but $T$-values in $J(c')$, i.e. elements of $T(J(c'))$. 
 \end{blockENG}
 
 \begin{blockRUS}

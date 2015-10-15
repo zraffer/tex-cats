@@ -14,15 +14,15 @@ In this section we introduce two concepts that are likely to be familiar, althou
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Products}{ / }{Произведения}}\label{sec:products}\index{products!of sets}\index{произведения!множеств}
+\subsection{\caseENGRUS{Products}{ / }{Произведения}}\label{sec:products}
 
 \begin{definitionENG}
-Let $X$ and $Y$ be sets. The {\em product of $X$ and $Y$}, denoted $X\times Y$,\index{a symbol!$\times$} is defined as the set of ordered pairs $(x,y)$ where $x\in X$ and $y\in Y$. Symbolically, $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ There are two natural {\em projection functions} $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
+Let $X$ and $Y$ be sets. The {\em product of $X$ and $Y$}\index{products!of sets}, denoted $X\times Y$,\index{a symbol!$\times$} is defined as the set of ordered pairs $(x,y)$ where $x\in X$ and $y\in Y$. Symbolically, $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ There are two natural {\em projection functions} $\pi_1\taking X\times Y\to X$ and $\pi_2\taking X\times Y\to Y$.\index{projection functions}\index{product!projection functions}
 $$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
 \end{definitionENG}
 
 \begin{definitionRUS}
-Пусть $X$ и $Y$ — множества. {\em Произведение $X$ и $Y$}, обозначаемое $X\times Y$,\index{символ!$\times$} определяется как множество упорядоченных пар $(x,y)$, где $x\in X$ и $y\in Y$. На языке символов: $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ Имеются две естественные {\em функции проектирования} (или просто {\em проекции}) $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$.\index{функции проектирования}\index{произведение!функции проектирования}
+Пусть $X$ и $Y$ — множества. {\em Произведение $X$ и $Y$}\index{произведения!множеств}, обозначаемое $X\times Y$,\index{символ!$\times$} определяется как множество упорядоченных пар $(x,y)$, где $x\in X$ и $y\in Y$. На языке символов: $$X\times Y=\{(x,y)\|x\in X,\;\; y\in Y\}.$$ Имеются две естественные {\em функции проектирования} (или просто {\em проекции}) $\pi_1\taking X\times Y\to X$ и $\pi_2\taking X\times Y\to Y$.\index{функции проектирования}\index{произведение!функции проектирования}
 $$\xymatrix@=15pt{&X\times Y\ar[ddr]^{\pi_2}\ar[ddl]_{\pi_1}\\\\X&&Y}$$
 \end{definitionRUS}
 
@@ -166,9 +166,9 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Universal property for products}{ / }{Универсальное свойство произведений}}\index{products!universal property of}\index{universal property!products}\index{произведения!универсальное свойство}\index{универсальное свойство!произведений}
+\subsubsection{\caseENGRUS{Universal property for products}{ / }{Универсальное свойство произведений}}
 
-\begin{lemmaENG}[Universal property for product]\label{lemma:up for prod}
+\begin{lemmaENG}[Universal property for product]\label{lemma:up for prod}\index{universal property!products}
 Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ such that the following diagram commutes%
 \footnote{The symbol $\forall$ is read “for all”; the symbol $\exists$ is read “there exists”, and the symbol $\exists!$ is read “there exists a unique”. So this diagram is intended to express the idea that for any functions $f\taking A\to X$ and $g\taking A\to Y$, there exists a unique function $A\to X\times Y$ for which the two triangles commute.}
 \begin{align}\label{dia:univ prop for products}
@@ -177,7 +177,7 @@ Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking A\to X$ and $g\
 We might write the unique function as $$\prodmap{f}{g}\taking A\to X\times Y.$$
 \end{lemmaENG}
 
-\begin{lemmaRUS}[Универсальное свойство произведения]\label{lemma:up for prod}
+\begin{lemmaRUS}[Универсальное свойство произведения]\label{lemma:up for prod}\index{произведения!универсальное свойство}
 Пусть $X$ и $Y$ — множества. Для любого множества $A$ и функций $f\taking A\to X$ и $g\taking A\to Y$ существует единственная функция $A\to X\times Y$, [зависящая от $A, f, g$ и] такая, что следующая диаграмма коммутирует:%
 \footnote{Символ $\forall$ читается «для всех»; символ $\exists$ — «существует», а символ $\exists!$ — «существует единственный». Таким образом, эта диаграмма должна выражать идею, что для любых функций $f\taking A\to X$ и $g\taking A\to Y$, существует единственная функция $A\to X\times Y$, для которой оба треугольника коммутируют.}
 \begin{align}\label{dia:univ prop for products}
@@ -332,17 +332,17 @@ $$
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Coproducts}{ / }{Копроизведения}}\label{sec:coproducts}\index{coproducts!of sets}\index{копроизведение!множеств}
+\subsection{\caseENGRUS{Coproducts}{ / }{Копроизведения}}\label{sec:coproducts}
 
 \begin{definitionENG}\label{def:coproduct}
-Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the “disjoint union” of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
+Let $X$ and $Y$ be sets. The {\em coproduct of $X$ and $Y$}\index{coproducts!of sets}, denoted $X\sqcup Y$,\index{a symbol!$\sqcup$} is defined as the “disjoint union” of $X$ and $Y$, i.e. the set for which an element is either an element of $X$ or an element of $Y$. If something is an element of both $X$ and $Y$ then we include both copies, and distinguish between them, in $X\sqcup Y$. See Example \ref{ex:coproduct}
 
 There are two natural inclusion functions $i_1\taking X\to X\sqcup Y$ and $i_2\taking Y\to X\sqcup Y$.\index{inclusion functions}\index{coproduct!inclusion functions}
 $$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:coproduct}
-Пусть $X$ и $Y$ — множества. {\em Копроизведение $X$ и $Y$}, обозначаемое $X\sqcup Y$,\index{символ!$\sqcup$} определяется как «несвязное объединение» $X$ и $Y$, то есть множество, каждым элементом которого является либо элемент $X$, либо элемент $Y$. В случае, когда некий элемент принадлежит одновременно $X$ и $Y$, мы вкладываем в $X\sqcup Y$ две его копии и считаем их различными. См. Пример \ref{ex:coproduct}
+Пусть $X$ и $Y$ — множества. {\em Копроизведение $X$ и $Y$}\index{копроизведение!множеств}, обозначаемое $X\sqcup Y$,\index{символ!$\sqcup$} определяется как «несвязное объединение» $X$ и $Y$, то есть множество, каждым элементом которого является либо элемент $X$, либо элемент $Y$. В случае, когда некий элемент принадлежит одновременно $X$ и $Y$, мы вкладываем в $X\sqcup Y$ две его копии и считаем их различными. См. Пример \ref{ex:coproduct}
 
 Имеются две естественные {\em функции вложения} $i_1\taking X\to X\sqcup Y$ и $i_2\taking Y\to X\sqcup Y$.\index{функции вложения}\index{копроизведение!функции вложения}
 $$\xymatrix@=15pt{X\ar[ddr]_{i_1}&&Y\ar[ddl]^{i_2}\\\\&X\sqcup Y}$$
@@ -435,10 +435,10 @@ TODO (дать наброски решений некоторых упражне
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Universal property for coproducts}{ / }{Универсальное свойство копроизведений}}\index{coproducts!universal property of}\index{копроизведения!универсальное свойство}
+\subsubsection{\caseENGRUS{Universal property for coproducts}{ / }{Универсальное свойство копроизведений}}
 
 \begin{lemmaENG}[Universal property for coproduct]\label{lemma:up for coprod}
-Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes
+Let $X$ and $Y$ be sets. For any set $A$ and functions $f\taking X\to A$ and $g\taking Y\to A$, there exists a unique function $X\sqcup Y\to A$ such that the following diagram commutes\index{coproducts!universal property of}
 $$
 \xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
 $$
@@ -448,7 +448,7 @@ $$\coprodmap{f}{g}\taking X\sqcup Y\to A.$$
 \end{lemmaENG}
 
 \begin{lemmaRUS}[Универсальное свойство копроизведения]\label{lemma:up for coprod}
-Пусть $X$ и $Y$ — множества. Для любого множества $A$ и функций $f\taking X\to A$ и $g\taking Y\to A$ имеется единственная функция $X\sqcup Y\to A$, [зависящая от $A, f, g$ и] такая, что следующая диаграмма коммутирует
+Пусть $X$ и $Y$ — множества. Для любого множества $A$ и функций $f\taking X\to A$ и $g\taking Y\to A$ имеется единственная функция $X\sqcup Y\to A$, [зависящая от $A, f, g$ и] такая, что следующая диаграмма коммутирует\index{копроизведения!универсальное свойство}:
 $$
 \xymatrix@=15pt{&A\\\\X\ar[uur]^{\forall f}\ar[ddr]_{i_1}&&Y\ar[uul]_{\forall g}\ar[ddl]^{i_2}\\\\&X\sqcup Y\ar@{-->}[uuuu]^{\exists!}}
 $$

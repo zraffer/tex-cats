@@ -216,19 +216,19 @@ A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer a
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Paths in a graph}{ / }{Пути в графе}}\label{sec:paths in graph}\index{graph!paths}
+\subsection{\caseENGRUS{Paths in a graph}{ / }{Пути в графе}}\label{sec:paths in graph}
 
 \begin{blockENG}
 We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN$, even length $0$ or $1$. Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
 \end{blockENG}
 
-\begin{definitionENG}\label{def:paths in graph}
+\begin{definitionENG}\label{def:paths in graph}\index{graph!paths}
 Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G$, denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G$, which we denote by $v_0 a_1 a_2 \ldots a_n$. In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v$. We denote by $\Path_G$ the set of paths in $G$, $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V$. If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w$, we may denote it by $p\taking v\to w$. Given two vertices $v,w\in V$, we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w$.
 
 There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x$, we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w$, we have $pq=q$ (resp. $qr=q$). 
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:paths in graph}
+\begin{definitionRUS}\label{def:paths in graph}\index{граф!пути}
 \end{definitionRUS}
 
 \begin{exampleENG}

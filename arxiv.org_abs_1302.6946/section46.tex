@@ -13,7 +13,7 @@ In this section we discuss some leftover notions about categories. For example i
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Opposite categories}{ / }{Дуальные категории}}\label{sec:opposite}\index{functor!contravariant}\index{functor!covariant}
+\subsection{\caseENGRUS{Opposite categories}{ / }{Дуальные категории}}\label{sec:opposite}
 
 \begin{blockENG}
 People used to discuss two different kinds of functors between categories: the so-called {\em covariant functors} and the so-called {\em contravariant functors}. Covariant functors are what we have been calling functors. The reader may have come across the idea of contravariance when considering Exercise \ref{exc:points and opens in Top}.\footnote{Similarly, see Exercise \ref{exc:juris 2}.} There we saw that a continuous mapping of topological spaces $f\taking X\to Y$ does not induce a morphism of orders on their open sets $\Op(X)\to\Op(Y)$; that is not required by the notion of continuity. Instead, a morphism of topological spaces $f\taking X\to Y$ induces a morphism of orders $\Op(Y)\to\Op(X)$, going backwards. So we do not have a functor $\Top\to\PrO$ in this way, but it's quite close. One used to say that $\Op$ is a {\em contravariant functor} $\Top\to\PrO$.
@@ -29,7 +29,7 @@ As important and common as contravariance is, people found that keeping track of
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{definitionENG}\index{category!opposite}
+\begin{definitionENG}\index{category!opposite}\index{functor!contravariant}\index{functor!covariant}
 Let $\mcC$ be a category. The {\em opposite category} of $\mcC$, denoted $\mcC\op$,\index{a symbol!$\mcC\op$} has the same objects as $\mcC$, i.e. $\Ob(\mcC\op)=\Ob(\mcC)$, and for any two objects $c,c'$, one defines
 $$\Hom_{\mcC\op}(c,c'):=\Hom_\mcC(c',c).$$
 \end{definitionENG}
@@ -85,7 +85,7 @@ This may seem very complicated compared to something we did earlier, namely simp
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Grothendieck construction}{ / }{Конструкция Гротендика}}\label{sec:grothendieck construction}\index{Grothendieck!construction}
+\subsection{\caseENGRUS{Grothendieck construction}{ / }{Конструкция Гротендика}}\label{sec:grothendieck construction}
 
 \begin{blockENG}
 Let $\mcC$ be a database schema (or category) and let $J\taking\mcC\to\Set$ be an instance. We have been drawing this in table form, but there is another standard way of laying out the data in $J$, called the \href{http://en.wikipedia.org/wiki/Resource_Description_Framework}{\em resource descriptive framework} or RDF. Developed for the web, RDF is a useful format when one does not have a schema in hand, e.g. when scraping information off of a website, one does not know what schema will be best. In these cases, information is stored in so-called RDF triples, which are of the form $$\la\tn{Subject, Predicate, Object}\ra$$\index{RDF}
@@ -122,7 +122,7 @@ Category-theoretically, it is quite simple to convert a database instance $J\tak
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{definitionENG}\label{def:grothendieck}\index{category!of elements}
+\begin{definitionENG}\label{def:grothendieck}\index{category!of elements}\index{Grothendieck!construction}
 Let $\mcC$ be a category and let $J\taking\mcC\to\Set$ be a functor. The {\em category of elements of $J$}, denoted $\int_\mcC J$,\index{a symbol!$\int$} is defined as follows:
 \begin{align*}
 \Ob(\varint_\mcC J):=&\;\;\{(C,x)\|C\in\Ob(\mcC), x\in J(C)\}.\\
@@ -254,9 +254,9 @@ and the functor $F\taking\mcM\to\Set$ is recorded in an action table in Example 
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Full subcategory}{ / }{Полная подкатегория}}\index{subcategory!full}
+\subsection{\caseENGRUS{Full subcategory}{ / }{Полная подкатегория}}
 
-\begin{definitionENG}\label{def:full subcategory}
+\begin{definitionENG}\label{def:full subcategory}\index{subcategory!full}
 Let $\mcC$ be a category and let $X\ss\Ob(\mcC)$ be a set of objects in $\mcC$. The {\em full subcategory of $\mcC$ spanned by $X$} is the category, which we denote by $\mcC_{\Ob=X}$, with objects $\Ob(\mcC_{\Ob=X}):=X$ and with morphisms $\Hom_{\mcC_{\Ob=X}}(x,x'):=\Hom_\mcC(x,x')$.
 \end{definitionENG}
 
@@ -304,7 +304,7 @@ Including all identities and all compositions, how many morphisms are there in t
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Comma categories}{ / }{Категории запятой}}\label{sec:comma}\index{category!comma}
+\subsection{\caseENGRUS{Comma categories}{ / }{Категории запятой}}\label{sec:comma}
 
 \begin{blockENG}
 Category theory includes a highly developed and interoperable catalogue of materials and production techniques. One such is the comma category.
@@ -313,7 +313,7 @@ Category theory includes a highly developed and interoperable catalogue of mater
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{definitionENG}\label{def:comma category}
+\begin{definitionENG}\label{def:comma category}\index{category!comma}
 Let $\mcA,\mcB,$ and $\mcC$ be categories and let $F\taking\mcA\to\mcC$ and $G\taking\mcB\to\mcC$ be functors. The {\em comma category of $\mcC$ morphisms from $F$ to $G$}, denoted $(F\down_\mcC G)$ or simply $(F\down G)$,\index{a symbol!$(F\down G)$} is the category with objects $$\Ob(F\down G)=\{(a,b,f)\|a\in\Ob(\mcA), b\in\Ob(\mcB), f\taking F(a)\to G(b)\tn{ in }\mcC\}$$ and for any two objects $(a,b,f)$ and $(a',b',f')$ the set $\Hom_{(F\down G)}((a,b,f),(a',b',f'))$ of morphisms $(a,b,f)\too(a',b',f')$ is 
 $$\{(q,r)\|q\taking a\to a'\tn{ in }\mcA,\;\; r\taking b\to b'\tn{ in }\mcB,\tn{ such that } f'\circ F(q)=G(r)\circ f\}.$$
 In pictures,

@@ -13,7 +13,7 @@ The first three sections of this chapter were about classical objects from mathe
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{What are databases?}{ / }{Что такое базы данных}}\label{sec:what are dbs}\index{database!tables}
+\subsection{\caseENGRUS{What are databases?}{ / }{Что такое базы данных}}\label{sec:what are dbs}
 
 \begin{blockENG}
 Data, in particular the set of observations made during experiment, plays
@@ -25,7 +25,7 @@ a primary role in science of any kind. To be useful data must be organized, ofte
 \end{blockRUS}
 
 \begin{blockENG}
-A database is a collection of tables, each table $T$ of which consists of a set of columns and a set of rows. We roughly explain the role of tables, columns, and rows as follows. The existence of table $T$ suggests the existence of a fixed methodology for observing objects or events of a certain type. Each column $c$ in $T$ prescribes a single kind or method of observation, so that the datum inhabiting any cell in column $c$ refers to an observation of that kind. Each row $r$ in $T$ has a fixed sourcing event or object, which can be observed using the methods prescribed by the columns. The cell $(r,c)$ refers to the observation of kind $c$ made on event $r$. All of the rows in $T$ should refer to uniquely identifiable objects or events of a single type, and the name of the table $T$ should refer to that type.
+A database is a collection of tables\index{database!tables}, each table $T$ of which consists of a set of columns and a set of rows. We roughly explain the role of tables, columns, and rows as follows. The existence of table $T$ suggests the existence of a fixed methodology for observing objects or events of a certain type. Each column $c$ in $T$ prescribes a single kind or method of observation, so that the datum inhabiting any cell in column $c$ refers to an observation of that kind. Each row $r$ in $T$ has a fixed sourcing event or object, which can be observed using the methods prescribed by the columns. The cell $(r,c)$ refers to the observation of kind $c$ made on event $r$. All of the rows in $T$ should refer to uniquely identifiable objects or events of a single type, and the name of the table $T$ should refer to that type.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -66,10 +66,10 @@ In the left-hand table it appears either that each graphene sample was used only
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Primary keys, foreign keys, and data columns}{ / }{Первичные ключи, внешние ключи и столбцы данных}}\index{database!primary key}\index{database!foreign key}
+\subsubsection{\caseENGRUS{Primary keys, foreign keys, and data columns}{ / }{Первичные ключи, внешние ключи и столбцы данных}}
 
 \begin{blockENG}
-There is a bit more structure in the above tables (Example \ref{ex:first tables}) then may first meet the eye. Each table has a {\em primary ID column}, found on the left, as well as some {\em data columns} and some {\em foreign key columns}. The primary key column is tasked with uniquely identifying different rows. Each data column houses elementary data of a certain sort. Perhaps most interesting from a structural point of view are the foreign key columns, because they link one table to another, creating a connection pattern between tables. Each foreign key column houses data that needs to be further unpacked. It thus refers us to another {\em foreign} table, in particular the primary ID column of that table. In Example \ref{ex:first tables} the {\tt Source} column was a foreign key to the {\tt Supplier} table.
+There is a bit more structure in the above tables (Example \ref{ex:first tables}) then may first meet the eye. Each table has a {\em primary ID column}\index{database!primary key}, found on the left, as well as some {\em data columns} and some {\em foreign key columns}\index{database!foreign key}. The primary key column is tasked with uniquely identifying different rows. Each data column houses elementary data of a certain sort. Perhaps most interesting from a structural point of view are the foreign key columns, because they link one table to another, creating a connection pattern between tables. Each foreign key column houses data that needs to be further unpacked. It thus refers us to another {\em foreign} table, in particular the primary ID column of that table. In Example \ref{ex:first tables} the {\tt Source} column was a foreign key to the {\tt Supplier} table.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -117,10 +117,10 @@ Display (\ref{dia:instance on maincat}) shows how such a database might look at 
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Business rules}{ / }{Бизнес-правила}}\index{database!business rules}
+\subsubsection{\caseENGRUS{Business rules}{ / }{Бизнес-правила}}
 
 \begin{blockENG}
-Looking at the tables from Example \ref{ex:department store 1}, one may notice a few patterns. First, every employee works in the same department as his or manager. Second, every department's secretary works in that department. Perhaps the business counts on these rules for the way it structures itself. In that case the database should enforce those rules, i.e. it should check that whenever the data is updated, it conforms to the rules: 
+Looking at the tables from Example \ref{ex:department store 1}, one may notice a few patterns\index{database!business rules}. First, every employee works in the same department as his or manager. Second, every department's secretary works in that department. Perhaps the business counts on these rules for the way it structures itself. In that case the database should enforce those rules, i.e. it should check that whenever the data is updated, it conforms to the rules: 
 
 \begin{enumerate}[\hsp Rule 1\;]
 \item For every employee $e$, the {\bf manager} of $e$ {\bf works in} the same department that $e$ {\bf works in}.
@@ -354,7 +354,7 @@ Let $P$ be a chess-playing program. Given any position (including the history of
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Ologging schemas}{ / }{Превращение схем в ологи}}\label{sec:olog as db schema}\index{olog!as database schema}
+\subsubsection{\caseENGRUS{Ologging schemas}{ / }{Превращение схем в ологи}}\label{sec:olog as db schema}
 
 \begin{blockENG}
 It should be clear that a database schema is nothing but an olog in disguise. The difference is basically the readability requirements for ologs. There is an important new addition in this section, namely that we can fill out an olog with data. Conversely, we have seen that databases are not any harder to understand than ologs are.
@@ -363,7 +363,7 @@ It should be clear that a database schema is nothing but an olog in disguise. Th
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{exampleENG}\label{ex:orbits}
+\begin{exampleENG}\label{ex:orbits}\index{olog!as database schema}
 Consider the olog 
 \begin{align}\label{dia:moon1}\obox{}{.5in}{a moon}\Too{\tn{orbits}}\obox{}{.5in}{a planet}\end{align}
 We can document some instances of this relationship using the following tables: 

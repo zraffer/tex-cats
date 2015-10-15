@@ -2,7 +2,7 @@
 
 \begin{document}
 
-\section{\caseENGRUS{Adjoint functors}{ / }{Сопряженные функторы}}\index{adjoint functors}
+\section{\caseENGRUS{Adjoint functors}{ / }{Сопряженные функторы}}
 
 \begin{blockENG}
 Just above, in the introduction to this chapter, I said that adjoint functors are like dictionaries that translate back and forth between different categories. How far can we take that analogy?
@@ -71,7 +71,7 @@ The analogy is complete. However, this is all just ideas. Let's give a definitio
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{definitionENG}\label{def:adjunction}\index{adjunction}\index{functor!adjoint}
+\begin{definitionENG}\label{def:adjunction}\index{adjunction}\index{functor!adjoint}\index{adjoint functors}
 Let $\mcB$ and $\mcA$ be categories. \footnote{Throughout this definition, notice that $B$'s come before $A$'s, especially in (\ref{dia:adjunction isomorphism}), which might be confusing. It was a stylistic choice to match with the {\bf B}abies and {\bf A}dults discussion above and below this definition.}
 An {\em adjunction between $\mcB$ and $\mcA$} is a pair of functors 
 $$L\taking\mcB\to\mcA\hsp\tn{and}\hsp R\taking\mcA\to\mcB$$ 
@@ -482,7 +482,7 @@ Its preorder $L(G\times H)$ does not have $(a,a)\leq(a,b)$, whereas this is the 
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Data migration}{ / }{Миграция баз данных}}\label{sec:data migration}\index{data migration}
+\subsection{\caseENGRUS{Data migration}{ / }{Миграция баз данных}}\label{sec:data migration}
 
 \begin{blockENG}
 As we saw in Sections \ref{sec:schemas and cats intro} and \ref{sec:instances}, a database schema is a category $\mcC$ and an instance is a functor $I\taking\mcC\to\Set$.  
@@ -499,7 +499,7 @@ Let $\mcC$ be a category. Throughout this section we denote by $\mcC\set$ the ca
 \end{notationRUS}
 
 \begin{blockENG}
-In this section we discuss what happens to the resulting instances when different schemas are connected by a functor, say $F\taking\mcC\to\mcD$. It turns out that three adjoint functors emerge: $\Delta_F\taking\mcD\set\to\mcC\set$, $\Sigma_F\taking\mcC\set\to\mcD\set$, and $\Pi_F\taking\mcC\set\to\mcD\set$, where $\Delta_F$ is adjoint to both, 
+In this section we discuss what happens to the resulting instances when different schemas are connected by a functor, say $F\taking\mcC\to\mcD$.\index{data migration} It turns out that three adjoint functors emerge: $\Delta_F\taking\mcD\set\to\mcC\set$, $\Sigma_F\taking\mcC\set\to\mcD\set$, and $\Pi_F\taking\mcC\set\to\mcD\set$, where $\Delta_F$ is adjoint to both, 
 $$
 \adjoint{\Sigma_F}{\mcC\set}{\mcD\set}{\Delta_F}
 \hspace{.7in}
@@ -513,7 +513,7 @@ It turns out that almost all the basic database operations are captured by these
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Pullback: $\Delta$}{ / }{Пулбек: $\Delta$}}\index{data migration!pullback $\Delta$}
+\subsubsection{\caseENGRUS{Pullback: $\Delta$}{ / }{Пулбек: $\Delta$}}
 
 \begin{blockENG}
 Given a functor $F\taking\mcC\to\mcD$ and a functor $I\taking\mcD\to\Set$, we can compose them to get a functor $I\circ F\taking\mcC\to\Set$. In other words, the presence of $F$ provides a way to convert $\mcD$-instances into $\mcC$-instances. In fact this conversion is functorial, meaning that morphisms of $\mcD$-instances are sent to morphisms of $\mcC$-instances. We denote the resulting functor by $\Delta_F\taking\mcD\set\to\mcC\set$ and call it {\em pullback along $F$}.
@@ -530,7 +530,7 @@ We have seen an example of this before in Example \ref{ex:whiskering}, where we 
 \end{blockRUS}
 
 \begin{remarkENG}
-Given a functor $F\taking\mcC\to\mcD$, which we think of as a schema translation, the functor $\Delta_F\taking\mcD\set\to\mcC\set$ “goes the opposite way”. The reasoning is simple to any explain (composition of functors) but something about it is often very strange to people, at first. The rough idea of this “contravariance” is captured by the role-reversal in the following slogan:
+Given a functor $F\taking\mcC\to\mcD$, which we think of as a schema translation, the functor $\Delta_F\taking\mcD\set\to\mcC\set$ “goes the opposite way”.\index{data migration!pullback $\Delta$} The reasoning is simple to any explain (composition of functors) but something about it is often very strange to people, at first. The rough idea of this “contravariance” is captured by the role-reversal in the following slogan:
 \end{remarkENG}
 
 \begin{remarkRUS}
@@ -672,7 +672,7 @@ Write out the two tables associated to the $[1]$-instance $\Delta_F(I)\taking[1]
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Left pushforward: $\Sigma$}{ / }{Левое расширение Кана: $\Sigma$}}\label{sec:left push}\index{data migration!left pushforward $\Sigma$}
+\subsubsection{\caseENGRUS{Left pushforward: $\Sigma$}{ / }{Левое расширение Кана: $\Sigma$}}\label{sec:left push}
 
 \begin{blockENG}
 Let $F\taking\mcC\to\mcD$ be a functor. The functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint, $\Sigma_F\taking\mcC\set\to\mcD\set$. The rough idea is that $\Sigma_F$ performs parameterized colimits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Sigma_F(I)(d)$ is the colimit (think, union) of some diagram back home in $\mcC$. 
@@ -689,7 +689,7 @@ Left pushforwards (also known as left Kan extensions) are discussed at length in
 \end{blockRUS}
 
 \begin{exampleENG}\label{ex:left pushforward and skolem}
-We again use the functor $F\taking\mcC\to\mcD$ drawn below
+We again use the functor $F\taking\mcC\to\mcD$ drawn below\index{data migration!left pushforward $\Sigma$}
 \begin{align}\tag{\ref{dia:translation}}\mcC:=\parbox{1.2in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T1}}\ar[uur]\ar[ur]\ar[dr]&&\color{red}{\LTO{T2}}\ar[ul]\ar[dl]\ar[ddl]\\&\LTO{Last}\\&\LTO{Salary}}}}\Too{F}\parbox{.8in}{\fbox{\xymatrix@=10pt{&\LTO{SSN}\\&\LTO{First}\\\color{red}{\LTO{T}}\ar[uur]\ar[ur]\ar[dr]\ar[ddr]\\&\LTO{Last}\\&\LTO{Salary}}}}=:\mcD
 \end{align}
 We will be applying the left pushforward $\Sigma_F\taking\mcC\set\to\mcD\set$ to the following instance $I\taking\mcC\to\Set$: 
@@ -806,7 +806,7 @@ By the universal property of colimits, this induces the required function $$\col
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Right pushforward: $\Pi$}{ / }{Правое расширение Кана: $\Pi$}}\index{data migration!right pushforward $\Pi$}
+\subsubsection{\caseENGRUS{Right pushforward: $\Pi$}{ / }{Правое расширение Кана: $\Pi$}}
 
 \begin{blockENG}
 Let $F\taking\mcC\to\mcD$ be a functor. We heard in Section \ref{sec:left push} that the functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint. Here we explain that it has a right adjoint, $\Pi_F\taking\mcC\set\to\mcD\set$ as well. The rough idea is that $\Pi_F$ performs parameterized limits. Given an instance $I\taking\mcC\to\Set$, we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD)$, the set $\Pi_F(I)(d)$ is the limit (think, fiber product) of some diagram back home in $\mcC$. 
@@ -816,7 +816,7 @@ Let $F\taking\mcC\to\mcD$ be a functor. We heard in Section \ref{sec:left push} 
 \end{blockRUS}
 
 \begin{blockENG}
-Right pushforwards (also known as right Kan extensions) are discussed at length in \cite{Sp1}; here we begin with some examples from that paper.\index{Kan extension!right}
+Right pushforwards (also known as right Kan extensions) are discussed at length in \cite{Sp1}\index{data migration!right pushforward $\Pi$}; here we begin with some examples from that paper.\index{Kan extension!right}
 \end{blockENG}
 
 \begin{blockRUS}

@@ -17,7 +17,7 @@ We saw in Section \ref{sec:categories} that there is a category $\Mon$ of monoid
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Monoids as categories}{ / }{Моноиды как категории}}\label{sec:monoids as cats}\index{monoid!as category}
+\subsubsection{\caseENGRUS{Monoids as categories}{ / }{Моноиды как категории}}\label{sec:monoids as cats}
 
 \begin{blockENG}
 In Example \ref{ex:monoid as olog} we said that to olog a monoid, we should use only one box. And again in Example \ref{ex:monoid action table} we said that a monoid action could be captured by only one table. These ideas emanated from the understanding that a monoid is perfectly modeled as a category with one object. 
@@ -29,7 +29,7 @@ In Example \ref{ex:monoid as olog} we said that to olog a monoid, we should use 
 \paragraph{\caseENGRUS{Each monoid as a category with one object}{ / }{Каждый моноид это категория с одним объектом}} ~\\
 
 \begin{blockENG}
-Let $(M,e,\star)$ be a monoid. We consider it as a category $\mcM$ with one object, $\Ob(\mcM)=\{\monOb\}$, and $$\Hom_\mcM(\monOb,\monOb):=M.$$ The identity morphism $\id_\monOb$ serves as the monoid identity $e$, and the composition formula $$\circ\taking\Hom_\mcM(\monOb,\monOb)\times\Hom_\mcM(\monOb,\monOb)\to\Hom_\mcM(\monOb,\monOb)$$ is given by $\star\taking M\times M\to M$. The associativity and identity laws for the monoid match precisely with the associativity and identity laws for categories.
+Let $(M,e,\star)$ be a monoid\index{monoid!as category}. We consider it as a category $\mcM$ with one object, $\Ob(\mcM)=\{\monOb\}$, and $$\Hom_\mcM(\monOb,\monOb):=M.$$ The identity morphism $\id_\monOb$ serves as the monoid identity $e$, and the composition formula $$\circ\taking\Hom_\mcM(\monOb,\monOb)\times\Hom_\mcM(\monOb,\monOb)\to\Hom_\mcM(\monOb,\monOb)$$ is given by $\star\taking M\times M\to M$. The associativity and identity laws for the monoid match precisely with the associativity and identity laws for categories.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -168,10 +168,10 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Groups as categories}{ / }{Группы как категории}}\index{group!as category}
+\subsubsection{\caseENGRUS{Groups as categories}{ / }{Группы как категории}}
 
 \begin{blockENG}
-A group is just a monoid $(M,e,\star)$ in which every element $m\in M$ is invertible, meaning there exists some $m'\in M$ with $m\star m'=e=m'\star m.$ If a monoid is the same thing as a category $\mcM$ with one object, then a group must be a category with one object and with an additional property having to do with invertibility. The elements of $M$ are the morphisms of the category $\mcM$, so we need a notion of invertibility for morphisms. Luckily we have such a notion already, namely isomorphism. We have the following:
+A group is just a monoid $(M,e,\star)$ in which every element $m\in M$ is invertible, meaning there exists some $m'\in M$ with $m\star m'=e=m'\star m.$ If a monoid is the same thing as a category $\mcM$ with one object\index{group!as category}, then a group must be a category with one object and with an additional property having to do with invertibility. The elements of $M$ are the morphisms of the category $\mcM$, so we need a notion of invertibility for morphisms. Luckily we have such a notion already, namely isomorphism. We have the following:
 \end{blockENG}
 
 \begin{blockRUS}
@@ -254,10 +254,10 @@ What is its group of automorphisms? Hint: every automorphism of $G$ will induce 
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Preorders as categories}{ / }{Предпорядки как категории}}\label{sec:preorder as cat}\index{preorder!as category}
+\subsubsection{\caseENGRUS{Preorders as categories}{ / }{Предпорядки как категории}}\label{sec:preorder as cat}
 
 \begin{blockENG}
-A preorder $(X,\leq)$ consists of a set $X$ and a binary relation $\leq$ that is reflexive and transitive. We can make from $(X,\leq)\in\Ob(\PrO)$ a category $\mcX\in\Ob(\Cat)$ as follows. Define $\Ob(\mcX)=X$ and for every two objects $x,y\in X$ define 
+A preorder $(X,\leq)$ consists of a set $X$ and a binary relation $\leq$ that is reflexive and transitive. We can make from $(X,\leq)\in\Ob(\PrO)$ a category $\mcX\in\Ob(\Cat)$ as follows. Define $\Ob(\mcX)=X$ and for every two objects $x,y\in X$ define\index{preorder!as category}
 $$\Hom_\mcX(x,y)=\begin{cases}\{“x\leq y”\}&\tn{ if } x\leq y\\\emptyset&\tn{ if } x\not\leq y\end{cases}$$
 To clarify: if $x\leq y$, we assign $\Hom_\mcX(x,y)$ to be the set containing only one element, namely the string “$x\leq y$”.\footnote{The name of this morphism is completely unimportant. What matters is that $\Hom_\mcX(x,y)$ has exactly one element iff $x\leq y$.} If $(x,y)$ is not in relation $\leq$, then we assign $\Hom_\mcX(x,y)$ to be the empty set. The composition formula 
 \begin{align}\label{dia:comp in preorder}
@@ -350,10 +350,10 @@ $$
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Graphs as functors}{ / }{Графы как функторы}}\label{sec:graphs as functors}\index{graph!as functor}
+\subsubsection{\caseENGRUS{Graphs as functors}{ / }{Графы как функторы}}\label{sec:graphs as functors}
 
 \begin{blockENG}
-Let $\mcC$ denote the category depicted below 
+Let $\mcC$ denote the category depicted below\index{graph!as functor} 
 \begin{align}\label{dia:graph index}
 \GrIn:=\fbox{\GrInSchema}\index{a category!$\GrIn$}
 \end{align}
@@ -428,7 +428,7 @@ Let $\GrIn$ be the graph indexing category shown in (\ref{dia:graph index}) and 
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Database schemas present categories}{ / }{Схемы баз данных представляют собой категории}}\label{sec:schemas and cats intro}\index{schema!as category presentation}
+\subsection{\caseENGRUS{Database schemas present categories}{ / }{Схемы баз данных представляют собой категории}}\label{sec:schemas and cats intro}
 
 \begin{blockENG}
 Recall from Definition \ref{def:schema} that a database schema (or schema, for short) consists of a graph together with a certain kind of equivalence relation on its paths. In Section \ref{sec:sch as category} we will define a category $\Sch$ that has schemas as objects and appropriately modified graph homomorphisms as morphisms. In Section \ref{sec:proof of cat=sch} we prove that the category of schemas is equivalent (in the sense of Definition \ref{def:equiv of cats}) to the category of categories, $$\Sch\simeq\Cat.$$
@@ -445,7 +445,7 @@ The difference between schemas and categories is like the difference between mon
 \end{blockRUS}
 
 \begin{sloganENG}
-A database schema is a category presentation.
+A database schema is a category presentation.\index{schema!as category presentation}
 \end{sloganENG}
 
 \begin{sloganRUS}
@@ -487,7 +487,7 @@ Suppose that $G$ is a graph and that $\mcG$ is the schema generated by $G$ with 
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Instances on a schema $\mcC$}{ / }{Экземпляры схемы $\mcC$}}\label{sec:instances}\index{database!instance}\index{instance}
+\subsubsection{\caseENGRUS{Instances on a schema $\mcC$}{ / }{Экземпляры схемы $\mcC$}}\label{sec:instances}
 
 \begin{blockENG}
 If schemas are like categories, what are instances? Recall that an instance $I$ on a schema $\mcS=(G,\simeq)$ assigns to each vertex $v$ in $G$ a set of rows say $I(v)\in\Ob(\Set)$. And to every arrow $a\taking v\to v'$ in $G$ the instance assigns a function $I(a)\taking I(v)\to I(v')$. The rule is that given two equivalent paths, their compositions must give the same function. Concisely, an instance is a functor $I\taking\mcS\to\Set$. 
@@ -497,7 +497,7 @@ If schemas are like categories, what are instances? Recall that an instance $I$ 
 \end{blockRUS}
 
 \begin{exampleENG}
-We have now seen that a monoid is just a category $\mcM$ with one object and that a monoid action is a functor $\mcM\to\Set$. Under our understanding of database schemas as categories, $\mcM$ is a schema and so an action becomes an instance of that schema. The monoid action table from Example {ex:action table} was simply a manifestation of the database instance according to the Rules \ref{rules:schema to tables}.
+We have now seen that a monoid is just a category $\mcM$ with one object and that a monoid action is a functor $\mcM\to\Set$. Under our understanding of database schemas as categories, $\mcM$ is a schema and so an action becomes an instance of that schema.\index{database!instance}\index{instance} The monoid action table from Example {ex:action table} was simply a manifestation of the database instance according to the Rules \ref{rules:schema to tables}.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -517,7 +517,7 @@ But now we know that if a graph is a set-valued functor then we can consider $\G
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Spaces}{ / }{Пространства}}\index{space}
+\subsection{\caseENGRUS{Spaces}{ / }{Пространства}}
 
 \begin{blockENG}
 Category theory was invented for use in algebraic topology, and in particular to discuss natural transformations between certain functors. We will get to natural transformations more formally in Section \ref{sec:nat trans}. For now, they are ways of relating functors. In the original use, Eilenberg and Mac Lane were interested in functors that connect topological spaces (shapes like spheres, etc.) to algebraic systems (groups, etc.) 
@@ -540,7 +540,7 @@ There is a relationship between the functor $\pi_1$ and the functor $H_1$. For e
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{exampleENG}\label{ex:topological space}\index{space!topological}\index{topology}
+\begin{exampleENG}\label{ex:topological space}\index{space!topological}\index{topology}\index{space}
 Given a set $X$, recall that $\PP(X)$ denotes the set of subsets of $X$. A {\em topology} on $X$ is a choice of which subsets $U\in\PP(X)$ will be called {\em open sets}. The union of any number of open sets must be considered to be an open set, and the intersection of any finite number of open sets must be considered open. One could say succinctly that a topology on $X$ is a sub-order $\Op(X)\ss\PP(X)$ that is closed under taking finite meets and infinite joins.
 
 A {\em topological space}\index{topological space} is a pair $(X,\Op(X))$, where $X$ is a set and $\Op(X)$ is a topology on $X$. The elements of the set $X$ are called {\em points}. A {\em morphism of topological spaces} (also called a {\em continuous map}) is a function $f\taking X\to Y$ such that for every $V\in\Op(Y)$ the preimage $f^\m1(V)\in\PP(X)$ is actually in $\Op(X)$. That is, such that there exists a dashed arrow making the diagram below commute:
@@ -592,10 +592,10 @@ Every vector space has vector subspaces, ordered by inclusion (the origin is ins
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Groupoids}{ / }{Группоиды}}\label{sec:groupoid}\index{groupoid}
+\subsubsection{\caseENGRUS{Groupoids}{ / }{Группоиды}}\label{sec:groupoid}
 
 \begin{blockENG}
-Groupoids are like groups except a groupoid can have more than one object. 
+Groupoids are like groups except a groupoid can have more than one object\index{groupoid}. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -682,7 +682,7 @@ Consider the set $A$ of all (well-formed) arithmetic expressions in the symbols 
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{The category of propositions}{ / }{Категория утверждений}}\label{sec:propositions}\index{a category!$\Prop$}
+\subsubsection{\caseENGRUS{The category of propositions}{ / }{Категория утверждений}}\label{sec:propositions}
 
 \begin{blockENG}
 Given a domain of discourse, a logical proposition is a statement that is evalued in any model of that domain as either true or “not always true”. For example, in the domain of real numbers we might have the proposition 
@@ -693,7 +693,7 @@ We say that one logical proposition $P$ {\em implies} another proposition $Q$, d
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{exampleENG}
+\begin{exampleENG}\index{a category!$\Prop$}
 We can repeat this idea for non-mathematical statements. Take all possible statements that are verifiable by experiment as objects of a category. Given two such statements, it may be that one implies the other (e.g. “if the speed of light is fixed then there are relativistic effects”). Every statement implies itself (identity) and implication is transitive, so we have a category. 
 \end{exampleENG}
 
@@ -729,10 +729,10 @@ Take again the preorder $J$ of jurisdictions from Exercise \ref{exc:juris 1} and
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{A categorical characterization of $\Set$}{ / }{Категорная характеризация $\Set$}}\index{set!Lawvere's description of}
+\subsubsection{\caseENGRUS{A categorical characterization of $\Set$}{ / }{Категорная характеризация $\Set$}}
 
 \begin{blockENG}
-The category $\Set$ of sets is fundamental in mathematics, but instead of thinking of it as something given or somehow special, it can be shown to merely be a category with certain properties, each of which can be phrased purely categorically. This was shown by Lawvere \cite{Law}. A very readable account is given in \cite{Le2}.
+The category $\Set$ of sets is fundamental in mathematics, but instead of thinking of it as something given or somehow special, it can be shown to merely be a category with certain properties, each of which can be phrased purely categorically. This was shown by Lawvere \cite{Law}\index{set!Lawvere's description of}. A very readable account is given in \cite{Le2}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -740,7 +740,7 @@ The category $\Set$ of sets is fundamental in mathematics, but instead of thinki
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Categories in computer science}{ / }{Категории в теоретической информатике}}\index{CCCs}\index{category!cartesian closed}
+\subsubsection{\caseENGRUS{Categories in computer science}{ / }{Категории в теоретической информатике}}
 
 \begin{blockENG}
 Computer science makes heavy use of trees, graphs, orders, lists, and monoids. We have seen that all of these are naturally viewed in the context of category theory, though it seems that such facts are rarely mentioned explicitly in computer science textbooks. However, categories are also used explicitly in the theory of programming languages (PL). Researchers in that field attempt to understand the connection between what programs are supposed to do (their denotation) and what they actually cause to occur (their operation). Category theory provides a useful mathematical formalism in which to study this.
@@ -750,7 +750,7 @@ Computer science makes heavy use of trees, graphs, orders, lists, and monoids. W
 \end{blockRUS}
 
 \begin{blockENG}
-The kind of category most often considered by a PL researcher is what is known as a {\em Cartesian closed category} or {\em CCC}, which means a category $\mcT$ that has products (like $A\times B$ in $\Set$) and exponential objects (like $B^A$ in $\Set$). $\Set$ is an example of a CCC, but there are others that are more appropriate for actual computation. The objects in a PL person's CCC represent the {\em types} of the language, types such as {\tt integers, strings, floats}. The morphisms represent computable functions, e.g. {\tt length: strings}$\too${\tt integers}. The products allow one to discuss pairs $(a,b)$ where $a$ is of one type and $b$ is of another type. Exponential objects allow one to consider computable functions as things that can be input to a function (e.g. given any computable function {\tt floats}$\to${\tt integers} one can consistently multiply its results by 2 and get a new computable function {\tt floats}$\to${\tt integers}. We will be getting to products in Section \ref{def:products in a cat} and exponential objects in Section \ref{sec:vert and hor}. 
+The kind of category most often considered by a PL researcher is what is known as a {\em Cartesian closed category} or {\em CCC}\index{CCCs}\index{category!cartesian closed}, which means a category $\mcT$ that has products (like $A\times B$ in $\Set$) and exponential objects (like $B^A$ in $\Set$). $\Set$ is an example of a CCC, but there are others that are more appropriate for actual computation. The objects in a PL person's CCC represent the {\em types} of the language, types such as {\tt integers, strings, floats}. The morphisms represent computable functions, e.g. {\tt length: strings}$\too${\tt integers}. The products allow one to discuss pairs $(a,b)$ where $a$ is of one type and $b$ is of another type. Exponential objects allow one to consider computable functions as things that can be input to a function (e.g. given any computable function {\tt floats}$\to${\tt integers} one can consistently multiply its results by 2 and get a new computable function {\tt floats}$\to${\tt integers}. We will be getting to products in Section \ref{def:products in a cat} and exponential objects in Section \ref{sec:vert and hor}. 
 \end{blockENG}
 
 \begin{blockRUS}

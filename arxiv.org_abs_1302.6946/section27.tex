@@ -34,14 +34,14 @@ Create an olog that includes sets $X$ and $Y$, and functions $f\taking X\to Y$ a
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Currying}{ / }{Каррирование}}\label{sec:currying}\index{currying}\index{materials!force extension curves}
+\subsection{\caseENGRUS{Currying}{ / }{Каррирование}}\label{sec:currying}
 
 \begin{blockENG}
-Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to “curry” the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information. 
+Currying is the idea that when a function takes many inputs, we can input them one at a time or all at once. For example, consider the function that takes a material $M$ and an extension $E$ and returns the force transmitted through the material when it is pulled to that extension. This is a function $e\taking \fakebox{a material}\times\fakebox{an extension}\to\fakebox{a force}$. This function takes two inputs at once, but it is convenient to “curry” the second input. Recall that $\Hom_\Set(\fakebox{an extension},\fakebox{a force})$ is the set of theoretical force-extension curves. Currying transforms $e$ into a function $$e'\taking\fakebox{a material}\to\Hom_\Set(\fakebox{an extension},\fakebox{a force}).$$ This is a more convenient way to package the same information.\index{materials!force extension curves}
 \end{blockENG}
 
 \begin{blockRUS}
-Каррирование — это идея о том, что в случае функции нескольких аргументов мы можем подставлять их в функцию или по одному, или все сразу. Например, рассмотрим функцию, которая берет материал $M$ и величину деформации $E$, и возвращает силу, возникающую в материале, если деформировать его соответствующим образом. Это функция $e\taking \fakebox{материал}\times\fakebox{деформация}\to\fakebox{сила}$. Эта функция принимает два аргумента сразу, однако удобно «каррировать» ее второй аргумент. Напомним, что $\Hom_\Set(\fakebox{деформация},\fakebox{сила})$ это множество всех теоретически возможных зависимостей силы от деформации. Каррирование преобразует $e$ в функцию $$e'\taking\fakebox{материал}\to\Hom_\Set(\fakebox{деформация},\fakebox{сила}).$$ Это более удобный способ «упаковать» ту же самую информацию. 
+Каррирование — это идея о том, что в случае функции нескольких аргументов мы можем подставлять их в функцию или по одному, или все сразу. Например, рассмотрим функцию, которая берет материал $M$ и величину деформации $E$, и возвращает силу, возникающую в материале, если деформировать его соответствующим образом. Это функция $e\taking \fakebox{материал}\times\fakebox{деформация}\to\fakebox{сила}$. Эта функция принимает два аргумента сразу, однако удобно «каррировать» ее второй аргумент. Напомним, что $\Hom_\Set(\fakebox{деформация},\fakebox{сила})$ это множество всех теоретически возможных зависимостей силы от деформации. Каррирование преобразует $e$ в функцию $$e'\taking\fakebox{материал}\to\Hom_\Set(\fakebox{деформация},\fakebox{сила}).$$ Это более удобный способ «упаковать» ту же самую информацию.\index{материалы!диаграмма деформации}
 \end{blockRUS}
 
 \begin{blockENG}
@@ -74,14 +74,14 @@ For a finite set $A$, let $|A|\in\NN$ denote the cardinality of (number of eleme
 Для конечного множества $A$, пусть $|A|\in\NN$ обозначает мощность (т.е. число элементов в) $A$. Если оба множества $A$ и $B$ —  конечные (включая возможность того, что одно из них или оба пустые), всегда ли будет верно, что $|B^A|=|B|^{|A|}$?
 \end{exerciseRUS}
 
-\begin{propositionENG}[Currying]\label{prop:curry}
+\begin{propositionENG}[Currying]\label{prop:curry}\index{currying}
 Let $A$ denote a set. For any sets $X,Y$ there is a bijection 
 \begin{align}\label{dia:curry bijection}
 \phi\taking\Hom_\Set(X\times A,Y)\To{\iso}\Hom_\Set(X,Y^A).
 \end{align}
 \end{propositionENG}
 
-\begin{propositionRUS}[Каррирование]\label{prop:curry}
+\begin{propositionRUS}[Каррирование]\label{prop:curry}\index{каррирование}
 Пусть $A$ обозначает множество. Для любых множеств $X,Y$ имеется биекция%
 \endnote{
 TODO: Термин «биекция» встречается раньше определения. Поменять на «изоморфизм» или переместить определение?
@@ -171,7 +171,7 @@ In Example \ref{ex:R2} we said that $\RR^2$ is an abbreviation for $\RR\times\RR
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Arithmetic of sets}{ / }{Арифметика множеств}}\label{sec:arithmetic of sets}\index{set!arithmetic of}\index{множество!арифметика}
+\subsection{\caseENGRUS{Arithmetic of sets}{ / }{Арифметика множеств}}\label{sec:arithmetic of sets}
 
 \begin{blockENG}
 Proposition \ref{prop:arithmetic of sets} summarizes the properties of products, coproducts, and exponentials, and shows them all in a familiar light, namely that of arithmetic. In fact, one can think of the natural numbers as literally being the isomorphism classes of finite sets — that's what they are used for in counting. Consider the standard procedure for counting the elements of a set $S$, say cows in a field: one points to an element in $S$ and simultaneously says “1”, points to another element in $S$ and simultaneously says “2”, and so on until finished. This procedure amounts to nothing more than creating an isomorphism (one-to-one mapping) between $S$ and some set $\ul{n}$. 
@@ -197,7 +197,7 @@ In this proposition, we denote the coproduct of two sets $A$ and $B$ by the nota
 В этом утверждении мы обозначаем копроизведение двух множеств $A$ и $B$ при помощи $A+B$, а не $A\sqcup B$. Это достаточно осмысленное обозначение в более общем случае, и его часто используют. 
 \end{blockRUS}
 
-\begin{propositionENG}\label{prop:arithmetic of sets}
+\begin{propositionENG}\label{prop:arithmetic of sets}\index{set!arithmetic of}
 The following isomorphisms exist for any sets $A,B,$ and $C$ (except for one caveat, see Exercise \ref{exc:0 to the 0}). 
  
 \begin{itemize}
@@ -218,7 +218,7 @@ The following isomorphisms exist for any sets $A,B,$ and $C$ (except for one cav
 \end{itemize}
 \end{propositionENG}
 
-\begin{propositionRUS}\label{prop:arithmetic of sets}
+\begin{propositionRUS}\label{prop:arithmetic of sets}\index{множество!арифметика}
 Следующие изоморфизмы существуют для любых множеств $A,B$ и $C$ (с единственным исключением, см. Упражнение \ref{exc:0 to the 0}). 
  
 \begin{itemize}
@@ -718,7 +718,7 @@ In this section we prepare ourselves for considering categories other than $\Set
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Multisets}{ / }{Мультимножества}}\index{multiset}
+\subsubsection{\caseENGRUS{Multisets}{ / }{Мультимножества}}
 
 \begin{blockENG}
 Consider the set $X$ of words in a given document. If $WC(X)$ is the wordcount of the document, we will not generally have $WC(X)=|X|$. The reason is that a set cannot contain the same element more than once, so words like “the” might be undercounted in $|X|$. A {\em multiset} is a set in which elements can be assigned a multiplicity, i.e. a number of times they are to be counted. 
@@ -756,7 +756,7 @@ In Chapter \ref{chap:categories} we will be getting to the definition of categor
 В Главе \ref{chap:categories} будет представлено определение категории, и тогда вы сможете проверить, соответствует ли ваше понятие отображений определению категории. Для сравнения, вот мое определение отображений мультимножеств.
 \end{blockRUS}
 
-\begin{definitionENG}\label{def:multiset}
+\begin{definitionENG}\label{def:multiset}\index{multiset}
 A {\em multiset} is a sequence $X:=(E,B,\pi)$ where $E$ and $B$ are sets and $\pi\taking E\to B$ is a surjective function. We refer to $E$ as the set of {\em element instances of $X$}, we refer to $B$ as the set of {\em element names of $X$}, and we refer to $\pi$ as the {\em naming function for $X$}. Given an element name $x\in B$, let $\pi^\m1(x)\ss E$ be the preimage; the number of elements in $\pi^\m1(x)$ is called the {\em multiplicity of $x$}.
 
 Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping from $X$ to $Y$}, denoted $f\taking X\to Y$, consists of a pair $(f_1,f_0)$ such that $f_1\taking E\to E'$ and $f_0\taking B\to B'$ are functions and such that the following diagram commutes:
@@ -765,7 +765,7 @@ Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping f
 \end{align}
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:multiset}
+\begin{definitionRUS}\label{def:multiset}\index{мультимножество}
 {\em Мультимножество} это последовательность $X:=(E,B,\pi)$, где $E$ и $B$ — это множества, а $\pi\taking E\to B$ — сюръективная функция. Мы будем называть $E$ множеством {\em экземпляров элементов $X$}, $B$ — множеством {\em имен элементов $X$}, а $\pi$ — {\em именующей функцией $X$}. Для заданного имени элемента $x\in B$, пусть $\pi^\m1(x)\ss E$ это прообраз; число элементов в $\pi^\m1(x)$ называется {\em кратностью $x$}.
 
 Предположим, что $X=(E,B,\pi)$ и $X'=(E',B',\pi')$ — это мультимножества. {\em Отображение из $X$ в $Y$}, обозначаемое $f\taking X\to Y$, это пара $(f_1,f_0)$ функций $f_1\taking E\to E'$ и $f_0\taking B\to B'$, для которых следующая диаграмма коммутирует:
@@ -830,7 +830,7 @@ Consider the multisets described in Exercise \ref{exc:multiset 1}.
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Relative sets}{ / }{Относительные множества}}\label{sec:relative sets}\index{relative set}
+\subsubsection{\caseENGRUS{Relative sets}{ / }{Относительные множества}}\label{sec:relative sets}
 
 \begin{blockENG}
 Let's continue with our ideas from multisets, but now suppose that we have a fixed set $B$ of names that we want to keep once and for all. Whenever someone discusses a set, each element must have a name in $B$. And whenever someone discusses a mapping, it must preserve the names. For example, if $B$ is the set of English words, then every document consists of an ordered set mapping to $B$ (e.g. $1\mapsto \tn{Suppose}, 2\mapsto\tn{that}, 3\mapsto\tn{we},$ etc.) A mapping from document $A$ to document $B$ would send each word found somewhere in $A$ to the same word found somewhere in $B$. This notion is defined carefully below.
@@ -878,7 +878,7 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z$, we can
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Indexed sets}{ / }{Индексированные множества}}\label{sec:indexed sets}\index{indexed set}
+\subsubsection{\caseENGRUS{Indexed sets}{ / }{Индексированные множества}}\label{sec:indexed sets}
 
 \begin{blockENG}
 Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a$. This is called an $A$-indexed set. In category theory we are always interested in the legal mappings between two different structures of the same sort, so we need a notion of $A$-indexed mappings; we do the “obvious thing”.

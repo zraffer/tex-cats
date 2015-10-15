@@ -438,7 +438,7 @@ in $\Fin$. The result about natural numbers {\color{red}follows}.
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{The subobject classifier $\Omega\in\Ob(\mcC\set)$}{ / }{Классификатор подобъектов $\Omega\in\Ob(\mcC\set)$}}\index{subobject classifier!in $\mcC\set$}
+\subsubsection{\caseENGRUS{The subobject classifier $\Omega\in\Ob(\mcC\set)$}{ / }{Классификатор подобъектов $\Omega\in\Ob(\mcC\set)$}}
 
 \begin{blockENG}
 If $\mcC$ is a category then the functor category $\mcC\set$ is a very nice kind of category, called a {\em topos}.\index{topos} Note that when $\mcC=\ul{1}$ is the terminal category, then we have an isomorphism $\mcC\set\iso\Set$, so the category of sets is a special case of a topos. What is so interesting about toposes (or topoi) is that they so nicely generalize many properties of $\Set$. In this short section we investigate only one such property, namely that $\mcC\set$ has a subobject classifier, denoted $\Omega\in\Ob(\mcC\set)$. In the case $\mcC=\ul{1}$, we saw back in Section \ref{def:subobject classifier} that the subobject classifier is $\{True,False\}\in\Ob(\Set)$. 
@@ -466,7 +466,7 @@ $$
 \end{definitionRUS}
 
 \begin{blockENG}
-In terms of databases, what this means is that for every schema $\mcC$ there is some special instance $\Omega_\mcC\in\Ob(\mcC\set)$ that somehow classifies sub-instances. When our schema is the terminal category, $\mcC=\ul{1}$, instances are sets and we saw in Definition \ref{def:subobject classifier} that the subobject classifier is $\Omega_{\ul{1}}=\{True, False\}$. One might think that the subobject classifier for $\mcC\set$ should just consist of a two-element set table-by-table, i.e. that for every $c\in\Ob(\mcC)$ we should have $\Omega_{\mcC}=^?\{True,False\}$, but this is not correct. 
+In terms of databases, what this means is that for every schema $\mcC$ there is some special instance $\Omega_\mcC\in\Ob(\mcC\set)$ that somehow classifies sub-instances.\index{subobject classifier!in $\mcC\set$} When our schema is the terminal category, $\mcC=\ul{1}$, instances are sets and we saw in Definition \ref{def:subobject classifier} that the subobject classifier is $\Omega_{\ul{1}}=\{True, False\}$. One might think that the subobject classifier for $\mcC\set$ should just consist of a two-element set table-by-table, i.e. that for every $c\in\Ob(\mcC)$ we should have $\Omega_{\mcC}=^?\{True,False\}$, but this is not correct. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -743,7 +743,7 @@ Many other scientific disciplines could use the same kind of tool. For example, 
 
 %%%% Subsection %%%%
 
-\subsection{\caseENGRUS{Sheaves}{ / }{Пучки}}\label{sec:sheaves}\index{sheaves}
+\subsection{\caseENGRUS{Sheaves}{ / }{Пучки}}\label{sec:sheaves}
 
 \begin{blockENG}
 Let $X$ be a topological space (see Example \ref{ex:topological space}), such as a sphere. In Section \ref{sec:other targets} we discussed continuous functions out of $X$, and their use in science (e.g. recording temperatures on the earth as a continuous map $X\to[-100,200]$). Sheaves allow us to consider the local-global nature of such maps, taking into account reparable discrepancies in data gathering tools. 
@@ -823,7 +823,7 @@ A presheaf $\mcO$ on $X$ tells us what value-assignments throughout $U$ can exis
 \begin{blockRUS}
 \end{blockRUS}
 
-\begin{definitionENG}\label{def:sheaf}
+\begin{definitionENG}\label{def:sheaf}\index{sheaves}
 Let $X$ be a topological space, let $\Op(X)$ be its partial order of open sets, and let $\mcO\taking\Op(X)\op\to\Set$ be a presheaf. Given an open set $U\ss X$ and a cover $V_1,\ldots, V_n$ of $U$, the following condition is called the {\em sheaf condition}\index{sheaf!condition} for that cover. 
 \begin{description}
 \item [Sheaf condition] Given a sequence $a_1,\ldots,a_n$ where each is a value-assignment $a_i\in\mcO(V_i)$ throughout $V_i$, suppose that for all $i,j$ we have $a_i|_{V_i\cap V_j}=a_j|_{V_i\cap V_j}$; then there is a unique value-assignment $b\in\mcO(U)$ such that $b|_{V_i}=a_i$.
@@ -901,7 +901,7 @@ In Exercises \ref{exc:juris 1} and \ref{exc:juris 2} we discussed the idea of la
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Sheaf of ologged concepts}{ / }{Пучок концептов олога}}\index{olog!sheaf of}
+\subsubsection{\caseENGRUS{Sheaf of ologged concepts}{ / }{Пучок концептов олога}}
 
 \begin{blockENG}
 Definition \ref{def:sheaf} defines what should be called a sheaf of sets. We can discuss sheaves of groups or even sheaves of categories. Here is an application of the latter.
@@ -929,7 +929,7 @@ To every simplicial complex (indeed every ordered set) one can associate a topol
 \end{blockRUS}
 
 \begin{blockENG}
-How does this work in the case of our sheaf $\mcO$ of worldviews? For simplices such as $(A)$ or $(CI)$, the sheaf returns the olog corresponding to that person or shared worldview. But for open sets like the union of $(CIJ)$ and $(IJK)$, what we get is the olog consisting of the types shared by $C, I$, and $J$ for which $I$ and $J$ affirm agreement with types shared by $I, J$, and $K$.
+How does this work in the case of our sheaf $\mcO$ of worldviews?\index{olog!sheaf of} For simplices such as $(A)$ or $(CI)$, the sheaf returns the olog corresponding to that person or shared worldview. But for open sets like the union of $(CIJ)$ and $(IJK)$, what we get is the olog consisting of the types shared by $C, I$, and $J$ for which $I$ and $J$ affirm agreement with types shared by $I, J$, and $K$.
 \end{blockENG}
 
 \begin{blockRUS}
