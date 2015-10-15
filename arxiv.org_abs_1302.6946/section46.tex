@@ -16,7 +16,7 @@ In this section we discuss some leftover notions about categories. For example i
 \subsection{\caseENGRUS{Opposite categories}{ / }{Дуальные категории}}\label{sec:opposite}
 
 \begin{blockENG}
-People used to discuss two different kinds of functors between categories: the so-called {\em covariant functors} and the so-called {\em contravariant functors}. Covariant functors are what we have been calling functors. The reader may have come across the idea of contravariance when considering Exercise~\ref{exc:points and opens in Top}.\footnote{Similarly, see Exercise~\ref{exc:juris 2}.} There we saw that a continuous mapping of topological spaces $f\taking X\to Y$ does not induce a morphism of orders on their open sets $\Op(X)\to\Op(Y)$; that is not required by the notion of continuity. Instead, a morphism of topological spaces $f\taking X\to Y$ induces a morphism of orders $\Op(Y)\to\Op(X)$, going backwards. So we do not have a functor $\Top\to\PrO$ in this way, but it's quite close. One used to say that $\Op$ is a {\em contravariant functor} $\Top\to\PrO$.
+People used to discuss two different kinds of functors between categories: the so-called {\em covariant functors} and the so-called {\em contravariant functors}. Covariant functors are what we have been calling functors. The reader may have come across the idea of contravariance when considering Exercise~\ref{exc:points and opens in Top}.\footnote{Similarly, see Exercise~\ref{exc:juris 2}.} There we saw that a continuous mapping of topological spaces $f\taking X\to Y$ does not induce a morphism of orders on their open sets $\Op(X)\to\Op(Y)$; that is not required by the notion of continuity. Instead, a morphism of topological spaces $f\taking X\to Y$ induces a morphism of orders $\Op(Y)\to\Op(X),$ going backwards. So we do not have a functor $\Top\to\PrO$ in this way, but it's quite close. One used to say that $\Op$ is a {\em contravariant functor} $\Top\to\PrO.$
 \end{blockENG}
 
 \begin{blockRUS}
@@ -30,7 +30,7 @@ As important and common as contravariance is, people found that keeping track of
 \end{blockRUS}
 
 \begin{definitionENG}\index{category!opposite}\index{functor!contravariant}\index{functor!covariant}
-Let $\mcC$ be a category. The {\em opposite category} of $\mcC$, denoted $\mcC\op$,\index{a symbol!$\mcC\op$} has the same objects as $\mcC$, i.e. $\Ob(\mcC\op)=\Ob(\mcC)$, and for any two objects $c,c'$, one defines
+Let $\mcC$ be a category. The {\em opposite category} of $\mcC,$ denoted $\mcC\op,$\index{a symbol!$\mcC\op$} has the same objects as $\mcC,$ i.e. $\Ob(\mcC\op)=\Ob(\mcC),$ and for any two objects $c,c',$ one defines
 $$\Hom_{\mcC\op}(c,c'):=\Hom_\mcC(c',c).$$
 \end{definitionENG}
 
@@ -38,21 +38,21 @@ $$\Hom_{\mcC\op}(c,c'):=\Hom_\mcC(c',c).$$
 \end{definitionRUS}
 
 \begin{exampleENG}
-If $n\in\NN$ is a natural number and $\ul{n}$ the corresponding discrete category, then $\ul{n}\op=\ul{n}$. Recall  the span category $I=\ul{2}\lcone$ from Definition~\ref{def:products in a cat}. Its opposite is the cospan category $I\op=\ul{2}\rcone$, from Definition~\ref{def:coproducts in a cat}.
+If $n\in\NN$ is a natural number and $\ul{n}$ the corresponding discrete category, then $\ul{n}\op=\ul{n}.$ Recall  the span category $I=\ul{2}\lcone$ from Definition~\ref{def:products in a cat}. Its opposite is the cospan category $I\op=\ul{2}\rcone,$ from Definition~\ref{def:coproducts in a cat}.
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Let $\mcC$ be the category from Example~\ref{ex:category of spans}. Draw $\mcC\op$.
+Let $\mcC$ be the category from Example~\ref{ex:category of spans}. Draw $\mcC\op.$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{lemmaENG}
-Let $\mcC$ and $\mcD$ be categories. One has $(\mcC\op)\op=\mcC$. Also we have $\Fun(\mcC,\mcD)\iso\Fun(\mcC\op,\mcD\op)$. This implies that a functor $\mcC\op\to\mcD$ can be identified with a functor $\mcC\to\mcD\op$.
+Let $\mcC$ and $\mcD$ be categories. One has $(\mcC\op)\op=\mcC.$ Also we have $\Fun(\mcC,\mcD)\iso\Fun(\mcC\op,\mcD\op).$ This implies that a functor $\mcC\op\to\mcD$ can be identified with a functor $\mcC\to\mcD\op.$
 \end{lemmaENG}
 
 \begin{lemmaRUS}
@@ -66,16 +66,16 @@ This follows straightforwardly from the definitions.
 \end{proofRUS}
 
 \begin{exerciseENG}
-In Exercises~\ref{exc:points and opens in Top},~\ref{exc:juris 1}, and~\ref{exc:juris 2} there were questions about whether a certain function $\Ob(\mcC)\to\Ob(\mcD)$ extended to a functor $\mcC\to\mcD$. In each case, see if the proposed function would extend to a “contravariant functor” i.e. to a functor $\mcC\op\to\mcD$.
+In Exercises~\ref{exc:points and opens in Top},~\ref{exc:juris 1}, and~\ref{exc:juris 2} there were questions about whether a certain function $\Ob(\mcC)\to\Ob(\mcD)$ extended to a functor $\mcC\to\mcD.$ In each case, see if the proposed function would extend to a “contravariant functor” i.e. to a functor $\mcC\op\to\mcD.$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exampleENG}[Simplicial sets]\label{ex:simplicial set}\index{simplicial set}
-Recall from Example~\ref{ex:finite linear orders} the category $\bD$ of linear orders $[n]$. For example, $[1]$ is the linear order $0\leq 1$ and $[2]$ is the linear order $0\leq 1\leq2$. Both $[1]$ and $[2]$ are objects of $\bD$.\index{a category!$\bD$} There are 6 morphisms from $[1]$ to $[2]$, which we could denote $$\Hom_{\bD}([1],[2])=\{(0,0), (0,1), (0,2), (1,1), (1,2), (2,2)\}.$$
+Recall from Example~\ref{ex:finite linear orders} the category $\bD$ of linear orders $[n].$ For example, $[1]$ is the linear order $0\leq 1$ and $[2]$ is the linear order $0\leq 1\leq2.$ Both $[1]$ and $[2]$ are objects of $\bD.$\index{a category!$\bD$} There are 6 morphisms from $[1]$ to $[2],$ which we could denote $$\Hom_{\bD}([1],[2])=\{(0,0), (0,1), (0,2), (1,1), (1,2), (2,2)\}.$$
 
-It may seem strange, but the category $\bD\op$ turns out to be quite useful in algebraic topology. It is the indexing category for a combinatorial approach to the homotopy theory of spaces. That is, we can represent something like the category of spaces and continuous maps using the functor category $\sSet:=\Fun(\bD\op,\Set)$,\index{a category!$\sSet$} which is called the {\em category of simplicial sets}. 
+It may seem strange, but the category $\bD\op$ turns out to be quite useful in algebraic topology. It is the indexing category for a combinatorial approach to the homotopy theory of spaces. That is, we can represent something like the category of spaces and continuous maps using the functor category $\sSet:=\Fun(\bD\op,\Set),$\index{a category!$\sSet$} which is called the {\em category of simplicial sets}. 
 
 This may seem very complicated compared to something we did earlier, namely simplicial complexes. But simplicial sets have excellent formal properties that simplicial complexes do not. We will not go further with this here, but through the work of Dan Kan, Andr\'{e} Joyal, Jacob Lurie, and many others, simplicial sets have allowed category theory to pierce deeply into the realm of topology and vice versa.
 \end{exampleENG}
@@ -88,7 +88,7 @@ This may seem very complicated compared to something we did earlier, namely simp
 \subsection{\caseENGRUS{Grothendieck construction}{ / }{Конструкция Гротендика}}\label{sec:grothendieck construction}
 
 \begin{blockENG}
-Let $\mcC$ be a database schema (or category) and let $J\taking\mcC\to\Set$ be an instance. We have been drawing this in table form, but there is another standard way of laying out the data in $J$, called the \href{http://en.wikipedia.org/wiki/Resource_Description_Framework}{\em resource descriptive framework} or RDF. Developed for the web, RDF is a useful format when one does not have a schema in hand, e.g. when scraping information off of a website, one does not know what schema will be best. In these cases, information is stored in so-called RDF triples, which are of the form $$\la\tn{Subject, Predicate, Object}\ra$$\index{RDF}
+Let $\mcC$ be a database schema (or category) and let $J\taking\mcC\to\Set$ be an instance. We have been drawing this in table form, but there is another standard way of laying out the data in $J,$ called the \href{http://en.wikipedia.org/wiki/Resource_Description_Framework}{\em resource descriptive framework} or RDF. Developed for the web, RDF is a useful format when one does not have a schema in hand, e.g. when scraping information off of a website, one does not know what schema will be best. In these cases, information is stored in so-called RDF triples, which are of the form $$\la\tn{Subject, Predicate, Object}\ra$$\index{RDF}
 \end{blockENG}
 
 \begin{blockRUS}
@@ -123,22 +123,22 @@ Category-theoretically, it is quite simple to convert a database instance $J\tak
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:grothendieck}\index{category!of elements}\index{Grothendieck!construction}
-Let $\mcC$ be a category and let $J\taking\mcC\to\Set$ be a functor. The {\em category of elements of $J$}, denoted $\int_\mcC J$,\index{a symbol!$\int$} is defined as follows:
+Let $\mcC$ be a category and let $J\taking\mcC\to\Set$ be a functor. The {\em category of elements of $J$}, denoted $\int_\mcC J,$\index{a symbol!$\int$} is defined as follows:
 \begin{align*}
 \Ob(\varint_\mcC J):=&\;\;\{(C,x)\|C\in\Ob(\mcC), x\in J(C)\}.\\
 \Hom_{\int_\mcC J}((C,x),(C',x')):=&\;\;\{f\taking C\to C'\|J(f)(x)=x'\}.
 \end{align*}
 
-There is a natural functor $\pi_J\taking\int_\mcC J\too\mcC$. It sends each object $(C,x)\in\Ob(\int_\mcC J)$ to the object $C\in\Ob(\mcC)$. And it sends each morphism $f\taking (C,x)\to (C',x')$ to the morphism $f\taking C\to C'$. We call $\pi_J$ the {\em projection functor}.
+There is a natural functor $\pi_J\taking\int_\mcC J\too\mcC.$ It sends each object $(C,x)\in\Ob(\int_\mcC J)$ to the object $C\in\Ob(\mcC).$ And it sends each morphism $f\taking (C,x)\to (C',x')$ to the morphism $f\taking C\to C'.$ We call $\pi_J$ the {\em projection functor}.
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:grothendieck}\index{category!of elements}
 \end{definitionRUS}
 
 \begin{exampleENG}
-Let $A$ be a set, and consider it as a discrete category. We saw in Exercise~\ref{exc:indexed sets as functors} that a functor $S\taking A\to\Set$ is the same thing as an $A$-indexed set, as discussed in Section~\ref{sec:indexed sets}. We will follow Definition~\ref{def:indexed sets} and for each $a\in A$ write $S_a:=S(a)$.
+Let $A$ be a set, and consider it as a discrete category. We saw in Exercise~\ref{exc:indexed sets as functors} that a functor $S\taking A\to\Set$ is the same thing as an $A$-indexed set, as discussed in Section~\ref{sec:indexed sets}. We will follow Definition~\ref{def:indexed sets} and for each $a\in A$ write $S_a:=S(a).$
 
-What is the category of elements of a functor $S\taking A\to\Set$? The objects of $\int_AS$ are pairs $(a,s)$ where $a\in A$ and $s\in S(a)$. Since $A$ has nothing but identity morphisms, $\int_AS$ has nothing but identity morphisms; i.e. it is the discrete category on a set. In fact that set is the disjoint union $$\varint_AS=\bigsqcup_{a\in A}S_a.$$ The functor $\pi_S\taking\int_AS\to A$ sends each element in $S_a$ to the element $a\in A$. 
+What is the category of elements of a functor $S\taking A\to\Set?$ The objects of $\int_AS$ are pairs $(a,s)$ where $a\in A$ and $s\in S(a).$ Since $A$ has nothing but identity morphisms, $\int_AS$ has nothing but identity morphisms; i.e. it is the discrete category on a set. In fact that set is the disjoint union $$\varint_AS=\bigsqcup_{a\in A}S_a.$$ The functor $\pi_S\taking\int_AS\to A$ sends each element in $S_a$ to the element $a\in A.$ 
 
 One can see this as a kind of histogram. For example, let $A=\{{\tt BOS, NYC, LA, DC}\}$ and let $S\taking A\to\Set$ assign 
 \begin{align*}
@@ -162,14 +162,14 @@ $$
 \;\;A=\fbox{\xymatrix@=33pt{\hspace{.25in}\LTO{BOS}&\LTO{NYC}&\LTO{LA}&\LTO{DC}\hspace{.2in}}}
 $$
 
-We also see that the category of elements construction has converted an $A$-indexed set into a relative set over $A$, as in Definition~\ref{def:relative sets}.
+We also see that the category of elements construction has converted an $A$-indexed set into a relative set over $A,$ as in Definition~\ref{def:relative sets}.
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{blockENG}
-The above example does not show at all how the Grothendieck construction transforms a database instance into an RDF triple store. The reason is that our database schema was $A$, a discrete category that specifies no connections between data (it simply collects the data into bins). 
+The above example does not show at all how the Grothendieck construction transforms a database instance into an RDF triple store. The reason is that our database schema was $A,$ a discrete category that specifies no connections between data (it simply collects the data into bins). 
 So lets examine a more interesting database schema and instance. This is taken from \cite{Sp2}.
 \end{blockENG}
 
@@ -179,7 +179,7 @@ So lets examine a more interesting database schema and instance. This is taken f
 \begin{applicationENG}\index{RDF!as category of elements}
 Consider the schema below, which we first encountered in Example~\ref{ex:department store 3}:
 \begin{align}\label{dia:basic cat}\mcC:=\MainCatLarge{}\end{align}
-And consider the instance $J\taking\mcC\to\Set$, which we first encountered in (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2})
+And consider the instance $J\taking\mcC\to\Set,$ which we first encountered in (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2})
 
 \begin{align*}
 &\footnotesize
@@ -221,9 +221,9 @@ The category of elements of $J\taking\mcC\to\Set$ looks like this:
 			}}}
 \end{align}~\\
 
-In the above drawing (\ref{dia:Grothendieck}) of $\int_\mcC J$, we left out 10 arrows for ease of readability, for example, we left out an arrow $\LTO{102}\Too{\tt first}\LTO{Bertrand}$.
+In the above drawing (\ref{dia:Grothendieck}) of $\int_\mcC J,$ we left out 10 arrows for ease of readability, for example, we left out an arrow $\LTO{102}\Too{\tt first}\LTO{Bertrand}.$
 
-For the punchline, how do we see the category of elements $\int_\mcC J$ as an RDF triple store? For each arrow in $\int_\mcC J$, we take the triple consisting of the source vertex, the arrow name, and the target vertex. So our triple store would include triples such as $\la{\tt 102\;\; first\;\; Bertrand}\ra$ and $\la{\tt 101\;\; manager\;\; 103}\ra$.
+For the punchline, how do we see the category of elements $\int_\mcC J$ as an RDF triple store? For each arrow in $\int_\mcC J,$ we take the triple consisting of the source vertex, the arrow name, and the target vertex. So our triple store would include triples such as $\la{\tt 102\;\; first\;\; Bertrand}\ra$ and $\la{\tt 101\;\; manager\;\; 103}\ra.$
 \end{applicationENG}
 
 \begin{applicationRUS}\index{RDF!as category of elements}
@@ -244,9 +244,9 @@ The Grothendieck construction takes structured, boxed-up data and flattens it by
 \end{sloganRUS}
 
 \begin{exerciseENG}\label{exc:FSM as elements of monoid action}\index{finite state machine}
-Recall from Section~\ref{sec:FSMs} that a finite state machine is a free monoid $(\List(\Sigma),[\;],\plpl)$ acting on a set $X$. Recall also that we can consider a monoid as a category $\mcM$ with one object and a monoid action as a set-valued functor $F\taking\mcM\to\Set$, (see Section~\ref{sec:monoids as cats}). In the case of Figure~\ref{fig:fsa} the monoid in question is $\List(a,b)$, which can be drawn as the schema
+Recall from Section~\ref{sec:FSMs} that a finite state machine is a free monoid $(\List(\Sigma),[\;],\plpl)$ acting on a set $X.$ Recall also that we can consider a monoid as a category $\mcM$ with one object and a monoid action as a set-valued functor $F\taking\mcM\to\Set,$ (see Section~\ref{sec:monoids as cats}). In the case of Figure~\ref{fig:fsa} the monoid in question is $\List(a,b),$ which can be drawn as the schema
 $$\fbox{\xymatrix{\monOb\ar@(ul,dl)[]_(.3)a\ar@(ul,dl)[]_(.7){~}\ar@(ur,dr)[]^(.3)b\ar@(ur,dr)[]^(.7){~}}}$$
-and the functor $F\taking\mcM\to\Set$ is recorded in an action table in Example~\ref{ex:action table}. What is $\int_\mcM F$? How does it relate to the picture in Figure~\ref{fig:fsa}?
+and the functor $F\taking\mcM\to\Set$ is recorded in an action table in Example~\ref{ex:action table}. What is $\int_\mcM F?$ How does it relate to the picture in Figure~\ref{fig:fsa}?
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:FSM as elements of monoid action}\index{finite state machine}
@@ -257,14 +257,14 @@ and the functor $F\taking\mcM\to\Set$ is recorded in an action table in Example~
 \subsection{\caseENGRUS{Full subcategory}{ / }{Полная подкатегория}}
 
 \begin{definitionENG}\label{def:full subcategory}\index{subcategory!full}
-Let $\mcC$ be a category and let $X\ss\Ob(\mcC)$ be a set of objects in $\mcC$. The {\em full subcategory of $\mcC$ spanned by $X$} is the category, which we denote by $\mcC_{\Ob=X}$, with objects $\Ob(\mcC_{\Ob=X}):=X$ and with morphisms $\Hom_{\mcC_{\Ob=X}}(x,x'):=\Hom_\mcC(x,x')$.
+Let $\mcC$ be a category and let $X\ss\Ob(\mcC)$ be a set of objects in $\mcC.$ The {\em full subcategory of $\mcC$ spanned by $X$} is the category, which we denote by $\mcC_{\Ob=X},$ with objects $\Ob(\mcC_{\Ob=X}):=X$ and with morphisms $\Hom_{\mcC_{\Ob=X}}(x,x'):=\Hom_\mcC(x,x').$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:full subcategory}
 \end{definitionRUS}
 
 \begin{exampleENG}
-The following are examples of full subcategories. We will name them in the form “$X$ inside of $Y$”, and each time we mean that $X$ and $Y$ are names of categories, the category $X$ can be considered as a subcategory of the category $Y$ in some sense, and it is full. In other words, all morphisms in $Y$ “count” as morphisms in $X$.
+The following are examples of full subcategories. We will name them in the form “$X$ inside of $Y$”, and each time we mean that $X$ and $Y$ are names of categories, the category $X$ can be considered as a subcategory of the category $Y$ in some sense, and it is full. In other words, all morphisms in $Y$ “count” as morphisms in $X.$
 \begin{itemize}
 \item Finite sets inside of sets, $\Fin\ss\Set$;
 \item Finite sets of the form $\ul{n}$ inside of $\Fin$;
@@ -288,7 +288,7 @@ A subcategory $\mcC\ss\mcD$ is (up to isomorphism) just a functor $i\taking\mcC\
 \end{remarkRUS}
 
 \begin{exampleENG}
-Let $\mcC$ be a category, let $X\ss\Ob(\mcC)$ be a set of objects, and let $\mcC_{\Ob=X}$ denote the full subcategory of $\mcC$ spanned by $X$. We can realize this as a fiber product of categories. Indeed, recall that for any set, we can form the indiscrete category on that set; see Example~\ref{ex:indiscrete cat equiv to terminal}. In fact, we have a functor $Ind\taking\Set\to\Cat$.\index{a functor!$Ind\taking\Set\to\Cat$} Thus our function $X\to\Ob(\mcC)$ can be converted into a functor between indiscrete categories $Ind(X)\to Ind(\Ob(\mcC))$. There is also a functor $\mcC\to Ind(\Ob(\mcC))$ sending each object to itself. Then the full subcategory of $\mcC$ spanned by $X$ is the fiber product of categories,
+Let $\mcC$ be a category, let $X\ss\Ob(\mcC)$ be a set of objects, and let $\mcC_{\Ob=X}$ denote the full subcategory of $\mcC$ spanned by $X.$ We can realize this as a fiber product of categories. Indeed, recall that for any set, we can form the indiscrete category on that set; see Example~\ref{ex:indiscrete cat equiv to terminal}. In fact, we have a functor $Ind\taking\Set\to\Cat.$\index{a functor!$Ind\taking\Set\to\Cat$} Thus our function $X\to\Ob(\mcC)$ can be converted into a functor between indiscrete categories $Ind(X)\to Ind(\Ob(\mcC)).$ There is also a functor $\mcC\to Ind(\Ob(\mcC))$ sending each object to itself. Then the full subcategory of $\mcC$ spanned by $X$ is the fiber product of categories,
 $$\xymatrix{\mcC_{\Ob=X}\ar[r]\ar[d]&\mcC\ar[d]\\Ind(X)\ar[r]&Ind(\Ob(\mcC))}$$
 \end{exampleENG}
 
@@ -296,7 +296,7 @@ $$\xymatrix{\mcC_{\Ob=X}\ar[r]\ar[d]&\mcC\ar[d]\\Ind(X)\ar[r]&Ind(\Ob(\mcC))}$$
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Including all identities and all compositions, how many morphisms are there in the full subcategory of $\Set$ spanned by the objects $\{\ul{0},\ul{1},\ul{2}\}$? Write them out.
+Including all identities and all compositions, how many morphisms are there in the full subcategory of $\Set$ spanned by the objects $\{\ul{0},\ul{1},\ul{2}\}?$ Write them out.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -314,30 +314,30 @@ Category theory includes a highly developed and interoperable catalogue of mater
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:comma category}\index{category!comma}
-Let $\mcA,\mcB,$ and $\mcC$ be categories and let $F\taking\mcA\to\mcC$ and $G\taking\mcB\to\mcC$ be functors. The {\em comma category of $\mcC$ morphisms from $F$ to $G$}, denoted $(F\down_\mcC G)$ or simply $(F\down G)$,\index{a symbol!$(F\down G)$} is the category with objects $$\Ob(F\down G)=\{(a,b,f)\|a\in\Ob(\mcA), b\in\Ob(\mcB), f\taking F(a)\to G(b)\tn{ in }\mcC\}$$ and for any two objects $(a,b,f)$ and $(a',b',f')$ the set $\Hom_{(F\down G)}((a,b,f),(a',b',f'))$ of morphisms $(a,b,f)\too(a',b',f')$ is 
+Let $\mcA,\mcB,$ and $\mcC$ be categories and let $F\taking\mcA\to\mcC$ and $G\taking\mcB\to\mcC$ be functors. The {\em comma category of $\mcC$ morphisms from $F$ to $G$}, denoted $(F\down_\mcC G)$ or simply $(F\down G),$\index{a symbol!$(F\down G)$} is the category with objects $$\Ob(F\down G)=\{(a,b,f)\|a\in\Ob(\mcA), b\in\Ob(\mcB), f\taking F(a)\to G(b)\tn{ in }\mcC\}$$ and for any two objects $(a,b,f)$ and $(a',b',f')$ the set $\Hom_{(F\down G)}((a,b,f),(a',b',f'))$ of morphisms $(a,b,f)\too(a',b',f')$ is 
 $$\{(q,r)\|q\taking a\to a'\tn{ in }\mcA,\;\; r\taking b\to b'\tn{ in }\mcB,\tn{ such that } f'\circ F(q)=G(r)\circ f\}.$$
 In pictures,
 $$\Hom_{(F\down G)}((a,b,f),(a',b',f')):=\left\{\parbox{2in}{\xymatrix{
 a\ar[d]_q&F(a)\ar@{}[dr]|{\checkmark}\ar[r]^f\ar[d]_{F(q)}&G(b)\ar[d]^{G(r)}&b\ar[d]^r\\
 a'&F(a')\ar[r]_{f'}&G(b')&b'
 }}\right\}$$
-We refer to the diagram $\mcA\To{F}\mcC\From{G}\mcB$ (in $\Cat$) as the {\em setup} for the comma category $(F\down G)$.
+We refer to the diagram $\mcA\To{F}\mcC\From{G}\mcB$ (in $\Cat$) as the {\em setup} for the comma category $(F\down G).$
 
-There is a canonical functor $(F\down G)\to\mcA$ called {\em left projecton}, sending $(a,b,f)$ to $a$, and a canonical functor $(F\down G)\to\mcB$ called {\em right projection}, sending $(a,b,f)$ to $b$. 
+There is a canonical functor $(F\down G)\to\mcA$ called {\em left projecton}, sending $(a,b,f)$ to $a,$ and a canonical functor $(F\down G)\to\mcB$ called {\em right projection}, sending $(a,b,f)$ to $b.$ 
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:comma category}
 \end{definitionRUS}
 
 \begin{blockENG}
-A setup $\mcA\To{F}\mcC\From{G}\mcB$ is reversable; i.e. we can flip it to obtain $\mcB\To{G}\mcC\From{F}\mcA$. However, note that $(F\down G)$ is different than (i.e. almost never equivalent to) $(G\down F)$, unless every arrow in $\mcC$ is an isomorphism.
+A setup $\mcA\To{F}\mcC\From{G}\mcB$ is reversable; i.e. we can flip it to obtain $\mcB\To{G}\mcC\From{F}\mcA.$ However, note that $(F\down G)$ is different than (i.e. almost never equivalent to) $(G\down F),$ unless every arrow in $\mcC$ is an isomorphism.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{sloganENG}
-When two categories $\mcA,\mcB$ can be interpreted in a common setting $\mcC$, the comma category integrates them by recording how to move from $\mcA$ to $\mcB$ inside $\mcC$.
+When two categories $\mcA,\mcB$ can be interpreted in a common setting $\mcC,$ the comma category integrates them by recording how to move from $\mcA$ to $\mcB$ inside $\mcC.$
 \end{sloganENG}
 
 \begin{sloganRUS}
@@ -346,18 +346,18 @@ When two categories $\mcA,\mcB$ can be interpreted in a common setting $\mcC$, t
 \begin{exampleENG}
 Let $\mcC$ be a category and $I\taking\mcC\to\Set$ a functor. In this example we show that the comma category construction captures the notion of taking the category of elements $\int_\mcC I$; see Definition~\ref{def:grothendieck}. 
 
-Consider the set $\ul{1}$, the category $Disc(\ul{1})$, and the functor $F\taking Disc(\ul{1})\to\Set$ sending the unique object to the set $\ul{1}$. We use the comma category setup $\ul{1}\Too{F}\Set\Fromm{I}\mcC$. There is an isomorphism of categories 
+Consider the set $\ul{1},$ the category $Disc(\ul{1}),$ and the functor $F\taking Disc(\ul{1})\to\Set$ sending the unique object to the set $\ul{1}.$ We use the comma category setup $\ul{1}\Too{F}\Set\Fromm{I}\mcC.$ There is an isomorphism of categories 
 $$\int_\mcC I\iso (F\down I).$$
-Indeed, an object in $(F\down I)$ is a triple $(a,b,f)$ where $a\in\Ob(\ul{1}), b\in\Ob(\mcC)$, and $f\taking F(a)\to I(b)$ is a morphism in $\Set$. There is only one object in $\ul{1}$, so this reduces to a pair $(b,f)$ where $b\in\Ob(\mcC)$ and $f\taking \singleton\to I(b)$. The set of functions $\singleton\to I(b)$ is isomorphic to $I(b)$, as we saw in Exercise~\ref{exc:generator for set}. So we have reduced $\Ob(F\down I)$ to the set of pairs $(b,x)$ where $b\in\Ob(\mcC)$ and $x\in I(b)$; this is $\Ob(\int_\mcC I)$. Because there is only one function $\ul{1}\to\ul{1}$, a morphism $(b,x)\to(b',x')$ in $(F\down I)$ boils down to a morphism $r\taking b\to b'$ such that the diagram 
+Indeed, an object in $(F\down I)$ is a triple $(a,b,f)$ where $a\in\Ob(\ul{1}), b\in\Ob(\mcC),$ and $f\taking F(a)\to I(b)$ is a morphism in $\Set.$ There is only one object in $\ul{1},$ so this reduces to a pair $(b,f)$ where $b\in\Ob(\mcC)$ and $f\taking \singleton\to I(b).$ The set of functions $\singleton\to I(b)$ is isomorphic to $I(b),$ as we saw in Exercise~\ref{exc:generator for set}. So we have reduced $\Ob(F\down I)$ to the set of pairs $(b,x)$ where $b\in\Ob(\mcC)$ and $x\in I(b)$; this is $\Ob(\int_\mcC I).$ Because there is only one function $\ul{1}\to\ul{1},$ a morphism $(b,x)\to(b',x')$ in $(F\down I)$ boils down to a morphism $r\taking b\to b'$ such that the diagram 
 $$\xymatrix{\ul{1}\ar[r]^x\ar@{=}[d]&I(b)\ar[d]^{I(r)}\\\ul{1}\ar[r]_{x'}&I(b')}$$
-commutes. But such diagrams are in one-to-one correspondence with the diagrams needed for morphisms in $\int_\mcC I$.
+commutes. But such diagrams are in one-to-one correspondence with the diagrams needed for morphisms in $\int_\mcC I.$
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Let $\mcC$ be a category and let $c,c'\in\Ob(\mcC)$ be objects. Consider them as functors $c,c'\taking\ul{1}\to\mcC$, and consider the setup $\ul{1}\Too{c}\mcC\Fromm{c'}\ul{1}$. What is the comma category $(c\down c')$?
+Let $\mcC$ be a category and let $c,c'\in\Ob(\mcC)$ be objects. Consider them as functors $c,c'\taking\ul{1}\to\mcC,$ and consider the setup $\ul{1}\Too{c}\mcC\Fromm{c'}\ul{1}.$ What is the comma category $(c\down c')?$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -375,14 +375,14 @@ In Section~\ref{sec:arithmetic of sets}, we summarized some of the properties of
 \end{blockRUS}
 
 \begin{blockENG}
-In the following proposition, we denote the coproduct of two categories $\mcA$ and $\mcB$ by the notation $\mcA+\mcB$ rather than $\mcA\sqcup\mcB$. We also denote the functor category $\Fun(\mcA,\mcB)$ by $\mcB^\mcA$. Finally, we use $\ul{0}$ and $\ul{1}$ to refer to the discrete category on 0 and on 1 object, respectively.
+In the following proposition, we denote the coproduct of two categories $\mcA$ and $\mcB$ by the notation $\mcA+\mcB$ rather than $\mcA\sqcup\mcB.$ We also denote the functor category $\Fun(\mcA,\mcB)$ by $\mcB^\mcA.$ Finally, we use $\ul{0}$ and $\ul{1}$ to refer to the discrete category on 0 and on 1 object, respectively.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{propositionENG}\label{prop:arithmetic of cats}\index{category!arithmetic of}
-The following isomorphisms exist for any small categories $\mcA,\mcB,$ and $\mcC$.
+The following isomorphisms exist for any small categories $\mcA,\mcB,$ and $\mcC.$
 
 \begin{itemize}
 \item $\mcA+\ul{0}\iso \mcA$
@@ -395,7 +395,7 @@ The following isomorphisms exist for any small categories $\mcA,\mcB,$ and $\mcC
 \item $\mcA\times(\mcB+\mcC)\iso (\mcA\times \mcB)+(\mcA\times \mcC)$
 \item $\mcA^{\ul{0}}\iso \ul{1}$
 \item $\mcA^{\ul{1}}\iso \mcA$
-\item $\ul{0}^\mcA\iso\ul{0}$,\;\; if $\mcA\neq\ul{0}$
+\item $\ul{0}^\mcA\iso\ul{0},$\;\; if $\mcA\neq\ul{0}$
 \item $\ul{1}^\mcA\iso\ul{1}$
 \item $\mcA^{\mcB+\mcC}\iso \mcA^\mcB\times \mcA^\mcC$
 \item $(\mcA^\mcB)^\mcC\iso \mcA^{\mcB\times \mcC}$

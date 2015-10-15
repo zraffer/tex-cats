@@ -56,24 +56,24 @@ Here is the definition, which we take directly from \cite{Sp4}.
 \begin{definitionENG}\label{def:operad}
 An {\em operad} $\mcO$ is defined as follows: One announces some constituents (A. objects, B. morphisms, C. identities, D. compositions) and asserts that they conform to some laws (1. identity law, 2. associativity law). Specifically, 
 \begin{enumerate}[\hsp A.]
-\item one announces a collection $\Ob(\mcO)$, each element of which is called an {\em object} of $\mcO$.
-\item for each object $y\in\Ob(\mcO)$, finite set $n\in\Ob(\Fin)$, and $n$-indexed set of objects $x\taking n\to\Ob(\mcO)$, one announces a set $\mcO_n(x;y)\in\Ob(\Set)$. Its elements are called {\em morphisms from $x$ to $y$} in $\mcO$. 
-\item for every object $x\in\Ob(\mcO)$, one announces a specified morphism denoted $\id_x\in\mcO_1(x;x)$ called {\em the identity morphism on $x$}.
-\item Let $s\taking m\to n$ be a morphism in $\Fin$. Let $z\in\Ob(\mcO)$ be an object, let $y\taking n\to\Ob(\mcO)$ be an $n$-indexed set of objects, and let $x\taking m\to\Ob(\mcO)$ be an $m$-indexed set of objects. For each element $i\in n$, write $m_i:=s^\m1(i)$ for the pre-image of $s$ under $i$, and write $x_i=x|_{m_i}\taking m_i\to\Ob(\mcO)$ for the restriction of $x$ to $m_i$. Then one announces a function 
+\item one announces a collection $\Ob(\mcO),$ each element of which is called an {\em object} of $\mcO.$
+\item for each object $y\in\Ob(\mcO),$ finite set $n\in\Ob(\Fin),$ and $n$-indexed set of objects $x\taking n\to\Ob(\mcO),$ one announces a set $\mcO_n(x;y)\in\Ob(\Set).$ Its elements are called {\em morphisms from $x$ to $y$} in $\mcO.$ 
+\item for every object $x\in\Ob(\mcO),$ one announces a specified morphism denoted $\id_x\in\mcO_1(x;x)$ called {\em the identity morphism on $x$}.
+\item Let $s\taking m\to n$ be a morphism in $\Fin.$ Let $z\in\Ob(\mcO)$ be an object, let $y\taking n\to\Ob(\mcO)$ be an $n$-indexed set of objects, and let $x\taking m\to\Ob(\mcO)$ be an $m$-indexed set of objects. For each element $i\in n,$ write $m_i:=s^\m1(i)$ for the pre-image of $s$ under $i,$ and write $x_i=x|_{m_i}\taking m_i\to\Ob(\mcO)$ for the restriction of $x$ to $m_i.$ Then one announces a function 
 \begin{align}\label{dia:composition formula}
 \circ\taking\mcO_n(y;z)\times\prod_{i\in n}\mcO_{m_i}(x_i;y(i))\too\mcO_{m}(x;z),
 \end{align} 
 called {\em the composition formula}.
 \end{enumerate}
-Given an $n$-indexed set of objects $x\taking n\to\Ob(\mcO)$ and an object $y\in\Ob(\mcO)$, we sometimes abuse notation and denote the set of morphisms from $x$ to $y$ by $\mcO(x_1,\ldots,x_n;y)$.
-\footnote{There are three abuses of notation when writing $\mcO(x_1,\ldots,x_n;y)$, which we will fix one by one. First, it confuses the set $n\in\Ob(\Fin)$ with its cardinality $|n|\in\NN$. But rather than writing $\mcO(x_1,\ldots,x_{|n|};y)$, it would be more consistent to write $\mcO(x(1),\ldots,x(|n|);y)$, because we have assigned subscripts another meaning in part D. But even this notation unfoundedly suggests that the set $n$ has been endowed with a linear ordering, which it has not. This may be seen as a more serious abuse, but see Remark~\ref{rem:symmetry}.}
-We may write $\Hom_\mcO(x_1,\ldots,x_n;y)$, in place of $\mcO(x_1,\ldots,x_n;y)$, when convenient. We can denote a morphism $\phi\in\mcO_n(x;y)$ by $\phi\taking x\to y$ or by $\phi\taking (x_1,\ldots,x_n)\to y$; we say that each $x_i$ is a {\em domain object} of $\phi$ and that $y$ is the {\em codomain object} of $\phi$. We use infix notation for the composition formula, e.g. writing $\psi\circ(\phi_1,\ldots,\phi_n)$.
+Given an $n$-indexed set of objects $x\taking n\to\Ob(\mcO)$ and an object $y\in\Ob(\mcO),$ we sometimes abuse notation and denote the set of morphisms from $x$ to $y$ by $\mcO(x_1,\ldots,x_n;y).$
+\footnote{There are three abuses of notation when writing $\mcO(x_1,\ldots,x_n;y),$ which we will fix one by one. First, it confuses the set $n\in\Ob(\Fin)$ with its cardinality $|n|\in\NN.$ But rather than writing $\mcO(x_1,\ldots,x_{|n|};y),$ it would be more consistent to write $\mcO(x(1),\ldots,x(|n|);y),$ because we have assigned subscripts another meaning in part D. But even this notation unfoundedly suggests that the set $n$ has been endowed with a linear ordering, which it has not. This may be seen as a more serious abuse, but see Remark~\ref{rem:symmetry}.}
+We may write $\Hom_\mcO(x_1,\ldots,x_n;y),$ in place of $\mcO(x_1,\ldots,x_n;y),$ when convenient. We can denote a morphism $\phi\in\mcO_n(x;y)$ by $\phi\taking x\to y$ or by $\phi\taking (x_1,\ldots,x_n)\to y$; we say that each $x_i$ is a {\em domain object} of $\phi$ and that $y$ is the {\em codomain object} of $\phi.$ We use infix notation for the composition formula, e.g. writing $\psi\circ(\phi_1,\ldots,\phi_n).$
 
 One asserts that the following laws hold:
 \begin{enumerate}[\hsp 1.]
-\item for every $x_1,\ldots,x_n,y\in\Ob(\mcO)$ and every morphism $\phi\taking(x_1,\ldots,x_n)\to y$, we have
+\item for every $x_1,\ldots,x_n,y\in\Ob(\mcO)$ and every morphism $\phi\taking(x_1,\ldots,x_n)\to y,$ we have
 $$\phi\circ(\id_{x_1},\ldots,\id_{x_n})=\phi\hsp\tn{and}\hsp\id_y\circ\phi=\phi;$$
-\item Let $m\To{s}n\To{t}p$ be composable morphisms in $\Fin$. Let $z\in\Ob(\mcO)$ be an object, let $y\taking p\to\Ob(\mcO)$, $x\taking n\to\Ob(\mcO)$, and $w\taking m\to\Ob(\mcO)$ respectively be a $p$-indexed, $n$-indexed, and $m$-indexed set of objects. For each $i\in p$, write $n_i=t^\m1(i)$ for the pre-image and $x_i\taking n_i\to\Ob(\mcO)$ for the restriction. Similarly, for each $k\in n$ write $m_k=s^\m1(k)$ and $w_k\taking m_k\to\Ob(\mcO)$; for each $i\in p$, write $m_{i,-}=(t\circ s)^\m1(i)$ and $w_{i,-}\taking m_{i,-}\to\Ob(\mcO)$; for each $j\in n_i$, write $m_{i,j}:=s^\m1(j)$ and $w_{i,j}\taking m_{i,j}\to\Ob(\mcO)$. Then the diagram below commutes:
+\item Let $m\To{s}n\To{t}p$ be composable morphisms in $\Fin.$ Let $z\in\Ob(\mcO)$ be an object, let $y\taking p\to\Ob(\mcO),$ $x\taking n\to\Ob(\mcO),$ and $w\taking m\to\Ob(\mcO)$ respectively be a $p$-indexed, $n$-indexed, and $m$-indexed set of objects. For each $i\in p,$ write $n_i=t^\m1(i)$ for the pre-image and $x_i\taking n_i\to\Ob(\mcO)$ for the restriction. Similarly, for each $k\in n$ write $m_k=s^\m1(k)$ and $w_k\taking m_k\to\Ob(\mcO)$; for each $i\in p,$ write $m_{i,-}=(t\circ s)^\m1(i)$ and $w_{i,-}\taking m_{i,-}\to\Ob(\mcO)$; for each $j\in n_i,$ write $m_{i,j}:=s^\m1(j)$ and $w_{i,j}\taking m_{i,j}\to\Ob(\mcO).$ Then the diagram below commutes:
 $$\hspace{-1.4in}\xymatrix@=18pt{
 &
 {\hspace{.9in}\color{white}\prod\color{black}}
@@ -106,27 +106,27 @@ $$
 \begin{remarkENG}\label{rem:symmetry}
 In this remark we will discuss the abuse of notation in Definition~\ref{def:operad} and how it relates to an action of a symmetric group on each morphism set in our definition of operad. We follow the notation of Definition~\ref{def:operad}, especially following the use of subscripts in the composition formula.
 
-Suppose that $\mcO$ is an operad, $z\in\Ob(\mcO)$ is an object, $y\taking n\to\Ob(\mcO)$ is an $n$-indexed set of objects, and $\phi\taking y\to z$ is a morphism. If we linearly order $n$, enabling us to write $\phi\taking (y(1),\ldots,y(|n|))\to z$, then changing the linear ordering amounts to finding an isomorphism of finite sets $\sigma\taking m\To{\iso} n$, where $|m|=|n|$. Let $x=y\circ\sigma$ and for each $i\in n$, note that $m_i=\sigma^\m1(\{i\})=\{\sigma^\m1(i)\}$, so $x_i=x|_{\sigma^\m1(i)}=y(i)$. Taking $\id_{x_i}\in\mcO_{m_i}(x_i;y(i))$ for each $i\in n$, and using the identity law, we find that the composition formula induces a bijection $\mcO_n(y;z)\To{\iso}\mcO_m(x;z)$, which we might denote by 
+Suppose that $\mcO$ is an operad, $z\in\Ob(\mcO)$ is an object, $y\taking n\to\Ob(\mcO)$ is an $n$-indexed set of objects, and $\phi\taking y\to z$ is a morphism. If we linearly order $n,$ enabling us to write $\phi\taking (y(1),\ldots,y(|n|))\to z,$ then changing the linear ordering amounts to finding an isomorphism of finite sets $\sigma\taking m\To{\iso} n,$ where $|m|=|n|.$ Let $x=y\circ\sigma$ and for each $i\in n,$ note that $m_i=\sigma^\m1(\{i\})=\{\sigma^\m1(i)\},$ so $x_i=x|_{\sigma^\m1(i)}=y(i).$ Taking $\id_{x_i}\in\mcO_{m_i}(x_i;y(i))$ for each $i\in n,$ and using the identity law, we find that the composition formula induces a bijection $\mcO_n(y;z)\To{\iso}\mcO_m(x;z),$ which we might denote by 
 $$\sigma\taking\mcO(y(1),y(2),\ldots,y(n);z)\iso\mcO\big(y(\sigma(1)),y(\sigma(2)),\ldots,y(\sigma(n));z\big).$$
-In other words, there is an induced group action of $\Aut(n)$ on $\mcO_n(x;z)$, where $\Aut(n)$ is the group of permutations of an $n$-element set.
+In other words, there is an induced group action of $\Aut(n)$ on $\mcO_n(x;z),$ where $\Aut(n)$ is the group of permutations of an $n$-element set.
 
-Throughout this book, we will permit ourselves to abuse notation and speak of morphisms $\phi\taking (x_1,x_2,\ldots,x_n)\to y$ for a natural number $n\in\NN$, without mentioning the abuse inherent in choosing an order, so long as it is clear that permuting the order of indices would not change anything up to canonical isomorphism.
+Throughout this book, we will permit ourselves to abuse notation and speak of morphisms $\phi\taking (x_1,x_2,\ldots,x_n)\to y$ for a natural number $n\in\NN,$ without mentioning the abuse inherent in choosing an order, so long as it is clear that permuting the order of indices would not change anything up to canonical isomorphism.
 \end{remarkENG}
 
 \begin{remarkRUS}\label{rem:symmetry}
 \end{remarkRUS}
 
 \begin{exampleENG}\index{an operad!$\Sets$}
-Let $\Sets$ denote the operad defined as follows. For objects we put $\Ob(\Sets)=\Ob(\Set)$. For a natural number $n\in\NN$ and sets $X_1,\ldots,X_n,Y$, put 
+Let $\Sets$ denote the operad defined as follows. For objects we put $\Ob(\Sets)=\Ob(\Set).$ For a natural number $n\in\NN$ and sets $X_1,\ldots,X_n,Y,$ put 
 $$\Hom_\Sets(X_1,\ldots,X_n;Y):=\Hom_\Set(X_1\times\cdots\times X_n,Y).$$
-Given functions $f_1\taking(X_{1,1}\times\cdots\times X_{1,m_1})\to Y_1$ through $f_n\taking (X_{n,1}\times\cdots\times X_{n,m_n})\to Y_n$ and a function $Y_1\times\cdots\times Y_n\to Z$, the universal property provides us a unique function of the form $(X_{1,1}\times\cdots\times X_{n,m_n})\too Z$, giving rise to our composition formula.
+Given functions $f_1\taking(X_{1,1}\times\cdots\times X_{1,m_1})\to Y_1$ through $f_n\taking (X_{n,1}\times\cdots\times X_{n,m_n})\to Y_n$ and a function $Y_1\times\cdots\times Y_n\to Z,$ the universal property provides us a unique function of the form $(X_{1,1}\times\cdots\times X_{n,m_n})\too Z,$ giving rise to our composition formula.
 \end{exampleENG}
 
 \begin{exampleRUS}\index{an operad!$\Sets$}
 \end{exampleRUS}
 
 \begin{exampleENG}[Little squares operad]\label{ex:little squares}\index{an operad!little squares}
-An operad commonly used in mathematics is called the {\em little $n$-cubes operad}\index{an operad!little $n$-cubes}. We'll focus on $n=2$ and talk about the little squares operad $\mcO$. Here the set of objects has only one element, which we denote by a square, $\Ob(\mcO)=\{\square\}$. For a natural number $n\in\NN$, a morphism $f\taking(\square,\square,\ldots,\square)\too\square$ is a positioning of $n$ non-overlapping squares inside of a square. Here is a picture of a morphism $(X_1,X_2,X_3)\to Y$, where $X_1=X_2=X_3=Y=\square$.
+An operad commonly used in mathematics is called the {\em little $n$-cubes operad}\index{an operad!little $n$-cubes}. We'll focus on $n=2$ and talk about the little squares operad $\mcO.$ Here the set of objects has only one element, which we denote by a square, $\Ob(\mcO)=\{\square\}.$ For a natural number $n\in\NN,$ a morphism $f\taking(\square,\square,\ldots,\square)\too\square$ is a positioning of $n$ non-overlapping squares inside of a square. Here is a picture of a morphism $(X_1,X_2,X_3)\to Y,$ where $X_1=X_2=X_3=Y=\square.$
 \begin{center}
 \includegraphics[height=2in]{square1}
 \end{center}
@@ -135,7 +135,7 @@ The composition law says that given a positioning of small squares inside a larg
 \begin{center}
 \includegraphics[width=\textwidth]{square2}
 \end{center}
-\caption{Here we show a morphism $(X_1,X_2,X_3)\to Y$ and morphisms $(W_{1,1},W_{1,2})\to X_1$, $(W_{2,1},W_{2,2},W_{2,3})\to X_2$, and $(W_{3,1})\to X_3$, each of which is a positioning of squares inside a square. The composition law scales and positions the squares in the “obvious” way.}
+\caption{Here we show a morphism $(X_1,X_2,X_3)\to Y$ and morphisms $(W_{1,1},W_{1,2})\to X_1,$ $(W_{2,1},W_{2,2},W_{2,3})\to X_2,$ and $(W_{3,1})\to X_3,$ each of which is a positioning of squares inside a square. The composition law scales and positions the squares in the “obvious” way.}
 \label{fig:composition law for squares}
 \end{figure}
 
@@ -148,7 +148,7 @@ Hopefully, what we meant by “self-similarity” in the introduction to this se
 \begin{exerciseENG}\label{exc:little shapes}
 Consider an operad $\mcO$ like the little squares operad from Example~\ref{ex:little squares}, except with three objects: square, circle, equilateral triangle. A morphism is again a non-overlapping positioning of shapes inside of a shape. 
 \sexc Draw an example of a morphism $f$ from two circles and a square to a triangle.
-\item Find three other morphisms that compose into $f$, and draw the composite.
+\item Find three other morphisms that compose into $f,$ and draw the composite.
 \endsexc
 \end{exerciseENG}
 
@@ -176,13 +176,13 @@ What we call operad functors in Definition~\ref{def:operad morphism} are usually
 \begin{definitionENG}\label{def:operad morphism}\index{operad!morphism of}
 Let $\mcO$ and $\mcO'$ be operads. An {\em operad functor from $\mcO$ to $\mcO'$}, denoted $F\taking\mcO\to\mcO'$ consists of some constituents (A. on-objects part, B. on-morphisms part) conforming to some laws (1. preservation of identities, 2. preservation of composition), as follows:
 \begin{enumerate}[\hsp A.]
-\item There is a function $\Ob(F)\taking\Ob(\mcO)\to\Ob(\mcO')$.
-\item For each object $y\in\Ob(\mcO)$, finite set $n\in\Ob(\Fin)$, and $n$-indexed set of objects $x\taking n\to\Ob(\mcO)$, there is a function $$F_n\taking\mcO_n(x;y)\to\mcO'_n(Fx;Fy).$$
+\item There is a function $\Ob(F)\taking\Ob(\mcO)\to\Ob(\mcO').$
+\item For each object $y\in\Ob(\mcO),$ finite set $n\in\Ob(\Fin),$ and $n$-indexed set of objects $x\taking n\to\Ob(\mcO),$ there is a function $$F_n\taking\mcO_n(x;y)\to\mcO'_n(Fx;Fy).$$
 \end{enumerate}
-As in B. above, we often denote $\Ob(F)$, and also each $F_n$, simply by $F$. The laws that govern these constituents are as follows:
+As in B. above, we often denote $\Ob(F),$ and also each $F_n,$ simply by $F.$ The laws that govern these constituents are as follows:
 \begin{enumerate}[\hsp 1.]
-\item For each object $x\in\Ob(\mcO)$, the equation $F(\id_x)=\id_{Fx}$ holds.
-\item Let $s\taking m\to n$ be a morphism in $\Fin$. Let $z\in\Ob(\mcO)$ be an object, let $y\taking n\to\Ob(\mcO)$ be an $n$-indexed set of objects, and let $x\taking m\to\Ob(\mcO)$ be an $m$-indexed set of objects. Then, with notation as in Definition~\ref{def:operad}, the following diagram of sets commutes:
+\item For each object $x\in\Ob(\mcO),$ the equation $F(\id_x)=\id_{Fx}$ holds.
+\item Let $s\taking m\to n$ be a morphism in $\Fin.$ Let $z\in\Ob(\mcO)$ be an object, let $y\taking n\to\Ob(\mcO)$ be an $n$-indexed set of objects, and let $x\taking m\to\Ob(\mcO)$ be an $m$-indexed set of objects. Then, with notation as in Definition~\ref{def:operad}, the following diagram of sets commutes:
 \begin{align}\label{dia:operad functor on composition}
 \xymatrix{
 \mcO_n(y;z)\times\prod_{i\in n}\mcO_{m_i}(x_i;y(i))\ar[r]^-F\ar[d]_\circ&
@@ -192,7 +192,7 @@ As in B. above, we often denote $\Ob(F)$, and also each $F_n$, simply by $F$. Th
 \end{align}
 \end{enumerate}
 
-We denote the category of operads and operad functors by $\Oprd$.
+We denote the category of operads and operad functors by $\Oprd.$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:operad morphism}\index{operad!morphism of}
@@ -200,8 +200,8 @@ We denote the category of operads and operad functors by $\Oprd$.
 
 \begin{exerciseENG}
 Let $\mcO$ denote the little squares operad from Example~\ref{ex:little squares} and let $\mcO'$ denote the operad you constructed in Exercise~\ref{exc:little shapes}.
-\sexc Can you come up with an operad functor $\mcO\to\mcO'$?
-\item Is it possible to find an operad functor $\mcO'\to\mcO$? 
+\sexc Can you come up with an operad functor $\mcO\to\mcO'?$
+\item Is it possible to find an operad functor $\mcO'\to\mcO?$ 
 \endsexc
 \end{exerciseENG}
 
@@ -209,14 +209,14 @@ Let $\mcO$ denote the little squares operad from Example~\ref{ex:little squares}
 \end{exerciseRUS}
 
 \begin{definitionENG}[Operad algebra]\label{def:operad algebra}\index{algebra!operad}\index{operad!algebra of}
-Let $\mcO$ be an operad. An {\em algebra on $\mcO$} is an operad functor $A\taking\mcO\to\Sets$.
+Let $\mcO$ be an operad. An {\em algebra on $\mcO$} is an operad functor $A\taking\mcO\to\Sets.$
 \end{definitionENG}
 
 \begin{definitionRUS}[Operad algebra]\label{def:operad algebra}\index{algebra!operad}\index{operad!algebra of}
 \end{definitionRUS}
 
 \begin{remarkENG}
-Every category can be construed as an operad (yes, there is a functor $\Cat\to\Oprd$), by simply not including non-unary morphisms. That is, given a category $\mcC$, one makes an operad $\mcO$ with $\Ob(\mcO):=\Ob(\mcC)$ and with 
+Every category can be construed as an operad (yes, there is a functor $\Cat\to\Oprd$), by simply not including non-unary morphisms. That is, given a category $\mcC,$ one makes an operad $\mcO$ with $\Ob(\mcO):=\Ob(\mcC)$ and with 
 $$
 \Hom_\mcO(x_1,\ldots,x_n;y)=
 \begin{cases}
@@ -259,11 +259,11 @@ The operad $\mcO$ should abstractly model the structure, but not the substance b
 \end{applicationRUS}
 
 \begin{applicationENG}
-Suppose we have chosen an operad $\mcO$ to model the structure of materials. Each object of $\mcO$ might correspond to a certain quality of material, and each morphism corresponds to an arrangement of various qualities to form a new quality. An algebra $A\taking\mcO\to\Sets$ on $\mcO$ forces us to choose what substances will fill in for these qualities. For every object $x\in\Ob(\mcO)$, we want a set $A(x)$ which will be the set of materials with that quality. For every arrangement, i.e. morphism, $f\taking (x_1,\ldots,x_n)\to y$, and every choice $a_1\in A(x_1), \ldots, a_n\in A(x_n)$ of materials, we need to understand what material $a'=A(f)(a_1,\ldots,a_n)\in A(y)$ will emerge when these materials are arranged in accordance with $f$. We are really pinning ourselves down here.
+Suppose we have chosen an operad $\mcO$ to model the structure of materials. Each object of $\mcO$ might correspond to a certain quality of material, and each morphism corresponds to an arrangement of various qualities to form a new quality. An algebra $A\taking\mcO\to\Sets$ on $\mcO$ forces us to choose what substances will fill in for these qualities. For every object $x\in\Ob(\mcO),$ we want a set $A(x)$ which will be the set of materials with that quality. For every arrangement, i.e. morphism, $f\taking (x_1,\ldots,x_n)\to y,$ and every choice $a_1\in A(x_1), \ldots, a_n\in A(x_n)$ of materials, we need to understand what material $a'=A(f)(a_1,\ldots,a_n)\in A(y)$ will emerge when these materials are arranged in accordance with $f.$ We are really pinning ourselves down here.
 
-But there may be more than one interesting algebra on $\mcO$. Suppose that $B\taking\mcO\to\Sets$ is an algebra of strengths rather than materials. For each object $x\in\Ob(\mcO)$, which represents some quality, we let $B(x)$ be the set of possible strengths that something of quality $x$ can have. Then for each arrangement, i.e. morphism, $f\taking (x_1,\ldots,x_n)\to y$, and every choice $b_1\in B(x_1), \ldots, b_n\in B(x_n)$ of strengths, we need to understand what strength $b'=B(f)(b_1,\ldots,b_n)\in B(y)$ will emerge when these strengths are arranged in accordance with $f$. Certainly an impressive achievement!
+But there may be more than one interesting algebra on $\mcO.$ Suppose that $B\taking\mcO\to\Sets$ is an algebra of strengths rather than materials. For each object $x\in\Ob(\mcO),$ which represents some quality, we let $B(x)$ be the set of possible strengths that something of quality $x$ can have. Then for each arrangement, i.e. morphism, $f\taking (x_1,\ldots,x_n)\to y,$ and every choice $b_1\in B(x_1), \ldots, b_n\in B(x_n)$ of strengths, we need to understand what strength $b'=B(f)(b_1,\ldots,b_n)\in B(y)$ will emerge when these strengths are arranged in accordance with $f.$ Certainly an impressive achievement!
 
-Finally, a morphism of algebras $S\taking A\to B$ would consist of a coherent system for assigning to each material $a\in A(X)$ of a given quality $x$ a specific strength $S(a)\in B(X)$, in such a way that morphisms behaved appropriately. In this language we have stated a very precise goal for the field of material mechanics.
+Finally, a morphism of algebras $S\taking A\to B$ would consist of a coherent system for assigning to each material $a\in A(X)$ of a given quality $x$ a specific strength $S(a)\in B(X),$ in such a way that morphisms behaved appropriately. In this language we have stated a very precise goal for the field of material mechanics.
 \end{applicationENG}
 
 \begin{applicationRUS}
@@ -271,9 +271,9 @@ Finally, a morphism of algebras $S\taking A\to B$ would consist of a coherent sy
 
 \begin{exerciseENG}
 Consider again the little squares operad $\mcO$ from Example~\ref{ex:little squares}. Suppose we wanted to use this operad to describe those \href{http://en.wikipedia.org/wiki/Photographic_mosaic}{\text photographic mosaics}. 
-\sexc Come up with an algebra $P\taking\mcO\to\Sets$ that sends the square to the set of all photos that can be pasted into that square. What does $P$ do on morphisms in $\mcO$?
-\item Come up with an algebra $C\taking\mcO\to\Sets$ that sends each square to the set of all colors (visible frequencies of light). In other words, $C(\square)$ is the set of colors, not the set of ways to color the square. What does $C$ do on morphisms in $\mcO$. Hint: use some kind of averaging scheme for the morphisms.
-\item Guess: if someone were to appropriately define morphisms of $\mcO$-algebras (something akin to natural transformations between functors $\mcO\to\Sets$), do you think there would some a morphism of algebras $P\to C$?
+\sexc Come up with an algebra $P\taking\mcO\to\Sets$ that sends the square to the set of all photos that can be pasted into that square. What does $P$ do on morphisms in $\mcO?$
+\item Come up with an algebra $C\taking\mcO\to\Sets$ that sends each square to the set of all colors (visible frequencies of light). In other words, $C(\square)$ is the set of colors, not the set of ways to color the square. What does $C$ do on morphisms in $\mcO.$ Hint: use some kind of averaging scheme for the morphisms.
+\item Guess: if someone were to appropriately define morphisms of $\mcO$-algebras (something akin to natural transformations between functors $\mcO\to\Sets$), do you think there would some a morphism of algebras $P\to C?$
 \endsexc
 \end{exerciseENG}
 
@@ -285,7 +285,7 @@ Consider again the little squares operad $\mcO$ from Example~\ref{ex:little squa
 \subsubsection{\caseENGRUS{Wiring diagrams}{ / }{Проволочные диаграммы}}
 
 \begin{exampleENG}\label{ex:operad of relations}
-Here we describe an {\em operad of relations}, which we will denote by $\mcR$. The objects are sets, $\Ob(\mcR)=\Ob(\Set)$. A morphism $f\taking (x_1,x_2,\ldots,x_n)\too x'$ in $\mcR$ is a diagram in $\Set$ of the form 
+Here we describe an {\em operad of relations}, which we will denote by $\mcR.$ The objects are sets, $\Ob(\mcR)=\Ob(\Set).$ A morphism $f\taking (x_1,x_2,\ldots,x_n)\too x'$ in $\mcR$ is a diagram in $\Set$ of the form 
 \begin{align}\label{dia:operad of relations}
 \xymatrix@=15pt{&&&R\ar[llldd]_(.7){f_1}\ar[lldd]^{f_2}\ar@{}[ldd]^(.6)\cdots\ar[dd]^(.6){f_n}\ar[rrdd]^(.7){f'}\\\\x_1&x_2&\cdots&x_n&&x'}
 \end{align} 
@@ -310,9 +310,9 @@ The operad $\mcR$ from Example~\ref{ex:operad of relations} becomes useful as a 
 \end{applicationRUS}
 
 \begin{exampleENG}\label{ex:algebra on operad of rels}
-Let $\mcR$ be the operad of relations from Example~\ref{ex:operad of relations}. Consider the algebra $S\taking\mcR\to\Sets$ given by $S(x)=\PP(x)$. Given a morphism $\prod_ix_i\from R\to y$ and subsets $x_i'\ss x_i$, we have a subset $\prod_ix_i'\ss\prod_ix_i$. We take the fiber product
+Let $\mcR$ be the operad of relations from Example~\ref{ex:operad of relations}. Consider the algebra $S\taking\mcR\to\Sets$ given by $S(x)=\PP(x).$ Given a morphism $\prod_ix_i\from R\to y$ and subsets $x_i'\ss x_i,$ we have a subset $\prod_ix_i'\ss\prod_ix_i.$ We take the fiber product
 $$\xymatrix@=15pt{&FP\ar[rr]\ar[ld]&&R\ar[ld]\ar[rd]\\\prod_ix_i'\ar[rr]&&\prod_ix_i&&y}$$
-and the image of $FP\to y$ is a subset of $y$. 
+and the image of $FP\to y$ is a subset of $y.$ 
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:algebra on operad of rels}
@@ -332,10 +332,10 @@ In this example we discuss wiring diagrams that look like this:\index{wiring dia
 \begin{center}
 \includegraphics[width=\textwidth]{wiringDiagram}
 \end{center}
-The operad in question will be denoted $\mcW$; it is discussed in greater detail in \cite{Sp4}. The objects of $\mcW$ are pairs $(C,s)$ where $C$ is a finite set and $v\taking C\to\Ob(\Set)$ is a function. Think of such an object as a circle with $C$-many cables sticking out of it; each cable $c$ is assigned a set $v(c)$ corresponding to the set of values that can be carried on that cable. For example $E_2=(C,v)$ where $|C|=11$ and we consider $v$ to be specified by declaring that black wires carry $\ZZ$ and red wires carry $\{\tn{sweet, sour, salty, bitter, umami}\}$. 
+The operad in question will be denoted $\mcW$; it is discussed in greater detail in \cite{Sp4}. The objects of $\mcW$ are pairs $(C,s)$ where $C$ is a finite set and $v\taking C\to\Ob(\Set)$ is a function. Think of such an object as a circle with $C$-many cables sticking out of it; each cable $c$ is assigned a set $v(c)$ corresponding to the set of values that can be carried on that cable. For example $E_2=(C,v)$ where $|C|=11$ and we consider $v$ to be specified by declaring that black wires carry $\ZZ$ and red wires carry $\{\tn{sweet, sour, salty, bitter, umami}\}.$ 
 
-The morphisms in $\mcW$ will be pictures as above, formalized as follows. Given objects $(C_1,v_1),\ldots,(C_n,v_n), (D,w)$, a morphism $F\taking((C_1,v_1),\ldots,(C_n,v_n))\too (D,w)$ is a commutative diagram of sets
-\footnote{If one is concerned with cardinality issues, fix a cardinality $\kappa$ and replace $\Ob(\Set)$ everywhere with $\Ob(\Set_{<\kappa})$.} 
+The morphisms in $\mcW$ will be pictures as above, formalized as follows. Given objects $(C_1,v_1),\ldots,(C_n,v_n), (D,w),$ a morphism $F\taking((C_1,v_1),\ldots,(C_n,v_n))\too (D,w)$ is a commutative diagram of sets
+\footnote{If one is concerned with cardinality issues, fix a cardinality $\kappa$ and replace $\Ob(\Set)$ everywhere with $\Ob(\Set_{<\kappa}).$} 
 $$
 \xymatrix{\bigsqcup_{i\in\ul{n}}C_i\ar[rd]_{\sqcup_iv_i}\ar[r]^i&G\ar[d]^x&D\ar[l]_j\ar[ld]^w\\&\Ob(\Set)}
 $$
@@ -343,7 +343,7 @@ such that $i$ and $j$ are jointly surjective.
 
 Composition of morphisms is easily understood in pictures: given wiring diagrams inside of wiring diagrams, we can throw away the intermediary circles. In terms of sets, we perform a pushout.
 
-There is an operad functor $\mcW\to\mcS$ given by sending $(C,v)$ to $\prod_{c\in C}v(c)$. The idea is that to an entity defined as having a bunch of cables carrying variables, a phenomenon is the same thing as a choice of value on each cable. A wiring diagram translates between values experienced locally and values experienced globally. 
+There is an operad functor $\mcW\to\mcS$ given by sending $(C,v)$ to $\prod_{c\in C}v(c).$ The idea is that to an entity defined as having a bunch of cables carrying variables, a phenomenon is the same thing as a choice of value on each cable. A wiring diagram translates between values experienced locally and values experienced globally. 
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -352,7 +352,7 @@ There is an operad functor $\mcW\to\mcS$ given by sending $(C,v)$ to $\prod_{c\i
 \begin{applicationENG}
 In cognitive neuroscience or in industrial economics, it may be that we want to understand the behavior of an entity such as a mind, a society, or a business in terms of its structure. Knowing the connection pattern (\href{http://en.wikipedia.org/wiki/Connectome}{connectome}, \href{http://en.wikipedia.org/wiki/Supply_chain}{supply chain}) of sub-entities should help us understand how big changes are generated from small ones.
 
-Under the functor $\mcW\to\mcS$ the algebra $\mcS\to\Sets$ from Application~\ref{app:desire} becomes an algebra $\mcW\to\Sets$. To each entity we now associate some subset of the value-assignments it can carry. 
+Under the functor $\mcW\to\mcS$ the algebra $\mcS\to\Sets$ from Application~\ref{app:desire} becomes an algebra $\mcW\to\Sets.$ To each entity we now associate some subset of the value-assignments it can carry. 
 \end{applicationENG}
 
 \begin{applicationRUS}

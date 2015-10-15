@@ -12,7 +12,7 @@ In this course, unless otherwise specified, whenever we speak of graphs we are n
 \end{blockRUS}
 
 \begin{blockENG}
-We will take our graphs to be {\em directed}, meaning that every arrow points {\em from} a vertex {\em to} a vertex; rather than merely connecting vertices, arrows will have direction. If $a$ and $b$ are vertices, there can be many arrows from $a$ to $b$, or none at all. There can be arrows from $a$ to itself. Here is the formal definition in terms of sets and functions.
+We will take our graphs to be {\em directed}, meaning that every arrow points {\em from} a vertex {\em to} a vertex; rather than merely connecting vertices, arrows will have direction. If $a$ and $b$ are vertices, there can be many arrows from $a$ to $b,$ or none at all. There can be arrows from $a$ to itself. Here is the formal definition in terms of sets and functions.
 \end{blockENG}
 
 %%%% Subsection %%%%
@@ -27,14 +27,14 @@ A {\em graph} $G$ consists of a sequence $G:=(V,A,src,tgt)$ where
 \item $src\taking A\to V$ is a function, called {\em the source function for $G$}, and
 \item $tgt\taking A\to V$ is a function, called {\em the target function for $G$}.
 \end{itemize}
-Given an arrow $a\in A$ we refer to $src(a)$ as the {\em source vertex} of $a$ and to $tgt(a)$ as the {\em target vertex} of $a$.
+Given an arrow $a\in A$ we refer to $src(a)$ as the {\em source vertex} of $a$ and to $tgt(a)$ as the {\em target vertex} of $a.$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:graph}\index{graph}
 \end{definitionRUS}
 
 \begin{blockENG}
-To draw a graph, first draw a dot for every element of $V$. Then for every element $a\in A$, draw an arrow connecting dot $src(a)$ to dot $tgt(a)$.
+To draw a graph, first draw a dot for every element of $V.$ Then for every element $a\in A,$ draw an arrow connecting dot $src(a)$ to dot $tgt(a).$
 \end{blockENG}
 
 \begin{blockRUS}
@@ -45,7 +45,7 @@ Here is a picture of a graph $G=(V,A,src,tgt)$:
 \begin{align}\label{dia:graph}
 G:=\parbox{2in}{\fbox{\xymatrix{\bullet^v\ar[r]^f&\bullet^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\bullet^x\\\bullet^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&\bullet^z\ar@/^1pc/[l]^k}}}
 \end{align} 
-We have $V=\{v,w,x,y,z\}$ and $A=\{f,g,h,i,j,k\}$. The source and target functions $src,tgt\taking A\to V$ can be captured in the table to the left below:
+We have $V=\{v,w,x,y,z\}$ and $A=\{f,g,h,i,j,k\}.$ The source and target functions $src,tgt\taking A\to V$ can be captured in the table to the left below:
 \begin{align*}
 \begin{array}{| l || l | l |}\bhline
 {\bf A}&{\bf src}&{\bf tgt}\\\bbhline
@@ -66,7 +66,7 @@ y\\\hline
 z\\\bhline
 \end{array}
 \end{align*}
-In fact, all of the data of the graph $G$ is captured in the two tables above—together they tell us the sets $A$ and $V$ and the functions $src$ and $tgt$.
+In fact, all of the data of the graph $G$ is captured in the two tables above—together they tell us the sets $A$ and $V$ and the functions $src$ and $tgt.$
 \end{exampleENG}
 
 \begin{exampleRUS}[Graph]\label{ex:graph}
@@ -114,7 +114,7 @@ $$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition~\ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B$, where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B$. Draw the associated graph $(A\sqcup B,A,src,tgt)$.
+Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}.$ Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition~\ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B,$ where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B.$ Draw the associated graph $(A\sqcup B,A,src,tgt).$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -122,7 +122,7 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary funct
 
 \begin{exerciseENG}~
 \sexc Let $V$ be a set. Suppose we just draw the elements of $V$ as vertices and have no arrows between them. Is this a graph?
-\item Given $V$, is there any other “canonical” or somehow automatic non-random procedure for generating a graph with those vertices? 
+\item Given $V,$ is there any other “canonical” or somehow automatic non-random procedure for generating a graph with those vertices? 
 \endsexc
 \end{exerciseENG}
 
@@ -130,7 +130,7 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}$. Draw them and choose an arbitrary funct
 \end{exerciseRUS}
 
 \begin{exampleENG}
-Recall from Construction~\ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition~\ref{def:span}) $A\From{f}R\To{g}B$. Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
+Recall from Construction~\ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition~\ref{def:span}) $A\From{f}R\To{g}B.$ Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
 $$
 \xymatrix{&A\ar[dr]^i\\R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g&&V\\&B\ar[ur]_j}
 $$ 
@@ -160,7 +160,7 @@ Let $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ be the graph depicted
 $$\xymatrix{\LMO{0}\ar[r]^0&\LMO{1}\ar[r]^1&\LMO{2}\ar[r]^2&\cdots}$$
 When we get to limits in a category, we will understand that products can be taken in the category of graphs (see  Example~\ref{ex:product of graphs}), and $N\times G$ will make sense. For now, we construct it by hand.
 
-Let $T(G)=(V\times \NN,A\times\NN,src',tgt')$ be a new graph, where for $a\in A$ and $n\in\NN$ we have $src'(a,n):=(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1)$. This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
+Let $T(G)=(V\times \NN,A\times\NN,src',tgt')$ be a new graph, where for $a\in A$ and $n\in\NN$ we have $src'(a,n):=(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1).$ This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
 
 Let $G$ be the graph drawn below 
 $$\xymatrix{\LMO{a}\ar@(ul,ur)[]^f\ar[d]_g\\\LMO{b}}$$
@@ -196,8 +196,8 @@ $$
 (0,1)\ar[r]\ar[u]&(1,1)\ar[r]\ar[u]&(2,1)\ar[r]\ar[u]&\cdots\\
 (0,0)\ar[r]\ar[u]&(1,0)\ar[r]\ar[u]&(2,0)\ar[r]\ar[u]&\cdots}
 $$
-\sexc Write down the sets $A$ and $V$. 
-\item What are the source and target function $A\to V$?  
+\sexc Write down the sets $A$ and $V.$ 
+\item What are the source and target function $A\to V?$  
 \endsexc
 \end{exerciseENG}
 
@@ -205,7 +205,7 @@ $$
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:(co)equalizer of graph}
-A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer and coequalizer (see Definitions~\ref{def:equalizer} and~\ref{def:coequalizer}). 
+A graph is a pair of functions $A\tto V.$ This sets up the notion of equalizer and coequalizer (see Definitions~\ref{def:equalizer} and~\ref{def:coequalizer}). 
 \sexc What feature of a graph is captured by the equalizer of its source and target functions? 
 \item What feature of a graph is captured by the coequalizer of its source and target functions?
 \endsexc
@@ -219,20 +219,20 @@ A graph is a pair of functions $A\tto V$. This sets up the notion of equalizer a
 \subsection{\caseENGRUS{Paths in a graph}{ / }{Пути в графе}}\label{sec:paths in graph}
 
 \begin{blockENG}
-We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN$, even length $0$ or $1$. Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
+We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN,$ even length $0$ or $1.$ Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
 \end{blockENG}
 
 \begin{definitionENG}\label{def:paths in graph}\index{graph!paths}
-Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G$, denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G$, which we denote by $v_0 a_1 a_2 \ldots a_n$. In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v$. We denote by $\Path_G$ the set of paths in $G$, $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V$. If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w$, we may denote it by $p\taking v\to w$. Given two vertices $v,w\in V$, we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w$.
+Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G,$ denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G,$ which we denote by $v_0 a_1 a_2 \ldots a_n.$ In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v.$ We denote by $\Path_G$ the set of paths in $G,$ $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V.$ If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w,$ we may denote it by $p\taking v\to w.$ Given two vertices $v,w\in V,$ we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w.$
 
-There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x$, we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w$, we have $pq=q$ (resp. $qr=q$). 
+There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x,$ we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w,$ we have $pq=q$ (resp. $qr=q$). 
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:paths in graph}\index{граф!пути}
 \end{definitionRUS}
 
 \begin{exampleENG}
-In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from $v$ to $y$, one path ($f$) from $v$ to $w$, two paths ($fg$ and $fh$) from $v$ to $x$, and infinitely many paths $$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in\NN\}$$ from $y$ to $y$. There are other paths as well, including the five trivial paths.
+In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from $v$ to $y,$ one path ($f$) from $v$ to $w,$ two paths ($fg$ and $fh$) from $v$ to $x,$ and infinitely many paths $$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in\NN\}$$ from $y$ to $y.$ There are other paths as well, including the five trivial paths.
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -247,7 +247,7 @@ $$\xymatrix{\LMO{1}\ar[r]^{f}&\LMO{2}\ar[r]^{g}&\LMO{3}}$$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $G$ be a graph and consider the set $\Path_G$ of paths in $G$. Suppose someone claimed that there is a monoid structure on the set $\Path_G$, where the multiplication formula is given by concatenation of paths. Are they correct? Why or why not? Hint: what should be the identity element?
+Let $G$ be a graph and consider the set $\Path_G$ of paths in $G.$ Suppose someone claimed that there is a monoid structure on the set $\Path_G,$ where the multiplication formula is given by concatenation of paths. Are they correct? Why or why not? Hint: what should be the identity element?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -265,7 +265,7 @@ A graph $(V,A,src,tgt)$ involves two sets and two functions. For two graphs to b
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:graph homomorphism}\index{graph!homomorphism}
-Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomorphism $f$ from $G$ to $G'$}, denoted $f\taking G\to G'$, consists of two functions $f_0\taking V\to V'$ and $f_1\taking A\to A'$ such that the two diagrams below commute:
+Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomorphism $f$ from $G$ to $G'$}, denoted $f\taking G\to G',$ consists of two functions $f_0\taking V\to V'$ and $f_1\taking A\to A'$ such that the two diagrams below commute:
 \begin{align}\label{dia:graph hom}
 \xymatrix{A\ar[r]^{f_1}\ar[d]_{src}&A'\ar[d]^{src'}\\V\ar[r]_{f_0}&V'
 }\hspace{1in}
@@ -297,7 +297,7 @@ Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be the graphs drawn to the left
 \parbox{1in}{\xymatrix{~\ar[rr]^{\parbox{.8in}{\vspace{-.2in}\footnotesize$1\mapsto 1', 2\mapsto 2',\\ 3\mapsto 1',4\mapsto 4',\\ 5\mapsto 5',6\mapsto5'$}}&\hsp&~}}
 \parbox{.8in}{\fbox{\xymatrix{\LMO{\color{red}{1'}}\ar@<.5ex>[r]^w\ar[d]_y&\LMO{\color{ForestGreen}{2'}}\ar@<.5ex>[l]^x\\\LMO{4'}&\LMO{\color{blue}{5'}}\ar@(r,u)[]_z}}}
 \end{align}
-The colors indicate our choice of function $f_0\taking V\to V'$. Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\taking G\to G'$. 
+The colors indicate our choice of function $f_0\taking V\to V'.$ Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\taking G\to G'.$ 
 \end{exampleENG}
 
 \begin{exampleRUS}[Graph homomorphism]\label{ex:graph hom}
@@ -313,15 +313,15 @@ The colors indicate our choice of function $f_0\taking V\to V'$. Given that choi
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n$, as in Example~\ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G$, or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G$?
+Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n,$ as in Example~\ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G,$ or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G?$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Given a morphism of graphs $f\taking G\to G'$, there an induced function $\Path(f)\taking\Path(G)\to\Path(G')$. 
-\sexc Is it the case that for every $n\in\NN$, the function $\Path(f)$ carries $\Path^{(n)}(G)$ to $\Path^{(n)}(G')$, or can path lengths change in this process?
+Given a morphism of graphs $f\taking G\to G',$ there an induced function $\Path(f)\taking\Path(G)\to\Path(G').$ 
+\sexc Is it the case that for every $n\in\NN,$ the function $\Path(f)$ carries $\Path^{(n)}(G)$ to $\Path^{(n)}(G'),$ or can path lengths change in this process?
 \item Suppose that $f_0$ and $f_1$ are injective (meaning no two distinct vertices in $G$ are sent to the same vertex (respectively for arrows) under $f$). Does this imply that $\Path(f)$ is also injective (meaning no two distinct paths are sent to the same path under $f$)?
 \item Suppose that $f_0$ and $f_1$ are surjective (meaning every vertex in $G'$ and every arrow in $G'$ is in the image of $f$). Does this imply that $\Path(f)$ is also surjective? Hint: at least one of the answers to these three questions is “no”.
 \endsexc
@@ -331,7 +331,7 @@ Given a morphism of graphs $f\taking G\to G'$, there an induced function $\Path(
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:single condition for graph hom}
-Given a graph $(V,A,src,tgt)$, let $i\taking A\to V\times V$ be function guaranteed by the universal property for products, as applied to $src,tgt\taking A\to V$. One might hope to summarize Condition (\ref{dia:graph hom}) for graph homomorphisms by the commutativity of the single square 
+Given a graph $(V,A,src,tgt),$ let $i\taking A\to V\times V$ be function guaranteed by the universal property for products, as applied to $src,tgt\taking A\to V.$ One might hope to summarize Condition (\ref{dia:graph hom}) for graph homomorphisms by the commutativity of the single square 
 \begin{align}\label{dia:equiv graph hom}
 \xymatrix{A\ar[r]^{f_1}\ar[d]_{i}&A'\ar[d]^{i'}\\V\times V\ar[r]_{f_0\times f_0}&V'\times V'.}
 \end{align}
@@ -346,14 +346,14 @@ Is the commutativity of the diagram in (\ref{dia:equiv graph hom}) indeed equiva
 \subsubsection{\caseENGRUS{Binary relations and graphs}{ / }{Бинарные отношения и графы}}
 
 \begin{definitionENG}\label{def:binary relation}\index{relation!binary}
-Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X$. 
+Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X.$ 
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:binary relation}\index{relation!binary}
 \end{definitionRUS}
 
 \begin{blockENG}
-If $X=\NN$ is the set of integers, then the usual $\leq$ defines a relation on $X$: given $(m,n)\in\NN\times\NN$, we put $(m,n)\in R$ iff $m\leq n$. As a table it might be written as to the left
+If $X=\NN$ is the set of integers, then the usual $\leq$ defines a relation on $X$: given $(m,n)\in\NN\times\NN,$ we put $(m,n)\in R$ iff $m\leq n.$ As a table it might be written as to the left
 \begin{align}\label{dia:3 relations}
 \begin{tabular}{|p{.7cm}|p{.7cm}|}
 \bhline
@@ -397,20 +397,20 @@ m&n\\\bbhline
 $\vdots$&$\vdots$\\\hline
 \end{tabular}
 \end{align}
-The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$ and the right-hand table is the relation $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN$. 
+The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$ and the right-hand table is the relation $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN.$ 
 \end{blockENG}
 
 \begin{exerciseENG}
-A relation on $\RR$ is a subset of $\RR\times\RR$, and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as “$\epsilon$-approximation”. To say it another way, draw the relation “$x$ is within $\epsilon$ of $y$”.
+A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as “$\epsilon$-approximation”. To say it another way, draw the relation “$x$ is within $\epsilon$ of $y$”.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exerciseENG}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}
-\sexc If $R\ss S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S$. 
+\sexc If $R\ss S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S.$ 
 \item What is the set $A$ of arrows? 
-\item What are the source and target functions $src,tgt\taking A\to S$?
+\item What are the source and target functions $src,tgt\taking A\to S?$
 \item Take the left-hand table in (\ref{dia:3 relations}) and consider its first $7$ rows (i.e. forget the $\vdots$). Draw the corresponding graph (do you see a tetrahedron?). 
 \item Do the same for the right-hand table.
 \endsexc
@@ -429,8 +429,8 @@ A relation on $\RR$ is a subset of $\RR\times\RR$, and one can indicate such a s
 \end{exerciseRUS}
 
 \begin{exerciseENG}[Going around the loops]
-\sexc Given a binary relation $R\ss S\times S$, you know from Exercise~\ref{exc:rel to graph} how to construct a graph out of it, and from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
-\item Given a graph $(V,A,src,tgt)$, you know from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise~\ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
+\sexc Given a binary relation $R\ss S\times S,$ you know from Exercise~\ref{exc:rel to graph} how to construct a graph out of it, and from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
+\item Given a graph $(V,A,src,tgt),$ you know from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise~\ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
 \endsexc
 \end{exerciseENG}
 
