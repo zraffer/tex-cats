@@ -9,7 +9,7 @@ A common way to interpret phenomena we see around us is to say that agents are a
 \end{blockENG}
 
 \begin{blockRUS}
-Общепринятым способом интерпретировать феномены, которые мы наблюдаем вокруг, является объяснение их воздействием на объекты некоторых факторов. Например, в программе компьютерной графики пользователь {\em воздействует на} область рисования заранее определенными способами. Выбор действий из списка всех доступных [в данной программе] может быть повторен многократно, преобразуя в результате одно изображение в другое. В качестве другого примера можно рассмотреть то, как время {\em воздействует на} положение стрелок на часах заранее определенным способом. Первое правило воздействия такое: проведение последовательно нескольких воздействий само является проведением воздействия, — более сложного, но все равно воздействия.
+Общепринятым способом интерпретировать феномены, которые мы наблюдаем вокруг, является объяснение их воздействием некоторых факторов на объекты. Например, в программе компьютерной графики пользователь заранее определенными способами {\em воздействует на} область рисования. Выбор действий из списка всех доступных [в данной программе] может быть повторен многократно, преобразуя в результате одно изображение в другое. В качестве другого примера можно рассмотреть то, как время заранее определенным способом {\em воздействует на} положение стрелок на часах. Первое правило воздействия такое: проведение последовательно нескольких воздействий само является воздействием, — более сложным, но все равно воздействием.
 \end{blockRUS}
 
 \begin{blockENG}
@@ -17,7 +17,7 @@ Mathematical objects called {\em monoids} and {\em groups} are tasked with encod
 \end{blockENG}
 
 \begin{blockRUS}
-Математические объекты под названием {\em моноиды} и {\em группы} предназначены для формализации всего этого с точки зрения воздействующего фактора, т.е. что этот фактор может делать, и что происходит, когда различные действия выполнены последовательно. Моноид можно сконструировать из множества действий, взятого вместе со правилом, согласно которому последовательность действий может рассматриваться как одно действие. Группа — это то же, что и моноид, за исключением того, что каждое действие должно быть обратимым. В этом разделе мы сосредоточимся на моноидах; до групп мы доберемся в Разделе~\ref{sec:groups}.
+Математические объекты под названием {\em моноиды} и {\em группы} предназначены для формализации всего этого с точки зрения воздействующего фактора, т.е. вопроса, что наш фактор может проделать, и что происходит, когда различные действия выполнены последовательно. Моноид можно сконструировать из множества действий, взятого вместе со правилом, согласно которому последовательность действий может рассматриваться как одно действие. Кроме того, есть понятие группы — это то же, что и моноид, за исключением того, что мы дополнительно требуем, чтобы каждое действие в группе должно быть обратимым. В данном разделе мы сосредоточимся на моноидах; до групп мы доберемся в Разделе~\ref{sec:groups}.
 \end{blockRUS}
 
 %%%% Subsection %%%%
@@ -44,7 +44,7 @@ We call the first two rules {\em identity laws} and the third rule the {\em asso
 \item $(m\star n)\star p=m\star(n\star p).$
 \end{itemize}
 Мы называем элемент $e$ — {\em единицей}\index{моноид!единица}, а $\star$ — {\em правилом умножения} данного моноида.\index{моноид!правило умножения}%
-\footnote{Хотя функция $\star\taking M\times M\to M$ называется правилом умножения, оно может не иметь ничего общего с умножением. Это не более, чем алгоритм, берущий два исходных значения и возвращающий результат; именование его «умножением» должно быть скорее намеком на его истоки, а не требованием к его поведению.}
+\footnote{Хотя функция $\star\taking M\times M\to M$ называется правилом умножения, она может не иметь ничего общего с умножением. Это не более, чем алгоритм, берущий два исходных значения и возвращающий результат; именование его «умножением» должно быть скорее намеком на его истоки, а не требованием к его поведению.}
 Мы называем первые два условия {\em свойствами единицы}, а третье {\em ассоциативным законом} для моноидов.
 \end{definitionRUS}
 
@@ -65,7 +65,7 @@ The way they are written in Definition~\ref{def:monoid} is called {\em infix not
 \item $\star(e,m)=m,$
 \item $\star(\star(m,n),p)=\star(m,(\star(n,p)).$
 \end{itemize}
-Однако в Определении~\ref{def:monoid} использован способ обозначения под названием {\em инфиксная нотация}\index{инфиксная нотация}, и он часто будет появляться без дополнительных предупреждений. В частности, для заданной функции $\cdot\taking A\times B\to C$ мы пишем $a\cdot b$ вместо $\cdot(a,b).$
+В Определении~\ref{def:monoid}, однако, использован способ обозначения под названием {\em инфиксная нотация}\index{инфиксная нотация}, и он часто будет появляться без дополнительных предупреждений. В частности, для заданной функции $\cdot\taking A\times B\to C$ мы пишем $a\cdot b$ вместо $\cdot(a,b).$
 \end{remarkRUS}
 
 \begin{exampleENG}[Additive monoid of natural numbers]\label{ex:monoid 0}\index{monoid!additive natural numbers}
@@ -73,7 +73,7 @@ Let $M=\NN$ be the set of natural numbers. Let $e=0$ and let $\star\taking M\tim
 \end{exampleENG}
 
 \begin{exampleRUS}[Аддитивный моноид натуральных чисел]\label{ex:monoid 0}\index{моноид!натуральных чисел!аддитивный}
-Пусть $M=\NN$ — это множество натуральных чисел. Положим $e=0$ и $\star\taking M\times M\to M$ пусть обозначает сложение, так что $\star(4,18)=22.$ Тогда равенства $m\star 0=m$ и $0\star m=m$ действительно выполняются, также как и $(m\star n)\star p=m\star (n\star p).$ Выбрав $e$ и $\star$ подобным образом, мы «придали $\NN$ структуру моноида».
+Пусть $M=\NN$ — это множество натуральных чисел. Положим $e=0,$ а $\star\taking M\times M\to M$ пусть обозначает сложение, например, $\star(4,18)=22.$ Тогда равенства $m\star 0=m$ и $0\star m=m$ действительно выполняются, также как и $(m\star n)\star p=m\star (n\star p).$ Выбрав $e$ и $\star$ подобным образом, мы «придаем $\NN$ структуру моноида».
 \end{exampleRUS}
 
 \begin{remarkENG}
@@ -93,7 +93,7 @@ One might also attempt to consider an operation $f\taking M\times M\to M$ that, 
 \begin{exampleRUS}[Не моноид]
 Если $M$ — это множество, мы называем функцию $f\taking M\times M\to M$ {\em операцией на $M$}. В частности, если $M=\NN$ — множество натуральных чисел, мы можем рассмотреть операцию возведения в степень $f\taking\NN\to\NN.$ Например, $f(2,5)=2*2*2*2*2=32$ и $f(7,2)=49.$ Это в самом деле операция, но она не является частью никакого моноида. Во-первых, у нее нет единицы. Попробовав очевидный вариант $e=1,$ мы видим, что $a^1=a$ (хорошо), но, с другой стороны, $1^a=1$ (плохо: нужно, чтобы получилось $a$). Во-вторых, эта операция не ассоциативна, поскольку в общем случае $a^{b^c}\neq (a^b)^c.$ Например, $2^{1^2}=2,$ но $(2^1)^2=4.$
 
-Кроме того, можно даже рассмотреть такую операцию $f\taking M\times M\to M,$ которая, при ближайшем рассмотрении, не является операцией. Например, если $M=\ZZ,$ то возведение в степень не является операцией. Действительно, $f(2,-1)=2^{-1}=\frac{1}{2},$ и это не целое число. Чтобы у нас была на самом деле функция $f\taking M\times M\to M,$ нужно, чтобы для каждого элемента области определения, в данном случае — для любой пары целых чисел, у нас получался результат из $M.$ Но такой функции $f$ [, действующей на целых числах,] нет.
+Кроме того, можно даже рассмотреть такую операцию $f\taking M\times M\to M,$ которая, при ближайшем рассмотрении, не является операцией. Например, если $M=\ZZ,$ то возведение в степень не является операцией. Действительно, $f(2,-1)=2^{-1}=\frac{1}{2},$ и это не целое число. Чтобы у нас была на самом деле функция $f\taking M\times M\to M,$ нужно, чтобы для каждого элемента области определения, в данном случае — для любой пары целых чисел, у нас получался результат из $M.$ Но такой функции $f,$ действующей на целых числах, нет.
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:monoid 1}
@@ -117,7 +117,7 @@ In both Example~\ref{ex:monoid 0} and Exercise~\ref{exc:monoid 1}, the monoids $
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{ex:commutative monoid}
-In both Example~\ref{ex:monoid 0} and Exercise~\ref{exc:monoid 1}, the monoids $(M,e,\star)$ satisfied an additional rule called {\em commutativity},\index{monoid!commutative} namely $m\star n=n\star m$ for every $m,n\in M.$ There is a monoid $(M,e,\star)$ lurking in linear algebra textbooks that is not commutative; if you have background in linear algebra try to answer this: what $M, e,$ and $\star$ might I be referring to?
+В Упражнении~\ref{ex:monoid 0} и Упражнении~\ref{exc:monoid 1} для упомянутых там моноидов $(M,e,\star)$ выполняется дополнительное свойство, называемое {\em коммутативностью}\index{моноид!коммутативный}, а именно $m\star n=n\star m$ для любых $m,n\in M.$ В учебниках по линейной алгебре обсуждается моноид $(M,e,\star),$ не являющийся коммутативным; если вы знакомы с линейной алгеброй, попытайтесь ответить на вопрос: каковы подходящие для этого $M, e,$ и $\star$?
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -128,13 +128,18 @@ Recall the notion of commutativity for monoids from Exercise~\ref{ex:commutative
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Вспомним понятие коммутативности моноидов из Упражнения~\ref{ex:commutative monoid}.
+\sexc Каково наименьшее множество $M,$ которому можно придать структуру некоммутативного моноида?
+\item Каково наименьшее множество $M,$ которому можно придать структуру моноида?
+\endsexc
 \end{exerciseRUS}
 
 \begin{exampleENG}[Trivial monoid]\label{ex:trivial monoid}
 There is a monoid with only one element, $M=(\{e\},e,\star)$ where $\star\taking\{e\}\times\{e\}\to\{e\}$ is the unique function. We call this monoid {\em the trivial monoid},\index{monoid!trivial} and sometimes denote it $\ul{1}.$
 \end{exampleENG}
 
-\begin{exampleRUS}[Trivial monoid]\label{ex:trivial monoid}
+\begin{exampleRUS}[Тривиальный моноид]\label{ex:trivial monoid}
+Имеется моноид с одним элементом, $M=(\{e\},e,\star),$ где $\star\taking\{e\}\times\{e\}\to\{e\}$ — единственная функция. Мы называем этот моноид {\em тривиальным моноидом},\index{моноид!тривиальный} и иногда обозначаем его $\ul{1}.$
 \end{exampleRUS}
 
 \begin{exampleENG}
@@ -150,6 +155,15 @@ In fact, the product of any list of monoid elements is the same, regardless of p
 \end{exampleENG}
 
 \begin{exampleRUS}
+Предположим, что $(M,e,\star)$ — это моноид. Для заданных элементов $m_1,m_2,m_3,m_4$ имеется пять различных способов расстановки скобок в произведении $m_1\star m_2\star m_3\star m_4,$ при этом закон ассоциативности для моноидов гарантирует, что все они равны. Выполняются равенства:
+\begin{align*}
+((m_1\star m_2)\star m_3)\star m_4&=(m_1\star m_2)\star (m_3\star m_4)\\
+&=(m_1\star(m_2\star m_3))\star m_4\\
+&=m_1\star(m_2\star (m_3\star m_4))\\
+&=m_1\star((m_2\star m_3)\star m_4)
+\end{align*}
+
+Более общо, произведения любого списка элементов моноида совпадают, независимо от расстановки скобок. Таким образом, мы можем непротиворечиво писать $m_1m_2m_3m_4m_5$ совсем без скобок. Этот факт известен под названием \href{http://en.wikipedia.org/wiki/Coherence_theorem}{\text теоремы когеррентности} и может быть найден в \cite{Mac}.
 \end{exampleRUS}
 
 %% Subsubsection %%
@@ -159,7 +173,7 @@ In fact, the product of any list of monoid elements is the same, regardless of p
 \begin{definitionENG}\label{def:list}\index{list}
 Let $X$ be a set. A {\em list in $X$} is a pair $(n,f)$ where $n\in\NN$ is a natural number (called the {\em length of the list}) and $f\taking\ul{n}\to X$ is a function, where $\ul{n}=\{1,2,\ldots,n\}.$ We may denote such a list by
 $$(n,f)=[f(1),f(2),\ldots,f(n)].$$
-The {\em empty list} is the unique list in which $n=0$; we may denote it by $[\;].$ Given an element $x\in X$ the {\em singleton list on $x$} is the list $[x].$ Given a list $L=(n,f)$ and a number $i\in\NN$ with $i\leq n,$ the {\em $i$th entry of $L$} is the element $f(i)\in X.$ \index{entry!in list}
+The {\em empty list} is the unique list in which $n=0$; we may denote it by $[\,].$ Given an element $x\in X$ the {\em singleton list on $x$} is the list $[x].$ Given a list $L=(n,f)$ and a number $i\in\NN$ with $i\leq n,$ the {\em $i$th entry of $L$} is the element $f(i)\in X.$ \index{entry!in list}
 
 Given two lists $L=(n,f)$ and $L'=(n',f'),$ define the {\em concatenation of $L$ and $L'$}\index{list!concatenation}\index{concatenation!of lists}, denoted $L\plpl L',$\index{a symbol!$\plpl$} to be the list $(n+n',f\plpl f'),$ where $f\plpl f'\taking \ul{n+n'}\to X$ is given on $i\leq n+n'$ by
 $$(f\plpl f')(i):=
@@ -171,6 +185,19 @@ $$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:list}\index{list}
+Пусть $X$ — это множество. {\em Список с элементами из $X$} — это пара $(n,f),$ где $n\in\NN$ — натуральное число (называемое {\em длиной списка}), а $f\taking\ul{n}\to X$ — функция, где $\ul{n}=\{1,2,\ldots,n\}.$ Его можно обозначить так:
+$$(n,f)=[f(1),f(2),\ldots,f(n)].$$
+{\em Пустой список} — это единственный список длины $n=0$; его можно обозначить $[\,].$ Для заданного элемента $x\in X$ {\em одноэлементный список $x$} — это список $[x]$ длины $n=1$. Для заданного списка $L=(n,f)$ и числа $i\in\NN,$ если $i\leq n,$ то {\em $i$-м элементом $L$} называется значение $f(i)\in X.$ \index{элемент!списка}
+
+Множество всех списков с элементами из $X$ обозначается $\List(X).$
+
+Для заданных двух списков $L=(n,f)$ и $L'=(n',f'),$ определим {\em конкатенацию $L$ и $L'$}\index{список!конкатенация}\index{конкатенация!списков}, обозначаемую $L\plpl L',$\index{символ!$\plpl$} как список $(n+n',f\plpl f'),$ где $f\plpl f'\taking \ul{n+n'}\to X$ задано на $i\leq n+n'$ как
+$$(f\plpl f')(i):=
+\begin{cases}
+f(i)&\tn{ if }i\leq n\\
+f'(i-n)&\tn{ if }i\geq n+1
+\end{cases}
+$$
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -178,6 +205,7 @@ Let $X=\{a,b,c,\ldots,z\}.$ The following are elements of $\List(X)$: $$[a,b,c],
 \end{exampleENG}
 
 \begin{exampleRUS}
+Пусть $X=\{a,b,c,\ldots,z\}.$ Вот примеры элементов $\List(X)$: $$[a,b,c],\;\; [p],\;\; [p,a,a,a,p],\;\; [\;],\;\;\dots$$ Конкатенацией списков $[a,b,c]$ и $[p,a,a,a,p]$ будет $[a,b,c,p,a,a,a,p].$ Конкатенацией любого списка $A$ с пустым списком $[\;]$ будет само $A.$
 \end{exampleRUS}
 
 \begin{definitionENG}\label{def:free monoid}\index{monoid!free}
