@@ -127,10 +127,16 @@ $$\xymatrix@=.5pt{
 \ar@{..}[rrr]+<.6in,0pt>&&&\\\\\\
 &\big[[q, p, r], [], [q, r, p, r], [r]\big]\ar@{|->}[rr]&&[q, p, r, q, r, p, r, r]}$$
 The naturality of $\eta$ and $\mu$ just mean that these maps work appropriately well under term-by-term replacement by a function $f\taking X\to Y.$ Finally the three monad laws from Definition~\ref{def:monad} can be exemplified as follows:
-$$\xymatrix@=30pt{[p, q, q]\ar@{|->}[r]^-{\id_\List\circ\eta}\ar@{=}[rd]&\big[[p], [q], [q]\big]\ar@{|->}[d]^\mu\\&[p, q, q]}\hspace{.8in}
-\xymatrix@=30pt{[p, q, q]\ar@{|->}[r]^-{\eta\circ\id_\List}\ar@{=}[rd]&\big[[p, q, q]\big]\ar@{|->}[d]^\mu\\&[p,q,q]}$$
+$$\xymatrix@=30pt{
+[p, q, q]\ar@{|->}[r]^-{\id_{\List}\circ\eta}\ar@{=}[rd]&\big[[p], [q], [q]\big]\ar@{|->}[d]^\mu\\&[p, q, q]
+}\hspace{.8in}
+\xymatrix@=30pt{
+[p, q, q]\ar@{|->}[r]^-{\eta\circ\id_{\List}}\ar@{=}[rd]&\big[[p, q, q]\big]\ar@{|->}[d]^\mu\\&[p,q,q]
+}$$
 \vspace{.1in}
-$$\xymatrix@=30pt{\Big[\big[[p, q], [r]\big], \big[[], [r, q, q]\big]\Big]\ar@{|->}[r]^-{\mu\circ\id_\List}\ar@{|->}[d]_{\id_\List\circ\mu}&\big[[p, q], [r], [], [r, q, q]\big]\ar@{|->}[d]^\mu\\\big[[p, q, r], [r, q, q]\big]\ar@{|->}[r]_\mu&[p, q, r, r, q,q]}$$
+$$\xymatrix@=30pt{
+\Big[\big[[p, q], [r]\big], \big[[], [r, q, q]\big]\Big]\ar@{|->}[r]^-{\mu\circ\id_{\List}}\ar@{|->}[d]_{\id_{\List}\circ\mu}&\big[[p, q], [r], [], [r, q, q]\big]\ar@{|->}[d]^\mu\\\big[[p, q, r], [r, q, q]\big]\ar@{|->}[r]_\mu&[p, q, r, r, q,q]
+}$$
 \end{exampleENG}
 
 \begin{exampleRUS}[List monad]\label{ex:monad}\index{a monad!List}
