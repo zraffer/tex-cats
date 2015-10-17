@@ -94,7 +94,7 @@ $$\adjoint{L}{\mcB}{\mcA}{R}$$
 \end{definitionRUS}
 
 \begin{propositionENG}\label{prop:free forgetful monoid}
-Let $L\taking\Set\to\Mon$ be the functor sending $X\in\Ob(\Set)$ to the free monoid $L(X):=(\List(X),[\;],\plpl),$ as in Definition~\ref{def:free monoid}. Let $R\taking\Mon\to\Set$ be the functor sending each monoid $\mcM:=(M,1,\star)$ to its underlying set $R(\mcM):=M.$ Then $L$ is left adjoint to $R.$
+Let $L\taking\Set\to\Mon$ be the functor sending $X\in\Ob(\Set)$ to the free monoid $L(X):=(\List(X),[\,],\plpl),$ as in Definition~\ref{def:free monoid}. Let $R\taking\Mon\to\Set$ be the functor sending each monoid $\mcM:=(M,1,\star)$ to its underlying set $R(\mcM):=M.$ Then $L$ is left adjoint to $R.$
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:free forgetful monoid}
@@ -105,9 +105,9 @@ If we can find a natural isomorphism of sets
 $$\alpha_{X,\mcM}\taking\Hom_\Mon(L(X),\mcM)\to\Hom_\Set(X,R(\mcM))$$
 we will have succeeded in showing that these functors are adjoint.
 
-Suppose given an element $f\in\Hom_\Mon(L(X),\mcM),$ i.e. a monoid homomorphism $f\taking\List(X)\to M$ (sending $[\;]$ to $1$ and list concatenation to $\star$). Then in particular we can apply $f$ to the singleton list $[x]$ for any $x\in X.$ This gives a function $X\to M$ by $x\mapsto f([x]),$ and this is $\alpha_{X,\mcM}(f)\taking X\to M=R(\mcM).$ We need only to supply an inverse $\beta_{X,\mcM}\taking\Hom_\Set(X,R(\mcM))\to\Hom_\Mon(L(X),\mcM).$
+Suppose given an element $f\in\Hom_\Mon(L(X),\mcM),$ i.e. a monoid homomorphism $f\taking\List(X)\to M$ (sending $[\,]$ to $1$ and list concatenation to $\star$). Then in particular we can apply $f$ to the singleton list $[x]$ for any $x\in X.$ This gives a function $X\to M$ by $x\mapsto f([x]),$ and this is $\alpha_{X,\mcM}(f)\taking X\to M=R(\mcM).$ We need only to supply an inverse $\beta_{X,\mcM}\taking\Hom_\Set(X,R(\mcM))\to\Hom_\Mon(L(X),\mcM).$
 
-Suppose given an element $g\in\Hom_\Set(X,R(\mcM)),$ i.e. a function $g\taking X\to M.$ Then to any list $\ell=[x_1,x_2,\ldots,x_n]\in\List(X)$ we can assign $\beta_{X,\mcM}(\ell):=g(x_1)\star g(x_2)\star\cdots\star g(x_n)$ (if $\ell=[\;]$ is the empty list, assign $\beta_{X,\mcM}([\;]):=1$). We now have a function $\List(X)\to M.$ It is a monoid homomorphism because it respects identity and composition. It is easy to check that $\beta$ and $\alpha$ are mutually inverse, completing the proof.
+Suppose given an element $g\in\Hom_\Set(X,R(\mcM)),$ i.e. a function $g\taking X\to M.$ Then to any list $\ell=[x_1,x_2,\ldots,x_n]\in\List(X)$ we can assign $\beta_{X,\mcM}(\ell):=g(x_1)\star g(x_2)\star\cdots\star g(x_n)$ (if $\ell=[\,]$ is the empty list, assign $\beta_{X,\mcM}([\,]):=1$). We now have a function $\List(X)\to M.$ It is a monoid homomorphism because it respects identity and composition. It is easy to check that $\beta$ and $\alpha$ are mutually inverse, completing the proof.
 \end{proofENG}
 
 \begin{proofRUS}

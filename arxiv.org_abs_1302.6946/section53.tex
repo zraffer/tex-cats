@@ -112,7 +112,7 @@ We sometimes refer to the functor $T$ as though it were the whole monad; we call
 \end{definitionRUS}
 
 \begin{exampleENG}[List monad]\label{ex:monad}\index{a monad!List}
-We now go through Definition~\ref{def:monad} using what is called the $\List$ monad.\index{list} The first step is to give a functor $\List\taking\Set\to\Set,$ which we did in Example~\ref{ex:free monoid}. Recall that if $X=\{p,q,r\}$ then $\List(X)$ includes the empty list $[\;],$ singleton lists, such as $[p],$ and any other list of elements in $X,$ such as $[p,p,r,q,p].$ Given a function $f\taking X\to Y,$ one obtains a function $\List(f)\taking\List(X)\to\List(Y)$ by entry-wise application of $f.$
+We now go through Definition~\ref{def:monad} using what is called the $\List$ monad.\index{list} The first step is to give a functor $\List\taking\Set\to\Set,$ which we did in Example~\ref{ex:free monoid}. Recall that if $X=\{p,q,r\}$ then $\List(X)$ includes the empty list $[\,],$ singleton lists, such as $[p],$ and any other list of elements in $X,$ such as $[p,p,r,q,p].$ Given a function $f\taking X\to Y,$ one obtains a function $\List(f)\taking\List(X)\to\List(Y)$ by entry-wise application of $f.$
 
 As a monad, the functor $\List$ comes with two natural transformations, a unit map $\eta$ and a multiplication map $\mu.$ Given a set $X,$ the unit map $\eta_X\taking X\to\List(X)$ returns singleton lists as follows
 $$\xymatrix@=.5pt{
@@ -463,7 +463,7 @@ The composition formula for Kleisli categories is the desired one: to each star 
 \begin{blockENG}
 There is a strong connection between monads and adjunctions: every adjunction creates a monad, and every monad “comes from” an adjunction. For example, the $\List$ monad (Example~\ref{ex:monad}) comes from the free-forgetful adjunction between sets and monoids
 $$\Adjoint{F}{\Set}{\Mon}{U}$$
-(see Proposition~\ref{prop:free forgetful monoid}). That is, for any set $X,$ the free monoid on $X$ is $$F(X)=(\List(X),[\;],\plpl),$$ and the underlying set of that monoid is $U(F(X))=\List(X).$ Now it may seem like there was no reason to use monoids at all—the set $\List(X)$ was needed in order to discuss $F(X)$—but it will turn out that the unit $\eta$ and multiplication $\mu$ will come drop out of the adjunction too. First, we discuss the unit and counit of an adjunction.
+(see Proposition~\ref{prop:free forgetful monoid}). That is, for any set $X,$ the free monoid on $X$ is $$F(X)=(\List(X),[\,],\plpl),$$ and the underlying set of that monoid is $U(F(X))=\List(X).$ Now it may seem like there was no reason to use monoids at all—the set $\List(X)$ was needed in order to discuss $F(X)$—but it will turn out that the unit $\eta$ and multiplication $\mu$ will come drop out of the adjunction too. First, we discuss the unit and counit of an adjunction.
 \end{blockENG}
 
 \begin{blockRUS}

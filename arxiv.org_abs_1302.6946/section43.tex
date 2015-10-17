@@ -30,7 +30,7 @@ Let's begin with an example. There is a functor $\List\taking\Set\to\Set,$ which
 \end{blockRUS}
 
 \begin{blockENG}
-It may seem a strange thing to contemplate, but there is also a functor $\List\circ\List\taking\Set\to\Set$ that sends a set $X$ to the set of lists of lists in $X.$ If $X=\{a,b,c\}$ then $\List\circ\List(X)$ contains elements like $\big[[a,b],[a,c,a,b,c],[c]\big]$ and $\big[[\;]\big]$ and $\big[[a],[\;],[a,a,a]\big].$ We can {\em naturally transform} a list of lists into a list by concatenation. In other words, for any set $X$ there is a function $\mu_X\taking\List\circ\List(X)\to\List(X)$ which sends our lists above to $[a,b,a,c,a,b,c,c]$ and $[\;]$ and $[a,a,a,a],$ respectively. In fact, even if we use a function $f\taking X\to Y$ to convert a list of $X$'s into a list of $Y$'s (or a list of lists of $X$'s into a list of lists of $Y$'s), the concatenation “works right”. Take a deep breath for the precise statement couched as a slogan.
+It may seem a strange thing to contemplate, but there is also a functor $\List\circ\List\taking\Set\to\Set$ that sends a set $X$ to the set of lists of lists in $X.$ If $X=\{a,b,c\}$ then $\List\circ\List(X)$ contains elements like $\big[[a,b],[a,c,a,b,c],[c]\big]$ and $\big[[\,]\big]$ and $\big[[a],[\,],[a,a,a]\big].$ We can {\em naturally transform} a list of lists into a list by concatenation. In other words, for any set $X$ there is a function $\mu_X\taking\List\circ\List(X)\to\List(X)$ which sends our lists above to $[a,b,a,c,a,b,c,c]$ and $[\,]$ and $[a,a,a,a],$ respectively. In fact, even if we use a function $f\taking X\to Y$ to convert a list of $X$'s into a list of $Y$'s (or a list of lists of $X$'s into a list of lists of $Y$'s), the concatenation “works right”. Take a deep breath for the precise statement couched as a slogan.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -242,7 +242,7 @@ State 2B&State 0&State 0\\\bhline
 
 How are these models compatible? Looking at the table for $Y,$ if one removes the distinction between States 1A, 1B, 1C and between States 2A and 2B, then one returns with the table for $X.$ The table for $Y$ is more specific, but it is fully compatible with table $X.$ The sense in which it is compatible is precisely the sense defined by there being a natural transformation.
 
-Recall that $\mcM=(\List(\Sigma),[\;],\plpl)$ is a monoid, and that a monoid is simply a category with one object, say $\Ob(\mcM)=\{\monOb\}$ (see Section~\ref{sec:mon grp pro as cat}). With $\Sigma=\{a,b\},$ the monoid $\mcM$ can be visualized as follows:
+Recall that $\mcM=(\List(\Sigma),[\,],\plpl)$ is a monoid, and that a monoid is simply a category with one object, say $\Ob(\mcM)=\{\monOb\}$ (see Section~\ref{sec:mon grp pro as cat}). With $\Sigma=\{a,b\},$ the monoid $\mcM$ can be visualized as follows:
 $$
 \mcM=\fbox{\xymatrix{\LMO{\monOb}\ar@(ul,dl)[]_a\ar@(ur,dr)[]^b}}
 $$
