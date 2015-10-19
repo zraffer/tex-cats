@@ -1,0 +1,27 @@
+Given x, a character position, consider the following. We know that x is a
+character position, which when moved up results in a character position, which
+when moved down results in a character position that we’ll call P(x). We also
+know that x is a character position that we’ll call Q(x). Fact: whenever x is a
+character position we will have P(x)=Q(x). Summary: [up, down] = [ ]
+
+Given x, a character position, consider the following. We know that x is a
+character position, which when moved down results in a character position,
+which when moved up results in a character position that we’ll call P(x). We also
+know that x is a character position that we’ll call Q(x). Fact: whenever x is a
+character position we will have P(x)=Q(x). Summary: [down, up] = [ ]
+
+Given x, a character position, consider the following. We know that x is a
+character position, which when moved up results in a character position, which
+when moved right results in a character position that we’ll call P(x). We also
+know that x is a character position, which when moved right results in a
+character position, which when moved up results in a character position that
+we’ll call Q(x). Fact: whenever x is a character position we will have P(x)=Q(x).
+Summary: [up, right] = [right, up]
+
+Given x, a character position, consider the following. We know that x is a
+character position, which when moved down results in a character position,
+which when moved right results in a character position that we’ll call P(x). We
+also know that x is a character position, which when moved right results in a
+character position, which when moved down results in a character position that
+we’ll call Q(x). Fact: whenever x is a character position we will have P(x)=Q(x).
+Summary: [down, right] = [right, down]

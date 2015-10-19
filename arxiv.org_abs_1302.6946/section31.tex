@@ -513,6 +513,7 @@ If monoids are understood in terms of how they act on sets, then it is reasonabl
 \end{blockENG}
 
 \begin{blockRUS}
+Если моноиды понимать в терминах того, как они действуют на множествах, то осмысленным будет способ думать о них в терминах ологов. На самом деле с моноидами связаны в точности те ологи, которые имеют в точности один тип (и, возможно, много стрелочек и коммутативных диаграмм).
 \end{blockRUS}
 
 \begin{exampleENG}\label{ex:monoid as olog}\index{monoid!olog of}
@@ -523,7 +524,13 @@ We might imagine that $M$ acts on the set of positions for a character in an old
 \end{center}
 \end{exampleENG}
 
-\begin{exampleRUS}\label{ex:monoid as olog}\index{monoid!olog of}
+\begin{exampleRUS}\label{ex:monoid as olog}\index{моноид!олог}\index{олог!моноида}
+В этом примере мы покажем, как сопоставить олог действию моноида. Рассмотрим моноид $M,$ порожденный множеством $\{u,d,r\},$ элементы которого означают «вверх, вниз, вправо», удовлетворяющий отношениям
+$$[u,d]\sim[\,],\hsp[d,u]\sim[\,],\hsp[u,r]=[r,u],\hsp \tn{и}\hsp [d,r]=[r,d].$$
+Мы пожем представить, как $M$ действует на множестве положений персонажа в старой видеоигре. В данном случае олог, соответствующий этому действию, должен выглядеть примерно так:
+\begin{center}
+\includegraphics[width=\textwidth]{monoidOlogRU}
+\end{center}
 \end{exampleRUS}
 
 %% Subsubsection %%
