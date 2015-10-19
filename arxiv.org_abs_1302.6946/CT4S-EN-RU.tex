@@ -1,13 +1,14 @@
-\documentclass{book}
+\documentclass[xetex]{book}
 \newif\ifENG\ENGtrue % change me
 \newif\ifRUS\RUStrue % change me
 \usepackage{mystyle,subfiles}
 \begin{document}
 \begin{russian}
+
 \frontmatter
 \maketitle
 \subfile{chapter0}
-\tableofcontents
+\globalTOC
 
 \mainmatter
 \subfile{chapter1}

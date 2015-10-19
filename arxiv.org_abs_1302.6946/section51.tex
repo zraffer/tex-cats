@@ -513,7 +513,7 @@ It turns out that almost all the basic database operations are captured by these
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Pullback: $\Delta$}{ / }{Пулбек: $\Delta$}}
+\subsubsection{\caseENGRUS{Pullback}{ / }{Пулбек}: \texorpdfstring{$\Delta$}{Δ}}
 
 \begin{blockENG}
 Given a functor $F\taking\mcC\to\mcD$ and a functor $I\taking\mcD\to\Set,$ we can compose them to get a functor $I\circ F\taking\mcC\to\Set.$ In other words, the presence of $F$ provides a way to convert $\mcD$-instances into $\mcC$-instances. In fact this conversion is functorial, meaning that morphisms of $\mcD$-instances are sent to morphisms of $\mcC$-instances. We denote the resulting functor by $\Delta_F\taking\mcD\set\to\mcC\set$ and call it {\em pullback along $F$}.
@@ -672,7 +672,7 @@ Write out the two tables associated to the $[1]$-instance $\Delta_F(I)\taking[1]
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Left pushforward: $\Sigma$}{ / }{Левое расширение Кана: $\Sigma$}}\label{sec:left push}
+\subsubsection{\caseENGRUS{Left pushforward}{ / }{Левое расширение Кана}: \texorpdfstring{$\Sigma$}{Σ}}\label{sec:left push}
 
 \begin{blockENG}
 Let $F\taking\mcC\to\mcD$ be a functor. The functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint, $\Sigma_F\taking\mcC\set\to\mcD\set.$ The rough idea is that $\Sigma_F$ performs parameterized colimits. Given an instance $I\taking\mcC\to\Set,$ we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD),$ the set $\Sigma_F(I)(d)$ is the colimit (think, union) of some diagram back home in $\mcC.$ 
@@ -806,7 +806,7 @@ By the universal property of colimits, this induces the required function $$\col
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Right pushforward: $\Pi$}{ / }{Правое расширение Кана: $\Pi$}}
+\subsubsection{\caseENGRUS{Right pushforward}{ / }{Правое расширение Кана}: \texorpdfstring{$\Pi$}{Π}}
 
 \begin{blockENG}
 Let $F\taking\mcC\to\mcD$ be a functor. We heard in Section~\ref{sec:left push} that the functor $\Delta_F\taking\mcD\set\to\mcC\set$ has a left adjoint. Here we explain that it has a right adjoint, $\Pi_F\taking\mcC\set\to\mcD\set$ as well. The rough idea is that $\Pi_F$ performs parameterized limits. Given an instance $I\taking\mcC\to\Set,$ we get an instance on $\mcD$ that acts as follows. For each object $d\in\Ob(\mcD),$ the set $\Pi_F(I)(d)$ is the limit (think, fiber product) of some diagram back home in $\mcC.$ 

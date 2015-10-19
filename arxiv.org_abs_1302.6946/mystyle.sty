@@ -42,8 +42,20 @@
 \newfontfamily\latinfonttt{Ubuntu Mono}
 \PolyglossiaSetup{russian}{indentfirst=true}
 
+\usepackage{etoc}
 \usepackage{tocbibind}
 \usepackage[titles]{tocloft}
+\newcommand{\globalTOC}{
+    \setcounter{tocdepth}{1}
+    \tableofcontents
+}
+\newcommand{\localTOC}{
+    \setcounter{tocdepth}{3}
+    \raggedbottom
+    \localtableofcontents
+    \raggedbottom
+    \pagebreak
+}
 
 \usepackage{etex}
 \usepackage{amsthm,amscd}
@@ -348,7 +360,6 @@
 \def\GrInSchema{\xymatrix{\LMO{Ar}\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LMO{V\!e}}}
 
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{2}
 
 \def\sub{\begin{itemize}\item}
 \def\endsub{\end{itemize}}
