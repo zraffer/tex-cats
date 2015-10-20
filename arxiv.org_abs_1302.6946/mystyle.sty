@@ -44,17 +44,19 @@
 
 \usepackage{etoc}
 \usepackage{tocbibind}
-\usepackage[titles]{tocloft}
+\setcounter{tocdepth}{3}
+\etocsettocstyle{\medskip\hrule\medskip}{\medskip\hrule\medskip}
 \newcommand{\globalTOC}{
-    \setcounter{tocdepth}{1}
+    \etocsettocdepth{section}
     \tableofcontents
+    \etocsettocdepth{subsubsection}
+    \etocarticlestyle
 }
 \newcommand{\localTOC}{
-    \setcounter{tocdepth}{3}
-    \raggedbottom
-    \localtableofcontents
-    \raggedbottom
-    \pagebreak
+%    \raggedbottom
+    \localtableofcontents*
+%    \raggedbottom
+%    \pagebreak
 }
 
 \usepackage{etex}
