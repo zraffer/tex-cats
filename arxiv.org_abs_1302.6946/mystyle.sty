@@ -45,9 +45,15 @@
 \usepackage{etoc}
 \usepackage{tocbibind}
 \setcounter{tocdepth}{3}
-\makeatletter
-\def\etocarticlestyle{\etocsettocstyle{\section *{\contentsname}}{}}
-\makeatother
+\etocsettocdepth{subsubsection}
+\newcommand{\globalTOC}{
+    \etocsetnexttocdepth{section}
+    \tableofcontents
+}
+\newcommand{\localTOC}{
+    \etocsettocstyle{\section*{\contentsname}}{}
+    \localtableofcontents
+}
 
 \usepackage{etex}
 \usepackage{amsthm,amscd}
