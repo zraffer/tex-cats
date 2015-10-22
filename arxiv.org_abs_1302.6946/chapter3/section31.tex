@@ -555,7 +555,7 @@ According to Wikipedia, a \href{http://en.wikipedia.org/wiki/Finite_state_machin
 \item $S$ — конечное непустое множество, называемое {\em множеством состояний},
 \item $\delta\taking \Sigma\times S\to S$ — функция, называемая {\em функцией переходов},
 \item $s_0\in S$ — элемент, называемый {\em начальным состоянием},
-\item $F\ss S$ — подмножество, называемое {\em мноеством финальных состояний}.
+\item $F\ss S$ — подмножество, называемое {\em множеством финальных состояний}.
 \end{enumerate}
 \end{blockRUS}
 
@@ -564,7 +564,7 @@ In this book we will not worry about the initial state and the set of final stat
 \end{blockENG}
 
 \begin{blockRUS}
-В данной книге нас не будут заботить начальные состояния и множество финальных состояний, мы больше сосредоточимся на взаимодействии через $\delta$ между алфавитом $\Sigma$ и множеством $S$ состояний.
+В данной книге нас не будут заботить начальное состояние и множество финальных состояний, мы больше сосредоточимся на воздействии алфавита $\Sigma$ на множество $S$ состояний при помощи $\delta$.
 \end{blockRUS}
 
 \begin{figure}[h]
@@ -575,7 +575,7 @@ In this book we will not worry about the initial state and the set of final stat
 \caption{A finite state machine with alphabet $\Sigma=\{a,b\}$ and state set $S=\{\tn{State 0, State 1, State 2}\}.$ If pressed, we will make State 0 the initial state and \{State 2\} the set of final states.}\label{fig:fsa}
 \end{blockENG}
 \begin{blockRUS}
-\caption{A finite state machine with alphabet $\Sigma=\{a,b\}$ and state set $S=\{\tn{State 0, State 1, State 2}\}.$ If pressed, we will make State 0 the initial state and \{State 2\} the set of final states.}\label{fig:fsa}
+\caption{Конечный автомат с алфавитом $\Sigma=\{a,b\}$ и множеством состояний $S=\{\tn{State 0, State 1, State 2}\}.$ В случае необходимости можно сделать состояние State 0 начальным, а \{State 2\} выбрать в качестве множества финальных состояний.}\label{fig:fsa}
 \end{blockRUS}
 \end{figure}
 
@@ -584,6 +584,7 @@ The following proposition expresses the notion of finite state automata in terms
 \end{blockENG}
 
 \begin{blockRUS}
+Следующее утверждение выражает понятие конечного автомата в терминах свободных моноидов и их действий на конечных множествах.
 \end{blockRUS}
 
 \begin{propositionENG}\index{finite state machine}
@@ -591,6 +592,7 @@ Let $\Sigma, S$ be finite non-empty sets. Giving a function $\delta\taking\Sigma
 \end{propositionENG}
 
 \begin{propositionRUS}\index{конечный автомат}
+Пусть $\Sigma, S$ — это конечные непустые множества. Задание функции $\delta\taking\Sigma\times S\to S$ эквивалентно заданию действия свободного моноида $\List(\Sigma)$ на $S.$
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -602,6 +604,11 @@ Given an element $f\in\Hom_\Set(\Sigma\times S,S),$ define $\psi(f)\taking\List(
 \end{proofENG}
 
 \begin{proofRUS}
+Из Определения~\ref{def:monoid action} мы знаем, что функция $\varepsilon\taking\List(\Sigma)\times S\to S$ образует действие моноида $\List(\Sigma)$ на множестве $S$ ттт для всех $s\in S$ выполняется $\varepsilon([\,],s)=s$ и для любых двух элементов $m,m'\in\List(\Sigma)$ выполняется $\varepsilon(m,\varepsilon(m',s))=\varepsilon(m\star m',s),$ где $m\star m'$ — это конкатенация списков. Пусть $$A=\{\varepsilon\taking \List(\Sigma)\times S\to S\|\varepsilon\tn{ образует действие}\}.$$ Нам требуется доказать, что имеется изоморфизм множеств $$\varphi\taking A\To{\iso}\Hom_\Set(\Sigma\times S,S).$$
+
+Для данного элемента $\varepsilon\taking\List(\Sigma)\times S\to S$ в $A$ зададим значение $\varphi(\varepsilon)$ на элементе $(\sigma,s)\in\Sigma\times S$ как $\varphi(\varepsilon)(\sigma,s):=\varepsilon([\sigma],s),$ где $[\sigma]$ — одноэлементный список. Теперь определим $\psi\taking\Hom_\Set(\Sigma\times S,S)\to A.$
+
+Для данного элемента $f\in\Hom_\Set(\Sigma\times S,S)$ зададим $\psi(f)\taking\List(\Sigma)\times S\to S$ на паре $(L,s)\in\List(\Sigma)\times S,$ где $L=[\varepsilon_1,\ldots,\varepsilon_n]$ следующим образом. По индукции, если $n=0,$ положим $\psi(f)(L,s):=s$; если $n\geq 1,$ обозначим $L'=[\varepsilon_1,\ldots,\varepsilon_{n-1}]$ и зададим $\psi(f)(L,s):=\psi(f)(L',f(\varepsilon_n,s)).$ Можно легко проверить, что $\psi(f)$ удовлетворяет двум вышеупомянутым условиям, образуя действие $\List(\Sigma)$ на $S.$ Также легко проверить, что $\varphi$ и $\psi$ взаимно обратны, что завершает доказательство.
 \end{proofRUS}
 
 \begin{blockENG}
@@ -612,6 +619,10 @@ A finite state machine is an action of a free monoid on a finite set.
 \end{blockENG}
 
 \begin{blockRUS}
+Мы подведем итог идее этого раздела так:
+\begin{sloganRUS}
+Конечный автомат — это действие свободного моноида на конечном множестве.
+\end{sloganRUS}
 \end{blockRUS}
 
 \begin{exerciseENG}
@@ -622,6 +633,10 @@ Consider the functions $\phi$ and $\psi$ above.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Рассмотрим функции $\varphi$ и $\psi,$ определенные выше.
+\sexc Покажите, что для любых $f\taking\Sigma\times S\to S,$ отображение $\psi(f)\taking\List(\Sigma)\times S\to S$ задает действие.
+\item Покажите, что $\varphi$ и $\psi$ являются взаимно обратными функциями (например, $\varphi\circ\psi=\id_{\Hom(\Sigma\times S,S)}$ и $\psi\circ\varphi=\id_{A}.$)
+\endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
