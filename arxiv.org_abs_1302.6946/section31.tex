@@ -197,8 +197,8 @@ $$(n,f)=[f(1),f(2),\ldots,f(n)].$$
 Для заданных двух списков $L=(n,f)$ и $L'=(n',f'),$ определим {\em конкатенацию $L$ и $L'$}\index{список!конкатенация}\index{конкатенация!списков}, обозначаемую $L\plpl L',$\index{символ!$\plpl$} как список $(n+n',f\plpl f'),$ где $f\plpl f'\taking \ul{n+n'}\to X$ задано на $i\leq n+n'$ как
 $$(f\plpl f')(i):=
 \begin{cases}
-f(i)&\tn{ if }i\leq n\\
-f'(i-n)&\tn{ if }i\geq n+1
+f(i),&\tn{если}i\leq n\\
+f'(i-n),&\tn{если}i\geq n+1
 \end{cases}
 $$
 \end{definitionRUS}
@@ -549,6 +549,14 @@ According to Wikipedia, a \href{http://en.wikipedia.org/wiki/Finite_state_machin
 \end{blockENG}
 
 \begin{blockRUS}
+Согласно Википедии, \href{https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82#.D0.94.D0.B5.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D0.BE.D1.81.D1.82.D1.8C}{\em детерминированный конечный автомат} — это пятерка $(\Sigma,S,s_0,\delta,F),$ где
+\begin{enumerate}
+\item $\Sigma$ — конечное непустое множество символов, называемое {\em входным алфавитом},
+\item $S$ — конечное непустое множество, называемое {\em множеством состояний},
+\item $\delta\taking \Sigma\times S\to S$ — функция, называемая {\em функцией переходов},
+\item $s_0\in S$ — элемент, называемый {\em начальным состоянием},
+\item $F\ss S$ — подмножество, называемое {\em мноеством финальных состояний}.
+\end{enumerate}
 \end{blockRUS}
 
 \begin{blockENG}
@@ -556,6 +564,7 @@ In this book we will not worry about the initial state and the set of final stat
 \end{blockENG}
 
 \begin{blockRUS}
+В данной книге нас не будут заботить начальные состояния и множество финальных состояний, мы больше сосредоточимся на взаимодействии через $\delta$ между алфавитом $\Sigma$ и множеством $S$ состояний.
 \end{blockRUS}
 
 \begin{figure}[h]
