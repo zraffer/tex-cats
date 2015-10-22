@@ -1,0 +1,77 @@
+\documentclass[../main/CT4S-EN-RU]{subfiles}
+
+\begin{document}
+
+\section{\caseENGRUS{Intention of this book}{ / }{Предназначение этой книги}}
+
+\begin{blockENG}
+The world of {\em applied mathematics} is much smaller than the world of {\em applicable mathematics}. As alluded to above, this course is intended to create a bridge between the vast array of mathematical concepts that are used daily by mathematicians to describe all manner of phenomena that arise in our studies, and the models and frameworks of scientific disciplines such as physics, computation, and neuroscience.
+\end{blockENG}
+
+\begin{blockRUS}
+Мир уж\'e существующей {\em примененной математики} (обычно называемой {\em прикладной}) значительно \'yже мира всей {\em применимой математики} [каламбур].%
+\endnote{
+Здесь и далее все краткие пояснения в квадратных скобках добавлены при переводе. Обычно они появляются в случае, если дословный перевод не способен отразить смысл исходного текста, а слишком художественный исказил бы его. Как говорит поговорка, «перевод - как женщина: если верен, то некрасив, а если красив, то неверен.»
+} Как указывалось выше, этот курс предназначен создать мост между, с одной стороны, огромным массивом математических понятий, применяемых ежедневно математиками для описания возникающих в их исследованиях разнообразных феноменов, и, с другой стороны, моделями и конструкциями таких научных дисциплин, как физика, вычислительная математика, нейронаука. 
+\end{blockRUS}
+
+\begin{blockENG}
+To the pure mathematician I'll try to prove that concepts such as categories, functors, natural transformations, limits, colimits, functor categories, sheaves, monads, and operads — concepts that are often considered too abstract for even math majors — can be communicated to scientists with no math background beyond linear algebra. If this material is as teachable as I think, it means that category theory is not esoteric but somehow well-aligned with ideas that already make sense to the scientific mind. Note, however, that this book is example-based rather than proof-based, so it may not be suitable as a reference for students of pure mathematics.
+\end{blockENG}
+
+\begin{blockRUS}
+Что касается чистых математиков, им я попытаюсь доказать, что такие понятия, как категории, функторы, естественные преобразования, пределы, копределы, категории функторов, пучки, монады и операды — понятия, зачастую рассматриваемые как слишком абстрактные даже студентами старших курсов — могут использоваться для общения с учеными, чье математическое образование не выходит за рамки курса линейной алгебры. Если этот материал настолько доступен к преподаванию, насколько я думаю, то это означает, что теория категорий не является своего рода эзотерикой, но, в определенном смысле, несет в себе идеи, которые совпадают с уже существующими в уме любого ученого. Заметим, однако, что эта книга основана на примерах, а не на доказательствах, в результате чего она, возможно, не подойдет в качестве пособия для студентов-чистых математиков. 
+\end{blockRUS}
+
+\begin{blockENG}
+To the scientist I'll try to prove the claim that category theory includes a formal treatment of conceptual structures that the scientist sees often, perhaps without realizing that there is well-oiled mathematical machinery to be employed. We will work on the structure of information; how data is made meaningful by its connections, both internal and outreaching, to other data. Note, however, that this book should most certainly not be taken as a reference on scientific matters themselves. One should assume that any account of physics, materials science, chemistry, etc. has been oversimplified.\index{a warning!oversimplified science} The intention is to give a flavor of how category theory may help us model scientific ideas, not to explain these ideas in a serious way.
+\end{blockENG}
+
+\begin{blockRUS}
+Что касается ученых, им я попытаюсь доказать утверждение, что теория категорий включает в себя формальное изложение концептуальных структур, с которыми часто сталкивается ученый, возможно, не осознавая, что уже имеется готовый к употреблению «хорошо смазанный» математический механизм. Мы будем иметь дело со структурой информации; тем, как сделать данные осмысленными при помощи их связей, как внутренних, так и уходящих вовне. Заметим, однако, что данная книга совершенно определенно не должна рассматриваться как справочник по научным предметам самим по себе. Следует учитывать, что любое ознакомление с физикой, материаловедением и прочими, здесь дается в упрощенном виде\index{предупреждение!упрощенная наука}. Наша цель — дать почувствовать, как именно теория категорий может помочь моделировать научные идеи, а не серьезно объяснять сами эти идеи. 
+\end{blockRUS}
+
+\begin{blockENG}
+Data gathering is ubiquitous in science. Giant databases are currently being mined for unknown patterns, but in fact there are many (many) known patterns that simply have not been catalogued. Consider the well-known case of medical records. A patient's medical history is often known by various individual doctor-offices but quite inadequately shared between them. Sharing medical records often means faxing a hand-written note or a filled-in house-created form between offices.
+\end{blockENG}
+
+\begin{blockRUS}
+Сбор данных вездесущ в науке. Сейчас в гигантских базах данных ведется целенаправленный поиск ранее неизвестных взаимосвязей, и в то же время имеется огромное количество информации, которая просто еще не попала в эти каталоги. Рассмотрим хорошо известный случай медицинских записей. История болезни пациента хорошо известна различным отдельным медицинским заведениям, но совершенно неадекватно передается между ними. Обмен медицинскими записями зачастую означает передачу по факсу между заведениями рукописной справки или заполнения доморощенной формы. 
+\end{blockRUS}
+
+\begin{blockENG}
+Similarly, in science there exists substantial expertise making brilliant connections between concepts, but it is being conveyed in silos of English prose known as journal articles. Every scientific journal article has a methods section, but it is almost impossible to read a methods section and subsequently repeat the experiment — the English language is inadequate to precisely and concisely convey what is being done.
+\end{blockENG}
+
+\begin{blockRUS}
+Аналогично, в науке развит достаточный профессионализм в создании блистательных связей между понятиями, но он втискивается в прокрустово ложе естественного языка, известное как журнальные статьи. Каждая статья в научном журнале имеет методический раздел, но практически невозможно прочесть методический раздел и последовательно воспроизвести эксперимент, — английский язык неадекватен для точной и краткой передачи того, что же необходимо проделать. 
+\end{blockRUS}
+
+\begin{blockENG}
+The first thing to understand in this course is that reusable methodologies can be formalized, and that doing so is inherently valuable. Consider the following analogy. Suppose you want to add up the area of a region in space (or the area under a curve). You break the region down into small squares, each of which you know has area $A$; then you count the number of squares, say $n,$ and the result is that the region has an area of about $nA.$ If you want a more precise and accurate result you repeat the process with half-size squares. This methodology can be used for any area-finding problem (of which there are more than a first-year calculus student generally realizes) and thus it deserves to be formalized. But once we have formalized this methodology, it can be taken to its limit and out comes integration by Riemann sums.
+\end{blockENG}
+
+\begin{blockRUS}
+Первая вещь, которую следует понять из этого курса, — то, что повторно используемые методологии могут быть формализованы, и то, что делать это — существенно важно. Рассмотрим следующую аналогию. Предположим, мы хотим просуммировать площадь области в пространстве (или площадь под кривой). Мы разбиваем область на малые квадратики, каждый из которых имеет площадь $A$; затем мы подсчитываем число квадратиков, скажем $n,$ и в результате получаем, что площадь равняется $nA.$ Если мы хотим более точного результата, мы повторяем процедуру с квадратиками половинного размера. Эта методология может быть использована для любой задачи нахождения площади (которых гораздо больше, чем представляет себе студент-первокурсник, изучающий мат. анализ) и поэтому она заслуживает формализации. Но как только мы формализовали методологию, она может быть существенно улучшена, и отсюда получается интегрирование при помощи римановых сумм. 
+\end{blockRUS}
+
+\begin{blockENG}
+I intend to show that category theory is incredibly efficient as a language for experimental design patterns, introducing formality while remaining flexible. It forms a rich and tightly woven conceptual fabric that will allow the scientist to maneuver between different perspectives whenever the need arises. Once one builds that fabric for oneself, he or she has an ability to think about models in a way that simply would not occur without it.  Moreover, putting ideas into the language of category theory forces a person to clarify their assumptions. This is highly valuable both for the researcher and for his or her audience.
+\end{blockENG}
+
+\begin{blockRUS}
+Я собираюсь показать, что теория категорий невероятно эффективна как язык для экспериментальных дизайн-паттернов,%
+\endnote{
+TODO (и сюда дизайн-паттерны пробрались... или имеются в виду не они? уточнить!)
+} одновременно вводя формальность и оставаясь гибкой. Она образует крепко сотканную ткань понятий, которая позволит ученым маневрировать между различными точками зрения, как только возникает необходимость. Как только некто строит подобную ткань для самого себя, он или она получает возможность думать о моделях способом, который бы без этого не возник. Более того, выражение идей в языке теории категорий заставляет человека сделать более ясными свои предположения. Это чрезвычайно ценно как для исследователя, так и для его аудитории. 
+\end{blockRUS}
+
+\begin{blockENG}
+What must be recognized in order to find value in this course is that conceptual chaos is a major problem. Creativity demands clarity of thinking, and to think clearly about a subject requires an organized understanding of how its pieces fit together. Organization and clarity also lead to better communication with others. Academics often say they are paid to think and understand, but that is not true. They are paid to think, understand, and {\em communicate their findings}. Universal languages for science — languages such as calculus and differential equations, matrices, or simply graphs and pie-charts — already exist, and they grant us a cohesiveness that makes scientific research worthwhile. In this book I will attempt to show that category theory can be similarly useful in describing complex scientific understandings.
+\end{blockENG}
+
+\begin{blockRUS}
+Для того, чтобы извлечь пользу из этого курса, необходимо увидеть, что хаос понятий представляет из себя существенную проблему. Творчество требует ясности мышления, а ясное мышление о предмете требует организованного понимания того, как части предмета соединяются вместе. Организованность и ясность также приводят к лучшему общению с другими. Академические работники часто заявляют, что им платят за то, чтобы они думали и понимали, но это неправда. Им платят за то, чтобы они думали, понимали и {\em сообщали о своих находках}. Универсальные языки для науки — такие, как анализ и дифференциальные уравнения, матрицы, или же просто графики и круговые диаграммы, — уже существуют, и именно они дают нам ту связность, что делает научные исследования стоящими потраченных на них усилий. В этой книге я попытаюсь показать, что и теория категорий может быть в равной степени полезна для описания сложных научных прозрений. 
+\end{blockRUS}
+
+\end{document}
