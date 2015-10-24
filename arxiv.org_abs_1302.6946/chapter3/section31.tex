@@ -873,6 +873,7 @@ Recall that $(\NN,0,+)$ is the free monoid on one generator. It turns out that f
 \end{blockENG}
 
 \begin{blockRUS}
+Напомним, что $(\NN,0,+)$ является свободным моноидом с одним порождающим. Оказывается, что для любого другого моноида $\mcM=(M,e,\star)$ множество гомоморфизмов моноидов $\NN\to\mcM$ изоморфно множеству $M.$ Это частный случай (в котором $G$ — это множество из одного элемента) следующего утверждения.
 \end{blockRUS}
 
 \begin{propositionENG}\label{prop:free monoid}
@@ -881,6 +882,8 @@ $$\Hom_\Mon(F(G),\mcM)\To{\iso}\Hom_\Set(G,M).$$
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:free monoid}
+Пусть $G$ — это множество, $F(G):=(\List(G),[\,],\plpl)$ — свободый моноид на $G,$ а $\mcM:=(M,e,\star)$ — произвольный моноид. Имеется естественный изоморфизм
+$$\Hom_\Mon(F(G),\mcM)\To{\iso}\Hom_\Set(G,M).$$
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -891,6 +894,10 @@ $$\psi(\phi f)(L)=(\phi f)(g_1)\star\cdots\star(\phi f)(g_n)=f[g_1]\star\cdots\s
 \end{proofENG}
 
 \begin{proofRUS}
+Мы предложим функцию $\varphi\taking\Hom_\Mon(F(G),\mcM)\to\Hom_\Set(G,M)$ и функцию $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM),$ а затем покажем, что они взаимно обратны. Сначала построим $\varphi.$ Для данного изоморфизма моноидов $f\taking F(G)\to\mcM$ нам нужно найти $\varphi(f)\taking G\to M.$ Для произвольного $g\in G$ положим $\varphi(f)(g):=f([g]).$
+
+Теперь построим $\psi.$ Для заданного $p\taking G\to M$ нужно найти функцию $\psi(p)\taking\List(G)\to\mcM$ такую, что $\psi(p)$ является гомоморфизмом моноидов. Для списка $L=[g_1,\ldots,g_n]\in\List(G)$ зададим $\psi(p)(L):=p(g_1)\star\cdots\star p(g_n)\in M.$ В частности, $\psi(p)([\,])=e.$ Нетрудно заметить, что это на самом деле гомоморфизм моноидов. Также легко доказать, что $\varphi\circ\psi(p)=p$ для всех $p\in\Hom_\Set(G,M).$ Мы покажем, что $\psi\circ\varphi(f)=f$ для любых $f\in\Hom_\Mon(F(G),\mcM).$ Выберем некоторый $L=[g_1,\ldots,g_n]\in\List(G).$ Тогда
+$$\psi(\varphi f)(L)=(\varphi f)(g_1)\star\cdots\star(\varphi f)(g_n)=f[g_1]\star\cdots\star f[g_n]=f([g_1,\ldots,g_n])=f(L).$$
 \end{proofRUS}
 
 \begin{exerciseENG}
@@ -898,6 +905,7 @@ Let $G=\{a,b\},$ let $\mcM:=(M,e,\star)$ be any monoid, and let $f\taking G\to M
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Пусть $G=\{a,b\},$ $\mcM:=(M,e,\star)$ — произвольный моноид, а $f\taking G\to M$ задана равенствами $f(a)=m$ и $f(b)=n,$ где $m,n\in M.$ Если $\psi\taking\Hom_\Set(G,M)\to\Hom_\Mon(F(G),\mcM)$ — это функция, упомянутая в доказательстве Утверждения~\ref{prop:free monoid}, а $L=[a,a,b,a,b],$ то чему будет равняться $\psi(f)(L)$ ?
 \end{exerciseRUS}
 
 %% Subsubsection %%
@@ -909,6 +917,7 @@ A monoid homomorphism $f\taking M\to M'$ (see Definition~\ref{def:monoid hom}) e
 \end{blockENG}
 
 \begin{blockRUS}
+Гомоморфизм моноидов $f\taking M\to M'$ (см. Определение~\ref{def:monoid hom}) гарантирует, что элементы $M$ имеют осмысленную интерпретацию в $M'$; они действуют на $M'$ таким же образом, каким они делали это в исходном $M.$ Если у нас есть такой гомоморфизм $f$ и действие $\alpha\taking M'\times S\to S$ моноида $M'$ на множестве $S,$ то у нас есть способ задать действие $M$ на $S$. А именно, мы берем элемент $M,$ переводим его в $M',$ и действуем полученным элементом на $S.$ В терминах функций, мы берем композицию $\alpha$ с функцией $f\times\id_S\taking M\times S\to M'\times S,$ получая функцию, которую мы обозначим $$\Delta_f(\alpha)\taking M\times S\to S.$$ После Утверждения~\ref{prop:restriction of scalars} мы будем знать, что $\Delta_f(\alpha)$ действительно является действием моноида, и будем говорить, что оно получается {\em ограничением скаляров вдоль $f$}.\index{ограничение скаляров}
 \end{blockRUS}
 
 \begin{propositionENG}\label{prop:restriction of scalars}
@@ -916,6 +925,7 @@ Let $\mcM:=(M,e,\star)$ and $\mcM':=(M',e',\star')$ be monoids, $f\taking\mcM\to
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:restriction of scalars}
+Пусть $\mcM:=(M,e,\star)$ и $\mcM':=(M',e',\star')$ — это моноиды, $f\taking\mcM\to\mcM'$ — гомоморфизм моноидов, $S$ — множество; предположим также, что $\alpha\taking M'\times S\to S$ — это действие $\mcM'$ на $S.$ Тогда $\Delta_f(\alpha)\taking M\times S\to S,$ введенное выше, также является действием моноида.
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -928,6 +938,12 @@ Refer to Remark~\ref{rmk:monoid action}; we assume $\alpha$ is a monoid action a
 \end{proofENG}
 
 \begin{proofRUS}
+Вспомним про Примечание~\ref{rmk:monoid action}; мы знаем, что $\alpha$ — это действие моноида, и хотим показать, что $\Delta_f(\alpha)$ — тоже действие моноида. Действительно, верно равенство $\Delta_f(\alpha)(e,s)=\alpha(f(e),s)=\alpha(e',s)=s,$ а также следующие равенства:
+\begin{align*}
+\Delta_f(\alpha)(m,\Delta_f(\alpha)(n,s))=\alpha(f(m),\alpha(f(n),s))&=\alpha(f(m)\star' f(n),s)\\
+&=\alpha(f(m\star n),s)\\
+&=\Delta_f(\alpha)(m\star n,s).
+\end{align*}
 \end{proofRUS}
 
 \begin{exampleENG}
@@ -935,6 +951,7 @@ Let $\NN$ and $\ZZ$ denote the additive monoids of natural numbers and integers,
 \end{exampleENG}
 
 \begin{exampleRUS}
+Пусть $\NN$ и $\ZZ$ обозначают аддитивные моноиды натуральных и целых чисел соответственно, а $i\taking\NN\to\ZZ$ — вложение, которое, как мы видели в Примере~\ref{ex:nat to int}, является гомоморфизмом моноидов. Имеется действие $\alpha\taking\ZZ\times\RR\to\RR$ моноида $\ZZ$ на множестве $\RR$ действительных чисел, заданное так: $\alpha(n,x)=n+x.$ Очевидно, это действие устроено точно так же, как если бы мы ограничили наши скаляры вдоль $\NN\ss\ZZ,$ разрешая прибавлять к действительным числам только натуральные. Действие $\Delta_i\alpha\taking\NN\times\RR\to\RR$ задано $(n,x)\in\NN\times\RR$ как $\Delta_i\alpha(n,x)=\alpha(i(n),x)=\alpha(n,x)=n+x,$ что и следовало ожидать.
 \end{exampleRUS}
 
 \begin{exampleENG}
@@ -942,6 +959,7 @@ Suppose that $V$ is a complex vector space. In particular, this means that the m
 \end{exampleENG}
 
 \begin{exampleRUS}
+Предположим, что $V$ — комплексное векторное пространство. Это, в частности, означает, что моноид $\CC$ комплексных чисел (с умножением) действует на элементах $V.$ Если $i\taking\RR\to\CC$ — это вложение действительной прямой в $\CC,$ то $i$ — гомоморфизм моноидов. Ограничение скаляров в вышеописанном смысле превращает $V$ в действительное векторное пространство, так что название «ограничение скаляров» здесь вполне уместно.
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -949,6 +967,7 @@ Let $\NN$ be the free monoid on one generator, let $\Sigma=\{a,b\},$ and let $S=
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Пусть $\NN$ — это свободный моноид с одним порождающим, $\Sigma=\{a,b\},$ и $S=\{\tn{State 0, State 1, State 2}\}.$ Рассмотрим отображение моноидов $f\taking\NN\to\List(\Sigma),$ заданное так: $1\mapsto [a,b,b].$ Действие моноида $\alpha\taking\List(\Sigma)\times S\to S,$ определенное в Примере~\ref{ex:action table} можем быть преобразовано ограничением скаляров вдоль $f$ в действие $\Delta_f(\alpha)$ моноида $\NN$ на $S.$ Запишите таблицу этого действия.
 \end{exerciseRUS}
 
 \end{document}
