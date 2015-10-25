@@ -9,6 +9,7 @@ Groups are monoids in which every element has an inverse. If we think of these s
 \end{blockENG}
 
 \begin{blockRUS}
+Группы — это моноиды, в которых каждый элемент имеет обратный. Если думать об этих структурах в терминах того, как они действуют на множествах, то различие между группами и моноидами в том, что действие каждого элемента группы обратимо. Одним из способов думать о группах являются симметрии. Например, вращения и отражения квадрата образуют группу. 
 \end{blockRUS}
 
 \begin{blockENG}
@@ -16,6 +17,7 @@ Another way to think of the difference between monoids and groups is in terms of
 \end{blockENG}
 
 \begin{blockRUS}
+Есть и другой способ думать о различии между моноидами и группами, основанный на понятии времени. Моноиды хорошо подходят при рассуждениях о диффузии, в которой события нельзя обратить во времени вспять. Группы более подходят для рассуждений о механике, где все события обратимы.
 \end{blockRUS}
 
 %%%% Subsection %%%%
@@ -26,15 +28,18 @@ Another way to think of the difference between monoids and groups is in terms of
 Let $(M,e,\star)$ be a monoid. An element $m\in M$ is said to {\em have an inverse} if there exists an $m'\in M$ such that $mm'=e$ and $m'm=e.$ A {\em group} is a monoid $(M,e,\star)$ in which every element $m\in M$ has an inverse.
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:group}\index{group}\index{monoid!inverse of an element in}
+\begin{definitionRUS}\label{def:group}\index{группа}\index{моноид!обратимый элемент}
+Пусть $(M,e,\star)$ — это моноид. Говорят, что элемент $m\in M$ {\em имеет обратный}, если существует $m'\in M$ такой, что $mm'=e$ и $m'm=e.$ {\em Группа} — это моноид $(M,e,\star),$ в котором каждый элемент $m\in M$ имеет обратный.
 \end{definitionRUS}
 
 \begin{propositionENG}
-Suppose that $\mcM:=(M,e,\star)$ is a monoid and let $m\in M$ be an element. Then $m$ has at most one inverse.
+Suppose that $\mcM:=(M,e,\star)$ is a monoid and let $m\in M$ be an element. Then $m$ has at most one inverse.%
 \footnote{If $\mcM$ is a group then every element $m$ has exactly one inverse.}
 \end{propositionENG}
 
 \begin{propositionRUS}
+Предположим, что $\mcM:=(M,e,\star)$ — моноид, а $m\in M$ — его элемент. Тогда $m$ имеет не более одного обратного.%
+\footnote{Если $\mcM$ — это группа, то каждый элемент $m$ имеет ровно один обратный.}
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -43,6 +48,8 @@ $$m'=m'(mm'')=(m'm)m''=m''.$$
 \end{proofENG}
 
 \begin{proofRUS}
+Предположим, что $m'$ и $m''$ являются обратными к $m$; мы хотим показать, что $m'=m''.$ Это следует из свойства ассоциативности моноидов:
+$$m'=m'(mm'')=(m'm)m''=m''.$$
 \end{proofRUS}
 
 \begin{exampleENG}
@@ -50,6 +57,7 @@ The additive monoid $(\NN,0,+)$ is not a group because none of its elements are 
 \end{exampleENG}
 
 \begin{exampleRUS}
+Аддитивный моноид $(\NN,0,+)$ не является группой, поскольку ни один из его элементов не обратим, за исключением $0.$ С другой стороны, аддитивный моноид целых чисел $(\ZZ,0,+)$ — это группа. Моноид позиций часов из Примера~\ref{ex:cyclic} — тоже группа. Например, обратным к $Q^5$ в нем будет $Q^7,$ поскольку $Q^5\star Q^7=e=Q^7\star Q^5.$
 \end{exampleRUS}
 
 \begin{exampleENG}
@@ -57,6 +65,7 @@ Consider a square centered at the origin in $\RR^2.$ It has rotational and mirro
 \end{exampleENG}
 
 \begin{exampleRUS}
+Рассмотрим квадрат в $\RR^2$ с центром в начале координат. Он имеет вращательные и зеркальные симметрии. Всего их восемь, мы обозначим их $$\{e,\rho,\rho^2,\rho^3,\varphi,\varphi\rho,\varphi\rho^2,\varphi\rho^3\},$$ где $\rho$ означает вращение $90^\circ$ против часовой стрелки, а $\varphi$ — горизонтальное отражение (относительно вертикальной оси). Отношения состоят из $\rho^4=e,$ $\varphi^2=e,$ и $\rho^3\varphi=\varphi\rho.$
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:important groups}
@@ -66,6 +75,9 @@ Another interesting group is the Euclidean group\index{a group!$E_3$} $E(3)$ whi
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:important groups}
+Множеству $3\times 3$ матриц можно придать структуру моноида, где единицей будет единичная матрица $3\times 3,$ а умножением — обычное умножение матриц. Подмножество обратимых матриц образует группу, называемую {\em полной линейной группой порядка 3}\index{группа!$GL_3$} и обозначаемую $GL_3.$ Внутри $GL_3$ имеется так называемая {\em ортогональная группа}, обозначаемая $O_3,$ из матриц $M$ таких, что $M^\m1=M^\top.$ Эти матрицы соответствуют симметриям сферы с центром в начале координат.
+
+Другая интересная группа — Евклидова группа\index{группа!$E_3$} $E(3),$ которая состоит из всех {\em изометрий} $\RR^3,$ т.е. всех функций $\RR^3\to\RR^3,$ сохраняющих растояния.  
 \end{exampleRUS}
 
 \begin{applicationENG}\label{app:groups for symmetry}\index{symmetry}
@@ -77,6 +89,11 @@ That is, it's an isometry of $\RR^3$ such that each atom of $A$ is sent to a pos
 \end{applicationENG}
 
 \begin{applicationRUS}\label{app:groups for symmetry}\index{symmetry}
+В \href{https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F}{\text кристаллографии} часто интересуются симметриями расположений $A$ атомов в молекуле. Чтобы думать о симметриях в терминах групп, сначала определим {\em расположение атомов} как конечное подмножество $i\taking A\ss\RR^3.$ Симметрия в данном случае — это изометрия $\RR^3$ (см. Пример~\ref{ex:important groups}), скажем $f\taking\RR^3\to\RR^3$ такая, что существует пунктирная стрелка, делающая диаграмму ниже коммутативной:
+$$
+\xymatrix{A\ar@{-->}[r]\ar[d]_i&A\ar[d]^i\\\RR^3\ar[r]_f&\RR^3}
+$$
+То есть, это изометрия $\RR^3$ такая, что каждый атом $A$ переходит в положение, занимаемое перед этим (возможно, другим) атомом $A.$ Нетрудно показать, что множество таких изометрий образует группу, называемую \href{https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BB%D0%BB%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0}{\em кристаллографической группой}\index{кристаллографическая группа} данного кристалла.
 \end{applicationRUS}
 
 \begin{exerciseENG}\label{exc:permutation}\index{set!permutation of}
@@ -90,7 +107,15 @@ Let $S$ be a finite set. A {\em permutation of $S$}\index{permutation} is an iso
 \endsexc
 \end{exerciseENG}
 
-\begin{exerciseRUS}\label{exc:permutation}\index{set!permutation of}
+\begin{exerciseRUS}\label{exc:permutation}\index{множество!перестановка}
+Пусть $S$ — это конечное множество. {\em Перестановка $S$}\index{перестановка} — это изоморфизм $f\taking S\To{\iso}S.$ 
+\begin{center}
+\parbox{2.3in}{
+\includegraphics[height=2in]{SetPermutation}}
+\end{center}
+\sexc Предложите единицу и операцию умножения такие, что множество перестановок $S$ образует моноид. 
+\item Будет ли он группой?
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -98,6 +123,7 @@ In Exercise~\ref{exc:classify cyclic} you classified the cyclic monoids. Which o
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+В Упражнении~\ref{exc:classify cyclic} мы классифицировали циклические моноиды. Какие из них оказываются группами? 
 \end{exerciseRUS}
 
 \begin{definitionENG}[Group action]\label{def:group action}\index{group!action}\index{action!of a group}
@@ -110,6 +136,12 @@ In other words, considering $G$ as a monoid, it is an action in the sense of Def
 \end{definitionENG}
 
 \begin{definitionRUS}[Group action]\label{def:group action}\index{group!action}\index{action!of a group}
+Пусть $(G,e,\star)$ — это группа, а $S$ — некоторое множество. {\em Действие} $G$ на $S$ — это функция $\acts\taking G\times S\to S$ такая, что для всех $s\in S$ и $g,g'\in G,$ выполняется
+\begin{itemize}
+\item $e\acts s=s,$
+\item $g\acts(g'\acts s)=(g\star g')\acts s.$
+\end{itemize}
+Другими словами, если считать $G$ моноидом, это будет его действие в смысле Определения~\ref{def:monoid action}.
 \end{definitionRUS}
 
 \begin{exampleENG}\label{ex:U(1)}\index{a group!$U(1)$}
@@ -147,6 +179,37 @@ $$
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:U(1)}\index{a group!$U(1)$}
+Когда группа действует на множестве, она имеет характер \href{https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BC%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F}{\text симметрии}. Например, рассморим группу, элементами которой являются углы $\theta.$ Эту группу обозначают $U(1)$ и зачастую формализуют как единичную окружность на плоскости $\CC,$ состоящую из комплексных чисел $z=a+bi$ таких, что $|z|=a^2+b^2=1.$ Множество таких точек получает структуру группы $(U(1),e,\star),$ если задать в качестве единицы число $e:=1+0i,$ а в качестве умножения — обычное умножение комплекных чисел. Тем, для кого комплексные числа не столь привычны, сообщаем, что это просто сложение углов, где мы учитываем, что $360^\circ=0^\circ.$ Если $\theta_1=190^\circ$ и $\theta_2=278^\circ,$ то $\theta_1\star\theta_2=468^\circ=108^\circ.$ На языке комплексных чисел, $z=e^{i\theta}.$
+
+Группа $U(1)$ действует на любое множество, в котором обнаруживается вращательная симметрия вокруг фиксированной оси, подобная вращению Земли вокруг оси между Южным и Северным полюсами. Мы обозначим $S=\{(x,y,z)\in\RR^3\|x^2+y^2+z^2=1\}$ единичную сферу, и изучим действие вращением группы $U(1)$ на множество $S.$\index{орбита!вращения Земли}
+
+Сначала покажем, что $U(1)$ действует на $\RR^3$ так $\theta\acts(x,y,z)=(x\cos\theta+y\sin\theta, -x\sin\theta+y\cos\theta,z)$ или в матричной записи
+$$\theta\acts(x,y,z)
+:=(x,y,z)\left(\begin{array}{ccc}
+\cos(\theta)&-\sin(\theta)&0\\
+\sin(\theta)&\cos(\theta)&0\\
+0&0&1\end{array}\right)
+$$
+\href{https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B8%D0%B3%D0%BE%D0%BD%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5_%D1%82%D0%BE%D0%B6%D0%B4%D0%B5%D1%81%D1%82%D0%B2%D0%B0}{\text Тригонометрические тождества} гарантируют нам, что это действительно действие.
+
+В терминах таблиц действия для выражения этого действия нам бы потребовалось бесконечно много столбцов. Вот пример:
+$$
+\begin{tabular}{| l || l | l | l |}
+\bhline
+\multicolumn{4}{|c|}{Action of $U(1)$ on $\RR^3$}\\\bhline
+{$\RR^3$}&{$\theta=45^\circ$}&{$\theta=90^\circ$}&{$\theta=100^\circ$}\\\bbhline
+(0,0,0)&(0,0,0)&(0,0,0)&(0,0,0)\\\hline
+(1,0,0)&(.71,.71,0)&(0,1,0)&(-.17,.98,0)\\\hline
+(0,1,-4.2)&(-.71,.71,-4.2)&(-1,0,-4.2)&(-.98,-.17,-4.2)\\\hline
+(3,4,2)&(4.95,.71,2)&(-4,3,2)&(3.42,-3.65,2)\\\hline
+$\vdots$&$\vdots$&$\vdots$&$\vdots$\\\bhline
+\end{tabular}
+$$
+
+Наконец, мы собираемся проверить, что данное действие сохраняет расстояния так, что если $(x,y,z)\in S,$ то $\theta\acts(x,y,z)\in S$; таким образом мы убедимся в том, что $U(1)$ действительно действует на $S.$ Начнем вычисления с известного равенства $x^2+y^2+z^2=1$ и получим, что 
+$$
+(x\cos\theta+y\sin\theta)^2+(-x\sin\theta+y\cos\theta)^2+z^2=x^2+y^2+z^2=1.
+$$
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:permutation group}
@@ -154,6 +217,7 @@ Let $X$ be a set and consider the group of permutations of $X$ (see Exercise~\re
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:permutation group}
+Пусть $X$ — это некоторое множество; рассмотрим группу перестановок $X$ (см. Пример~\ref{exc:permutation}), которую мы обозначим $\Sigma_X$\index{группа!$\Sigma_X$}. Найдите каноническое действие $\Sigma_X$ на $X.$
 \end{exerciseRUS}
 
 \begin{definitionENG}
@@ -162,6 +226,8 @@ $$Gx:=\{x'\in X\|\exists g\in G \tn{ such that }gx=x'\}.$$
 \end{definitionENG}
 
 \begin{definitionRUS}
+Пусть $G$ — это группа, действующая на множестве $X.$ Для любой точки $x\in X$ {\em орбита $x$},\index{орбита}\index{действие!орбита} обозначаемая $Gx,$ — это множество
+$$Gx:=\{x'\in X\|\exists g\in G \tn{ такой, что }gx=x'\}.$$
 \end{definitionRUS}
 
 \begin{applicationENG}
@@ -171,6 +237,9 @@ One may also consider a small band around the earth, i.e. the set $A=\{(x,y,z)\|
 \end{applicationENG}
 
 \begin{applicationRUS}
+Пусть $S$ — это поверхность Земли, которую мы считаем сферой, и пусть $G=U(1)$ — группа углов, действующая на $S$ как в Примере~\ref{ex:U(1)}. Орбита любой точки $p=(x,y,z)\in S$ — это множество точек с той же самой широтой, что у $p.$
+
+Можно также рассмотреть небольшой слой вокруг Земли, т.е. множество $A=\{(x,y,z)\|1.0\leq x^2+y^2+z^2\leq 1.05\}.$ Действие $U(1)\acts S$ расширяется до действия $U(1)\acts A.$ Орбитами будут «линии широты на определенной высоте». Одним из упрощенных положений \href{https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B8%D0%BC%D0%B0%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F}{\text климатологии} является предположение о том, что $U(1)$ в определенном смысле действует на все атмосферные потоки. Тогда вместо того, чтобы рассматривать движения во всем пространстве $A,$ мы разрешаем только такие движения, которые ведут себя одинаковым образом на каждой орбите данного действия группы.
 \end{applicationRUS}
 
 \begin{exerciseENG}~
@@ -180,6 +249,9 @@ One may also consider a small band around the earth, i.e. the set $A=\{(x,y,z)\|
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
+\sexc Рассмотрим действие $U(1)$ на $\RR^3,$ описанное в Примере~\ref{ex:U(1)}. Опишите множество орбит этого действия.
+\item Каковы орбиты действия группы перестановок $\Sigma_{\{1,2,3\}}$ на множестве $\{1,2,3\}?$ (См. Упражнение~\ref{exc:permutation group}.)
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -187,6 +259,7 @@ Let $G$ be a group and $X$ a set on which $G$ acts by $\acts\taking G\times X\to
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Пусть $G$ — это некоторая группа, а $X$ — множество, на котором $G$ действует при помощи $\acts\taking G\times X\to X.$ Является ли «расположены на одной орбите» отношением эквивалентности на $X?$ 
 \end{exerciseRUS}
 
 \begin{definitionENG}\label{def:group homomorphism}\index{group!homomorphism of}
@@ -194,6 +267,7 @@ Let $G$ and $G'$ be groups. A {\em group homomorphism} $f\taking G\to G'$ is def
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:group homomorphism}\index{group!homomorphism of}
+Пусть $G$ и $G'$ — группы. {\em Гомоморфизм групп} $f\taking G\to G'$ определяется как гомоморфизм моноидов $G\to G',$ где $G$ и $G'$ рассматриваются как моноиды в соответствии с Определением~\ref{def:group}.
 \end{definitionRUS}
 
 \end{document}
