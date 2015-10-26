@@ -326,7 +326,7 @@ Imagine a \href{http://en.wikipedia.org/wiki/Chronon}{\text quantum-time} univer
 
 \begin{exampleENG}[Finite hierarchy]\label{ex:finite hierarchy}\index{hierarchy}
 The schema $\Loop$ can also be used to encode hierarchies, such as the manager relation from Examples~\ref{ex:department store 1} and~\ref{ex:department store 3}, 
-$$\fbox{\xymatrix{\LTO{E}\ar@(l,u)[]^{\tn{mgr}}}}$$
+$$\fbox{\xymatrix{\LTOX{E}\ar@(l,u)[]^{\tn{mgr}}}}$$
 One problem with this, however, is if a schema has even one loop, then it can have infinitely many paths (corresponding, e.g. to an employees manager's manager's manager's ... manager). 
 
 Sometimes we know that in a given company that process eventually ends, a famous example being that at Ben and Jerry's ice cream, there were only seven levels. In that case we know that an employee's 8th level manager is equal to his or her 7th level manager. This can be encoded by the PED $${\tt E} \tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\simeq{\tt E}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}\tn{ mgr}$$ or more concisely, $\tn{mgr}^8=\tn{mgr}^7.$

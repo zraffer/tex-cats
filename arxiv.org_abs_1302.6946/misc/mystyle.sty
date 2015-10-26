@@ -47,7 +47,6 @@
 
 \usepackage{etoc}
 \usepackage{tocbibind}
-\setcounter{tocdepth}{3}
 \etocsettocdepth{subsubsection}
 \newcommand{\globalTOC}{
     \etocsetnexttocdepth{section}
@@ -108,13 +107,12 @@
 \newcommand{\qtE}[1]{\tn{“}#1\tn{”}}
 \newcommand{\qtR}[1]{\tn{«}#1\tn{»}}
 
-\def\ZZ{{\mathbb Z}}
-\def\QQ{{\mathbb Q}}
-\def\RR{{\mathbb R}}
-\def\CC{{\mathbb C}}
-\def\AA{{\mathbb A}}
-\def\PP{{\mathbb P}}
-\def\NN{{\mathbb N}}
+\def\ZZ{ℤ}%{{\mathbb Z}}
+\def\QQ{ℚ}%{{\mathbb Q}}
+\def\RR{ℝ}%{{\mathbb R}}
+\def\CC{ℂ}%{{\mathbb C}}
+\def\PP{ℙ}%{{\mathbb P}}
+\def\NN{ℕ}%{{\mathbb N}}
 
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Path}{Path}
@@ -188,7 +186,9 @@
 \def\monOb{\blacktriangle}
 
 \newcommand{\LMO}[1]{\stackrel{#1}{\bullet}}
-\newcommand{\LTO}[1]{\stackrel{\tt{#1}}{\bullet}}
+\newcommand{\LMOX}[1]{\bullet^{#1}}
+\newcommand{\LTO}[1]{\stackrel{\tn{\tt{#1}}}{\bullet}}
+\newcommand{\LTOX}[1]{\bullet^{\tn{\tt{#1}}}}
 \newcommand{\LA}[2]{\ar[#1]^-{\tn {#2}}}
 \newcommand{\LAL}[2]{\ar[#1]_-{\tn {#2}}}
 \newcommand{\obox}[3]{\stackrel{#1}{\fbox{\parbox{#2}{#3}}}}
@@ -260,36 +260,36 @@
 \def\bbhline{\Xhline{2.5\arrayrulewidth}}
 \def\bbbhline{\Xhline{3\arrayrulewidth}}
 
-\def\mcA{\mc{A}}
-\def\mcB{\mc{B}}
-\def\mcC{\mc{C}}
-\def\mcD{\mc{D}}
-\def\mcE{\mc{E}}
-\def\mcF{\mc{F}}
-\def\mcG{\mc{G}}
-\def\mcH{\mc{H}}
-\def\mcI{\mc{I}}
-\def\mcJ{\mc{J}}
-\def\mcK{\mc{K}}
-\def\mcL{\mc{L}}
-\def\mcM{\mc{M}}
-\def\mcN{\mc{N}}
-\def\mcO{\mc{O}}
-\def\mcP{\mc{P}}
-\def\mcQ{\mc{Q}}
-\def\mcR{\mc{R}}
-\def\mcS{\mc{S}}
-\def\mcT{\mc{T}}
-\def\mcU{\mc{U}}
-\def\mcV{\mc{V}}
-\def\mcW{\mc{W}}
-\def\mcX{\mc{X}}
-\def\mcY{\mc{Y}}
-\def\mcZ{\mc{Z}}
+\def\mcA{𝓐}%{\mc{A}}
+\def\mcB{𝓑}%{\mc{B}}
+\def\mcC{𝓒}%{\mc{C}}
+\def\mcD{𝓓}%{\mc{D}}
+\def\mcE{𝓔}%{\mc{E}}
+\def\mcF{𝓕}%{\mc{F}}
+\def\mcG{𝓖}%{\mc{G}}
+\def\mcH{𝓗}%{\mc{H}}
+\def\mcI{𝓘}%{\mc{I}}
+\def\mcJ{𝓙}%{\mc{J}}
+\def\mcK{𝓚}%{\mc{K}}
+\def\mcL{𝓛}%{\mc{L}}
+\def\mcM{𝓜}%{\mc{M}}
+\def\mcN{𝓝}%{\mc{N}}
+\def\mcO{𝓞}%{\mc{O}}
+\def\mcP{𝓟}%{\mc{P}}
+\def\mcQ{𝓠}%{\mc{Q}}
+\def\mcR{𝓡}%{\mc{R}}
+\def\mcS{𝓢}%{\mc{S}}
+\def\mcT{𝓣}%{\mc{T}}
+\def\mcU{𝓤}%{\mc{U}}
+\def\mcV{𝓥}%{\mc{V}}
+\def\mcW{𝓦}%{\mc{W}}
+\def\mcX{𝓧}%{\mc{X}}
+\def\mcY{𝓨}%{\mc{Y}}
+\def\mcZ{𝓩}%{\mc{Z}}
 
 \def\undsc{\rule{2mm}{0.4pt}}
 \def\Loop{{\mcL\!oop}}
-\def\LoopSchema{{\parbox{.5in}{\fbox{\xymatrix{\LMO{s}\ar@(l,u)[]^f}}}}}
+\def\LoopSchema{{\parbox{.5in}{\fbox{\xymatrix{\LMOX{s}\ar@(l,u)[]^f}}}}}
 
 %%%%%%%%%%%%%%%% ORIGINAL
 

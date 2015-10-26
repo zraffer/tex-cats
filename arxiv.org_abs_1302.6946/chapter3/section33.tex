@@ -9,11 +9,16 @@ In this course, unless otherwise specified, whenever we speak of graphs we are n
 \end{blockENG}
 
 \begin{blockRUS}
+В данном курсе, если дополнительно не сказано противоположное, когда говорится о графах, не имеются в виду кривые на плоскости, такие как параболы или вообще изображения функций [это уточнение возникло из-за того, что в английском графы и графики называются одним словом; нужно как-то адаптировать]. Мы понимаем под этим термином системы вершин и стрелок.
 \end{blockRUS}
 
 \begin{blockENG}
 We will take our graphs to be {\em directed}, meaning that every arrow points {\em from} a vertex {\em to} a vertex; rather than merely connecting vertices, arrows will have direction. If $a$ and $b$ are vertices, there can be many arrows from $a$ to $b,$ or none at all. There can be arrows from $a$ to itself. Here is the formal definition in terms of sets and functions.
 \end{blockENG}
+
+\begin{blockRUS}
+Мы будем считать наши графы {\em ориентированными} [это общепринятый термин из теории графов], имея в виду, что каждая стрелка идет {\em из} вершины {\em в} вершину; другими словами, вместо того, чтобы просто соединять две равноправные вершины, стрелки имеют направление. Если $a$ и $b$ — вершины, у нас может быть много стрелок из $a$ в $b$ или вообще их не быть. Могут быть стрелки из вершины $a$ в себя. Вот формальное определение графов в терминах множеств и функций.
+\end{blockRUS}
 
 %%%% Subsection %%%%
 
@@ -31,6 +36,14 @@ Given an arrow $a\in A$ we refer to $src(a)$ as the {\em source vertex} of $a$ a
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:graph}\index{graph}
+{\em Граф} $G$ задается четверкой $G:=(V,A,src,tgt),$ где
+\begin{itemize}
+\item $V$ — это множество, называемое {\em множеством вершин $G$},\index{вершина}
+\item $A$ — это множество, называемое {\em множеством стрелок $G$},\index{стрелка}
+\item $src\taking A\to V$ — это функция, называемая {\em функцией начала стрелок $G$},
+\item $tgt\taking A\to V$ — это функция, называемая {\em функцией конца стрелок $G$}.
+\end{itemize}
+Для данной стрелки $a\in A$ мы называем $src(a)$ ее {\em началом}, а $tgt(a)$ — ее {\em концом}.
 \end{definitionRUS}
 
 \begin{blockENG}
@@ -38,6 +51,7 @@ To draw a graph, first draw a dot for every element of $V.$ Then for every eleme
 \end{blockENG}
 
 \begin{blockRUS}
+Чтобы изобразить граф, нарисуем сначала точку для каждого элемента $V.$ Затем для каждого элемента $a\in A$ нарисуем стрелку, соединяющую точку $src(a)$ с точкой $tgt(a).$
 \end{blockRUS}
 
 \begin{exampleENG}[Graph]\label{ex:graph}
@@ -69,7 +83,36 @@ z\\\bhline
 In fact, all of the data of the graph $G$ is captured in the two tables above—together they tell us the sets $A$ and $V$ and the functions $src$ and $tgt.$
 \end{exampleENG}
 
-\begin{exampleRUS}[Graph]\label{ex:graph}
+\begin{exampleRUS}[Граф]\label{ex:graph}
+Вот изображение графа $G=(V,A,src,tgt)$:
+\begin{align}\label{dia:graph}
+G:=\parbox{2in}{\fbox{\xymatrix{
+    \bullet^v\ar[r]^f&\bullet^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\bullet^x\\
+    \bullet^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&\bullet^z\ar@/^1pc/[l]^k
+}}}
+\end{align} 
+Здесь у нас $V=\{v,w,x,y,z\}$ и $A=\{f,g,h,i,j,k\}.$ Функции начала и конца $src,tgt\taking A\to V$ задаются таблицей ниже (слева):
+\begin{align*}
+\begin{array}{| l || l | l |}\bhline
+{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+f&v&w\\\hline
+g&w&x\\\hline
+h&w&x\\\hline
+i&y&y\\\hline
+j&y&z\\\hline
+k&z&y\\\bhline
+\end{array}
+\hspace{1in}
+\begin{array}{| l |}\bhline
+{\bf V}\\\bbhline
+v\\\hline
+w\\\hline
+x\\\hline
+y\\\hline
+z\\\bhline
+\end{array}
+\end{align*}
+В принципе, вся информация о графе $G$ охвачена двумя таблицами выше: вместе они говорят нам все о множествах $A$ и $V$ и функциях $src$ и $tgt.$
 \end{exampleRUS}
 
 \begin{exampleENG}
@@ -77,6 +120,7 @@ Every olog has an underlying graph. The additional information in an olog has to
 \end{exampleENG}
 
 \begin{exampleRUS}
+Каждый олог имеет подлежащий граф. Дополнительная информация в ологе касается того, какие пары путей объявлены эквивалентными, а также человеко-читаемого текста на естественном языке.\index{олог!подлежащий граф}
 \end{exampleRUS}
 
 \begin{exerciseENG}
@@ -111,6 +155,36 @@ $$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+\sexc Изобразите граф, соответствующий следующим таблицам:
+\begin{align*}
+\begin{array}{| l || l | l |}\bhline
+{\bf A}&{\bf src}&{\bf tgt}\\\bbhline
+f&v&w\\\hline
+g&v&w\\\hline
+h&v&w\\\hline
+i&x&w\\\hline
+j&z&w\\\hline
+k&z&z\\\bhline
+\end{array}
+\hspace{1in}
+\begin{array}{| l |}\bhline
+{\bf V}\\\bbhline
+u\\\hline
+v\\\hline
+w\\\hline
+x\\\hline
+y\\\hline
+z\\\bhline
+\end{array}
+\end{align*}
+\item Выпишите две таблицы, подобные упомянутым выше, которые соответствуют следующему графу:
+$$
+\fbox{\xymatrix{
+    \LMO{a}\ar[r]^{1}&\LMO{b}\ar[r]^2\ar@/^1pc/[r]^3&\LMO{c}\ar@/^1pc/[l]^4\ar[r]^5&\LMO{d}\\
+    \LMO{e}&\LMO{f}\ar[l]^6\ar[r]_7&\LMO{g}\ar[ur]_8
+}}
+$$
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -118,6 +192,7 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}.$ Draw them and choose an arbitrary funct
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Пусть $A=\{1,2,3,4,5\}$ и $B=\{a,b,c\}.$ Изобразите их; выберите произвольную функцию $f\taking A\to B$ and и изобразите ее. Пусть $A\sqcup B$ — это копроизведение $A$ и $B$ (Определение~\ref{def:coproduct}), а $A\To{i_1}A\sqcup B\From{i_2}B$ — два вложения. Рассмотрим две функции $src,tgt\taking A\to A\sqcup B,$ где $src=i_1$ и $tgt$ является композицией $A\To{f}B\To{i_2}A\sqcup B.$ Изобразите соответствующий граф $(A\sqcup B,A,src,tgt).$
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
@@ -127,6 +202,9 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}.$ Draw them and choose an arbitrary funct
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
+\sexc Пусть $V$ — это множество. Предположим, мы просто нарисовали элементы $V$ в виде вершин безо всяких стрелочек между ними. Получится ли у нас граф?
+\item Имеются ли другие «канонические» или в каком-то смысле автоматические, неслучайные процедуры для построения по данному множеству вершин $V$ графа с этими вершинами? 
+\endsexc
 \end{exerciseRUS}
 
 \begin{exampleENG}
@@ -138,6 +216,13 @@ Then $(V,R,src,tgt)$ is a graph that would be drawn exactly as we specified the 
 \end{exampleENG}
 
 \begin{exampleRUS}
+Напомним из Конструкции~\ref{const:bipartite} понятие двудольного графа, который определяется как развилка (т.е. пара функций, см. Определение~\ref{def:span}) $A\From{f}R\To{g}B.$ Теперь, когда у нас есть формальное определение графа, мы могли бы надеяться, что двудольный граф будет частным его случаем, и это действительно так. Пусть $V=A\sqcup B,$ а $i\taking A\to V$ и $j\taking B\to V$ — вложения. Положим $src:=i\circ f\taking R\to V$ и $tgt:=j\circ g\taking R\to V$ (заданные как композиции).
+$$\xymatrix{
+      &  A\ar[dr]^i  \\
+    R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g  &  &  V  \\
+      &  B\ar[ur]_j
+}$$ 
+Тогда $(V,R,src,tgt)$ является графом, который изображается точно так, как изображаются развилки согласно Конструкции~\ref{const:bipartite}.
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:[n] as graph}
@@ -151,6 +236,11 @@ In general $[n]$ has $n$ arrows and $n+1$ vertices. In particular, when $n=0$ we
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:[n] as graph}
+Пусть $n\in\NN$ — это натуральное число. {\em Граф-цепь длины $n$},\index{граф!цепь} обозначаемый $[n],$ — это граф, изображенный ниже:
+$$\xymatrix{
+    \LMO{0}\ar[r]  &  \LMO{1}\ar[r]  &  \cdots\ar[r]  &  \LMO{n}
+}$$
+В общем случае $[n]$ имеет $n$ стрелок и $n+1$ вершину. В частности, при $n=0$ получается, что граф $[0]$ состоит из единственной вершины и не имеет стрелок. 
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:ZxG}
@@ -174,6 +264,27 @@ As you can see, $f$-arrows still take $a$'s to $a$'s and $g$-arrows still take $
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:ZxG}
+Пусть $G=(V,A,src,tgt)$ — это граф; мы хотим разместить его в дискретном времени так, чтобы каждая стрелка возникала не в отдельный момент [нулевой продолжительности], а на протяжении некоторого кванта времени. 
+
+Пусть $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ — это граф, изображенный ниже:
+$$\xymatrix{
+    \LMO{0}\ar[r]^0  &  \LMO{1}\ar[r]^1  &  \LMO{2}\ar[r]^2  &  \cdots
+}$$
+Когда мы дойдем до понятия пределов в категории, мы осознаем, что в категории графов можно образовывать произведения (см. Пример~\ref{ex:product of graphs}), и что имеет смысл выражение $N\times G.$ Сейчас же мы построим его вручную.
+
+Пусть $T(G)=(V\times \NN,A\times\NN,src',tgt')$ — это новый граф, где для любого $a\in A$ и $n\in\NN$ выполняется $src'(a,n):=(src(a),n)$ и $tgt'(a,n):=(tgt(a),n+1).$ Возможно, это немного трудно переварить сразу, так что попытаемся понять, что происходит, на следующем примере. 
+
+Пусть $G$ — это граф, изображенный ниже:
+$$\xymatrix{
+    \LMO{a} \ar@(ul,ur)[]^f \ar[d]_g  \\
+    \LMO{b}
+}$$
+Тогда $T(G)$ будет графом
+$$\xymatrix@=30pt{
+    \LMO{a0} \ar[r]^{f0} \ar[rd]_{g0}  &  \LMO{a1} \ar[r]^{f1} \ar[rd]_{g1}  &  \LMO{a2} \ar[r]^{f2} \ar[rd]_{g2}  &  \cdots  \\
+    \LMO{b0}  &  \LMO{b1}  &  \LMO{b2}  &  \cdots
+}$$
+Как вы видите, $f$-стрелки по прежнему идут из $a$-вершин в $a$-вершины, а $g$-стрелки — из $a$-вершин в $b$-вершины, при этом они всегда двигаются по времени вперед.
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:secret turing}
@@ -185,6 +296,11 @@ Draw (using ellipses “$\cdots$” if necessary) the graph $T(G)$ defined in Ex
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:secret turing}
+Пусть $G$ — это граф, изображенный ниже:
+$$\xymatrix{
+    \LMO{a} \ar@/^1pc/[rr]^w \ar@(lu,ld)[]_x  &  &  \LMO{b} \ar@/^1pc/[ll]^y \ar@(ur,dr)[]^z
+}$$
+Нарисуйте (используя по необходимости «$\cdots$») граф $T(G),$ определенный в Примере~\ref{ex:ZxG}.
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:lattice}
@@ -221,6 +337,9 @@ A graph is a pair of functions $A\tto V.$ This sets up the notion of equalizer a
 \begin{blockENG}
 We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN,$ even length $0$ or $1.$ Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
 \end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 \begin{definitionENG}\label{def:paths in graph}\index{graph!paths}
 Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G,$ denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G,$ which we denote by $v_0 a_1 a_2 \ldots a_n.$ In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v.$ We denote by $\Path_G$ the set of paths in $G,$ $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V.$ If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w,$ we may denote it by $p\taking v\to w.$ Given two vertices $v,w\in V,$ we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w.$
@@ -399,6 +518,9 @@ $\vdots$&$\vdots$\\\hline
 \end{align}
 The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$ and the right-hand table is the relation $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN.$ 
 \end{blockENG}
+
+\begin{blockRUS}
+\end{blockRUS}
 
 \begin{exerciseENG}
 A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as “$\epsilon$-approximation”. To say it another way, draw the relation “$x$ is within $\epsilon$ of $y$”.
