@@ -456,7 +456,7 @@ The commutativity of the diagrams in (\ref{dia:graph hom}) is exactly what is ne
 \end{remarkENG}
 
 \begin{remarkRUS}
-Вышеупомянутые свойства (\ref{dia:graph hom}) поначалу могут показаться невразумительными, между тем они формализуют очень важную идею о том, что, грубо говоря, «стрелки привязаны к своим вершинам». При отображении графов $G\to G'$ нельзя отобразить данную стрелку $G$ в произвольную стрелку $G',$ должно дополнительно выполняться условие, чтобы каждая стрелка соединяля те же вершины [вернее, их образы], что соединяла исходная стрелка. Ниже приведен пример отображения, которое не удовлетворяет этим свойствам: $a$ соединяет $1$ и $2$ до отображения, но не после:
+Вышеупомянутые свойства (\ref{dia:graph hom}) поначалу могут показаться невразумительными, между тем они формализуют очень важную идею о том, что, грубо говоря, «стрелки привязаны к своим вершинам». При отображении графов $G\to G'$ нельзя просто отобразить данную стрелку $G$ в произвольную стрелку $G',$ должно дополнительно выполняться условие, чтобы каждая стрелка соединяля те же вершины [вернее, их образы], что соединяла исходная стрелка. Ниже приведен пример отображения, которое не удовлетворяет этим свойствам: $a$ соединяет $1$ и $2$ до отображения, но не после:
 $$
 \fbox{\xymatrix{
     \LMO{\color{red}{1}} \ar[r]^{a}  &  \LMO{\color{blue}{2}}
@@ -522,16 +522,16 @@ Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chai
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Given a morphism of graphs $f\taking G\to G',$ there an induced function $\Path(f)\taking\Path(G)\to\Path(G').$ 
-\sexc Is it the case that for every $n\in\NN,$ the function $\Path(f)$ carries $\Path^{(n)}(G)$ to $\Path^{(n)}(G'),$ or can path lengths change in this process?
+Given a morphism of graphs $f\taking G\to G',$ there an induced function $\Path(f)\taking\Path_{G}\to\Path_{G'}.$ 
+\sexc Is it the case that for every $n\in\NN,$ the function $\Path(f)$ carries $\Path^{(n)}_{G}$ to $\Path^{(n)}_{G'},$ or can path lengths change in this process?
 \item Suppose that $f_0$ and $f_1$ are injective (meaning no two distinct vertices in $G$ are sent to the same vertex (respectively for arrows) under $f$). Does this imply that $\Path(f)$ is also injective (meaning no two distinct paths are sent to the same path under $f$)?
 \item Suppose that $f_0$ and $f_1$ are surjective (meaning every vertex in $G'$ and every arrow in $G'$ is in the image of $f$). Does this imply that $\Path(f)$ is also surjective? Hint: at least one of the answers to these three questions is “no”.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Для данного гомоморфизма графов $f\taking G\to G',$ имеется индуцированная функция $\Path(f)\taking\Path(G)\to\Path(G').$ 
-\sexc Верно ли, что для каждого $n\in\NN$ функция $\Path(f)$ отображает $\Path^{(n)}(G)$ в $\Path^{(n)}(G')$ или же пути при ее действии могут менять длину?
+Для данного гомоморфизма графов $f\taking G\to G',$ имеется индуцированная функция $\Path(f)\taking\Path_{G}\to\Path_{G'}.$ 
+\sexc Верно ли, что для каждого $n\in\NN$ функция $\Path(f)$ отображает $\Path^{(n)}_{G}$ в $\Path^{(n)}_{G'}$ или же пути при ее действии могут менять длину?
 \item Предположим, что $f_0$ и $f_1$ инъективны (имеется в виду, что разные вершины (и стрелки) в $G$ не могут переходить в одну вершину (соответственно, стрелку) под действием $f$). Следует ли из этого, что $\Path(f)$ тоже будет инъективной (имеется в виду, что разные пути не должны переходить в один путь под действием $f$)?
 \item Предположим, что $f_0$ и $f_1$ сюръективны (имея в виду, что каждая вершина и стрелка в $G'$ лежат в образе $f$). Следует ли из этого, что $\Path(f)$ тоже будет сюръективной? Подсказка: по крайней мере один из ответов на эти вопросы отрицательный.
 \endsexc
@@ -565,6 +565,7 @@ Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X.$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:binary relation}\index{relation!binary}
+Пусть $X$ — это множество. {\em Бинарное отношение на $X$} — это подмножество $R\ss X\times X.$ 
 \end{definitionRUS}
 
 \begin{blockENG}
@@ -616,6 +617,51 @@ The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$
 \end{blockENG}
 
 \begin{blockRUS}
+Если $X=\NN$ — это множество целых чисел, то обычное сравнение $\leq$ задает отношение на $X$: для данных $(m,n)\in\NN\times\NN,$ положим $(m,n)\in R$ ттт $m\leq n.$ В виде таблицы оно изображено слева:
+\begin{align}\label{dia:3 relations}
+\begin{tabular}{|p{.7cm}|p{.7cm}|}
+\bhline
+\multicolumn{2}{|c|}{$m\leq n$}\\\bhline
+m&n\\\bbhline
+0&0\\\hline
+0&1\\\hline
+1&1\\\hline
+0&2\\\hline
+1&2\\\hline
+2&2\\\hline
+0&3\\\bhline
+$\vdots$&$\vdots$\\\hline
+\end{tabular}
+\hspace{1in}
+\begin{tabular}{|p{.7cm}|p{.7cm}|}
+\bhline
+\multicolumn{2}{|c|}{$n=5m$}\\\bhline
+m&n\\\bbhline
+0&0\\\hline
+1&5\\\hline
+2&10\\\hline
+3&15\\\hline
+4&20\\\hline
+5&25\\\hline
+6&30\\\bhline
+$\vdots$&$\vdots$\\\hline
+\end{tabular}
+\hspace{1in}
+\begin{tabular}{|p{.7cm}|p{.7cm}|}
+\bhline
+\multicolumn{2}{|c|}{$|n-m|\leq 1$}\\\bhline
+m&n\\\bbhline
+0&0\\\hline
+0&1\\\hline
+1&0\\\hline
+1&1\\\hline
+1&2\\\hline
+2&1\\\hline
+2&2\\\hline
+$\vdots$&$\vdots$\\\hline
+\end{tabular}
+\end{align}
+Таблица посредине — это отношение $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN,$ а справа — отношение $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN.$ 
 \end{blockRUS}
 
 \begin{exerciseENG}
@@ -623,9 +669,10 @@ A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a s
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Отношение на $\RR$ — это подмножество $\RR\times\RR,$ и его можно изобразить, закрасив часть плоскости. Выберите величину погрешности $\varepsilon>0$ и нарисуйте отношение, которое можно определить как «$\varepsilon$-приближение». Другими словами, изобразите отношение «расстояние между $x$ и $y$ меньше $\varepsilon$».
 \end{exerciseRUS}
 
-\begin{exerciseENG}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}
+\begin{exerciseENG}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}~
 \sexc If $R\ss S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S.$ 
 \item What is the set $A$ of arrows? 
 \item What are the source and target functions $src,tgt\taking A\to S?$
@@ -634,7 +681,13 @@ A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a s
 \endsexc
 \end{exerciseENG}
 
-\begin{exerciseRUS}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}
+\begin{exerciseRUS}[Преобразование бинарных отношений в графы]\label{exc:rel to graph}\index{relation!graph of}~
+Если $R\ss S\times S$ — это бинарное отношение, найдите естественный способ построить граф на основе него с множеством вершин $S.$ 
+\sexc Каким будет множество стрелок $A$? 
+\item Каковы функции начала и конца $src,tgt\taking A\to S?$
+\item Возьмите таблицу слева на (\ref{dia:3 relations}) и рассмотрите ее первые $7$ строк (т.е. забудьте про $\vdots$). Изобразите соответствующий граф (видите тетраэдр? а он тут есть). 
+\item Проделайте то же с таблицей справа.
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}[Graphs to binary relations]\label{ex:graph to rel}~
@@ -643,16 +696,22 @@ A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a s
 \endsexc
 \end{exerciseENG}
 
-\begin{exerciseRUS}[Graphs to binary relations]\label{ex:graph to rel}~
+\begin{exerciseRUS}[Преобразование графов в бинарные отношения]\label{ex:graph to rel}~
+\sexc Если $(V,A,src,tgt)$ — это граф, найдите естественный способ построить на основе него бинарное отношение $R\ss V\times V.$ 
+\item Возьмите граф $G$ с диаграммы (\ref{dia:graph hom example}) слева и выпишите соответствующее бинарное отношение в виду таблицы.
+\endsexc
 \end{exerciseRUS}
 
-\begin{exerciseENG}[Going around the loops]
+\begin{exerciseENG}[Going around the loops]~
 \sexc Given a binary relation $R\ss S\times S,$ you know from Exercise~\ref{exc:rel to graph} how to construct a graph out of it, and from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
 \item Given a graph $(V,A,src,tgt),$ you know from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise~\ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
 \endsexc
 \end{exerciseENG}
 
-\begin{exerciseRUS}[Going around the loops]
+\begin{exerciseRUS}[Туда и обратно]~
+\sexc Мы уже знаем из Упражнения~\ref{exc:rel to graph}, как построить граф из данного бинарного отношения $R\ss S\times S,$ а из Упражнения~\ref{ex:graph to rel} — как из этого графа построить новое бинарное отношение. Как связано полученное бинарное отношение с исходным?
+\item Мы уже знаем из Упражнения~\ref{ex:graph to rel}, как построить бинарное отношение из данного графа $(V,A,src,tgt),$ а из Упражнения~\ref{exc:rel to graph} — как построить из этого отношения новый граф. Как связан полученный граф с исходным? 
+\endsexc
 \end{exerciseRUS}
 
 \end{document}
