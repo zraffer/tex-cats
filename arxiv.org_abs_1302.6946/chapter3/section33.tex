@@ -17,7 +17,7 @@ We will take our graphs to be {\em directed}, meaning that every arrow points {\
 \end{blockENG}
 
 \begin{blockRUS}
-Мы будем считать наши графы {\em ориентированными} [это общепринятый термин из теории графов], имея в виду, что каждая стрелка идет {\em из} вершины {\em в} вершину; другими словами, вместо того, чтобы просто соединять две равноправные вершины, стрелки имеют направление. Если $a$ и $b$ — вершины, у нас может быть много стрелок из $a$ в $b$ или вообще их не быть. Могут быть стрелки из вершины $a$ в себя. Вот формальное определение графов в терминах множеств и функций.
+Мы займемся {\em ориентированными} графами [это общепринятый термин из теории графов], имея в виду, что каждая стрелка в них ориентирована, т.е. идет {\em из} вершины {\em в} вершину; другими словами, вместо того, чтобы просто соединять две равноправные вершины, стрелки имеют направление. Если $a$ и $b$ — вершины, у нас может быть много стрелок из $a$ в $b$ или вообще их не быть. Допустимы также стрелки из вершины $a$ в нее же. Вот формальное определение графов в терминах множеств и функций.
 \end{blockRUS}
 
 %%%% Subsection %%%%
@@ -318,6 +318,16 @@ $$
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:lattice}
+Рассмотрим бесконечный граф $G=(V,A,src,tgt),$ изображенный ниже:
+$$\xymatrix{
+    \vdots  &  \vdots  &  \vdots  \\
+    (0,2) \ar[r] \ar[u]  &  (1,2) \ar[r] \ar[u]  &  (2,2) \ar[r] \ar[u]  &  \cdots\\
+    (0,1) \ar[r] \ar[u]  &  (1,1) \ar[r] \ar[u]  &  (2,1) \ar[r] \ar[u]  &  \cdots\\
+    (0,0) \ar[r] \ar[u]  &  (1,0) \ar[r] \ar[u]  &  (2,0) \ar[r] \ar[u]  &  \cdots
+}$$
+\sexc Выпишите множество $A$ и $V.$ 
+\item Каковы функции начала и конца $A\to V?$  
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:(co)equalizer of graph}
@@ -328,6 +338,10 @@ A graph is a pair of functions $A\tto V.$ This sets up the notion of equalizer a
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:(co)equalizer of graph}
+Граф — это пара функций $A\tto V.$ Как мы помним, при наличии пары функций можно говорить об их уравнителе и коуравнителе (см. Определения~\ref{def:equalizer} и~\ref{def:coequalizer}). 
+\sexc Какое свойство графа описывается уравнителем функций начала и конца? 
+\item Какое свойство графа описывается коуравнителем функций начала и конца? 
+\endsexc
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -339,6 +353,7 @@ We all know what a path in a graph is, especially if we understand that a path m
 \end{blockENG}
 
 \begin{blockRUS}
+Мы все знаем, что такое путь в графе, особенно если мы понимаем, что стрелки должны идти согласно направлению пути. Следующее определение уточняет эту идею. В частности то, что возможны пути любой длины $n\in\NN,$ даже длины $0$ или $1.$ Кроме того, мы хотим иметь возможность говорить о вершинах начала и конца пути, а также о конкатенации путей.
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:paths in graph}\index{graph!paths}
@@ -347,7 +362,18 @@ Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G,$
 There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x,$ we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w,$ we have $pq=q$ (resp. $qr=q$). 
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:paths in graph}\index{граф!пути}
+\begin{definitionRUS}\label{def:paths in graph}\index{граф!путь}
+Пусть $G=(V,A,src,tgt)$ — это граф. {\em Путь длины $n$}\index{путь} в $G,$ обозначаемый $p\in\Path_G^{(n)}$\index{символ!$\Path$} — это последовательность
+\begin{align}\label{dia:path}
+    p = (v_0 \To{a_1} v_1 \To{a_2} v_2 \To{a_3} \ldots \To{a_n} v_n)
+\end{align}
+стрелок в $G,$ которую мы обозначим $v_0 a_1 a_2 \ldots a_n.$ В частности, имеются канонические изоморфизмы $\Path_G^{(1)}\iso A$ и $\Path_G^{(0)}\iso V$; мы будем называть путь длины $0$ на вершине $v$ {\em тривиальным путем на $v$} и обозначать его просто $v.$ Символом $\Path_G$ обозначим множество всех путей в $G$:
+$$
+    \Path_G := \bigcup_{n\in\NN} \Path_G^{(n)}.
+$$ 
+Каждый путь $p\in\Path_G$ имеет вершины начала и конца, которые мы можем обозначить $\ol{src},\ol{tgt}\taking\Path_G\to V.$ Если $p$ — это путь, у которого $\ol{src}(p)=v$ и $\ol{tgt}(p)=w,$ то мы будем обозначать этот факт как $p\taking v\to w.$ Для данных двух вершин $v,w\in V,$ мы записываем $\Path_G(v,w)$ для обозначения множества всех путей $p\taking v\to w.$
+
+На путях задана операция конкатенации.\index{конкатенация!путей} Для данных путей $p\taking v\to w$ и $q\taking w\to x$ их конкатенация, обозначаемая $p q\taking v\to x,$ определяется очевидным образом. Если $p=va_1,a_2\ldots a_m$ и $q= wb_1b_2\ldots b_n,$ то $pq=va_1\ldots a_mb_1\ldots b_n.$ В частности, если $p$ (соответственно, $r$) является тривиальным путем на вершине $v$ (соответственно, на $w$), то для любого пути $q\taking v\to w$ выполняется равенство $pq=q$ (соответственно $qr=q$). 
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -355,14 +381,23 @@ In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from 
 \end{exampleENG}
 
 \begin{exampleRUS}
+В Диаграмме~(\ref{dia:graph}) на c. \pageref{dia:graph} нет путей из $v$ в $y,$ есть один путь ($f$) из $v$ в $w,$ два пути ($fg$ и $fh$) из $v$ в $x,$ и бесконечно много путей
+$$
+    \{ y i^{p_1}(jk)^{q_1} \cdots i^{p_n}(jk)^{q_n} \| n,p_1,q_1,\ldots,p_n,q_n \in \NN \}
+$$
+из $y$ в $y.$ Имеются также другие пути, в том числе пять тривиальных.
 \end{exampleRUS}
 
 \begin{exerciseENG}
-How many paths are there in the following graph? 
+How many paths are there in the following graph?
 $$\xymatrix{\LMO{1}\ar[r]^{f}&\LMO{2}\ar[r]^{g}&\LMO{3}}$$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Сколько всего путей в следующем графе?
+$$\xymatrix{
+    \LMO{1} \ar[r]^{f}  &  \LMO{2} \ar[r]^{g}  &  \LMO{3}
+}$$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -370,6 +405,7 @@ Let $G$ be a graph and consider the set $\Path_G$ of paths in $G.$ Suppose someo
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Пусть $G$ — это граф; рассмотрим множество $\Path_G$ путей в $G.$ Предположим, некто утверждает, что множеству $\Path_G$ можно придать структуру моноида, где операция умножения задана конкатенацией путей. Верно ли это? Почему? Подсказка: какой должна быть единица в этом моноиде?
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -381,6 +417,7 @@ A graph $(V,A,src,tgt)$ involves two sets and two functions. For two graphs to b
 \end{blockENG}
 
 \begin{blockRUS}
+Граф $(V,A,src,tgt)$ задается двумя множествами и двумя функциями. Для того, чтобы сопоставить два графа, нужно сопоставить эти два множества и эти две функции.
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:graph homomorphism}\index{graph!homomorphism}
@@ -394,6 +431,18 @@ Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomor
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:graph homomorphism}\index{graph!homomorphism}
+Пусть $G=(V,A,src,tgt)$ и $G'=(V',A',src',tgt')$ — это графы. {\em Гомоморфизм графов} $f$ из $G$ в $G'$, обозначаемый $f\taking G\to G',$ состоит из двух функций $f_0\taking V\to V'$ и $f_1\taking A\to A'$ таких, что две диаграммы ниже коммутируют:
+\begin{align}\label{dia:graph hom}
+\xymatrix{
+    A \ar[r]^{f_1} \ar[d]_{src}  &  A' \ar[d]^{src'}  \\
+    V \ar[r]_{f_0}  &  V'
+}
+\hspace{1in}
+\xymatrix{
+    A \ar[r]^{f_1} \ar[d]_{tgt}  &  A' \ar[d]^{tgt'}  \\
+    V \ar[r]_{f_0}  &  V'
+}
+\end{align}
 \end{definitionRUS}
 
 \begin{remarkENG}
@@ -407,6 +456,19 @@ The commutativity of the diagrams in (\ref{dia:graph hom}) is exactly what is ne
 \end{remarkENG}
 
 \begin{remarkRUS}
+Вышеупомянутые свойства (\ref{dia:graph hom}) поначалу могут показаться невразумительными, между тем они формализуют очень важную идею о том, что, грубо говоря, «стрелки привязаны к своим вершинам». При отображении графов $G\to G'$ нельзя отобразить данную стрелку $G$ в произвольную стрелку $G',$ должно дополнительно выполняться условие, чтобы каждая стрелка соединяля те же вершины [вернее, их образы], что соединяла исходная стрелка. Ниже приведен пример отображения, которое не удовлетворяет этим свойствам: $a$ соединяет $1$ и $2$ до отображения, но не после:
+$$
+\fbox{\xymatrix{
+    \LMO{\color{red}{1}} \ar[r]^{a}  &  \LMO{\color{blue}{2}}
+}}
+\xymatrix{
+    ~ \ar[rr]^{1\mapsto 1', 2\mapsto 2', a\mapsto a'}  &  \hsp  &  ~
+}
+\fbox{\xymatrix{
+    \LMO{\color{red}{1'}}  &  \LMO{\color{blue}{2'}} \ar[r]^{a'}  &  \LMO{\color{ForestGreen}{3'}}
+}}
+$$
+Коммутативность диаграмм~(\ref{dia:graph hom}) это в точности то, что требуется, чтобы обеспечить манипуляцию стрелочками предсказуемым образом, как и предписано гомоморфизмом графов.
 \end{remarkRUS}
 
 \begin{exampleENG}[Graph homomorphism]\label{ex:graph hom}
@@ -419,7 +481,24 @@ Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be the graphs drawn to the left
 The colors indicate our choice of function $f_0\taking V\to V'.$ Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\taking G\to G'.$ 
 \end{exampleENG}
 
-\begin{exampleRUS}[Graph homomorphism]\label{ex:graph hom}
+\begin{exampleRUS}[Гомоморфизм графов]\label{ex:graph hom}
+Пусть $G=(V,A,src,tgt)$ и $G'=(V',A',src',tgt')$ — это графы, изображенные слева и справа (соответственно) ниже:
+\begin{align}\label{dia:graph hom example}
+\parbox{1.5in}{\fbox{\xymatrix{
+    \LMO{\color{red}{1}} \ar[r]^a \ar@/^1pc/[d]^d \ar@/_1pc/[d]_c  &  \LMO{\color{ForestGreen}{2}} \ar[r]^b  &  \LMO{\color{red}{3}}  \\
+    \LMO{4}  &  \LMO{\color{blue}{5}} \ar[r]^e  &  \LMO{\color{blue}{6}}
+}}}
+\parbox{1in}{\xymatrix{
+    ~ \ar[rr]^{\parbox{.8in}{
+        \vspace{-.2in}\footnotesize$1\mapsto 1', 2\mapsto 2',\\ 3\mapsto 1',4\mapsto 4',\\ 5\mapsto 5',6\mapsto5'$
+    }}  &  \hsp  &  ~
+}}
+\parbox{.8in}{\fbox{\xymatrix{
+    \LMO{\color{red}{1'}} \ar@<.5ex>[r]^w \ar[d]_y  &  \LMO{\color{ForestGreen}{2'}} \ar@<.5ex>[l]^x  \\
+    \LMO{4'}  &  \LMO{\color{blue}{5'}} \ar@(r,u)[]_z
+}}}
+\end{align}
+Цветами обозначено действие гомоморфизма на вершины, функция $f_0\taking V\to V'.$ Из свойств (\ref{dia:graph hom}) вытекает, что при таком выборе этой функции имеется единственное продолжение ее до гомоморфизма графов $f\taking G\to G'.$ 
 \end{exampleRUS}
 
 \begin{exerciseENG}~
@@ -429,6 +508,9 @@ The colors indicate our choice of function $f_0\taking V\to V'.$ Given that choi
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
+\sexc Куда переходят $a,b,c,d,e$ под действием $f_1\taking A\to A'$ в Диаграмме~(\ref{dia:graph hom example})? 
+\item Выберите пару элементов $A$ и проверьте, что они ведут себя согласно Диаграмме~(\ref{dia:graph hom}).
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -436,6 +518,7 @@ Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chai
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Пусть $G$ — это граф, $n\in\NN$ — натуральное число, а $[n]$ — граф-цепь длины $n,$ как в Примере~\ref{ex:[n] as graph}. Будет ли путь длины $n$ в $G$ тем же самым, что и гомоморфизм $[n]\to G,$ или имеются тонкие различия? Более точно, всегда ли найдется изоморфизм между множеством гомоморфизмов графов $[n]\to G$ и множеством $\Path_G^{(n)}$ путей длины $n$ в $G?$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -447,6 +530,11 @@ Given a morphism of graphs $f\taking G\to G',$ there an induced function $\Path(
 \end{exerciseENG}
 
 \begin{exerciseRUS}
+Для данного гомоморфизма графов $f\taking G\to G',$ имеется индуцированная функция $\Path(f)\taking\Path(G)\to\Path(G').$ 
+\sexc Верно ли, что для каждого $n\in\NN$ функция $\Path(f)$ отображает $\Path^{(n)}(G)$ в $\Path^{(n)}(G')$ или же пути при ее действии могут менять длину?
+\item Предположим, что $f_0$ и $f_1$ инъективны (имеется в виду, что разные вершины (и стрелки) в $G$ не могут переходить в одну вершину (соответственно, стрелку) под действием $f$). Следует ли из этого, что $\Path(f)$ тоже будет инъективной (имеется в виду, что разные пути не должны переходить в один путь под действием $f$)?
+\item Предположим, что $f_0$ и $f_1$ сюръективны (имея в виду, что каждая вершина и стрелка в $G'$ лежат в образе $f$). Следует ли из этого, что $\Path(f)$ тоже будет сюръективной? Подсказка: по крайней мере один из ответов на эти вопросы отрицательный.
+\endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:single condition for graph hom}
@@ -458,6 +546,14 @@ Is the commutativity of the diagram in (\ref{dia:equiv graph hom}) indeed equiva
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:single condition for graph hom}
+Для данного графа $(V,A,src,tgt),$ обозначим $i\taking A\to V\times V$ функцию, получающуюся из универсального свойства произведений для пары отображений $src,tgt\taking A\to V.$ Можно надеяться выразить Свойства (\ref{dia:graph hom}) гомоморфизма графов коммутативностью единственного квадрата 
+\begin{align}\label{dia:equiv graph hom}
+\xymatrix{
+    A \ar[r]^{f_1} \ar[d]_{i}  &  A' \ar[d]^{i'}  \\
+    V \times V \ar[r]_{f_0 \times f_0}  &  V' \times V'.
+}
+\end{align}
+Действительно ли коммутативность диаграммы (\ref{dia:equiv graph hom}) эквивалентна коммутативности обеих диаграмм (\ref{dia:graph hom})?
 \end{exerciseRUS}
 
 %% Subsubsection %%
