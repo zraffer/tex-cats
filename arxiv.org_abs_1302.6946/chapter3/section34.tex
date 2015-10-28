@@ -9,7 +9,7 @@ People usually think of certain sets as though they just {\em are} ordered, e.g.
 \end{blockENG}
 
 \begin{blockRUS}
-Данный раздел посвящен различным видам порядков. О некоторых множествах часто думают как об уже имеющих {\em порядок}, как будто он предопределен Богом. В частности, натуральные числа упорядочены. Буквы алфавита упорядочены. Но на самом деле, порядок — это то, что мы добавляем к множеству, просто некоторые порядки более общеприняты в нашей культуре. Для разных целей на одно и то же множество могут накладываться разные порядки. Например, в Упражнении~\ref{exc:divides as po} мы зададим другое упорядочение натуральных чисел, которое полезно в элементарной теории чисел. Еще можно упорядочить буквы алфавита по частоте их использования, тогда $e$ будет идти перед $a.$ 
+Данный раздел посвящен различным видам порядков. О некоторых множествах часто думают как об уже имеющих {\em порядок}, как будто он предопределен Богом. В частности, натуральные числа упорядочены. Буквы алфавита упорядочены. Но на самом деле порядок — это то, что мы добавляем к множеству, просто отдельные порядки являются в нашей культуре общепринятыми, в отличие от остальных. Для разных целей на одно и то же множество могут накладываться разные порядки. Например, в Упражнении~\ref{exc:divides as po} мы зададим другое упорядочение натуральных чисел, которое полезно в элементарной теории чисел. Еще можно упорядочить алфавит по частоте их использования букв, тогда буква $e$ будет идти перед буквой $a.$ 
 \end{blockRUS}
 
 \begin{blockENG}
@@ -42,6 +42,20 @@ We denote such a preorder (or partial order or linear order) by $(S,\leq).$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:orders}\index{order}
+Let $S$ be a set and $R\ss S\times S$ a binary relation on $S$; if $(s,s')\in R$ we will write $s\leq s'.$ Then we say that $R$ is a {\em preorder}\index{order!preorder} if, for all $s,s',s''\in S$ we have
+\begin{description}
+\item[Reflexivity:] $s\leq s,$ and
+\item[Transitivity:] if $s\leq s'$ and $s'\leq s'',$ then $s\leq s''.$
+\end{description}
+We say that $R$ is a {\em partial order}\index{order!partial order} if it is a preorder and, in addition, for all $s,s'\in S$ we have
+\begin{description}
+\item[Antisymmetry:] If $s\leq s'$ and $s'\leq s,$ then $s=s'.$
+\end{description}
+We say that $R$ is a {\em linear order}\index{order!linear order} if it is a partial order and, in addition, for all $s,s'\in S$ we have
+\begin{description}
+\item[Comparability:] Either $s\leq s'$ or $s'\leq s.$
+\end{description}
+We denote such a preorder (or partial order or linear order) by $(S,\leq).$
 \end{definitionRUS}
 
 \begin{exerciseENG}~

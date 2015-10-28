@@ -21,7 +21,7 @@ Suppose we have a function $f\taking X\to Y$ and a function $g\taking Y\to X$ su
 \end{definitionENG}
 
 \begin{definitionRUS}
-Предположим, у нас есть функция $f\taking X\to Y$ и функция $g\taking Y\to X$ такие, что $g\circ f=\id_X.$ [О подобной ситуации говорят, как о {\em ретракции}.]\index{ретракция} В этом случае мы называем $f$ {\em сечением ретракции}, а $g$ — {\em проекцией ретракции}.
+Предположим, у нас есть такие функции $f\taking X\to Y$ и $g\taking Y\to X,$ что $g\circ f=\id_X.$ [О подобной ситуации говорят, как о {\em ретракции}.]\index{ретракция} В этом случае мы называем $f$ {\em сечением ретракции}, а $g$ — {\em проекцией ретракции}.
 \end{definitionRUS}
 
 \begin{exerciseENG}
@@ -29,7 +29,7 @@ Create an olog that includes sets $X$ and $Y,$ and functions $f\taking X\to Y$ a
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Придумайте олог, содержащий множества $X$ и $Y,$ и функции $f\taking X\to Y$ и $g\taking Y\to X$ такие, чтобы $g\circ f=\id_X,$ но чтобы $f\circ g\neq\id_Y$; то есть, чтобы $f$ было сечением ретракции, но не изоморфизмом.
+Придумайте олог, содержащий некоторые множества $X$ и $Y,$ и такие функции $f\taking X\to Y$ и $g\taking Y\to X,$ чтобы $g\circ f=\id_X,$ но чтобы $f\circ g\neq\id_Y$; то есть, чтобы $f$ было сечением ретракции, но не изоморфизмом.
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -60,7 +60,7 @@ B^A:=\Hom_\Set(A,B).
 \end{notationENG}
 
 \begin{notationRUS}\index{экспоненциальный объект ! в $\Set$}
-Пусть $A$ и $B$ — это множества. Мы иногда будем обозначать множество функций из $A$ в $B$ так: 
+Пусть $A$ и $B$ — некоторые множества. Мы иногда будем обозначать множество функций из $A$ в $B$ так: 
 \begin{align}\label{dia:exponential sets}
 B^A:=\Hom_\Set(A,B).
 \end{align}
@@ -134,7 +134,7 @@ Let $A$ and $B$ be sets. We know that $\Hom_\Set(A,B)=B^A,$ so we have a functio
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:evaluation}\index{экспоненциальный объект!вычисление}
-Пусть $A$ и $B$ — это множества. Известно, что $\Hom_\Set(A,B)=B^A,$ так что имеется функция $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A.$ Взглянем на Утверждение~\ref{prop:curry}, сделав подстановки $X=\Hom_\Set(A,B),$ $Y=B$ и  $A=A.$ Рассмотрим функцию $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B),$$ полученную как обратную к (\ref{dia:curry bijection}). В области определения $\phi^\m1$ имеется канонический элемент $\id_{B^A}.$ Мы можем применить функцию $\phi^\m1$ и получить элемент $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B),$ который сам является функцией, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
+Пусть $A$ и $B$ — некоторые множества. Известно, что $\Hom_\Set(A,B)=B^A,$ поэтому имеется функция $\id_{B^A}\taking\Hom_\Set(A,B)\to B^A.$ Взглянем на Утверждение~\ref{prop:curry}, сделав подстановки $X=\Hom_\Set(A,B),$ $Y=B$ и  $A=A.$ Рассмотрим функцию $$\phi^\m1\taking\Hom_\Set(\Hom_\Set(A,B),B^A)\to\Hom_\Set(\Hom_\Set(A,B)\times A,B),$$ полученную как обратную к (\ref{dia:curry bijection}). В области определения $\phi^\m1$ имеется канонический элемент $\id_{B^A}.$ Мы можем применить функцию $\phi^\m1$ и получить элемент $ev=\phi^\m1(\id_{B^A})\in\Hom_\Set(\Hom_\Set(A,B)\times A,B),$ который сам является функцией, $$ev\taking\Hom_\Set(A,B)\times A\to B.$$ 
 \sexc Опишите функцию $ev$ в терминах того, как она действует на элементах своей области определения. 
 \item Что побудило нас назвать функцию $ev?$%
 \endnote{
@@ -151,7 +151,7 @@ A^n:=A^{\ul{n}}.
 \end{blockENG}
 
 \begin{blockRUS}
-Если $n\in\NN$ — это натуральное число, напомним (см.~\ref{dia:underline n}), что имеется замечательное множество $\ul{n}=\{1,2,\ldots,n\}.$ Если $A$ — это множество, мы часто используем сокращенную запись
+Если $n\in\NN$ — некоторое натуральное число, напомним (см.~\ref{dia:underline n}), что имеется замечательное множество $\ul{n}=\{1,2,\ldots,n\}.$ Если $A$ — это множество, мы часто используем сокращенную запись
 \begin{align}\label{dia:exponential abbrev}
 A^n:=A^{\ul{n}}.
 \end{align}
@@ -342,9 +342,9 @@ Since $X_0\iso V,$ we may denote a simplicial complex $(V,X)$ simply by $X.$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:simplicial complex}\index{симплициальный комплекс}
-Пусть $V$ — это множество, а $\PP(V)$ — его множество-степень. Подмножество $X\ss\PP(V)$ называется {\em замкнутым вниз} если, для каждого $u\in X$ и каждого $u'\ss u$ выполняется $u'\in X.$ Мы говорим, что $X$ {\em содержит все атомы}, если для каждого $v\in V$ одноэлементное множество $\{v\}$ является элементом $X.$ 
+Пусть $V$ — некоторое множество, а $\PP(V)$ — его множество-степень. Подмножество $X\ss\PP(V)$ называется {\em замкнутым вниз} если, для каждого $u\in X$ и каждого $u'\ss u$ выполняется $u'\in X.$ Мы говорим, что $X$ {\em содержит все атомы}, если для каждого $v\in V$ одноэлементное множество $\{v\}$ является элементом $X.$ 
 
-{\em Симплициальный комплекс} это пара $(V,X),$ где $V$ — это множество и $X\ss\PP(V)$ — замкнутоее вниз подмножество, содержащее все атомы. Элементы $X$ называются {\em симплексами}.\index{симплекс} Любое подмножество $u\ss V$ имеет мощность $|u|,$ откуда мы получаем функцию $X\to\NN,$ переводящую каждый симплекс в его мощность. Множество симплексов мощности $n+1$ обозначается $X_n,$ а каждый элемент $x\in X_n$ называется {\em $n$-симплексом}.%
+{\em Симплициальный комплекс} это пара $(V,X),$ где $V$ — некоторое множество и $X\ss\PP(V)$ — замкнутоее вниз подмножество, содержащее все атомы. Элементы $X$ называются {\em симплексами}.\index{симплекс} Любое подмножество $u\ss V$ имеет мощность $|u|,$ откуда мы получаем функцию $X\to\NN,$ переводящую каждый симплекс в его мощность. Множество симплексов мощности $n+1$ обозначается $X_n,$ а каждый элемент $x\in X_n$ называется {\em $n$-симплексом}.%
 \footnote{Поначалу кажется неудобным, что множество подмножеств мощности 1 обозначается $X_0,$ и т.д. Но это стандартное соглашение, поскольку, как мы увидим позже, $X_n$ содержит $n$-мерные симплексы.}
 Поскольку $X$ содержит все атомы (подмножества мощности 1), мы получаем $X_0\iso V$; элементы этого множества — 0-симплексы — мы будем называть также {\em вершинами}. Иногда мы также будем называть 1-симплексы {\em ребрами}.%
 \footnote{Причина, по которой мы записываем $X_0\iso V,$ а не $X_0=V$ — то, что $X_0$ — это [не само $V,$ а] множество одноэлементных подмножеств $V.$ Так что, если $V=\{a,b,c\},$ то $X_0=\{\{a\},\{b\},\{c\}\}.$ На самом деле это всего лишь педантичность.}
@@ -407,7 +407,7 @@ Write out $X_2$ and $X_3$ (hint: the drawing of $X$ indicates that $X_3$ should 
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $X$ — это такой симплициальный комплекс, у которого $X_0=\{A,B,\ldots,M\}.$ 
+Пусть $X$ — такой симплициальный комплекс, у которого $X_0=\{A,B,\ldots,M\}.$ 
 \begin{center}
 \includegraphics[height=3in]{OlogNetwork5}
 \end{center} 
@@ -447,7 +447,7 @@ Let $B$ be a set. There is an isomorphism $$\phi\taking\Hom_\Set(B,\Omega)\To{\i
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:characteristic function}
-Пусть $B$ — это множество. Имеется изоморфизм $$\phi\taking\Hom_\Set(B,\Omega)\To{\iso}\PP(B).$$
+Пусть $B$ — некоторое множество. Имеется изоморфизм $$\phi\taking\Hom_\Set(B,\Omega)\To{\iso}\PP(B).$$
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -519,7 +519,7 @@ A function that is both injective and surjective is called {\em bijective}.
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:inj,surj,bij}\index{функция!инъекция}\index{функция!сюръекция}\index{функция!биекция}
-Пусть $f\taking X\to Y$ — это функция. Мы называем $f$ {\em сюръективной}, если для всех $y\in Y$ существует $x\in X$ такой, что $f(x)=y.$ Мы называем $f$ {\em инъективной}, если для всех $x\in X$ и $x'\in X,$ из $f(x)=f(x')$ следует $x=x'.$
+Пусть $f\taking X\to Y$ — некоторая функция. Мы называем $f$ {\em сюръективной}, если для всех $y\in Y$ существует такой $x\in X,$ что $f(x)=y.$ Мы называем $f$ {\em инъективной}, если для всех $x\in X$ и $x'\in X,$ из $f(x)=f(x')$ следует $x=x'.$
 
 Функция, одновременно инъективная и сюръективная, называется {\em биективной}.
 \end{definitionRUS}
@@ -549,15 +549,15 @@ if $h\circ f=h'\circ f$ then $h=h'.$
 \end{definitionENG}
 
 \begin{definitionRUS}[Мономорфизмы, эпиморфизмы]\label{def:mono, epi in set}\index{эпиморфизм!в $\Set$}\index{мономорфизм!в $\Set$}
-Пусть $f\taking X\to Y$ — это функция. 
+Пусть $f\taking X\to Y$ — некоторая функция. 
 
-Мы говорим, что $f$ — {\em мономорфизм}, если для всех множеств $A$ и пар функций $g,g'\taking A\to X,$
+Мы говорим, что $f$ — это {\em мономорфизм}, если для всех множеств $A$ и пар функций $g,g'\taking A\to X,$
 $$
 \xymatrix{A\ar@/^1pc/[r]^g\ar@/_1pc/[r]_{g'}&X\ar[r]^f&Y}
 $$
 из того, что $f\circ g=f\circ g'$ следует $g=g'.$
 
-Мы говорим, что $f$ — {\em эпиморфизм}, если для всех множеств $B$ и пар функций $h,h'\taking Y\to B,$ 
+Мы говорим, что $f$ — это {\em эпиморфизм}, если для всех множеств $B$ и пар функций $h,h'\taking Y\to B,$ 
 $$
 \xymatrix{X\ar[r]^f&Y\ar@/^1pc/[r]^h\ar@/_1pc/[r]_{h'}&B}
 $$
@@ -569,7 +569,7 @@ Let $f\taking X\to Y$ be a function. Then $f$ is injective if and only if it is 
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:inj and surj}
-Пусть $f\taking X\to Y$ — это функция. Тогда $f$ инъективна, если и только если она является мономорфизмом; $f$ сюръективна, если и только если она является эпиморфизмом.
+Пусть $f\taking X\to Y$ — некоторая функция. Тогда $f$ инъективна, если и только если она является мономорфизмом; $f$ сюръективна, если и только если она является эпиморфизмом.
 \end{propositionRUS}
 
 \begin{proofENG}
@@ -581,9 +581,9 @@ Finally, suppose that $f$ is surjective, and let $h,h'\taking Y\to B$ be functio
 \end{proofENG}
 
 \begin{proofRUS}
-Если $f$ — это мономорфизм, то легко увидеть, что она инъективна, просто подставив $A=\singleton.$ Предположим, что $f$ — инъективна и пусть $g,g'\taking A\to X$ — функции такие, что $f\circ g=f\circ g'$; начнем доказывать от противного и предположим, что $g\neq g'.$ Тогда имеется некоторый элемент $a\in A$ такой, что $g(a)\neq g'(a)\in X.$ Но тогда в силу инъективности $f(g(a))\neq f(g'(a)),$ что противоречит условию $f\circ g=f\circ g'.$
+Если $f$ — это мономорфизм, то легко увидеть, что она инъективна, просто подставив $A=\singleton.$ Предположим, что $f$ — инъективна и пусть $g,g'\taking A\to X$ — такие функции, что $f\circ g=f\circ g'$; начнем доказывать от противного и предположим, что $g\neq g'.$ Тогда имеется такой элемент $a\in A,$ что $g(a)\neq g'(a)\in X.$ Но тогда в силу инъективности $f(g(a))\neq f(g'(a)),$ что противоречит условию $f\circ g=f\circ g'.$
 
-Предположим $f\taking X\to Y$ — это эпиморфизм и выберем некоторое $y_0\in Y$ (заметим, что если $Y$ пусто, то утверждение тривиальным образом верно). Пусть $h\taking Y\to\Omega$ обозначает характеристическую функцию подмножества $\{y_0\}\ss Y,$ а $h'\taking Y\to\Omega$ — характеристическую функцию $\emptyset\ss Y$; заметим, что $h(y)=h'(y)$ для всех $y\neq y_0.$ Тогда, поскольку $f$ — эпиморфизм и $h\neq h',$ выполняется $h\circ f\neq h'\circ f,$ так что существует $x\in X,$ для которого $h(f(x))\neq h'(f(x)),$ откуда следует, что $f(x)=y_0.$ Это доказывает, что $f$ сюръективна.
+Предположим $f\taking X\to Y$ — это эпиморфизм и выберем некоторое $y_0\in Y$ (заметим, что если $Y$ пусто, то утверждение тривиальным образом верно). Пусть $h\taking Y\to\Omega$ обозначает характеристическую функцию подмножества $\{y_0\}\ss Y,$ а $h'\taking Y\to\Omega$ — характеристическую функцию $\emptyset\ss Y$; заметим, что $h(y)=h'(y)$ для всех $y\neq y_0.$ Тогда, поскольку $f$ — эпиморфизм и $h\neq h',$ выполняется $h\circ f\neq h'\circ f,$ поэтому существует $x\in X,$ для которого $h(f(x))\neq h'(f(x)),$ откуда следует, что $f(x)=y_0.$ Это доказывает, что $f$ сюръективна.
 
 Наконец, предположим, что $f$ сюръективна, а $h,h'\taking Y\to B$ — функции, для которых $h\circ f=h'\circ f.$ Для каждого $y\in Y,$ существует такой $x\in X,$ что $f(x)=y,$ поэтому $h(y)=h(f(x))=h'(f(x))=h'(y).$ Это доказывает, что $f$ — эпиморфизм.
 \end{proofRUS}
@@ -597,7 +597,7 @@ is a monomorphism.
 \end{propositionENG}
 
 \begin{propositionRUS}\label{prop:pb preserve mono}
-Пусть $f\taking X\to Y$ — это мономорфизм. Тогда для любой функции $g\taking A\to Y$ верхнее отображение $f'\taking X\times_YA\to A$ в диаграмме
+Пусть $f\taking X\to Y$ — некоторый мономорфизм. Тогда для любой функции $g\taking A\to Y$ верхнее отображение $f'\taking X\times_YA\to A$ в диаграмме
 $$
 \xymatrix{X\times_YA\ar[r]^-{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\X\ar[r]_f&Y}
 $$
@@ -615,7 +615,7 @@ But we assumed that $f$ is a monomorphism so this implies that $q=r.$ By the uni
 \end{proofENG}
 
 \begin{proofRUS}
-Чтобы показать, что $f'$ является мономорфизмом, возьмем произвольное множество $B$ и два отображения $m,n\taking B\to X\times_YA$ такие, что $f'\circ m=f'\circ n$; последнюю функцию обозначим $p:=f'\circ m\taking B\to A.$ Теперь положим $q=g'\circ m$ и $r=g'\circ n.$ Необходимая диаграмма выглядит так:
+Чтобы показать, что $f'$ является мономорфизмом, возьмем произвольное множество $B$ и два такие отображения $m,n\taking B\to X\times_YA,$ что $f'\circ m=f'\circ n$; последнюю функцию обозначим $p:=f'\circ m\taking B\to A.$ Теперь положим $q=g'\circ m$ и $r=g'\circ n.$ Необходимая диаграмма выглядит так:
 $$
 \xymatrix{B\ar@<.5ex>[rr]^(.4)m\ar@<-.5ex>[rr]_(.4)n\ar@/^2pc/[rrr]^p\ar@<.5ex>[drr]^(.6)q\ar@<-.5ex>[drr]_(.6)r&&X\times_YA\ar[r]^{f'}\ar[d]_{g'}\ullimit&A\ar[d]^g\\&&X\ar[r]_f&Y}
 $$
@@ -652,9 +652,9 @@ $$
 \end{exampleENG}
 
 \begin{exampleRUS}\label{exc:olog pullbacks}
-Предположим, в ологе имеется притягивающий квадрат
-$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z}$$ 
-такой, что $f$ должна быть инъекцией, а $g$ — любым отображением.%
+Предположим, в ологе имеется такой притягивающий квадрат
+$$\xymatrix{X\times_ZY\ar[r]^-{g'}\ar[d]_{f'}&Y\ar[d]^f\\X\ar[r]_g&Z},$$ 
+что $f$ должна быть инъекцией, а $g$ — любым отображением.%
 \footnote{Конечно, эта диаграмма симметрична, так что те же идеи верны и в случае, если $g$ является инъекцией, а $f$ — любым отображением.} 
 В таком случае имеется прекрасная система меток для $f', g'$ и $X\times_ZY.$ В частности:
 \begin{itemize}
@@ -700,7 +700,7 @@ Consider the subobject classifier $\Omega,$ the singleton $\singleton$ and the m
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Рассмотрим классификатор подобъектов $\Omega,$ синглетон $\singleton$ и отображение $\singleton\To{True}\Omega$ из Определения~\ref{def:subobject classifier}. Взгляните на диаграмму~\ref{dia:monos are pbs of true} и, в духе Упражнения~\ref{exc:olog pullbacks}, предложите метку для $\Omega,$ для $\singleton$ и для $True.$ Исходя из известных меток для $X$ и для $f,$ предложите метку для $A,$ для $i$ и для $f'$ так, чтобы естественый язык приближался к математическому.%
+Рассмотрим классификатор подобъектов $\Omega,$ синглетон $\singleton$ и отображение $\singleton\To{True}\Omega$ из Определения~\ref{def:subobject classifier}. Взгляните на диаграмму~\ref{dia:monos are pbs of true} и, в духе Упражнения~\ref{exc:olog pullbacks}, предложите метку для $\Omega,$ для $\singleton$ и для $True.$ Исходя из известных меток для $X$ и для $f,$ предложите такую метку для $A,$ для $i$ и для $f',$ чтобы естественый язык приближался к математическому.%
 \endnote{Опять же, с данной задачей из-за гибкости русского могут быть проблемы...}
 \end{exerciseRUS}
 
@@ -766,7 +766,7 @@ Suppose that $X=(E,B,\pi)$ and $X'=(E',B',\pi')$ are multisets. A {\em mapping f
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:multiset}\index{мультимножество}
-{\em Мультимножество} это последовательность $X:=(E,B,\pi),$ где $E$ и $B$ — это множества, а $\pi\taking E\to B$ — сюръективная функция. Мы будем называть $E$ множеством {\em экземпляров элементов $X$}, $B$ — множеством {\em имен элементов $X$}, а $\pi$ — {\em именующей функцией $X$}. Для заданного имени элемента $x\in B,$ пусть $\pi^\m1(x)\ss E$ это прообраз; число элементов в $\pi^\m1(x)$ называется {\em кратностью $x$}.
+{\em Мультимножество} это последовательность $X:=(E,B,\pi),$ где $E$ и $B$ — некоторые множества, а $\pi\taking E\to B$ — сюръективная функция. Мы будем называть $E$ множеством {\em экземпляров элементов $X$}, $B$ — множеством {\em имен элементов $X$}, а $\pi$ — {\em именующей функцией $X$}. Для заданного имени элемента $x\in B,$ пусть $\pi^\m1(x)\ss E$ это прообраз; число элементов в $\pi^\m1(x)$ называется {\em кратностью $x$}.
 
 Предположим, что $X=(E,B,\pi)$ и $X'=(E',B',\pi')$ — это мультимножества. {\em Отображение из $X$ в $Y$}, обозначаемое $f\taking X\to Y,$ это пара $(f_1,f_0)$ функций $f_1\taking E\to E'$ и $f_0\taking B\to B',$ для которых следующая диаграмма коммутирует:
 \begin{align}\label{dia:multiset map}
@@ -806,27 +806,29 @@ Consider the multisets described in Exercise~\ref{exc:multiset 1}.
 \endsexc
 \end{exerciseRUS}
 
-%\begin{exampleENG}[Using multisets to approach probability]
-%
-%Let $S=\{a,b,c,d\},$ and call each element of $S$ a {\em suit}. Let $R=\{1,2,\ldots,13\},$ and call each element of $R$ a {\em rank}. Let $C=S\times R,$ and call each element of $C$ a {\em card}. For each $n\in\NN,$ let $$A_n=\{f\taking \{1,2,\ldots,n\}\to C\|f \tn{ is injective}\}$$ and call each element of $A_n$ an {\em $n$-card arrangement}. So $A_{52}$ has $52!:=52*51*\cdots*1$ elements and $A_1$ has 52 elements.
-%
-%The {\em 4-handed poker deal} is the function $A_{52}\to A_5\times A_5\times A_5\times A_5$ given as follows. For each $i\in\{1,2,3,4\},$ let $p_i\taking\{1,2,3,4,5\}\to\{1,2,\ldots,52\}$ be the (injective) function given by the following matrix
-%\begin{align}
-%\begin{array}{l || l | l | l | l | l}
-%i&p_i(1)&p_i(2)&p_i(3)&p_i(4)&p_i(5)\\\hline
-%p_1&1&5&9&13&17\\
-%p_2&2&6&10&14&18\\
-%p_3&3&7&11&15&19\\
-%p_4&4&8&12&16&20
-%\end{array}
-%\end{align}
-%Then if $f\taking\{1,2,\ldots,52\}\to C$ is a 52-card arrangement, then $f\circ p_i\taking\{1,2,3,4,5\}\to C$ is a 5-card arrangement, and putting them together we get our 4-handed poker deal.
-%
-%We could similarly define a $k$-handed poker deal for any $1\leq k\leq 10.$ We focus here on $1$-handed poker deals. For any $n\leq 52,$ let $\sim_n$ denote the equivalence relation on $A_n$ for which two arrangements are equivalent if one is a permutation (reordering) of the other. Let $H_n=A_n/\sim_n$ be the quotient; we call its elements {\em $n$-card hands}. 
-%
-%In “5-card poker”, the 5-card hands are classified by patterns of suits and ranks in the cards. More precisely, given a 5-card arrangement $f\taking \{1,2,3,4,5\}\to C,$ we consider the compositions with $\pi_1\taking C\to S$ and $\pi_2\taking C\to R,$ which we denote $f_S:=\pi_1\circ f$ and $f_R:=\pi_2\circ f.$ We are concerned only with the cardinalities of the fibers of $f_S$ and $f_R.$ For example if some suit $s\in S$ has $|f_S^\m1(s)|=5$ we say that $f$ (or its equivalence class in $H_5$) is a {\em flush}. If for ranks $r_1,r_2$ we have $|f_R^\m1(r_1)|=2$ and $|f_R^\m1(r_2)|=3,$ we call it a {\em full house}. 
-%
-%\end{exampleENG}
+\begin{exampleENG}[Using multisets to approach probability]
+Let $S=\{a,b,c,d\},$ and call each element of $S$ a {\em suit}. Let $R=\{1,2,\ldots,13\},$ and call each element of $R$ a {\em rank}. Let $C=S\times R,$ and call each element of $C$ a {\em card}. For each $n\in\NN,$ let $$A_n=\{f\taking \{1,2,\ldots,n\}\to C\|f \tn{ is injective}\}$$ and call each element of $A_n$ an {\em $n$-card arrangement}. So $A_{52}$ has $52!:=52*51*\cdots*1$ elements and $A_1$ has 52 elements.
+
+The {\em 4-handed poker deal} is the function $A_{52}\to A_5\times A_5\times A_5\times A_5$ given as follows. For each $i\in\{1,2,3,4\},$ let $p_i\taking\{1,2,3,4,5\}\to\{1,2,\ldots,52\}$ be the (injective) function given by the following matrix
+\begin{align}
+\begin{array}{l || l | l | l | l | l}
+i&p_i(1)&p_i(2)&p_i(3)&p_i(4)&p_i(5)\\\hline
+p_1&1&5&9&13&17\\
+p_2&2&6&10&14&18\\
+p_3&3&7&11&15&19\\
+p_4&4&8&12&16&20
+\end{array}
+\end{align}
+Then if $f\taking\{1,2,\ldots,52\}\to C$ is a 52-card arrangement, then $f\circ p_i\taking\{1,2,3,4,5\}\to C$ is a 5-card arrangement, and putting them together we get our 4-handed poker deal.
+
+We could similarly define a $k$-handed poker deal for any $1\leq k\leq 10.$ We focus here on $1$-handed poker deals. For any $n\leq 52,$ let $\sim_n$ denote the equivalence relation on $A_n$ for which two arrangements are equivalent if one is a permutation (reordering) of the other. Let $H_n=A_n/\sim_n$ be the quotient; we call its elements {\em $n$-card hands}. 
+
+In “5-card poker”, the 5-card hands are classified by patterns of suits and ranks in the cards. More precisely, given a 5-card arrangement $f\taking \{1,2,3,4,5\}\to C,$ we consider the compositions with $\pi_1\taking C\to S$ and $\pi_2\taking C\to R,$ which we denote $f_S:=\pi_1\circ f$ and $f_R:=\pi_2\circ f.$ We are concerned only with the cardinalities of the fibers of $f_S$ and $f_R.$ For example if some suit $s\in S$ has $|f_S^\m1(s)|=5$ we say that $f$ (or its equivalence class in $H_5$) is a {\em flush}. If for ranks $r_1,r_2$ we have $|f_R^\m1(r_1)|=2$ and $|f_R^\m1(r_2)|=3,$ we call it a {\em full house}. 
+\end{exampleENG}
+
+\begin{exampleENG}[Мультимножественный подход к вероятности]
+(TODO - перевод скрытого примера)
+\end{exampleENG}
 
 %% Subsubsection %%
 
@@ -837,7 +839,7 @@ Let's continue with our ideas from multisets, but now suppose that we have a fix
 \end{blockENG}
 
 \begin{blockRUS}
-Продолжим наши идеи о мультимножествах, но на этот раз предположим, что у нас есть заданное множество имен $B,$ которое мы зафиксируем раз и навсегда. Если обсуждается множество, то каждый его элемент должен иметь имя в $B.$ Если же обсуждается отображение, то оно должно сохранять имена. Например, если $B$ — это множество слов естественного языка, то каждый документ состоит из упорядоченного множества с отображением его в $B$ (например, $1\mapsto \tn{Предположим}, 2\mapsto\tn{что}, 3\mapsto\tn{мы}$ и т.д.) Отображение документа $A$ в документ $B$ должно переводить каждое слово из $A$ в такое же слово из $B.$ Эти понятия подробно определены ниже.
+Продолжим наши идеи о мультимножествах, но на этот раз предположим, что у нас есть заданное множество имен $B,$ которое мы зафиксируем раз и навсегда. Если обсуждается множество, то каждый его элемент должен иметь имя в $B.$ Если же обсуждается отображение, то оно должно сохранять имена. Например, если $B$ — это множество слов естественного языка, то каждый документ состоит из упорядоченного множества мест слов с отображением его в $B$ (например, $1\mapsto \tn{Предположим}, 2\mapsto\tn{что}, 3\mapsto\tn{мы}$ и т.д.) Отображение документа $A$ в документ $B$ должно переводить каждое слово из $A$ в такое же слово из $B.$ Эти понятия подробно определены ниже.
 \end{blockRUS}
 
 \begin{definitionENG}[Relative set]\label{def:relative sets}\index{relative set}
@@ -849,7 +851,7 @@ $$
 \end{definitionENG}
 
 \begin{definitionRUS}[Относительное множество]\label{def:relative sets}\index{относительное множество}
-Пусть $B$ — это множество. {\em Относительное множество над $B$} или просто {\em множество над $B$} — это пара $(E,\pi)$ такая, что $E$ — это множество, а $\pi\taking E\to B$ — функция. {\em Отображение относительных множеств над $B$}, обозначаемое $f\taking (E,\pi)\to(E',\pi'),$ — это функция $f\taking E\to E'$ такая, что треугольник ниже коммутирует, т.е. $\pi=\pi'\circ f,$
+Пусть $B$ — некоторое множество. {\em Относительное множество над $B$} или просто {\em множество над $B$} — это такая пара $(E,\pi),$ что $E$ — это множество, а $\pi\taking E\to B$ — функция. {\em Отображение относительных множеств над $B$}, обозначаемое $f\taking (E,\pi)\to(E',\pi'),$ — это такая функция $f\taking E\to E',$ что треугольник ниже коммутирует, т.е. $\pi=\pi'\circ f,$
 $$
 \xymatrix@=10pt{E\ar[rr]^f\ar[rdd]_{\pi}&&E'\ar[ldd]^{\pi'}\\\\&B
 }
@@ -861,7 +863,7 @@ Given sets $X,Y,Z$ and functions $f\taking X\to Y$ and $g\taking Y\to Z,$ we can
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Для данных множеств $X,Y,Z$ и функций $f\taking X\to Y$ и $g\taking Y\to Z$ мы можем образовать композицию, получив функцию $X\to Z.$ Допустим, $B$ — это множество, а $(X,p), (Y,q),$ и $(Z,r)$ — относительные множества над $B$ и, кроме того, $f\taking (X,p)\to (Y,q)$ и $g\taking (Y,q)\to (Z,r)$ — отображения; имеется ли тогда осмысленное понятие композиции, которое давало бы в результате отображение относительных множеств $(X,p)\to (Z,r)?$ Подсказка: нарисуйте диаграммы.
+Для данных множеств $X,Y,Z$ и функций $f\taking X\to Y$ и $g\taking Y\to Z$ мы можем образовать композицию, получив функцию $X\to Z.$ Допустим, $B$ — некоторое множество, а $(X,p), (Y,q),$ и $(Z,r)$ — относительные множества над $B$ и, кроме того, $f\taking (X,p)\to (Y,q)$ и $g\taking (Y,q)\to (Z,r)$ — некоторые отображения; имеется ли тогда осмысленное понятие композиции, которое давало бы в результате отображение относительных множеств $(X,p)\to (Z,r)?$ Подсказка: нарисуйте диаграммы.
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
@@ -885,7 +887,7 @@ Let $A$ be a set. Suppose we want to assign to each element $a\in A$ a set $S_a.
 \end{blockENG}
 
 \begin{blockRUS}
-Пусть $A$ — это множество. Предположим, мы хотим сопоставить каждому элементу $a\in A$ некоторое множество $S_a.$ Это называется $A$-индексированным множеством. Поскольку в теории категорий всегда интересуются определенным образом «узаконенными» отображениями между двумя отдельными структурами одного сорта, нам потребуется понятие $A$-индексированных отображений; пойдем очевидным путем. 
+Пусть $A$ — некоторое множество. Предположим, мы хотим сопоставить каждому элементу $a\in A$ некоторое множество $S_a.$ Это называется $A$-индексированным множеством. Поскольку в теории категорий всегда интересуются определенным образом «узаконенными» отображениями между двумя отдельными структурами одного сорта, нам потребуется понятие $A$-индексированных отображений; пойдем очевидным путем. 
 \end{blockRUS}
 
 \begin{exampleENG}\label{ex:classroom seats}
@@ -903,7 +905,7 @@ Let $A$ be a set. An {\em $A$-indexed set} is a collection of sets $S_a,$ one fo
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:indexed sets}\index{индексированное множество}
-Пусть $A$ — это множество. {\em $A$-индексированное множество} — это семейство множеств $S_a,$ по одному для каждого элемента $a\in A$; мы будем обозначать это при помощи $(S_a)_{a\in A}.$ Если $(S'_a)_{a\in A}$ — это другое $A$-индексированное множество, то {\em отображением $A$-индексированных множеств из $(S_a)_{a\in A}$ в $(S'_a)_{a\in A}$}, обозначаемым $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A},$$ является семейство функций $f_a\taking S_a\to S'_a,$ по одному для каждого элемента $a\in A.$
+Пусть $A$ — некоторое множество. {\em $A$-индексированное множество} — это семейство множеств $S_a,$ по одному для каждого элемента $a\in A$; мы будем обозначать это при помощи $(S_a)_{a\in A}.$ Если $(S'_a)_{a\in A}$ — это другое $A$-индексированное множество, то {\em отображением $A$-индексированных множеств из $(S_a)_{a\in A}$ в $(S'_a)_{a\in A}$}, обозначаемым $$(f_a)_{a\in A}\taking(S_a)_{a\in A}\to (S'_a)_{a\in A},$$ является семейство функций $f_a\taking S_a\to S'_a,$ по одному для каждого элемента $a\in A.$
 \end{definitionRUS}
 
 \begin{exerciseENG}
