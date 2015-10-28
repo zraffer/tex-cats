@@ -35,7 +35,7 @@ A database is a collection of tables\index{database!tables}, each table $T$ of w
 \begin{exampleENG}\label{ex:graphene}
 When graphene is strained (lengthened by a factor of $x\geq 1$), it becomes stressed (carries a force in the direction of the lengthening). The following is a made-up set of data.
 
-\begin{align}\label{ex:first tables}\footnotesize
+\begin{align}\label{ex:first tables}\scriptsize
 \begin{tabular}{| l || l | l | l |}\bhline
 \multicolumn{4}{|c|}{Graphene sample}\\\bhline
 {\bf ID}&{\bf Source}&{\bf Stress}&{\bf Strain}\\\bbhline
@@ -101,11 +101,11 @@ Above we can suppose that E.1, E.2, and D.1 are data columns (referring to names
 
 Display (\ref{dia:instance on maincat}) shows how such a database might look at a particular moment in time. 
 \begin{align}\label{dia:instance on maincat}\index{a schema!department store}
-&\footnotesize
+&\scriptsize
 \begin{tabular}{| l || l | l | l | l |}\bhline
 \multicolumn{5}{| c |}{{\tt Employee}}\\\bhline 
 {\bf ID}&{\bf first}&{\bf last}&{\bf manager}&{\bf worksIn}\\\bbhline 101&David&Hilbert&103&q10\\\hline 102&Bertrand&Russell&102&x02\\\hline 103&Emmy&Noether&103&q10\\\bhline
-\end{tabular}&\hsp\footnotesize
+\end{tabular}&\hsp\scriptsize
 \begin{tabular}{| l || l | l |}\bhline
 \multicolumn{3}{| c |}{{\tt Department}}\\
 \bhline {\bf ID}&{\bf name}&{\bf secretary}\\\bbhline q10&Sales&101\\\hline x02&Production&102\\\bhline
@@ -149,15 +149,15 @@ To make everything consistent, we could even say that data columns are specific 
 \begin{exampleENG}\label{ex:department store 2}
 Consider again Example~\ref{ex:department store 1}. Note that first names and last names had a particular type, which we all but ignored above. We could cease to ignore them by adding three tables, as follows.
 
-\begin{align}\label{dia:instance on maincat 2}\footnotesize
+\begin{align}\label{dia:instance on maincat 2}\scriptsize
 \begin{tabular}{| l ||}\bhline
 \multicolumn{1}{| c |}{{\tt FirstNameString}}\\\bhline
 {\bf ID}\\\bbhline Alan\\\hline Alice\\\hline Bertrand\\\hline Carl\\\hline David\\\hline Emmy\\\hline\hspace{.25in}\vdots\\\bhline
-\end{tabular}\hspace{.6in}\footnotesize
+\end{tabular}\hspace{.6in}\scriptsize
 \begin{tabular}{| l ||}\bhline
 \multicolumn{1}{| c |}{{\tt LastNameString}}\\\bhline
 {\bf ID}\\\bbhline Arden\\\hline Hilbert\\\hline Jones\\\hline Noether\\\hline Russell\\\hline\hspace{.25in}\vdots\\\bhline
-\end{tabular}\hspace{.6in}\footnotesize
+\end{tabular}\hspace{.6in}\scriptsize
 \begin{tabular}{| l ||}\bhline
 \multicolumn{1}{| c |}{{\tt DepartmentNameString}}\\\bhline
 {\bf ID}\\\bbhline Marketing\\\hline Production\\\hline Sales\\\hline\hspace{.25in}\vdots\\\bhline
