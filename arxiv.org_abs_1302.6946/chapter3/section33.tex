@@ -236,7 +236,7 @@ In general $[n]$ has $n$ arrows and $n+1$ vertices. In particular, when $n=0$ we
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:[n] as graph}
-Пусть $n\in\NN$ — это натуральное число. {\em Граф-цепь длины $n$},\index{граф!цепь} обозначаемый $[n],$ — это граф, изображенный ниже:
+Пусть $n\in\NN$ — некоторое натуральное число. {\em Граф-цепь длины $n$},\index{граф!цепь} обозначаемый $[n],$ — это граф, изображенный ниже:
 $$\xymatrix{
     \LMO{0}\ar[r]  &  \LMO{1}\ar[r]  &  \cdots\ar[r]  &  \LMO{n}
 }$$
@@ -264,7 +264,7 @@ As you can see, $f$-arrows still take $a$'s to $a$'s and $g$-arrows still take $
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:ZxG}
-Пусть $G=(V,A,src,tgt)$ — это граф; мы хотим разместить его в дискретном времени так, чтобы каждая стрелка возникала не в отдельный момент [нулевой продолжительности], а на протяжении некоторого кванта времени. 
+Пусть $G=(V,A,src,tgt)$ — некоторый граф; мы хотим разместить его в дискретном времени так, чтобы каждая стрелка возникала не в отдельный момент [нулевой продолжительности], а на протяжении некоторого кванта времени. 
 
 Пусть $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ — это граф, изображенный ниже:
 $$\xymatrix{
@@ -272,7 +272,7 @@ $$\xymatrix{
 }$$
 Когда мы дойдем до понятия пределов в категории, мы осознаем, что в категории графов можно образовывать произведения (см. Пример~\ref{ex:product of graphs}), и что имеет смысл выражение $N\times G.$ Сейчас же мы построим его вручную.
 
-Пусть $T(G)=(V\times \NN,A\times\NN,src',tgt')$ — это новый граф, где для любого $a\in A$ и $n\in\NN$ выполняется $src'(a,n):=(src(a),n)$ и $tgt'(a,n):=(tgt(a),n+1).$ Возможно, это немного трудно переварить сразу, так что попытаемся понять, что происходит, на следующем примере. 
+Пусть $T(G)=(V\times \NN,A\times\NN,src',tgt')$ — это новый граф, где для любого $a\in A$ и $n\in\NN$ выполняется $src'(a,n):=(src(a),n)$ и $tgt'(a,n):=(tgt(a),n+1).$ Возможно, это немного трудно переварить сразу, поэтому попытаемся понять, что происходит, на следующем примере. 
 
 Пусть $G$ — это граф, изображенный ниже:
 $$\xymatrix{
@@ -363,7 +363,7 @@ There is a concatenation operation on paths.\index{concatenation!of paths} Given
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:paths in graph}\index{граф!путь}
-Пусть $G=(V,A,src,tgt)$ — это граф. {\em Путь длины $n$}\index{путь} в $G,$ обозначаемый $p\in\Path_G^{(n)}$\index{символ!$\Path$} — это последовательность
+Пусть $G=(V,A,src,tgt)$ — некоторый граф. {\em Путь длины $n$}\index{путь} в $G,$ обозначаемый $p\in\Path_G^{(n)}$\index{символ!$\Path$} — это последовательность
 \begin{align}\label{dia:path}
     p = (v_0 \To{a_1} v_1 \To{a_2} v_2 \To{a_3} \ldots \To{a_n} v_n)
 \end{align}
@@ -405,7 +405,7 @@ Let $G$ be a graph and consider the set $\Path_G$ of paths in $G.$ Suppose someo
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $G$ — это граф; рассмотрим множество $\Path_G$ путей в $G.$ Предположим, некто утверждает, что множеству $\Path_G$ можно придать структуру моноида, где операция умножения задана конкатенацией путей. Верно ли это? Почему? Подсказка: какой должна быть единица в этом моноиде?
+Пусть $G$ — некоторый граф; рассмотрим множество $\Path_G$ путей в $G.$ Предположим, некто утверждает, что множеству $\Path_G$ можно придать структуру моноида, где операция умножения задана конкатенацией путей. Верно ли это? Почему? Подсказка: какой должна быть единица в этом моноиде?
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -431,7 +431,7 @@ Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomor
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:graph homomorphism}\index{graph!homomorphism}
-Пусть $G=(V,A,src,tgt)$ и $G'=(V',A',src',tgt')$ — это графы. {\em Гомоморфизм графов} $f$ из $G$ в $G'$, обозначаемый $f\taking G\to G',$ состоит из двух функций $f_0\taking V\to V'$ и $f_1\taking A\to A'$ таких, что две диаграммы ниже коммутируют:
+Пусть $G=(V,A,src,tgt)$ и $G'=(V',A',src',tgt')$ — некоторые графы. {\em Гомоморфизм графов} $f$ из $G$ в $G'$, обозначаемый $f\taking G\to G',$ состоит из двух таких функций $f_0\taking V\to V'$ и $f_1\taking A\to A',$ что две диаграммы ниже коммутируют:
 \begin{align}\label{dia:graph hom}
 \xymatrix{
     A \ar[r]^{f_1} \ar[d]_{src}  &  A' \ar[d]^{src'}  \\
@@ -521,7 +521,7 @@ Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chai
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $G$ — это граф, $n\in\NN$ — натуральное число, а $[n]$ — граф-цепь длины $n,$ как в Примере~\ref{ex:[n] as graph}. Будет ли путь длины $n$ в $G$ тем же самым, что и гомоморфизм $[n]\to G,$ или имеются тонкие различия? Более точно, всегда ли найдется изоморфизм между множеством гомоморфизмов графов $[n]\to G$ и множеством $\Path_G^{(n)}$ путей длины $n$ в $G?$
+Пусть $G$ — некоторый граф, $n\in\NN$ — натуральное число, а $[n]$ — граф-цепь длины $n,$ как в Примере~\ref{ex:[n] as graph}. Будет ли путь длины $n$ в $G$ тем же самым, что и гомоморфизм $[n]\to G,$ или имеются тонкие различия? Более точно, всегда ли найдется изоморфизм между множеством гомоморфизмов графов $[n]\to G$ и множеством $\Path_G^{(n)}$ путей длины $n$ в $G?$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
@@ -568,7 +568,7 @@ Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X.$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:binary relation}\index{relation!binary}
-Пусть $X$ — это множество. {\em Бинарное отношение на $X$} — это подмножество $R\ss X\times X.$ 
+Пусть $X$ — некоторое множество. {\em Бинарное отношение на $X$} — это подмножество $R\ss X\times X.$ 
 \end{definitionRUS}
 
 \begin{blockENG}
@@ -685,7 +685,7 @@ A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a s
 \end{exerciseENG}
 
 \begin{exerciseRUS}[Преобразование бинарных отношений в графы]\label{exc:rel to graph}\index{relation!graph of}~
-Если $R\ss S\times S$ — это бинарное отношение, найдите естественный способ построить граф на основе него с множеством вершин $S.$ 
+Если $R\ss S\times S$ — некоторое бинарное отношение, найдите естественный способ построить граф на основе него с множеством вершин $S.$ 
 \sexc Каким будет множество стрелок $A$? 
 \item Каковы функции начала и конца $src,tgt\taking A\to S?$
 \item Возьмите таблицу слева на (\ref{dia:3 relations}) и рассмотрите ее первые $7$ строк (т.е. забудьте про $\vdots$). Изобразите соответствующий граф (видите тетраэдр? а он тут есть). 
@@ -700,7 +700,7 @@ A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a s
 \end{exerciseENG}
 
 \begin{exerciseRUS}[Преобразование графов в бинарные отношения]\label{ex:graph to rel}~
-\sexc Если $(V,A,src,tgt)$ — это граф, найдите естественный способ построить на основе него бинарное отношение $R\ss V\times V.$ 
+\sexc Если $(V,A,src,tgt)$ — некоторый граф, найдите естественный способ построить на основе него бинарное отношение $R\ss V\times V.$ 
 \item Возьмите граф $G$ с диаграммы (\ref{dia:graph hom example}) слева и выпишите соответствующее бинарное отношение в виду таблицы.
 \endsexc
 \end{exerciseRUS}

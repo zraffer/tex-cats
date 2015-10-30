@@ -31,7 +31,7 @@
 {\markboth{\MakeUppercase{\GetTranslation{#1}}}{\MakeUppercase{\GetTranslation{#1}}}}
 
 \usepackage{amsmath,amssymb}
-\usepackage{mathabx}
+%\usepackage{mathabx} % !!!
 \usepackage{unicode-math}
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -137,6 +137,14 @@
 \newcommand{\hsps}[1]{{\hspace{2mm} #1\hspace{2mm}}}
 \newcommand{\tin}[1]{\text{\tiny #1}}
 
+    \DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+    \DeclareFontShape{U}{mathb}{m}{n}{<-6> mathb5 <6-7> mathb6 <7-8> mathb7 <8-9> mathb8 <9-10> mathb9 <10-12> mathb10 <12-> mathb12}{}
+    \DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+    \DeclareMathSymbol{\lefttorightarrow}{\mathrel}{mathb}{"FC}
+    \DeclareMathSymbol{\righttoleftarrow}{\mathrel}{mathb}{"FD}
+    \DeclareMathSymbol{\uptodownarrow}{\mathrel}{mathb}{"FE}
+    \DeclareMathSymbol{\downtouparrow}{\mathrel}{mathb}{"FF}
+
 \newcommand{\singleton}{\{\smiley\}}
 \newcommand{\boxtitle}[1]{\begin{center}#1\end{center}\vspace{-.1in}}
 \newcommand{\singlefun}[1]{\star^{#1}}
@@ -176,8 +184,8 @@
 \def\ol{\overline}
 \def\ul{\underline}
 \def\plpl{+\!\!+\hspace{1pt}}
-\def\acts{\lefttorightarrow}
-\def\actsRight{\righttoleftarrow}
+\def\acts{⟳}%{\lefttorightarrow}
+\def\actsRight{⟲}%{\righttoleftarrow}
 \def\vect{\overrightarrow}
 \def\qeq{\mathop{=}^?}
 \def\del{\partial\,}
