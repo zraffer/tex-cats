@@ -41,21 +41,21 @@ We say that $R$ is a {\em linear order}\index{order!linear order} if it is a par
 We denote such a preorder (or partial order or linear order) by $(S,\leq).$
 \end{definitionENG}
 
-\begin{definitionRUS}\label{def:orders}\index{order}
-Let $S$ be a set and $R\ss S\times S$ a binary relation on $S$; if $(s,s')\in R$ we will write $s\leq s'.$ Then we say that $R$ is a {\em preorder}\index{order!preorder} if, for all $s,s',s''\in S$ we have
+\begin{definitionRUS}\label{def:orders}\index{порядок}
+Пусть $S$ — некоторое множество, а $R\ss S\times S$ — бинарное отношение на $S$; при этом, если $(s,s')\in R,$ то этот факт мы будем обозначать так: $s\leq s'.$ Мы называем $R$ {\em предпорядком}\index{порядок!предпорядок}, если для всех $s,s',s''\in S$ выполняются следующие свойства:
 \begin{description}
-\item[Reflexivity:] $s\leq s,$ and
-\item[Transitivity:] if $s\leq s'$ and $s'\leq s'',$ then $s\leq s''.$
+\item[Рефлексивность:] $s\leq s,$
+\item[Транзитивность:] если $s\leq s'$ и $s'\leq s'',$ то $s\leq s''.$
 \end{description}
-We say that $R$ is a {\em partial order}\index{order!partial order} if it is a preorder and, in addition, for all $s,s'\in S$ we have
+Мы называем $R$ {\em частичным порядком}\index{порядок!частичный порядок}, если оно является предпорядком и, дополнительно, для всех $s,s'\in S$ выполняется
 \begin{description}
-\item[Antisymmetry:] If $s\leq s'$ and $s'\leq s,$ then $s=s'.$
+\item[Антисимметричность:] Если $s\leq s'$ и $s'\leq s,$ то $s=s'.$
 \end{description}
-We say that $R$ is a {\em linear order}\index{order!linear order} if it is a partial order and, in addition, for all $s,s'\in S$ we have
+Мы называем $R$ {\em линейным порядком}\index{порядок!линейный порядок}, если оно является частичным порядком и, дополнительно, для всех $s,s'\in S$ выполняется
 \begin{description}
-\item[Comparability:] Either $s\leq s'$ or $s'\leq s.$
+\item[Сравнимость:] Либо $s\leq s',$ либо $s'\leq s.$
 \end{description}
-We denote such a preorder (or partial order or linear order) by $(S,\leq).$
+Мы записываем предпорядок (или частичный порядок, или линейный порядок) в виде пары $(S,\leq).$
 \end{definitionRUS}
 
 \begin{exerciseENG}~
@@ -65,6 +65,9 @@ We denote such a preorder (or partial order or linear order) by $(S,\leq).$
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
+\sexc Определите, изображает ли таблица слева на Диаграмме (\ref{dia:3 relations}) линейный порядок. 
+\item Покажите, что ни одна из остальных таблиц не является даже предпорядком.
+\endsexc
 \end{exerciseRUS}
 
 \begin{exampleENG}[Partial order not linear order]\label{ex:pre not par}
@@ -81,7 +84,18 @@ We will draw an olog for playing cards.
 We can put a binary relation on the set of boxes here by saying $A\leq B$ if there is a path $A\to B.$ One can see immediately that this is a preorder because length=0 paths give reflexivity and concatenation of paths gives transitivity. To see that it is a partial order we only note that there are no loops. But this partial order is not a linear order because there is no path (in either direction) between, e.g., \fakebox{a 4 of diamonds} and \fakebox{a black queen}, so it violates the comparability condition.
 \end{exampleENG}
 
-\begin{exampleRUS}[Partial order not linear order]\label{ex:pre not par}
+\begin{exampleRUS}[Частичный порядок, не являющийся линейным]\label{ex:pre not par}
+Изобразим олог для игральных карт. 
+\begin{align}\label{dia:card olog}
+\scriptsize
+\xymatrixnocompile@=15pt{
+\obox{}{.3in}{бубны}\ar[dr]^{\tn{это}}&&\obox{}{.4in}{черви}\ar[dl]_{\tn{это}}&&\obox{}{.35in}{трефы}\ar[dr]^{\tn{это}}&&\obox{}{.3in}{пики}\ar[dl]_{\tn{это}}\\
+&\obox{}{.4in}{красные}\ar[drr]^{\tn{is}}&&&&\obox{}{.4in}{черные}\ar[dll]_{\tn{это}}\\
+\obox{}{.45in}{четверка бубен}\ar[d]^{\tn{это}}\ar[uu]_{\tn{это}}&&&\obox{}{.3in}{карта}&&&\obox{}{.4in}{черные дамы}\ar[d]^{\tn{это}}\ar[ul]_{\tn{это}}\\
+\obox{}{.4in}{четверки}\ar[rr]^{\tn{это}}&&\obox{}{.4in}{цифры}\ar[ur]^{\tn{это}}&&\obox{}{.4in}{картинки}\ar[ul]_{\tn{это}}&&\obox{}{.3in}{дамы}\ar[ll]_{\tn{это}}
+}
+\end{align}
+Мы можем задать бинарное отношение на множестве типов олога, положив $A\leq B$ ттт имеется путь $A\to B.$ Отсюда немедленно вытекает, что это предпорядок, потому что пути длины 0 обеспечивают рефлексивность, а конкатенация путей — транзитивность. Чтобы убедиться в том, что это частичный порядок, заметим, что здесь отсутствуют циклы. Однако, этот частичный порядок не является линейным, поскольку нет пути (в любом направлении) между, например, \fakebox{четверка бубен} и \fakebox{черные дамы}, а значит, не выполняется условие сравнимости.
 \end{exampleRUS}
 
 \begin{remarkENG}
