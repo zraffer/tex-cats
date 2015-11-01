@@ -125,7 +125,7 @@ Category-theoretically, it is quite simple to convert a database instance $J\tak
 \begin{definitionENG}\label{def:grothendieck}\index{category!of elements}\index{Grothendieck!construction}
 Let $\mcC$ be a category and let $J\taking\mcC\to\Set$ be a functor. The {\em category of elements of $J$}, denoted $\int_\mcC J,$\index{a symbol!$\int$} is defined as follows:
 \begin{align*}
-\Ob(\varint_\mcC J):=&\;\;\{(C,x)\|C\in\Ob(\mcC), x\in J(C)\}.\\
+\Ob(\int_\mcC J):=&\;\;\{(C,x)\|C\in\Ob(\mcC), x\in J(C)\}.\\
 \Hom_{\int_\mcC J}((C,x),(C',x')):=&\;\;\{f\taking C\to C'\|J(f)(x)=x'\}.
 \end{align*}
 
@@ -138,7 +138,7 @@ There is a natural functor $\pi_J\taking\int_\mcC J\too\mcC.$ It sends each obje
 \begin{exampleENG}
 Let $A$ be a set, and consider it as a discrete category. We saw in Exercise~\ref{exc:indexed sets as functors} that a functor $S\taking A\to\Set$ is the same thing as an $A$-indexed set, as discussed in Section~\ref{sec:indexed sets}. We will follow Definition~\ref{def:indexed sets} and for each $a\in A$ write $S_a:=S(a).$
 
-What is the category of elements of a functor $S\taking A\to\Set?$ The objects of $\int_AS$ are pairs $(a,s)$ where $a\in A$ and $s\in S(a).$ Since $A$ has nothing but identity morphisms, $\int_AS$ has nothing but identity morphisms; i.e. it is the discrete category on a set. In fact that set is the disjoint union $$\varint_AS=\bigsqcup_{a\in A}S_a.$$ The functor $\pi_S\taking\int_AS\to A$ sends each element in $S_a$ to the element $a\in A.$ 
+What is the category of elements of a functor $S\taking A\to\Set?$ The objects of $\int_AS$ are pairs $(a,s)$ where $a\in A$ and $s\in S(a).$ Since $A$ has nothing but identity morphisms, $\int_AS$ has nothing but identity morphisms; i.e. it is the discrete category on a set. In fact that set is the disjoint union $$\int_AS=\bigsqcup_{a\in A}S_a.$$ The functor $\pi_S\taking\int_AS\to A$ sends each element in $S_a$ to the element $a\in A.$ 
 
 One can see this as a kind of histogram. For example, let $A=\{{\tt BOS, NYC, LA, DC}\}$ and let $S\taking A\to\Set$ assign 
 \begin{align*}
@@ -149,7 +149,7 @@ S_{\tt DC}&=\{{\tt Abby,Carla}\}.
 \end{align*}
 Then the category of elements of $S$ would look like the (discrete) category at the top: 
 \begin{align}\label{dia:elements for cities}
-\varint_AS=\parbox{2.7in}{\fbox{\xymatrix@=10pt{
+\int_AS=\parbox{2.7in}{\fbox{\xymatrix@=10pt{
 \LTO{(BOS,Abby)}\\
 \LTO{(BOS,Bob)}&\hspace{.3in}&\LTO{(LA,John)}&\LTO{(DC,Abby)}\\
 \LTO{(BOS,Casandra)}&&\LTO{(LA,Jim)}&\LTO{(DC,Carla)}
@@ -211,7 +211,7 @@ And consider the instance $J\taking\mcC\to\Set,$ which we first encountered in (
 The category of elements of $J\taking\mcC\to\Set$ looks like this:
 
 \begin{align}\label{dia:Grothendieck}
-\hspace{0in}\varint_\mcC J=\parbox{3.9in}{
+\hspace{0in}\int_\mcC J=\parbox{3.9in}{
 \fbox{
 \xymatrix@=.1pt{
 &\LTO{101}\ar@/_2.5pc/[ddddl]+<-3pt,3pt>_{\tin{first}}\ar@/_1.5pc/[ddrrr]+<-4pt,0pt>^{\tin{last}}\ar@/_1pc/[rr]+<-3pt,-3pt>_-{\tin{manager}}\ar@/^1.8pc/[rrrrrr]^{\tin{worksIn}}&\LTO{\;\;102}&\LTO{103}&&&&\LTO{q10}&\LTO{x02}\ar@/^1.6pc/[llllll]+<4pt,-2pt>_{\tin{secretary}}\ar@/^1.2pc/[lddd]+<6pt,2pt>^(.4){\tin{name}}\\\parbox{.1in}{~\\\vspace{.6in}~}\\\LTO{Alan}&&&&\LTO{Hilbert}&\hspace{.4in}&\hspace{.4in}&\LTO{Production}\\\LTO{\;\;Bertrand}&&&&\LTO{Russell}&&&\LTO{\hspace{-.1in}Sales}\\\LTO{\hspace{.2in}David}&&&&\LTO{Noether}&&&\LTO{Marketing}\\\LTO{Emmy}&&&&\LTO{Arden}\\\LTO{Carl}&&&&\LTO{Jones}}}\\

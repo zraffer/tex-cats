@@ -31,7 +31,6 @@
 {\markboth{\MakeUppercase{\GetTranslation{#1}}}{\MakeUppercase{\GetTranslation{#1}}}}
 
 \usepackage{amsmath,amssymb}
-%\usepackage{mathabx} % !!!
 \usepackage{unicode-math}
 \usepackage{fontspec}
 \usepackage{polyglossia}
@@ -59,8 +58,6 @@
 
 \usepackage{etex}
 \usepackage{amsthm,amscd}
-\usepackage{wasysym}
-\savesymbol{Sun}\savesymbol{Mercury}\savesymbol{Venus}\savesymbol{Earth}\savesymbol{Mars}\savesymbol{Jupiter}\savesymbol{Saturn}\savesymbol{Uranus}\savesymbol{Neptune}\savesymbol{Pluto}\savesymbol{leftmoon}\savesymbol{rightmoon}\savesymbol{fullmoon}\savesymbol{newmoon}\savesymbol{Aries}\savesymbol{Taurus}\savesymbol{Gemini}\savesymbol{Leo}\savesymbol{Libra}\savesymbol{Scorpio}\savesymbol{diameter}
 \usepackage{setspace}
 \usepackage{chngcntr}
 \usepackage[tt]{titlepic}
@@ -144,6 +141,8 @@
     \DeclareMathSymbol{\righttoleftarrow}{\mathrel}{mathb}{"FD}
     \DeclareMathSymbol{\uptodownarrow}{\mathrel}{mathb}{"FE}
     \DeclareMathSymbol{\downtouparrow}{\mathrel}{mathb}{"FF}
+
+\newcommand{\smiley}{☺}
 
 \newcommand{\singleton}{\{\smiley\}}
 \newcommand{\boxtitle}[1]{\begin{center}#1\end{center}\vspace{-.1in}}
@@ -330,9 +329,9 @@
 \genTh{guess}{Guess}{Догадка}
 \genTh{answer}{Answer}{Ответ}
 \genTh{construction}{Construction}{Конструкция}
-\genTh{rules}{Rules of good practice}{Правила хорошего тона (рекомендации)}
+\genTh{rules}{Rules of good practice}{Рекомендации}
 \genTh{exc}{Exercise}{Упражнение}
-\genTh{app}{Application}{Прикладной пример (применение)}
+\genTh{app}{Application}{Применение}
 \genTh{notation}{Notation}{Обозначение}
 \genTh{conjecture}{Conjecture}{Гипотеза}
 \genTh{postulate}{Postulate}{Постулат}
@@ -382,15 +381,32 @@
 
 \author{\caseENGRUS{David I. Spivak}{\\}{Дэвид И. Спивак}}
 
-\titlepic{\vspace{1.3in}\dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\\vspace{.3in}\Large\caseENGRUS{How can mathematics make this diagram meaningful?}{\\}{Как математика может придать смысл этой диаграмме?}\normalsize}
+\titlepic{
+  \vspace{1.3in}
+  \dashbox{\includegraphics[width=.8\textwidth]{ScientificMethod}}\\
+  \vspace{.3in}\Large
+  \caseENGRUS{
+      How can mathematics make this diagram meaningful?
+  }{\\}{
+      Как математика может придать смысл этой диаграмме?
+  }\normalsize
+}
 
 %%%%%%%%%%%%%%%%%%%
 
 \newcommand{\MainCatLarge}[1]{
-  \stackrel{#1}{
-    \parbox{4.5in}{\fbox{\parbox{4.4in}{\begin{center}\underline{{\tt Employee} manager worksIn $\simeq$ {\tt Employee} worksIn}\hsp  \underline{{\tt Department} secretary worksIn $\simeq$ {\tt Department}}\end{center}~\\\\\\
-      \xymatrix@=8pt{&\LTO{Employee}\ar@<.5ex>[rrrrr]^{\tn{worksIn}}\ar@(l,u)[]+<5pt,10pt>^{\tn{manager}}\ar[dddl]_{\tn{first}}\ar[dddr]^{\tn{last}}&&&&&\LTO{Department}\ar@<.5ex>[lllll]^{\tn{secretary}}\ar[ddd]^{\tn{name}}\\\\\\\LTO{FirstNameString}&&\LTO{LastNameString}&~&~&~&\LTO{DepartmentNameString}
+  \stackrel{#1}{\parbox{4.5in}{
+    \fbox{\parbox{4.4in}{
+      \begin{center}
+        \underline{{\tt Employee} manager worksIn $\simeq$ {\tt Employee} worksIn}\hsp  
+        \underline{{\tt Department} secretary worksIn $\simeq$ {\tt Department}}
+      \end{center}~
+      \\\\\\
+      \xymatrix@=8pt{
+        &\LTO{Employee}\ar@<.5ex>[rrrrr]^{\tn{worksIn}}\ar@(l,u)[]+<5pt,10pt>^{\tn{manager}}\ar[dddl]_{\tn{first}}\ar[dddr]^{\tn{last}}&&&&&\LTO{Department}\ar@<.5ex>[lllll]^{\tn{secretary}}\ar[ddd]^{\tn{name}}
+        \\\\\\
+        \LTO{FirstNameString}&&\LTO{LastNameString}&~&~&~&\LTO{DepartmentNameString}
       }
-    }}}
-  }
+    }}
+  }}
 }
