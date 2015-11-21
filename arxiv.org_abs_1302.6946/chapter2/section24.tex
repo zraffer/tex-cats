@@ -316,7 +316,7 @@ yields, insofar as it $\qtR{p}\;\qtR{c}$ and $\qtR{q}\;\qtR{d},$
 \begin{exampleENG}
 Every car owner owns at least one car, but there is no obvious function $\fakebox{a car owner}{→}\fakebox{a car}$ because he or she may own more than one. One good choice would be the car that the person drives most often, which we'll call his or her primary car. Also, given a person and a car, an economist could ask how much utility the person would get out of the car. From all this we can put together the following olog involving products:
 $$
-\xymatrixnocompile{\obox{O}{.7in}{a car owner}\LAL{dd}{is}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize owns, as primary,}}\LA{rr}{\parbox{.8in}{{ℝ}\scriptsize yields, insofar as it is a person and owns, as primary, a car,}}&\ar@{}[d]^(.4){\checkmark}&
+\xymatrixnocompile{\obox{O}{.7in}{a car owner}\LAL{dd}{is}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize owns, as primary,}}\LA{rr}{\parbox{.8in}{\raggedright\scriptsize yields, insofar as it is a person and owns, as primary, a car,}}&\ar@{}[d]^(.4){\checkmark}&
 \obox{P\times C}{1in}{a pair $(x,y)$ where $x$ is a person and $y$ is a car}\ar@/^1pc/[ddll]^(.7){\tn{yields, as }x,}\LA{dd}{\tn{yields, as }y,}\LA{rr}{\parbox{.7in}{\scriptsize has as associated utility}}&&\obox{V}{.8in}{a dollar value}\\&&\\\obox{P}{.5in}{a person}&&\obox{C}{.4in}{a car}
 }
 $$
@@ -325,7 +325,7 @@ $$
 \begin{exampleRUS}
 Каждый владелец автомобиля владеет по крайней мере одним автомобилем, однако нет очевидной функции $\fakebox{a car owner}{→}\fakebox{a car},$ поскольку он (или она) могут владеть более чем одной машиной. Подходящим выбором может оказаться автомобиль, которым этот человек пользуется наиболее часто, и который мы назовем основной его (или ее) машиной. Кроме того, о каждом человеке и автомобиле экономист мог бы спросить: сколько выгоды данный человек может получить от данной машины? Из всего этого мы можем собрать следующий олог, включающий произведения:
 $$
-\xymatrixnocompile{\obox{O}{.7in}{владелец автомобиля}\LAL{dd}{является}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize владеет основным}}\LA{rr}{\parbox{.8in}{{ℝ}\scriptsize выдает себя в качестве человека и основную машину, которой владеет}}&\ar@{}[d]^(.4){\checkmark}&
+\xymatrixnocompile{\obox{O}{.7in}{владелец автомобиля}\LAL{dd}{является}\ar[ddrr]_(.35){\parbox{.45in}{\scriptsize владеет основным}}\LA{rr}{\parbox{.8in}{\raggedright\scriptsize выдает себя в качестве человека и основную машину, которой владеет}}&\ar@{}[d]^(.4){\checkmark}&
 \obox{P\times C}{1in}{пара $(x,y),$ где $x$ это человек и $y$ это машина}\ar@/^1pc/[ddll]^(.7){\tn{выдает в качестве }x}\LA{dd}{\tn{выдает в качестве }y}\LA{rr}{\parbox{.7in}{\scriptsize дает выгоду}}&&\obox{V}{.8in}{денежная сумма}\\&&\\\obox{P}{.5in}{человек}&&\obox{C}{.4in}{автомобиль}
 }
 $$
@@ -546,13 +546,13 @@ In the following olog the types $A$ and $B$ are disjoint, so the coproduct $C=A\
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:coproduct2}
-In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{{ℝ} an animal that can fly}\LA{rr}{labeled “A” is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled “A”) or an animal that can swim (labeled “B”)}&&\obox{B}{.9in}{{ℝ} an animal that can swim}\LAL{ll}{labeled “B” is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C,$ once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C,$ which justifies the name “disjoint union.”
+In the following olog, $A$ and $B$ are not disjoint, so care must be taken to differentiate common elements. $$\fbox{\xymatrixnocompile{\obox{A}{.7in}{\raggedright an animal that can fly}\LA{rr}{labeled “A” is}&&\obox{C=A\sqcup B}{1.3in}{an animal that can fly (labeled “A”) or an animal that can swim (labeled “B”)}&&\obox{B}{.9in}{\raggedright an animal that can swim}\LAL{ll}{labeled “B” is}}}$$  Since ducks can both swim and fly, each duck is found twice in $C,$ once labeled as a flyer and once labeled as a swimmer.  The types $A$ and $B$ are kept disjoint in $C,$ which justifies the name “disjoint union.”
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:coproduct2}
 В следующем ологе $A$ и $B$ пересекаются, так что особое внимание придется уделить различению общих элементов.
 $$
-\fbox{\xymatrixnocompile{\obox{A}{.7in}{{ℝ} летающее животное}\LA{rr}{помечено «A»}&&\obox{C=A\sqcup B}{1.3in}{летающее животное (помеченное «A») или водоплавающее животное (помеченное «B»)}&&\obox{B}{.9in}{{ℝ} водоплавающее животное}\LAL{ll}{помечено «B»}}}
+\fbox{\xymatrixnocompile{\obox{A}{.7in}{\raggedright летающее животное}\LA{rr}{помечено «A»}&&\obox{C=A\sqcup B}{1.3in}{летающее животное (помеченное «A») или водоплавающее животное (помеченное «B»)}&&\obox{B}{.9in}{\raggedright водоплавающее животное}\LAL{ll}{помечено «B»}}}
 $$
 Поскольку утки одновременно летают и плавают, каждая утка появляется в $C$ дважды, один раз в качестве летуна и один раз в качестве пловца. Типы $A$ и $B$ остаются непересекающимися (не связанными) в $C,$ чем объясняется название «несвязное объединение.»
 \end{exampleRUS}
