@@ -9,7 +9,7 @@
 \subsection{\caseENGRUS{Monoids, groups, preorders, and graphs}{ / }{Моноиды, группы, предпорядки и графы}}\label{sec:mon grp pro as cat}
 
 \begin{blockENG}
-We saw in Section~\ref{sec:categories} that there is a category $\Mon$ of monoids, a category $\Grp$ of groups, a category $\PrO$ of preorders, and a category $\Grph$ of graphs. In this section we show that each monoid $\mcM,$ each group $\mcG,$ and each preorder $\mcP$ can be considered as its own category. If each object in $\Mon$ is a category, we might hope that each morphism in $\Mon$ is just a functor, and this is true. The same holds for $\Grp$ and $\PrO.$ We will deal with graphs in Section~\ref{sec:graphs as functors}.
+We saw in Section~\ref{sec:categories} that there is a category $\Mon$ of monoids, a category $\Grp$ of groups, a category $\PrO$ of preorders, and a category $\Grph$ of graphs. In this section we show that each monoid ${𝓜},$ each group ${𝓖},$ and each preorder ${𝓟}$ can be considered as its own category. If each object in $\Mon$ is a category, we might hope that each morphism in $\Mon$ is just a functor, and this is true. The same holds for $\Grp$ and $\PrO.$ We will deal with graphs in Section~\ref{sec:graphs as functors}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -29,14 +29,14 @@ In Example~\ref{ex:monoid as olog} we said that to olog a monoid, we should use 
 \paragraph{\caseENGRUS{Each monoid as a category with one object}{ / }{Каждый моноид это категория с одним объектом}} ~\\
 
 \begin{blockENG}
-Let $(M,e,\star)$ be a monoid\index{monoid!as category}. We consider it as a category $\mcM$ with one object, $\Ob(\mcM)=\{\monOb\},$ and $$\Hom_\mcM(\monOb,\monOb):=M.$$ The identity morphism $\id_\monOb$ serves as the monoid identity $e,$ and the composition formula $$\circ\taking\Hom_\mcM(\monOb,\monOb)\times\Hom_\mcM(\monOb,\monOb)\to\Hom_\mcM(\monOb,\monOb)$$ is given by $\star\taking M\times M\to M.$ The associativity and identity laws for the monoid match precisely with the associativity and identity laws for categories.
+Let $(M,e,{⋆})$ be a monoid\index{monoid!as category}. We consider it as a category ${𝓜}$ with one object, $\Ob({𝓜})=\{{▴}\},$ and $$\Hom_{𝓜}({▴},{▴}){\coloneqq}M.$$ The identity morphism $\id_{▴}$ serves as the monoid identity $e,$ and the composition formula $$\circ\colon\Hom_{𝓜}({▴},{▴})\times\Hom_{𝓜}({▴},{▴}){→}\Hom_{𝓜}({▴},{▴})$$ is given by ${⋆}\colon M\times M{→} M.$ The associativity and identity laws for the monoid match precisely with the associativity and identity laws for categories.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-If monoids are categories with one object, is there any categorical way of phrasing the notion of monoid homomorphism? Suppose that $\mcM=(M,e,\star)$ and $\mcM'=(M',e',\star').$ We know that a monoid homomorphism is a function $f\taking M\to M'$ such that $f(e)=e'$ and such that for every pair $m_0,m_1\in M$ we have $f(m_0\star m_1)=f(m_0)\star' f(m_1).$ What is a functor $\mcM\to\mcM'?$ 
+If monoids are categories with one object, is there any categorical way of phrasing the notion of monoid homomorphism? Suppose that ${𝓜}=(M,e,{⋆})$ and ${𝓜}'=(M',e',{⋆}').$ We know that a monoid homomorphism is a function $f\colon M{→} M'$ such that $f(e)=e'$ and such that for every pair $m_0,m_1\in M$ we have $f(m_0{⋆} m_1)=f(m_0){⋆}' f(m_1).$ What is a functor ${𝓜}{→}{𝓜}'?$ 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -45,14 +45,14 @@ If monoids are categories with one object, is there any categorical way of phras
 \paragraph{\caseENGRUS{Each monoid homomorphism as a functor between one-object categories}{ / }{Каждый гомоморфизм моноидов это функтор между однообъектными категориями}} ~\\
 
 \begin{blockENG}
-Say that $\Ob(\mcM)=\{\monOb\}$ and $\Ob(\mcM')=\{\monOb'\}$; and we know that $\Hom_\mcM(\monOb,\monOb)=M$ and $\Hom_{\mcM'}(\monOb',\monOb')=M'.$ A functor $F\taking\mcM\to\mcM'$ consists first of a function $\Ob(\mcM)\to\Ob(\mcM'),$ but these sets have only one element each, so there is nothing to say on that front. It also consists of a function $\Hom_\mcM\to\hom_{\mcM'}$ but that is just a function $M\to M'.$ The identity and composition formulas for functors match precisely with the identity and composition formula for monoid homomorphisms, as discussed above. Thus a monoid homomorphism is nothing more than a functor between one-object categories. 
+Say that $\Ob({𝓜})=\{{▴}\}$ and $\Ob({𝓜}')=\{{▴}'\}$; and we know that $\Hom_{𝓜}({▴},{▴})=M$ and $\Hom_{{𝓜}'}({▴}',{▴}')=M'.$ A functor $F\colon{𝓜}{→}{𝓜}'$ consists first of a function $\Ob({𝓜}){→}\Ob({𝓜}'),$ but these sets have only one element each, so there is nothing to say on that front. It also consists of a function $\Hom_{𝓜}{→}\hom_{{𝓜}'}$ but that is just a function $M{→} M'.$ The identity and composition formulas for functors match precisely with the identity and composition formula for monoid homomorphisms, as discussed above. Thus a monoid homomorphism is nothing more than a functor between one-object categories. 
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{sloganENG}
-A monoid is a category $\mcG$ with one object. A monoid homomorphism is just a functor between one-object categories.
+A monoid is a category ${𝓖}$ with one object. A monoid homomorphism is just a functor between one-object categories.
 \end{sloganENG}
 
 \begin{sloganRUS}
@@ -66,10 +66,10 @@ We formalize this as the following theorem.
 \end{blockRUS}
 
 \begin{theoremENG}\label{thm:mon to cat}
-There is a functor $i\taking\Mon\to\Cat$\index{a functor!$\Mon\to\Cat$} with the following properties:
+There is a functor $i\colon\Mon{→}\Cat$\index{a functor!$\Mon{→}\Cat$} with the following properties:
 \begin{itemize}
-\item for every monoid $\mcM\in\Ob(\Mon),$ the category $i(\mcM)\in\Ob(\Cat)$ itself has exactly one object, $$|\Ob(i(\mcM))|=1$$ 
-\item for every pair of monoids $\mcM,\mcM'\in\Ob(\Mon)$ the function $$\Hom_\Mon(\mcM,\mcM')\To{\iso}\Hom_\Cat(i(\mcM),i(\mcM')),$$ induced by the functor $i,$ is a bijection.
+\item for every monoid ${𝓜}\in\Ob(\Mon),$ the category $i({𝓜})\in\Ob(\Cat)$ itself has exactly one object, $$|\Ob(i({𝓜}))|=1$$ 
+\item for every pair of monoids ${𝓜},{𝓜}'\in\Ob(\Mon)$ the function $$\Hom_\Mon({𝓜},{𝓜}')\To{\iso}\Hom_\Cat(i({𝓜}),i({𝓜}')),$$ induced by the functor $i,$ is a bijection.
 \end{itemize}
 \end{theoremENG}
 
@@ -93,14 +93,14 @@ Theorem~\ref{thm:mon to cat} situates the theory of monoids very nicely within t
 \paragraph{\caseENGRUS{Each monoid action as a set-valued functor}{ / }{Каждое действие моноида это предпучок}} ~\\
 
 \begin{blockENG}
-Recall from Definition~\ref{def:monoid action} that if $(M,e,\star)$ is a monoid, an action consists of a set $S$ and a function $\acts\taking M\times S\to S$ such that $e\acts s=s$ and $m_0\acts (m_1\acts s)=(m_0\star m_1)\acts s$ for all $s\in S.$ How might we relate the notion of monoid actions to the notion of functors? One idea is to try asking what a functor $F\taking\mcM\to\Set$ is; this idea will work.
+Recall from Definition~\ref{def:monoid action} that if $(M,e,{⋆})$ is a monoid, an action consists of a set $S$ and a function ${⟳}\colon M\times S{→} S$ such that $e{⟳} s=s$ and $m_0{⟳} (m_1{⟳} s)=(m_0{⋆} m_1){⟳} s$ for all $s\in S.$ How might we relate the notion of monoid actions to the notion of functors? One idea is to try asking what a functor $F\colon{𝓜}{→}\Set$ is; this idea will work.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-Since $\mcM$ has only one object, we obtain one set, $S:=F(\monOb)\in\Ob(\Set).$ We also obtain a function $\Hom_F\taking\Hom_\mcM(\monOb,\monOb)\to\Hom_\Set(F(\monOb),F(\monOb)),$ or more concisely, a function $$H_F\taking M\to\Hom_\Set(S,S).$$ By currying (see Proposition~\ref{prop:curry}), this is the same as a function $\acts\taking M\times S\to S.$ The rule that $e\acts s=s$ becomes the rule that functors preserve identities, $\Hom_F(\id_\monOb)=\id_S.$ The other rule is equivalent to the composition formula for functors. 
+Since ${𝓜}$ has only one object, we obtain one set, $S{\coloneqq}F({▴})\in\Ob(\Set).$ We also obtain a function $\Hom_F\colon\Hom_{𝓜}({▴},{▴}){→}\Hom_\Set(F({▴}),F({▴})),$ or more concisely, a function $$H_F\colon M{→}\Hom_\Set(S,S).$$ By currying (see Proposition~\ref{prop:curry}), this is the same as a function ${⟳}\colon M\times S{→} S.$ The rule that $e{⟳} s=s$ becomes the rule that functors preserve identities, $\Hom_F(\id_{▴})=\id_S.$ The other rule is equivalent to the composition formula for functors. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -120,7 +120,7 @@ To begin we need a lemma.
 \end{blockRUS}
 
 \begin{lemmaENG}\label{lemma:evaluating composition}
-Let $S$ be a set and let $H_S:=\Hom_\Set(S,S).$ Let $c\taking H_S\times H_S\to\Hom_\Set(S,S)$ be given by the composition of functions $c(g,f)=g\circ f.$ The following diagram, the top function of which is obtained by currying and the other two maps of which are obtained by evaluation, commutes: 
+Let $S$ be a set and let $H_S{\coloneqq}\Hom_\Set(S,S).$ Let $c\colon H_S\times H_S{→}\Hom_\Set(S,S)$ be given by the composition of functions $c(g,f)=g\circ f.$ The following diagram, the top function of which is obtained by currying and the other two maps of which are obtained by evaluation, commutes: 
 $$
 \xymatrix{H_S\times H_S\times S\ar[r]^-{\phi(c)}\ar[d]_{\id_{H_S}\times ev}&S\\H_S\times S\ar[ur]_{ev}}
 $$
@@ -130,7 +130,7 @@ $$
 \end{lemmaRUS}
 
 \begin{proofENG}
-This is merely saying that for any $g,f\taking S\to S$ and any $s\in S$ we have 
+This is merely saying that for any $g,f\colon S{→} S$ and any $s\in S$ we have 
 $$
 \xymatrix{(g,f,s)\ar@{|->}[r]^-{\phi(c)}\ar@{|->}[d]_{(\id_g,ev)}&(g\circ f)(s)\ar@{=}[d]\\(g,f(s))\ar@{|->}[r]_{ev}&g(f(s))}
 $$
@@ -141,22 +141,22 @@ which holds by definition.
 \end{proofRUS}
 
 \begin{blockENG}
-Above we defined $H_F\taking M\to H_S$ such that the diagram 
+Above we defined $H_F\colon M{→} H_S$ such that the diagram 
 $$
 \xymatrix{M\times S\ar[rr]^{H_F}\ar@/_1pc/[rrr]_{\cdot}&&H_S\times S\ar[r]^-{ev}&S}
 $$
 commutes. The composition formula for monoid actions can be phrased as the left-hand commutative diagram of sets
 $$
-\xymatrix{M\times M\times S\ar[r]^-{\id_M\times\cdot}\ar[d]_{\star\times\id_S}&M\times S\ar[d]^\cdot\\M\times S\ar[r]_\cdot&S}
+\xymatrix{M\times M\times S\ar[r]^-{\id_M\times\cdot}\ar[d]_{{⋆}\times\id_S}&M\times S\ar[d]^\cdot\\M\times S\ar[r]_\cdot&S}
 \hspace{.7in}
 \xymatrix@=25pt{
-M\times M\times S\ar[rd]\ar[r]^-{H_F}\ar[dd]_{\star}&M\times H_S\times S\ar[d]\ar[r]^-{ev}&M\times S\ar[d]^{H_F}\\
+M\times M\times S\ar[rd]\ar[r]^-{H_F}\ar[dd]_{{⋆}}&M\times H_S\times S\ar[d]\ar[r]^-{ev}&M\times S\ar[d]^{H_F}\\
 &H_S\times H_S\times S\ar[r]\ar[rd]^\circ&H_S\times S\ar[d]^{ev}\\
 M\times S\ar[r]_{H_F}&H_S\times S\ar[r]_{ev}&S}
 $$
 This amounts to the same thing as the outer part of the right-hand diagram. By Lemma~\ref{lemma:evaluating composition} the inner part commutes too. Inside this diagram we see a curried version of the diagram that comes to us from the composition formula for functors,
 $$
-\xymatrix{M\times M\ar[r]^{H_F\times H_F}\ar[d]_\star&H_S\times H_S\ar[d]^\circ\\M\ar[r]_{H_F}&H_S}
+\xymatrix{M\times M\ar[r]^{H_F\times H_F}\ar[d]_{⋆}&H_S\times H_S\ar[d]^\circ\\M\ar[r]_{H_F}&H_S}
 $$
 \end{blockENG}
 
@@ -171,24 +171,24 @@ $$
 \subsubsection{\caseENGRUS{Groups as categories}{ / }{Группы как категории}}
 
 \begin{blockENG}
-A group is just a monoid $(M,e,\star)$ in which every element $m\in M$ is invertible, meaning there exists some $m'\in M$ with $m\star m'=e=m'\star m.$ If a monoid is the same thing as a category $\mcM$ with one object\index{group!as category}, then a group must be a category with one object and with an additional property having to do with invertibility. The elements of $M$ are the morphisms of the category $\mcM,$ so we need a notion of invertibility for morphisms. Luckily we have such a notion already, namely isomorphism. We have the following:
+A group is just a monoid $(M,e,{⋆})$ in which every element $m\in M$ is invertible, meaning there exists some $m'\in M$ with $m{⋆} m'=e=m'{⋆} m.$ If a monoid is the same thing as a category ${𝓜}$ with one object\index{group!as category}, then a group must be a category with one object and with an additional property having to do with invertibility. The elements of $M$ are the morphisms of the category ${𝓜},$ so we need a notion of invertibility for morphisms. Luckily we have such a notion already, namely isomorphism. We have the following:
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{sloganENG}
-A group is a category $\mcG$ with one object, such that every morphism in $\mcG$ is an isomorphism. A group homomorphism is just a functor between such categories.
+A group is a category ${𝓖}$ with one object, such that every morphism in ${𝓖}$ is an isomorphism. A group homomorphism is just a functor between such categories.
 \end{sloganENG}
 
 \begin{sloganRUS}
 \end{sloganRUS}
 
 \begin{theoremENG}\label{thm:grp to cat}
-There is a functor $i\taking\Grp\to\Cat$\index{a functor!$\Grp\to\Cat$} with the following properties:
+There is a functor $i\colon\Grp{→}\Cat$\index{a functor!$\Grp{→}\Cat$} with the following properties:
 \begin{itemize}
-\item for every group $\mcG\in\Ob(\Grp),$ the category $i(\mcG)\in\Ob(\Cat)$ itself has exactly one object, and every morphism $m$ in $i(\mcG)$ is an isomorphism; and 
-\item for every pair of groups $\mcG,\mcG'\in\Ob(\Grp)$ the function $$\Hom_\Grp(\mcG,\mcG')\To{\iso}\Hom_\Cat(i(\mcG),i(\mcG')),$$ induced by the functor $i,$ is a bijection.
+\item for every group ${𝓖}\in\Ob(\Grp),$ the category $i({𝓖})\in\Ob(\Cat)$ itself has exactly one object, and every morphism $m$ in $i({𝓖})$ is an isomorphism; and 
+\item for every pair of groups ${𝓖},{𝓖}'\in\Ob(\Grp)$ the function $$\Hom_\Grp({𝓖},{𝓖}')\To{\iso}\Hom_\Cat(i({𝓖}),i({𝓖}')),$$ induced by the functor $i,$ is a bijection.
 \end{itemize}
 \end{theoremENG}
 
@@ -196,7 +196,7 @@ There is a functor $i\taking\Grp\to\Cat$\index{a functor!$\Grp\to\Cat$} with the
 \end{theoremRUS}
 
 \begin{blockENG}
-Just as with monoids, an action of some group $(G,e,\star)$ on a set $S\in\Ob(\Set)$ is the same thing as a functor $\mcG\to\Set$ sending the unique object of $\mcG$ to the set $S.$ 
+Just as with monoids, an action of some group $(G,e,{⋆})$ on a set $S\in\Ob(\Set)$ is the same thing as a functor ${𝓖}{→}\Set$ sending the unique object of ${𝓖}$ to the set $S.$ 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -207,21 +207,21 @@ Just as with monoids, an action of some group $(G,e,\star)$ on a set $S\in\Ob(\S
 \subsubsection{\caseENGRUS{Monoid and group stationed at each object in a category}{ / }{Моноид и группа, связанные с каждым объектом категории}}
 
 \begin{blockENG}
-If a monoid is just a category with one object, we can locate monoids in any category $\mcC$ by narrowing our gaze to one object in $\mcC.$ Similarly for groups.
+If a monoid is just a category with one object, we can locate monoids in any category ${𝓒}$ by narrowing our gaze to one object in ${𝓒}.$ Similarly for groups.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exampleENG}[Endomorphism monoid]\index{monoid!of endomorphisms}
-Let $\mcC$ be a category and $x\in\Ob(\mcC)$ an object. Let $M=\Hom_\mcC(x,x).$ Note that for any two elements $f,g\in M$ we have $f\circ g\taking x\to x$ in $M.$ Let $\mcM=(M,\id_x,\circ).$ It is easy to check that $\mcM$ is a monoid; it is called the {\em endomorphism monoid of $x$ in $\mcC$}.
+Let ${𝓒}$ be a category and $x\in\Ob({𝓒})$ an object. Let $M=\Hom_{𝓒}(x,x).$ Note that for any two elements $f,g\in M$ we have $f\circ g\colon x{→} x$ in $M.$ Let ${𝓜}=(M,\id_x,\circ).$ It is easy to check that ${𝓜}$ is a monoid; it is called the {\em endomorphism monoid of $x$ in ${𝓒}$}.
 \end{exampleENG}
 
 \begin{exampleRUS}[Endomorphism monoid]\index{monoid!of endomorphisms}
 \end{exampleRUS}
 
 \begin{exampleENG}[Automorphism group]\index{group!of automorphisms}
-Let $\mcC$ be a category and $x\in\Ob(\mcC)$ an object. Let $G=\{f\taking x\to x\|f\tn{ is an isomorphism}\}.$ Let $\mcG=(G,\id_x,\circ).$ It is easy to check that $\mcG$ is a group; it is called the {\em automorphism group of $x$ in $\mcC$}.
+Let ${𝓒}$ be a category and $x\in\Ob({𝓒})$ an object. Let $G=\{f\colon x{→} x{\;|\;}f\tn{ is an isomorphism}\}.$ Let ${𝓖}=(G,\id_x,\circ).$ It is easy to check that ${𝓖}$ is a group; it is called the {\em automorphism group of $x$ in ${𝓒}$}.
 \end{exampleENG}
 
 \begin{exampleRUS}[Automorphism group]\index{group!of automorphisms}
@@ -257,11 +257,11 @@ What is its group of automorphisms? Hint: every automorphism of $G$ will induce 
 \subsubsection{\caseENGRUS{Preorders as categories}{ / }{Предпорядки как категории}}\label{sec:preorder as cat}
 
 \begin{blockENG}
-A preorder $(X,\leq)$ consists of a set $X$ and a binary relation $\leq$ that is reflexive and transitive. We can make from $(X,\leq)\in\Ob(\PrO)$ a category $\mcX\in\Ob(\Cat)$ as follows. Define $\Ob(\mcX)=X$ and for every two objects $x,y\in X$ define\index{preorder!as category}
-$$\Hom_\mcX(x,y)=\begin{cases}\{“x\leq y”\}&\tn{ if } x\leq y\\\emptyset&\tn{ if } x\not\leq y\end{cases}$$
-To clarify: if $x\leq y,$ we assign $\Hom_\mcX(x,y)$ to be the set containing only one element, namely the string “$x\leq y$”.\footnote{The name of this morphism is completely unimportant. What matters is that $\Hom_\mcX(x,y)$ has exactly one element iff $x\leq y.$} If $(x,y)$ is not in relation $\leq,$ then we assign $\Hom_\mcX(x,y)$ to be the empty set. The composition formula 
+A preorder $(X,\leq)$ consists of a set $X$ and a binary relation $\leq$ that is reflexive and transitive. We can make from $(X,\leq)\in\Ob(\PrO)$ a category ${𝓧}\in\Ob(\Cat)$ as follows. Define $\Ob({𝓧})=X$ and for every two objects $x,y\in X$ define\index{preorder!as category}
+$$\Hom_{𝓧}(x,y)=\begin{cases}\{“x\leq y”\}&\tn{ if } x\leq y\\\emptyset&\tn{ if } x\not\leq y\end{cases}$$
+To clarify: if $x\leq y,$ we assign $\Hom_{𝓧}(x,y)$ to be the set containing only one element, namely the string “$x\leq y$”.\footnote{The name of this morphism is completely unimportant. What matters is that $\Hom_{𝓧}(x,y)$ has exactly one element iff $x\leq y.$} If $(x,y)$ is not in relation $\leq,$ then we assign $\Hom_{𝓧}(x,y)$ to be the empty set. The composition formula 
 \begin{align}\label{dia:comp in preorder}
-\circ\taking\Hom_\mcX(x,y)\times\Hom_\mcX(y,z)\to\Hom_\mcX(x,z)
+\circ\colon\Hom_{𝓧}(x,y)\times\Hom_{𝓧}(y,z){→}\Hom_{𝓧}(x,z)
 \end{align}
 is completely determined because either one of two possibilities occurs. One possibility is that the left-hand side is empty (if either $x\not\leq y$ or $y\not\leq z$; in this case there is a unique function $\circ$ as in (\ref{dia:comp in preorder}). The other possibility is that the left-hand side is not empty in case $x\leq y$ and $y\leq,$ which implies $x\leq z,$ so the right-hand side has exactly one element $“x\leq z”$ in which case again there is a unique function $\circ$ as in (\ref{dia:comp in preorder}).
 \end{blockENG}
@@ -270,28 +270,28 @@ is completely determined because either one of two possibilities occurs. One pos
 \end{blockRUS}
 
 \begin{blockENG}
-On the other hand, if $\mcC$ is a category having the property that for every pair of objects $x,y\in\Ob(\mcC),$ the set $\Hom_\mcC(x,y)$ is either empty or has one element, then we can form a preorder out of $\mcC.$ Namely, take $X=\Ob(\mcC)$ and say $x\leq y$ if there exists a morphism $x\to y$ in $\mcC.$ 
+On the other hand, if ${𝓒}$ is a category having the property that for every pair of objects $x,y\in\Ob({𝓒}),$ the set $\Hom_{𝓒}(x,y)$ is either empty or has one element, then we can form a preorder out of ${𝓒}.$ Namely, take $X=\Ob({𝓒})$ and say $x\leq y$ if there exists a morphism $x{→} y$ in ${𝓒}.$ 
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exerciseENG}
-We have seen that a preorder can be considered as a category $\mcP.$ Recall from Definition~\ref{def:orders} that a partial order is a preorder with an additional property. Phrase the defining property for partial orders in terms of isomorphisms in the category $\mcP.$
+We have seen that a preorder can be considered as a category ${𝓟}.$ Recall from Definition~\ref{def:orders} that a partial order is a preorder with an additional property. Phrase the defining property for partial orders in terms of isomorphisms in the category ${𝓟}.$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Suppose that $\mcC$ is a preorder (considered as a category). Let $x,y\in\Ob(\mcC)$ be objects such that $x\leq y$ and $y\leq x.$ Prove that there is an isomorphism $x\to y$ in $\mcC.$
+Suppose that ${𝓒}$ is a preorder (considered as a category). Let $x,y\in\Ob({𝓒})$ be objects such that $x\leq y$ and $y\leq x.$ Prove that there is an isomorphism $x{→} y$ in ${𝓒}.$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exampleENG}
-The olog from Example~\ref{ex:pre not par} depicted a partial order, say $\mcP.$ In it we have $$\Hom_\mcP(\fakebox{a diamond},\fakebox{a red card})=\{\tn{is}\}$$ and we have $$\Hom_\mcP(\fakebox{a black queen},\fakebox{a card})\iso\{\tn{is}\circ\tn{is}\};$$ Both of these sets contain exactly one element, the name is not important. The set $\Hom_\mcP(\fakebox{a 4},\fakebox{a 4 of diamonds})=\emptyset.$ 
+The olog from Example~\ref{ex:pre not par} depicted a partial order, say ${𝓟}.$ In it we have $$\Hom_{𝓟}(\fakebox{a diamond},\fakebox{a red card})=\{\tn{is}\}$$ and we have $$\Hom_{𝓟}(\fakebox{a black queen},\fakebox{a card})\iso\{\tn{is}\circ\tn{is}\};$$ Both of these sets contain exactly one element, the name is not important. The set $\Hom_{𝓟}(\fakebox{a 4},\fakebox{a 4 of diamonds})=\emptyset.$ 
 \end{exampleENG}
 
 \begin{exampleRUS}
@@ -305,10 +305,10 @@ Every linear order is a partial order with a special property. Can you phrase th
 \end{exerciseRUS}
 
 \begin{propositionENG}\label{prop:preorders to cats}
-There is a functor $i\taking\PrO\to\Cat$\index{a functor!$\PrO\to\Cat$} with the following properties for every preorder $(X,\leq)$:
+There is a functor $i\colon\PrO{→}\Cat$\index{a functor!$\PrO{→}\Cat$} with the following properties for every preorder $(X,\leq)$:
 \begin{enumerate}
-\item the category $\mcX:=i(X,\leq)$ has objects $\Ob(\mcX)=X$; and
-\item \label{cond:hom set in preorder} for each pair of elements $x,x'\in\Ob(\mcX)$ the set $\Hom_\mcX(x,x')$ has at most one element.
+\item the category ${𝓧}{\coloneqq}i(X,\leq)$ has objects $\Ob({𝓧})=X$; and
+\item \label{cond:hom set in preorder} for each pair of elements $x,x'\in\Ob({𝓧})$ the set $\Hom_{𝓧}(x,x')$ has at most one element.
 \end{enumerate}
 Moreover, any category with property~\ref{cond:hom set in preorder} is in the image of the functor $i.$
 \end{propositionENG}
@@ -317,7 +317,7 @@ Moreover, any category with property~\ref{cond:hom set in preorder} is in the im
 \end{propositionRUS}
 
 \begin{proofENG}
-To specify a functor $i\taking\PrO\to\Cat,$ we need to say what it does on objects and on morphisms. To an object $(X,\leq)$ in $\PrO,$ we assign the category $\mcX$ with objects $X$ and a unique morphism from $x\to x'$ if $x\leq x'$; this was discussed at the top of Section~\ref{sec:preorder as cat}. To a morphism $f\taking(X,\leq_X)\to(Y,\leq_Y)$ of preorders, we must assign a functor $i(f)\taking\mcX\to\mcY.$ Again, to specify a functor we need to say what it does on objects and morphisms of $\mcX.$ To an object $x\in\Ob(\mcX)=X,$ we assign the object $f(x)\in Y=\Ob(\mcY).$ Given a morphism $f\taking x\to x'$ in $\mcX,$ we know that $x\leq x'$ so by Definition~\ref{def:morphism of orders} we have that $f(x)\leq f(x'),$ and we assign to $f$ the unique morphism $f(x)\to f(x')$ in $\mcY.$ To check that the rules of functors (preservation of identities and composition) are obeyed is routine.
+To specify a functor $i\colon\PrO{→}\Cat,$ we need to say what it does on objects and on morphisms. To an object $(X,\leq)$ in $\PrO,$ we assign the category ${𝓧}$ with objects $X$ and a unique morphism from $x{→} x'$ if $x\leq x'$; this was discussed at the top of Section~\ref{sec:preorder as cat}. To a morphism $f\colon(X,\leq_X){→}(Y,\leq_Y)$ of preorders, we must assign a functor $i(f)\colon{𝓧}{→}{𝓨}.$ Again, to specify a functor we need to say what it does on objects and morphisms of ${𝓧}.$ To an object $x\in\Ob({𝓧})=X,$ we assign the object $f(x)\in Y=\Ob({𝓨}).$ Given a morphism $f\colon x{→} x'$ in ${𝓧},$ we know that $x\leq x'$ so by Definition~\ref{def:morphism of orders} we have that $f(x)\leq f(x'),$ and we assign to $f$ the unique morphism $f(x){→} f(x')$ in ${𝓨}.$ To check that the rules of functors (preservation of identities and composition) are obeyed is routine.
 \end{proofENG}
 
 \begin{proofRUS}
@@ -331,14 +331,14 @@ A preorder is a category in which every hom-set has either 0 elements or 1 eleme
 \end{sloganRUS}
 
 \begin{exerciseENG}
-Recall the functor $P\taking\PrO\to\Grph$\index{a functor!$\PrO\to\Grph$} from Proposition~\ref{prop:pro to grph}, the functors $F\taking\Grph\to\Cat$ and $U\taking\Cat\to\Grph$ from Example~\ref{exc:free underlying cat grph}, and the functor $i\taking\PrO\to\Cat$\index{a functor!$\PrO\to\Cat$} from Proposition~\ref{prop:preorders to cats}.
+Recall the functor $P\colon\PrO{→}\Grph$\index{a functor!$\PrO{→}\Grph$} from Proposition~\ref{prop:pro to grph}, the functors $F\colon\Grph{→}\Cat$ and $U\colon\Cat{→}\Grph$ from Example~\ref{exc:free underlying cat grph}, and the functor $i\colon\PrO{→}\Cat$\index{a functor!$\PrO{→}\Cat$} from Proposition~\ref{prop:preorders to cats}.
 \sexc Do either of the following diagrams of categories commute?
 $$
 \xymatrix@=15pt{\PrO\ar[rr]^P\ar[rdd]_i&\ar@{}[dd]|(.4)?&\Grph\ar[ldd]^F\\\\&\Cat}
 \hspace{.5in}
 \xymatrix@=15pt{\PrO\ar[rr]^P\ar[rdd]_i&\ar@{}[dd]|(.4)?&\Grph\\\\&\Cat\ar[uur]_U}
 $$
-\item We also had a functor $\Grph\to\PrO.$ Does the following diagram of categories commute?
+\item We also had a functor $\Grph{→}\PrO.$ Does the following diagram of categories commute?
 $$
 \xymatrix@=15pt{\Grph\ar[rr]\ar[rdd]_F&\ar@{}[dd]|(.4)?&\PrO\ar[ldd]^i\\\\&\Cat}
 $$
@@ -353,41 +353,41 @@ $$
 \subsubsection{\caseENGRUS{Graphs as functors}{ / }{Графы как функторы}}\label{sec:graphs as functors}
 
 \begin{blockENG}
-Let $\mcC$ denote the category depicted below\index{graph!as functor} 
+Let ${𝓒}$ denote the category depicted below\index{graph!as functor} 
 \begin{align}\label{dia:graph index}
-\GrIn:=\fbox{\GrInSchema}\index{a category!$\GrIn$}
+\GrIn{\coloneqq}\fbox{\GrInSchema}\index{a category!$\GrIn$}
 \end{align}
-Then a functor $G\taking\GrIn\to\Set$ is the same thing as two sets $G(Ar),G(V\!e)$ and two functions $G(src)\taking G(Ar)\to G(V\!e)$ and $G(tgt)\taking G(Ar)\to G(V\!e).$ This is precisely what is needed for a graph; see Definition~\ref{def:graph}. We call $\GrIn$ the {\em graph indexing category}.
+Then a functor $G\colon\GrIn{→}\Set$ is the same thing as two sets $G(Ar),G(V\!e)$ and two functions $G(src)\colon G(Ar){→} G(V\!e)$ and $G(tgt)\colon G(Ar){→} G(V\!e).$ This is precisely what is needed for a graph; see Definition~\ref{def:graph}. We call $\GrIn$ the {\em graph indexing category}.
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exerciseENG}
-Consider the terminal category, $\ul{1},$ also known as the discrete category on one element (see Exercise~\ref{exc:term cat}). Let $\GrIn$ be as in (\ref{dia:graph index}) and consider the functor $i_0\taking\ul{1}\to\GrIn$ sending the object of $\ul{1}$ to the object $V\in\Ob(\GrIn).$ If $G\taking\GrIn\to\Set$ is a graph, what is the composite $G\circ i_0?$ It consists of only one set; what set is it? For example, what set is it when $G$ is the graph from Example~\ref{ex:graph hom}.
+Consider the terminal category, $\underline{1},$ also known as the discrete category on one element (see Exercise~\ref{exc:term cat}). Let $\GrIn$ be as in (\ref{dia:graph index}) and consider the functor $i_0\colon\underline{1}{→}\GrIn$ sending the object of $\underline{1}$ to the object $V\in\Ob(\GrIn).$ If $G\colon\GrIn{→}\Set$ is a graph, what is the composite $G\circ i_0?$ It consists of only one set; what set is it? For example, what set is it when $G$ is the graph from Example~\ref{ex:graph hom}.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{blockENG}
-If a graph is a functor $\GrIn\to\Set,$ what is a graph homomorphism? We will see later in Example~\ref{ex:graph hom as NT} that graph homomorphisms are homomorphisms between functors, which are called natural transformations. (Natural transformations are the highest-“level” structure that occurs in ordinary category theory.)
+If a graph is a functor $\GrIn{→}\Set,$ what is a graph homomorphism? We will see later in Example~\ref{ex:graph hom as NT} that graph homomorphisms are homomorphisms between functors, which are called natural transformations. (Natural transformations are the highest-“level” structure that occurs in ordinary category theory.)
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exampleENG}\index{graph!symmetric}
-Let $\mcD$ be the category depicted below
+Let ${𝓓}$ be the category depicted below
 \begin{align}\label{dia:symmetric graph index}
-\mcD:=\fbox{\xymatrix{\LMO{A}\ar@(lu,ld)[]_\rho\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LMO{V}}}
+{𝓓}{\coloneqq}\fbox{\xymatrix{\LMO{A}\ar@(lu,ld)[]_\rho\ar@<.5ex>[r]^{src}\ar@<-.5ex>[r]_{tgt}&\LMO{V}}}
 \end{align}
 with the following composition formula: 
 $$\rho\circ\rho=\id_A;\hsp src\circ\rho=tgt;\hsp\tn{and}\hsp tgt\circ\rho=src.$$
 
-The idea here is that the morphism $\rho\taking A\to A$ reverses arrows. The PED $\rho\circ\rho=\id_A$ forces the fact that the reverse of the reverse of an arrow yields the original arrow. The PEDs $src\circ\rho=tgt$ and $tgt\circ\rho=src$ force the fact that when we reverse an arrow, its source and target switch roles. 
+The idea here is that the morphism $\rho\colon A{→} A$ reverses arrows. The PED $\rho\circ\rho=\id_A$ forces the fact that the reverse of the reverse of an arrow yields the original arrow. The PEDs $src\circ\rho=tgt$ and $tgt\circ\rho=src$ force the fact that when we reverse an arrow, its source and target switch roles. 
 
-This category $\mcD$ is the {\em symmetric graph indexing category}. Just like any graph can be understood as a functor $\GrIn\to\Set,$ where $\GrIn$ is the graph indexing category displayed in (\ref{dia:graph index}), any symmetric graph can be understood as a functor $\mcD\to\Set,$ where $\mcD$ is the category drawn above. Given a functor $G\taking\mcD\to\Set,$ we will have a set of arrows, a set of vertices, a source operation, a target operation, and a “reverse direction” operation that all behave as expected.
+This category ${𝓓}$ is the {\em symmetric graph indexing category}. Just like any graph can be understood as a functor $\GrIn{→}\Set,$ where $\GrIn$ is the graph indexing category displayed in (\ref{dia:graph index}), any symmetric graph can be understood as a functor ${𝓓}{→}\Set,$ where ${𝓓}$ is the category drawn above. Given a functor $G\colon{𝓓}{→}\Set,$ we will have a set of arrows, a set of vertices, a source operation, a target operation, and a “reverse direction” operation that all behave as expected.
 
 It is customary to draw the connections in a symmetric graph as line segments rather than arrows between vertices. However, a better heuristic is to think that each connection between vertices consists of two arrows, one pointing in each direction. 
 \end{exampleENG}
@@ -416,10 +416,10 @@ Which of the following graphs are symmetric:
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $\GrIn$ be the graph indexing category shown in (\ref{dia:graph index}) and let $\mcD$ be the symmetric graph indexing category displayed in (\ref{dia:symmetric graph index}).
-\sexc How many functors are there of the form $\GrIn\to\mcD?$
+Let $\GrIn$ be the graph indexing category shown in (\ref{dia:graph index}) and let ${𝓓}$ be the symmetric graph indexing category displayed in (\ref{dia:symmetric graph index}).
+\sexc How many functors are there of the form $\GrIn{→}{𝓓}?$
 \item Is one more “reasonable” than the others? 
-\item Choose the one that seems most reasonable and call it $i\taking\GrIn\to\mcD.$ If a symmetric graph is a functor $S\taking\mcD\to\Set,$ you can compose with $i$ to get a functor $S\circ i\taking\GrIn\to\Set.$ This is a graph; what graph is it? What has changed?
+\item Choose the one that seems most reasonable and call it $i\colon\GrIn{→}{𝓓}.$ If a symmetric graph is a functor $S\colon{𝓓}{→}\Set,$ you can compose with $i$ to get a functor $S\circ i\colon\GrIn{→}\Set.$ This is a graph; what graph is it? What has changed?
 \endsexc
 \end{exerciseENG}
 
@@ -452,7 +452,7 @@ A database schema is a category presentation.\index{schema!as category presentat
 \end{sloganRUS}
 
 \begin{blockENG}
-We will formally show in Section~\ref{sec:proof of cat=sch} how to turn a schema into a category (the category it {\em presents}). For now, it seems pedagogically better not to be so formal, because the idea is fairly straightforward. Suppose given a schema $\mcS,$ which consists of a graph $G=(V,A,src,tgt)$ equipped with a congruence $\sim$ (see Definition~\ref{def:congruence}). It presents a category $\mcC$ defined as follows. The set of objects in $\mcC$ is defined to be the vertices $V$; the set of morphisms in $\mcC$ is defined to be the quotient $\Paths(G)/\sim$; and the composition law is concatenation of paths. The path equivalences making up $\sim$ become commutative diagrams in $\mcC.$\index{category!presentation}\index{schema!as category presentation}
+We will formally show in Section~\ref{sec:proof of cat=sch} how to turn a schema into a category (the category it {\em presents}). For now, it seems pedagogically better not to be so formal, because the idea is fairly straightforward. Suppose given a schema ${𝓢},$ which consists of a graph $G=(V,A,src,tgt)$ equipped with a congruence $\sim$ (see Definition~\ref{def:congruence}). It presents a category ${𝓒}$ defined as follows. The set of objects in ${𝓒}$ is defined to be the vertices $V$; the set of morphisms in ${𝓒}$ is defined to be the quotient $\Paths(G)/\sim$; and the composition law is concatenation of paths. The path equivalences making up $\sim$ become commutative diagrams in ${𝓒}.$\index{category!presentation}\index{schema!as category presentation}
 \end{blockENG}
 
 \begin{blockRUS}
@@ -460,26 +460,26 @@ We will formally show in Section~\ref{sec:proof of cat=sch} how to turn a schema
 
 \begin{exampleENG}
 The schema $\Loop,$ depicted below, has no path equivalence declarations. As a graph it has one vertex and one arrow.
-$$\Loop:=\LoopSchema$$ 
-The category it generates, however, is the free monoid on one generator, $\NN.$ It has one object $\monOb$ but a morphism $f^n\taking\monOb\to\monOb$ for every natural number $n\in\NN,$ thought of as “how many times to go around the loop $f$”. Clearly, the schema is more compact that the infinite category it generates.
+$$\Loop{\coloneqq}\LoopSchema$$ 
+The category it generates, however, is the free monoid on one generator, ${ℕ}.$ It has one object ${▴}$ but a morphism $f^n\colon{▴}{→}{▴}$ for every natural number $n\in{ℕ},$ thought of as “how many times to go around the loop $f$”. Clearly, the schema is more compact that the infinite category it generates.
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Consider the olog from Exercise~\ref{exc:father and child}, which says that for any father $x,$ his first child's father is $x.$ It is redrawn below as a schema $\mcS,$ and we include the desired path equivalence declaration, $F\;c\;f=F,$
+Consider the olog from Exercise~\ref{exc:father and child}, which says that for any father $x,$ his first child's father is $x.$ It is redrawn below as a schema ${𝓢},$ and we include the desired path equivalence declaration, $F\;c\;f=F,$
 $$
 \xymatrix{\LMO{F}\ar[r]^c&\LMO{C}\ar@/^1pc/[l]^f}
 $$ 
-How many morphisms are there (total) in the category generated by $\mcS?$
+How many morphisms are there (total) in the category generated by ${𝓢}?$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Suppose that $G$ is a graph and that $\mcG$ is the schema generated by $G$ with no PEDs. What is the relationship between the category generated by $\mcG$ and the free category $F(G)\in\Ob(\Cat)$ as defined in Example~\ref{ex:free category}?
+Suppose that $G$ is a graph and that ${𝓖}$ is the schema generated by $G$ with no PEDs. What is the relationship between the category generated by ${𝓖}$ and the free category $F(G)\in\Ob(\Cat)$ as defined in Example~\ref{ex:free category}?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -487,25 +487,25 @@ Suppose that $G$ is a graph and that $\mcG$ is the schema generated by $G$ with 
 
 %% Subsubsection %%
 
-\subsubsection{\caseENGRUS{Instances on a schema}{ / }{Экземпляры схемы} \texorpdfstring{$\mcC$}{C}}\label{sec:instances}
+\subsubsection{\caseENGRUS{Instances on a schema}{ / }{Экземпляры схемы} \texorpdfstring{${𝓒}$}{C}}\label{sec:instances}
 
 \begin{blockENG}
-If schemas are like categories, what are instances? Recall that an instance $I$ on a schema $\mcS=(G,\simeq)$ assigns to each vertex $v$ in $G$ a set of rows say $I(v)\in\Ob(\Set).$ And to every arrow $a\taking v\to v'$ in $G$ the instance assigns a function $I(a)\taking I(v)\to I(v').$ The rule is that given two equivalent paths, their compositions must give the same function. Concisely, an instance is a functor $I\taking\mcS\to\Set.$ 
+If schemas are like categories, what are instances? Recall that an instance $I$ on a schema ${𝓢}=(G,\simeq)$ assigns to each vertex $v$ in $G$ a set of rows say $I(v)\in\Ob(\Set).$ And to every arrow $a\colon v{→} v'$ in $G$ the instance assigns a function $I(a)\colon I(v){→} I(v').$ The rule is that given two equivalent paths, their compositions must give the same function. Concisely, an instance is a functor $I\colon{𝓢}{→}\Set.$ 
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exampleENG}
-We have now seen that a monoid is just a category $\mcM$ with one object and that a monoid action is a functor $\mcM\to\Set.$ Under our understanding of database schemas as categories, $\mcM$ is a schema and so an action becomes an instance of that schema.\index{database!instance}\index{instance} The monoid action table from Example {ex:action table} was simply a manifestation of the database instance according to the Rules~\ref{rules:schema to tables}.
+We have now seen that a monoid is just a category ${𝓜}$ with one object and that a monoid action is a functor ${𝓜}{→}\Set.$ Under our understanding of database schemas as categories, ${𝓜}$ is a schema and so an action becomes an instance of that schema.\index{database!instance}\index{instance} The monoid action table from Example {ex:action table} was simply a manifestation of the database instance according to the Rules~\ref{rules:schema to tables}.
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{exerciseENG}
-In Section~\ref{sec:graphs as functors} we discuss how each graph is a functor $\GrIn\to\Set$ for the graph indexing category depicted below:
-$$\GrIn:=\fbox{\GrInSchema}$$
+In Section~\ref{sec:graphs as functors} we discuss how each graph is a functor $\GrIn{→}\Set$ for the graph indexing category depicted below:
+$$\GrIn{\coloneqq}\fbox{\GrInSchema}$$
 But now we know that if a graph is a set-valued functor then we can consider $\GrIn$ as a database schema.
 \sexc How many tables, and how many columns of each should there be (if unsure, consult Rules~\ref{rules:schema to tables})?
 \item Write out the table view of graph $G$ from Example~\ref{ex:graph hom}. 
@@ -527,24 +527,24 @@ Category theory was invented for use in algebraic topology, and in particular to
 \end{blockRUS}
 
 \begin{blockENG}
-For example, there is a functor that assigns to each space $X$ its group $\pi_1(X)$ of round-trip voyages (starting and ending at some chosen point $x\in X$), modulo some equivalence relation. There is another functor that assigns to every space its group $H_1(X,\ZZ)$ of ways to drop some (positive or negative) number of circles on $X.$ These two functors are related, but they are not equal. 
+For example, there is a functor that assigns to each space $X$ its group $\pi_1(X)$ of round-trip voyages (starting and ending at some chosen point $x\in X$), modulo some equivalence relation. There is another functor that assigns to every space its group $H_1(X,{ℤ})$ of ways to drop some (positive or negative) number of circles on $X.$ These two functors are related, but they are not equal. 
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{blockENG}
-There is a relationship between the functor $\pi_1$ and the functor $H_1.$ For example when $X$ is the figure-$8$ space (two circles joined at a point) the group $\pi_1(X)$ is much bigger than the group $H_1(X).$ Indeed $\pi_1(X)$ includes information about the order and direction of loops traveled; whereas the group $H_1(X,\ZZ)$ includes only information about how many times one goes around each loop. However, there is a natural transformation of functors $\pi_1(-)\to H_1(-,\ZZ),$ called the Hurewicz transformation, which “forgets” the extra information and thus yields a simplification. 
+There is a relationship between the functor $\pi_1$ and the functor $H_1.$ For example when $X$ is the figure-$8$ space (two circles joined at a point) the group $\pi_1(X)$ is much bigger than the group $H_1(X).$ Indeed $\pi_1(X)$ includes information about the order and direction of loops traveled; whereas the group $H_1(X,{ℤ})$ includes only information about how many times one goes around each loop. However, there is a natural transformation of functors $\pi_1(-){→} H_1(-,{ℤ}),$ called the Hurewicz transformation, which “forgets” the extra information and thus yields a simplification. 
 \end{blockENG}
 
 \begin{blockRUS}
 \end{blockRUS}
 
 \begin{exampleENG}\label{ex:topological space}\index{space!topological}\index{topology}\index{space}
-Given a set $X,$ recall that $\PP(X)$ denotes the set of subsets of $X.$ A {\em topology} on $X$ is a choice of which subsets $U\in\PP(X)$ will be called {\em open sets}. The union of any number of open sets must be considered to be an open set, and the intersection of any finite number of open sets must be considered open. One could say succinctly that a topology on $X$ is a sub-order $\Op(X)\ss\PP(X)$ that is closed under taking finite meets and infinite joins.
+Given a set $X,$ recall that ${ℙ}(X)$ denotes the set of subsets of $X.$ A {\em topology} on $X$ is a choice of which subsets $U\in{ℙ}(X)$ will be called {\em open sets}. The union of any number of open sets must be considered to be an open set, and the intersection of any finite number of open sets must be considered open. One could say succinctly that a topology on $X$ is a sub-order $\Op(X)\subseteq{ℙ}(X)$ that is closed under taking finite meets and infinite joins.
 
-A {\em topological space}\index{topological space} is a pair $(X,\Op(X)),$ where $X$ is a set and $\Op(X)$ is a topology on $X.$ The elements of the set $X$ are called {\em points}. A {\em morphism of topological spaces} (also called a {\em continuous map}) is a function $f\taking X\to Y$ such that for every $V\in\Op(Y)$ the preimage $f^\m1(V)\in\PP(X)$ is actually in $\Op(X).$ That is, such that there exists a dashed arrow making the diagram below commute:
-$$\xymatrix{\Op(Y)\ar@{-->}[r]\ar[d]&\Op(X)\ar[d]\\\PP(Y)\ar[r]_{f^\m1}&\PP(X).}$$
+A {\em topological space}\index{topological space} is a pair $(X,\Op(X)),$ where $X$ is a set and $\Op(X)$ is a topology on $X.$ The elements of the set $X$ are called {\em points}. A {\em morphism of topological spaces} (also called a {\em continuous map}) is a function $f\colon X{→} Y$ such that for every $V\in\Op(Y)$ the preimage $f^{-1}(V)\in{ℙ}(X)$ is actually in $\Op(X).$ That is, such that there exists a dashed arrow making the diagram below commute:
+$$\xymatrix{\Op(Y)\ar@{-->}[r]\ar[d]&\Op(X)\ar[d]\\{ℙ}(Y)\ar[r]_{f^{-1}}&{ℙ}(X).}$$
 The {\em category of topological spaces}, denoted $\Top,$ is the category having objects and morphisms as above.\index{a category!$\Top$}
 \end{exampleENG}
 
@@ -552,8 +552,8 @@ The {\em category of topological spaces}, denoted $\Top,$ is the category having
 \end{exampleRUS}
 
 \begin{exerciseENG}\label{exc:points and opens in Top}~
-\sexc Explain how “looking at points” gives a functor $\Top\to\Set.$\index{a functor!$\Top\to\Set$}
-\item Does “looking at open sets” give a functor $\Top\to\PrO?$\index{a functor!$\Top\to\PrO\op$}
+\sexc Explain how “looking at points” gives a functor $\Top{→}\Set.$\index{a functor!$\Top{→}\Set$}
+\item Does “looking at open sets” give a functor $\Top{→}\PrO?$\index{a functor!$\Top{→}\PrO\op$}
 \endsexc
 \end{exerciseENG}
 
@@ -561,20 +561,20 @@ The {\em category of topological spaces}, denoted $\Top,$ is the category having
 \end{exerciseRUS}
 
 \begin{exampleENG}[Continuous dynamical systems]\label{ex:continuous dynamical systems}\index{dynamical system!continuous}
-The set $\RR$ can be given a topology in a standard way.\footnote{The topology is given by saying that $U\ss\RR$ is open iff for every $x\in U$ there exists $\epsilon>0$ such that $\{y\in \RR\| |y-x|<\epsilon\}\ss U\}.$ One says, “$U\ss\RR$ is open if every point in $U$ has an epsilon-neighborhood fully contained in $U$”.} But $(\RR,0,+)$ is also a monoid. Moreover, for every $x\in\RR$ the monoid operation $+\taking\RR\times\RR\to\RR$ is continuous.
-\footnote{The topology on $\RR\times\RR$ is similar; a subset $U\ss\RR\times\RR$ is open if every point $x\in U$ has an epsilon-neighborhood (a disk around $x$ of some positive radius) fully contained in $U.$}
-So we say that $\mcR:=(\RR,0,+)$ is a {\em topological monoid}.
+The set ${ℝ}$ can be given a topology in a standard way.\footnote{The topology is given by saying that $U\subseteq{ℝ}$ is open iff for every $x\in U$ there exists $\epsilon>0$ such that $\{y\in {ℝ}{\;|\;} |y-x|<\epsilon\}\subseteq U\}.$ One says, “$U\subseteq{ℝ}$ is open if every point in $U$ has an epsilon-neighborhood fully contained in $U$”.} But $({ℝ},0,+)$ is also a monoid. Moreover, for every $x\in{ℝ}$ the monoid operation $+\colon{ℝ}\times{ℝ}{→}{ℝ}$ is continuous.
+\footnote{The topology on ${ℝ}\times{ℝ}$ is similar; a subset $U\subseteq{ℝ}\times{ℝ}$ is open if every point $x\in U$ has an epsilon-neighborhood (a disk around $x$ of some positive radius) fully contained in $U.$}
+So we say that ${𝓡}{\coloneqq}({ℝ},0,+)$ is a {\em topological monoid}.
 
-Recall from Section~\ref{sec:monoids as cats} that a monoid action is a functor $\mcM\to\Set,$ where $\mcM$ is a monoid. Instead imagine a functor $a\taking\mcR\to\Top?$ Since $\mcR$ is a category with one object, this amounts to an object $X\in\Ob(\Top),$ a space. And to every real number $t\in\RR$ we obtain a continuous map $a(t)\taking X\to X.$ If we consider $X$ as the set of states of some system and $\RR$ as the time line, we have captured what is called a {\em continuous dynamical system}.
+Recall from Section~\ref{sec:monoids as cats} that a monoid action is a functor ${𝓜}{→}\Set,$ where ${𝓜}$ is a monoid. Instead imagine a functor $a\colon{𝓡}{→}\Top?$ Since ${𝓡}$ is a category with one object, this amounts to an object $X\in\Ob(\Top),$ a space. And to every real number $t\in{ℝ}$ we obtain a continuous map $a(t)\colon X{→} X.$ If we consider $X$ as the set of states of some system and ${ℝ}$ as the time line, we have captured what is called a {\em continuous dynamical system}.
 \end{exampleENG}
 
 \begin{exampleRUS}[Continuous dynamical systems]\label{ex:continuous dynamical systems}\index{dynamical system!continuous}
 \end{exampleRUS}
 
 \begin{exampleENG}\index{a category!$\Vect$}\index{vector space}
-Recall (see \cite{Axl}) that a {\em real vector space} is a set $X,$ elements of which are called {\em vectors}, which is closed under addition and scalar multiplication. For example $\RR^3$ is a vector space. A {\em linear transformation from $X$ to $Y$} is a function $f\taking X\to Y$ that appropriately preserves addition and scalar multiplication. The {\em category of real vector spaces}, denoted $\Vect_\RR,$ has as objects the real vector spaces and as morphisms the linear transformations.
+Recall (see \cite{Axl}) that a {\em real vector space} is a set $X,$ elements of which are called {\em vectors}, which is closed under addition and scalar multiplication. For example ${ℝ}^3$ is a vector space. A {\em linear transformation from $X$ to $Y$} is a function $f\colon X{→} Y$ that appropriately preserves addition and scalar multiplication. The {\em category of real vector spaces}, denoted $\Vect_{ℝ},$ has as objects the real vector spaces and as morphisms the linear transformations.
 
-There is a functor $\Vect_\RR\to\Grp$\index{a functor!$\Vect_\RR\to\Grp$} sending a vector space to its underlying group of vectors, where the group operation is addition of vectors and the group identity is the 0-vector. 
+There is a functor $\Vect_{ℝ}{→}\Grp$\index{a functor!$\Vect_{ℝ}{→}\Grp$} sending a vector space to its underlying group of vectors, where the group operation is addition of vectors and the group identity is the 0-vector. 
 \end{exampleENG}
 
 \begin{exampleRUS}\index{a category!$\Vect$}\index{vector space}
@@ -582,8 +582,8 @@ There is a functor $\Vect_\RR\to\Grp$\index{a functor!$\Vect_\RR\to\Grp$} sendin
 
 \begin{exerciseENG}
 Every vector space has vector subspaces, ordered by inclusion (the origin is inside of any line which is inside of certain planes, etc., and all are inside of the whole space $V$). If you know about this topic, answer the following questions.
-\sexc Does a linear transformation $V\to V'$ induce a morphism of these orders? In other words, is there a functor $\Vect_\RR\to\PrO?$\index{a functor!$\Vect_\RR\to\PrO$}
-\item Would you guess that there is a nice functor $\Vect_\RR\to\Top?$\index{a functor!$\Vect_\RR\to\Top$} By a “nice functor” I mean one that doesn't make people roll their eyes (for example, there is a functor $\Vect_\RR\to\Top$ that sends every vector space to the empty space, and that's not really a “nice” one. If someone asked for a functor $\Vect_\RR\to\Top$ for their birthday, this functor would make them sad. We're looking for a functor $\Vect_\RR\to\Top$ that would make them happy.)
+\sexc Does a linear transformation $V{→} V'$ induce a morphism of these orders? In other words, is there a functor $\Vect_{ℝ}{→}\PrO?$\index{a functor!$\Vect_{ℝ}{→}\PrO$}
+\item Would you guess that there is a nice functor $\Vect_{ℝ}{→}\Top?$\index{a functor!$\Vect_{ℝ}{→}\Top$} By a “nice functor” I mean one that doesn't make people roll their eyes (for example, there is a functor $\Vect_{ℝ}{→}\Top$ that sends every vector space to the empty space, and that's not really a “nice” one. If someone asked for a functor $\Vect_{ℝ}{→}\Top$ for their birthday, this functor would make them sad. We're looking for a functor $\Vect_{ℝ}{→}\Top$ that would make them happy.)
 \endsexc
 \end{exerciseENG}
 
@@ -602,24 +602,24 @@ Groupoids are like groups except a groupoid can have more than one object\index{
 \end{blockRUS}
 
 \begin{definitionENG}
-A {\em groupoid} is a category $\mcC$ such that every morphism is an isomorphism. If $\mcC$ and $\mcD$ are groupoids, a {\em morphism of groupoids}, denoted $F\taking\mcC\to\mcD,$ is simply a functor. The category of groupoids is denoted $\Grpd.$\index{a category!$\Grpd$}
+A {\em groupoid} is a category ${𝓒}$ such that every morphism is an isomorphism. If ${𝓒}$ and ${𝓓}$ are groupoids, a {\em morphism of groupoids}, denoted $F\colon{𝓒}{→}{𝓓},$ is simply a functor. The category of groupoids is denoted $\Grpd.$\index{a category!$\Grpd$}
 \end{definitionENG}
 
 \begin{definitionRUS}
 \end{definitionRUS}
 
 \begin{exampleENG}
-There is a functor $\Grpd\to\Cat$\index{a functor!$\Grpd\to\Cat$}, sending a groupoid to its underlying category. There is also a functor $\Grp\to\Grpd$\index{a functor!$\Grp\to\Grpd$} sending a group to “itself as a groupoid with one object.” 
+There is a functor $\Grpd{→}\Cat$\index{a functor!$\Grpd{→}\Cat$}, sending a groupoid to its underlying category. There is also a functor $\Grp{→}\Grpd$\index{a functor!$\Grp{→}\Grpd$} sending a group to “itself as a groupoid with one object.” 
 \end{exampleENG}
 
 \begin{exampleRUS}
 \end{exampleRUS}
 
 \begin{applicationENG}\index{groupoid!of material states}
-Let $M$ be a material in some original state $s_0.$\footnote{This example may be a bit crude, in accordance with the crudeness of my understanding of materials science.} Construct a category $\mcS_M$ whose objects are the states of $M,$ e.g. by pulling on $M$ in different ways, or by heating it up, etc. we obtain such states. Include a morphism from state $s$ to state $s'$ if there exists a physical transformation from $s$ to $s'.$ Physical transformations can be performed one after another, so we can compose morphisms, and perhaps we can agree this composition is associative. Note that there exists a morphism $i_s\taking s_0\to s$ for any $s.$ Note also that this category is a preorder because there either exists a physical transformation or there does not. 
+Let $M$ be a material in some original state $s_0.$\footnote{This example may be a bit crude, in accordance with the crudeness of my understanding of materials science.} Construct a category ${𝓢}_M$ whose objects are the states of $M,$ e.g. by pulling on $M$ in different ways, or by heating it up, etc. we obtain such states. Include a morphism from state $s$ to state $s'$ if there exists a physical transformation from $s$ to $s'.$ Physical transformations can be performed one after another, so we can compose morphisms, and perhaps we can agree this composition is associative. Note that there exists a morphism $i_s\colon s_0{→} s$ for any $s.$ Note also that this category is a preorder because there either exists a physical transformation or there does not. 
 \footnote{Someone may choose to beef this category up to include the set of physical processes between states as the hom-set. This gives a category that is not a preorder. But there would be a functor from their category to ours.}
 
-The \href{http://en.wikipedia.org/wiki/Elastic_modulus}{\text elastic deformation region} of the material is the set of states $s$ such that there exists a morphism $s\to s_0,$ because any such morphism will be the inverse of $i_s\taking s_0\to s.$ A transformation is irreversible if there is no transformation back. If $s_1$ is not in the elastic deformation region, we can (inventing a term) still talk about the region that is “elastically-equivalent” to $s_1.$ It is all the objects in $\mcS_M$ that are isomorphic to $s_1.$ If we consider only elastic equivalences, we are looking at a groupoid sitting inside the larger category $\mcS_M.$
+The \href{http://en.wikipedia.org/wiki/Elastic_modulus}{\text elastic deformation region} of the material is the set of states $s$ such that there exists a morphism $s{→} s_0,$ because any such morphism will be the inverse of $i_s\colon s_0{→} s.$ A transformation is irreversible if there is no transformation back. If $s_1$ is not in the elastic deformation region, we can (inventing a term) still talk about the region that is “elastically-equivalent” to $s_1.$ It is all the objects in ${𝓢}_M$ that are isomorphic to $s_1.$ If we consider only elastic equivalences, we are looking at a groupoid sitting inside the larger category ${𝓢}_M.$
 \end{applicationENG}
 
 \begin{applicationRUS}\index{groupoid!of material states}
@@ -633,36 +633,36 @@ Alan Weinstein \href{http://www.ams.org/notices/199607/weinstein.pdf}{\text expl
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:fundamental groupoid}\index{groupoid!fundamental}
-Let $I=\{x\in\RR\|0\leq x\leq 1\}$ denote the unit interval. It can be given a topology in a standard way, as a subset of $\RR$ (see Example~\ref{ex:continuous dynamical systems})
+Let $I=\{x\in{ℝ}{\;|\;}0\leq x\leq 1\}$ denote the unit interval. It can be given a topology in a standard way, as a subset of ${ℝ}$ (see Example~\ref{ex:continuous dynamical systems})
 
-For any space $X,$ a {\em path in $X$} is a continuous map $I\to X.$ Two paths are called {\em homotopic} if one can be continuously deformed to the other, where the deformation occurs completely within $X.$
+For any space $X,$ a {\em path in $X$} is a continuous map $I{→} X.$ Two paths are called {\em homotopic} if one can be continuously deformed to the other, where the deformation occurs completely within $X.$
 \footnote{
-Let $I^2=\{(x,y)\in\RR^2\|0\leq x\leq 1 \tn{ and } 0\leq y\leq 1\}$ denote the square. There are two inclusions $i_0,i_1\taking I\to S$ that put the interval inside the square at the left and right sides. Two paths $f_0,f_1\taking I\to X$ are homotopic if there exists a continuous map $f\taking I\times I\to X$ such that $f_0=f\circ i_0$ and $f_1=f\circ i_1,$ 
+Let $I^2=\{(x,y)\in{ℝ}^2{\;|\;}0\leq x\leq 1 \tn{ and } 0\leq y\leq 1\}$ denote the square. There are two inclusions $i_0,i_1\colon I{→} S$ that put the interval inside the square at the left and right sides. Two paths $f_0,f_1\colon I{→} X$ are homotopic if there exists a continuous map $f\colon I\times I{→} X$ such that $f_0=f\circ i_0$ and $f_1=f\circ i_1,$ 
 $$\xymatrix{I\ar@<-.5ex>[r]_{i_1}\ar@<.5ex>[r]^{i_0}&I\times I\ar[r]^f&X}$$
 } 
 One can prove that being homotopic is an equivalence relation on paths. 
 
 Paths in $X$ can be composed, one after the other, and the composition is associative (up to homotopy). Moreover, for any point $x\in X$ there is a trivial path (that stays at $x$). Finally every path is invertible (by traversing it backwards) up to homotopy. 
 
-This all means that to any space $X\in\Ob(\Top)$ we can associate a groupoid, called the {\em fundamental groupoid of $X$} and denoted $\Pi_1(X)\in\Ob(\Grpd).$ The objects of $\Pi_1(X)$ are the points of $X$; the morphisms in $\Pi_1(X)$ are the paths in $X$ (up to homotopy). A continuous map $f\taking X\to Y$ can be composed with any path $I\to X$ to give a path $I\to Y$ and this preserves homotopy. So in fact $\Pi_1\taking\Top\to\Grpd$\index{a functor!$\Pi_1\taking\Top\to\Grpd$} is a functor.
+This all means that to any space $X\in\Ob(\Top)$ we can associate a groupoid, called the {\em fundamental groupoid of $X$} and denoted ${Π}_1(X)\in\Ob(\Grpd).$ The objects of ${Π}_1(X)$ are the points of $X$; the morphisms in ${Π}_1(X)$ are the paths in $X$ (up to homotopy). A continuous map $f\colon X{→} Y$ can be composed with any path $I{→} X$ to give a path $I{→} Y$ and this preserves homotopy. So in fact ${Π}_1\colon\Top{→}\Grpd$\index{a functor!${Π}_1\colon\Top{→}\Grpd$} is a functor.
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:fundamental groupoid}\index{groupoid!fundamental}
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Let $T$ denote the surface of a donut, i.e. a torus. Choose two points $p,q\in T.$ Since $\Pi_1(T)$ is a groupoid, it is also a category. What would the hom-set $\Hom_{\Pi_1(T)}(p,q)$ represent?
+Let $T$ denote the surface of a donut, i.e. a torus. Choose two points $p,q\in T.$ Since ${Π}_1(T)$ is a groupoid, it is also a category. What would the hom-set $\Hom_{{Π}_1(T)}(p,q)$ represent?
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exerciseENG}\index{vector field}
-Let $U\ss\RR^2$ be an open subset of the plane, and let $F$ be an \href{http://en.wikipedia.org/wiki/Conservative_vector_field#Irrotational_vector_fields}{\text irrotational vector field} on $U$ (i.e. one with $\tn{curl}(F)=0$). Following Exercise~\ref{exc:vector field 1}, we have a category $\mcC_F.$ If two curves $C,C'$ in $U$ are homotopic then they have the same line integral, $\int_CF=\int_{C'}F.$
+Let $U\subseteq{ℝ}^2$ be an open subset of the plane, and let $F$ be an \href{http://en.wikipedia.org/wiki/Conservative_vector_field#Irrotational_vector_fields}{\text irrotational vector field} on $U$ (i.e. one with $\tn{curl}(F)=0$). Following Exercise~\ref{exc:vector field 1}, we have a category ${𝓒}_F.$ If two curves $C,C'$ in $U$ are homotopic then they have the same line integral, $\int_CF=\int_{C'}F.$
 
-We also have a category $\Pi_1U,$ given by the fundamental groupoid, as in Example~\ref{ex:fundamental groupoid}. Both categories have the same objects, $\Ob(\mcC_F)=|U|=\Ob(\Pi_1U),$ the set of points in $U.$
-\sexc Is there a functor $\mcC_F\to\Pi_1U$ or a functor $\Pi_1U\to\mcC_F$ that is identity on the underlying objects? 
-\item What is $\mcC_F$ if $F$ is a conservative vector field?\index{vector field!conservative}
+We also have a category ${Π}_1U,$ given by the fundamental groupoid, as in Example~\ref{ex:fundamental groupoid}. Both categories have the same objects, $\Ob({𝓒}_F)=|U|=\Ob({Π}_1U),$ the set of points in $U.$
+\sexc Is there a functor ${𝓒}_F{→}{Π}_1U$ or a functor ${Π}_1U{→}{𝓒}_F$ that is identity on the underlying objects? 
+\item What is ${𝓒}_F$ if $F$ is a conservative vector field?\index{vector field!conservative}
 \endsexc
 \end{exerciseENG}
 
@@ -686,8 +686,8 @@ Consider the set $A$ of all (well-formed) arithmetic expressions in the symbols 
 
 \begin{blockENG}
 Given a domain of discourse, a logical proposition is a statement that is evalued in any model of that domain as either true or “not always true”. For example, in the domain of real numbers we might have the proposition 
-$$\tn{For all real numbers }x\in\RR\tn{ there exists a real number } y\in\RR\tn{ such that }y>3x.$$
-We say that one logical proposition $P$ {\em implies} another proposition $Q,$ denoted $P\Rightarrow Q$ if, for every model in which $P$ is true, so is $Q.$ There is a category $\Prop$ whose objects are logical propositions and whose morphisms are proofs that one statement implies another. Crudely, one might say that {\em $B$ holds at least as often as $A$} if there is a morphism $A\to B$ (meaning whenever $A$ holds, so does $B$). So the proposition “$x\neq x$” holds very seldom and “$x=x$” always very often.
+$$\tn{For all real numbers }x\in{ℝ}\tn{ there exists a real number } y\in{ℝ}\tn{ such that }y>3x.$$
+We say that one logical proposition $P$ {\em implies} another proposition $Q,$ denoted $P\Rightarrow Q$ if, for every model in which $P$ is true, so is $Q.$ There is a category $\Prop$ whose objects are logical propositions and whose morphisms are proofs that one statement implies another. Crudely, one might say that {\em $B$ holds at least as often as $A$} if there is a morphism $A{→} B$ (meaning whenever $A$ holds, so does $B$). So the proposition “$x\neq x$” holds very seldom and “$x=x$” always very often.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -708,9 +708,9 @@ Let's consider differences in proofs to be irrelevant, so the category $\Prop$ b
 \end{blockRUS}
 
 \begin{exerciseENG}\label{exc:juris 1}
-Consider the set of possible laws (most likely an infinite set) that can be dictated to hold throughout a jurisdiction. Consider each law as a proposition (“such and such is (dictated to be) the case”), i.e as an object of our preorder $\Prop.$ Given a jurisdiction $V,$ and a set of laws $\{\ell_1,\ell_2,\ldots,\ell_n\}$ that are dictated to hold throughout $V,$ we take their meet $L(V):=\ell_1\wedge\ell_2\wedge\cdots\wedge\ell_n$ and consider it to be the single law of the land $V.$ Suppose that $V$ is a jurisdiction and $U$ is a sub-jurisdiction (e.g. $U$ is a county and $V$ is a state); write $U\leq V.$ Then clearly any law dictated by the large jurisdiction (the state) must also hold throughout the small jurisdiction (the county).
+Consider the set of possible laws (most likely an infinite set) that can be dictated to hold throughout a jurisdiction. Consider each law as a proposition (“such and such is (dictated to be) the case”), i.e as an object of our preorder $\Prop.$ Given a jurisdiction $V,$ and a set of laws $\{\ell_1,\ell_2,\ldots,\ell_n\}$ that are dictated to hold throughout $V,$ we take their meet $L(V){\coloneqq}\ell_1\wedge\ell_2\wedge\cdots\wedge\ell_n$ and consider it to be the single law of the land $V.$ Suppose that $V$ is a jurisdiction and $U$ is a sub-jurisdiction (e.g. $U$ is a county and $V$ is a state); write $U\leq V.$ Then clearly any law dictated by the large jurisdiction (the state) must also hold throughout the small jurisdiction (the county).
 \sexc What is the relation in $\Prop$ between $L(U)$ and $L(V)?$
-\item Consider the preorder $J$ on jurisdictions given by $\leq$ as above. Is “the law of the land” a morphism of preorders $J\to\Prop?$ To be a bit more high-brow, considering both $J$ and $\Prop$ to be categories (by Proposition~\ref{prop:preorders to cats}), we have a function $L\taking\Ob(J)\to\Ob(\Prop)$; this question is asking whether $L$ extends to a functor $J\to\Prop.$\footnote{Hint: Exercises~\ref{exc:juris 1} and~\ref{exc:juris 2} will ask similar yes/no questions and at least one of these is correctly answered “no”.}
+\item Consider the preorder $J$ on jurisdictions given by $\leq$ as above. Is “the law of the land” a morphism of preorders $J{→}\Prop?$ To be a bit more high-brow, considering both $J$ and $\Prop$ to be categories (by Proposition~\ref{prop:preorders to cats}), we have a function $L\colon\Ob(J){→}\Ob(\Prop)$; this question is asking whether $L$ extends to a functor $J{→}\Prop.$\footnote{Hint: Exercises~\ref{exc:juris 1} and~\ref{exc:juris 2} will ask similar yes/no questions and at least one of these is correctly answered “no”.}
 \endsexc
 \end{exerciseENG}
 
@@ -719,8 +719,8 @@ Consider the set of possible laws (most likely an infinite set) that can be dict
 
 \begin{exerciseENG}\label{exc:juris 2}
 Take again the preorder $J$ of jurisdictions from Exercise~\ref{exc:juris 1} and the idea that laws are propositions. But this time, let $R(V)$ be the set of all possible laws (not just those dictated to hold) that are in actuality being respected, i.e. followed, by all people in $V.$ This assigns to each jurisdiction a set.
-\sexc Since preorders can be considered categories, does our “the set of respected laws” function $R\taking\Ob(J)\to\Ob(\Set)$ extend to a functor $J\to\Set?$ 
-\item What about if instead we take the meet of all these laws and assign to each jurisdiction the maximal law respected throughout. Does this assignment $\Ob(J)\to\Ob(\Prop)$ extend to a functor $J\to\Prop?$$~^{\arabic{footnote}}$
+\sexc Since preorders can be considered categories, does our “the set of respected laws” function $R\colon\Ob(J){→}\Ob(\Set)$ extend to a functor $J{→}\Set?$ 
+\item What about if instead we take the meet of all these laws and assign to each jurisdiction the maximal law respected throughout. Does this assignment $\Ob(J){→}\Ob(\Prop)$ extend to a functor $J{→}\Prop?$$~^{\arabic{footnote}}$
 \endsexc
 \end{exerciseENG}
 
@@ -750,7 +750,7 @@ Computer science makes heavy use of trees, graphs, orders, lists, and monoids. W
 \end{blockRUS}
 
 \begin{blockENG}
-The kind of category most often considered by a PL researcher is what is known as a {\em Cartesian closed category} or {\em CCC}\index{CCCs}\index{category!cartesian closed}, which means a category $\mcT$ that has products (like $A\times B$ in $\Set$) and exponential objects (like $B^A$ in $\Set$). $\Set$ is an example of a CCC, but there are others that are more appropriate for actual computation. The objects in a PL person's CCC represent the {\em types} of the language, types such as {\tt integers, strings, floats}. The morphisms represent computable functions, e.g. {\tt length: strings}$\too${\tt integers}. The products allow one to discuss pairs $(a,b)$ where $a$ is of one type and $b$ is of another type. Exponential objects allow one to consider computable functions as things that can be input to a function (e.g. given any computable function {\tt floats}$\to${\tt integers} one can consistently multiply its results by 2 and get a new computable function {\tt floats}$\to${\tt integers}. We will be getting to products in Section~\ref{def:products in a cat} and exponential objects in Section~\ref{sec:vert and hor}. 
+The kind of category most often considered by a PL researcher is what is known as a {\em Cartesian closed category} or {\em CCC}\index{CCCs}\index{category!cartesian closed}, which means a category ${𝓣}$ that has products (like $A\times B$ in $\Set$) and exponential objects (like $B^A$ in $\Set$). $\Set$ is an example of a CCC, but there are others that are more appropriate for actual computation. The objects in a PL person's CCC represent the {\em types} of the language, types such as {\tt integers, strings, floats}. The morphisms represent computable functions, e.g. {\tt length: strings}${⟶}${\tt integers}. The products allow one to discuss pairs $(a,b)$ where $a$ is of one type and $b$ is of another type. Exponential objects allow one to consider computable functions as things that can be input to a function (e.g. given any computable function {\tt floats}${→}${\tt integers} one can consistently multiply its results by 2 and get a new computable function {\tt floats}${→}${\tt integers}. We will be getting to products in Section~\ref{def:products in a cat} and exponential objects in Section~\ref{sec:vert and hor}. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -782,7 +782,7 @@ Categories are being used throughout mathematics to relate various subjects, as 
 \end{blockRUS}
 
 \begin{blockENG}
-Quantum field theory is was categorified by Atiyah \cite{Ati} in the late 1980's, with much success (at least in producing interesting mathematics). In this domain, one takes a category in which an object is a reasonable space, called a manifold, and a morphism is a manifold connecting two manifolds, like a cylinder connects two circles. Such connecting manifolds are called cobordisms, and as such people refer to the category as $\Cob.$ Topological quantum field theory is the study of functors $\Cob\to\Vect$ that assign a vector space to each manifold and a linear transformation of vector spaces to each cobordism. 
+Quantum field theory is was categorified by Atiyah \cite{Ati} in the late 1980's, with much success (at least in producing interesting mathematics). In this domain, one takes a category in which an object is a reasonable space, called a manifold, and a morphism is a manifold connecting two manifolds, like a cylinder connects two circles. Such connecting manifolds are called cobordisms, and as such people refer to the category as $\Cob.$ Topological quantum field theory is the study of functors $\Cob{→}\Vect$ that assign a vector space to each manifold and a linear transformation of vector spaces to each cobordism. 
 \end{blockENG}
 
 \begin{blockRUS}
@@ -798,7 +798,7 @@ is the study of how to ideally compress messages so that they can be sent quickl
 \end{blockRUS}
 
 \begin{blockENG}
-In \cite{BFL}, Baez, Fritz, and Leinster show that entropy can be captured quite cleanly using category theory. They make a category {\tt FinProb} whose objects are finite sets equipped with a probability measure, and whose morphisms are probability preserving functions. They characterize {\em information loss} as a way to assign numbers to such morphisms, subject to certain explicit constraints. They then show that the entropy of an object in {\tt FinProb} is the amount of information lost under the unique map to the singleton set $\singleton.$ This approach explicates (by way of the explicit constraints for information loss functions) the essential idea of Shannon's information theory, allowing it to be generalized to categories other than {\tt FinProb}. Thus Baez and Leinster effectively {\em categorified} information theory.
+In \cite{BFL}, Baez, Fritz, and Leinster show that entropy can be captured quite cleanly using category theory. They make a category {\tt FinProb} whose objects are finite sets equipped with a probability measure, and whose morphisms are probability preserving functions. They characterize {\em information loss} as a way to assign numbers to such morphisms, subject to certain explicit constraints. They then show that the entropy of an object in {\tt FinProb} is the amount of information lost under the unique map to the singleton set ${\{☺\}}.$ This approach explicates (by way of the explicit constraints for information loss functions) the essential idea of Shannon's information theory, allowing it to be generalized to categories other than {\tt FinProb}. Thus Baez and Leinster effectively {\em categorified} information theory.
 \end{blockENG}
 
 \begin{blockRUS}

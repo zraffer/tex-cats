@@ -25,23 +25,23 @@ We will take our graphs to be {\em directed}, meaning that every arrow points {\
 \subsection{\caseENGRUS{Definition and examples}{ / }{Определение и примеры}}
 
 \begin{definitionENG}\label{def:graph}\index{graph}
-A {\em graph} $G$ consists of a sequence $G:=(V,A,src,tgt)$ where 
+A {\em graph} $G$ consists of a sequence $G{\coloneqq}(V,A,src,tgt)$ where 
 \begin{itemize}
 \item $V$ is a set, called {\em the set of vertices of $G$} (singular:{\em vertex}),\index{vertex}
 \item $A$ is a set, called {\em the set of arrows of $G$},\index{arrow}
-\item $src\taking A\to V$ is a function, called {\em the source function for $G$}, and
-\item $tgt\taking A\to V$ is a function, called {\em the target function for $G$}.
+\item $src\colon A{→} V$ is a function, called {\em the source function for $G$}, and
+\item $tgt\colon A{→} V$ is a function, called {\em the target function for $G$}.
 \end{itemize}
 Given an arrow $a\in A$ we refer to $src(a)$ as the {\em source vertex} of $a$ and to $tgt(a)$ as the {\em target vertex} of $a.$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:graph}\index{graph}
-{\em Граф} $G$ задается четверкой $G:=(V,A,src,tgt),$ где
+{\em Граф} $G$ задается четверкой $G{\coloneqq}(V,A,src,tgt),$ где
 \begin{itemize}
 \item $V$ — это множество, называемое {\em множеством вершин $G$},\index{вершина}
 \item $A$ — это множество, называемое {\em множеством стрелок $G$},\index{стрелка}
-\item $src\taking A\to V$ — это функция, называемая {\em функцией начала стрелок $G$},
-\item $tgt\taking A\to V$ — это функция, называемая {\em функцией конца стрелок $G$}.
+\item $src\colon A{→} V$ — это функция, называемая {\em функцией начала стрелок $G$},
+\item $tgt\colon A{→} V$ — это функция, называемая {\em функцией конца стрелок $G$}.
 \end{itemize}
 Для данной стрелки $a\in A$ мы называем $src(a)$ ее {\em началом}, а $tgt(a)$ — ее {\em концом}.
 \end{definitionRUS}
@@ -57,9 +57,9 @@ To draw a graph, first draw a dot for every element of $V.$ Then for every eleme
 \begin{exampleENG}[Graph]\label{ex:graph}
 Here is a picture of a graph $G=(V,A,src,tgt)$:
 \begin{align}\label{dia:graph}
-G:=\parbox{2in}{\fbox{\xymatrix{\bullet^v\ar[r]^f&\bullet^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\bullet^x\\\bullet^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&\bullet^z\ar@/^1pc/[l]^k}}}
+G{\coloneqq}\parbox{2in}{\fbox{\xymatrix{∙^v\ar[r]^f&∙^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&∙^x\\∙^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&∙^z\ar@/^1pc/[l]^k}}}
 \end{align} 
-We have $V=\{v,w,x,y,z\}$ and $A=\{f,g,h,i,j,k\}.$ The source and target functions $src,tgt\taking A\to V$ can be captured in the table to the left below:
+We have $V=\{v,w,x,y,z\}$ and $A=\{f,g,h,i,j,k\}.$ The source and target functions $src,tgt\colon A{→} V$ can be captured in the table to the left below:
 \begin{align*}
 \begin{array}{| l || l | l |}\bhline
 {\bf A}&{\bf src}&{\bf tgt}\\\bbhline
@@ -86,12 +86,12 @@ In fact, all of the data of the graph $G$ is captured in the two tables above—
 \begin{exampleRUS}[Граф]\label{ex:graph}
 Вот изображение графа $G=(V,A,src,tgt)$:
 \begin{align}\label{dia:graph}
-G:=\parbox{2in}{\fbox{\xymatrix{
-    \bullet^v\ar[r]^f&\bullet^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&\bullet^x\\
-    \bullet^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&\bullet^z\ar@/^1pc/[l]^k
+G{\coloneqq}\parbox{2in}{\fbox{\xymatrix{
+    ∙^v\ar[r]^f&∙^w\ar@/_1pc/[r]_h\ar@/^1pc/[r]^g&∙^x\\
+    ∙^y\ar@(l,u)[]^i\ar@/^1pc/[r]^j&∙^z\ar@/^1pc/[l]^k
 }}}
 \end{align} 
-Здесь у нас $V=\{v,w,x,y,z\}$ и $A=\{f,g,h,i,j,k\}.$ Функции начала и конца $src,tgt\taking A\to V$ задаются таблицей ниже (слева):
+Здесь у нас $V=\{v,w,x,y,z\}$ и $A=\{f,g,h,i,j,k\}.$ Функции начала и конца $src,tgt\colon A{→} V$ задаются таблицей ниже (слева):
 \begin{align*}
 \begin{array}{| l || l | l |}\bhline
 {\bf A}&{\bf src}&{\bf tgt}\\\bbhline
@@ -188,11 +188,11 @@ $$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}.$ Draw them and choose an arbitrary function $f\taking A\to B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition~\ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\taking A\to A\sqcup B,$ where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B.$ Draw the associated graph $(A\sqcup B,A,src,tgt).$
+Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}.$ Draw them and choose an arbitrary function $f\colon A{→} B$ and draw it. Let $A\sqcup B$ be the coproduct of $A$ and $B$ (Definition~\ref{def:coproduct}) and let $A\To{i_1}A\sqcup B\From{i_2}B$ be the two inclusions. Consider the two functions $src,tgt\colon A{→} A\sqcup B,$ where $src=i_1$ and $tgt$ is the composition $A\To{f}B\To{i_2}A\sqcup B.$ Draw the associated graph $(A\sqcup B,A,src,tgt).$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $A=\{1,2,3,4,5\}$ и $B=\{a,b,c\}.$ Изобразите их; выберите произвольную функцию $f\taking A\to B$ and и изобразите ее. Пусть $A\sqcup B$ — это копроизведение $A$ и $B$ (Определение~\ref{def:coproduct}), а $A\To{i_1}A\sqcup B\From{i_2}B$ — два вложения. Рассмотрим две функции $src,tgt\taking A\to A\sqcup B,$ где $src=i_1$ и $tgt$ является композицией $A\To{f}B\To{i_2}A\sqcup B.$ Изобразите соответствующий граф $(A\sqcup B,A,src,tgt).$
+Пусть $A=\{1,2,3,4,5\}$ и $B=\{a,b,c\}.$ Изобразите их; выберите произвольную функцию $f\colon A{→} B$ and и изобразите ее. Пусть $A\sqcup B$ — это копроизведение $A$ и $B$ (Определение~\ref{def:coproduct}), а $A\To{i_1}A\sqcup B\From{i_2}B$ — два вложения. Рассмотрим две функции $src,tgt\colon A{→} A\sqcup B,$ где $src=i_1$ и $tgt$ является композицией $A\To{f}B\To{i_2}A\sqcup B.$ Изобразите соответствующий граф $(A\sqcup B,A,src,tgt).$
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
@@ -208,7 +208,7 @@ Let $A=\{1,2,3,4,5\}$ and $B=\{a,b,c\}.$ Draw them and choose an arbitrary funct
 \end{exerciseRUS}
 
 \begin{exampleENG}
-Recall from Construction~\ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition~\ref{def:span}) $A\From{f}R\To{g}B.$ Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\taking A\to V$ and $j\taking B\to V$ be the inclusions. Let $src=i\circ f\taking R\to V$ and let $tgt=j\circ g\taking R\to V$ be the composites.
+Recall from Construction~\ref{const:bipartite} the notion of bipartite graph, which we defined to be a span (i.e. pair of functions, see Definition~\ref{def:span}) $A\From{f}R\To{g}B.$ Now that we have a formal definition of graph, we might hope that bipartite graphs fit in, and they do. Let $V=A\sqcup B$ and let $i\colon A{→} V$ and $j\colon B{→} V$ be the inclusions. Let $src=i\circ f\colon R{→} V$ and let $tgt=j\circ g\colon R{→} V$ be the composites.
 $$
 \xymatrix{&A\ar[dr]^i\\R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g&&V\\&B\ar[ur]_j}
 $$ 
@@ -216,7 +216,7 @@ Then $(V,R,src,tgt)$ is a graph that would be drawn exactly as we specified the 
 \end{exampleENG}
 
 \begin{exampleRUS}
-Напомним из Конструкции~\ref{const:bipartite} понятие двудольного графа, который определяется как развилка (т.е. пара функций, см. Определение~\ref{def:span}) $A\From{f}R\To{g}B.$ Теперь, когда у нас есть формальное определение графа, мы могли бы надеяться, что двудольный граф будет частным его случаем, и это действительно так. Пусть $V=A\sqcup B,$ а $i\taking A\to V$ и $j\taking B\to V$ — вложения. Положим $src:=i\circ f\taking R\to V$ и $tgt:=j\circ g\taking R\to V$ (заданные как композиции).
+Напомним из Конструкции~\ref{const:bipartite} понятие двудольного графа, который определяется как развилка (т.е. пара функций, см. Определение~\ref{def:span}) $A\From{f}R\To{g}B.$ Теперь, когда у нас есть формальное определение графа, мы могли бы надеяться, что двудольный граф будет частным его случаем, и это действительно так. Пусть $V=A\sqcup B,$ а $i\colon A{→} V$ и $j\colon B{→} V$ — вложения. Положим $src{\coloneqq}i\circ f\colon R{→} V$ и $tgt{\coloneqq}j\circ g\colon R{→} V$ (заданные как композиции).
 $$\xymatrix{
       &  A\ar[dr]^i  \\
     R\ar@/^1pc/[rr]_{src}\ar@/_1pc/[rr]^{tgt}\ar[ur]^f\ar[dr]_g  &  &  V  \\
@@ -226,7 +226,7 @@ $$\xymatrix{
 \end{exampleRUS}
 
 \begin{exampleENG}\label{ex:[n] as graph}
-Let $n\in\NN$ be a natural number. The {\em chain graph of length $n$},\index{graph!chain} denoted $[n]$ is the graph depicted here:
+Let $n\in{ℕ}$ be a natural number. The {\em chain graph of length $n$},\index{graph!chain} denoted $[n]$ is the graph depicted here:
 $$
 \xymatrix{
 \LMO{0}\ar[r]&\LMO{1}\ar[r]&\cdots\ar[r]&\LMO{n}
@@ -236,7 +236,7 @@ In general $[n]$ has $n$ arrows and $n+1$ vertices. In particular, when $n=0$ we
 \end{exampleENG}
 
 \begin{exampleRUS}\label{ex:[n] as graph}
-Пусть $n\in\NN$ — некоторое натуральное число. {\em Граф-цепь длины $n$},\index{граф!цепь} обозначаемый $[n],$ — это граф, изображенный ниже:
+Пусть $n\in{ℕ}$ — некоторое натуральное число. {\em Граф-цепь длины $n$},\index{граф!цепь} обозначаемый $[n],$ — это граф, изображенный ниже:
 $$\xymatrix{
     \LMO{0}\ar[r]  &  \LMO{1}\ar[r]  &  \cdots\ar[r]  &  \LMO{n}
 }$$
@@ -246,11 +246,11 @@ $$\xymatrix{
 \begin{exampleENG}\label{ex:ZxG}
 Let $G=(V,A,src,tgt)$ be a graph; we want to spread it out over discrete time, so that each arrow does not occur within a given time-slice but instead over a quantum unit of time. 
 
-Let $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ be the graph depicted 
+Let $N=({ℕ},{ℕ},n\mapsto n,n\mapsto n+1)$ be the graph depicted 
 $$\xymatrix{\LMO{0}\ar[r]^0&\LMO{1}\ar[r]^1&\LMO{2}\ar[r]^2&\cdots}$$
 When we get to limits in a category, we will understand that products can be taken in the category of graphs (see  Example~\ref{ex:product of graphs}), and $N\times G$ will make sense. For now, we construct it by hand.
 
-Let $T(G)=(V\times \NN,A\times\NN,src',tgt')$ be a new graph, where for $a\in A$ and $n\in\NN$ we have $src'(a,n):=(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1).$ This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
+Let $T(G)=(V\times {ℕ},A\times{ℕ},src',tgt')$ be a new graph, where for $a\in A$ and $n\in{ℕ}$ we have $src'(a,n){\coloneqq}(src(a),n)$ and $tgt'(a,n)=(tgt(a),n+1).$ This may be a bit much to swallow, so try to simply understand what is being done in the following example. 
 
 Let $G$ be the graph drawn below 
 $$\xymatrix{\LMO{a}\ar@(ul,ur)[]^f\ar[d]_g\\\LMO{b}}$$
@@ -266,13 +266,13 @@ As you can see, $f$-arrows still take $a$'s to $a$'s and $g$-arrows still take $
 \begin{exampleRUS}\label{ex:ZxG}
 Пусть $G=(V,A,src,tgt)$ — некоторый граф; мы хотим разместить его в дискретном времени так, чтобы каждая стрелка возникала не в отдельный момент [нулевой продолжительности], а на протяжении некоторого кванта времени. 
 
-Пусть $N=(\NN,\NN,n\mapsto n,n\mapsto n+1)$ — это граф, изображенный ниже:
+Пусть $N=({ℕ},{ℕ},n\mapsto n,n\mapsto n+1)$ — это граф, изображенный ниже:
 $$\xymatrix{
     \LMO{0}\ar[r]^0  &  \LMO{1}\ar[r]^1  &  \LMO{2}\ar[r]^2  &  \cdots
 }$$
 Когда мы дойдем до понятия пределов в категории, мы осознаем, что в категории графов можно образовывать произведения (см. Пример~\ref{ex:product of graphs}), и что имеет смысл выражение $N\times G.$ Сейчас же мы построим его вручную.
 
-Пусть $T(G)=(V\times \NN,A\times\NN,src',tgt')$ — это новый граф, где для любого $a\in A$ и $n\in\NN$ выполняется $src'(a,n):=(src(a),n)$ и $tgt'(a,n):=(tgt(a),n+1).$ Возможно, это немного трудно переварить сразу, поэтому попытаемся понять, что происходит, на следующем примере. 
+Пусть $T(G)=(V\times {ℕ},A\times{ℕ},src',tgt')$ — это новый граф, где для любого $a\in A$ и $n\in{ℕ}$ выполняется $src'(a,n){\coloneqq}(src(a),n)$ и $tgt'(a,n){\coloneqq}(tgt(a),n+1).$ Возможно, это немного трудно переварить сразу, поэтому попытаемся понять, что происходит, на следующем примере. 
 
 Пусть $G$ — это граф, изображенный ниже:
 $$\xymatrix{
@@ -313,7 +313,7 @@ $$
 (0,0)\ar[r]\ar[u]&(1,0)\ar[r]\ar[u]&(2,0)\ar[r]\ar[u]&\cdots}
 $$
 \sexc Write down the sets $A$ and $V.$ 
-\item What are the source and target function $A\to V?$  
+\item What are the source and target function $A{→} V?$  
 \endsexc
 \end{exerciseENG}
 
@@ -326,19 +326,19 @@ $$\xymatrix{
     (0,0) \ar[r] \ar[u]  &  (1,0) \ar[r] \ar[u]  &  (2,0) \ar[r] \ar[u]  &  \cdots
 }$$
 \sexc Выпишите множество $A$ и $V.$ 
-\item Каковы функции начала и конца $A\to V?$  
+\item Каковы функции начала и конца $A{→} V?$  
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:(co)equalizer of graph}
-A graph is a pair of functions $A\tto V.$ This sets up the notion of equalizer and coequalizer (see Definitions~\ref{def:equalizer} and~\ref{def:coequalizer}). 
+A graph is a pair of functions $A{⇉} V.$ This sets up the notion of equalizer and coequalizer (see Definitions~\ref{def:equalizer} and~\ref{def:coequalizer}). 
 \sexc What feature of a graph is captured by the equalizer of its source and target functions? 
 \item What feature of a graph is captured by the coequalizer of its source and target functions?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:(co)equalizer of graph}
-Граф — это пара функций $A\tto V.$ Как мы помним, при наличии пары функций можно говорить об их уравнителе и коуравнителе (см. Определения~\ref{def:equalizer} и~\ref{def:coequalizer}). 
+Граф — это пара функций $A{⇉} V.$ Как мы помним, при наличии пары функций можно говорить об их уравнителе и коуравнителе (см. Определения~\ref{def:equalizer} и~\ref{def:coequalizer}). 
 \sexc Какое свойство графа описывается уравнителем функций начала и конца? 
 \item Какое свойство графа описывается коуравнителем функций начала и конца? 
 \endsexc
@@ -349,17 +349,17 @@ A graph is a pair of functions $A\tto V.$ This sets up the notion of equalizer a
 \subsection{\caseENGRUS{Paths in a graph}{ / }{Пути в графе}}\label{sec:paths in graph}
 
 \begin{blockENG}
-We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in\NN,$ even length $0$ or $1.$ Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
+We all know what a path in a graph is, especially if we understand that a path must always follow the direction of arrows. The following definition makes this idea precise. In particular, one can have paths of any finite length $n\in{ℕ},$ even length $0$ or $1.$ Also, we want to be able to talk about the source vertex and target vertex of a path, as well as concatenation of paths.
 \end{blockENG}
 
 \begin{blockRUS}
-Мы все знаем, что такое путь в графе, особенно если мы понимаем, что стрелки должны идти согласно направлению пути. Следующее определение уточняет эту идею. В частности то, что возможны пути любой длины $n\in\NN,$ даже длины $0$ или $1.$ Кроме того, мы хотим иметь возможность говорить о вершинах начала и конца пути, а также о конкатенации путей.
+Мы все знаем, что такое путь в графе, особенно если мы понимаем, что стрелки должны идти согласно направлению пути. Следующее определение уточняет эту идею. В частности то, что возможны пути любой длины $n\in{ℕ},$ даже длины $0$ или $1.$ Кроме того, мы хотим иметь возможность говорить о вершинах начала и конца пути, а также о конкатенации путей.
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:paths in graph}\index{graph!paths}
-Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G,$ denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G,$ which we denote by $v_0 a_1 a_2 \ldots a_n.$ In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v.$ We denote by $\Path_G$ the set of paths in $G,$ $$\Path_G:=\bigcup_{n\in\NN}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\ol{src},\ol{tgt}\taking\Path_G\to V.$ If $p$ is a path with $\ol{src}(p)=v$ and $\ol{tgt}(p)=w,$ we may denote it by $p\taking v\to w.$ Given two vertices $v,w\in V,$ we write $\Path_G(v,w)$ to denote the set of all paths $p\taking v\to w.$
+Let $G=(V,A,src,tgt)$ be a graph. A {\em path of length $n$}\index{path} in $G,$ denoted $p\in\Path_G^{(n)}$\index{a symbol!$\Path$} is a head-to-tail sequence \begin{align}\label{dia:path}p=(v_0\To{a_1}v_1\To{a_2}v_2\To{a_3}\ldots\To{a_n}v_n)\end{align} of arrows in $G,$ which we denote by $v_0 a_1 a_2 \ldots a_n.$ In particular we have canonical isomorphisms $\Path_G^{(1)}\iso A$ and $\Path_G^{(0)}\iso V$; we refer to the path of length 0 on vertex $v$ as the {\em trivial path on $v$} and denote it simply by $v.$ We denote by $\Path_G$ the set of paths in $G,$ $$\Path_G{\coloneqq}\bigcup_{n\in{ℕ}}\Path_G^{(n)}.$$ Every path $p\in\Path_G$ has a source vertex and a target vertex, and we may denote these by $\overline{src},\overline{tgt}\colon\Path_G{→} V.$ If $p$ is a path with $\overline{src}(p)=v$ and $\overline{tgt}(p)=w,$ we may denote it by $p\colon v{→} w.$ Given two vertices $v,w\in V,$ we write $\Path_G(v,w)$ to denote the set of all paths $p\colon v{→} w.$
 
-There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\taking v\to w$ and $q\taking w\to x,$ we define the concatenation, denoted $p q\taking v\to x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\taking v\to w,$ we have $pq=q$ (resp. $qr=q$). 
+There is a concatenation operation on paths.\index{concatenation!of paths} Given a path $p\colon v{→} w$ and $q\colon w{→} x,$ we define the concatenation, denoted $p q\colon v{→} x$ in the obvious way. If $p=va_1,a_2\ldots a_m$ and $q= wb_1b_2\ldots b_n$ then $pq=va_1\ldots a_mb_1\ldots b_n.$ In particular, if $p$ (resp. $r$) is the trivial path on vertex $v$ (resp. vertex $w$) then for any path $q\colon v{→} w,$ we have $pq=q$ (resp. $qr=q$). 
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:paths in graph}\index{граф!путь}
@@ -369,21 +369,21 @@ There is a concatenation operation on paths.\index{concatenation!of paths} Given
 \end{align}
 стрелок в $G,$ которую мы обозначим $v_0 a_1 a_2 \ldots a_n.$ В частности, имеются канонические изоморфизмы $\Path_G^{(1)}\iso A$ и $\Path_G^{(0)}\iso V$; мы будем называть путь длины $0$ на вершине $v$ {\em тривиальным путем на $v$} и обозначать его просто $v.$ Символом $\Path_G$ обозначим множество всех путей в $G$:
 $$
-    \Path_G := \bigcup_{n\in\NN} \Path_G^{(n)}.
+    \Path_G {\coloneqq} \bigcup_{n\in{ℕ}} \Path_G^{(n)}.
 $$ 
-Каждый путь $p\in\Path_G$ имеет вершины начала и конца, которые мы можем обозначить $\ol{src},\ol{tgt}\taking\Path_G\to V.$ Если $p$ — это путь, у которого $\ol{src}(p)=v$ и $\ol{tgt}(p)=w,$ то мы будем обозначать этот факт как $p\taking v\to w.$ Для данных двух вершин $v,w\in V,$ мы записываем $\Path_G(v,w)$ для обозначения множества всех путей $p\taking v\to w.$
+Каждый путь $p\in\Path_G$ имеет вершины начала и конца, которые мы можем обозначить $\overline{src},\overline{tgt}\colon\Path_G{→} V.$ Если $p$ — это путь, у которого $\overline{src}(p)=v$ и $\overline{tgt}(p)=w,$ то мы будем обозначать этот факт как $p\colon v{→} w.$ Для данных двух вершин $v,w\in V,$ мы записываем $\Path_G(v,w)$ для обозначения множества всех путей $p\colon v{→} w.$
 
-На путях задана операция конкатенации.\index{конкатенация!путей} Для данных путей $p\taking v\to w$ и $q\taking w\to x$ их конкатенация, обозначаемая $p q\taking v\to x,$ определяется очевидным образом. Если $p=va_1,a_2\ldots a_m$ и $q= wb_1b_2\ldots b_n,$ то $pq=va_1\ldots a_mb_1\ldots b_n.$ В частности, если $p$ (соответственно, $r$) является тривиальным путем на вершине $v$ (соответственно, на $w$), то для любого пути $q\taking v\to w$ выполняется равенство $pq=q$ (соответственно $qr=q$). 
+На путях задана операция конкатенации.\index{конкатенация!путей} Для данных путей $p\colon v{→} w$ и $q\colon w{→} x$ их конкатенация, обозначаемая $p q\colon v{→} x,$ определяется очевидным образом. Если $p=va_1,a_2\ldots a_m$ и $q= wb_1b_2\ldots b_n,$ то $pq=va_1\ldots a_mb_1\ldots b_n.$ В частности, если $p$ (соответственно, $r$) является тривиальным путем на вершине $v$ (соответственно, на $w$), то для любого пути $q\colon v{→} w$ выполняется равенство $pq=q$ (соответственно $qr=q$). 
 \end{definitionRUS}
 
 \begin{exampleENG}
-In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from $v$ to $y,$ one path ($f$) from $v$ to $w,$ two paths ($fg$ and $fh$) from $v$ to $x,$ and infinitely many paths $$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in\NN\}$$ from $y$ to $y.$ There are other paths as well, including the five trivial paths.
+In Diagram (\ref{dia:graph}), page \pageref{dia:graph}, there are no paths from $v$ to $y,$ one path ($f$) from $v$ to $w,$ two paths ($fg$ and $fh$) from $v$ to $x,$ and infinitely many paths $$\{y i^{p_1}(jk)^{q_1}\cdots i^{p_n}(jk)^{q_n}\;|\;n,p_1,q_1,\ldots,p_n,q_n\in{ℕ}\}$$ from $y$ to $y.$ There are other paths as well, including the five trivial paths.
 \end{exampleENG}
 
 \begin{exampleRUS}
 В Диаграмме~(\ref{dia:graph}) на c. \pageref{dia:graph} нет путей из $v$ в $y,$ есть один путь ($f$) из $v$ в $w,$ два пути ($fg$ и $fh$) из $v$ в $x,$ и бесконечно много путей
 $$
-    \{ y i^{p_1}(jk)^{q_1} \cdots i^{p_n}(jk)^{q_n} \| n,p_1,q_1,\ldots,p_n,q_n \in \NN \}
+    \{ y i^{p_1}(jk)^{q_1} \cdots i^{p_n}(jk)^{q_n} {\;|\;} n,p_1,q_1,\ldots,p_n,q_n \in {ℕ} \}
 $$
 из $y$ в $y.$ Имеются также другие пути, в том числе пять тривиальных.
 \end{exampleRUS}
@@ -421,7 +421,7 @@ A graph $(V,A,src,tgt)$ involves two sets and two functions. For two graphs to b
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:graph homomorphism}\index{graph!homomorphism}
-Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomorphism $f$ from $G$ to $G'$}, denoted $f\taking G\to G',$ consists of two functions $f_0\taking V\to V'$ and $f_1\taking A\to A'$ such that the two diagrams below commute:
+Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomorphism $f$ from $G$ to $G'$}, denoted $f\colon G{→} G',$ consists of two functions $f_0\colon V{→} V'$ and $f_1\colon A{→} A'$ such that the two diagrams below commute:
 \begin{align}\label{dia:graph hom}
 \xymatrix{A\ar[r]^{f_1}\ar[d]_{src}&A'\ar[d]^{src'}\\V\ar[r]_{f_0}&V'
 }\hspace{1in}
@@ -431,7 +431,7 @@ Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomor
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:graph homomorphism}\index{graph!homomorphism}
-Пусть $G=(V,A,src,tgt)$ и $G'=(V',A',src',tgt')$ — некоторые графы. {\em Гомоморфизм графов} $f$ из $G$ в $G'$, обозначаемый $f\taking G\to G',$ состоит из двух таких функций $f_0\taking V\to V'$ и $f_1\taking A\to A',$ что две диаграммы ниже коммутируют:
+Пусть $G=(V,A,src,tgt)$ и $G'=(V',A',src',tgt')$ — некоторые графы. {\em Гомоморфизм графов} $f$ из $G$ в $G'$, обозначаемый $f\colon G{→} G',$ состоит из двух таких функций $f_0\colon V{→} V'$ и $f_1\colon A{→} A',$ что две диаграммы ниже коммутируют:
 \begin{align}\label{dia:graph hom}
 \xymatrix{
     A \ar[r]^{f_1} \ar[d]_{src}  &  A' \ar[d]^{src'}  \\
@@ -446,7 +446,7 @@ Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be graphs. A {\em graph homomor
 \end{definitionRUS}
 
 \begin{remarkENG}
-The above conditions (\ref{dia:graph hom}) may look abstruse at first, but they encode a very important idea, roughly stated “arrows are bound to their vertices”. Under a map of graphs $G\to G'$ , one cannot flippantly send an arrow of $G$ any old arrow of $G'$: it must still connect the vertices it connected before. Below is an example of a mapping that does not respect this condition: $a$ connects $1$ and $2$ before, but not after:
+The above conditions (\ref{dia:graph hom}) may look abstruse at first, but they encode a very important idea, roughly stated “arrows are bound to their vertices”. Under a map of graphs $G{→} G'$ , one cannot flippantly send an arrow of $G$ any old arrow of $G'$: it must still connect the vertices it connected before. Below is an example of a mapping that does not respect this condition: $a$ connects $1$ and $2$ before, but not after:
 $$
 \fbox{\xymatrix{\LMO{\color{red}{1}}\ar[r]^{a}&\LMO{\color{blue}{2}}}}
 \xymatrix{~\ar[rr]^{1\mapsto 1',2\mapsto 2', a\mapsto a'}&\hsp&~}
@@ -456,7 +456,7 @@ The commutativity of the diagrams in (\ref{dia:graph hom}) is exactly what is ne
 \end{remarkENG}
 
 \begin{remarkRUS}
-Вышеупомянутые свойства (\ref{dia:graph hom}) поначалу могут показаться невразумительными, между тем они формализуют очень важную идею о том, что, грубо говоря, «стрелки привязаны к своим вершинам». При отображении графов $G\to G'$ нельзя просто отобразить данную стрелку $G$ в произвольную стрелку $G',$ должно дополнительно выполняться условие, чтобы каждая стрелка соединяля те же вершины [вернее, их образы], что соединяла исходная стрелка. Ниже приведен пример отображения, которое не удовлетворяет этим свойствам: $a$ соединяет $1$ и $2$ до отображения, но не после:
+Вышеупомянутые свойства (\ref{dia:graph hom}) поначалу могут показаться невразумительными, между тем они формализуют очень важную идею о том, что, грубо говоря, «стрелки привязаны к своим вершинам». При отображении графов $G{→} G'$ нельзя просто отобразить данную стрелку $G$ в произвольную стрелку $G',$ должно дополнительно выполняться условие, чтобы каждая стрелка соединяля те же вершины [вернее, их образы], что соединяла исходная стрелка. Ниже приведен пример отображения, которое не удовлетворяет этим свойствам: $a$ соединяет $1$ и $2$ до отображения, но не после:
 $$
 \fbox{\xymatrix{
     \LMO{\color{red}{1}} \ar[r]^{a}  &  \LMO{\color{blue}{2}}
@@ -478,7 +478,7 @@ Let $G=(V,A,src,tgt)$ and $G'=(V',A',src',tgt')$ be the graphs drawn to the left
 \parbox{1in}{\xymatrix{~\ar[rr]^{\parbox{.8in}{\vspace{-.2in}\footnotesize$1\mapsto 1', 2\mapsto 2',\\ 3\mapsto 1',4\mapsto 4',\\ 5\mapsto 5',6\mapsto5'$}}&\hsp&~}}
 \parbox{.8in}{\fbox{\xymatrix{\LMO{\color{red}{1'}}\ar@<.5ex>[r]^w\ar[d]_y&\LMO{\color{ForestGreen}{2'}}\ar@<.5ex>[l]^x\\\LMO{4'}&\LMO{\color{blue}{5'}}\ar@(r,u)[]_z}}}
 \end{align}
-The colors indicate our choice of function $f_0\taking V\to V'.$ Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\taking G\to G'.$ 
+The colors indicate our choice of function $f_0\colon V{→} V'.$ Given that choice, condition (\ref{dia:graph hom}) imposes in this case that there is a unique choice of graph homomorphism $f\colon G{→} G'.$ 
 \end{exampleENG}
 
 \begin{exampleRUS}[Гомоморфизм графов]\label{ex:graph hom}
@@ -501,47 +501,47 @@ The colors indicate our choice of function $f_0\taking V\to V'.$ Given that choi
     \LMO{4'}  &  \LMOX{\color{blue}{5'}} \ar@(l,u)[]^z
 }}}
 \end{align}
-Цветами обозначено действие гомоморфизма на вершины, функция $f_0\taking V\to V'.$ Из свойств (\ref{dia:graph hom}) вытекает, что при таком выборе этой функции имеется единственное продолжение ее до гомоморфизма графов $f\taking G\to G'.$ 
+Цветами обозначено действие гомоморфизма на вершины, функция $f_0\colon V{→} V'.$ Из свойств (\ref{dia:graph hom}) вытекает, что при таком выборе этой функции имеется единственное продолжение ее до гомоморфизма графов $f\colon G{→} G'.$ 
 \end{exampleRUS}
 
 \begin{exerciseENG}~
-\sexc Where are $a,b,c,d,e$ sent under $f_1\taking A\to A'$ in Diagram (\ref{dia:graph hom example})? 
+\sexc Where are $a,b,c,d,e$ sent under $f_1\colon A{→} A'$ in Diagram (\ref{dia:graph hom example})? 
 \item Choose a couple elements of $A$ and check that they behave as specified by Diagram (\ref{dia:graph hom}).
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
-\sexc Куда переходят $a,b,c,d,e$ под действием $f_1\taking A\to A'$ в Диаграмме~(\ref{dia:graph hom example})? 
+\sexc Куда переходят $a,b,c,d,e$ под действием $f_1\colon A{→} A'$ в Диаграмме~(\ref{dia:graph hom example})? 
 \item Выберите пару элементов $A$ и проверьте, что они ведут себя согласно Диаграмме~(\ref{dia:graph hom}).
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $G$ be a graph, let $n\in\NN$ be a natural number, and let $[n]$ be the chain graph of length $n,$ as in Example~\ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]\to G,$ or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]\to G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G?$
+Let $G$ be a graph, let $n\in{ℕ}$ be a natural number, and let $[n]$ be the chain graph of length $n,$ as in Example~\ref{ex:[n] as graph}. Is a path of length $n$ in $G$ the same thing as a graph homomorphism $[n]{→} G,$ or are there subtle differences? More precisely, is there always an isomorphism between the set of graph homomorphisms $[n]{→} G$ and the set $\Path_G^{(n)}$ of length-$n$ paths in $G?$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $G$ — некоторый граф, $n\in\NN$ — натуральное число, а $[n]$ — граф-цепь длины $n,$ как в Примере~\ref{ex:[n] as graph}. Будет ли путь длины $n$ в $G$ тем же самым, что и гомоморфизм $[n]\to G,$ или имеются тонкие различия? Более точно, всегда ли найдется изоморфизм между множеством гомоморфизмов графов $[n]\to G$ и множеством $\Path_G^{(n)}$ путей длины $n$ в $G?$
+Пусть $G$ — некоторый граф, $n\in{ℕ}$ — натуральное число, а $[n]$ — граф-цепь длины $n,$ как в Примере~\ref{ex:[n] as graph}. Будет ли путь длины $n$ в $G$ тем же самым, что и гомоморфизм $[n]{→} G,$ или имеются тонкие различия? Более точно, всегда ли найдется изоморфизм между множеством гомоморфизмов графов $[n]{→} G$ и множеством $\Path_G^{(n)}$ путей длины $n$ в $G?$
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Given a morphism of graphs $f\taking G\to G',$ there an induced function $\Path(f)\taking\Path_{G}\to\Path_{G'}.$ 
-\sexc Is it the case that for every $n\in\NN,$ the function $\Path(f)$ carries $\Path^{(n)}_{G}$ to $\Path^{(n)}_{G'},$ or can path lengths change in this process?
+Given a morphism of graphs $f\colon G{→} G',$ there an induced function $\Path(f)\colon\Path_{G}{→}\Path_{G'}.$ 
+\sexc Is it the case that for every $n\in{ℕ},$ the function $\Path(f)$ carries $\Path^{(n)}_{G}$ to $\Path^{(n)}_{G'},$ or can path lengths change in this process?
 \item Suppose that $f_0$ and $f_1$ are injective (meaning no two distinct vertices in $G$ are sent to the same vertex (respectively for arrows) under $f$). Does this imply that $\Path(f)$ is also injective (meaning no two distinct paths are sent to the same path under $f$)?
 \item Suppose that $f_0$ and $f_1$ are surjective (meaning every vertex in $G'$ and every arrow in $G'$ is in the image of $f$). Does this imply that $\Path(f)$ is also surjective? Hint: at least one of the answers to these three questions is “no”.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Для данного гомоморфизма графов $f\taking G\to G',$ имеется индуцированная функция $\Path(f)\taking\Path_{G}\to\Path_{G'}.$ 
-\sexc Верно ли, что для каждого $n\in\NN$ функция $\Path(f)$ отображает $\Path^{(n)}_{G}$ в $\Path^{(n)}_{G'}$ или же пути при ее действии могут менять длину?
+Для данного гомоморфизма графов $f\colon G{→} G',$ имеется индуцированная функция $\Path(f)\colon\Path_{G}{→}\Path_{G'}.$ 
+\sexc Верно ли, что для каждого $n\in{ℕ}$ функция $\Path(f)$ отображает $\Path^{(n)}_{G}$ в $\Path^{(n)}_{G'}$ или же пути при ее действии могут менять длину?
 \item Предположим, что $f_0$ и $f_1$ инъективны (имеется в виду, что разные вершины (и стрелки) в $G$ не могут переходить в одну вершину (соответственно, стрелку) под действием $f$). Следует ли из этого, что $\Path(f)$ тоже будет инъективной (имеется в виду, что разные пути не должны переходить в один путь под действием $f$)?
 \item Предположим, что $f_0$ и $f_1$ сюръективны (имея в виду, что каждая вершина и стрелка в $G'$ лежат в образе $f$). Следует ли из этого, что $\Path(f)$ тоже будет сюръективной? Подсказка: по крайней мере один из ответов на эти вопросы отрицательный.
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}\label{exc:single condition for graph hom}
-Given a graph $(V,A,src,tgt),$ let $i\taking A\to V\times V$ be function guaranteed by the universal property for products, as applied to $src,tgt\taking A\to V.$ One might hope to summarize Condition (\ref{dia:graph hom}) for graph homomorphisms by the commutativity of the single square 
+Given a graph $(V,A,src,tgt),$ let $i\colon A{→} V\times V$ be function guaranteed by the universal property for products, as applied to $src,tgt\colon A{→} V.$ One might hope to summarize Condition (\ref{dia:graph hom}) for graph homomorphisms by the commutativity of the single square 
 \begin{align}\label{dia:equiv graph hom}
 \xymatrix{A\ar[r]^{f_1}\ar[d]_{i}&A'\ar[d]^{i'}\\V\times V\ar[r]_{f_0\times f_0}&V'\times V'.}
 \end{align}
@@ -549,7 +549,7 @@ Is the commutativity of the diagram in (\ref{dia:equiv graph hom}) indeed equiva
 \end{exerciseENG}
 
 \begin{exerciseRUS}\label{exc:single condition for graph hom}
-Для данного графа $(V,A,src,tgt),$ обозначим $i\taking A\to V\times V$ функцию, получающуюся из универсального свойства произведений для пары отображений $src,tgt\taking A\to V.$ Можно надеяться выразить Свойства (\ref{dia:graph hom}) гомоморфизма графов коммутативностью единственного квадрата 
+Для данного графа $(V,A,src,tgt),$ обозначим $i\colon A{→} V\times V$ функцию, получающуюся из универсального свойства произведений для пары отображений $src,tgt\colon A{→} V.$ Можно надеяться выразить Свойства (\ref{dia:graph hom}) гомоморфизма графов коммутативностью единственного квадрата 
 \begin{align}\label{dia:equiv graph hom}
 \xymatrix{
     A \ar[r]^{f_1} \ar[d]_{i}  &  A' \ar[d]^{i'}  \\
@@ -564,15 +564,15 @@ Is the commutativity of the diagram in (\ref{dia:equiv graph hom}) indeed equiva
 \subsubsection{\caseENGRUS{Binary relations and graphs}{ / }{Бинарные отношения и графы}}
 
 \begin{definitionENG}\label{def:binary relation}\index{relation!binary}
-Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\ss X\times X.$ 
+Let $X$ be a set. A {\em binary relation on $X$} is a subset $R\subseteq X\times X.$ 
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:binary relation}\index{relation!binary}
-Пусть $X$ — некоторое множество. {\em Бинарное отношение на $X$} — это подмножество $R\ss X\times X.$ 
+Пусть $X$ — некоторое множество. {\em Бинарное отношение на $X$} — это подмножество $R\subseteq X\times X.$ 
 \end{definitionRUS}
 
 \begin{blockENG}
-If $X=\NN$ is the set of integers, then the usual $\leq$ defines a relation on $X$: given $(m,n)\in\NN\times\NN,$ we put $(m,n)\in R$ iff $m\leq n.$ As a table it might be written as to the left
+If $X={ℕ}$ is the set of integers, then the usual $\leq$ defines a relation on $X$: given $(m,n)\in{ℕ}\times{ℕ},$ we put $(m,n)\in R$ iff $m\leq n.$ As a table it might be written as to the left
 \begin{align}\label{dia:3 relations}
 \begin{tabular}{|p{.7cm}|p{.7cm}|}
 \bhline
@@ -616,11 +616,11 @@ m&n\\\bbhline
 $\vdots$&$\vdots$\\\hline
 \end{tabular}
 \end{align}
-The middle table is the relation $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN$ and the right-hand table is the relation $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN.$ 
+The middle table is the relation $\{(m,n)\in{ℕ}\times{ℕ}{\;|\;}n=5m\}\subseteq{ℕ}\times{ℕ}$ and the right-hand table is the relation $\{(m,n)\in{ℕ}\times{ℕ}{\;|\;}|n-m|\leq 1\}\subseteq{ℕ}\times{ℕ}.$ 
 \end{blockENG}
 
 \begin{blockRUS}
-Если $X=\NN$ — это множество целых чисел, то обычное сравнение $\leq$ задает отношение на $X$: для данных $(m,n)\in\NN\times\NN,$ положим $(m,n)\in R$ ттт $m\leq n.$ В виде таблицы оно изображено слева:
+Если $X={ℕ}$ — это множество целых чисел, то обычное сравнение $\leq$ задает отношение на $X$: для данных $(m,n)\in{ℕ}\times{ℕ},$ положим $(m,n)\in R$ ттт $m\leq n.$ В виде таблицы оно изображено слева:
 \begin{align}\label{dia:3 relations}
 \begin{tabular}{|p{.7cm}|p{.7cm}|}
 \bhline
@@ -664,55 +664,55 @@ m&n\\\bbhline
 $\vdots$&$\vdots$\\\hline
 \end{tabular}
 \end{align}
-Таблица посредине — это отношение $\{(m,n)\in\NN\times\NN\|n=5m\}\ss\NN\times\NN,$ а справа — отношение $\{(m,n)\in\NN\times\NN\||n-m|\leq 1\}\ss\NN\times\NN.$ 
+Таблица посредине — это отношение $\{(m,n)\in{ℕ}\times{ℕ}{\;|\;}n=5m\}\subseteq{ℕ}\times{ℕ},$ а справа — отношение $\{(m,n)\in{ℕ}\times{ℕ}{\;|\;}|n-m|\leq 1\}\subseteq{ℕ}\times{ℕ}.$ 
 \end{blockRUS}
 
 \begin{exerciseENG}
-A relation on $\RR$ is a subset of $\RR\times\RR,$ and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as “$\epsilon$-approximation”. To say it another way, draw the relation “$x$ is within $\epsilon$ of $y$”.
+A relation on ${ℝ}$ is a subset of ${ℝ}\times{ℝ},$ and one can indicate such a subset of the plane by shading. Choose an error bound $\epsilon>0$ and draw the relation one might refer to as “$\epsilon$-approximation”. To say it another way, draw the relation “$x$ is within $\epsilon$ of $y$”.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Отношение на $\RR$ — это подмножество $\RR\times\RR,$ и его можно изобразить, закрасив часть плоскости. Выберите величину погрешности $\varepsilon>0$ и нарисуйте отношение, которое можно определить как «$\varepsilon$-приближение». Другими словами, изобразите отношение «расстояние между $x$ и $y$ меньше $\varepsilon$».
+Отношение на ${ℝ}$ — это подмножество ${ℝ}\times{ℝ},$ и его можно изобразить, закрасив часть плоскости. Выберите величину погрешности $\varepsilon>0$ и нарисуйте отношение, которое можно определить как «$\varepsilon$-приближение». Другими словами, изобразите отношение «расстояние между $x$ и $y$ меньше $\varepsilon$».
 \end{exerciseRUS}
 
 \begin{exerciseENG}[Binary relations to graphs]\label{exc:rel to graph}\index{relation!graph of}~
-\sexc If $R\ss S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S.$ 
+\sexc If $R\subseteq S\times S$ is a binary relation, find a natural way to make a graph out of it, having vertices $S.$ 
 \item What is the set $A$ of arrows? 
-\item What are the source and target functions $src,tgt\taking A\to S?$
+\item What are the source and target functions $src,tgt\colon A{→} S?$
 \item Take the left-hand table in (\ref{dia:3 relations}) and consider its first $7$ rows (i.e. forget the $\vdots$). Draw the corresponding graph (do you see a tetrahedron?). 
 \item Do the same for the right-hand table.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}[Преобразование бинарных отношений в графы]\label{exc:rel to graph}\index{relation!graph of}~
-Если $R\ss S\times S$ — некоторое бинарное отношение, найдите естественный способ построить граф на основе него с множеством вершин $S.$ 
+Если $R\subseteq S\times S$ — некоторое бинарное отношение, найдите естественный способ построить граф на основе него с множеством вершин $S.$ 
 \sexc Каким будет множество стрелок $A$? 
-\item Каковы функции начала и конца $src,tgt\taking A\to S?$
+\item Каковы функции начала и конца $src,tgt\colon A{→} S?$
 \item Возьмите таблицу слева на (\ref{dia:3 relations}) и рассмотрите ее первые $7$ строк (т.е. забудьте про $\vdots$). Изобразите соответствующий граф (видите тетраэдр? а он тут есть). 
 \item Проделайте то же с таблицей справа.
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}[Graphs to binary relations]\label{ex:graph to rel}~
-\sexc If $(V,A,src,tgt)$ is a graph, find a natural way to make a binary relation $R\ss V\times V$ out of it. 
+\sexc If $(V,A,src,tgt)$ is a graph, find a natural way to make a binary relation $R\subseteq V\times V$ out of it. 
 \item Take the left-hand graph $G$ from (\ref{dia:graph hom example}) and write out the corresponding binary relation in table form.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}[Преобразование графов в бинарные отношения]\label{ex:graph to rel}~
-\sexc Если $(V,A,src,tgt)$ — некоторый граф, найдите естественный способ построить на основе него бинарное отношение $R\ss V\times V.$ 
+\sexc Если $(V,A,src,tgt)$ — некоторый граф, найдите естественный способ построить на основе него бинарное отношение $R\subseteq V\times V.$ 
 \item Возьмите граф $G$ с диаграммы (\ref{dia:graph hom example}) слева и выпишите соответствующее бинарное отношение в виду таблицы.
 \endsexc
 \end{exerciseRUS}
 
 \begin{exerciseENG}[Going around the loops]~
-\sexc Given a binary relation $R\ss S\times S,$ you know from Exercise~\ref{exc:rel to graph} how to construct a graph out of it, and from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
+\sexc Given a binary relation $R\subseteq S\times S,$ you know from Exercise~\ref{exc:rel to graph} how to construct a graph out of it, and from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of that. How does the resulting relation compare with the original?
 \item Given a graph $(V,A,src,tgt),$ you know from Exercise~\ref{ex:graph to rel} how to make a new binary relation out of it, and from Exercise~\ref{exc:rel to graph} how to construct a new graph out of that. How does the resulting graph compare with the original? 
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}[Туда и обратно]~
-\sexc Мы уже знаем из Упражнения~\ref{exc:rel to graph}, как построить граф из данного бинарного отношения $R\ss S\times S,$ а из Упражнения~\ref{ex:graph to rel} — как из этого графа построить новое бинарное отношение. Как связано полученное бинарное отношение с исходным?
+\sexc Мы уже знаем из Упражнения~\ref{exc:rel to graph}, как построить граф из данного бинарного отношения $R\subseteq S\times S,$ а из Упражнения~\ref{ex:graph to rel} — как из этого графа построить новое бинарное отношение. Как связано полученное бинарное отношение с исходным?
 \item Мы уже знаем из Упражнения~\ref{ex:graph to rel}, как построить бинарное отношение из данного графа $(V,A,src,tgt),$ а из Упражнения~\ref{exc:rel to graph} — как построить из этого отношения новый граф. Как связан полученный граф с исходным? 
 \endsexc
 \end{exerciseRUS}

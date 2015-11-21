@@ -184,7 +184,7 @@ The above section may all seem intuitive or reasonable in some ways, but also a 
 \begin{exampleENG}\label{ex:department store 3}
 In Examples~\ref{ex:department store 1} and~\ref{ex:department store 2}, the conceptual layout for a department store was given, and some example tables were shown. We were instructed to keep track of employees, departments, and six types of data (E.1, E.2, E.3, E.4, D.1, and D.2), and we were instructed to follow two rules (Rule 1, Rule 2). All of this is summarized in the following picture:
 \begin{align}\label{dia:maincat schema}
-\MainCatLarge{\mcC:=\tn{ Schema for tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) conforming to (\ref{dia:rules})}}
+\MainCatLarge{{𝓒}{\coloneqq}\tn{ Schema for tables (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) conforming to (\ref{dia:rules})}}
 \end{align}
 The five tables from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as five vertices; this is also the number of primary ID columns. The six foreign key columns from (\ref{dia:instance on maincat}) and (\ref{dia:instance on maincat 2}) are seen as six arrows; each points from a table to a foreign table. The two rules from (\ref{dia:rules}) are seen as statements at the top of Display (\ref{dia:maincat schema}).We will explain path equivalences in Definition~\ref{def:congruence}.
 \end{exampleENG}
@@ -215,8 +215,8 @@ A {\em congruence} on $G$ is a relation $\simeq$ on $\Path_G$ that has the follo
 \item The relation $\simeq$ is an equivalence relation.
 \item If $p\simeq q$ then $src(p)=src(q).$
 \item If $p\simeq q$ then $tgt(p)=tgt(q).$
-\item Suppose $p,q\taking b\to c$ are paths, and $m\taking a\to b$ is an arrow. If $p\simeq q$ then $mp\simeq mq.$ 
-\item Suppose $p,q\taking a\to b$ are paths, and $n\taking b\to c$ is an arrow. If $p\simeq q$ then $pn\simeq qn.$
+\item Suppose $p,q\colon b{→} c$ are paths, and $m\colon a{→} b$ is an arrow. If $p\simeq q$ then $mp\simeq mq.$ 
+\item Suppose $p,q\colon a{→} b$ are paths, and $n\colon b{→} c$ is an arrow. If $p\simeq q$ then $pn\simeq qn.$
 \end{enumerate}
 \end{definitionENG}
 
@@ -241,21 +241,21 @@ Consider the graph shown in (\ref{dia:maincat schema}), and the two declarations
 \end{exerciseRUS}
 
 \begin{lemmaENG}\label{lemma:composing PEDs}
-Suppose that $G$ is a graph and $\simeq$ is a congruence on $G.$ Suppose $p\simeq q\taking a\to b$ and $r\simeq s\taking b\to c.$ Then $pr\simeq qs.$
+Suppose that $G$ is a graph and $\simeq$ is a congruence on $G.$ Suppose $p\simeq q\colon a{→} b$ and $r\simeq s\colon b{→} c.$ Then $pr\simeq qs.$
 \end{lemmaENG}
 
 \begin{lemmaRUS}\label{lemma:composing PEDs}
 \end{lemmaRUS}
 
 \begin{proofENG}
-The picture to have in mind is this: $$\xymatrix@=13pt{&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[dr]\\\LMO{a}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_p\ar@{-->}@/_1.5pc/[rrrr]^q&&&&\LMO{b}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_r\ar@{-->}@/_1.5pc/[rrrr]^s&&&&\LMO{c}\\&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]&&\bullet\ar[r]&\cdots\ar[r]&\bullet\ar[ur]}$$ Applying condition (3) from Definition~\ref{def:congruence} to each arrow in path $p,$ it follows by induction that $pr\simeq ps.$ Applying condition (4) to each arrow in path $s,$ it follows similarly that $ps\simeq qs.$ Because $\simeq$ is an equivalence relation, it follows that $pr\simeq qs.$ 
+The picture to have in mind is this: $$\xymatrix@=13pt{&∙\ar[r]&\cdots\ar[r]&∙\ar[dr]&&∙\ar[r]&\cdots\ar[r]&∙\ar[dr]\\\LMO{a}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_p\ar@{-->}@/_1.5pc/[rrrr]^q&&&&\LMO{b}\ar@{}[rrrr]|{\simeq}\ar[ur]\ar[dr]\ar@{-->}@/^1.5pc/[rrrr]_r\ar@{-->}@/_1.5pc/[rrrr]^s&&&&\LMO{c}\\&∙\ar[r]&\cdots\ar[r]&∙\ar[ur]&&∙\ar[r]&\cdots\ar[r]&∙\ar[ur]}$$ Applying condition (3) from Definition~\ref{def:congruence} to each arrow in path $p,$ it follows by induction that $pr\simeq ps.$ Applying condition (4) to each arrow in path $s,$ it follows similarly that $ps\simeq qs.$ Because $\simeq$ is an equivalence relation, it follows that $pr\simeq qs.$ 
 \end{proofENG}
 
 \begin{proofRUS}
 \end{proofRUS}
 
 \begin{definitionENG}\label{def:schema}\index{schema}\index{database!schema}
-A {\em database schema} (or simply {\em schema}) $\mcC$ consists of a pair $\mcC:=(G,\simeq)$ where $G$ is a graph and $\simeq$ is a congruence on $G.$ 
+A {\em database schema} (or simply {\em schema}) ${𝓒}$ consists of a pair ${𝓒}{\coloneqq}(G,\simeq)$ where $G$ is a graph and $\simeq$ is a congruence on $G.$ 
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:schema}\index{schema}\index{database!schema}
@@ -276,11 +276,11 @@ A schema can be converted into a system of tables each with a primary key and so
 \end{blockRUS}
 
 \begin{rulesENG}\label{rules:schema to tables}\index{olog!rules}
-Converting a schema $\mcC=(G,\simeq)$ into a table layout should be done as follows:
+Converting a schema ${𝓒}=(G,\simeq)$ into a table layout should be done as follows:
 \begin{enumerate}[(i)]
 \item There should be a table for every vertex in $G$ and if the vertex is named, the table should have that name;
 \item Each table should have a left-most column called ID, set apart from the other columns by a double vertical line; and
-\item To each arrow $a$ in $G$ having source vertex $s:=src(a)$ and target vertex $t:=tgt(a),$ there should be a foreign key column $a$ in table $s,$ referring to table $t$; if the arrow $a$ is named, column $a$ should have that name.
+\item To each arrow $a$ in $G$ having source vertex $s{\coloneqq}src(a)$ and target vertex $t{\coloneqq}tgt(a),$ there should be a foreign key column $a$ in table $s,$ referring to table $t$; if the arrow $a$ is named, column $a$ should have that name.
 \end{enumerate}
 \end{rulesENG}
 
@@ -290,9 +290,9 @@ Converting a schema $\mcC=(G,\simeq)$ into a table layout should be done as foll
 \begin{exampleENG}[Discrete dynamical system]\label{ex:dds}\index{dynamical system!discrete}
 Consider the schema 
 \begin{align}\label{dia:loop}
-\Loop:=\LoopSchema
+\Loop{\coloneqq}\LoopSchema
 \end{align}
-in which the congruence is trivial (i.e. generated by the empty set of PEDs.) This schema is quite interesting. It encodes a set $s$ and a function $f\taking s\to s.$ Such a thing is called a {\em discrete dynamical system}. One imagines $s$ as the set of states and, for any state $x\in s,$ a notion of “next state” $f(x)\in s.$ For example
+in which the congruence is trivial (i.e. generated by the empty set of PEDs.) This schema is quite interesting. It encodes a set $s$ and a function $f\colon s{→} s.$ Such a thing is called a {\em discrete dynamical system}. One imagines $s$ as the set of states and, for any state $x\in s,$ a notion of “next state” $f(x)\in s.$ For example
 \begin{align}\label{dia:dds data}
 \begin{tabular}{| l || c |}\bhline
 \multicolumn{2}{| c |}{s}\\\bhline 
@@ -408,7 +408,7 @@ Consider the olog
 $$
 \xymatrix{\obox{C}{.4in}{a child}\LA{rr}{has}&&\obox{F}{.5in}{a father}\ar@/^1pc/[ll]^{\tn{has as first}}\ar@/_1pc/[ll]_{\tn{has as tallest}}}
 $$
-\sexc What path equivalence declarations would be appropriate for this olog? You can use $f\taking F\to C,$ $t\taking F\to C,$ and $h\taking C\to F$ if you prefer. 
+\sexc What path equivalence declarations would be appropriate for this olog? You can use $f\colon F{→} C,$ $t\colon F{→} C,$ and $h\colon C{→} F$ if you prefer. 
 \item How many PEDs are in the congruence?
 \endsexc
 \end{exerciseENG}
@@ -428,10 +428,10 @@ Given a database schema $(G,\simeq),$ an instance of it is just a bunch of table
 \end{blockRUS}
 
 \begin{definitionENG}\label{def:instance}\index{database!instance}\index{instance}
-Let $\mcC=(G,\simeq)$ where $G=(V,A,src,tgt).$ An {\em instance on $\mcC$}, denoted $(\PK,\FK)\taking\mcC\to\Set,$ is defined as follows: One announces some constituents (A. primary ID part, B. foreign key part) and asserts that they conform to a law (1. preservation of congruence). Specifically, one announces
+Let ${𝓒}=(G,\simeq)$ where $G=(V,A,src,tgt).$ An {\em instance on ${𝓒}$}, denoted $(\PK,\FK)\colon{𝓒}{→}\Set,$ is defined as follows: One announces some constituents (A. primary ID part, B. foreign key part) and asserts that they conform to a law (1. preservation of congruence). Specifically, one announces
 \begin{enumerate}[\hsp A.]
-\item a function $\PK\taking V\to \Set$; i.e. to each vertex $v\in V$ one provides a set $\PK(v)$;\footnote{The elements of $\PK(v)$ will be listed as the rows of table $v,$ or more precisely as the leftmost cells of these rows.} and
-\item for every arrow $a\in A$ with $v=src(a)$ and $w=tgt(a),$ a function $\FK(a)\taking\PK(v)\to\PK(w).$
+\item a function $\PK\colon V{→} \Set$; i.e. to each vertex $v\in V$ one provides a set $\PK(v)$;\footnote{The elements of $\PK(v)$ will be listed as the rows of table $v,$ or more precisely as the leftmost cells of these rows.} and
+\item for every arrow $a\in A$ with $v=src(a)$ and $w=tgt(a),$ a function $\FK(a)\colon\PK(v){→}\PK(w).$
 \footnote{The arrow $a$ will correspond to a column, and to each row $r\in\PK(v)$ the $(r,a)$ cell will contain the datum $\FK(a)(r).$}
 \end{enumerate}
 One asserts that the following law holds for any vertices $v, w$ and paths $p=va_1a_2\ldots a_m$ and $q=va_1'a_2'\ldots a_n'$ from $v$ to $w$:
@@ -445,7 +445,7 @@ One asserts that the following law holds for any vertices $v, w$ and paths $p=va
 
 \begin{exerciseENG}\label{ex:self email}
 Consider the olog pictured below: 
-$$\mcC:=
+$${𝓒}{\coloneqq}
 \fbox{\parbox{3.1in}{
 \xymatrix{
 \obox{}{.7in}{a self-email}\LA{r}{is}&\obox{}{.5in}{an email}\ar@/^1pc/[r]^{\tn{is sent by}}\ar@/_1pc/[r]_{\tn{is sent to}}&\obox{}{.5in}{a person}}~\\\\
@@ -488,8 +488,8 @@ Sue\\\bhline
 
 \sexc What is the set $\PK(\fakebox{an email})?$ 
 \item What is the set $\PK(\fakebox{a person})?$ 
-\item What is the function $\FK(\tn{is sent by})\taking\PK(\fakebox{an email})\to\PK(\fakebox{a person})?$
-\item Interpret the sentences at the bottom of $\mcC$ as the Englishification of a simple path equivalence declaration. Is it satisfied by the instance (\ref{dia:self email}); that is, does law 1. from Definition~\ref{def:instance} hold?\index{Englishifiication}
+\item What is the function $\FK(\tn{is sent by})\colon\PK(\fakebox{an email}){→}\PK(\fakebox{a person})?$
+\item Interpret the sentences at the bottom of ${𝓒}$ as the Englishification of a simple path equivalence declaration. Is it satisfied by the instance (\ref{dia:self email}); that is, does law 1. from Definition~\ref{def:instance} hold?\index{Englishifiication}
 \endsexc
 \end{exerciseENG}
 
@@ -497,7 +497,7 @@ Sue\\\bhline
 \end{exerciseRUS}
 
 \begin{exampleENG}[Monoid action table]\label{ex:monoid action table}
-In Example~\ref{ex:monoid as olog}, we saw how a monoid $\mcM$ could be captured as an olog with only one object. As a database schema, this means there is only one table. Every generator of $\mcM$ would be a column of the table. The notion of database instance for such a schema is precisely the notion of action table from Section~\ref{sec:monoid action table}. Note that a monoid can act on itself, in which case this action table is the monoid's multiplication table as in Example~\ref{ex:multiplication table}, but it can also act on any other set as in Example~\ref{ex:action table}. If $\mcM$ acts on a set $S,$ then the set of rows in the action table will be $S.$
+In Example~\ref{ex:monoid as olog}, we saw how a monoid ${𝓜}$ could be captured as an olog with only one object. As a database schema, this means there is only one table. Every generator of ${𝓜}$ would be a column of the table. The notion of database instance for such a schema is precisely the notion of action table from Section~\ref{sec:monoid action table}. Note that a monoid can act on itself, in which case this action table is the monoid's multiplication table as in Example~\ref{ex:multiplication table}, but it can also act on any other set as in Example~\ref{ex:action table}. If ${𝓜}$ acts on a set $S,$ then the set of rows in the action table will be $S.$
 \end{exampleENG}
 
 \begin{exampleRUS}[Monoid action table]\label{ex:monoid action table}
@@ -511,7 +511,7 @@ Draw (as a graph) the schema for which Table~\ref{dia:action table for FSM} is a
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Suppose that $\mcM$ is a monoid and some instance of it is written out in table form. It's possible that $\mcM$ is a group. What evidence in an instance table for $\mcM$ might suggest that $\mcM$ is a group? 
+Suppose that ${𝓜}$ is a monoid and some instance of it is written out in table form. It's possible that ${𝓜}$ is a group. What evidence in an instance table for ${𝓜}$ might suggest that ${𝓜}$ is a group? 
 \end{exerciseENG}
 
 \begin{exerciseRUS}
@@ -522,7 +522,7 @@ Suppose that $\mcM$ is a monoid and some instance of it is written out in table 
 \subsubsection{\caseENGRUS{Paths through a database}{ / }{Пути в базе данных}}
 
 \begin{blockENG}
-Let $\mcC:=(G,\simeq)$ be a schema and let $(\PK,\FK)\taking\mcC\to\Set$ be an instance on $\mcC.$ Then for every arrow $a\taking v\to w$ in $G$ we get a function $\FK(a)\taking\PK(v)\to\PK(w).$ Functions can be composed, so in fact for every path through $G$ we get a function. Namely, if $p=v_0a_1,a_2,\ldots,a_n$ is a path from $v_0$ to $v_n$ then the instance provides a function $$\FK(p):=\FK(a_n)\circ\cdots\FK(a_2)\circ\FK(a_1)\taking\PK(v_0)\to\PK(v_n),$$ which first made an appearance as part of Law 1 in Definition~\ref{def:instance}.
+Let ${𝓒}{\coloneqq}(G,\simeq)$ be a schema and let $(\PK,\FK)\colon{𝓒}{→}\Set$ be an instance on ${𝓒}.$ Then for every arrow $a\colon v{→} w$ in $G$ we get a function $\FK(a)\colon\PK(v){→}\PK(w).$ Functions can be composed, so in fact for every path through $G$ we get a function. Namely, if $p=v_0a_1,a_2,\ldots,a_n$ is a path from $v_0$ to $v_n$ then the instance provides a function $$\FK(p){\coloneqq}\FK(a_n)\circ\cdots\FK(a_2)\circ\FK(a_1)\colon\PK(v_0){→}\PK(v_n),$$ which first made an appearance as part of Law 1 in Definition~\ref{def:instance}.
 \end{blockENG}
 
 \begin{blockRUS}
@@ -546,14 +546,14 @@ Consider the department store schema from Example~\ref{ex:department store 3}, a
 \end{exampleRUS}
 
 \begin{exerciseENG}
-Consider the path $p:=[f,f]$ on the $\Loop$ schema from (\ref{dia:loop}). Using the instance from (\ref{dia:dds data}), where $\PK(s)=\{A,B,C,D,E,F,G,H\},$ interpret $p$ as a function $\PK(s)\to\PK(s),$ and write this as a 2-column table, as above in Example~\ref{ex:paths as functions}.
+Consider the path $p{\coloneqq}[f,f]$ on the $\Loop$ schema from (\ref{dia:loop}). Using the instance from (\ref{dia:dds data}), where $\PK(s)=\{A,B,C,D,E,F,G,H\},$ interpret $p$ as a function $\PK(s){→}\PK(s),$ and write this as a 2-column table, as above in Example~\ref{ex:paths as functions}.
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 \end{exerciseRUS}
 
 \begin{exerciseENG}~
-\sexc Given an instance $(\PK,\FK)$ on a schema $\mcC,$ and given a trivial path $p$ (i.e. $p$ has length 0; it starts at some vertex but doesn't go anywhere), what function does $p$ yield?
+\sexc Given an instance $(\PK,\FK)$ on a schema ${𝓒},$ and given a trivial path $p$ (i.e. $p$ has length 0; it starts at some vertex but doesn't go anywhere), what function does $p$ yield?
 \item What are the domain and codomain of $p?$
 \endsexc
 \end{exerciseENG}

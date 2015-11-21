@@ -23,7 +23,7 @@ Suppose given the diagram of sets and functions below.
 X\ar[r]_f&Z}
 \end{align}
 Its {\em fiber product}\index{fiber product} is the set 
-$$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}.$$ There are obvious projections $\pi_1\taking X\times_ZY\to X$ and $\pi_2\taking X\times_ZY\to Y$ (e.g. $\pi_2(x,w,y)=y$). Note that if $W=X\times_ZY$ then the diagram 
+$$X\times_ZY{\coloneqq}\{(x,w,y){\;|\;}f(x)=w=g(y)\}.$$ There are obvious projections $\pi_1\colon X\times_ZY{→} X$ and $\pi_2\colon X\times_ZY{→} Y$ (e.g. $\pi_2(x,w,y)=y$). Note that if $W=X\times_ZY$ then the diagram 
 \begin{align}\label{dia:pullback sets}
 \xymatrix{W\ullimit\ar[r]^-{\pi_2}\ar[d]_{\pi_1}&Y\ar[d]^g\\
 X\ar[r]_f&Z}
@@ -38,8 +38,8 @@ commutes. Given the setup of Diagram~\ref{dia:fp sets} we define the {\em pullba
 X\ar[r]_f&Z}
 \end{align}
 Ее {\em расслоенное произведение}\index{расслоенное произведение} — это множество 
-$$X\times_ZY:=\{(x,w,y)\|f(x)=w=g(y)\}.$$ 
-Имеются очевидные проекции $\pi_1\taking X\times_ZY\to X$ и $\pi_2\taking X\times_ZY\to Y$ (например, $\pi_2(x,w,y)=y$). Заметим, что если $W=X\times_ZY,$ то диаграмма 
+$$X\times_ZY{\coloneqq}\{(x,w,y){\;|\;}f(x)=w=g(y)\}.$$ 
+Имеются очевидные проекции $\pi_1\colon X\times_ZY{→} X$ и $\pi_2\colon X\times_ZY{→} Y$ (например, $\pi_2(x,w,y)=y$). Заметим, что если $W=X\times_ZY,$ то диаграмма 
 \begin{align}\label{dia:pullback sets}
 \xymatrix{W\ullimit\ar[r]^-{\pi_2}\ar[d]_{\pi_1}&Y\ar[d]^g\\
 X\ar[r]_f&Z}
@@ -48,7 +48,7 @@ X\ar[r]_f&Z}
 \end{definitionRUS}
 
 \begin{exerciseENG}
-Let $X,Y,Z$ be as drawn and $f\taking X\to Z$ and $g\taking Y\to Z$ the indicated functions. 
+Let $X,Y,Z$ be as drawn and $f\colon X{→} Z$ and $g\colon Y{→} Z$ the indicated functions. 
 \begin{center}
 \includegraphics[height=2in]{setPullback}
 \end{center}
@@ -56,7 +56,7 @@ What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y?$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $X,Y,Z$ такие, как на рисунке, а $f\taking X\to Z$ и $g\taking Y\to Z$ — изображенные функции. 
+Пусть $X,Y,Z$ такие, как на рисунке, а $f\colon X{→} Z$ и $g\colon Y{→} Z$ — изображенные функции. 
 \begin{center}
 \includegraphics[height=2in]{setPullback}
 \end{center}
@@ -66,16 +66,16 @@ What is the pullback of the diagram $X\Too{f}Z\Fromm{g}Y?$
 \begin{exerciseENG}~
 \sexc Draw a set $X$ with five elements and a set $Y$ with three elements. Color each element of $X$ and each element of $Y$ either red, blue, or yellow,%
 \footnote{You can use shadings rather than coloring, if coloring would be annoying.}
-and do so in a “random-looking” way. Considering your coloring of $X$ as a function $X\to C,$ where $C=\{\tn{red, blue, yellow}\},$ and similarly obtaining a function $Y\to C,$ draw the fiber product $X\times_CY.$ Make sure it is colored appropriately.
-\item The universal property for products guarantees a function $X\times_CY\to X\times Y,$ which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
+and do so in a “random-looking” way. Considering your coloring of $X$ as a function $X{→} C,$ where $C=\{\tn{red, blue, yellow}\},$ and similarly obtaining a function $Y{→} C,$ draw the fiber product $X\times_CY.$ Make sure it is colored appropriately.
+\item The universal property for products guarantees a function $X\times_CY{→} X\times Y,$ which I can tell you will be an injection. This means that the drawing you made of the fiber product can be imbedded into the $5\times 3$ grid; please draw the grid and indicate this subset.
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}~
 \sexc Нарисуйте множество $X$ из пяти элементов и множество $Y$ из трех элементов. Раскрасьте все элементы $X$ и $Y$ либо в красный, либо в синий, либо в желтый цвет,%
 \footnote{Можете их заштриховать, а не раскрашивать, если раскрашивать вам неудобно.}
-причем сделайте это «случайным» образом. Считая вашу раскраску $X$ функцией $X\to C,$ где $C=\{\tn{красный, синий, желтый}\},$ и аналогичным образом получив функцию $Y\to C,$ нарисуйте расслоенное произведение $X\times_CY.$ Раскрасив его подходящим образом, убедитесь, что цвета пар совпадают.
-\item Универсальное свойство произведений обеспечивает нам функцию $X\times_CY\to X\times Y,$ которая, можете мне поверить, будет инъекцией. Это означает, что рисунок расслоенного произведения, который вы сделали, может быть вставлен в сетку $5\times 3$; изобразите, пожалуйста, такую сетку и отметьте на ней подмножество.
+причем сделайте это «случайным» образом. Считая вашу раскраску $X$ функцией $X{→} C,$ где $C=\{\tn{красный, синий, желтый}\},$ и аналогичным образом получив функцию $Y{→} C,$ нарисуйте расслоенное произведение $X\times_CY.$ Раскрасив его подходящим образом, убедитесь, что цвета пар совпадают.
+\item Универсальное свойство произведений обеспечивает нам функцию $X\times_CY{→} X\times Y,$ которая, можете мне поверить, будет инъекцией. Это означает, что рисунок расслоенного произведения, который вы сделали, может быть вставлен в сетку $5\times 3$; изобразите, пожалуйста, такую сетку и отметьте на ней подмножество.
 \endsexc
 \end{exerciseRUS}
 
@@ -100,7 +100,7 @@ Some may prefer to denote this fiber product by $f\times_Zg$ rather than $X\time
 \end{exerciseRUS}
 
 \begin{exerciseENG}
-Let $S=\RR^3, T=\RR,$ and think of them as (Aristotelian) space and time, with the origin in $S\times T$ given by the center of mass of MIT at the time of its founding. Let $Y=S\times T$ and let $g_1\taking Y\to S$ be one projection and $g_2\taking Y\to T$ the other projection. Let $X=\singleton$ be a set with one element and let $f_1\taking X\to S$ and $f_2\taking X\to T$ be given by the origin in both cases. 
+Let $S={ℝ}^3, T={ℝ},$ and think of them as (Aristotelian) space and time, with the origin in $S\times T$ given by the center of mass of MIT at the time of its founding. Let $Y=S\times T$ and let $g_1\colon Y{→} S$ be one projection and $g_2\colon Y{→} T$ the other projection. Let $X={\{☺\}}$ be a set with one element and let $f_1\colon X{→} S$ and $f_2\colon X{→} T$ be given by the origin in both cases. 
 \sexc What are the fiber products $W_1$ and $W_2$:
 $$
 \xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
@@ -111,7 +111,7 @@ $$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $S=\RR^3, T=\RR;$ будем думать о них, как об (Аристотелевых) пространстве и времени, с началом отсчета в $S\times T,$ заданным центром масс [университета] MIT в момент его основания. Пусть $Y=S\times T$ и $g_1\taking Y\to S$ — одна из проекций, а $g_2\taking Y\to T$ — другая. Пусть $X=\singleton$ — множество из одного элемента, а $f_1\taking X\to S$ и $f_2\taking X\to T$ заданы как начала отсчета в обоих случаях. 
+Пусть $S={ℝ}^3, T={ℝ};$ будем думать о них, как об (Аристотелевых) пространстве и времени, с началом отсчета в $S\times T,$ заданным центром масс [университета] MIT в момент его основания. Пусть $Y=S\times T$ и $g_1\colon Y{→} S$ — одна из проекций, а $g_2\colon Y{→} T$ — другая. Пусть $X={\{☺\}}$ — множество из одного элемента, а $f_1\colon X{→} S$ и $f_2\colon X{→} T$ заданы как начала отсчета в обоих случаях. 
 \sexc Какими будут расслоенные произведения $W_1$ и $W_2$:
 $$
 \xymatrix{W_1\ar[r]\ar[d]\ullimit&Y\ar[d]^{g_1}\\X\ar[r]_{f_1}&S}\hspace{1in}
@@ -136,7 +136,7 @@ In this section we will see that the fiber product of a diagram can serve to def
 \begin{exampleENG}
 Consider the following two ologs. The one on the right is the pullback of the one on the left. 
 \begin{align}\label{dia:wealthy and loyal}
-\fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr a customer that is wealthy and loyal}\LAL{d}{is}\LA{r}{is}&\obox{C}{.7in}{\rr a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{\rr a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}
+\fbox{\xymatrixnocompile{&\obox{C}{.7in}{{ℝ} a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{{ℝ} a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{{ℝ} a customer that is wealthy and loyal}\LAL{d}{is}\LA{r}{is}&\obox{C}{.7in}{{ℝ} a loyal customer}\LA{d}{is}\\\obox{B}{.7in}{{ℝ} a wealthy customer}\LA{r}{is}&\smbox{D}{a customer}}}
 \end{align}
 Check from Definition~\ref{def:pullback} that the label, “a customer that is wealthy and loyal”, is fair and straightforward as a label for the fiber product $A=B\times_DC,$ given the labels on $B,C,$ and $D.$
 \end{exampleENG}
@@ -144,7 +144,7 @@ Check from Definition~\ref{def:pullback} that the label, “a customer that is w
 \begin{exampleRUS}
 Рассмотрим следующие два олога. Тот, что справа, является притягивающим квадратом того, что слева. 
 \begin{align}\label{dia:wealthy and loyal}
-\fbox{\xymatrixnocompile{&\obox{C}{.7in}{\rr лояльный потребитель}\LA{d}{это}\\\obox{B}{.7in}{\rr богатый потребитель}\LA{r}{это}&\smbox{D}{потребитель}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{\rr богатый и лояльный потребитель}\LAL{d}{это}\LA{r}{это}&\obox{C}{.7in}{\rr лояльный потребитель}\LA{d}{это}\\\obox{B}{.7in}{\rr богатый потребитель}\LA{r}{это}&\smbox{D}{потребитель}}}
+\fbox{\xymatrixnocompile{&\obox{C}{.7in}{{ℝ} лояльный потребитель}\LA{d}{это}\\\obox{B}{.7in}{{ℝ} богатый потребитель}\LA{r}{это}&\smbox{D}{потребитель}}}\hsp&\fbox{\xymatrix{\obox{A=B\times_DC}{.9in}{{ℝ} богатый и лояльный потребитель}\LAL{d}{это}\LA{r}{это}&\obox{C}{.7in}{{ℝ} лояльный потребитель}\LA{d}{это}\\\obox{B}{.7in}{{ℝ} богатый потребитель}\LA{r}{это}&\smbox{D}{потребитель}}}
 \end{align}
 Проверьте по определению~\ref{def:pullback}, что метка «богатый и лояльный потребитель» — это корректная и достаточно прямолинейная метка для расслоенного произведения $A=B\times_DC,$ если на $B,C$ и $D$ поставить соответствующие метки.%
 \endnote{
@@ -162,22 +162,22 @@ Note that in Diagram (\ref{dia:wealthy and loyal}) the top-left box could have b
 
 \begin{exerciseENG}
 For each of the following, an author has proposed that the diagram on the right is a pullback. Do you think their labels are appropriate or misleading; that is, is the label on the upper-left box reasonable given the rest of the olog, or is it suspect in some way?
-\sexc\begin{align*}\scriptsize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{\rr has as favorite color}}&&\smbox{D}{a color}}}
+\sexc\begin{align*}\scriptsize\fbox{\xymatrix{&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{{ℝ} has as favorite color}}&&\smbox{D}{a color}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{{ℝ} a person whose favorite color is blue}\LAL{d}{is}\LA{rr}{\parbox{.7in}{{ℝ} has as favorite color}}&&\smbox{C}{blue}\LA{d}{is}\\\smbox{B}{a person}\LA{rr}{\parbox{.7in}{{ℝ} has as favorite color}}&&\smbox{D}{a color}}}
 \end{align*}
-\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr a dog whose owner is a woman}\LAL{d}{is}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{\rr has as owner}}&&\smbox{D}{a person}}}
+\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{{ℝ} has as owner}}&&\smbox{D}{a person}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{{ℝ} a dog whose owner is a woman}\LAL{d}{is}\LA{rr}{\parbox{.7in}{{ℝ} has as owner}}&&\smbox{C}{a woman}\LA{d}{is}\\\smbox{B}{a dog}\LA{rr}{\parbox{.7in}{{ℝ} has as owner}}&&\smbox{D}{a person}}}
 \end{align*}
-\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{\rr a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
+\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{{ℝ} a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{{ℝ} a space in our house}\LA{r}{has}&\smbox{D}{a width}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{{ℝ} a good fit}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{{ℝ} a piece of furniture}\LA{d}{has}\\\obox{B}{.6in}{{ℝ} a space in our house}\LA{r}{has}&\smbox{D}{a width}}}
 \end{align*}
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}
 Для каждого из нижеследующих ологов автор заявляет, что диаграмма справа является притягивающим квадратом. Считаете ли вы метки подходящими или сбивающими с толку; другими словами, будет ли метка на верхнем левом прямоугольнике обоснованой остальной частью олога или же она некоторым образом вызывает подозрение?
-\sexc\begin{align*}\scriptsize\fbox{\xymatrix{&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{D}{цвет}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{\rr человек, который любит синий цвет}\LAL{d}{это}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{\rr любимый цвет}}&&\smbox{D}{цвет}}}
+\sexc\begin{align*}\scriptsize\fbox{\xymatrix{&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{{ℝ} любимый цвет}}&&\smbox{D}{цвет}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1.1in}{{ℝ} человек, который любит синий цвет}\LAL{d}{это}\LA{rr}{\parbox{.7in}{{ℝ} любимый цвет}}&&\smbox{C}{синий}\LA{d}{это}\\\smbox{B}{человек}\LA{rr}{\parbox{.7in}{{ℝ} любимый цвет}}&&\smbox{D}{цвет}}}
 \end{align*}
-\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{\rr собака, у которой владелец — женщина}\LAL{d}{это}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{\rr владелец}}&&\smbox{D}{человек}}}
+\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{{ℝ} владелец}}&&\smbox{D}{человек}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{1in}{{ℝ} собака, у которой владелец — женщина}\LAL{d}{это}\LA{rr}{\parbox{.7in}{{ℝ} владелец}}&&\smbox{C}{женщина}\LA{d}{это}\\\smbox{B}{собака}\LA{rr}{\parbox{.7in}{{ℝ} владелец}}&&\smbox{D}{человек}}}
 \end{align*}
-\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{\rr подходит}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{\rr предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{\rr свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}
+\item\begin{align*}\scriptsize\fbox{\xymatrixnocompile{&\obox{C}{.5in}{{ℝ} предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{{ℝ} свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}\hsp&\scriptsize\fbox{\xymatrixnocompile{\obox{A=B\times_DC}{.5in}{{ℝ} подходит}\LAL{d}{$s$}\LA{r}{$f$}&\obox{C}{.5in}{{ℝ} предмет мебели}\LA{d}{имеет}\\\obox{B}{.6in}{{ℝ} свободное место в доме}\LA{r}{имеет}&\smbox{D}{ширина}}}
 \end{align*}
 \endsexc
 \end{exerciseRUS}
@@ -195,19 +195,19 @@ For each of the following, an author has proposed that the diagram on the right 
 \end{exerciseRUS}
 
 \begin{definitionENG}[Preimage]\label{def:preimage}
-Let $f\taking X\to Y$ be a function and $y\in Y$ an element. The {\em preimage of y under $f$}\index{preimage}, denoted $f^\m1(y),$\index{a symbol!$f^\m1$} is  the subset $f^\m1(y):=\{x\in X\|f(x)=y\}.$ If $Y'\ss Y$ is any subset, the {\em preimage of $Y'$ under $f$}, denoted $f^\m1(Y'),$ is the subset $f^\m1(Y')=\{x\in X\|f(x)\in Y'\}.$
+Let $f\colon X{→} Y$ be a function and $y\in Y$ an element. The {\em preimage of y under $f$}\index{preimage}, denoted $f^{-1}(y),$\index{a symbol!$f^{-1}$} is  the subset $f^{-1}(y){\coloneqq}\{x\in X{\;|\;}f(x)=y\}.$ If $Y'\subseteq Y$ is any subset, the {\em preimage of $Y'$ under $f$}, denoted $f^{-1}(Y'),$ is the subset $f^{-1}(Y')=\{x\in X{\;|\;}f(x)\in Y'\}.$
 \end{definitionENG}
 
 \begin{definitionRUS}[Прообраз]\label{def:preimage}
-Пусть $f\taking X\to Y$ — некоторая функция и $y\in Y$ — элемент ее области значений. {\em Прообраз $y$ относительно $f$}\index{прообраз}, обозначаемый $f^\m1(y),$\index{символ!$f^\m1$} — это подмножество $f^\m1(y):=\{x\in X\|f(x)=y\}.$ Если $Y'\ss Y$ — произвольное подмножество, то {\em прообраз $Y'$ относительно $f$}, обозначаемый $f^\m1(Y'),$ — это подмножество $f^\m1(Y')=\{x\in X\|f(x)\in Y'\}.$
+Пусть $f\colon X{→} Y$ — некоторая функция и $y\in Y$ — элемент ее области значений. {\em Прообраз $y$ относительно $f$}\index{прообраз}, обозначаемый $f^{-1}(y),$\index{символ!$f^{-1}$} — это подмножество $f^{-1}(y){\coloneqq}\{x\in X{\;|\;}f(x)=y\}.$ Если $Y'\subseteq Y$ — произвольное подмножество, то {\em прообраз $Y'$ относительно $f$}, обозначаемый $f^{-1}(Y'),$ — это подмножество $f^{-1}(Y')=\{x\in X{\;|\;}f(x)\in Y'\}.$
 \end{definitionRUS}
 
 \begin{exerciseENG}
-Let $f\taking X\to Y$ be a function and $y\in Y$ an element. Draw a pullback diagram in which the fiber product is isomorphic to the preimage $f^\m1(y).$
+Let $f\colon X{→} Y$ be a function and $y\in Y$ an element. Draw a pullback diagram in which the fiber product is isomorphic to the preimage $f^{-1}(y).$
 \end{exerciseENG}
 
 \begin{exerciseRUS}
-Пусть $f\taking X\to Y$ — некоторая функция и $y\in Y$ — элемент ее области значений. Нарисуйте притягивающий квадрат, в котором расслоенное произведение изоморфно прообразу $f^\m1(y).$ 
+Пусть $f\colon X{→} Y$ — некоторая функция и $y\in Y$ — элемент ее области значений. Нарисуйте притягивающий квадрат, в котором расслоенное произведение изоморфно прообразу $f^{-1}(y).$ 
 \end{exerciseRUS}
 
 \begin{lemmaENG}[Universal property for pullback]\label{lemma:up for fp}
@@ -216,7 +216,7 @@ Suppose given the diagram of sets and functions as below.
 \xymatrix{&Y\ar[d]^u\\
 X\ar[r]_t&Z}
 \end{align*}
-For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\taking A\to X$ and $g\taking A\to Y$ such that $t\circ f=u\circ g$), 
+For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\colon A{→} X$ and $g\colon A{→} Y$ such that $t\circ f=u\circ g$), 
 \begin{align}\label{dia:universal property of fp}
 \xymatrix{
 &X\times_ZY\ar@/_1pc/[lddd]_{\pi_1}\ar@/^1pc/[rddd]^{\pi_2}\\\\
@@ -224,7 +224,7 @@ For any set $A$ and commutative solid arrow diagram as below (i.e. functions $f\
 X\ar[rd]_t&&Y\ar[ld]^u\\
 &Z&}
 \end{align}
-there exists a unique arrow $\pb{f}{g}{Z}\taking A\to X\times_ZY$ making everything commute, i.e. 
+there exists a unique arrow $\pb{f}{g}{Z}\colon A{→} X\times_ZY$ making everything commute, i.e. 
 $$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
 \end{lemmaENG}
 
@@ -234,7 +234,7 @@ $$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{and}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
 \xymatrix{&Y\ar[d]^u\\
 X\ar[r]_t&Z}
 \end{align*}
-Для любого множества $A$ и коммутативной диаграммы из непрерывных стрелок, данной ниже (т.е. таких функций $f\taking A\to X$ и $g\taking A\to Y,$ что $t\circ f=u\circ g$), 
+Для любого множества $A$ и коммутативной диаграммы из непрерывных стрелок, данной ниже (т.е. таких функций $f\colon A{→} X$ и $g\colon A{→} Y,$ что $t\circ f=u\circ g$), 
 \begin{align}\label{dia:universal property of fp}
 \xymatrix{
 &X\times_ZY\ar@/_1pc/[lddd]_{\pi_1}\ar@/^1pc/[rddd]^{\pi_2}\\\\
@@ -242,7 +242,7 @@ X\ar[r]_t&Z}
 X\ar[rd]_t&&Y\ar[ld]^u\\
 &Z&}
 \end{align}
-существует единственная стрелка $\pb{f}{g}{Z}\taking A\to X\times_ZY,$ делающая коммутативным все остальное, т.е.
+существует единственная стрелка $\pb{f}{g}{Z}\colon A{→} X\times_ZY,$ делающая коммутативным все остальное, т.е.
 $$f=\pi_1\circ \pb{f}{g}{Z}\hsp\text{и}\hsp g=\pi_2\circ\pb{f}{g}{Z}.$$
 \end{lemmaRUS}
 
@@ -299,18 +299,18 @@ $$
 \end{propositionRUS}
 
 \begin{proofENG}
-We first provide a map $\phi\taking A\times_B(B\times_CC')\to A\times_CC'.$ An element of $A\times_B(B\times_CC')$ is of the form $(a,b,(b,c,c'))$ such that $f(a)=b, g(b)=c$ and $k(c')=c.$ But this implies that $g\circ f(a)=c=k(c')$ so we put $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'.$ Now we provide a proposed inverse, $\psi\taking A\times_CC'\to A\times_B(B\times_CC').$ Given $(a,c,c')$ with $g\circ f(a)=c=k(c'),$ let $b=f(a)$ and note that $(b,c,c')$ is an element of $B\times_CC'.$ So we can define $\psi(a,c,c')=(a,b,(b,c,c')).$ It is easy to see that $\phi$ and $\psi$ are inverse.
+We first provide a map $\phi\colon A\times_B(B\times_CC'){→} A\times_CC'.$ An element of $A\times_B(B\times_CC')$ is of the form $(a,b,(b,c,c'))$ such that $f(a)=b, g(b)=c$ and $k(c')=c.$ But this implies that $g\circ f(a)=c=k(c')$ so we put $\phi(a,b,(b,c,c')){\coloneqq}(a,c,c')\in A\times_CC'.$ Now we provide a proposed inverse, $\psi\colon A\times_CC'{→} A\times_B(B\times_CC').$ Given $(a,c,c')$ with $g\circ f(a)=c=k(c'),$ let $b=f(a)$ and note that $(b,c,c')$ is an element of $B\times_CC'.$ So we can define $\psi(a,c,c')=(a,b,(b,c,c')).$ It is easy to see that $\phi$ and $\psi$ are inverse.
 \end{proofENG}
 
 \begin{proofRUS}
-Сначала получим отображение $\phi\taking A\times_B(B\times_CC')\to A\times_CC'.$ Элементы из $A\times_B(B\times_CC')$ имеют вид таких $(a,b,(b,c,c')),$ что $f(a)=b, g(b)=c$ и $k(c')=c.$ Но из этого следует, что $g\circ f(a)=c=k(c'),$ так что мы можем положить $\phi(a,b,(b,c,c')):=(a,c,c')\in A\times_CC'.$ Теперь получим необходимое обратное отображение $\psi\taking A\times_CC'\to A\times_B(B\times_CC').$ Для данного $(a,c,c')$ с $g\circ f(a)=c=k(c'),$ пусть $b=f(a)$; заметим, что $(b,c,c')$ — элемент $B\times_CC'.$ Поэтому мы можем определить $\psi(a,c,c')=(a,b,(b,c,c')).$ Легко видеть, что $\phi$ и $\psi$ будут взаимно обратными.
+Сначала получим отображение $\phi\colon A\times_B(B\times_CC'){→} A\times_CC'.$ Элементы из $A\times_B(B\times_CC')$ имеют вид таких $(a,b,(b,c,c')),$ что $f(a)=b, g(b)=c$ и $k(c')=c.$ Но из этого следует, что $g\circ f(a)=c=k(c'),$ так что мы можем положить $\phi(a,b,(b,c,c')){\coloneqq}(a,c,c')\in A\times_CC'.$ Теперь получим необходимое обратное отображение $\psi\colon A\times_CC'{→} A\times_B(B\times_CC').$ Для данного $(a,c,c')$ с $g\circ f(a)=c=k(c'),$ пусть $b=f(a)$; заметим, что $(b,c,c')$ — элемент $B\times_CC'.$ Поэтому мы можем определить $\psi(a,c,c')=(a,b,(b,c,c')).$ Легко видеть, что $\phi$ и $\psi$ будут взаимно обратными.
 \end{proofRUS}
 
 \begin{blockENG}
 Proposition~\ref{prop:pasting} can be useful in authoring ologs. For example, the type \fakebox{a cellphone that has a bad battery} is vague, but we can lay out precisely what it means using pullbacks:
 \small
 \begin{align}\label{dia:bad battery}
-\fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{a cellphone that has a bad battery}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{a bad battery}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{less than 1 hour}\ar[r]\ar[d]&\obox{G}{.5in}{between 0 and 1}\ar[d]\\\smbox{B}{a cellphone}\LA{r}{has}&\smbox{D}{a battery}\LA{r}{\parbox{.4in}{\rr remains charged for}}&\obox{F}{.6in}{a duration of time}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr in hours yields}}&\obox{H}{.6in}{a range of numbers}}}
+\fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{a cellphone that has a bad battery}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{a bad battery}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{less than 1 hour}\ar[r]\ar[d]&\obox{G}{.5in}{between 0 and 1}\ar[d]\\\smbox{B}{a cellphone}\LA{r}{has}&\smbox{D}{a battery}\LA{r}{\parbox{.4in}{{ℝ} remains charged for}}&\obox{F}{.6in}{a duration of time}\LA{r}{\hspace{.07in}\parbox{.4in}{{ℝ} in hours yields}}&\obox{H}{.6in}{a range of numbers}}}
 \end{align}\normalsize
 \end{blockENG}
 
@@ -318,7 +318,7 @@ Proposition~\ref{prop:pasting} can be useful in authoring ologs. For example, th
 Утверждение~\ref{prop:pasting} может оказаться полезным при создании ологов. Например, тип \fakebox{мобильный телефон с плохим аккумулятором} определен туманно, но мы можем точно сформулировать, что оно означает, используя пулбеки:
 \small
 \begin{align}\label{dia:bad battery}
-\fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{мобильный телефон с плохим аккумулятором}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{плохой аккумулятор}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{менее 1 часа}\ar[r]\ar[d]&\obox{G}{.5in}{между 0 и 1}\ar[d]\\\smbox{B}{мобильный телефон}\LA{r}{имеет}&\smbox{D}{аккумулятор}\LA{r}{\parbox{.4in}{\rr остается заряженным}}&\obox{F}{.6in}{промежуток времени}\LA{r}{\hspace{.07in}\parbox{.4in}{\rr в часах}}&\obox{H}{.6in}{числовой промежуток}}}
+\fbox{\xymatrixnocompile{\obox{A\iso B\times_DC}{1in}{мобильный телефон с плохим аккумулятором}\ar[r]\ar[d]&\smbox{C\iso D\times_FE}{плохой аккумулятор}\ar[r]\ar[d]&\obox{E\iso F\times_HG}{.5in}{менее 1 часа}\ar[r]\ar[d]&\obox{G}{.5in}{между 0 и 1}\ar[d]\\\smbox{B}{мобильный телефон}\LA{r}{имеет}&\smbox{D}{аккумулятор}\LA{r}{\parbox{.4in}{{ℝ} остается заряженным}}&\obox{F}{.6in}{промежуток времени}\LA{r}{\hspace{.07in}\parbox{.4in}{{ℝ} в часах}}&\obox{H}{.6in}{числовой промежуток}}}
 \end{align}\normalsize
 \end{blockRUS}
 
@@ -359,7 +359,7 @@ W\ar[rr]\ar[dd]\ullimit&&Y\ar[ru]\ar[dd]\\
 X\ar[rr]\ar[ru]&&Z\ar[ru]
 }
 $$
-Let $W=X\times_ZY$ and $W'=X'\times_{Z'}Y',$ and form the diagram to the right. Use the universal property of fiber products to construct a map $W\to W'$ such that all squares commute.
+Let $W=X\times_ZY$ and $W'=X'\times_{Z'}Y',$ and form the diagram to the right. Use the universal property of fiber products to construct a map $W{→} W'$ such that all squares commute.
 \end{exerciseENG}
 
 \begin{exerciseRUS}[*]\label{exc:pointwise map of fp}
@@ -379,7 +379,7 @@ W\ar[rr]\ar[dd]\ullimit&&Y\ar[ru]\ar[dd]\\
 X\ar[rr]\ar[ru]&&Z\ar[ru]
 }
 $$
-Положив $W=X\times_ZY$ и $W'=X'\times_{Z'}Y',$ образуем диаграмму справа. Используя универсальное свойство расслоенных произведений, сконструируйте такое отображение $W\to W',$ чтобы все квадраты коммутировали.
+Положив $W=X\times_ZY$ и $W'=X'\times_{Z'}Y',$ образуем диаграмму справа. Используя универсальное свойство расслоенных произведений, сконструируйте такое отображение $W{→} W',$ чтобы все квадраты коммутировали.
 \end{exerciseRUS}
 
 %%%% Subsection %%%%
@@ -387,12 +387,12 @@ $$
 \subsection{\caseENGRUS{Spans, experiments, and matrices}{ / }{Развилки, эксперименты и матрицы}}
 
 \begin{definitionENG}\label{def:span}\index{span}
-Given sets $A$ and $B,$ a {\em span on $A$ and $B$} is a set $R$ together with functions $f\taking R\to A$ and $g\taking R\to B.$ 
+Given sets $A$ and $B,$ a {\em span on $A$ and $B$} is a set $R$ together with functions $f\colon R{→} A$ and $g\colon R{→} B.$ 
 $$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:span}\index{спан}\index{развилка}
-Для данных множеств $A$ и $B$ {\em развилка} между $A$ и $B$ (иногда говорят {\em спан}) это множество $R$ вместе с функциями $f\taking R\to A$ и $g\taking R\to B.$ 
+Для данных множеств $A$ и $B$ {\em развилка} между $A$ и $B$ (иногда говорят {\em спан}) это множество $R$ вместе с функциями $f\colon R{→} A$ и $g\colon R{→} B.$ 
 $$\xymatrix@=15pt{&R\ar[ddl]_f\ar[ddr]^g\\\\A&&B}$$
 \end{definitionRUS}
 
@@ -449,7 +449,7 @@ $$
 \begin{applicationENG}\label{app:exp temp press 2}
 Let's look back at our lab's experiment from Application~\ref{app:exp temp press}, which resulted in a span $T\From{f}E\To{g}P.$ Suppose we notice that something looks a little wrong. The pressure should be linear in the temperature but it doesn't appear to be. We hypothesize that the volume of the container is increasing under pressure. We look up this container online and see that experiments have been done to measure the volume as the interior pressure changes. The data has generously been made available online, which gives us a span $P\From{f'}E'\To{g'}V.$ 
 
-The composite of our lab's span with the online data span yields a span $T\from E''\to V,$ where $E'':=E\times_PE'.$ What information does this span give us? In explaining it, one might say “whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do.” 
+The composite of our lab's span with the online data span yields a span $T{←} E''{→} V,$ where $E''{\coloneqq}E\times_PE'.$ What information does this span give us? In explaining it, one might say “whenever an experiment in our lab yielded the same pressure as one they recorded, let's call that a data point. Every data point has an associated temperature (from our lab) and an associated volume (from their experiment). This is the best we can do.” 
 
 The information we get this way might be seen by some as unscientific, but it certainly is the kind of information people use in business and in every day life calculation — we get our data from multiple sources and put it together. Moreover, it is scientific in the sense that it is reproducible. The way we obtained our $T$-$V$ data is completely transparent.
 \end{applicationENG}
@@ -457,7 +457,7 @@ The information we get this way might be seen by some as unscientific, but it ce
 \begin{applicationRUS}\label{app:exp temp press 2}
 Давайте вернемся к нашему эксперименту из Прикладного примера~\ref{app:exp temp press}, результат которого представим в виде развилки $T\From{f}E\To{g}P.$ Предположим, мы обнаружили, будто нечто пошло неправильно. Давление должно зависеть линейно от температуры, но обнаружилось, что это не так. Мы можем высказать гипотезу, что объем контейнера растет с давлением. Мы ищем данные об этом контейнере в интернет и обнаруживаем, что уже были проделаны эксперименты по измерению объема этого контейнера при изменении давления. Данные были великодушно выложены в свободный доступ, что дает нам развилку $P\From{f'}E'\To{g'}V.$ 
 
-При помощи композиции нашей лабораторной развилки и развилки с данными из интернет получим новую развилку $T\from E''\to V,$ где $E'':=E\times_PE'.$ Какую информацию эта развилка дает нам? Для объяснения этого можно сказать «каждый раз, когда эксперимент в нашей латоратории выдает такое давление, какое мы записали, назовем это измерительной точкой. Каждая измерительная точка имеет связанную с ней температуру (из нашей лаборатории) и объем (из чужого эксперимента). Это лучшее из того, что можно получить.»
+При помощи композиции нашей лабораторной развилки и развилки с данными из интернет получим новую развилку $T{←} E''{→} V,$ где $E''{\coloneqq}E\times_PE'.$ Какую информацию эта развилка дает нам? Для объяснения этого можно сказать «каждый раз, когда эксперимент в нашей латоратории выдает такое давление, какое мы записали, назовем это измерительной точкой. Каждая измерительная точка имеет связанную с ней температуру (из нашей лаборатории) и объем (из чужого эксперимента). Это лучшее из того, что можно получить.»
 
 Информация, которую мы получим таким способом может показаться в чем-то ненаучной, но это именно тот вид информации, которую люди используют в бизнесе и в ежедневных бытовых вычислениях: мы получаем данные из многих источников и соединяем их вместе. Более того, этот способ научен в том смысле, что он воспроизводим. Способ, которым мы получили наши данные о зависимости $T$-$V$ совершенно прозрачен.
 \end{applicationRUS}
@@ -471,23 +471,23 @@ We can relate spans to matrices of natural numbers, and see a natural “categor
 \end{blockRUS}
 
 \begin{blockENG}
-Let $A$ and $B$ be sets and let $A\from R\to B$ be a span. By the universal property of products, we have a unique map $R\To{p}A\times B.$ 
+Let $A$ and $B$ be sets and let $A{←} R{→} B$ be a span. By the universal property of products, we have a unique map $R\To{p}A\times B.$ 
 \end{blockENG}
 
 \begin{blockRUS}
-Пусть $A$ и $B$ — некоторые множества, а $A\from R\to B$ — развилка между ними. Согласно универсальному свойству произведений у нас имеется единственное отображение $R\To{p}A\times B.$ 
+Пусть $A$ и $B$ — некоторые множества, а $A{←} R{→} B$ — развилка между ними. Согласно универсальному свойству произведений у нас имеется единственное отображение $R\To{p}A\times B.$ 
 \end{blockRUS}
 
 \begin{blockENG}
-We make a matrix of natural numbers out of this data as follows. The set of rows is $A,$ the set of columns is $B.$ For elements $a\in A$ and $b\in B,$ the $(a,b)$-entry is the cardinality of its preimage, $|p^\m1(a,b)|,$ i.e. the number of elements in $R$ that are sent by $p$ to $(a,b).$ 
+We make a matrix of natural numbers out of this data as follows. The set of rows is $A,$ the set of columns is $B.$ For elements $a\in A$ and $b\in B,$ the $(a,b)$-entry is the cardinality of its preimage, $|p^{-1}(a,b)|,$ i.e. the number of elements in $R$ that are sent by $p$ to $(a,b).$ 
 \end{blockENG}
 
 \begin{blockRUS}
-Построим матрицу из натуральных чисел следующим образом. В качестве множества строк возьмем $A,$ множества столбцов — $B.$ Для элементов $a\in A$ и $b\in B$ ячейка $(a,b)$ будет содержать мощность прообраза $|p^\m1(a,b)|,$ т.е. число элементов $R$ переходящих в $(a,b)$ при помощи $p.$ 
+Построим матрицу из натуральных чисел следующим образом. В качестве множества строк возьмем $A,$ множества столбцов — $B.$ Для элементов $a\in A$ и $b\in B$ ячейка $(a,b)$ будет содержать мощность прообраза $|p^{-1}(a,b)|,$ т.е. число элементов $R$ переходящих в $(a,b)$ при помощи $p.$ 
 \end{blockRUS}
 
 \begin{blockENG}
-Suppose we are given two $(A,B)$-spans, i.e. $A\from R\to B$ and $A\from R'\to B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A\from R\sqcup R'\to B$ making the requisite diagram commute.%
+Suppose we are given two $(A,B)$-spans, i.e. $A{←} R{→} B$ and $A{←} R'{→} B$; we might think of these has having the same {\em dimensions}, i.e. they are both $|A|\times|B|$-matrices. We can take the disjoint union $R\sqcup R'$ and by the universal property of coproducts we have a unique span $A{←} R\sqcup R'{→} B$ making the requisite diagram commute.%
 \footnote{
 $$\xymatrix{
 &R\ar[dl]\ar[dr]\ar[d]\\
@@ -499,7 +499,7 @@ The matrix corresponding to this new span will be the sum of the matrices corres
 \end{blockENG}
 
 \begin{blockRUS}
-Предположим, даны две $(A,B)$-развилки, например $A\from R\to B$ и $A\from R'\to B$; о них можно думать, как об имеющих общую {\em размерность}, другими словами обе являются $|A|\times|B|$-матрицами. Мы можем взять несвязное объединение $R\sqcup R'$ и из универсального свойства копроизведений получить единственную развилку $A\from R\sqcup R'\to B,$ делающую необходимую нам диаграмму коммутирующей.%
+Предположим, даны две $(A,B)$-развилки, например $A{←} R{→} B$ и $A{←} R'{→} B$; о них можно думать, как об имеющих общую {\em размерность}, другими словами обе являются $|A|\times|B|$-матрицами. Мы можем взять несвязное объединение $R\sqcup R'$ и из универсального свойства копроизведений получить единственную развилку $A{←} R\sqcup R'{→} B,$ делающую необходимую нам диаграмму коммутирующей.%
 \footnote{
 $$\xymatrix{
 &R\ar[dl]\ar[dr]\ar[d]\\
@@ -511,11 +511,11 @@ $$
 \end{blockRUS}
 
 \begin{blockENG}
-Given a span $A\from R\to B$ and a span $B\from S\to C,$ the composite span can be formed as in Definition~\ref{def:composite span}. It will correspond to the usual multiplication of matrices.
+Given a span $A{←} R{→} B$ and a span $B{←} S{→} C,$ the composite span can be formed as in Definition~\ref{def:composite span}. It will correspond to the usual multiplication of matrices.
 \end{blockENG}
 
 \begin{blockRUS}
-Для данных развилок $A\from R\to B$ и $B\from S\to C$ можно образовать их композицию (см. Определение~\ref{def:composite span}). Она будет соответствовать обычному умножению матриц.
+Для данных развилок $A{←} R{→} B$ и $B{←} S{→} C$ можно образовать их композицию (см. Определение~\ref{def:composite span}). Она будет соответствовать обычному умножению матриц.
 \end{blockRUS}
 
 \begin{constructionENG}\label{const:bipartite}\index{graph!bipartite}
@@ -549,7 +549,7 @@ Suppose given two parallel arrows
 \begin{align}\label{dia:equalizer}
 \xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{Eq(f,g)\ar[r]^-p&X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y}
 \end{align}
-The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:equalizer}), where we define $$Eq(f,g):=\{x\in X\|f(x)=g(x)\}$$ and where $p$ is the canonical inclusion.
+The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in (\ref{dia:equalizer}), where we define $$Eq(f,g){\coloneqq}\{x\in X{\;|\;}f(x)=g(x)\}$$ and where $p$ is the canonical inclusion.
 \end{definitionENG}
 
 \begin{definitionRUS}\label{def:equalizer}\index{уравнитель}
@@ -557,7 +557,7 @@ The {\em equalizer of $f$ and $g$} is the commutative diagram as to the right in
 \begin{align}\label{dia:equalizer}
 \xymatrix{X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y.}\hspace{1in}\xymatrix{Eq(f,g)\ar[r]^-p&X\ar@<.5ex>[r]^f\ar@<-.5ex>[r]_g&Y}
 \end{align}
-{\em Уравнитель $f$ и $g$} — это коммутативная диаграмма справа (\ref{dia:equalizer}), где мы определяем $$Eq(f,g):=\{x\in X\|f(x)=g(x)\},$$ и где  $p$ — каноническое вложение.
+{\em Уравнитель $f$ и $g$} — это коммутативная диаграмма справа (\ref{dia:equalizer}), где мы определяем $$Eq(f,g){\coloneqq}\{x\in X{\;|\;}f(x)=g(x)\},$$ и где  $p$ — каноническое вложение.
 \end{definitionRUS}
 
 \begin{exampleENG}
@@ -593,13 +593,13 @@ Find a universal property enjoyed by the equalizer of two arrows, and present it
 \end{exerciseRUS}
 
 \begin{exerciseENG}\index{terminal object!in $\Set$}~
-\sexc A terminal set is a set $S$ such that for every set $X,$ there exists a unique function $X\to S.$ Find a terminal set. 
+\sexc A terminal set is a set $S$ such that for every set $X,$ there exists a unique function $X{→} S.$ Find a terminal set. 
 \item Do you think that the notion {\em terminal set} belongs in this section (Section~\ref{sec:finite limits})? How so? If products, pullbacks, and equalizers are all limits, what do limits have in common?
 \endsexc
 \end{exerciseENG}
 
 \begin{exerciseRUS}\index{terminal object!in $\Set$}~
-\sexc Терминальное множество — это такое множество $S,$ что для любого множества $X$ существует единственная функция $X\to S.$ Найдите хотя бы одно терминальное множество. 
+\sexc Терминальное множество — это такое множество $S,$ что для любого множества $X$ существует единственная функция $X{→} S.$ Найдите хотя бы одно терминальное множество. 
 \item Как вы считаете, принадлежит ли понятие {\em терминального множества} данному разделу (Раздел~\ref{sec:finite limits})? Почему? Если все — произведения, пулбеки и уравнители — являются пределами, то что общего у всех пределов?
 \endsexc
 \end{exerciseRUS}

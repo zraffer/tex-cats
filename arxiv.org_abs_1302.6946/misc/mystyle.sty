@@ -84,14 +84,14 @@
 
 \usepackage[bottom]{footmisc}
 \usepackage{perpage}
-\renewcommand{\thefootnote}{(\roman{footnote})}
+\renewcommand{\thefootnote}{[\roman{footnote}]}
 \makeatletter
 \MakePerPage{footnote}
 \makeatother
 
 \newcommand{\longnote}[2][4.9in]{\fcolorbox{black}{yellow}{\parbox{#1}{\color{black} #2}}}
 \newcommand{\shortnote}[1]{\fcolorbox{black}{yellow}{\color{black} #1}}
-\newcommand{\start}[1]{\shortnote{Start here: #1.}}
+%\newcommand{\start}[1]{\shortnote{Start here: #1.}}
 \newcommand{\cfbox}[2]{
     \colorlet{currentcolor}{.}
     {\color{#1}
@@ -104,12 +104,12 @@
 \newcommand{\qtE}[1]{\tn{“}#1\tn{”}}
 \newcommand{\qtR}[1]{\tn{«}#1\tn{»}}
 
-\def\ZZ{ℤ}%{{\mathbb Z}}
-\def\QQ{ℚ}%{{\mathbb Q}}
-\def\RR{ℝ}%{{\mathbb R}}
-\def\CC{ℂ}%{{\mathbb C}}
-\def\PP{ℙ}%{{\mathbb P}}
-\def\NN{ℕ}%{{\mathbb N}}
+%\newcommand{\ZZ}{ℤ}%{{\mathbb Z}}
+%\newcommand{\QQ}{ℚ}%{{\mathbb Q}}
+%\newcommand{\RR}{ℝ}%{{\mathbb R}}
+%\newcommand{\CC}{ℂ}%{{\mathbb C}}
+%\newcommand{\PP}{ℙ}%{{\mathbb P}}
+%\newcommand{\NN}{ℕ}%{{\mathbb N}}
 
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Path}{Path}
@@ -137,74 +137,37 @@
     \DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
     \DeclareFontShape{U}{mathb}{m}{n}{<-6> mathb5 <6-7> mathb6 <7-8> mathb7 <8-9> mathb8 <9-10> mathb9 <10-12> mathb10 <12-> mathb12}{}
     \DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
-    \DeclareMathSymbol{\lefttorightarrow}{\mathrel}{mathb}{"FC}
-    \DeclareMathSymbol{\righttoleftarrow}{\mathrel}{mathb}{"FD}
-    \DeclareMathSymbol{\uptodownarrow}{\mathrel}{mathb}{"FE}
-    \DeclareMathSymbol{\downtouparrow}{\mathrel}{mathb}{"FF}
+    \DeclareMathSymbol{\mylefttorightarrow}{\mathrel}{mathb}{"FC}
+    \DeclareMathSymbol{\myrighttoleftarrow}{\mathrel}{mathb}{"FD}
+    \DeclareMathSymbol{\myuptodownarrow}{\mathrel}{mathb}{"FE}
+    \DeclareMathSymbol{\mydowntouparrow}{\mathrel}{mathb}{"FF}
 
-\newcommand{\smiley}{☺}
-
-\newcommand{\singleton}{\{\smiley\}}
 \newcommand{\boxtitle}[1]{\begin{center}#1\end{center}\vspace{-.1in}}
-\newcommand{\singlefun}[1]{\star^{#1}}
-\newcommand{\pullb}[1]{\Delta_{#1}}
-\newcommand{\lpush}[1]{\Sigma_{#1}}
-\newcommand{\rpush}[1]{\Pi_{#1}}
-\def\lcone{^\triangleleft}
-\def\rcone{^\triangleright}
-\def\to{\rightarrow}
-\def\from{\leftarrow}
-\def\down{\downarrrow}
-\def\Down{\Downarrow}
-\def\taking{\colon}
-\def\inj{\hookrightarrow}
-\def\surj{\twoheadrightarrow}
-\def\too{\longrightarrow}
 \newcommand{\xyright}[1]{\xymatrix{~\ar[r]#1&}}
 \newcommand{\xydown}[1]{\xymatrix{~\ar[d]#1\\~}}
 \newcommand{\xydoown}[1]{\xymatrix{~\ar[ddd]#1\\\parbox{0in}{~}\\\parbox{0in}{~}\\~}}
-\def\fromm{\longleftarrow}
-\def\tooo{\longlongrightarrow}
-\def\tto{\rightrightarrows}
-\def\ttto{\equiv\!\!>}
-\def\ss{\subseteq}
-\def\superset{\supseteq}
-\def\iso{\cong}
-\def\down{\downarrow}
-\def\|{{\;|\;}}
-\def\m1{{-1}}
-\def\op{^\tn{op}}
-\def\loc{\tn{loc}}
-\def\la{\langle}
-\def\ra{\rangle}
-\def\wt{\widetilde}
-\def\wh{\widehat}
-\def\we{\simeq}
-\def\ol{\overline}
-\def\ul{\underline}
-\def\plpl{+\!\!+\hspace{1pt}}
-\def\acts{⟳}%{\lefttorightarrow}
-\def\actsRight{⟲}%{\righttoleftarrow}
-\def\vect{\overrightarrow}
-\def\qeq{\mathop{=}^?}
-\def\del{\partial\,}
+\newcommand{\ttto}{\equiv\!\!>}
+\newcommand{\iso}{\cong}
+\newcommand{\op}{^\tn{op}}
+\newcommand{\loc}{\tn{loc}}
+\newcommand{\plpl}{+\!\!+\hspace{1pt}}
+\newcommand{\qeq}{\mathop{=}^?}
+\newcommand{\del}{\partial\,}
 
-\def\rr{\raggedright}
-\def\monOb{\blacktriangle}
-
-\newcommand{\LMO}[1]{\stackrel{#1}{\bullet}}
-\newcommand{\LMOX}[1]{\bullet^{#1}}
-\newcommand{\LTO}[1]{\stackrel{\tn{\tt{#1}}}{\bullet}}
-\newcommand{\LTOX}[1]{\bullet^{\tn{\tt{#1}}}}
+\newcommand{\LMO}[1]{\stackrel{#1}{∙}}
+\newcommand{\LMOX}[1]{∙^{#1}}
+\newcommand{\LTO}[1]{\stackrel{\tn{\tt{#1}}}{∙}}
+\newcommand{\LTOX}[1]{∙^{\tn{\tt{#1}}}}
 \newcommand{\LA}[2]{\ar[#1]^-{\tn {#2}}}
 \newcommand{\LAL}[2]{\ar[#1]_-{\tn {#2}}}
 \newcommand{\obox}[3]{\stackrel{#1}{\fbox{\parbox{#2}{#3}}}}
-\newcommand{\labox}[2]{\obox{#1}{1.6in}{#2}}
+\newcommand{\llabox}[2]{\obox{#1}{1.6in}{#2}}
 \newcommand{\mebox}[2]{\obox{#1}{1in}{#2}}
 \newcommand{\smbox}[2]{\stackrel{#1}{\fbox{#2}}}
 \newcommand{\fakebox}[1]{\tn{$\ulcorner$#1$\urcorner$}}
 \newcommand{\sq}[4]{\xymatrix{#1\ar[r]\ar[d]&#2\ar[d]\\#3\ar[r]&#4}}
-\newcommand{\namecat}[1]{\begin{center}$#1:=$\end{center}}
+\newcommand{\coloneqq}{\mathrel{\mathop:}=}
+\newcommand{\namecat}[1]{\begin{center}$#1\coloneqq$\end{center}}
 
 \def\ullimit{\ar@{}[rd]|(.3)*+{\lrcorner}}
 \def\urlimit{\ar@{}[ld]|(.3)*+{\llcorner}}
@@ -228,75 +191,49 @@
 \newcommand{\From}[1]{\xleftarrow{#1}}
 \newcommand{\Fromm}[1]{\xleftarrow{\ \ #1\ \ }}
 \newcommand{\Adjoint}[4]{\xymatrix@1{#2 \ar@<.5ex>[r]^-{#1} & #3 \ar@<.5ex>[l]^-{#4}}}
-\newcommand{\adjoint}[4]{\xymatrix{#1\taking #2\ar@<.5ex>[r]& #3\hspace{1pt}:\hspace{-2pt} #4\ar@<.5ex>[l]}}
-\newcommand{\prodmap}[2]{\la#1,#2\ra}
+\newcommand{\adjoint}[4]{\xymatrix{#1\colon #2\ar@<.5ex>[r]& #3\hspace{1pt}:\hspace{-2pt} #4\ar@<.5ex>[l]}}
+\newcommand{\prodmap}[2]{⟨ #1, #2 ⟩}
 \newcommand{\pb}[3]{\prodmap{#1}{#2}_{#3}}
 \newcommand{\coprodmap}[2]{{\left\{\parbox{.1in}{#1\\#2}\right.}}
 \newcommand{\po}[3]{\coprodmap{#1}{#2}^{#3}}
 
-\def\Top{{\mathbf{Top}}}
-\def\Cat{{\mathbf{Cat}}}
-\def\Oprd{{\mathbf{Oprd}}}
-\def\Str{{\mathbf{Str}}}
-\def\Mon{{\mathbf{Mon}}}
-\def\Grp{{\mathbf{Grp}}}
-\def\Grph{{\mathbf{Grph}}}
-\def\Type{{\mathbf{Type}}}
-\def\Supp{{\mathbf{Supp}}}
-\def\Dist{{\mathbf{Dist}}}
-\def\Vect{{\mathbf{Vect}}}
-\def\Kls{{\mathbf{Kls}}}
-\def\Prop{{\mathbf{Prop}}}
-\def\FLin{{\mathbf{FLin}}}
-\def\Set{{\mathbf{Set}}}
-\def\Sets{{\mathbf{Sets}}}
-\def\PrO{{\mathbf{PrO}}}
-\def\Star{{\mathbf{Star}}}
-\def\Cob{{\mathbf{Cob}}}
-\def\Qry{{\mathbf{Qry}}}
-\def\set{{\text \textendash}{\mathbf{Set}}}
-\def\sSet{{\mathbf{sSet}}}
-\def\sSets{{\mathbf{sSets}}}
-\def\Grpd{{\mathbf{Grpd}}}
-\def\Pre{{\mathbf{Pre}}}
-\def\Shv{{\mathbf{Shv}}}
-\def\Rings{{\mathbf{Rings}}}
-\def\bD{{\mathbf{\Delta}}}
-\def\dispInt{\parbox{.1in}{$\int$}}
-\def\bhline{\Xhline{2\arrayrulewidth}}
-\def\bbhline{\Xhline{2.5\arrayrulewidth}}
-\def\bbbhline{\Xhline{3\arrayrulewidth}}
+\newcommand{\Top}{{\mathbf{Top}}}
+\newcommand{\Cat}{{\mathbf{Cat}}}
+\newcommand{\Oprd}{{\mathbf{Oprd}}}
+\newcommand{\Str}{{\mathbf{Str}}}
+\newcommand{\Mon}{{\mathbf{Mon}}}
+\newcommand{\Grp}{{\mathbf{Grp}}}
+\newcommand{\Grph}{{\mathbf{Grph}}}
+\newcommand{\Type}{{\mathbf{Type}}}
+\newcommand{\Supp}{{\mathbf{Supp}}}
+\newcommand{\Dist}{{\mathbf{Dist}}}
+\newcommand{\Vect}{{\mathbf{Vect}}}
+\newcommand{\Kls}{{\mathbf{Kls}}}
+\newcommand{\Prop}{{\mathbf{Prop}}}
+\newcommand{\FLin}{{\mathbf{FLin}}}
+\newcommand{\Set}{{\mathbf{Set}}}
+\newcommand{\Sets}{{\mathbf{Sets}}}
+\newcommand{\PrO}{{\mathbf{PrO}}}
+\newcommand{\Star}{{\mathbf{Star}}}
+\newcommand{\Cob}{{\mathbf{Cob}}}
+\newcommand{\Qry}{{\mathbf{Qry}}}
+\newcommand{\set}{{\text \textendash}{\mathbf{Set}}}
+\newcommand{\sSet}{{\mathbf{sSet}}}
+\newcommand{\sSets}{{\mathbf{sSets}}}
+\newcommand{\Grpd}{{\mathbf{Grpd}}}
+\newcommand{\Pre}{{\mathbf{Pre}}}
+\newcommand{\Shv}{{\mathbf{Shv}}}
+\newcommand{\Rings}{{\mathbf{Rings}}}
+\newcommand{\bD}{{\mathbf{\Delta}}}
+\newcommand{\dispInt}{\parbox{.1in}{$\int$}}
+\newcommand{\bhline}{\Xhline{2\arrayrulewidth}}
+\newcommand{\bbhline}{\Xhline{2.5\arrayrulewidth}}
+\newcommand{\bbbhline}{\Xhline{3\arrayrulewidth}}
 
-\def\mcA{𝓐}%{\mc{A}}
-\def\mcB{𝓑}%{\mc{B}}
-\def\mcC{𝓒}%{\mc{C}}
-\def\mcD{𝓓}%{\mc{D}}
-\def\mcE{𝓔}%{\mc{E}}
-\def\mcF{𝓕}%{\mc{F}}
-\def\mcG{𝓖}%{\mc{G}}
-\def\mcH{𝓗}%{\mc{H}}
-\def\mcI{𝓘}%{\mc{I}}
-\def\mcJ{𝓙}%{\mc{J}}
-\def\mcK{𝓚}%{\mc{K}}
-\def\mcL{𝓛}%{\mc{L}}
-\def\mcM{𝓜}%{\mc{M}}
-\def\mcN{𝓝}%{\mc{N}}
-\def\mcO{𝓞}%{\mc{O}}
-\def\mcP{𝓟}%{\mc{P}}
-\def\mcQ{𝓠}%{\mc{Q}}
-\def\mcR{𝓡}%{\mc{R}}
-\def\mcS{𝓢}%{\mc{S}}
-\def\mcT{𝓣}%{\mc{T}}
-\def\mcU{𝓤}%{\mc{U}}
-\def\mcV{𝓥}%{\mc{V}}
-\def\mcW{𝓦}%{\mc{W}}
-\def\mcX{𝓧}%{\mc{X}}
-\def\mcY{𝓨}%{\mc{Y}}
-\def\mcZ{𝓩}%{\mc{Z}}
 
-\def\undsc{\rule{2mm}{0.4pt}}
-\def\Loop{{\mcL\!oop}}
-\def\LoopSchema{{\parbox{.5in}{\fbox{\xymatrix{\LMOX{s}\ar@(l,u)[]^f}}}}}
+\newcommand{\undsc}{\rule{2mm}{0.4pt}}
+\newcommand{\Loop}{{𝓛\!oop}}
+\newcommand{\LoopSchema}{{\parbox{.5in}{\fbox{\xymatrix{\LMOX{s}\ar@(l,u)[]^f}}}}}
 
 %%%%%%%%%%%%%%%% ORIGINAL
 
