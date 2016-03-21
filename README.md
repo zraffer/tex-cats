@@ -1,5 +1,7 @@
 # tex-cats
 
+[![Join the chat at https://gitter.im/zeitraffer/tex-cats](https://badges.gitter.im/zeitraffer/tex-cats.svg)](https://gitter.im/zeitraffer/tex-cats?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Translations of open source texts about category theory  
 (see LICENSE files in subdirectories)
 
